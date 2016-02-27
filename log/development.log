@@ -510,3 +510,47 @@ Started GET "/" for 127.0.0.1 at 2016-02-27 13:28:21 -0500
 Processing by UsersController#show as HTML
   Rendered users/show.html.erb within layouts/application (0.0ms)
 Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-02-27 14:06:45 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (16.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#show as HTML
+  Rendered users/show.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 761ms (Views: 703.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-02-27 14:21:01 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#show as HTML
+  Rendered users/show.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 1089ms (Views: 1064.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/github" for ::1 at 2016-02-27 14:21:06 -0500
+Processing by OauthsController#oauth as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to https://github.com/login/oauth/authorize?client_id=967e28fa62250e17078e&display&redirect_uri=http%3A%2F%2F0.0.0.0%3A3000%2Foauth%2Fcallback%3Fprovider%3Dgithub&response_type=code&scope&state
+Completed 403 Forbidden in 38ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/callback?code=ec1d791e0d19a9d4af9a&provider=github" for 127.0.0.1 at 2016-02-27 14:21:06 -0500
+Processing by OauthsController#callback as HTML
+  Parameters: {"code"=>"ec1d791e0d19a9d4af9a", "provider"=>"github"}
+  [1m[35mAuthentication Load (1.0ms)[0m  SELECT  "authentications".* FROM "authentications" WHERE "authentications"."uid" = ? AND "authentications"."provider" = ?  ORDER BY "authentications"."id" ASC LIMIT 1  [["uid", "15382938"], ["provider", "github"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (18.2ms)[0m  INSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2016-02-27 19:21:07.378061"], ["updated_at", "2016-02-27 19:21:07.378061"]]
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 696ms (ActiveRecord: 20.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-27 14:21:07 -0500
+Processing by UsersController#show as HTML
+  Rendered users/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 24ms (Views: 23.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-27 14:21:07 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-27 14:21:07 -0500
