@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  root 'users#show'
   resources :users, only: [:show, :new, :create]
 
   post "oauth/callback" => "oauths#callback"

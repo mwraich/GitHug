@@ -23,7 +23,6 @@ class OauthsController < ApplicationController
     end
   end
 
-  end
 
   private
   def auth_params
