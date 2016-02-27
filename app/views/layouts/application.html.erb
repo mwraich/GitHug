@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
   <li><%= link_to 'Login with Github', auth_at_provider_path(provider: :github) %></li>
 
 <%= yield %>

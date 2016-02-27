@@ -454,3 +454,59 @@ Started GET "/" for 127.0.0.1 at 2016-02-26 23:11:49 -0500
 Processing by UsersController#show as HTML
   Rendered users/show.html.erb within layouts/application (0.0ms)
 Completed 200 OK in 32ms (Views: 31.6ms | ActiveRecord: 0.0ms)
+  [1m[36mUser Load (2.9ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+
+Started GET "/" for ::1 at 2016-02-27 13:28:12 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#show as HTML
+  Rendered users/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 272ms (Views: 262.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/github" for ::1 at 2016-02-27 13:28:15 -0500
+Processing by OauthsController#oauth as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to https://github.com/login/oauth/authorize?client_id=e262cefa98987c943551&display&redirect_uri=http%3A%2F%2F0.0.0.0%3A3000%2Foauth%2Fcallback%3Fprovider%3Dgithub&response_type=code&scope&state
+Completed 403 Forbidden in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/callback?code=72966d38f5f27e5250d8&provider=github" for 127.0.0.1 at 2016-02-27 13:28:15 -0500
+Processing by OauthsController#callback as HTML
+  Parameters: {"code"=>"72966d38f5f27e5250d8", "provider"=>"github"}
+  [1m[35mAuthentication Load (0.6ms)[0m  SELECT  "authentications".* FROM "authentications" WHERE "authentications"."uid" = ? AND "authentications"."provider" = ?  ORDER BY "authentications"."id" ASC LIMIT 1  [["uid", "16617247"], ["provider", "github"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2016-02-27 18:28:16.341344"], ["updated_at", "2016-02-27 18:28:16.341344"]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 401ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-27 13:28:16 -0500
+Processing by UsersController#show as HTML
+  Rendered users/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/github" for 127.0.0.1 at 2016-02-27 13:28:21 -0500
+Processing by OauthsController#oauth as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to https://github.com/login/oauth/authorize?client_id=e262cefa98987c943551&display&redirect_uri=http%3A%2F%2F0.0.0.0%3A3000%2Foauth%2Fcallback%3Fprovider%3Dgithub&response_type=code&scope&state
+Completed 403 Forbidden in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/callback?code=bcc93b25b653718fcc59&provider=github" for 127.0.0.1 at 2016-02-27 13:28:21 -0500
+Processing by OauthsController#callback as HTML
+  Parameters: {"code"=>"bcc93b25b653718fcc59", "provider"=>"github"}
+  [1m[35mAuthentication Load (0.2ms)[0m  SELECT  "authentications".* FROM "authentications" WHERE "authentications"."uid" = ? AND "authentications"."provider" = ?  ORDER BY "authentications"."id" ASC LIMIT 1  [["uid", "16617247"], ["provider", "github"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2016-02-27 18:28:21.515142"], ["updated_at", "2016-02-27 18:28:21.515142"]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 317ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-27 13:28:21 -0500
+Processing by UsersController#show as HTML
+  Rendered users/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.0ms)
