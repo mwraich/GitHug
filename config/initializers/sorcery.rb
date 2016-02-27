@@ -126,7 +126,7 @@ Rails.application.config.sorcery.configure do |config|
   config.github.key = Figaro.env.github_client_id
   config.github.secret = Figaro.env.github_secret
   config.github.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=github"
-  config.github.user_info_mapping = {:email => "name"}
+  config.github.user_info_mapping = {:email => "email"}
   #
   # config.google.key = ""
   # config.google.secret = ""
@@ -436,7 +436,7 @@ Rails.application.config.sorcery.configure do |config|
     # Class which holds the various external provider data for this user.
     # Default: `nil`
     #
-    # user.authentications_class =
+    user.authentications_class = Authentication
 
 
     # User's identifier in authentications class.
