@@ -10646,3 +10646,287 @@ Processing by UsersController#new as HTML
   Rendered users/new.html.erb within layouts/application (0.1ms)
   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
 Completed 200 OK in 22ms (Views: 21.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 14:47:36 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 1803ms (Views: 1792.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/github" for ::1 at 2016-02-29 14:47:40 -0500
+Processing by OauthsController#oauth as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to https://github.com/login/oauth/authorize?client_id=707effc4d388373c1adb&display&redirect_uri=http%3A%2F%2F0.0.0.0%3A3000%2Foauth%2Fcallback%3Fprovider%3Dgithub&response_type=code&scope=user%3Aemail&state
+Completed 403 Forbidden in 8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/callback?error=redirect_uri_mismatch&error_description=The+redirect_uri+MUST+match+the+registered+callback+URL+for+this+application.&error_uri=https%3A%2F%2Fdeveloper.github.com%2Fv3%2Foauth%2F%23redirect-uri-mismatch&provider=github" for ::1 at 2016-02-29 14:47:40 -0500
+Processing by OauthsController#callback as HTML
+  Parameters: {"error"=>"redirect_uri_mismatch", "error_description"=>"The redirect_uri MUST match the registered callback URL for this application.", "error_uri"=>"https://developer.github.com/v3/oauth/#redirect-uri-mismatch", "provider"=>"github"}
+Completed 500 Internal Server Error in 180ms (ActiveRecord: 0.0ms)
+
+OAuth2::Error (redirect_uri_mismatch: The redirect_uri MUST match the registered callback URL for this application.
+error=redirect_uri_mismatch&error_description=The+redirect_uri+MUST+match+the+registered+callback+URL+for+this+application.&error_uri=https%3A%2F%2Fdeveloper.github.com%2Fv3%2Foauth%2F%23redirect-uri-mismatch2):
+  app/controllers/oauths_controller.rb:10:in `callback'
+
+
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.5ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (78.0ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (66.6ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (146.7ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 14:48:23 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/github" for ::1 at 2016-02-29 14:48:26 -0500
+Processing by OauthsController#oauth as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to https://github.com/login/oauth/authorize?client_id=707effc4d388373c1adb&display&redirect_uri=http%3A%2F%2F0.0.0.0%3A3000%2Foauth%2Fcallback%3Fprovider%3Dgithub&response_type=code&scope=user%3Aemail&state
+Completed 403 Forbidden in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/callback?error=redirect_uri_mismatch&error_description=The+redirect_uri+MUST+match+the+registered+callback+URL+for+this+application.&error_uri=https%3A%2F%2Fdeveloper.github.com%2Fv3%2Foauth%2F%23redirect-uri-mismatch&provider=github" for ::1 at 2016-02-29 14:48:26 -0500
+Processing by OauthsController#callback as HTML
+  Parameters: {"error"=>"redirect_uri_mismatch", "error_description"=>"The redirect_uri MUST match the registered callback URL for this application.", "error_uri"=>"https://developer.github.com/v3/oauth/#redirect-uri-mismatch", "provider"=>"github"}
+Completed 500 Internal Server Error in 560ms (ActiveRecord: 0.0ms)
+
+OAuth2::Error (redirect_uri_mismatch: The redirect_uri MUST match the registered callback URL for this application.
+error=redirect_uri_mismatch&error_description=The+redirect_uri+MUST+match+the+registered+callback+URL+for+this+application.&error_uri=https%3A%2F%2Fdeveloper.github.com%2Fv3%2Foauth%2F%23redirect-uri-mismatch2):
+  app/controllers/oauths_controller.rb:10:in `callback'
+
+
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (65.6ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (55.8ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (124.5ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 14:48:38 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 259ms (Views: 249.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/oauths.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 14:48:38 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 14:48:38 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-29 14:48:38 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 14:48:38 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-29 14:48:38 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-29 14:48:38 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 14:48:38 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-29 14:48:38 -0500
+
+
+Started GET "/assets/oauths.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 14:48:38 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 14:48:38 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-29 14:48:38 -0500
+
+
+Started GET "/oauth/github" for ::1 at 2016-02-29 14:48:39 -0500
+Processing by OauthsController#oauth as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to https://github.com/login/oauth/authorize?client_id=707effc4d388373c1adb&display&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Foauth%2Fcallback%3Fprovider%3Dgithub&response_type=code&scope=user%3Aemail&state
+Completed 403 Forbidden in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/callback?code=26ff7016892eaae06bf8&provider=github" for ::1 at 2016-02-29 14:48:45 -0500
+Processing by OauthsController#callback as HTML
+  Parameters: {"code"=>"26ff7016892eaae06bf8", "provider"=>"github"}
+  [1m[35mAuthentication Load (0.2ms)[0m  SELECT  "authentications".* FROM "authentications" WHERE "authentications"."uid" = ? AND "authentications"."provider" = ?  ORDER BY "authentications"."id" ASC LIMIT 1  [["uid", "14845428"], ["provider", "github"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)  [["email", "am.doyle@yahoo.ca"], ["created_at", "2016-02-29 19:48:46.190909"], ["updated_at", "2016-02-29 19:48:46.190909"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "authentications" ("user_id", "provider", "uid", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["provider", "github"], ["uid", "14845428"], ["created_at", "2016-02-29 19:48:46.199355"], ["updated_at", "2016-02-29 19:48:46.199355"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 595ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/users/new" for ::1 at 2016-02-29 14:48:46 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 0.2ms)
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+
+Started GET "/oauth/github" for ::1 at 2016-02-29 14:51:03 -0500
+Processing by OauthsController#oauth as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to https://github.com/login/oauth/authorize?client_id=707effc4d388373c1adb&display&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Foauth%2Fcallback%3Fprovider%3Dgithub&response_type=code&scope=user%3Aemail&state
+Completed 403 Forbidden in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/callback?code=7ac8fe33c06172a20b08&provider=github" for ::1 at 2016-02-29 14:51:04 -0500
+Processing by OauthsController#callback as HTML
+  Parameters: {"code"=>"7ac8fe33c06172a20b08", "provider"=>"github"}
+  [1m[35mAuthentication Load (0.2ms)[0m  SELECT  "authentications".* FROM "authentications" WHERE "authentications"."uid" = ? AND "authentications"."provider" = ?  ORDER BY "authentications"."id" ASC LIMIT 1  [["uid", "14845428"], ["provider", "github"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 615ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 14:51:04 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+Completed 200 OK in 21ms (Views: 20.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/oauth/github" for ::1 at 2016-02-29 14:51:06 -0500
+Processing by OauthsController#oauth as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to https://github.com/login/oauth/authorize?client_id=707effc4d388373c1adb&display&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Foauth%2Fcallback%3Fprovider%3Dgithub&response_type=code&scope=user%3Aemail&state
+Completed 403 Forbidden in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/callback?code=512e2697fd609a3d5805&provider=github" for ::1 at 2016-02-29 14:51:06 -0500
+Processing by OauthsController#callback as HTML
+  Parameters: {"code"=>"512e2697fd609a3d5805", "provider"=>"github"}
+  [1m[36mAuthentication Load (0.2ms)[0m  [1mSELECT  "authentications".* FROM "authentications" WHERE "authentications"."uid" = ? AND "authentications"."provider" = ?  ORDER BY "authentications"."id" ASC LIMIT 1[0m  [["uid", "14845428"], ["provider", "github"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 743ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 14:51:07 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 56ms (Views: 55.5ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/sessions/2" for ::1 at 2016-02-29 14:51:07 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"lAv6huuRL1grdjp/UCpg+6dq+tHj2fEqrGz1bIMqc47MSffdIISqwAoiuWh2u9/aAnqpE7Xi1Wz5Qt5nV3qLKQ==", "id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/sessions/new" for ::1 at 2016-02-29 14:51:07 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 27ms (Views: 26.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/github" for ::1 at 2016-02-29 14:51:08 -0500
+Processing by OauthsController#oauth as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to https://github.com/login/oauth/authorize?client_id=707effc4d388373c1adb&display&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Foauth%2Fcallback%3Fprovider%3Dgithub&response_type=code&scope=user%3Aemail&state
+Completed 403 Forbidden in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/github" for ::1 at 2016-02-29 14:51:10 -0500
+Processing by OauthsController#oauth as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to https://github.com/login/oauth/authorize?client_id=707effc4d388373c1adb&display&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Foauth%2Fcallback%3Fprovider%3Dgithub&response_type=code&scope=user%3Aemail&state
+Completed 403 Forbidden in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/callback?code=6236d1e76941fc4bd606&provider=github" for ::1 at 2016-02-29 14:51:13 -0500
+Processing by OauthsController#callback as HTML
+  Parameters: {"code"=>"6236d1e76941fc4bd606", "provider"=>"github"}
+  [1m[36mAuthentication Load (0.3ms)[0m  [1mSELECT  "authentications".* FROM "authentications" WHERE "authentications"."uid" = ? AND "authentications"."provider" = ?  ORDER BY "authentications"."id" ASC LIMIT 1[0m  [["uid", "14845428"], ["provider", "github"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 1760ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 14:51:15 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 19ms (Views: 18.3ms | ActiveRecord: 0.1ms)
+  [1m[35mAuthentication Load (0.3ms)[0m  SELECT "authentications".* FROM "authentications"
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "authentications" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "provider" varchar NOT NULL, "uid" varchar NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.0ms)[0m  [1mCREATE  INDEX "index_authentications_on_provider_and_uid" ON "authentications" ("provider", "uid")[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "crypted_password" varchar, "salt" varchar, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160227003344')[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160227003301')
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "authentications" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "provider" varchar NOT NULL, "uid" varchar NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.0ms)[0m  [1mCREATE  INDEX "index_authentications_on_provider_and_uid" ON "authentications" ("provider", "uid")[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "crypted_password" varchar, "salt" varchar, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160227003344')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160227003301')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/oauth/github" for ::1 at 2016-02-29 14:56:58 -0500
+Processing by OauthsController#oauth as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to https://github.com/login/oauth/authorize?client_id=707effc4d388373c1adb&display&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Foauth%2Fcallback%3Fprovider%3Dgithub&response_type=code&scope=user%3Aemail&state
+Completed 403 Forbidden in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/callback?code=bc9afd19b07fa2bc658d&provider=github" for ::1 at 2016-02-29 14:57:00 -0500
+Processing by OauthsController#callback as HTML
+  Parameters: {"code"=>"bc9afd19b07fa2bc658d", "provider"=>"github"}
+  [1m[35mAuthentication Load (0.2ms)[0m  SELECT  "authentications".* FROM "authentications" WHERE "authentications"."uid" = ? AND "authentications"."provider" = ?  ORDER BY "authentications"."id" ASC LIMIT 1  [["uid", "14845428"], ["provider", "github"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)  [["email", "am.doyle@yahoo.ca"], ["created_at", "2016-02-29 19:57:01.256447"], ["updated_at", "2016-02-29 19:57:01.256447"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "authentications" ("user_id", "provider", "uid", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["provider", "github"], ["uid", "14845428"], ["created_at", "2016-02-29 19:57:01.264017"], ["updated_at", "2016-02-29 19:57:01.264017"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 625ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/users/new" for ::1 at 2016-02-29 14:57:01 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 31ms (Views: 29.7ms | ActiveRecord: 0.2ms)
