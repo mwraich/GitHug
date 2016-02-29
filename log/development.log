@@ -10930,3 +10930,1425 @@ Processing by UsersController#new as HTML
   Rendered users/new.html.erb within layouts/application (0.0ms)
   [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
 Completed 200 OK in 31ms (Views: 29.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 15:11:57 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 34ms (Views: 33.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/oauth/github" for ::1 at 2016-02-29 15:13:23 -0500
+Processing by OauthsController#oauth as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to https://github.com/login/oauth/authorize?client_id=707effc4d388373c1adb&display&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Foauth%2Fcallback%3Fprovider%3Dgithub&response_type=code&scope=user%3Aemail&state
+Completed 403 Forbidden in 3ms (ActiveRecord: 0.0ms)
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36m (1.3ms)[0m  [1mCREATE TABLE "authentications" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "provider" varchar NOT NULL, "uid" varchar NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.9ms)[0m  [1mCREATE  INDEX "index_authentications_on_provider_and_uid" ON "authentications" ("provider", "uid")[0m
+  [1m[35m (1.1ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "crypted_password" varchar, "salt" varchar, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160227003344')[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160227003301')
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "authentications" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "provider" varchar NOT NULL, "uid" varchar NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.9ms)[0m  [1mCREATE  INDEX "index_authentications_on_provider_and_uid" ON "authentications" ("provider", "uid")[0m
+  [1m[35m (1.1ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "crypted_password" varchar, "salt" varchar, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160227003344')[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160227003301')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for ::1 at 2016-02-29 15:14:12 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 272ms (Views: 263.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/oauth/github" for ::1 at 2016-02-29 15:14:14 -0500
+Processing by OauthsController#oauth as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to https://github.com/login/oauth/authorize?client_id=8c91a63faf813b44435a&display&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Foauth%2Fcallback%3Fprovider%3Dgithub&response_type=code&scope=user%3Aemail&state
+Completed 403 Forbidden in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/callback?code=a45d6d5005cbf0199856&provider=github" for ::1 at 2016-02-29 15:14:15 -0500
+Processing by OauthsController#callback as HTML
+  Parameters: {"code"=>"a45d6d5005cbf0199856", "provider"=>"github"}
+  [1m[36mAuthentication Load (0.2ms)[0m  [1mSELECT  "authentications".* FROM "authentications" WHERE "authentications"."uid" = ? AND "authentications"."provider" = ?  ORDER BY "authentications"."id" ASC LIMIT 1[0m  [["uid", "14845428"], ["provider", "github"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "am.doyle@yahoo.ca"], ["created_at", "2016-02-29 20:14:16.395609"], ["updated_at", "2016-02-29 20:14:16.395609"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "authentications" ("user_id", "provider", "uid", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["provider", "github"], ["uid", "14845428"], ["created_at", "2016-02-29 20:14:16.405997"], ["updated_at", "2016-02-29 20:14:16.405997"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 588ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/users/new" for ::1 at 2016-02-29 15:14:16 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.2ms)
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+
+Started GET "/users/1" for ::1 at 2016-02-29 15:15:20 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+DEPRECATION WARNING: You are passing an instance of ActiveRecord::Base to `find`. Please pass the id of the object by calling `.id`. (called from show at /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/controllers/users_controller.rb:7)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for ::1 at 2016-02-29 15:15:58 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+DEPRECATION WARNING: You are passing an instance of ActiveRecord::Base to `find`. Please pass the id of the object by calling `.id`. (called from show at /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/controllers/users_controller.rb:7)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/oauths.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:15:58 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-29 15:15:58 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-29 15:15:58 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:15:58 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:15:58 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-29 15:15:58 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-29 15:15:58 -0500
+
+
+Started GET "/assets/oauths.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:15:58 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:15:58 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:15:58 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-29 15:15:58 -0500
+
+
+Started GET "/users/1/edit" for ::1 at 2016-02-29 15:18:12 -0500
+
+ActionController::RoutingError (No route matches [GET] "/users/1/edit"):
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (35.2ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (124.5ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (77.4ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (153.5ms)
+
+
+Started GET "/users/1/update" for ::1 at 2016-02-29 15:18:18 -0500
+
+ActionController::RoutingError (No route matches [GET] "/users/1/update"):
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (80.9ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (59.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (127.3ms)
+
+
+Started GET "/users/1/update" for ::1 at 2016-02-29 15:18:27 -0500
+
+ActionController::RoutingError (No route matches [GET] "/users/1/update"):
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (84.0ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (60.1ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (131.5ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-02-29 15:18:30 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/_user_form.html.erb (0.2ms)
+  Rendered users/edit.html.erb within layouts/application (2.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 42ms (Views: 29.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-02-29 15:19:47 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/_user_form.html.erb (0.0ms)
+  Rendered users/edit.html.erb within layouts/application (1.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 42ms (Views: 33.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/oauths.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:19:47 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:19:47 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:19:47 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-29 15:19:47 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-29 15:19:47 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-29 15:19:47 -0500
+
+
+Started GET "/assets/oauths.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:19:47 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-29 15:19:47 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:19:47 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:19:47 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-29 15:19:47 -0500
+
+
+Started GET "/users/1/edit" for ::1 at 2016-02-29 15:19:50 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/_user_form.html.erb (0.0ms)
+  Rendered users/edit.html.erb within layouts/application (1.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 22ms (Views: 20.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:19:50 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-29 15:19:50 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-29 15:19:50 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-29 15:19:50 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:19:50 -0500
+
+
+Started GET "/assets/oauths.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:19:50 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-29 15:19:50 -0500
+
+
+Started GET "/assets/oauths.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:19:50 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:19:50 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:19:50 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-29 15:19:50 -0500
+
+
+Started GET "/users/new" for ::1 at 2016-02-29 15:19:52 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_user_form.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/sessions/1" for ::1 at 2016-02-29 15:19:55 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"jjRn3jlhvcPOtSKGX4mJgnqgJVi68K/Pg7vZRY4r54clqIogQALuOXjijrL6W83XF+ttvGSLWb/XFA4/Q8tkvw==", "id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/sessions/new" for ::1 at 2016-02-29 15:19:55 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 19ms (Views: 18.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for ::1 at 2016-02-29 15:21:18 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 18ms (Views: 17.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/oauths.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:21:18 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:21:18 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:21:18 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-29 15:21:18 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-29 15:21:18 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-29 15:21:18 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-29 15:21:18 -0500
+
+
+Started GET "/assets/oauths.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:21:18 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:21:18 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:21:18 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-29 15:21:18 -0500
+
+
+Started GET "/users/new" for ::1 at 2016-02-29 15:21:22 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_user_form.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1" for ::1 at 2016-02-29 15:21:24 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", nil]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=):
+  app/controllers/users_controller.rb:7:in `show'
+
+
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.1ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (64.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (55.8ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (121.0ms)
+
+
+Started GET "/users" for ::1 at 2016-02-29 15:21:42 -0500
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1" for ::1 at 2016-02-29 15:21:45 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", nil]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=):
+  app/controllers/users_controller.rb:7:in `show'
+
+
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.1ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (64.2ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (59.7ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (127.8ms)
+
+
+Started GET "/oauth/github" for ::1 at 2016-02-29 15:21:49 -0500
+Processing by OauthsController#oauth as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to https://github.com/login/oauth/authorize?client_id=8c91a63faf813b44435a&display&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Foauth%2Fcallback%3Fprovider%3Dgithub&response_type=code&scope=user%3Aemail&state
+Completed 403 Forbidden in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/callback?code=be21e107d623fc94815f&provider=github" for ::1 at 2016-02-29 15:21:49 -0500
+Processing by OauthsController#callback as HTML
+  Parameters: {"code"=>"be21e107d623fc94815f", "provider"=>"github"}
+  [1m[36mAuthentication Load (0.2ms)[0m  [1mSELECT  "authentications".* FROM "authentications" WHERE "authentications"."uid" = ? AND "authentications"."provider" = ?  ORDER BY "authentications"."id" ASC LIMIT 1[0m  [["uid", "14845428"], ["provider", "github"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 508ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 15:21:49 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_user_form.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/1" for ::1 at 2016-02-29 15:21:53 -0500
+
+ActionController::RoutingError (No route matches [GET] "/1"):
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (82.2ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (58.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (133.0ms)
+
+
+Started GET "/users/1" for ::1 at 2016-02-29 15:21:59 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+DEPRECATION WARNING: You are passing an instance of ActiveRecord::Base to `find`. Please pass the id of the object by calling `.id`. (called from show at /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/controllers/users_controller.rb:7)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 24ms (Views: 22.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-02-29 15:22:00 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/_user_form.html.erb (0.2ms)
+  Rendered users/edit.html.erb within layouts/application (2.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-02-29 15:23:03 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/_user_form.html.erb (0.0ms)
+  Rendered users/edit.html.erb within layouts/application (1.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 20ms (Views: 19.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/oauths.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:23:03 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:23:03 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:23:03 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-29 15:23:03 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-29 15:23:03 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-29 15:23:03 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-29 15:23:03 -0500
+
+
+Started GET "/assets/oauths.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:23:03 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:23:03 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:23:03 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-29 15:23:03 -0500
+
+
+Started DELETE "/sessions/1" for ::1 at 2016-02-29 15:23:04 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ykFahZbcY49leO9IV8BOfiHGlqKJ+RpVXsajWlBwrGSB9k3DepEyoiDBLWFruSxkCJcQ2CCH8WWUkmAb4GDY3Q==", "id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/sessions/new" for ::1 at 2016-02-29 15:23:04 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/github" for ::1 at 2016-02-29 15:23:06 -0500
+Processing by OauthsController#oauth as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to https://github.com/login/oauth/authorize?client_id=8c91a63faf813b44435a&display&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Foauth%2Fcallback%3Fprovider%3Dgithub&response_type=code&scope=user%3Aemail&state
+Completed 403 Forbidden in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/callback?code=2f222f5f90007e19e33a&provider=github" for ::1 at 2016-02-29 15:23:06 -0500
+Processing by OauthsController#callback as HTML
+  Parameters: {"code"=>"2f222f5f90007e19e33a", "provider"=>"github"}
+  [1m[36mAuthentication Load (0.2ms)[0m  [1mSELECT  "authentications".* FROM "authentications" WHERE "authentications"."uid" = ? AND "authentications"."provider" = ?  ORDER BY "authentications"."id" ASC LIMIT 1[0m  [["uid", "14845428"], ["provider", "github"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 800ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 15:23:07 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_user_form.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/oauth/github" for ::1 at 2016-02-29 15:23:10 -0500
+Processing by OauthsController#oauth as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to https://github.com/login/oauth/authorize?client_id=8c91a63faf813b44435a&display&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Foauth%2Fcallback%3Fprovider%3Dgithub&response_type=code&scope=user%3Aemail&state
+Completed 403 Forbidden in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/callback?code=107e3190a3e2f951f58e&provider=github" for ::1 at 2016-02-29 15:23:10 -0500
+Processing by OauthsController#callback as HTML
+  Parameters: {"code"=>"107e3190a3e2f951f58e", "provider"=>"github"}
+  [1m[35mAuthentication Load (0.2ms)[0m  SELECT  "authentications".* FROM "authentications" WHERE "authentications"."uid" = ? AND "authentications"."provider" = ?  ORDER BY "authentications"."id" ASC LIMIT 1  [["uid", "14845428"], ["provider", "github"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 653ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 15:23:11 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_user_form.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (2.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/sessions/1" for ::1 at 2016-02-29 15:23:12 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"LYss7EOm40Jv1sWed1ZRL+dwD1ib4PPYeqjouiz6vtIsC3UnTi0qMx190z/C0ItbUF0rCaB+c88ih/LUIueebw==", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/sessions/new" for ::1 at 2016-02-29 15:23:12 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/github" for ::1 at 2016-02-29 15:23:14 -0500
+Processing by OauthsController#oauth as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to https://github.com/login/oauth/authorize?client_id=8c91a63faf813b44435a&display&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Foauth%2Fcallback%3Fprovider%3Dgithub&response_type=code&scope=user%3Aemail&state
+Completed 403 Forbidden in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/github" for ::1 at 2016-02-29 15:23:15 -0500
+Processing by OauthsController#oauth as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to https://github.com/login/oauth/authorize?client_id=8c91a63faf813b44435a&display&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Foauth%2Fcallback%3Fprovider%3Dgithub&response_type=code&scope=user%3Aemail&state
+Completed 403 Forbidden in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/callback?code=0fd1db9f2063d9377f75&provider=github" for ::1 at 2016-02-29 15:23:17 -0500
+Processing by OauthsController#callback as HTML
+  Parameters: {"code"=>"0fd1db9f2063d9377f75", "provider"=>"github"}
+  [1m[35mAuthentication Load (0.2ms)[0m  SELECT  "authentications".* FROM "authentications" WHERE "authentications"."uid" = ? AND "authentications"."provider" = ?  ORDER BY "authentications"."id" ASC LIMIT 1  [["uid", "14845428"], ["provider", "github"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 1406ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/oauth/github" for ::1 at 2016-02-29 15:23:18 -0500
+Processing by OauthsController#oauth as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to https://github.com/login/oauth/authorize?client_id=8c91a63faf813b44435a&display&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Foauth%2Fcallback%3Fprovider%3Dgithub&response_type=code&scope=user%3Aemail&state
+Completed 403 Forbidden in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 15:23:18 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_user_form.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (1.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 21ms (Views: 20.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/oauth/callback?code=856f41647c47fa3d818e&provider=github" for ::1 at 2016-02-29 15:23:18 -0500
+Processing by OauthsController#callback as HTML
+  Parameters: {"code"=>"856f41647c47fa3d818e", "provider"=>"github"}
+  [1m[36mAuthentication Load (0.2ms)[0m  [1mSELECT  "authentications".* FROM "authentications" WHERE "authentications"."uid" = ? AND "authentications"."provider" = ?  ORDER BY "authentications"."id" ASC LIMIT 1[0m  [["uid", "14845428"], ["provider", "github"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 688ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 15:23:19 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_user_form.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 29ms (Views: 28.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/oauth/github" for ::1 at 2016-02-29 15:23:54 -0500
+Processing by OauthsController#oauth as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to https://github.com/login/oauth/authorize?client_id=8c91a63faf813b44435a&display&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Foauth%2Fcallback%3Fprovider%3Dgithub&response_type=code&scope=user%3Aemail&state
+Completed 403 Forbidden in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/callback?code=327af4ed018338b66ac8&provider=github" for ::1 at 2016-02-29 15:23:55 -0500
+Processing by OauthsController#callback as HTML
+  Parameters: {"code"=>"327af4ed018338b66ac8", "provider"=>"github"}
+  [1m[35mAuthentication Load (0.2ms)[0m  SELECT  "authentications".* FROM "authentications" WHERE "authentications"."uid" = ? AND "authentications"."provider" = ?  ORDER BY "authentications"."id" ASC LIMIT 1  [["uid", "14845428"], ["provider", "github"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 1348ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 15:23:56 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_user_form.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (1.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/oauth/github" for ::1 at 2016-02-29 15:24:10 -0500
+Processing by OauthsController#oauth as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to https://github.com/login/oauth/authorize?client_id=8c91a63faf813b44435a&display&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Foauth%2Fcallback%3Fprovider%3Dgithub&response_type=code&scope=user%3Aemail&state
+Completed 403 Forbidden in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/callback?code=7f445c4696776c604239&provider=github" for ::1 at 2016-02-29 15:24:10 -0500
+Processing by OauthsController#callback as HTML
+  Parameters: {"code"=>"7f445c4696776c604239", "provider"=>"github"}
+  [1m[36mAuthentication Load (0.2ms)[0m  [1mSELECT  "authentications".* FROM "authentications" WHERE "authentications"."uid" = ? AND "authentications"."provider" = ?  ORDER BY "authentications"."id" ASC LIMIT 1[0m  [["uid", "14845428"], ["provider", "github"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 956ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 15:24:11 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_user_form.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/oauth/github" for ::1 at 2016-02-29 15:24:14 -0500
+Processing by OauthsController#oauth as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to https://github.com/login/oauth/authorize?client_id=8c91a63faf813b44435a&display&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Foauth%2Fcallback%3Fprovider%3Dgithub&response_type=code&scope=user%3Aemail&state
+Completed 403 Forbidden in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/callback?code=0168cc382987e93f0cb3&provider=github" for ::1 at 2016-02-29 15:24:15 -0500
+Processing by OauthsController#callback as HTML
+  Parameters: {"code"=>"0168cc382987e93f0cb3", "provider"=>"github"}
+  [1m[35mAuthentication Load (0.2ms)[0m  SELECT  "authentications".* FROM "authentications" WHERE "authentications"."uid" = ? AND "authentications"."provider" = ?  ORDER BY "authentications"."id" ASC LIMIT 1  [["uid", "14845428"], ["provider", "github"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 1806ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 15:24:17 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_user_form.html.erb (0.2ms)
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 23ms (Views: 22.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 15:24:55 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_user_form.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 30ms (Views: 29.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/oauths.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:24:55 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-29 15:24:55 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-29 15:24:55 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:24:55 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-29 15:24:55 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:24:55 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-29 15:24:55 -0500
+
+
+Started GET "/assets/oauths.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:24:55 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:24:55 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:24:55 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-29 15:24:55 -0500
+
+
+Started DELETE "/sessions/1" for ::1 at 2016-02-29 15:24:55 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"1LjvAksbDq6e00Mpi4CW/FZwaa9kHIh+tyWsHkCJJ53vu/3Fm5Z/SZRP76fzWgPwE0hUGodAUwzvnnM0EFAgPA==", "id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/sessions/new" for ::1 at 2016-02-29 15:24:55 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/github" for ::1 at 2016-02-29 15:24:56 -0500
+Processing by OauthsController#oauth as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to https://github.com/login/oauth/authorize?client_id=8c91a63faf813b44435a&display&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Foauth%2Fcallback%3Fprovider%3Dgithub&response_type=code&scope=user%3Aemail&state
+Completed 403 Forbidden in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/callback?code=3bd0f0fba6fc5959f11f&provider=github" for ::1 at 2016-02-29 15:24:56 -0500
+Processing by OauthsController#callback as HTML
+  Parameters: {"code"=>"3bd0f0fba6fc5959f11f", "provider"=>"github"}
+  [1m[36mAuthentication Load (0.2ms)[0m  [1mSELECT  "authentications".* FROM "authentications" WHERE "authentications"."uid" = ? AND "authentications"."provider" = ?  ORDER BY "authentications"."id" ASC LIMIT 1[0m  [["uid", "14845428"], ["provider", "github"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 1308ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 15:24:58 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_user_form.html.erb (0.1ms)
+  Rendered users/new.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 26ms (Views: 25.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/1" for ::1 at 2016-02-29 15:25:07 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+DEPRECATION WARNING: You are passing an instance of ActiveRecord::Base to `find`. Please pass the id of the object by calling `.id`. (called from show at /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/controllers/users_controller.rb:7)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 23ms (Views: 19.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for ::1 at 2016-02-29 15:25:34 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+DEPRECATION WARNING: You are passing an instance of ActiveRecord::Base to `find`. Please pass the id of the object by calling `.id`. (called from show at /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/controllers/users_controller.rb:7)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.2ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x007fc8d7e8f510>:0x007fc8d2da9858>
+Did you mean?  @user):
+     9: <body>
+    10: 
+    11:   <li><%= link_to 'Login with Github', auth_at_provider_path(provider: :github) %></li>
+    12:     <% if user %>
+    13:   <li><%= link_to 'Logout', session_path(current_user), method: 'delete' %></li>
+    14:       <% end %>
+    15: <%= yield %>
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__2314434685077356586_70250264545380'
+
+
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (62.7ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (56.2ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (127.7ms)
+
+
+Started GET "/users/1" for ::1 at 2016-02-29 15:25:43 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+DEPRECATION WARNING: You are passing an instance of ActiveRecord::Base to `find`. Please pass the id of the object by calling `.id`. (called from show at /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/controllers/users_controller.rb:7)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/oauths.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:25:43 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-29 15:25:43 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-29 15:25:43 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:25:43 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:25:43 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-29 15:25:43 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-29 15:25:43 -0500
+
+
+Started GET "/assets/oauths.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:25:43 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:25:43 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:25:43 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-29 15:25:43 -0500
+
+
+Started GET "/users/1" for ::1 at 2016-02-29 15:26:15 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+DEPRECATION WARNING: You are passing an instance of ActiveRecord::Base to `find`. Please pass the id of the object by calling `.id`. (called from show at /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/controllers/users_controller.rb:7)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/oauths.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:26:15 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:26:15 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:26:15 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-29 15:26:15 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-29 15:26:15 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-29 15:26:15 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-29 15:26:15 -0500
+
+
+Started GET "/assets/oauths.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:26:15 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:26:15 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:26:15 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-29 15:26:15 -0500
+
+
+Started DELETE "/sessions/1" for ::1 at 2016-02-29 15:26:17 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"KHkydSSWXHHac9vd2r6j4hWNO8llXmJ+vKcD/82mMUYsLsWwDK3R04DXl/wXhxIxjG32exg0tibAFHoKDEQFQg==", "id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/sessions/new" for ::1 at 2016-02-29 15:26:17 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 45ms (Views: 44.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/github" for ::1 at 2016-02-29 15:26:18 -0500
+Processing by OauthsController#oauth as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to https://github.com/login/oauth/authorize?client_id=8c91a63faf813b44435a&display&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Foauth%2Fcallback%3Fprovider%3Dgithub&response_type=code&scope=user%3Aemail&state
+Completed 403 Forbidden in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/callback?code=5c6a88fccf59684ee7c3&provider=github" for ::1 at 2016-02-29 15:26:18 -0500
+Processing by OauthsController#callback as HTML
+  Parameters: {"code"=>"5c6a88fccf59684ee7c3", "provider"=>"github"}
+  [1m[36mAuthentication Load (0.1ms)[0m  [1mSELECT  "authentications".* FROM "authentications" WHERE "authentications"."uid" = ? AND "authentications"."provider" = ?  ORDER BY "authentications"."id" ASC LIMIT 1[0m  [["uid", "14845428"], ["provider", "github"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 567ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 15:26:18 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_user_form.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 31ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/github" for ::1 at 2016-02-29 15:26:23 -0500
+Processing by OauthsController#oauth as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to https://github.com/login/oauth/authorize?client_id=8c91a63faf813b44435a&display&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Foauth%2Fcallback%3Fprovider%3Dgithub&response_type=code&scope=user%3Aemail&state
+Completed 403 Forbidden in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/callback?code=4ad72421e3f09d0e4dad&provider=github" for ::1 at 2016-02-29 15:26:24 -0500
+Processing by OauthsController#callback as HTML
+  Parameters: {"code"=>"4ad72421e3f09d0e4dad", "provider"=>"github"}
+  [1m[36mAuthentication Load (0.1ms)[0m  [1mSELECT  "authentications".* FROM "authentications" WHERE "authentications"."uid" = ? AND "authentications"."provider" = ?  ORDER BY "authentications"."id" ASC LIMIT 1[0m  [["uid", "14845428"], ["provider", "github"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 507ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 15:26:24 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_user_form.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 31ms (Views: 30.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 15:26:36 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_user_form.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 47ms (Views: 46.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/oauths.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:26:36 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-29 15:26:36 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:26:36 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-29 15:26:36 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-29 15:26:36 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:26:36 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-29 15:26:36 -0500
+
+
+Started GET "/assets/oauths.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:26:36 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:26:36 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:26:36 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-29 15:26:36 -0500
+
+
+Started GET "/" for ::1 at 2016-02-29 15:27:03 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_user_form.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 20ms (Views: 19.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/oauths.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:27:03 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-29 15:27:03 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:27:03 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-29 15:27:03 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-29 15:27:03 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:27:03 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-29 15:27:03 -0500
+
+
+Started GET "/assets/oauths.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:27:03 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:27:03 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:27:03 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-29 15:27:03 -0500
+
+
+Started GET "/oauth/github" for ::1 at 2016-02-29 15:27:04 -0500
+Processing by OauthsController#oauth as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to https://github.com/login/oauth/authorize?client_id=8c91a63faf813b44435a&display&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Foauth%2Fcallback%3Fprovider%3Dgithub&response_type=code&scope=user%3Aemail&state
+Completed 403 Forbidden in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/callback?code=f1be2109da7628daac77&provider=github" for ::1 at 2016-02-29 15:27:05 -0500
+Processing by OauthsController#callback as HTML
+  Parameters: {"code"=>"f1be2109da7628daac77", "provider"=>"github"}
+  [1m[36mAuthentication Load (0.2ms)[0m  [1mSELECT  "authentications".* FROM "authentications" WHERE "authentications"."uid" = ? AND "authentications"."provider" = ?  ORDER BY "authentications"."id" ASC LIMIT 1[0m  [["uid", "14845428"], ["provider", "github"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 1335ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 15:27:06 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_user_form.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 35ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1" for ::1 at 2016-02-29 15:27:16 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+DEPRECATION WARNING: You are passing an instance of ActiveRecord::Base to `find`. Please pass the id of the object by calling `.id`. (called from show at /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/controllers/users_controller.rb:7)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/sessions/1" for ::1 at 2016-02-29 15:27:21 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"z8v5NG7+EjhmIARUKQe5Anozg0qtols8SaLCtrRh3kx5FOeXiLDX1PQrVAxHNnEYNmG6HNfYZeyUwE5JGi4dLQ==", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/sessions/new" for ::1 at 2016-02-29 15:27:21 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 21ms (Views: 20.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1" for ::1 at 2016-02-29 15:27:25 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", nil]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=):
+  app/controllers/users_controller.rb:7:in `show'
+
+
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.5ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (61.6ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (59.0ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (127.8ms)
+
+
+Started GET "/users/1" for ::1 at 2016-02-29 15:28:00 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", nil]]
+Completed 404 Not Found in 5ms (ActiveRecord: 0.5ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=):
+  app/controllers/users_controller.rb:7:in `show'
+
+
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.2ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (64.0ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (58.8ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (131.9ms)
+
+
+Started GET "/oauth/github" for ::1 at 2016-02-29 15:28:03 -0500
+Processing by OauthsController#oauth as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to https://github.com/login/oauth/authorize?client_id=8c91a63faf813b44435a&display&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Foauth%2Fcallback%3Fprovider%3Dgithub&response_type=code&scope=user%3Aemail&state
+Completed 403 Forbidden in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/callback?code=662ea74547121930cb6a&provider=github" for ::1 at 2016-02-29 15:28:05 -0500
+Processing by OauthsController#callback as HTML
+  Parameters: {"code"=>"662ea74547121930cb6a", "provider"=>"github"}
+  [1m[35mAuthentication Load (0.2ms)[0m  SELECT  "authentications".* FROM "authentications" WHERE "authentications"."uid" = ? AND "authentications"."provider" = ?  ORDER BY "authentications"."id" ASC LIMIT 1  [["uid", "14845428"], ["provider", "github"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 947ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 15:28:06 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_user_form.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (1.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 21ms (Views: 20.7ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/sessions/1" for ::1 at 2016-02-29 15:28:12 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"81Hq4Eo+LIJ/2P3OTcYm529bb4wpoWwuqzTSTm2ILxWi9Jd8pcFIzf1YWsHtiL6r2Onv7Vn9FoH2ZfHSuDNQ4w==", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/sessions/new" for ::1 at 2016-02-29 15:28:12 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 27ms (Views: 26.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/github" for ::1 at 2016-02-29 15:28:13 -0500
+Processing by OauthsController#oauth as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to https://github.com/login/oauth/authorize?client_id=8c91a63faf813b44435a&display&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Foauth%2Fcallback%3Fprovider%3Dgithub&response_type=code&scope=user%3Aemail&state
+Completed 403 Forbidden in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/callback?code=75d491fb370389451c0a&provider=github" for ::1 at 2016-02-29 15:28:13 -0500
+Processing by OauthsController#callback as HTML
+  Parameters: {"code"=>"75d491fb370389451c0a", "provider"=>"github"}
+  [1m[35mAuthentication Load (0.2ms)[0m  SELECT  "authentications".* FROM "authentications" WHERE "authentications"."uid" = ? AND "authentications"."provider" = ?  ORDER BY "authentications"."id" ASC LIMIT 1  [["uid", "14845428"], ["provider", "github"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 520ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 15:28:14 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_user_form.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (1.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 33ms (Views: 32.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 15:29:41 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_user_form.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 35ms (Views: 32.7ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/sessions/1" for ::1 at 2016-02-29 15:29:42 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"LVBOzPO7qVFNJNlKS75uD5OT4rv2JokeFf0KjdUZM78TTShZTxIrvTYvK5mCjQNxLvyagA2pvZmFlZmB7Iw+sw==", "id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/sessions/new" for ::1 at 2016-02-29 15:29:42 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 25ms (Views: 24.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/github" for ::1 at 2016-02-29 15:29:43 -0500
+Processing by OauthsController#oauth as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to https://github.com/login/oauth/authorize?client_id=8c91a63faf813b44435a&display&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Foauth%2Fcallback%3Fprovider%3Dgithub&response_type=code&scope=user%3Aemail&state
+Completed 403 Forbidden in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/oauth/callback?code=961aa4b2257b81e3efe3&provider=github" for ::1 at 2016-02-29 15:29:43 -0500
+Processing by OauthsController#callback as HTML
+  Parameters: {"code"=>"961aa4b2257b81e3efe3", "provider"=>"github"}
+  [1m[36mAuthentication Load (0.2ms)[0m  [1mSELECT  "authentications".* FROM "authentications" WHERE "authentications"."uid" = ? AND "authentications"."provider" = ?  ORDER BY "authentications"."id" ASC LIMIT 1[0m  [["uid", "14845428"], ["provider", "github"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 607ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 15:29:44 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_user_form.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 22ms (Views: 21.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 15:30:56 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_user_form.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (1.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/oauths.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:30:56 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:30:56 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-29 15:30:56 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-29 15:30:56 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 15:30:56 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-29 15:30:56 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-29 15:30:56 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:30:56 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:30:56 -0500
+
+
+Started GET "/assets/oauths.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 15:30:56 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-29 15:30:56 -0500
+
+
+Started GET "/users/1/edit" for ::1 at 2016-02-29 15:30:58 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/_user_form.html.erb (0.0ms)
+  Rendered users/edit.html.erb within layouts/application (2.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 25ms (Views: 22.5ms | ActiveRecord: 0.2ms)

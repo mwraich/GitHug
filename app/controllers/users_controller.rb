@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = "Successfully signed up for GitHug! Welcome!"
-      auto_login(@user)
+      auto_login(current_user)
       redirect_to user_path
     else
       flash[:alert] = "Sorry, Signup failed. :( "
@@ -30,5 +30,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:email)
   end
-  
+
 end
