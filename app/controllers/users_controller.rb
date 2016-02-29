@@ -1,9 +1,21 @@
 class UsersController < ApplicationController
 
   def index
-  end
+    @users = if params[:search]
+      User.where('LOWER(name) LIKE LOWER(?)', "%#{params[:search]}%")
+    else
+      User.all
+    end
 
-  def show
+    respond_to do |format|
+      format.html do
+        if request.xhr?
+          render @users
+        else
+          render :index
+        end
+      end
+      format.js
+    end
   end
-  
 end

@@ -1,27 +1,34 @@
 <h1> Listing Users </h1>
 
-<%= link_to 'Users', user_root_path %>
+<%= link_to 'Users', users_path %>
 
-<%= form_tag users_path, method :get, id: 'search-form' do %>
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag "Search" %>
+<%= form_tag users_path, method: :get, id: 'search-form' do %>
+<label>What are you looking for?</label><br>
+<input type="radio" name="choice" value="paired"> Paired <br>
+<input type="radio" name="choice" value="date"> Date <br>
+
+
+<%= label(:language, 'What are your preferred languages?') %><br>
+<%= check_box_tag(:language, 'Ruby') %>
+<%= label_tag(:language, 'Ruby') %>
+<%= check_box_tag(:language, 'JavaScript') %>
+<%= label_tag(:language, 'JavaScript') %>
+<%= check_box_tag(:language, 'Python') %>
+<%= label_tag(:language, 'Python') %>
+<%= check_box_tag(:language, 'Java') %>
+<%= label_tag(:language,'Java') %>
+<%= check_box_tag(:language, 'PHP') %>
+<%= label_tag(:language,'PHP') %>
+<%= check_box_tag(:language, 'C++') %>
+<%= label_tag(:language,'C++') %><br>
+
+Operating System
+Age-Range
+
+<%= text_field_tag :search, params[:search] %>
+<%= submit_tag "Search" %>
 <% end %>
 
-<div id="products">
+<div id="users">
 	<%= render @users %>
 </div>
-
-
-<label>What are you looking for?</label>
-<form action="">
-  <input type="radio" name="choice" value="paired"> Paired <br>
-  <input type="radio" name="choice" value="date"> Date <br>
-</form>
-
-<label>What are your preferred languages?</label>
-<input id="Ruby" name="Ruby" type="checkbox" value="1" />
-<input id="JavaScript" name="JavaScript" type="checkbox" value="2" />
-<input id="C++" name="C++" type="checkbox" value="3" />
-<input id="Python" name="Python" type="checkbox" value="4" />
-<input id="Java" name="Java" type="checkbox" value="5" />
-<input id="PHP" name="PHP" type="checkbox" value="5" />

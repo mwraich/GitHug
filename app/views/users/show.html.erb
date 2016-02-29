@@ -1,14 +1,1 @@
 <h1> Profile Page</h1>
-
-<h1> Listing Users </h1>
-
-<%= link_to 'Users', user_root_path %>
-
-<%= form_tag users_path, method :get, id: 'search-form' do %>
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag "Search" %>
-<% end %>
-
-<div id="products">
-	<%= render @users %>
-</div>
