@@ -127,8 +127,8 @@ Rails.application.config.sorcery.configure do |config|
   config.github.secret = Figaro.env.github_secret
   config.github.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=github"
   #Added in based off of template
-  config.github.scope = "user:email"
-  config.github.user_info_mapping = {:email => "email"}
+  config.github.scope = "user"
+  config.github.user_info_mapping = {:email => "email", :first_name => "name"}
   #
   # config.google.key = ""
   # config.google.secret = ""
