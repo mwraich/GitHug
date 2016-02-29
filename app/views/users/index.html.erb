@@ -1,0 +1,27 @@
+<h1> Listing Users </h1>
+
+<%= link_to 'Users', user_root_path %>
+
+<%= form_tag users_path, method :get, id: 'search-form' do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<div id="products">
+	<%= render @users %>
+</div>
+
+
+<label>What are you looking for?</label>
+<form action="">
+  <input type="radio" name="choice" value="paired"> Paired <br>
+  <input type="radio" name="choice" value="date"> Date <br>
+</form>
+
+<label>What are your preferred languages?</label>
+<input id="Ruby" name="Ruby" type="checkbox" value="1" />
+<input id="JavaScript" name="JavaScript" type="checkbox" value="2" />
+<input id="C++" name="C++" type="checkbox" value="3" />
+<input id="Python" name="Python" type="checkbox" value="4" />
+<input id="Java" name="Java" type="checkbox" value="5" />
+<input id="PHP" name="PHP" type="checkbox" value="5" />
