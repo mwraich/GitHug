@@ -14,8 +14,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = "Successfully signed up for GitHug! Welcome!"
-      auto_login(@user)
-      redirect_to user_path
+      auto_login(current_user)
+      redirect_to user_path(current_user)
     else
       flash[:alert] = "Sorry, Signup failed. :( "
       render :new

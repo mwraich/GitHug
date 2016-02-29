@@ -7,10 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-  <li><%= link_to 'Login with Github', auth_at_provider_path(provider: :github) %></li>
   <% if current_user %>
     <li><%= link_to 'Logout', session_path(current_user), method: 'delete' %></li>
+    <li><%= link_to 'Update Profile', edit_user_path(current_user) %></li>
+
+  <% else %>
+    <li><%= link_to 'Login with GitHub', auth_at_provider_path(provider: :github) %></li>
   <% end %>
 
   <% if flash[:notice] %>
@@ -18,7 +20,6 @@
   <% end %>
   <% if flash[:alert] %>
     <p> <%= flash[:alert] %></p>
-  <% end %>
 
 <%= yield %>
 

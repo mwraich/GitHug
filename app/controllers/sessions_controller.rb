@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
 
   def create
     if @user = login(params[:email])
+      redirect_to users_path
     else
       render action: 'new'
     end
