@@ -9,7 +9,9 @@
 <body>
 
   <li><%= link_to 'Login with Github', auth_at_provider_path(provider: :github) %></li>
-
+    <% if current_user %>
+  <li><%= link_to 'Logout', session_path(current_user), method: 'delete' %></li>
+      <% end %>
 <%= yield %>
 
 </body>

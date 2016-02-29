@@ -126,6 +126,8 @@ Rails.application.config.sorcery.configure do |config|
   config.github.key = Figaro.env.github_client_id
   config.github.secret = Figaro.env.github_secret
   config.github.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=github"
+  #Added in based off of template
+  config.github.scope = "user:email"
   config.github.user_info_mapping = {:email => "email"}
   #
   # config.google.key = ""
@@ -177,7 +179,7 @@ Rails.application.config.sorcery.configure do |config|
     # specify username attributes, for example: [:username, :email].
     # Default: `[:email]`
     #
-    # user.username_attribute_names =
+    user.username_attribute_names = :email
 
 
     # change *virtual* password attribute, the one which is used until an encrypted one is generated.

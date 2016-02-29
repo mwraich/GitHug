@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
   def index
-
   end
 
   def show
@@ -12,7 +11,16 @@ class UsersController < ApplicationController
   end
 
   def create
-  end 
+    @user = User.new(user_params)
+    if @user.save
+      flash[:notice] = "Successfully signed up for GitHug! Welcome!"
+      auto_login(@user)
+      redirect_to user_path
+    else
+      flash[:alert] = "Sorry, Signup failed. :( "
+      render :new
+    end
+  end
 
   def edit
     @user = User.find(params[:id])
@@ -22,4 +30,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:email)
   end
+  
 end
