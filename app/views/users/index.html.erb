@@ -1,13 +1,9 @@
 <h1> Welcome to GitHug </h1>
 
-
-<%= link_to 'Users', users_path %>
-
 <%= form_tag users_path, method: :get, id: 'search-form' do %>
 <label>What are you looking for?</label><br>
 <input type="radio" name="choice" value="paired"> Paired <br>
 <input type="radio" name="choice" value="date"> Date <br>
-
 
 <%= label(:language, 'What are your preferred languages?') %><br>
 <%= check_box_tag(:language, 'Ruby') %>
@@ -23,12 +19,31 @@
 <%= check_box_tag(:language, 'C++') %>
 <%= label_tag(:language,'C++') %><br>
 
+<%="What is your Operating System of choice?" %><br>
+<%= check_box_tag(:operating_system, 'Unix') %>
+<%= label_tag(:operating_system,'Unix') %>
+<%= check_box_tag(:operating_system, 'Linux') %>
+<%= label_tag(:operating_system,'Linux') %><br>
 
+<%= "What age-range are you looking for?"%><br>
+<%= check_box_tag(:age, '20-25') %>
+<%= label_tag(:age,'20-25') %>
+<%= check_box_tag(:age, '25-30') %>
+<%= label_tag(:age, '25-30') %>
+<%= check_box_tag(:age, '30-35') %>
+<%= label_tag(:age, '30-35') %>
+<%= check_box_tag(:age, '40-45') %>
+<%= label_tag(:age,'40-45') %><br>
+<%= check_box_tag(:age, '50+') %>
+<%= label_tag(:age,'50+') %>
 
 <%= text_field_tag :search, params[:search] %>
 <%= submit_tag "Search" %>
 <% end %>
 
+
+
 <div id="users">
+
   <p>deleted this render since it was causing me some problems. Sorry!</p>
 </div>
