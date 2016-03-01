@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160301215745) do
+ActiveRecord::Schema.define(version: 20160301220853) do
 
   create_table "authentications", force: :cascade do |t|
     t.integer  "user_id",    null: false
@@ -24,12 +24,11 @@ ActiveRecord::Schema.define(version: 20160301215745) do
   add_index "authentications", ["provider", "uid"], name: "index_authentications_on_provider_and_uid"
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",            null: false
-    t.string   "crypted_password"
-    t.string   "salt"
+    t.string   "email",        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "username"
+    t.string   "github_image"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
