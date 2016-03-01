@@ -13,10 +13,10 @@ class OauthsController < ApplicationController
       begin
         @user = create_from(provider)
         # this is the place to add '@user.activate!' if you are using user_activation submodule
-
+        UserMailer .welcome_email(@user).deliver_later
         reset_session # protect from session fixation attack
         auto_login(@user)
-        redirect_to new_user_path, :notice => "Logged in from #{provider.titleize}!"
+        redirect_to new_user_path, :notice => "Account created from #{provider.titleize}!"
       rescue
         redirect_to new_user_path, :alert => "Failed to login from #{provider.titleize}!"
       end
