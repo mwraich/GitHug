@@ -2,6 +2,7 @@
 Rails.application.config.sorcery.submodules = [:external]
 
 Rails.application.config.sorcery.configure do |config|
+  config.external_providers = [:github]
 
   config.github.key = Figaro.env.github_client_id
   config.github.secret = Figaro.env.github_secret
@@ -11,7 +12,6 @@ Rails.application.config.sorcery.configure do |config|
 
   config.user_config do |user|
     user.username_attribute_names = :first_name
-
 
     user.authentications_class = Authentication
   end
