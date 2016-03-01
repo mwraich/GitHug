@@ -11,9 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20160301220853) do
-
+ActiveRecord::Schema.define(version: 20160301222741) do
 
   create_table "authentications", force: :cascade do |t|
     t.integer  "user_id",    null: false
@@ -25,13 +23,31 @@ ActiveRecord::Schema.define(version: 20160301220853) do
 
   add_index "authentications", ["provider", "uid"], name: "index_authentications_on_provider_and_uid"
 
-
   create_table "languages", force: :cascade do |t|
     t.string   "language"
     t.integer  "skill_level"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "user_id"
   end
+
+  add_index "languages", ["user_id"], name: "index_languages_on_user_id"
+
+  create_table "preferences", force: :cascade do |t|
+    t.string   "location"
+    t.boolean  "male"
+    t.boolean  "female"
+    t.boolean  "other"
+    t.integer  "age"
+    t.string   "operating_system"
+    t.boolean  "partner"
+    t.boolean  "paired_programmer"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "user_id"
+  end
+
+  add_index "preferences", ["user_id"], name: "index_preferences_on_user_id"
 
   create_table "profiles", force: :cascade do |t|
     t.string   "first_name"
@@ -45,7 +61,10 @@ ActiveRecord::Schema.define(version: 20160301220853) do
     t.text     "about_me"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "user_id"
   end
+
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",        null: false
