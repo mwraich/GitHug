@@ -25,7 +25,10 @@ ActiveRecord::Schema.define(version: 20160301220853) do
 
   add_index "authentications", ["provider", "uid"], name: "index_authentications_on_provider_and_uid"
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 71b01fa637558d54856f776af7dd8028445135ab
   create_table "languages", force: :cascade do |t|
     t.string   "language"
     t.integer  "skill_level"
