@@ -23,8 +23,15 @@
 <%= check_box_tag(:language, 'C++') %>
 <%= label_tag(:language,'C++') %><br>
 
-Operating System
-Age-Range
+<%="What is your Operating System of choice?" %><br>
+<%= check_box_tag(:operating_system, 'Unix') %>
+<%= label_tag(:operating_system,'Unix') %>
+<%= check_box_tag(:operating_system, 'Linux') %>
+<%= label_tag(:operating_system,'Linux') %><br>
+
+<%= "What age-range are you looking for?"%><br>
+<%= range_field(:age, :age, in: 20..25) %>
+
 
 <%= text_field_tag :search, params[:search] %>
 <%= submit_tag "Search" %>
@@ -33,4 +40,3 @@ Age-Range
 <div id="users">
 	<%= render @users %>
 </div>
->>>>>>> search_query
