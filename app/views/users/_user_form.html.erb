@@ -1,5 +1,22 @@
-<!-- all forms with file inputs  -->
-<form method = "post" enctype="multipart/form-data">
-  <input type = "file" none="myFile">
-  <button> Upload the file </button>
-</form>
+
+
+
+<%= form_for @user, html: { multipart:true } %>
+<p>
+  <label> Image </label>
+  <% if @users.any? %>
+  <% @users.each do |user| %>
+    <article class = "image">
+      <%= image_tag user.image_url(:thumb) if user.image? %>
+      <%= f.file_field :image %>
+      <%= f.hidden_field :image_cache %>
+    </article>
+</p>
+<p>
+  <label>
+    <%= f.checkbox :remove_image %>
+    Remove image
+  </label>
+</p>
+<% end %>
+<% end %>
