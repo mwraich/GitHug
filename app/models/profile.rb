@@ -8,6 +8,10 @@ end
 
 class Profile < ActiveRecord::Base
   belongs_to :user
+  has_many :languages
+  has_many :preferences
+  has_many :images
+  mount_uploader :image, ImageUploader
 
   validates_presence_of :first_name, :last_name, :location, :birthday, :about_me
   validates_with ValidatesGender
