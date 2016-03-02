@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  require 'fog/aws'
   has_many :authentications
   has_one :profile
   has_many :languages
