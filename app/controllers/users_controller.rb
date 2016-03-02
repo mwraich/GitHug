@@ -29,13 +29,18 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.update(user_params)
-    redirect_to user_path
 
+
+    if @user.update_attributes(user_params)
+      redirect_to user_path(@user)
+    else
+      render :edit
+    end
   end
 
   def create
     @user = User.new(user_params)
+
     if @user.save
       auto_login(current_user)
 
@@ -47,17 +52,17 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    @profile = Profile
+      @user.build_profile
   end
 
   private
 
   def user_params
     params.require(:user).permit(:email, :first_name,
-                          profile_attribute:[:first_name, :last_name, :location,
+                          profile_attributes: [:id, :first_name, :last_name, :location,
                           :male, :female, :other, :birthday, :opperating_system,
-                          :about_me], language_attributes:[:language, :skill_level],
-                          image_attributes:[:image, :image_cache])
+                          :about_me], language_attributes: [:id, :language, :skill_level],
+                          image_attributes: [:id, :image, :image_cache])
   end
 
 end

@@ -48,9 +48,10 @@
       <%= profile.label :about_me, "About Me:" %>
       <%= profile.text_area :about_me %>
     </div>
+
     <% end %>
 
-  <%= form_for :image do |image| %>
+  <%= f.fields_for :image do |image| %>
   <p>
     <label> Your images </label>
       <article class = "image">
@@ -66,11 +67,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
-
   <% end %>
-
-
-
-
-
 <% end %>
