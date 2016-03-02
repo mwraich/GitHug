@@ -3,3 +3,57 @@
   <input type = "file" none="myFile">
   <button> Upload the file </button>
 </form>
+
+<%= form_for @user do |f| %>
+  <%= f.fields_for :profile do |profile| %>
+  <% if @user.errors.any? %>
+      <div class="error_messages">
+        <h2>Form Is Invalid</h2>
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="form_input">
+      <%= profile.label :first_name, "First Name:"%>
+      <%= profile.text_field :first_name%>
+    </div>
+    <div class="form_input">
+      <%= profile.label :last_name, "Last Name:"%>
+      <%= profile.text_field :last_name%>
+    </div>
+    <div class="form_input">
+      <%= profile.label :location, "Location:"%>
+      <%= profile.text_field :location%>
+    </div>
+      <div class="form_radio_button">
+        <%= label_tag"Gender:" %>
+        <%= profile.check_box(:male) %>
+        <%= profile.label(:male, "Male" )%>
+        <%= profile.check_box(:female) %>
+        <%= profile.label(:female, "Female")%>
+        <%= profile.check_box(:other) %>
+        <%= profile.label(:other, "Other")%>
+      </div>
+      <div class="form_date_input">
+        <%= profile.label(:birthday, "Date of Birth:") %>
+        <%= profile.date_field(:birthday) %>
+      </div>
+      <div class="form_radio_button">
+        <%= label :opperating_system, "Operating System:" %>
+          <%= profile.radio_button(:operating_system, "Linux") %>
+          <%= profile.label(:operating_system, "Linux") %>
+          <%= profile.radio_button(:operating_system, "UNIX") %>
+          <%= profile.label(:operating_system, "UNIX") %>
+      </div>
+      <div class="form_text" >
+        <%= profile.label :about_me, "About Me:" %>
+        <%= profile.text_area :about_me %>
+      </div>
+      <div class="action">
+        <%= f.submit "Create Profile" %>
+      </div>
+  <% end %>
+<% end %>

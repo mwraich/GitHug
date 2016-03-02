@@ -3,9 +3,6 @@ Rails.application.routes.draw do
   root 'sessions#new'
 
   resources :users 
-  resources :profiles, only: [:new, :create, :edit, :update]
-  resources :languages, only: [:new, :create, :edit, :update]
-
 
   resources :sessions, only: [:new, :create, :destroy]
 
