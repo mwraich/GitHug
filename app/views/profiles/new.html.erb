@@ -1,52 +1,51 @@
 <%= form_for @profile do |f| %>
-<% if @profile.errors.any? %>
-    <div class="error_messages">
-      <h2>Form Is Invalid</h2>
-      <ul>
-        <% @profile.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+  <% if @profile.errors.any? %>
+      <div class="error_messages">
+        <h2>Form Is Invalid</h2>
+        <ul>
+          <% @profile.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="form_input">
+      <%= f.label :first_name, "First Name:"%>
+      <%= f.text_field :first_name%>
     </div>
-  <% end %>
-  <div class="form_input">
-    <%= f.label :first_name, "First Name:"%>
-    <%= f.text_field :first_name%>
-  </div>
-  <div class="form_input">
-    <%= f.label :last_name, "Last Name:"%>
-    <%= f.text_field :last_name%>
-  </div>
-  <div class="form_input">
-    <%= f.label :location, "Location:"%>
-    <%= f.text_field :location%>
-  </div>
-    <div class="form_radio_button">
-      <%= label_tag"Gender:" %>
-
-        <%= f.radio_button(:male, true) %>
+    <div class="form_input">
+      <%= f.label :last_name, "Last Name:"%>
+      <%= f.text_field :last_name%>
+    </div>
+    <div class="form_input">
+      <%= f.label :location, "Location:"%>
+      <%= f.text_field :location%>
+    </div>
+      <div class="form_radio_button">
+        <%= label_tag"Gender:" %>
+        <%= f.check_box(:male) %>
         <%= f.label(:male, "Male" )%>
-        <%= f.radio_button(:female, true) %>
+        <%= f.check_box(:female) %>
         <%= f.label(:female, "Female")%>
-        <%= f.radio_button(:other, true) %>
+        <%= f.check_box(:other) %>
         <%= f.label(:other, "Other")%>
-    </div>
-    <div class="form_date_input">
-      <%= f.label(:birthday, "Date of Birth:") %>
-      <%= f.date_field(:birthday) %>
-    </div>
-    <div class="form_radio_button">
-      <%= label :opperating_system, "Operating System:" %>
-        <%= f.radio_button(:operating_system, "Linux") %>
-        <%= f.label(:operating_system, "Linux") %>
-        <%= f.radio_button(:operating_system, "UNIX") %>
-        <%= f.label(:operating_system, "UNIX") %>
-    </div>
-    <div class="form_text" >
-      <%= f.label :about_me, "About Me:" %>
-      <%= f.text_area :about_me %>
-    </div>
-    <div class="action">
-      <%= f.submit "Create Profile" %>
-    </div>
+      </div>
+      <div class="form_date_input">
+        <%= f.label(:birthday, "Date of Birth:") %>
+        <%= f.date_field(:birthday) %>
+      </div>
+      <div class="form_radio_button">
+        <%= label :opperating_system, "Operating System:" %>
+          <%= f.radio_button(:operating_system, "Linux") %>
+          <%= f.label(:operating_system, "Linux") %>
+          <%= f.radio_button(:operating_system, "UNIX") %>
+          <%= f.label(:operating_system, "UNIX") %>
+      </div>
+      <div class="form_text" >
+        <%= f.label :about_me, "About Me:" %>
+        <%= f.text_area :about_me %>
+      </div>
+      <div class="action">
+        <%= f.submit "Create Profile" %>
+      </div>
 <% end %>

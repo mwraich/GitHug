@@ -1,6 +1,4 @@
 class ProfilesController < ApplicationController
-  def index
-  end
 
   def show
     @user = current_user
@@ -8,7 +6,9 @@ class ProfilesController < ApplicationController
   end
 
   def new
-    @profile = Profile.new
+    @profile = Profile.new(profile_params)
+    @profile.user_id = current_user
+
   end
 
   def create
