@@ -6,14 +6,14 @@ class ProfilesController < ApplicationController
   end
 
   def new
-    @profile = Profile.new(profile_params)
+    @profile = Profile.new
     @profile.user_id = current_user
 
   end
 
   def create
     @profile = Profile.new(profile_params)
-    @profile.user = current_user
+    @profile.user_id = current_user
     if @profile.save
       redirect_to users_path, notice: "Profile Saved!"
     else
@@ -33,10 +33,9 @@ class ProfilesController < ApplicationController
 
   private
 
-  def profile_params
-    params.require(:profile)
-          .permit(:first_name, :last_name, :location, :male, :female, :other,
-          :birthday, :opperating_system, :about_me)
-  end
-
+    def profile_params
+      params.require(:profile)
+            .permit(:first_name, :last_name, :location, :male, :female, :other,
+            :birthday, :opperating_system, :about_me)
+    end
 end
