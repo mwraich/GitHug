@@ -1,11 +1,8 @@
-
-
-
-<%= form_for @user do |f| %>
+<%= form_for @user, @image do |f| %>
 <p>
-  <label> Your images</label>
+  <label> Your images </label>
     <article class = "image">
-      <%= image_tag @user.image_url(:thumb) if @user.image? %>
+      <%= image_tag @image.image_url(:thumb) if @image.any? %>
       <%= f.file_field :image %>
       <%= f.hidden_field :image_cache %>
     </article>
@@ -14,6 +11,7 @@
   <label>
     <%= f.check_box :remove_image %>
     Remove image
+    <%= link_to "delete", image, method: :delete, data: { confirm: "Are you sure you want to delete that image?"} %>
   </label>
 </p>
 <div class="actions">
