@@ -5,6 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+#On command line type gem install faker, run bundle, and then rake db:seed
 100.times do |n|
   User.create({
     username: Faker::Internet.domain_word,
@@ -40,10 +42,9 @@ end
     male:       Faker::Boolean.boolean(0.5),
     female:     Faker::Boolean.boolean(0.5),
     other:      Faker::Boolean.boolean(0.5),
-    birthday:   Faker::Date.backward(5000),
+    age:        Faker::Number.between(18, 75),
     operating_system: Faker::App.version,
     partner:    Faker::Boolean.boolean(0.5),
     paired_programmer: Faker::Boolean.boolean(0.5),
-    about_me:   Faker::Hacker.say_something_smart
   })
 end
