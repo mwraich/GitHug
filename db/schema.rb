@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160301222741) do
+ActiveRecord::Schema.define(version: 20160302202256) do
 
   create_table "authentications", force: :cascade do |t|
     t.integer  "user_id",    null: false
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(version: 20160301222741) do
   end
 
   add_index "authentications", ["provider", "uid"], name: "index_authentications_on_provider_and_uid"
+
+  create_table "images", force: :cascade do |t|
+    t.string   "image"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "images", ["user_id"], name: "index_images_on_user_id"
 
   create_table "languages", force: :cascade do |t|
     t.string   "language"
@@ -72,6 +81,7 @@ ActiveRecord::Schema.define(version: 20160301222741) do
     t.datetime "updated_at"
     t.string   "username"
     t.string   "github_image"
+    t.string   "image"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

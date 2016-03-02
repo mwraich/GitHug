@@ -19,12 +19,19 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(current_user)
+    @user = User.find(params[:id])
   end
 
   def new
     @user = User.new
     @user.build_profile
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    redirect_to user_path
+
   end
 
   def create
@@ -43,13 +50,14 @@ class UsersController < ApplicationController
     @profile = Profile
   end
 
-  def update
-  end
-
   private
+
   def user_params
-    params.require(:user).permit(:email, :first_name, profile_attribute:[:first_name, :last_name, :location, :male, :female, :other,
-    :birthday, :opperating_system, :about_me], language_attributes:[:language, :skill_levels])
+    params.require(:user).permit(:email, :first_name,
+                          profile_attribute:[:first_name, :last_name, :location,
+                          :male, :female, :other, :birthday, :opperating_system,
+                          :about_me], language_attributes:[:language, :skill_level],
+                          image_attributes:[:image, :image_cache])
   end
 
 end
