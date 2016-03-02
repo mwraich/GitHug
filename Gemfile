@@ -24,8 +24,12 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 #Added Gem
+#for authentications
 gem 'sorcery'
+#to protect API keys
 gem 'figaro'
+#to allow search by location 
+gem 'geocoder'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
