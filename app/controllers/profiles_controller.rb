@@ -1,20 +1,29 @@
 class ProfilesController < ApplicationController
 
+  def index
+    # @tags = ActsAsTaggableOn::Tag.all
+    @profiles = Profile.all
+  end
+
   def show
     @user = current_user
+
+    # @tags = ActsAsTaggableOn::Tag.all
+    # @tag = ActsAsTaggableOn::Tag.find(params[:id])
+    # @profiles= Profile.tagged_with(@tag.name)
+
     @profile = Profile.find(params[:id])
   end
 
   def new
     @profile = Profile.new
     @profile.images.build
-    @profile.user_id = current_user
-
+    @profile.user = current_user
   end
 
   def create
     @profile = Profile.new(profile_params)
-    @profile.user_id = current_user
+    @profile.user = current_user
 
     if @profile.save
       redirect_to profile_path(@profile), notice: "Profile Saved!"
@@ -41,15 +50,33 @@ class ProfilesController < ApplicationController
   end
 
   def destroy
+    @profile = current_user
+    @image = Image.find(params[:id])
+    @image.destroy
+    flash[:success] = "Image deleted"
+    redirect_to user_path
+  end
+
+  def tagged
+    if params[:tag].present?
+      @profiles = Profile.tagged_with(params[:tag])
+    else
+      @profiles = Profile.all
+    end
   end
 
   private
 
-    def profile_params
-      params.require(:profile)
-            .permit(:first_name, :last_name, :location, :male, :female, :other,
-            :birthday, :opperating_system, :about_me, languages_attributes:
-            [:id, :language, :skill_level], images_attributes: [:id, :image, :image_cache])
-    end
+  # def profile_params
+  #     params.require(:profile).permit( :name, :tag_list)
+  # end
+
+  def profile_params
+    params.require(:profile)
+          .permit(:first_name, :last_name, :location, :male, :female, :other,
+          :birthday, :operating_system, :about_me, :tag_list, languages_attributes:
+          [:id, :language, :skill_level, :_destroy], images_attributes: [:id, :image,
+          :image_cache, :_destroy, :remove_image])
+  end
 
 end
