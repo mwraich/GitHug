@@ -2,9 +2,11 @@ Rails.application.routes.draw do
 
   root 'sessions#new'
 
-  resources :users 
-  resources :profile
+  resources :users, only: [:new, :create, :destroy]
 
+  resources :profiles
+
+  resources :images
 
   resources :sessions, only: [:new, :create, :destroy]
 

@@ -24,7 +24,6 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    @user.build_profile
   end
 
   def update
@@ -52,17 +51,12 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-      @user.build_profile
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:email, :first_name,
-                          profile_attributes: [:id, :first_name, :last_name, :location,
-                          :male, :female, :other, :birthday, :opperating_system,
-                          :about_me], language_attributes: [:id, :language, :skill_level],
-                          image_attributes: [:id, :image, :image_cache])
+    params.require(:user).permit(:email, :first_name)
   end
 
 end
