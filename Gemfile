@@ -33,6 +33,11 @@ gem 'geocoder'
 #allows taging
 gem 'acts-as-taggable-on', '~> 3.4'
 
+
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog-aws'
+gem 'cocoon'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -45,15 +50,20 @@ gem 'acts-as-taggable-on', '~> 3.4'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'pry-rails'
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-  gem 'letter_opener'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
+  # added gems for development
+  gem 'letter_opener'
+
+
   gem 'faker'
+
 
 end

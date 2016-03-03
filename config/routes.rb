@@ -2,9 +2,13 @@ Rails.application.routes.draw do
 
   root 'sessions#new'
 
-  resources :users
+  resources :users, only: [:new, :create, :destroy]
 
-  resources :sessions, only: [:new, :create, :destroy ]
+  resources :profiles
+
+  resources :images
+
+  resources :sessions, only: [:new, :create, :destroy]
 
   get "oauth/callback" => "oauths#callback" # for use with Github, Facebook
   get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider

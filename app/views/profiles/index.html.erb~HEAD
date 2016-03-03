@@ -1,0 +1,10 @@
+
+<div id="tag_cloud">
+  <% tag_cloud Profile.tag_counts, %w[s m l] do |tag, css_class| %>
+    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+  <% end %>
+</div>
+<div class="field">
+  <%= f.label :tag_list, 'Tags (seperated by a comma)' %>
+  <%= f.text_field :tag_list %>
+</div>

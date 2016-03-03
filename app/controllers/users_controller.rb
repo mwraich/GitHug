@@ -19,14 +19,27 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(current_user)
+    @user = User.find(params[:id])
+  end
+
+  def new
+    @user = User.new
   end
 
   def update
+    @user = User.find(params[:id])
+
+
+    if @user.update_attributes(user_params)
+      redirect_to user_path(@user)
+    else
+      render :edit
+    end
   end
 
   def create
     @user = User.new(user_params)
+
     if @user.save
       auto_login(current_user)
 
@@ -41,6 +54,7 @@ class UsersController < ApplicationController
   end
 
   private
+
   def user_params
     params.require(:user).permit(:email, :first_name)
   end

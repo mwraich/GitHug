@@ -1,0 +1,13 @@
+<%= form_for @image do |f| %>
+<p>
+ <label> Your images </label>
+   <article class = "image">
+
+     <%= f.file_field :image %>
+
+   </article>
+</p>
+<div class="actions">
+ <%= f.submit %>
+</div>
+<% end %>

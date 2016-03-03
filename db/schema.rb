@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160302232517) do
+=======
+ActiveRecord::Schema.define(version: 20160302232940) do
+>>>>>>> profiles
 
   create_table "authentications", force: :cascade do |t|
     t.integer  "user_id",    null: false
@@ -23,15 +27,24 @@ ActiveRecord::Schema.define(version: 20160302232517) do
 
   add_index "authentications", ["provider", "uid"], name: "index_authentications_on_provider_and_uid"
 
+  create_table "images", force: :cascade do |t|
+    t.string   "image"
+    t.integer  "profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "images", ["profile_id"], name: "index_images_on_profile_id"
+
   create_table "languages", force: :cascade do |t|
     t.string   "language"
     t.integer  "skill_level"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "user_id"
+    t.integer  "profile_id"
   end
 
-  add_index "languages", ["user_id"], name: "index_languages_on_user_id"
+  add_index "languages", ["profile_id"], name: "index_languages_on_profile_id"
 
   create_table "preferences", force: :cascade do |t|
     t.string   "location"
@@ -44,10 +57,10 @@ ActiveRecord::Schema.define(version: 20160302232517) do
     t.boolean  "paired_programmer"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-    t.integer  "user_id"
+    t.integer  "profile_id"
   end
 
-  add_index "preferences", ["user_id"], name: "index_preferences_on_user_id"
+  add_index "preferences", ["profile_id"], name: "index_preferences_on_profile_id"
 
   create_table "profiles", force: :cascade do |t|
     t.string   "first_name"
@@ -64,6 +77,10 @@ ActiveRecord::Schema.define(version: 20160302232517) do
     t.integer  "user_id"
     t.float    "latitude"
     t.float    "longitude"
+<<<<<<< HEAD
+=======
+    t.string   "image"
+>>>>>>> profiles
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
