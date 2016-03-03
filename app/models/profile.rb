@@ -11,17 +11,13 @@ class Profile < ActiveRecord::Base
   has_many :languages
   has_many :preferences
   has_many :images
-  mount_uploader :image, ImageUploader
+
+
   accepts_nested_attributes_for :images
   accepts_nested_attributes_for :languages, :preferences
-  # validates :user_id, uniqueness: {message: "Looks like you already have a profile. You can update your profile by click edit"}
+
   validates_presence_of :first_name, :last_name, :location, :birthday, :about_me
   validates_with ValidatesGender
-  validates :user_id, uniqueness: {message: "Looks like you already have a profile. You can update your profile by click edit"}
-  # def user_id_unique(profile)
-  #   if user_id.present?
-  #     profile.errors[:user_id] << "Looks like you already have a profile. You can update your profile by click edit"
-  #   end
-  # end
+  validates :user_id, uniqueness: {message: "Error. Looks like you already have a profile. You can update your profile by clicking on update."}
 
 end

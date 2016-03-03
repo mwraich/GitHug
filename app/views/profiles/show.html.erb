@@ -1,0 +1,42 @@
+<h1><%= @profile.first_name %> <%= @profile.last_name %></h1>
+
+<div>
+  <p> <%= @profile.about_me %></p>
+</div>
+
+<h3>My Details</h3>
+<ul>
+  <li>
+    <% if @profile.male == true %>
+    Male
+    <% elsif @profile.female == true %>
+    Female
+    <% else %>
+    Other
+    <% end %>
+  </li>
+  <li>
+    <%= @profile.location %>
+  </li>
+  <li>
+    <%= @profile.birthday %>
+  </li>
+</ul>
+
+<h3> Programming </h3>
+
+<ul>
+  <li>
+    <%= @profile.operating_system %>
+  </li>
+  <% @profile.languages.each do |lang| %>
+  <li> <%= lang.language %> Skill Level: <%= lang.skill_level %></li>
+  <% end %>
+</ul>
+
+<ul>
+
+  <% @profile.images.each do |img| %>
+  <li> <%= image_tag(img.image)%> </li>
+  <% end %>
+</ul>

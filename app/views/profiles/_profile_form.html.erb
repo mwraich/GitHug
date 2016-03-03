@@ -53,7 +53,7 @@
     <%= f.fields_for :languages do |language| %>
       <%= render "language_fields", f: language %>
     <% end %>
-    </div>
+  </div>
     <div>
       <%= link_to_add_association "Add Languages", f, :languages, id: 'add_language',
       'data-association-insertion-method' => 'before',
@@ -61,9 +61,9 @@
     </div>
 
     <div>
-    <%= f.fields_for :images, Image.new do |image| %>
-      <%= render "image_fields", f: image %>
-    <% end %>
+      <%= f.fields_for :images, Image.new do |image| %>
+        <%= render "image_fields", f: image %>
+      <% end %>
     </div>
     <div>
       <%= link_to_add_association "Add Images", f, :images,

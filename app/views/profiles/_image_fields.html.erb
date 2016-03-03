@@ -1,9 +1,10 @@
 <div class="nested-fields">
 
   <div class="image-fields">
-
+    <%= image_tag image_url(:thumb) if image_url.present? %>
     <%= f.file_field :image %>
-    <%= f.hidden_field :image_change %>
+    <%= f.hidden_field :image_cache %>
   </div>
-       <%= link_to_remove_association 'Remove Image', f %>
+
+  <%= link_to_remove_association 'Remove Image', f %>
 </div>
