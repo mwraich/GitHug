@@ -14,13 +14,13 @@ class Profile < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   accepts_nested_attributes_for :images
   accepts_nested_attributes_for :languages, :preferences
-
+  # validates :user_id, uniqueness: {message: "Looks like you already have a profile. You can update your profile by click edit"}
   validates_presence_of :first_name, :last_name, :location, :birthday, :about_me
   validates_with ValidatesGender
-
-  # def self.validate_gender
-  #   unless profile.male.present? || profile.female.present? || profile.other.present?
-  #     profile.errors[:gender] << "can't be blank"
+  validates :user_id, uniqueness: {message: "Looks like you already have a profile. You can update your profile by click edit"}
+  # def user_id_unique(profile)
+  #   if user_id.present?
+  #     profile.errors[:user_id] << "Looks like you already have a profile. You can update your profile by click edit"
   #   end
   # end
 
