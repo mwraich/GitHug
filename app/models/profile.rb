@@ -19,9 +19,8 @@ class Profile < ActiveRecord::Base
   has_many :images
 
 
-  accepts_nested_attributes_for :images
-  accepts_nested_attributes_for :languages, :preferences
 
+  accepts_nested_attributes_for :images, :languages, :preferences, allow_destroy: true
 
 
   validates_presence_of :first_name, :last_name, :location, :birthday, :about_me
