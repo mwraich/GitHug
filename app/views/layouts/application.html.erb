@@ -10,9 +10,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
   <% if current_user %>
+    <li>Currently loged in as <%=current_user.email %></li>
     <li><%= link_to 'Logout', session_path(current_user), method: 'delete' %></li>
     <li><%= link_to 'Update Profile', edit_user_path(current_user) %></li>
+
   <% end %>
 
   <% if flash[:notice] %>

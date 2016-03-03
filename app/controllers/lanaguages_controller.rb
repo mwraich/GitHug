@@ -1,0 +1,4 @@
+class LanaguagesController < ApplicationController
+
+
+end
