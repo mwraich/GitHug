@@ -1,5 +1,5 @@
 
-<%= form_for @profile do |profile| %>
+<%= form_for @profile do |f| %>
 
     <% if @profile.errors.any? %>
       <div class="error_messages">
@@ -13,58 +13,74 @@
     <% end %>
 
     <div class="form_input">
-      <%= profile.label :first_name, "First Name:"%>
-      <%= profile.text_field :first_name%>
+      <%= f.label :first_name, "First Name:"%>
+      <%= f.text_field :first_name%>
     </div>
     <div class="form_input">
-      <%= profile.label :last_name, "Last Name:"%>
-      <%= profile.text_field :last_name%>
+      <%= f.label :last_name, "Last Name:"%>
+      <%= f.text_field :last_name%>
     </div>
     <div class="form_input">
-      <%= profile.label :location, "Location:"%>
-      <%= profile.text_field :location%>
+      <%= f.label :location, "Location:"%>
+      <%= f.text_field :location%>
     </div>
     <div class="form_check_boxes">
       <%= label_tag"Gender:" %>
-        <%= profile.check_box(:male) %>
-        <%= profile.label(:male, "Male" )%>
-        <%= profile.check_box(:female) %>
-        <%= profile.label(:female, "Female")%>
-        <%= profile.check_box(:other) %>
-        <%= profile.label(:other, "Other")%>
+        <%= f.check_box(:male) %>
+        <%= f.label(:male, "Male" )%>
+        <%= f.check_box(:female) %>
+        <%= f.label(:female, "Female")%>
+        <%= f.check_box(:other) %>
+        <%= f.label(:other, "Other")%>
     </div>
     <div class="form_date_input">
-      <%= profile.label(:birthday, "Date of Birth:") %>
-      <%= profile.date_field(:birthday) %>
+      <%= f.label(:birthday, "Date of Birth:") %>
+      <%= f.date_field(:birthday) %>
     </div>
     <div class="form_radio_button">
       <%= label :opperating_system, "Operating System:" %>
-        <%= profile.radio_button(:operating_system, "Linux") %>
-        <%= profile.label(:operating_system, "Linux") %>
-        <%= profile.radio_button(:operating_system, "UNIX") %>
-        <%= profile.label(:operating_system, "UNIX") %>
+        <%= f.radio_button(:operating_system, "Linux") %>
+        <%= f.label(:operating_system, "Linux") %>
+        <%= f.radio_button(:operating_system, "UNIX") %>
+        <%= f.label(:operating_system, "UNIX") %>
     </div>
     <div class="form_text">
-      <%= profile.label :about_me, "About Me:" %>
-      <%= profile.text_area :about_me %>
+      <%= f.label :about_me, "About Me:" %>
+      <%= f.text_area :about_me %>
     </div>
 
-    <%= profile.fields_for :images do |i| %>
-
-    <p>
-      <label> Your images </label>
-        <article class = "image">
-          <%= image_tag @profile.image_url(:thumb) if @image_url.present? %>
-          <%= i.file_field :image %>
-
-        </article>
-    </p>
 
 
+    <div>
+    <%= f.fields_for :languages do |language| %>
+      <%= render "language_fields", f: language %>
     <% end %>
+  </div>
+    <div>
+      <%= link_to_add_association "Add Languages", f, :languages, id: 'add_language',
+      'data-association-insertion-method' => 'before',
+      'data-association-insertion-traversal' => 'closest' %>
+    </div>
+
+    <div class="form_text">
+      <p>Tag your Hobbies!</p>
+      <%= f.label :tag_list, 'Tags (seperated by a comma)' %>
+      <%= f.text_field :tag_list %>
+    </div>
+
+    <div>
+      <%= f.fields_for :images do |image| %>
+        <%= render "image_fields", f: image %>
+      <% end %>
+    </div>
+    <div>
+      <%= link_to_add_association "Add Images", f, :images,
+      'data-association-insertion-method' => 'before',
+      'data-association-insertion-traversal' => 'closest' %>
+    </div>
 
   <div class="actions">
-    <%= profile.submit %>
+    <%= f.submit %>
   </div>
 
 <% end %>

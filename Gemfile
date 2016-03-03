@@ -24,8 +24,15 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 #Added Gem
+#for authentications
 gem 'sorcery'
+#to protect API keys
 gem 'figaro'
+#to allow search by location
+gem 'geocoder'
+#allows taging
+gem 'acts-as-taggable-on', '~> 3.4'
+
 
 gem 'carrierwave'
 gem 'mini_magick'
@@ -43,7 +50,7 @@ gem 'cocoon'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'pry-rails'
+  # gem 'pry-rails'
 end
 
 group :development do
