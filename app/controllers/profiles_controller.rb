@@ -1,5 +1,13 @@
 class ProfilesController < ApplicationController
 
+  def index
+    if params[:search]
+      @profiles = Profile.search(params[:search]).order('created_at DESC')
+    else
+      @profiles = Profile.order("created_at DESC")
+    end
+  end
+
   def show
     @user = current_user
     @profile = Profile.find(@user.profile.id)

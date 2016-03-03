@@ -18,6 +18,13 @@ class Profile < ActiveRecord::Base
   validates_presence_of :first_name, :last_name, :location, :birthday, :about_me
   validates_with ValidatesGender
 
+  def self.search
+    where("language like ?", "%{search}")
+    where("age like ?", "%{search}")
+    where("gender like ?", "%{search}")
+    where("operating_system like ?", "%{search}")
+  end
+
   # def self.validate_gender
   #   unless profile.male.present? || profile.female.present? || profile.other.present?
   #     profile.errors[:gender] << "can't be blank"
