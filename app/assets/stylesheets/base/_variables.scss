@@ -1,6 +1,6 @@
 // Typography
-$base-font-family: $helvetica;
-$heading-font-family: $base-font-family;
+$base-font-family: 'Roboto', sans-serif;
+$heading-font-family: 'Exo', sans-serif;
 
 // Font Sizes
 $base-font-size: 1em;
@@ -15,6 +15,7 @@ $base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
+
 // Colors
 $blue: #1565c0;
 $dark-gray: #333;
@@ -27,7 +28,7 @@ $action-color: white;
 
 // Border
 $base-border-color: $light-gray;
-$base-border: 1px solid $base-border-color;
+$base-border: 5px solid $base-border-color;
 
 // Background Colors
 $base-background-color: #1E2542;

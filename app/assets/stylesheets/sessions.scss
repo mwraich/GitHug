@@ -4,3 +4,84 @@
 html{
   background-color: $base-background-color;
 }
+@include keyframes(fadeIn) {
+  from {
+    @include transform(scale(0.5));
+  }
+  to {
+    @include transform(scale(1));
+  }
+}
+@include keyframes(fadeInButtons) {
+  from {
+    opacity: 0;
+    @include transform(translateY(100%));
+  }
+  to {
+    opacity: 1;
+    @include transform(translateY(0%));
+  }
+}
+
+.logo{
+  @include animation-duration(1s);
+  @include animation-timing-function(ease);
+  animation-name: fadeIn;
+
+  margin-left: 19%;
+  margin-right: 19%;
+  margin-top: 40%;
+
+
+}
+.login{
+  opacity: 0;
+  @include animation-duration(1s);
+  @include animation-timing-function(ease);
+  @include animation-delay(1.2s);
+  @include animation-fill-mode(forwards);
+  animation-name: fadeInButtons;
+
+
+  text-align: center;
+  font-size: 1.5rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  border: $base-border;
+  @include span-columns(3);
+  margin-left: 13.5%;
+
+}
+#or{
+  opacity: 0;
+  @include animation-duration(1s);
+  @include animation-timing-function(ease);
+  @include animation-delay(2s);
+  @include animation-fill-mode(forwards);
+  animation-name: fadeInButtons;
+
+  display: block;
+  text-align: center;
+  padding-right: 7%;
+  padding-left: 7%;
+  margin-top: 17.5%;
+  margin-bottom: 2.5%;
+}
+.signup{
+  opacity: 0;
+  @include animation-duration(1s);
+  @include animation-timing-function(ease);
+  @include animation-delay(2.5s);
+  @include animation-fill-mode(forwards);
+  animation-name: fadeInButtons;
+
+
+  text-align: center;
+  font-size: 1.5rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  border: $base-border;
+  @include span-columns(3);
+  margin-left: 13.5%;
+
+}
