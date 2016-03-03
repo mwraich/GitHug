@@ -6,19 +6,19 @@ class ProfilesController < ApplicationController
 
   def show
     @user = current_user
-    @profile = Profile.find(current_user)
+    @profile = Profile.find(params[:id])
   end
 
   def new
     @profile = Profile.new
-    @profile.user_id = current_user.id
+    @profile.user = current_user
     # @profile.images.build
 
   end
 
   def create
     @profile = Profile.new(profile_params)
-    @profile.user_id = current_user.id
+    @profile.user = current_user
 
     if @profile.save
       redirect_to profile_path(@profile), notice: "Profile Saved!"

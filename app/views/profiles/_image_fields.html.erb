@@ -1,0 +1,9 @@
+<div class="nested-fields">
+
+  <div class="image-fields">
+
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_change %>
+  </div>
+       <%= link_to_remove_association 'Remove Image', f %>
+</div>

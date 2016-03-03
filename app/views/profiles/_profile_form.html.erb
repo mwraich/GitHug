@@ -60,16 +60,16 @@
       'data-association-insertion-traversal' => 'closest' %>
     </div>
 
-
-    <%= f.fields_for :images do |i| %>
-      <p>
-        <label> Your images </label>
-          <article class = "image">
-            <%= image_tag @profile.image_url(:thumb) if @image_url.present? %>
-            <%= i.file_field :image %>
-          </article>
-      </p>
+    <div>
+    <%= f.fields_for :images, Image.new do |image| %>
+      <%= render "image_fields", f: image %>
     <% end %>
+    </div>
+    <div>
+      <%= link_to_add_association "Add Images", f, :images,
+      'data-association-insertion-method' => 'before',
+      'data-association-insertion-traversal' => 'closest' %>
+    </div>
 
   <div class="actions">
     <%= f.submit %>

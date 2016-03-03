@@ -1,8 +1,0 @@
-<p>
-  <label> Your images </label>
-    <article class = "image">
-      <%= image_tag @profile.image_url(:thumb) if @profile.image_url.present? %>
-      <%= image.file_field :image %>
-      <%= image.hidden_field :image_cache %>
-    </article>
-</p>

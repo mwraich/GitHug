@@ -12,7 +12,7 @@ class Profile < ActiveRecord::Base
   has_many :preferences
   has_many :images
   mount_uploader :image, ImageUploader
-  accepts_nested_attributes_for :images, allow_destroy: true
+  accepts_nested_attributes_for :images
   accepts_nested_attributes_for :languages, :preferences
 
   validates_presence_of :first_name, :last_name, :location, :birthday, :about_me
