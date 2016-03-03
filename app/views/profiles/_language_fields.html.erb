@@ -1,0 +1,26 @@
+<div class="nested-fields">
+
+  <div class="language-fields">
+    <%= f.label :language, "Language:" %>
+    <%= f.text_field :language, placeholder: "Ruby" %>
+  </div>
+  <div class="language-fields">
+    <%= f.label :skill_level, "Skill Lever:" %>
+    <%= f.radio_button(:skill_level, 1) %>
+    <%= f.label(:skill_leve, "Newbie") %>
+    <%= f.radio_button(:skill_level, 2) %>
+    <%= f.label(:skill_leve, "Beginning") %>
+    <%= f.radio_button(:skill_level, 3) %>
+    <%= f.label(:skill_leve, "Intermediate") %>
+    <%= f.radio_button(:skill_level, 4) %>
+    <%= f.label(:skill_leve, "Advanced") %>
+    <%= f.radio_button(:skill_level, 5) %>
+    <%= f.label(:skill_leve, "Expert") %>
+  </div>
+
+  <div>
+    <%= link_to_remove_association 'Remove Language', f %>
+  </div>
+
+
+</div>

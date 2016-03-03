@@ -1,3 +1,5 @@
 class Image < ActiveRecord::Base
-  belongs_to :profile
+  belongs_to :profiles
+  mount_uploader :image, ImageUploader
+
 end

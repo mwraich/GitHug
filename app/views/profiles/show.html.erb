@@ -1,6 +1,49 @@
+
 <h1>Profile Page</h1>
 
+
+<h1><%= @profile.first_name %> <%= @profile.last_name %></h1>
+
+<div>
+  <p> <%= @profile.about_me %></p>
+</div>
+
+<h3>My Details</h3>
+<ul>
+  <li> Gender:
+    <% if @profile.male == true %>
+    Male
+    <% elsif @profile.female == true %>
+    Female
+    <% else %>
+    Other
+    <% end %>
+  </li>
+  <li>
+    Location: <%= @profile.location %>
+  </li>
+  <li>
+    Birthday: <%= @profile.birthday %>
+  </li>
+  <li>
+    Operating System: <%= @profile.operating_system %>
+  </li>
+</ul>
+
+<h3> Languages </h3>
+
+<ul>
+  <li>
+  <% @profile.languages.each do |lang| %>
+    <li> <%= lang.language %> Skill Level: <%= lang.skill_level %></li>
+  <% end %>
+</ul>
+
 <% @profile.tags.any? %>
-  <% @profile.tags.each do |tag| %>
-    <%= link_to tag.name, tagged_url(:tag => tag.name) %>
-      <% end %>
+<% @profile.tags.each do |tag| %>
+  <%= link_to tag.name, tagged_url(:tag => tag.name) %>
+<% end %>
+
+<% @profile.images.each do |img| %>
+  <%= image_tag(img.image)%>
+<% end %>
