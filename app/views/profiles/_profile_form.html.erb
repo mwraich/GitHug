@@ -49,6 +49,12 @@
       <%= profile.text_area :about_me %>
     </div>
 
+    <div class="form_text">
+      <p>Tag your Hobbies!</p>
+      <%= profile.label :tag_list, 'Tags (seperated by a comma)' %>
+      <%= profile.text_field :tag_list %>
+    </div>
+
     <%= profile.fields_for :images do |i| %>
 
     <p>
@@ -59,7 +65,6 @@
 
         </article>
     </p>
-
 
     <% end %>
 

@@ -1,1 +1,6 @@
-<p>Tags: <%= raw profile.tag_list.map { |t| link_to t, tag_path(t)}.join(', ')%></p>
+<h1>Profile Page</h1>
+
+<% @profile.tags.any? %>
+  <% @profile.tags.each do |tag| %>
+    <%= link_to tag.name, tagged_url(:tag => tag.name) %>
+      <% end %>

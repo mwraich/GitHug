@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20160302232517) do
-=======
 ActiveRecord::Schema.define(version: 20160302232940) do
->>>>>>> profiles
 
   create_table "authentications", force: :cascade do |t|
     t.integer  "user_id",    null: false
@@ -77,10 +73,7 @@ ActiveRecord::Schema.define(version: 20160302232940) do
     t.integer  "user_id"
     t.float    "latitude"
     t.float    "longitude"
-<<<<<<< HEAD
-=======
     t.string   "image"
->>>>>>> profiles
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"

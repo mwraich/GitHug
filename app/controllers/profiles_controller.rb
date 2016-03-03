@@ -1,8 +1,15 @@
 class ProfilesController < ApplicationController
 
+  def index
+    # @tags = ActsAsTaggableOn::Tag.all
+  end
+
   def show
     @user = current_user
     @profile = Profile.find(current_user)
+    # @tags = ActsAsTaggableOn::Tag.all
+    # @tag = ActsAsTaggableOn::Tag.find(params[:id])
+    # @profiles= Profile.tagged_with(@tag.name)
   end
 
   def new
@@ -44,12 +51,23 @@ class ProfilesController < ApplicationController
   def destroy
   end
 
+  def tagged
+    if params[:tag].present?
+      @profiles = Profile.tagged_with(params[:tag])
+    else
+      @profiles = Profile.all
+    end
+  end
+  # def profile_params
+  #     params.require(:profile).permit( :name, :tag_list)
+  # end
+
   private
 
     def profile_params
       params.require(:profile)
             .permit(:first_name, :last_name, :location, :male, :female, :other,
-            :birthday, :opperating_system, :about_me, languages_attributes:
+            :birthday, :opperating_system, :about_me, :tag_list, languages_attributes:
             [:id, :language, :skill_level], images_attributes: [:id, :image, :image_cache])
     end
 
