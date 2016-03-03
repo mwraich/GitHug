@@ -1,20 +1,24 @@
 class ProfilesController < ApplicationController
 
+  def index
+    @profiles = Profile.all
+  end
+
   def show
     @user = current_user
-    @profile = Profile.find(@user.profile.id)
+    @profile = Profile.find(current_user)
   end
 
   def new
     @profile = Profile.new
-    @profile.images.build
-    @profile.user_id = current_user
+    @profile.user_id = current_user.id
+    # @profile.images.build
 
   end
 
   def create
     @profile = Profile.new(profile_params)
-    @profile.user_id = current_user
+    @profile.user_id = current_user.id
 
     if @profile.save
       redirect_to profile_path(@profile), notice: "Profile Saved!"
@@ -48,7 +52,7 @@ class ProfilesController < ApplicationController
     def profile_params
       params.require(:profile)
             .permit(:first_name, :last_name, :location, :male, :female, :other,
-            :birthday, :opperating_system, :about_me, languages_attributes:
+            :birthday, :operating_system, :about_me, languages_attributes:
             [:id, :language, :skill_level], images_attributes: [:id, :image, :image_cache])
     end
 
