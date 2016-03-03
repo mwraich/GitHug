@@ -28,8 +28,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sorcery'
 #to protect API keys
 gem 'figaro'
-#to allow search by location 
+#to allow search by location
 gem 'geocoder'
+#allows taging
+gem 'acts-as-taggable-on', '~> 3.4'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
