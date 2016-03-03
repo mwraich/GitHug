@@ -11,7 +11,7 @@
 <body>
 
   <% if current_user %>
-    <li>Currently loged in as <%=current_user.email %></li>
+    <li>Currently logged in as <%=current_user.username %></li>
     <li><%= link_to 'Logout', session_path(current_user), method: 'delete' %></li>
 
   <% else %>

@@ -2,7 +2,7 @@ class ProfilesController < ApplicationController
 
   def show
     @user = current_user
-    @profile = Profile.find(@user.profile.id)
+    @profile = Profile.find(current_user)
   end
 
   def new
