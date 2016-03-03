@@ -6,8 +6,6 @@ Rails.application.routes.draw do
 
   resources :profiles
 
-  resources :images
-
   resources :sessions, only: [:new, :create, :destroy]
 
   get "oauth/callback" => "oauths#callback" # for use with Github, Facebook

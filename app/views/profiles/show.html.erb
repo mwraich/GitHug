@@ -6,7 +6,7 @@
 
 <h3>My Details</h3>
 <ul>
-  <li>
+  <li> Gender:
     <% if @profile.male == true %>
     Male
     <% elsif @profile.female == true %>
@@ -16,27 +16,25 @@
     <% end %>
   </li>
   <li>
-    <%= @profile.location %>
+    Location: <%= @profile.location %>
   </li>
   <li>
-    <%= @profile.birthday %>
+    Birthday: <%= @profile.birthday %>
+  </li>
+  <li>
+    Operating System: <%= @profile.operating_system %>
   </li>
 </ul>
 
-<h3> Programming </h3>
+<h3> Languages </h3>
 
 <ul>
   <li>
-    <%= @profile.operating_system %>
-  </li>
   <% @profile.languages.each do |lang| %>
   <li> <%= lang.language %> Skill Level: <%= lang.skill_level %></li>
   <% end %>
 </ul>
 
-<ul>
-
-  <% @profile.images.each do |img| %>
-  <li> <%= image_tag(img.image)%> </li>
-  <% end %>
-</ul>
+<% @profile.images.each do |img| %>
+<%= image_tag(img.image)%>
+<% end %>

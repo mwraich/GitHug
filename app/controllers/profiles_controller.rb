@@ -45,6 +45,11 @@ class ProfilesController < ApplicationController
   end
 
   def destroy
+    @profile = current_user
+    @image = Image.find(params[:id])
+    @image.destroy
+    flash[:success] = "Image deleted"
+    redirect_to user_path
   end
 
   private
@@ -53,7 +58,8 @@ class ProfilesController < ApplicationController
       params.require(:profile)
             .permit(:first_name, :last_name, :location, :male, :female, :other,
             :birthday, :operating_system, :about_me, languages_attributes:
-            [:id, :language, :skill_level], images_attributes: [:id, :image, :image_cache])
+            [:id, :language, :skill_level, :_destroy], images_attributes: [:id, :image,
+            :image_cache, :_destroy, :remove_image])
     end
 
 end

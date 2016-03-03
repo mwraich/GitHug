@@ -61,7 +61,7 @@
     </div>
 
     <div>
-      <%= f.fields_for :images, Image.new do |image| %>
+      <%= f.fields_for :images do |image| %>
         <%= render "image_fields", f: image %>
       <% end %>
     </div>
