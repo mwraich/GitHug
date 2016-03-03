@@ -11,6 +11,7 @@ $heading-line-height: 1.2;
 
 // Other Sizes
 $base-border-radius: 3px;
+$form-border-radius: 20px;
 $base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
@@ -23,11 +24,13 @@ $medium-gray: #999;
 $light-gray: #ddd;
 
 // Font Colors
-$base-font-color: white;
+$base-font-color: #1E2542;
 $action-color: white;
+$secondary-font-color: white;
+$form-font-color: #AADBE8;
 
 // Border
-$base-border-color: $light-gray;
+$base-border-color: white;
 $base-border: 5px solid $base-border-color;
 
 // Background Colors

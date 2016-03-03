@@ -1,3 +1,42 @@
-// Place all the styles related to the Profiles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+  background-color: white;
+}
+
+.message{
+  width: 10%;
+  margin-top: 2%;
+  margin-left: 3%;
+  display: inline;
+}
+
+.logo{
+  width: 30%;
+  margin-top: 4%;
+  display: inline;
+  margin-left: 10%;
+  margin-right: 9%;
+
+}
+
+.menu{
+  display: inline;
+  width: 10%;
+
+}
+
+.menu-bar{
+  background-color: $base-background-color;
+  padding-bottom: 1%;
+}
+
+#edit{
+  font-size: 1.7rem;
+}
+
+#signup{
+  font-size: 1.7rem;
+}
+
+.form_check_boxes{
+  display: inline;
+}

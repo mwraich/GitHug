@@ -5,7 +5,14 @@ html {
   line-height: $base-line-height;
 }
 
-h1,
+h1{
+  font-family: $heading-font-family;
+  font-size: $base-font-size;
+  line-height: $heading-line-height;
+  text-align: center;
+  margin: 0 0 $small-spacing;
+
+}
 h2,
 h3,
 h4,

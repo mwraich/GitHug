@@ -23,7 +23,7 @@ html{
   }
 }
 
-.logo{
+.logo-animated {
   @include animation-duration(1s);
   @include animation-timing-function(ease);
   animation-name: fadeIn;
@@ -55,6 +55,7 @@ html{
   border: $base-border;
   @include span-columns(3);
   margin-left: 13.5%;
+  color: $secondary-font-color;
 
 }
 
@@ -72,6 +73,7 @@ html{
   padding-left: 7%;
   margin-top: 17.5%;
   margin-bottom: 2.5%;
+  color: $secondary-font-color;
 }
 
 .signup{
@@ -90,5 +92,6 @@ html{
   border: $base-border;
   @include span-columns(3);
   margin-left: 13.5%;
+  color: $secondary-font-color;
 
 }
