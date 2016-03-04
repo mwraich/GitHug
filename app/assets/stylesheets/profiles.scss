@@ -38,8 +38,16 @@ body{
   font-size: 1.7rem;
 }
 
-.form_check_boxes{
+.form_checkbox_input label{
   display: inline;
+  font-size: 1.1rem;
+  color: #1E2542;
+}
+
+.form_radio_button label{
+  display: inline;
+  font-size: 1.2rem;
+  color: #1E2542;
 }
 
 #tag_cloud {
@@ -49,4 +57,104 @@ body{
     .m { font-size: 1.2em; }
     .l { font-size: 1.8em; }
 
+}
+
+label.select_label{
+  font-size: 1.3rem;
+  color: #597288;
+
+}
+
+#tag{
+  padding-left: 5%;
+  font-size: 1.3rem;
+  color: #1E2542;
+  text-align: center;
+  margin-top: 5%;
+}
+
+a.add_fields{
+  color: #1E2542;
+}
+
+.actions input{
+  width: 87%;
+  margin-left: 6.5%;
+  border: 5px solid $base-background-color;
+  margin-bottom: 5%;
+  font-size: 1.2rem;
+}
+
+.actions{
+  margin-top: 10%;
+}
+.language-fields-label{
+  display: inline;
+  font-size: 1.1rem;
+  color: #1E2542;
+}
+
+#add_language{
+  background-color: #AADBE8;
+  border-radius: $button-border-radius;
+  border: 5px solid $base-background-color;
+  font-size: 1rem;
+  padding-left: 25%;
+  padding-right: 25%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  margin-left: 9%;
+
+}
+.add-language-spacing{
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+
+#remove_language{
+  background-color: #AADBE8;
+  border-radius: $button-border-radius;
+  border: 5px solid $base-background-color;
+  font-size: 1rem;
+  padding-left: 22.5%;
+  padding-right: 22.5%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  margin-left: 9%;
+  font-style: $base-font-family;
+  color: $base-background-color;
+}
+
+#add_photo{
+  background-color: #AADBE8;
+  border-radius: $button-border-radius;
+  border: 5px solid $base-background-color;
+  margin-bottom: 10%;
+  font-size: 1rem;
+  padding-left: 21%;
+  padding-right: 21%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  margin-left: 9%;
+
+}
+
+#remove_photo{
+  background-color: #AADBE8;
+  border-radius: $button-border-radius;
+  border: 5px solid $base-background-color;
+  margin-bottom: 10%;
+  font-size: 1rem;
+  padding-left: 25%;
+  padding-right: 25%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  color: $base-background-color;
+  margin-left: 9%;
+
+}
+
+.image-fields input{
+  padding-left: 5%;
 }
