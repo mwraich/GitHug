@@ -49,12 +49,17 @@
 
 
   <%= form_for @message do |f| %>
-
-  <%= f.label :message, "Message" %>
-  <%= f.text_area :message %>
-
-  <%= f.hidden_field :recipient_id, value: @profile.id %>
-
-  <%= f.submit %>
+    <%= f.label :message, "Message" %>
+    <%= f.text_area :message %>
+    <%= f.hidden_field :recipient_id, value: @profile.id %>
+    <%= f.submit "SEND" %>
 <% end %>
-s
+
+<% @profile.recipient_messages.each do |message| %>
+  <div class="message">
+    <p>To: <%= message.recipient.first_name %> </p>
+    <p>Sent By: <%= message.sender.first_name %></p>
+    <%= message.message %>
+    <%= link_to "Reply", new_message_path%>
+  </div>
+<% end %>
