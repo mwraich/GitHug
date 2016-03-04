@@ -19,7 +19,7 @@ class Profile < ActiveRecord::Base
   has_many :images
 
 
-  accepts_nested_attributes_for :images
+  accepts_nested_attributes_for :images, allow_destroy: true
   accepts_nested_attributes_for :languages, :preferences
 
 
@@ -28,11 +28,16 @@ class Profile < ActiveRecord::Base
   validates_with ValidatesGender
 
 
-  def self.search
-    where("language like ?", "%{search}")
-    where("age like ?", "%{search}")
-    where("gender like ?", "%{search}")
-    where("operating_system like ?", "%{search}")
+  def self.search(search_params)
+    m = search_params['male'].to_i.positive?
+    f = search_params['female'].to_i.positive?
+    o = search_params['other'].to_i.positive?
+    min_age,max_age = search_params['age'].split('-')
+
+    includes(:languages).where(
+       age: min_age..max_age, male: m, female: f, other: o
+       ).where('languages.language = ? OR operating_system like ?',search_params['language'],search_params['operating_system']
+    ).references(:languages)
   end
 
   # def self.validate_gender
