@@ -25,6 +25,16 @@ class MessagesController < ApplicationController
     @messge = Message.find(params[:id])
   end
 
+  def inbox
+    @profile = Profile.find(params[:id])
+    @messge = Message.find(params[:id])
+  end
+
+  def sent
+    @profile = Profile.find(params[:id])
+    @messge = Message.find(params[:id])
+  end
+
   def edit
   end
 

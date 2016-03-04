@@ -8,9 +8,10 @@ Rails.application.routes.draw do
 
   resources :messages
 
+  get 'messages/:id/inbox' => 'messages#inbox'
+  get 'messages/:id/sent' => 'messages#sent'
 
   resources :sessions, only: [:new, :create, :destroy]
-
 
 
   get "oauth/callback" => "oauths#callback" # for use with Github, Facebook
