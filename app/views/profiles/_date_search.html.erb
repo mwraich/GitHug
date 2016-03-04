@@ -1,38 +1,37 @@
 <%= form_tag(profiles_path, method: :get, :id =>'search-form') do %>
-
   <%= label(:language, 'What are your preferred languages?') %><br>
-    <%= check_box_tag(:language, 'Ruby') %>
-    <%= label_tag(:language, 'Ruby') %>
-    <%= check_box_tag(:language, 'JavaScript') %>
-    <%= label_tag(:language, 'JavaScript') %>
-    <%= check_box_tag(:language, 'Python') %>
-    <%= label_tag(:language, 'Python') %>
-    <%= check_box_tag(:language, 'Java') %>
-    <%= label_tag(:language,'Java') %>
-    <%= check_box_tag(:language, 'PHP') %>
-    <%= label_tag(:language,'PHP') %>
-    <%= check_box_tag(:language, 'C++') %>
-    <%= label_tag(:language,'C++') %><br>
+    <%= check_box_tag('search[language]', 'Ruby') %>
+    <%= label_tag('search[language]', 'Ruby') %>
+    <%= check_box_tag('search[language]', 'JavaScript') %>
+    <%= label_tag('search[language]','JavaScript') %>
+    <%= check_box_tag('search[language]', 'Python') %>
+    <%= label_tag('search[language]', 'Python') %>
+    <%= check_box_tag('search[language]', 'Java') %>
+    <%= label_tag('search[language]','Java') %>
+    <%= check_box_tag('search[language]', 'PHP') %>
+    <%= label_tag('search[language]','PHP') %>
+    <%= check_box_tag('search[language]', 'C++') %>
+    <%= label_tag('search[language]','C++') %><br>
 
-  <%= label_tag"Gender:" %>
-    <%= check_box_tag(:male) %>
-    <%= label_tag(:male, "Male" )%>
-    <%= check_box_tag(:female) %>
-    <%= label_tag(:female, "Female")%>
-    <%= check_box_tag(:other) %>
-    <%= label_tag(:other, "Other")%>
+  <%= label(:age,'What age-range are you looking for?')%><br>
+    <%= check_box_tag('search[age]', '20-25') %>
+    <%= label_tag('search[age]','20-25') %>
+    <%= check_box_tag('search[age]', '25-30') %>
+    <%= label_tag('search[age]', '25-30') %>
+    <%= check_box_tag('search[age]', '30-35') %>
+    <%= label_tag('search[age]', '30-35') %>
+    <%= check_box_tag('search[age]', '40-45') %>
+    <%= label_tag('search[age]','40-45') %><br>
+    <%= check_box_tag('search[age]', '50+') %>
+    <%= label_tag('search[age]','50+') %>
 
-  <%= "What age-range are you looking for?"%><br>
-    <%= check_box_tag(:age, '20-25') %>
-    <%= label_tag(:age,'20-25') %>
-    <%= check_box_tag(:age, '25-30') %>
-    <%= label_tag(:age, '25-30') %>
-    <%= check_box_tag(:age, '30-35') %>
-    <%= label_tag(:age, '30-35') %>
-    <%= check_box_tag(:age, '40-45') %>
-    <%= label_tag(:age,'40-45') %><br>
-    <%= check_box_tag(:age, '50+') %>
-    <%= label_tag(:age,'50+') %>
+  <%= label_tag(:gender,"Gender:") %>
+    <%= check_box_tag('search[male]') %>
+    <%= label_tag('search[male]', 'Male' )%>
+    <%= check_box_tag('search[female]')%>
+    <%= label_tag('search[female]', 'Female')%>
+    <%= check_box_tag('search[other]') %>
+    <%= label_tag('search[other]', 'Other')%>
 
   <%= submit_tag "Search" %>
 <% end %>

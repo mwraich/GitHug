@@ -14,13 +14,13 @@
     <%= check_box_tag('search[language]', 'C++') %>
     <%= label_tag('search[language]','C++') %><br>
 
-  <%="What is your Operating System of choice?" %><br>
+  <%=label_tag(:operating_system,"What is your Operating System of choice?") %><br>
     <%= check_box_tag('search[operating_system]', 'Unix') %>
     <%= label_tag('search[operating_system]','Unix') %>
     <%= check_box_tag('search[operating_system]', 'Linux') %>
     <%= label_tag('search[operating_system]','Linux') %><br>
 
-  <%= 'What age-range are you looking for?'%><br>
+  <%= label_tag(:age, 'What age-range are you looking for?')%><br>
     <%= check_box_tag('search[age]', '20-25') %>
     <%= label_tag('search[age]','20-25') %>
     <%= check_box_tag('search[age]', '25-30') %>
@@ -32,7 +32,7 @@
     <%= check_box_tag('search[age]', '50+') %>
     <%= label_tag('search[age]','50+') %>
 
-  <%= label_tag"Gender:" %>
+  <%= label_tag(:gender, "Gender:") %>
     <%= check_box_tag('search[male]') %>
     <%= label_tag('search[male]', 'Male' )%>
     <%= check_box_tag('search[female]')%>
