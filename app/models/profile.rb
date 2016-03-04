@@ -19,13 +19,34 @@ class Profile < ActiveRecord::Base
   has_many :images
 
 
-  accepts_nested_attributes_for :images
+  accepts_nested_attributes_for :images, allow_destroy: true
   accepts_nested_attributes_for :languages, :preferences
 
 
 
   validates_presence_of :first_name, :last_name, :location, :birthday, :about_me
   validates_with ValidatesGender
+
+
+  def self.search(search_params)
+    m = search_params['male'].to_i.positive?
+    f = search_params['female'].to_i.positive?
+    o = search_params['other'].to_i.positive?
+    min_age,max_age = search_params['age'].split('-')
+
+    includes(:languages).where(
+       age: min_age..max_age, male: m, female: f, other: o
+       ).where('languages.language = ? OR operating_system like ?',search_params['language'],search_params['operating_system']
+    ).references(:languages)
+  end
+
+  # def self.validate_gender
+  #   unless profile.male.present? || profile.female.present? || profile.other.present?
+  #     profile.errors[:gender] << "can't be blank"
+  #   end
+  # end
+
   validates :user_id, uniqueness: {message: "Error. Looks like you already have a profile. You can update your profile by clicking on update."}
+
 
 end

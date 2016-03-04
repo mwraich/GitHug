@@ -1,8 +1,14 @@
 class ProfilesController < ApplicationController
 
   def index
-    # @tags = ActsAsTaggableOn::Tag.all
     @profiles = Profile.all
+    if params[:search]
+      @profiles = Profile.search(params[:search]).order('profiles.created_at DESC')
+    else
+      @profiles = Profile.order("profiles.created_at DESC")
+    end
+
+    # @tags = ActsAsTaggableOn::Tag.all
   end
 
   def show
