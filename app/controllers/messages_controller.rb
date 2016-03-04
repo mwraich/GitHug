@@ -8,7 +8,10 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = @Profile.message.build(message_params)
+    @profile = Profile.find(params[:profile_id])
+    @message = @profile.messages.build(message_params)
+
+    @message.recipient = current_user
 
     if @message.save
       redirect_to profile_path(@profile), notice: "Message sent!"
@@ -18,6 +21,8 @@ class MessagesController < ApplicationController
   end
 
   def show
+    @profile = Profile.find(params[:id])
+    @messge = Message.find(params[:id])
   end
 
   def edit

@@ -46,3 +46,14 @@
 <% @profile.images.each do |img| %>
   <%= image_tag(img.image)%>
 <% end %>
+
+
+  <%= form_for([@profile, @message]) do |f| %>
+
+  <%= f.label :message, "Message" %>
+  <%= f.text_area :message %>
+
+
+  <%= f.submit %>
+<% end %>
+s

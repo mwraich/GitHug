@@ -13,10 +13,15 @@ class ProfilesController < ApplicationController
 
   def show
     @user = current_user
+    @profile = Profile.find(params[:id])
     # @tags = ActsAsTaggableOn::Tag.all
     # @tag = ActsAsTaggableOn::Tag.find(params[:id])
     # @profiles= Profile.tagged_with(@tag.name)
-    @profile = Profile.find(params[:id])
+
+      @message = @profile.messages.build
+      # @message.sender = @user
+      # @message.recipient = @profile
+
   end
 
   def new
