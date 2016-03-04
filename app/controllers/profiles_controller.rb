@@ -6,8 +6,6 @@ class ProfilesController < ApplicationController
     else
       @profiles = Profile.order("profiles.created_at DESC")
     end
-
-  end
   end
 
   def show

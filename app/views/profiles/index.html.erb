@@ -10,20 +10,18 @@
 <label>What are you looking for?</label><br>
 <input type="radio" name="choice" value="paired"> Paired <br>
 <input type="radio" name="choice" value="date"> Date <br>
-
+<% end %>
 
   <%= render 'pair_search' %>
   <%= render 'date_search' %>
 
-<% @profiles.each do |profile| %>
+<!-- <% @profiles.each do |profile| %>
 <%= profile.first_name%><%=profile.last_name %>
-<% end %>
+<% end %> -->
 
-
-
-<div id="users">
+<!-- <div id="users">
 <% @profiles.each do |p| %>
 <%= p.first_name %>
 <%= p.location %>
 <% end %>
-</div>
+</div> -->

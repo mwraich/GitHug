@@ -74,10 +74,7 @@ ActiveRecord::Schema.define(version: 20160304000015) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "image"
-<<<<<<< HEAD
-=======
     t.integer  "age"
->>>>>>> bc184d53f4b4aa76600ee5f5b0733181d927b3b5
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
