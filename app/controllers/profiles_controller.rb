@@ -2,17 +2,16 @@ class ProfilesController < ApplicationController
 
   def index
     if params[:search]
-    @profiles = Profile.near(params[:search])
-  else
-    @profiles = Profile.all
+      @profiles = Profile.search.near(params[:search]).order('profiles.created_at DESC')
+    else
+      @profiles = Profile.order("profiles.created_at DESC")
+    end
+
   end
   end
 
   def show
     @user = current_user
-    # @tags = ActsAsTaggableOn::Tag.all
-    # @tag = ActsAsTaggableOn::Tag.find(params[:id])
-    # @profiles= Profile.tagged_with(@tag.name)
     @profile = Profile.find(params[:id])
   end
 
@@ -67,10 +66,6 @@ class ProfilesController < ApplicationController
   end
 
   private
-
-  # def profile_params
-  #     params.require(:profile).permit( :name, :tag_list)
-  # end
 
   def profile_params
     params.require(:profile)

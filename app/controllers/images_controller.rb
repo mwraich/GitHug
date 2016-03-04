@@ -23,8 +23,8 @@ class ImagesController < ApplicationController
     redirect_to user_path
   end
 
-  private
-  def image_params
-    params.require(:image).permit([:id, :image, :image_cache, :_destroy, :remove_image])
-  end
+  # private
+  # def image_params
+  #   params.require(:image).permit([:id, :image, :image_cache, :remove_image])
+  # end
 end

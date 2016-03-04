@@ -1,4 +1,3 @@
-<h1>Profiles</h1>
 <h1> User Search </h1>
 
 <%= form_tag profiles_path, method: :get do %>
@@ -12,40 +11,12 @@
 <input type="radio" name="choice" value="paired"> Paired <br>
 <input type="radio" name="choice" value="date"> Date <br>
 
-<%= label(:language, 'What are your preferred languages?') %><br>
-<%= check_box_tag(:language, 'Ruby') %>
-<%= label_tag(:language, 'Ruby') %>
-<%= check_box_tag(:language, 'JavaScript') %>
-<%= label_tag(:language, 'JavaScript') %>
-<%= check_box_tag(:language, 'Python') %>
-<%= label_tag(:language, 'Python') %>
-<%= check_box_tag(:language, 'Java') %>
-<%= label_tag(:language,'Java') %>
-<%= check_box_tag(:language, 'PHP') %>
-<%= label_tag(:language,'PHP') %>
-<%= check_box_tag(:language, 'C++') %>
-<%= label_tag(:language,'C++') %><br>
 
-<%="What is your Operating System of choice?" %><br>
-<%= check_box_tag(:operating_system, 'Unix') %>
-<%= label_tag(:operating_system,'Unix') %>
-<%= check_box_tag(:operating_system, 'Linux') %>
-<%= label_tag(:operating_system,'Linux') %><br>
+  <%= render 'pair_search' %>
+  <%= render 'date_search' %>
 
-<%= "What age-range are you looking for?"%><br>
-<%= check_box_tag(:age, '20-25') %>
-<%= label_tag(:age,'20-25') %>
-<%= check_box_tag(:age, '25-30') %>
-<%= label_tag(:age, '25-30') %>
-<%= check_box_tag(:age, '30-35') %>
-<%= label_tag(:age, '30-35') %>
-<%= check_box_tag(:age, '40-45') %>
-<%= label_tag(:age,'40-45') %><br>
-<%= check_box_tag(:age, '50+') %>
-<%= label_tag(:age,'50+') %>
-
-<%= text_field_tag :search, params[:search] %>
-<%= submit_tag "Search" %>
+<% @profiles.each do |profile| %>
+<%= profile.first_name%><%=profile.last_name %>
 <% end %>
 
 
