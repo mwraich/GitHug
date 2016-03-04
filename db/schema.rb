@@ -11,7 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20160304024110) do
+
 
   create_table "authentications", force: :cascade do |t|
     t.integer  "user_id",    null: false
@@ -82,6 +84,9 @@ ActiveRecord::Schema.define(version: 20160304024110) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "image"
+
+    t.integer  "age"
+
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
