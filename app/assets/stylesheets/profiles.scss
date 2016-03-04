@@ -158,3 +158,28 @@ a.add_fields{
 .image-fields input{
   padding-left: 5%;
 }
+
+.profile-image{
+  background-color:  #AADBE8;
+  border-radius: 200px;
+  width: 30%;
+  display: inline;
+  float: left;
+  margin-left: 5%;
+  margin-right: 5%;
+
+}
+
+#index-view-profile-info{
+  font-size: 1.5rem;
+  display: inline;
+  clear:left;
+
+}
+#index-view-profile-info p{
+padding-top: 5%;
+padding-left: 5%;
+}
+.line-break{
+  margin-top: 10%;
+}
