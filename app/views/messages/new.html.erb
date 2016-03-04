@@ -1,3 +1,12 @@
 <h1>New Message</h1>
 
-<%= render "inbox" %>
+<%= form_for @message do |f| %>
+  <%= f.label :recipient_id, "To" %>
+  <%= f.text_area :recipient_id %>
+
+  <%= f.label :message, "Message" %>
+  <%= f.text_area :message %>
+
+
+  <%= f.submit "SEND" %>
+<% end %>
