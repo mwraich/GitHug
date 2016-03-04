@@ -71,9 +71,9 @@ ActiveRecord::Schema.define(version: 20160303021950) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.integer  "user_id"
-    t.string   "image"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "image"
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"

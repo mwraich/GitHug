@@ -1,8 +1,11 @@
 class ProfilesController < ApplicationController
 
   def index
-    # @tags = ActsAsTaggableOn::Tag.all
+    if params[:search]
+    @profiles = Profile.near(params[:search])
+  else
     @profiles = Profile.all
+  end
   end
 
   def show

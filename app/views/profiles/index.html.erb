@@ -1,6 +1,12 @@
 <h1>Profiles</h1>
 <h1> User Search </h1>
 
+<%= form_tag profiles_path, method: :get do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Go!" %>
+<% end %>
+
+
 <%= form_tag users_path, method: :get, id: 'search-form' do %>
 <label>What are you looking for?</label><br>
 <input type="radio" name="choice" value="paired"> Paired <br>
@@ -45,5 +51,8 @@
 
 
 <div id="users">
-<!-- render all users here -->
+<% @profiles.each do |p| %>
+<%= p.first_name %>
+<%= p.location %>
+<% end %>
 </div>
