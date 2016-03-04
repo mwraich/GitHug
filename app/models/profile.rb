@@ -17,7 +17,8 @@ class Profile < ActiveRecord::Base
   has_many :languages
   has_many :preferences
   has_many :images
-  has_many :messages
+  has_many :sent_messages, class_name: :Message, foreign_key: :sender_id
+  has_many :recipient_messages, class_name: :Message, foreign_key: :recipient_id
 
   accepts_nested_attributes_for :images, :languages, :preferences, allow_destroy: true
 

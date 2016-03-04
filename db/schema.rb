@@ -11,8 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160304190127) do
-
+ActiveRecord::Schema.define(version: 20160304194725) do
 
   create_table "authentications", force: :cascade do |t|
     t.integer  "user_id",    null: false
@@ -44,11 +43,11 @@ ActiveRecord::Schema.define(version: 20160304190127) do
   add_index "languages", ["profile_id"], name: "index_languages_on_profile_id"
 
   create_table "messages", force: :cascade do |t|
-    t.integer  "recipient"
-    t.integer  "profile_id"
+    t.integer  "recipient_id"
+    t.integer  "sender_id"
     t.text     "message"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "preferences", force: :cascade do |t|
@@ -83,9 +82,7 @@ ActiveRecord::Schema.define(version: 20160304190127) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "image"
-
     t.integer  "age"
-
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"

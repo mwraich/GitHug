@@ -17,10 +17,7 @@ class ProfilesController < ApplicationController
     # @tags = ActsAsTaggableOn::Tag.all
     # @tag = ActsAsTaggableOn::Tag.find(params[:id])
     # @profiles= Profile.tagged_with(@tag.name)
-
-      @message = @profile.messages.build
-      # @message.sender = @user
-      # @message.recipient = @profile
+    @message = Message.new
 
   end
 

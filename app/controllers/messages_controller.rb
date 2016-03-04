@@ -8,13 +8,13 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @profile = Profile.find(params[:profile_id])
-    @message = @profile.messages.build(message_params)
+    # @profile = Profile.find(params[:id])
+    @message = Message.new(message_params)
 
-    @message.recipient = current_user
+    @message.sender = current_user.profile
 
     if @message.save
-      redirect_to profile_path(@profile), notice: "Message sent!"
+      redirect_to profile_path(@message.recipient), notice: "Message sent!"
     else
       render :new
     end
@@ -37,11 +37,6 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:recipient, :sender, :message)
+    params.require(:message).permit(:recipient_id, :message)
   end
-
-  def load_recipient
-    @recipient = Profile.find(params[:id])
-  end
-
 end

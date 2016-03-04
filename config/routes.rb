@@ -4,9 +4,10 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :destroy]
 
-  resources :profiles do
-    resources :messages
-  end
+  resources :profiles
+
+  resources :messages
+
 
   resources :sessions, only: [:new, :create, :destroy]
 
