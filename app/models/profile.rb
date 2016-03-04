@@ -17,6 +17,7 @@ class Profile < ActiveRecord::Base
   has_many :languages
   has_many :preferences
   has_many :images
+  has_many :messages
 
 
 
