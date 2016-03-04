@@ -30,12 +30,15 @@ class Profile < ActiveRecord::Base
     m = search_params['male'].to_i.positive?
     f = search_params['female'].to_i.positive?
     o = search_params['other'].to_i.positive?
-    min_age,max_age = search_params['age'].split('-')
+    min_bday, max_bday = search_params['age'].split('-').map { |a| a.to_i.years.ago }
 
-    includes(:languages).where(
-       age: min_age..max_age, male: m, female: f, other: o
-       ).where('languages.language = ? OR operating_system like ?',search_params['language'],search_params['operating_system']
+    near(search_params['location']).includes(:languages).where(
+       male: m, female: f, other: o
+    ).where('birthday BETWEEN ? AND ?', max_bday, min_bday
+    ).where('languages.language = ? OR operating_system like ?', search_params['language'],search_params['operating_system']
     ).references(:languages)
+
+
   end
 
   def self.validate_gender

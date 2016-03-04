@@ -7,9 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 #On command line type gem install faker, run bundle, and then rake db:seed
-cities = ["Toronto", "Montreal", "Vancouver", "Calgary"]
+locations = ["Toronto,Ontario", "Montreal,Quebec", "Vancouver,BC", "Calgary,Alberta"]
 languages = ["Ruby", "Javascript", "Ember.JS", "PHP", "C"]
-100.times do |n|
+10.times do |n|
   u = User.create!({
     username: Faker::Internet.domain_word,
     email: Faker::Internet.email,
@@ -19,11 +19,11 @@ languages = ["Ruby", "Javascript", "Ember.JS", "PHP", "C"]
   x = Profile.create!({
     first_name: Faker::Name.first_name,
     last_name:  Faker::Name.last_name,
-    location:   cities.sample + ", " + "Canada",
+    location:   locations.sample + ", " + "Canada",
     male:       true,
     female:     false,
     other:      false,
-    birthday:   Faker::Date.backward(5000),
+    birthday:   Faker::Date.backward(365*20),
     operating_system: Faker::App.version,
     about_me:   Faker::Hacker.say_something_smart,
     user: u

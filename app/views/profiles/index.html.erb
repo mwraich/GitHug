@@ -1,27 +1,26 @@
 <h1> User Search </h1>
 
-<%= form_tag profiles_path, method: :get do %>
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag "Go!" %>
-<% end %>
+<div id = "first_option">
+  <%= form_tag users_path, method: :get, id: 'search-form' do %>
+  <label>Who are you looking for?</label><br>
+  <input type="radio" id=pairchoice name="choice" value="pair"> Paired <br>
+  <input type="radio" id=datechoice name="choice" value="date"> Date <br>
+  <% end %>
+</div>
 
+<div class = "choices">
+  <div id = "pair-search">
+    <%= render 'pair_search' %>
+  </div>
 
-<%= form_tag users_path, method: :get, id: 'search-form' do %>
-<label>What are you looking for?</label><br>
-<input type="radio" name="choice" value="paired"> Paired <br>
-<input type="radio" name="choice" value="date"> Date <br>
-<% end %>
+  <div id = "date-search">
+    <%= render 'date_search' %>
+  </div>
+</div>
 
-  <%= render 'pair_search' %>
-  <%= render 'date_search' %>
-
+<div id = "profiles">
 <!-- <% @profiles.each do |profile| %>
-<%= profile.first_name%><%=profile.last_name %>
+  <%= profile.first_name%><%=profile.last_name %>
+  <%= profile.location %>
 <% end %> -->
-
-<!-- <div id="users">
-<% @profiles.each do |p| %>
-<%= p.first_name %>
-<%= p.location %>
-<% end %>
-</div> -->
+</div>
