@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160304194725) do
+ActiveRecord::Schema.define(version: 20160304223229) do
 
   create_table "authentications", force: :cascade do |t|
     t.integer  "user_id",    null: false
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 20160304194725) do
     t.text     "message"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.string   "subject_line"
+    t.boolean  "read_status"
   end
 
   create_table "preferences", force: :cascade do |t|
