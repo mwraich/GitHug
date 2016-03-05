@@ -15,7 +15,7 @@ languages = ["Ruby", "Javascript", "Ember.JS", "PHP", "C"]
     email: Faker::Internet.email,
     github_image: Faker::Avatar.image
   })
-    sleep(1)
+    # sleep(1)
   x = Profile.create!({
     first_name: Faker::Name.first_name,
     last_name:  Faker::Name.last_name,
@@ -40,7 +40,7 @@ end
 
 100.times do |n|
   Preference.create ({
-    location:   cities.sample + ", " + "Canada",
+    location:   locations.sample + ", " + "Canada",
     male:       true,
     female:     false,
     other:      false,
