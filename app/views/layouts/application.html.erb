@@ -23,13 +23,25 @@
       <%= image_tag "GitHugLogo3.svg", class: "logo" %>
     </div>
 
-    <div class="menu">
-      <%= image_tag "menu.svg", class: "menu" %>
+    <nav id="nav-main">
+      <ul>
+        <li><%= link_to 'Find A Match', profiles_path %></li>
+        <li><%= link_to 'View Your Profile', profile_path(current_user) %></li>
+        <li><%= link_to 'Update Profile', edit_profile_path(current_user) %></li>
+        <li><%= link_to 'Logout', session_path(current_user), method: 'delete' %></li>
+      </ul>
+    </nav>
+
+    <div id="nav-trigger">
+      <span class="menu">
+        <%= image_tag "menu.svg", class: "menu" %>
+      </span>
     </div>
+
+    <nav id="nav-mobile"></nav>
+
   </div>
 
-    <li><%= link_to 'Logout', session_path(current_user), method: 'delete' %></li>
-    <li><%= link_to 'Update Profile', edit_profile_path(current_user) %></li>
 
   <% end %>
   <div class="yeild">

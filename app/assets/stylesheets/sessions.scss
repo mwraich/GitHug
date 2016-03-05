@@ -43,7 +43,26 @@ html{
   opacity: 0;
   @include animation-duration(1s);
   @include animation-timing-function(ease);
-  @include animation-delay(1.2s);
+  @include animation-delay(2.5s);
+  @include animation-fill-mode(forwards);
+  animation-name: fadeInButtons;
+
+
+  text-align: center;
+  font-size: 1.5rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  border: $base-border;
+  @include span-columns(3);
+  margin-left: 13.5%;
+  color: black;
+
+}
+.signup{
+  opacity: 0;
+  @include animation-duration(1s);
+  @include animation-timing-function(ease);
+  @include animation-delay(2.5s);
   @include animation-fill-mode(forwards);
   animation-name: fadeInButtons;
 
@@ -74,24 +93,4 @@ html{
   margin-top: 17.5%;
   margin-bottom: 2.5%;
   color: $secondary-font-color;
-}
-
-.signup{
-  opacity: 0;
-  @include animation-duration(1s);
-  @include animation-timing-function(ease);
-  @include animation-delay(2.5s);
-  @include animation-fill-mode(forwards);
-  animation-name: fadeInButtons;
-
-
-  text-align: center;
-  font-size: 1.5rem;
-  padding-top: 0.2rem;
-  padding-bottom: 0.2rem;
-  border: $base-border;
-  @include span-columns(3);
-  margin-left: 13.5%;
-  color: $secondary-font-color;
-
 }

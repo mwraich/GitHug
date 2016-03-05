@@ -15,11 +15,11 @@
     <%= check_box_tag('search[language]', 'Java') %>
 
     <%= label_tag('search[language]','PHP') %>
+
     <%= check_box_tag('search[language]', 'PHP') %>
 
-
+    <%= check_box_tag('search[language]', 'C++') %>
     <%= label_tag('search[language]','C++') %>
-    <%= check_box_tag('search[language]', 'C++') %><br>
 
     <%= label(:age,'What age-range are you looking for?')%>
 
@@ -49,7 +49,9 @@
     <%= label_tag('search[other]', 'Other')%>
     <%= check_box_tag('search[other]') %>
 
-  <%= submit_tag "Search" %>
+  <%= label_tag(:location, "Where do you want the person you're searching for to live?") %>
+    <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag("Search", :id => "search") %>
 <% end %>
 
 <div id="users">
