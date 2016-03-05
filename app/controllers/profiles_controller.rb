@@ -2,7 +2,7 @@ class ProfilesController < ApplicationController
 
   def index
     if params[:search]
-      @profiles = Profile.search.near(params[:search]).order('profiles.created_at DESC')
+      @profiles = Profile.search(params[:search]).order('profiles.created_at DESC')
     else
       @profiles = Profile.order("profiles.created_at DESC")
     end
