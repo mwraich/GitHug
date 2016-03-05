@@ -49,6 +49,6 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:recipient_id, :message)
+    params.require(:message).permit(:recipient_id, :message, :subject_line)
   end
 end

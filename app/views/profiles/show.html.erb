@@ -47,15 +47,4 @@
   <%= image_tag(img.image)%>
 <% end %>
 
-
-<%= form_for @message do |f| %>
-  <%= f.label :message, "Message" %>
-  <%= f.text_area :message %>
-  <%= f.hidden_field :recipient_id, value: @profile.id %>
-  <%= f.submit "SEND" %>
-<% end %>
-
-
-
-<h1>sent</h1>
-<%= render "messages/sent" %>
+<%= render "messages/new_message" %>

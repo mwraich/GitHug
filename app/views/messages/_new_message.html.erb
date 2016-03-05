@@ -1,0 +1,9 @@
+<h3>Send <%= @profile.first_name %> a message:</h3>
+<%= form_for @message do |f| %>
+  <%= f.label :message, "New Message" %>
+  <%= f.label :subject_line, "Subject" %>
+  <%= f.text_field :subject_line %>
+  <%= f.text_area :message %>
+  <%= f.hidden_field :recipient_id, value: @profile.id %>
+  <%= f.submit "SEND" %>
+<% end %>
