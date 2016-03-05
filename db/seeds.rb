@@ -38,12 +38,12 @@ end
     user: u
 end
 
-100.times do |n|
-  Language.create ({
-    language: languages.sample,
-    skill_level: Faker::Number.between(1, 5)
-  })
-end
+# 100.times do |n|
+#   Language.create ({
+#     language: languages.sample,
+#     skill_level: Faker::Number.between(1, 5)
+#   })
+# end
 
 100.times do |n|
   Preference.create ({
