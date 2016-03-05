@@ -24,14 +24,14 @@ $(document).on('page:load ready', function() {
         $("#date-search").show();
           $("#pair-search").hide();
     }
-  $('#search-form').on('submit', function(e) {
+  $('#search').on('submit', function(e) {
     e.preventDefault();
   $.ajax({
     url: '/profiles?search=' + $('#search').val(),
     type:'GET',
     dataType: 'script',
     success:function(data){
-    $('#users').html(data);
+    $('#profiles').html(data);
   }
   });
   })
