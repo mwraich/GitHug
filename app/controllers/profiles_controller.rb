@@ -1,14 +1,11 @@
 class ProfilesController < ApplicationController
 
   def index
-    @profiles = Profile.all
     if params[:search]
       @profiles = Profile.search(params[:search]).order('profiles.created_at DESC')
     else
       @profiles = Profile.order("profiles.created_at DESC")
     end
-
-    # @tags = ActsAsTaggableOn::Tag.all
   end
 
   def show
@@ -72,10 +69,6 @@ class ProfilesController < ApplicationController
   end
 
   private
-
-  # def profile_params
-  #     params.require(:profile).permit( :name, :tag_list)
-  # end
 
   def profile_params
     params.require(:profile)
