@@ -1,5 +1,6 @@
 
 <%= form_tag(profiles_path, method: :get, :id =>'search-form') do %>
+
   <%= label(:language, 'What are your preferred languages?') %><br>
     <%= check_box_tag('search[language]', 'Ruby') %>
     <%= label_tag('search[language]', 'Ruby') %>

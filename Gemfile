@@ -32,6 +32,8 @@ gem 'figaro'
 gem 'geocoder'
 #allows taging
 gem 'acts-as-taggable-on', '~> 3.4'
+#Used to dictate different roles for privacy and viewership
+gem 'cancancan', '~> 1.10'
 
 
 gem 'carrierwave'
