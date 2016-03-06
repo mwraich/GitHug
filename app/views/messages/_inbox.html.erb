@@ -3,11 +3,13 @@
 <% if @profile.recipient_messages.any?%>
   <% @profile.recipient_messages.each do |message| %>
   <div class="message">
-    <p>To: <%= message.recipient.first_name %></p>
-    <p>Subject: <%= message.subject_line %></p>
-    <p>Sent By: <%= message.sender.first_name %></p>
+    <p>To:<span class="recipient_id"><%= message.recipient_id %></span></p>
+
+    <p>Subject:<span class="subject_line"><%= message.subject_line %></span></p>
+    <p>Sent By: <span class="sender_id"><%= message.sender.first_name %></p>
     <%= message.message %>
-    <%= link_to "Reply", new_message_path%>
+    <%= link_to "Reply", new_message_path, class: 'reply' %>
+    <%= render "reply" %>
   </div>
   <% end %>
 <% end %>

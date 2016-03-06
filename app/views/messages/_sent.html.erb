@@ -1,11 +1,13 @@
 <h3>Sent Messages</h3>
+<div class="sent_message">
 <% if @profile.sent_messages.any? %>
   <% @profile.sent_messages.each do |message| %>
     <div class="message">
-      <p>To: <%= message.recipient.first_name%></p>
+      <p>To: <%= message.recipient%></p>
       <p>Subject: <%= message.subject_line %></p>
       <p>Sent By: <%= message.sender.first_name %></p>
       <%= message.message %>
     </div>
   <% end %>
 <% end %>
+</div>

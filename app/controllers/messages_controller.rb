@@ -2,7 +2,8 @@ class MessagesController < ApplicationController
 
   def index
     @profile = current_user.profile
-    @messge = Message.all
+    @messages = Message.all.order(created_at: :desc)
+    @message = Message.new
   end
 
   def new
@@ -16,10 +17,11 @@ class MessagesController < ApplicationController
 
     if @message.save
       UserMailer.user_message_notification(Profile.find(@message.recipient)).deliver_later
-      redirect_to profile_path(@message.recipient), notice: "Message sent!"
+      redirect_to messages_path, notice: "Message sent!"
     else
       render :new
     end
+
   end
 
   def show
