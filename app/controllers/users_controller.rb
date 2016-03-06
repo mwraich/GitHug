@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  load_and_authorize_resource
   def index
     @users = if params[:search]
       User.where('LOWER(name) LIKE LOWER(?)', "%#{params[:search]}%")

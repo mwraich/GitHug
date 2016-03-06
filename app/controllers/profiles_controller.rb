@@ -1,5 +1,4 @@
 class ProfilesController < ApplicationController
-
   def index
     if params[:search]
       @profiles = Profile.search.near(params[:search]).order('profiles.created_at DESC')
@@ -11,6 +10,8 @@ class ProfilesController < ApplicationController
   def show
     @user = current_user
     @profile = Profile.find(params[:id])
+    @profiles = Profile.all
+    authorize! :read, @profiles
   end
 
   def new
