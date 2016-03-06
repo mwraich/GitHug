@@ -44,9 +44,5 @@
   <%= label_tag(:location, "Where do you want the person you're searching for to live?") %>
     <%= text_field_tag ('search[location]') %>
 
-  <%= submit_tag "Search" %>
+  <%= submit_tag("Search", :id => "search") %>
 <% end %>
-
-<div id="users">
-<!-- render all users here -->
-</div>
