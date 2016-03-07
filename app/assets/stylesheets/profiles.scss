@@ -213,6 +213,7 @@ a.add_fields{
 #profile-aboutme{
   margin-top: 5%;
   text-align: center;
+  font-size: 1.2rem;
 }
 
 #profile-details{
@@ -326,7 +327,10 @@ nav#nav-mobile li{
   }
 
   #profile-images{
-    width: 60%;
+    display: inline;
+    width: 50%;
+    margin-left: 2%;
+    margin-right: 2%;
 
   }
 
@@ -346,6 +350,7 @@ nav#nav-mobile li{
     width: 50%;
     height: 2rem;
     border-radius: $base-border-radius;
+    border-color:#859CB0;
     font-size: 1rem;
     border-width: 3px;
     display: inline;
@@ -361,6 +366,7 @@ nav#nav-mobile li{
   textarea#profile_about_me{
     width: 50%;
     border-radius: $base-border-radius;
+    border-color:#859CB0;
     font-size: 1rem;
     border-width: 3px;
     display: inline;
@@ -474,6 +480,100 @@ nav#nav-mobile li{
   .actions{
     margin-top: 0%;
   }
+
+  #first_option{
+    background-color: white;
+    border: $base-border;
+    border-color: #859CB0;
+    width: 92%;
+    margin-left: 4%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-bottom: 1%;
+    & label{
+      font-size: 1.1rem;
+    }
+  }
+
+  .button-label{
+    font-size: 1rem;
+  }
+
+  #pairchoice{
+    margin-left: 10%;
+  }
+
+  .preference-form{
+    margin-bottom: 1%;
+
+      & label{
+        font-size: 1rem;
+      }
+  }
+
+  .index-search-form{
+    background-color: white;
+    border: $base-border;
+    border-color: #859CB0;
+    width: 92%;
+    margin-left: 4%;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    margin-bottom: 2%;
+  }
+
+  .location-search-label{
+    font-size: 1rem;
+  }
+
+  input#search_location{
+    width: 50%;
+    height: 2rem;
+    border-radius: $base-border-radius;
+    font-size: 1rem;
+    border-width: 3px;
+    display: inline;
+    margin-left: 1%;
+    border-color:#859CB0;
+  }
+
+  input#search{
+    margin-left: 5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+  }
+
+  img.profile-image{
+    width: 15%;
+  }
+
+  .index-users{
+    background-color: white;
+    width: 92%;
+    margin-left: 4%;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    margin-bottom: 2%;
+  }
+
+  .line-break{
+    margin-top: 10%;
+  }
+
+  .profile-details-title{
+    font-size: 1.2rem;
+    color: #859CB0;
+  }
+
+  .profile-tags{
+    text-align: center;
+    padding-bottom: 10%;
+    & a{
+      background-color: #AADBE8;
+      padding: 1%;
+    }
+  }
+
 
 
 }

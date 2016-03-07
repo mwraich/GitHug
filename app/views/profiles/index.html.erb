@@ -22,6 +22,7 @@
   <%= render 'pair_search' %>
   <%= render 'date_search' %>
 
+<div class ="index-users">
 <% @profiles.each do |profile| %>
 <%= image_tag (profile.user.github_image), class: 'profile-image' %>
 <div id="index-view-profile-info">
@@ -31,7 +32,10 @@
 <p>Ruby, JavaScript, CSS</p>
 
 <hr class="line-break">
+
 <% end %>
+</div>
+
 
 <div id = "profiles">
 </div>
