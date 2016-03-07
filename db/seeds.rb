@@ -9,7 +9,7 @@
 #On command line type gem install faker, run bundle, and then rake db:seed
 cities = ["Toronto", "Montreal", "Vancouver", "Calgary"]
 languages = ["Ruby", "Javascript", "Ember.JS", "PHP", "C"]
-100.times do |n|
+20.times do |n|
   u = User.create!({
     username: Faker::Internet.domain_word,
     email: Faker::Internet.email,
@@ -30,14 +30,14 @@ languages = ["Ruby", "Javascript", "Ember.JS", "PHP", "C"]
   })
 end
 
-100.times do |n|
+20.times do |n|
   Language.create ({
     language: languages.sample,
     skill_level: Faker::Number.between(1, 5)
   })
 end
 
-100.times do |n|
+20.times do |n|
   Preference.create ({
     location:   Faker::Address.city,
     male:       Faker::Boolean.boolean(0.5),

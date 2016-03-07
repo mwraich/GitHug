@@ -1,6 +1,11 @@
 
 <h1>Profile Page</h1>
 
+<% for role in User::ROLES %>
+  <%= check_box_tag "user[roles][#{role}]", role, @user.roles.include?(role), {:name => "user[roles][]"}%>
+  <%= label_tag "user_roles_#{role}", role.to_s.humanize %><br />
+<% end %>
+<%= hidden_field_tag "user[roles][]", "" %>
 
 <h1><%= @profile.first_name %> <%= @profile.last_name %></h1>
 
