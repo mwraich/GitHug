@@ -2,14 +2,14 @@
 <html>
 <head>
   <title>GitHug</title>
-  <meta name="viewport" content="initial-scale=1.0, width=device-width">
+  <meta name="viewport" content="initial-scale=1.0" width="device-width">
   <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true %>
   <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= controller.controller_name %>">
 
   <% if current_user %>
 
@@ -45,16 +45,15 @@
 
   <% end %>
   <div class="yeild">
-  <% if flash[:notice] %>
-    <p><%= flash[:notice] %></p>
-  <% end %>
+    <% if flash[:notice] %>
+      <p><%= flash[:notice] %></p>
+    <% end %>
 
-  <% if flash[:alert] %>
-    <p> <%= flash[:alert] %></p>
-  <% end %>
+    <% if flash[:alert] %>
+      <p> <%= flash[:alert] %></p>
+    <% end %>
 
-
-<%= yield %>
+    <%= yield %>
   </div>
 </body>
 </html>

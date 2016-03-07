@@ -184,6 +184,7 @@ a.add_fields{
 
 .line-break{
   margin-top: 20%;
+  color: #859CB0;
 }
 
 #pairchoice{
@@ -194,6 +195,31 @@ a.add_fields{
   margin-left: 10%;
 }
 
+.location-search-label{
+  font-size: 1rem;
+}
+
+.preference-form label{
+  font-size: 1rem;
+}
+
+input#search_location{
+  width: 40%;
+  height: 2rem;
+  border-radius: $base-border-radius;
+  font-size: 1rem;
+  border-width: 3px;
+  display: inline;
+  margin-left: 1%;
+  border-color:#859CB0;
+}
+
+input#search{
+  margin-left: 5%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
 .button-label{
   font-size: 1.2rem;
   color: $base-background-color;
@@ -202,6 +228,30 @@ a.add_fields{
 
 #search{
   margin-left: 35%;
+}
+.index-search-form{
+  background-color: white;
+  border: $base-border;
+  border-color: #859CB0;
+  width: 92%;
+  margin-left: 4%;
+  padding-top: 2%;
+  padding-bottom: 1%;
+  margin-bottom: 2%;
+}
+
+#first_option{
+  background-color: white;
+  border: $base-border;
+  border-color: #859CB0;
+  width: 92%;
+  margin-left: 4%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  margin-bottom: 1%;
+  & label{
+    font-size: 1.1rem;
+  }
 }
 
 //Profile Page
@@ -341,9 +391,11 @@ nav#nav-mobile li{
     width: 50%;
     margin-left: 2%;
     margin-right: 2%;
-
   }
-
+  #profile-images img{
+    height: 300px;
+    width: 30%;
+  }
   .yeild{
     width: 92%;
     background-color: #F3F5F9;
@@ -493,25 +545,13 @@ nav#nav-mobile li{
     margin-left: 35%;
     margin-bottom: 5%;
     font-size: 1.2rem;
+    border: none;
   }
 
   .actions{
     margin-top: 0%;
   }
 
-  #first_option{
-    background-color: white;
-    border: $base-border;
-    border-color: #859CB0;
-    width: 92%;
-    margin-left: 4%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    margin-bottom: 1%;
-    & label{
-      font-size: 1.1rem;
-    }
-  }
 
   .button-label{
     font-size: 1rem;
@@ -540,9 +580,7 @@ nav#nav-mobile li{
     margin-bottom: 2%;
   }
 
-  .location-search-label{
-    font-size: 1rem;
-  }
+
 
   input#search_location{
     width: 40%;
