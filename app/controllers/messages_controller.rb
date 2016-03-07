@@ -2,8 +2,15 @@ class MessagesController < ApplicationController
 
   def index
     @profile = current_user.profile
-    @messages = Message.all.order(created_at: :desc)
+    @messages_sent_messages = Message.all.order(created_at: :desc)
+    @messages_recipient_messages = Message.all.order(subject_line: :asc, user_id: :asc, created_at: :desc)
     @message = Message.new
+
+    # if @message.update_attributes(message_params)
+    #   redirect_to messages_path
+    # else
+    #   render :new
+    # end
   end
 
   def new
@@ -19,7 +26,7 @@ class MessagesController < ApplicationController
       UserMailer.user_message_notification(Profile.find(@message.recipient)).deliver_later
       redirect_to messages_path, notice: "Message sent!"
     else
-      render :new
+      redirect_to messages_url, alert: "SORRY THERE WAS AN ERROR!"
     end
 
   end
@@ -40,10 +47,18 @@ class MessagesController < ApplicationController
   # end
 
   def edit
+    @message = Message.find(paramsp[:id])
   end
 
   def update
+    @message = Message.find(paramsp[:id])
+    if @message.update_attributes(message_params)
+      redirect_to messages_path
+    else
+      render :new
+    end
   end
+
 
   def destroy
   end
