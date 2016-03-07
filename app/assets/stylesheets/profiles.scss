@@ -302,6 +302,7 @@ nav#nav-mobile li{
   .logo{
     width: 10%;
     margin-left: 1%;
+    margin-top: 2%;
 
   }
 
@@ -326,6 +327,7 @@ nav#nav-mobile li{
 
     & a:hover{
       color: #A6D6E4;
+      border-bottom: 2px solid $base-border-color;
     }
   }
   .page-title{
@@ -405,6 +407,7 @@ nav#nav-mobile li{
     width: 50%;
     height: 2rem;
     border-radius: $base-border-radius;
+    border-color: #859CB0;
     font-size: 1rem;
     border-width: 3px;
     display: inline;
