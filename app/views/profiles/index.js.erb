@@ -1,4 +1,4 @@
 
 <% if params[:search].present? %>
-$('#profiles').append("<%= j render @profiles %>");
+ $('#search-result').prepend("<%= j render @profiles %>");
 <% end %>

@@ -22,7 +22,6 @@ $(document).on('page:load ready', function() {
     data: $(this).serialize(),
     success: function(data) {
       if (data) {
-    $('#profiles').append(data);
   }
   else {
     alert("nobody matches your request");
