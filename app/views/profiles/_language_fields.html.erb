@@ -4,8 +4,8 @@
     <%= f.label :language, "Language:" %>
     <%= f.text_field :language, placeholder: "Ruby" %>
   </div>
-  <div class="language-fields">
-    <%= f.label :skill_level, "Skill Level:" %>
+  <div class="language-fields-radio">
+    <%= f.label :skill_level, "Skill Level:", class: "skill-level" %>
 
     <%= f.label(:skill_level, "Newbie", class: "language-fields-label") %>
     <%= f.radio_button(:skill_level, 1) %>

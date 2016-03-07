@@ -35,7 +35,7 @@
         <%= f.label(:other, "Other")%>
         <%= f.check_box(:other) %>
     </div><br>
-    <div class="form_date_input">
+    <div class="form_input">
       <%= f.label(:birthday, "Date of Birth:") %>
       <%= f.date_field(:birthday) %>
     </div>
@@ -48,7 +48,7 @@
         <%= f.label(:operating_system, "UNIX") %>
         <%= f.radio_button(:operating_system, "UNIX") %>
     </div><br>
-    <div class="form_text">
+    <div class="form_input">
       <%= f.label :about_me, "About Me:" %>
       <%= f.text_area :about_me %>
     </div><br>
@@ -68,7 +68,7 @@
       'data-association-insertion-traversal' => 'closest' %>
     </div><br>
 
-    <div class="form_text">
+    <div class="form_input">
       <br>
       <p id="tag">Tag your Hobbies!</p>
       <%= f.label :tag_list, 'Tags (seperated by a comma):' %>
