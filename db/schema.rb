@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160304000015) do
+ActiveRecord::Schema.define(version: 20160307204219) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "authentications", force: :cascade do |t|
     t.integer  "user_id",    null: false
@@ -21,7 +24,15 @@ ActiveRecord::Schema.define(version: 20160304000015) do
     t.datetime "updated_at"
   end
 
-  add_index "authentications", ["provider", "uid"], name: "index_authentications_on_provider_and_uid"
+  add_index "authentications", ["provider", "uid"], name: "index_authentications_on_provider_and_uid", using: :btree
+
+  create_table "blocked_users", force: :cascade do |t|
+    t.integer "blocker_id"
+    t.integer "blocked_id"
+  end
+
+  add_index "blocked_users", ["blocked_id"], name: "index_blocked_users_on_blocked_id", using: :btree
+  add_index "blocked_users", ["blocker_id"], name: "index_blocked_users_on_blocker_id", using: :btree
 
   create_table "images", force: :cascade do |t|
     t.string   "image"
@@ -30,7 +41,7 @@ ActiveRecord::Schema.define(version: 20160304000015) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "images", ["profile_id"], name: "index_images_on_profile_id"
+  add_index "images", ["profile_id"], name: "index_images_on_profile_id", using: :btree
 
   create_table "languages", force: :cascade do |t|
     t.string   "language"
@@ -40,7 +51,7 @@ ActiveRecord::Schema.define(version: 20160304000015) do
     t.integer  "profile_id"
   end
 
-  add_index "languages", ["profile_id"], name: "index_languages_on_profile_id"
+  add_index "languages", ["profile_id"], name: "index_languages_on_profile_id", using: :btree
 
   create_table "preferences", force: :cascade do |t|
     t.string   "location"
@@ -56,7 +67,7 @@ ActiveRecord::Schema.define(version: 20160304000015) do
     t.integer  "profile_id"
   end
 
-  add_index "preferences", ["profile_id"], name: "index_preferences_on_profile_id"
+  add_index "preferences", ["profile_id"], name: "index_preferences_on_profile_id", using: :btree
 
   create_table "profiles", force: :cascade do |t|
     t.string   "first_name"
@@ -77,7 +88,7 @@ ActiveRecord::Schema.define(version: 20160304000015) do
     t.integer  "age"
   end
 
-  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
@@ -89,15 +100,15 @@ ActiveRecord::Schema.define(version: 20160304000015) do
     t.datetime "created_at"
   end
 
-  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
-  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true, using: :btree
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
 
   create_table "tags", force: :cascade do |t|
     t.string  "name"
     t.integer "taggings_count", default: 0
   end
 
-  add_index "tags", ["name"], name: "index_tags_on_name", unique: true
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",        null: false
@@ -107,6 +118,6 @@ ActiveRecord::Schema.define(version: 20160304000015) do
     t.string   "github_image"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
 end
