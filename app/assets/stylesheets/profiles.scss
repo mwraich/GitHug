@@ -3,6 +3,11 @@ html{
   background-color: white;
 }
 
+.page-title{
+  font-size: 1.7rem;
+  margin-top: 25%;
+}
+
 //Nav Bar
 .message{
   width: 10%;
@@ -31,20 +36,15 @@ html{
 
 .menu-bar{
   background-color: $base-background-color;
-  padding-bottom: 1%;
+  padding-bottom: 3%;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left:0;
 }
 
 //Edit and Create Profile Pages Form Styling
-
-#edit{
-  font-size: 1.7rem;
-  margin-top: 5%;
-}
-
-#signup{
-  font-size: 1.7rem;
-  margin-top: 5%;
-}
 
 .form_checkbox_input label{
   display: inline;
@@ -186,11 +186,6 @@ a.add_fields{
   margin-top: 20%;
 }
 
-#user-search{
-  font-size: 1.7rem;
-  margin-top: 5%;
-}
-
 #pairchoice{
   margin-left: 10%;
 }
@@ -209,6 +204,39 @@ a.add_fields{
   margin-left: 35%;
 }
 
+//Profile Page
+#profile-images{
+  width: 60%;
+  margin-left: 20%;
+}
+
+#profile-aboutme{
+  margin-top: 5%;
+  text-align: center;
+}
+
+#profile-details{
+  margin-left: 10%;
+  padding-bottom: 5%;
+}
+
+#profile-languages{
+  margin-left: 10%;
+  padding-bottom: 5%;
+}
+
+.profile-tags{
+  text-align: center;
+  padding-bottom: 10%;
+  & a{
+    background-color: #AADBE8;
+    padding: 2%;
+    border: $base-border;
+    border-radius: $base-border-radius;
+    border-color: $base-background-color;
+    color:black;
+  }
+}
 //Responsive Nav Bar
 
 #nav-trigger{
