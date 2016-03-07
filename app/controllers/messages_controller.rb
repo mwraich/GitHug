@@ -2,15 +2,15 @@ class MessagesController < ApplicationController
 
   def index
     @profile = current_user.profile
-    @messages_sent_messages = Message.all.order(created_at: :desc)
-    @messages_recipient_messages = Message.all.order(subject_line: :asc, user_id: :asc, created_at: :desc)
-    @message = Message.new
+    @messages_sent_messages = Message.where(sender: current_user).order(:recipient_id, :created_at)
+    @messages_recipient_messages = Message.where(recipient: current_user).order(:sender_id, :created_at)
+    # @message = Message.new
+  end
 
-    # if @message.update_attributes(message_params)
-    #   redirect_to messages_path
-    # else
-    #   render :new
-    # end
+  def reply
+    @message = Message.find(params[:message_id])
+    @reply = Message.new(recipient:@message.sender, subject_line:"RE: #{@message.subject_line}")
+    render partial: "reply"
   end
 
   def new
@@ -47,11 +47,11 @@ class MessagesController < ApplicationController
   # end
 
   def edit
-    @message = Message.find(paramsp[:id])
+    @message = Message.find(params[:id])
   end
 
   def update
-    @message = Message.find(paramsp[:id])
+    @message = Message.find(params[:id])
     if @message.update_attributes(message_params)
       redirect_to messages_path
     else
@@ -66,6 +66,6 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:recipient_id, :message, :subject_line)
+    params.require(:message).permit(:recipient_id, :message, :subject_line, :read_status)
   end
 end

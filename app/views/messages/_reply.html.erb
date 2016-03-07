@@ -1,9 +1,9 @@
 
-<div class="reply_form">
-<%= form_for @message do |f| %>
+
+<%= form_for @reply do |f| %>
   <div class="reply_message">
-    <%= f.label :recipient_id, "To" %>
-    <%= f.text_field :recipient_id, class: "reply_to" %>
+    <%= f.label :recipient_id, "To #{@reply.recipient.first_name}" %>
+    <%= f.hidden_field :recipient_id, class: "reply_to" %>
 
     <%= f.label :subject_line, "Subject" %>
     <%= f.text_field :subject_line, class: "reply_line" %>
@@ -15,5 +15,3 @@
     <%= f.submit "SEND" %>
   </div>
 <% end %>
-
-</div>

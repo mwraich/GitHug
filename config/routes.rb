@@ -6,10 +6,10 @@ Rails.application.routes.draw do
 
   resources :profiles
 
-  resources :messages
+  resources :messages do
+    get 'reply' => 'messages#reply'
+  end
 
-  get 'messages/:id/inbox' => 'messages#inbox'
-  get 'messages/:id/sent' => 'messages#sent'
 
   resources :sessions, only: [:new, :create, :destroy]
 
