@@ -1,7 +1,7 @@
 <h1 class="page-title"> User Search </h1>
 
 <div id = "first_option">
-  <%= form_tag users_path, method: :get, id: 'search-form' do %>
+  <%= form_tag users_path, method: :get, id: 'search-choice' do %>
   <label>Who are you looking for?</label><br>
   <input type="radio" id="pairchoice" name="choice" value="pair"> <label for="pairchoice" class="button-label">Pair</label><br>
   <input type="radio" id="datechoice" name="choice" value="date"> <label for="datechoice" class="button-label">Date</label><br>
@@ -19,23 +19,9 @@
 </div>
 
 
-  <%= render 'pair_search' %>
-  <%= render 'date_search' %>
 
-<div class ="index-users">
-<% @profiles.each do |profile| %>
-<%= image_tag (profile.user.github_image), class: 'profile-image' %>
-<div id="index-view-profile-info">
-  <p><%= profile.first_name%>, <%=profile.age %></p>
+<div id = "search-result">
 </div>
-<!--Once languages added will update this line-->
-<p>Ruby, JavaScript, CSS</p>
-
-<hr class="line-break">
-
-<% end %>
-</div>
-
-
-<div id = "profiles">
+<div id = "profile">
+  <%= render 'profile' %>
 </div>

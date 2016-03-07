@@ -1,0 +1,15 @@
+<div class ="index-users">
+<% @profiles.each do |profile| %>
+<%= image_tag (profile.user.github_image), class: 'profile-image' %>
+<div id="index-view-profile-info">
+  <p><%= profile.first_name%>, <%=profile.age %></p>
+</div>
+<!--Once languages added will update this line-->
+<p>Ruby, JavaScript, CSS</p>
+
+<hr class="line-break">
+
+<% end %>
+</div>
+
+<!-- should be called div id = "profiles"-->

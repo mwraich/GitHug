@@ -24,16 +24,25 @@ $(document).on('page:load ready', function() {
         $("#date-search").show();
           $("#pair-search").hide();
     }
-  $('#search').on('submit', function(e) {
+  $('#search-form').on('submit', function(e) {
     e.preventDefault();
   $.ajax({
-    url: '/profiles?search=' + $('#search').val(),
-    type:'GET',
-    dataType: 'script',
-    success:function(data){
-    $('#profiles').html(data);
+    url: $(this).attr('action'),
+    type: $(this).attr('method'),
+    dataType:'script',
+    data: $(this).serialize(),
+    success: function(data) {
+      if (data) {
   }
-  });
-  })
+  else {
+    alert("nobody matches your request");
+  }
+}
   });
 });
+  });
+});
+
+// url: '/profiles?search=' + $('#search').val(),
+// type:'GET',
+// dataType: 'script',

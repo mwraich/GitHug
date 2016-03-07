@@ -309,15 +309,23 @@ nav#nav-mobile li{
     padding-bottom: 1%;
   }
 
+  #nav-main{
+    width: 70%;
+  }
   nav#nav-main{
     position: fixed;
-    margin-left: 50%;
+    margin-left: 55%;
     margin-top: -3%;
 
     & li{
       display: inline;
       font-size: 1rem;
-      padding-right: 5%;
+      padding-left: 5%;
+
+    }
+
+    & a:hover{
+      color: #A6D6E4;
     }
   }
   .page-title{
@@ -359,7 +367,8 @@ nav#nav-mobile li{
   }
 
   .form_input label{
-    display: inline;
+    display: inline-block;
+    width: 15%;
     font-size: 1rem;
   }
 
@@ -374,6 +383,8 @@ nav#nav-mobile li{
     margin-bottom: -2%;
   }
   .form_checkbox_input label{
+    display: inline-block;
+    width: 12%;
     font-size: 1rem;
   }
   .form_radio_button label{
@@ -385,6 +396,8 @@ nav#nav-mobile li{
   }
   .language-fields label{
     font-size: 1rem;
+    display: inline-block;
+    width: 15%;
 
   }
 
@@ -402,9 +415,11 @@ nav#nav-mobile li{
   .language-fields-radio input{
     font-size: 1rem;
     display: inline;
-    margin-left: 2%;
+    margin-left: 0.5%;
   }
   .language-fields-radio label{
+    display: inline-block;
+    width: 15%;
     font-size: 1rem;
 
   }
@@ -527,7 +542,7 @@ nav#nav-mobile li{
   }
 
   input#search_location{
-    width: 50%;
+    width: 40%;
     height: 2rem;
     border-radius: $base-border-radius;
     font-size: 1rem;
