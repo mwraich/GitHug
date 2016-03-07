@@ -1,10 +1,10 @@
-<h1> User Search </h1>
+<h1 id="user-search"> User Search </h1>
 
 <div id = "first_option">
   <%= form_tag users_path, method: :get, id: 'search-form' do %>
   <label>Who are you looking for?</label><br>
-  <input type="radio" id=pairchoice name="choice" value="pair"> Paired <br>
-  <input type="radio" id=datechoice name="choice" value="date"> Date <br>
+  <input type="radio" id="pairchoice" name="choice" value="pair"> <label for="pairchoice" class="button-label">Pair</label><br>
+  <input type="radio" id="datechoice" name="choice" value="date"> <label for="datechoice" class="button-label">Date</label><br>
   <% end %>
 </div>
 

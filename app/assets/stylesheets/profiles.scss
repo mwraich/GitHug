@@ -1,5 +1,5 @@
 //Main CSS
-body{
+html{
   background-color: white;
 }
 
@@ -38,10 +38,12 @@ body{
 
 #edit{
   font-size: 1.7rem;
+  margin-top: 5%;
 }
 
 #signup{
   font-size: 1.7rem;
+  margin-top: 5%;
 }
 
 .form_checkbox_input label{
@@ -181,7 +183,30 @@ a.add_fields{
 }
 
 .line-break{
-  margin-top: 10%;
+  margin-top: 20%;
+}
+
+#user-search{
+  font-size: 1.7rem;
+  margin-top: 5%;
+}
+
+#pairchoice{
+  margin-left: 10%;
+}
+
+#datechoice{
+  margin-left: 10%;
+}
+
+.button-label{
+  font-size: 1.2rem;
+  color: $base-background-color;
+
+}
+
+#search{
+  margin-left: 35%;
 }
 
 //Responsive Nav Bar
