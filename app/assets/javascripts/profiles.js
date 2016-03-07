@@ -24,7 +24,7 @@ $(document).on('page:load ready', function() {
       if (data) {
   }
   else {
-    alert("nobody matches your request");
+   $("#search-result").html("Sorry, nobody matches your search");
   }
 }
   });
