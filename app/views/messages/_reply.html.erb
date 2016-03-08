@@ -1,0 +1,17 @@
+
+
+<%= form_for @reply do |f| %>
+  <div class="reply_message">
+    <%= f.label :recipient_id, "To #{@reply.recipient.first_name}" %>
+    <%= f.hidden_field :recipient_id, class: "reply_to" %>
+
+    <%= f.label :subject_line, "Subject" %>
+    <%= f.text_field :subject_line, class: "reply_line" %>
+
+    <%= f.label :message, "Message" %>
+    <%= f.text_area :message %>
+
+
+    <%= f.submit "SEND" %>
+  </div>
+<% end %>

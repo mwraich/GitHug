@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20160307222940) do
+=======
 ActiveRecord::Schema.define(version: 20160307234047) do
+>>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +48,19 @@ ActiveRecord::Schema.define(version: 20160307234047) do
   end
 
   add_index "languages", ["profile_id"], name: "index_languages_on_profile_id", using: :btree
+<<<<<<< HEAD
+
+  create_table "messages", force: :cascade do |t|
+    t.integer  "recipient_id"
+    t.integer  "sender_id"
+    t.text     "message"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "subject_line"
+    t.boolean  "read_status",  default: false
+  end
+=======
+>>>>>>> master
 
   create_table "preferences", force: :cascade do |t|
     t.string   "location"

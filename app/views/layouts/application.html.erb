@@ -12,7 +12,10 @@
 <body class="<%= controller.controller_name %>">
 
   <% if current_user %>
-
+    <li>Currently logged in as <%=current_user.username %></li>
+    <li><%= link_to 'Logout', session_path(current_user), method: 'delete' %></li>
+    <li>You have <%= $notice %> unread messages</li>
+  <% end %> 
 
   <div class="menu-bar">
     <div class="message">
@@ -49,9 +52,14 @@
       <p><%= flash[:notice] %></p>
     <% end %>
 
+<<<<<<< HEAD
     <% if flash[:alert] %>
       <p> <%= flash[:alert] %></p>
     <% end %>
+=======
+
+<%= yield %>
+>>>>>>> MessageFeature
 
     <%= yield %>
   </div>

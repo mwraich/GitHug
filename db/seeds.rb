@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-#On command line type gem install faker, run bundle, and then rake db:seed
+# # On command line type gem install faker, run bundle, and then rake db:seed
 
 locations = ["Toronto,Ontario", "Montreal,Quebec", "Vancouver,BC", "Calgary,Alberta"]
 languages = ["Ruby", "Javascript", "Ember.JS", "PHP", "C"]

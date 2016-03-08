@@ -5,9 +5,9 @@ class UserMailer < ApplicationMailer
     mail(to: @user.email, subject: "Welcome to GitHub")
   end
 
-  def user_connection_email(recipient, sender, subject)
+  def user_message_notification(recipient)
     @user = recipient
-    mail(to: sender.email, subject: subject)
+    mail(to: @user.user.email, subject: "You got a new message")
   end
 
 end
