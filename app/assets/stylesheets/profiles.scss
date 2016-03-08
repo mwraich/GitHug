@@ -1,5 +1,5 @@
 //Main CSS
-html{
+body{
   background-color: white;
 }
 
@@ -178,13 +178,13 @@ a.add_fields{
   clear:left;
   &p{
     padding-top: 5%;
-     padding-left: 5%;
+    padding-left: 5%;
  }
 }
 
 .line-break{
   margin-top: 20%;
-  color: #859CB0;
+
 }
 
 #pairchoice{
@@ -248,7 +248,7 @@ input#search{
   margin-left: 4%;
   padding-top: 1%;
   padding-bottom: 1%;
-  margin-bottom: 1%;
+  margin-bottom: 5%;
   & label{
     font-size: 1.1rem;
   }
@@ -342,7 +342,7 @@ nav#nav-mobile li{
 }
 
 @include media ($large-screen-up){
-  html{
+  body{
     background-color: $base-background-color;
   }
   .message{
@@ -383,7 +383,7 @@ nav#nav-mobile li{
   .page-title{
     font-size: 1.7rem;
     margin-top: 12%;
-
+    color: #597288;
   }
 
   #profile-images{
@@ -395,6 +395,7 @@ nav#nav-mobile li{
   #profile-images img{
     height: 300px;
     width: 30%;
+    border-radius: 20px;
   }
   .yeild{
     width: 92%;
@@ -557,6 +558,11 @@ nav#nav-mobile li{
     font-size: 1rem;
   }
 
+  #first_option{
+    margin-bottom: 1%;
+
+  }
+
   #pairchoice{
     margin-left: 10%;
   }
@@ -614,6 +620,7 @@ nav#nav-mobile li{
 
   .line-break{
     margin-top: 10%;
+
   }
 
   .profile-details-title{

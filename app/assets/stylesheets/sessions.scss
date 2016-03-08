@@ -10,7 +10,7 @@ body.sessions {
     @include transform(scale(0.5));
   }
   to {
-    @include transform(scale(1));
+    @include transform(scale(2));
   }
 }
 @include keyframes(fadeInButtons) {
@@ -27,16 +27,16 @@ body.sessions {
 .logo-animated {
   @include animation-duration(1s);
   @include animation-timing-function(ease);
+  @include animation-fill-mode(forwards);
   animation-name: fadeIn;
 
-  padding-top: 40%;
-  padding-left: 4%;
+  padding-left: 33%;
+  padding-top: 45%;
+  padding-bottom: 40%;
 
 }
 
 .githug-logo{
-  margin-left:auto;
-  margin-right:auto;
   display:block;
 }
 
@@ -53,10 +53,11 @@ body.sessions {
       padding-top: 0.2rem;
       padding-bottom: 0.2rem;
       border: $base-border;
-      margin-bottom: 10px;
+      border-color: white;
+      margin-bottom: 50px;
       display: block;
       width: 100%;
-      color: black;
+      color: white;
     }
   }
 }
@@ -74,7 +75,7 @@ body.sessions {
   opacity: 0;
   @include animation-duration(1s);
   @include animation-timing-function(ease);
-  @include animation-delay(2.5s);
+  @include animation-delay(3s);
   @include animation-fill-mode(forwards);
   animation-name: fadeInButtons;
 }
@@ -94,4 +95,31 @@ body.sessions {
   margin-top: 17.5%;
   margin-bottom: 2.5%;
   color: $secondary-font-color;
+}
+
+@include media ($large-screen-up){
+  body.sessions .yeild{
+    background-color: $base-background-color;
+  }
+  .logo-animated {
+    padding-left: 50%;
+    padding-top: 15%;
+    padding-bottom: 10%;
+    width:120%;
+
+  }
+
+  .session-links {
+    @include outer-container;
+
+    .link-wrap {
+      @include span-columns(3);
+      @include shift(0.5);
+
+      a {
+        width: 80%;
+        margin-left: 80%;
+      }
+    }
+  }
 }
