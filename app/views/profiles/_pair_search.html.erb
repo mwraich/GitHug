@@ -1,24 +1,40 @@
-
+<div class="index-search-form">
 <%= form_tag(profiles_path, method: :get, :id =>'search-form') do %>
-  <%= label(:language, 'What are your preferred languages?') %><br>
-    <%= check_box_tag('search[language]', 'Ruby') %>
-    <%= label_tag('search[language]', 'Ruby') %>
-    <%= check_box_tag('search[language]', 'JavaScript') %>
-    <%= label_tag('search[language]','JavaScript') %>
-    <%= check_box_tag('search[language]', 'Python') %>
-    <%= label_tag('search[language]', 'Python') %>
-    <%= check_box_tag('search[language]', 'Java') %>
-    <%= label_tag('search[language]','Java') %>
-    <%= check_box_tag('search[language]', 'PHP') %>
-    <%= label_tag('search[language]','PHP') %>
-    <%= check_box_tag('search[language]', 'C++') %>
-    <%= label_tag('search[language]','C++') %><br>
 
-  <%=label_tag(:operating_system,"What is your Operating System of choice?") %><br>
+<div class="preference-form">
+  <%= label(:language, 'What are your preferred languages?') %><br>
+
+    <%= label_tag('search[language]', 'Ruby',  class: 'button-label') %>
+    <%= check_box_tag('search[language]', 'Ruby') %>
+
+    <%= label_tag('search[language]','JavaScript',  class: 'button-label') %>
+    <%= check_box_tag('search[language]', 'JavaScript') %>
+
+    <%= label_tag('search[language]', 'Python',  class: 'button-label') %>
+    <%= check_box_tag('search[language]', 'Python') %>
+
+    <%= label_tag('search[language]','Java',  class: 'button-label') %>
+    <%= check_box_tag('search[language]', 'Java') %>
+
+    <%= label_tag('search[language]','PHP',  class: 'button-label') %>
+    <%= check_box_tag('search[language]', 'PHP') %>
+
+    <%= label_tag('search[language]','C++',  class: 'button-label') %>
+    <%= check_box_tag('search[language]', 'C++') %><br>
+</div>
+
+<div class="preference-form">
+  <%=label_tag(:operating_system,"What Operating System do you use?") %><br>
+
+    <%= label_tag('search[operating_system]','Unix',  class: 'button-label') %>
     <%= check_box_tag('search[operating_system]', 'Unix') %>
-    <%= label_tag('search[operating_system]','Unix') %>
-    <%= check_box_tag('search[operating_system]', 'Linux') %>
-    <%= label_tag('search[operating_system]','Linux') %><br>
+
+    <%= label_tag('search[operating_system]','Linux',  class: 'button-label') %>
+    <%= check_box_tag('search[operating_system]', 'Linux') %><br>
+
+</div>
+
+<div class="preference-form">
 
 
   <%= label(:age,'What age-range are you looking for?')%>
@@ -29,17 +45,27 @@
         <%= number_field_tag('search[max_age]', min: 18 ) %>
  <br>
 
-  <%= label_tag(:gender, "Gender:") %>
+</div>
+
+<div class="preference-form">
+  <%= label_tag(:gender, "Gender:") %><br>
+
+    <%= label_tag('search[male]', 'Male',  class: 'button-label' )%>
     <%= check_box_tag('search[male]') %>
-    <%= label_tag('search[male]', 'Male' )%>
+
+    <%= label_tag('search[female]', 'Female',  class: 'button-label')%>
     <%= check_box_tag('search[female]')%>
-    <%= label_tag('search[female]', 'Female')%>
-    <%= check_box_tag('search[other]') %>
-    <%= label_tag('search[other]', 'Other')%><br>
 
 
-  <%= label_tag(:location, "Where do you want the person you're searching for to live?") %>
+    <%= label_tag('search[other]', 'Other',  class: 'button-label')%>
+    <%= check_box_tag('search[other]') %><br>
+
+</div>
+
+
+  <%= label_tag(:location, "Where do you want the person you're searching for to live?", class: 'location-search-label') %>
     <%= text_field_tag ('search[location]') %>
 
   <%= submit_tag("Search", :id => "search") %>
 <% end %>
+</div>

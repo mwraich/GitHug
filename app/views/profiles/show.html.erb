@@ -1,14 +1,19 @@
+<h1 class="page-title"><%= @profile.first_name %> <%= @profile.last_name %></h1>
 
-<h1>Profile Page</h1>
+<div class="profile-form">
 
+<div id="profile-images">
+<% @profile.images.each do |img| %>
+  <%= image_tag(img.image)%>
+<% end %>
+</div>
 
-<h1><%= @profile.first_name %> <%= @profile.last_name %></h1>
-
-<div>
+<div id="profile-aboutme">
   <p> <%= @profile.about_me %></p>
 </div>
 
-<h3>My Details</h3>
+<div id="profile-details">
+<p class="profile-details-title">My Details</p>
 <ul>
   <li> Gender:
     <% if @profile.male == true %>
@@ -29,20 +34,23 @@
     Operating System: <%= @profile.operating_system %>
   </li>
 </ul>
+</div>
 
-<h3> Languages </h3>
+<div id="profile-languages">
+<p class="profile-details-title"> Languages </p>
 
 <ul>
   <% @profile.languages.each do |lang| %>
     <li> <%= lang.language %> Skill Level: <%= lang.skill_level %></li>
   <% end %>
 </ul>
+</div>
 
+<div class="profile-tags">
 <% @profile.tags.any? %>
 <% @profile.tags.each do |tag| %>
   <%= link_to tag.name, tagged_url(:tag => tag.name) %>
 <% end %>
+</div>
 
-<% @profile.images.each do |img| %>
-  <%= image_tag(img.image)%>
-<% end %>
+</div>
