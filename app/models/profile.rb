@@ -12,6 +12,7 @@ class Profile < ActiveRecord::Base
   has_many :preferences
   has_many :images
 
+#test these in controller tests
   accepts_nested_attributes_for :images, allow_destroy: true
   accepts_nested_attributes_for :languages, :preferences
 

@@ -5,10 +5,5 @@ class ProfileTest < ActiveSupport::TestCase
   #   assert true
   # end
 
-  test 'find_user_by_gender' do
-  end
 
-  test 'find_user_by_location' do
-  end
-    
 end
