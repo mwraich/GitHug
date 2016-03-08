@@ -31,12 +31,12 @@ languages = ["Ruby", "Javascript", "Ember.JS", "PHP", "C"]
   })
 end
 
-100.times do |n|
-  Language.create ({
-    language: languages.sample,
-    skill_level: Faker::Number.between(1, 5)
-  })
-end
+# 100.times do |n|
+#   Language.create ({
+#     language: languages.sample,
+#     skill_level: Faker::Number.between(1, 5)
+#   })
+# end
 
 100.times do |n|
   Preference.create ({
@@ -44,7 +44,8 @@ end
     male:       Faker::Boolean.boolean(0.5),
     female:     Faker::Boolean.boolean(0.5),
     other:      Faker::Boolean.boolean(0.5),
-    age:        Faker::Number.between(18, 75),
+    min_age:    Faker::Number.between(18),
+    max_age:   Faker::Number.between(75),
     operating_system: Faker::App.version,
     partner:    Faker::Boolean.boolean(0.5),
     paired_programmer: Faker::Boolean.boolean(0.5),

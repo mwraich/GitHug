@@ -11,7 +11,7 @@
 </head>
 <body class="<%= controller.controller_name %>">
 
-  <% if current_user %>
+  <% if current_user && current_user.profile %>
 
   <div class="menu-bar">
     <div class="message">
@@ -49,9 +49,11 @@
       <p> <%= flash[:alert] %></p>
     <% end %>
 
+        <p>You have <%= current_user.notice %> unread messages</p>
 
+        <%= current_user.username %>
     <% end %>
-    <p>You have <%= $notice %> unread messages</p>
+
     <%= yield %>
   </div>
 </body>
