@@ -14,6 +14,11 @@ describe Profile, type: :model do
       it { expect(profile).to respond_to(:languages) }
       it { expect(profile).to respond_to(:preferences) }
       it { expect(profile).to respond_to(:images) }
+  end
+
+  describe "ActiveModel search" do
+    it { expect(profile1).to }
 
   end
+
 end

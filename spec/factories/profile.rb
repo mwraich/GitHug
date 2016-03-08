@@ -21,13 +21,17 @@ FactoryGirl.define do
 
   end
   factory :profile2, parent: :profile1 do
-    female true
+    female = false
+    male = true
   end
 
   factory :profile3, parent: :profile1 do
+    first_name = "Joan"
+    last_name = "Potatoe"
   end
 
   factory :profil4, parent: :profile1 do
+
   end
 
   factory :profile5, parent: :profile1 do
