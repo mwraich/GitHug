@@ -13,7 +13,6 @@
 
   <% if current_user %>
 
-
   <div class="menu-bar">
     <div class="message">
       <%= image_tag "message.svg", class: "message" %>
@@ -42,17 +41,17 @@
 
   </div>
 
-
-  <% end %>
   <div class="yeild">
     <% if flash[:notice] %>
       <p><%= flash[:notice] %></p>
     <% end %>
-
     <% if flash[:alert] %>
       <p> <%= flash[:alert] %></p>
     <% end %>
 
+
+    <% end %>
+    <p>You have <%= $notice %> unread messages</p>
     <%= yield %>
   </div>
 </body>

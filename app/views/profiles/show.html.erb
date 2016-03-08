@@ -46,7 +46,6 @@
 <p class="profile-details-title"> Languages </p>
 
 <ul>
-  <li>
   <% @profile.languages.each do |lang| %>
     <li> <%= lang.language %> Skill Level: <%= lang.skill_level %></li>
   <% end %>
@@ -60,4 +59,8 @@
 <% end %>
 </div>
 
-</div>
+<% @profile.images.each do |img| %>
+  <%= image_tag(img.image)%>
+<% end %>
+
+<%= render "messages/new_message" %>

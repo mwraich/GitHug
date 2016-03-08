@@ -1,0 +1,26 @@
+<h3>Inbox</h3>
+
+<% if @profile.recipient_messages.any?%>
+  <% @messages_recipient_messages.each do |msg| %>
+    <div class="form_update">
+    <%= form_for msg do |f|%>
+      <%= f.label( :read_status, "Read", class: 'unread') %>
+      <%= f.check_box(:read_status, value: false, class: 'unread') %>
+      <% f.submit "SEND" %>
+    <% end %>
+    </div>
+
+  <div class="message">
+    <p>To:<span class="recipient_id"><%= msg.recipient.first_name %></span></p>
+
+    <p>Subject:<span class="subject_line"><%= msg.subject_line %></span></p>
+    <p>Sent By:<%= msg.sender.first_name %></p>
+
+    <%= msg.message %>
+
+      <%= link_to "Reply", message_reply_path(msg), class: 'reply' %>
+      <div class="reply_form"></div>
+    </div>
+
+  <% end %>
+<% end %>

@@ -53,6 +53,16 @@ ActiveRecord::Schema.define(version: 20160307234047) do
 
   add_index "languages", ["profile_id"], name: "index_languages_on_profile_id", using: :btree
 
+  create_table "messages", force: :cascade do |t|
+    t.integer  "recipient_id"
+    t.integer  "sender_id"
+    t.text     "message"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "subject_line"
+    t.boolean  "read_status",  default: false
+  end
+
   create_table "preferences", force: :cascade do |t|
     t.string   "location"
     t.boolean  "male"

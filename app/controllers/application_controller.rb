@@ -5,5 +5,4 @@ class ApplicationController < ActionController::Base
     include CanCan::ControllerAdditions
   # before_action :require_login
 
-
 end

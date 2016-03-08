@@ -6,6 +6,11 @@ Rails.application.routes.draw do
 
   resources :profiles
 
+  resources :messages do
+    get 'reply' => 'messages#reply'
+  end
+
+
   resources :sessions, only: [:new, :create, :destroy]
 
 
