@@ -20,12 +20,13 @@
     <%= check_box_tag('search[operating_system]', 'Linux') %>
     <%= label_tag('search[operating_system]','Linux') %><br>
 
-  <%= label_tag(:age, 'What age-range are you looking for?')%><br>
+
   <%= label(:age,'What age-range are you looking for?')%>
-    <%= number_field('search[min_age]',params[:search][:min_age], min: 18 ) %>
+
     <%= label_tag('search[min_age]','min') %>
-    <%= number_field('search[max_age]',params[:search][:max_age], min: 18 ) %>
+      <%= number_field_tag('search[min_age]', min: 18 ) %>
     <%= label_tag('search[max_age]','max') %>
+        <%= number_field_tag('search[max_age]', min: 18 ) %>
  <br>
 
   <%= label_tag(:gender, "Gender:") %>
@@ -34,7 +35,7 @@
     <%= check_box_tag('search[female]')%>
     <%= label_tag('search[female]', 'Female')%>
     <%= check_box_tag('search[other]') %>
-    <%= label_tag('search[other]', 'Other')%>
+    <%= label_tag('search[other]', 'Other')%><br>
 
 
   <%= label_tag(:location, "Where do you want the person you're searching for to live?") %>

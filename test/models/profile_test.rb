@@ -5,8 +5,10 @@ class ProfileTest < ActiveSupport::TestCase
   #   assert true
   # end
 
-  def test_user_id_is_unique
-    @profile = Profile.new(user_id: 2)
-    assert_not @profile.save,"Profile saved without input"
+  test 'find_user_by_gender' do
   end
+
+  test 'find_user_by_location' do
+  end
+    
 end

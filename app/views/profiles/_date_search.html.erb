@@ -14,9 +14,9 @@
     <%= label_tag('search[language]','C++') %>
 
   <%= label(:age,'What age-range are you looking for?')%>
-    <%= number_field('search[min_age]',params[:search][:min_age], min: 18 ) %>
+    <%= number_field_tag('search[min_age]', min: 18 ) %>
     <%= label_tag('search[min_age]','min') %>
-    <%= number_field('search[max_age]',params[:search][:max_age], min: 18 ) %>
+    <%= number_field_tag('search[max_age]', min: 18 ) %>
     <%= label_tag('search[max_age]','max') %>
  <br>
 
