@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   get 'tagged' => 'profiles#tagged', :as => 'tagged'
 
+  post 'profiles/:id/block_user' => 'profiles#create_block_user', :as => 'block_user'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

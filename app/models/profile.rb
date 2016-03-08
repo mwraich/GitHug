@@ -11,6 +11,7 @@ class Profile < ActiveRecord::Base
   has_many :languages
   has_many :preferences
   has_many :images
+  has_many :blocked_users, through: :user
 
   accepts_nested_attributes_for :images, allow_destroy: true
   accepts_nested_attributes_for :languages, :preferences

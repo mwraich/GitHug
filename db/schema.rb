@@ -11,14 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20160306215917) do
-=======
-ActiveRecord::Schema.define(version: 20160307204219) do
+ActiveRecord::Schema.define(version: 20160307215202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
->>>>>>> blocked
 
   create_table "authentications", force: :cascade do |t|
     t.integer  "user_id",    null: false

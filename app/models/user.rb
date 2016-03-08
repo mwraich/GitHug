@@ -2,10 +2,12 @@ class User < ActiveRecord::Base
 
   has_many :authentications
   has_one :profile
+  has_many :blocked_users, foreign_key: :blocker_id
+
   authenticates_with_sorcery!
   # accepts_nested_attributes_for :images
 
-  ROLES = %i[normal blocked]
+  ROLES = %i[normal]
 
   def roles= (roles)
     roles = [*roles].map { |r| r.to_sym }

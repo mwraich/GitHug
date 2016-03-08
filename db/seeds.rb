@@ -9,6 +9,7 @@
 #On command line type gem install faker, run bundle, and then rake db:seed
 locations = ["Toronto,Ontario", "Montreal,Quebec", "Vancouver,BC", "Calgary,Alberta"]
 languages = ["Ruby", "Javascript", "Ember.JS", "PHP", "C"]
+system = ["Linux, Unix"]
 20.times do |n|
 
   u = User.create!({
@@ -25,7 +26,7 @@ languages = ["Ruby", "Javascript", "Ember.JS", "PHP", "C"]
     female:     false,
     other:      false,
     birthday:   Faker::Date.backward(365*20),
-    operating_system: Faker::App.version,
+    operating_system: languages.sample,
     about_me:   Faker::Hacker.say_something_smart,
     image:      Faker::Avatar.image,
     user: u
