@@ -33,7 +33,7 @@ gem 'figaro'
 gem 'geocoder'
 #allows taging
 gem 'acts-as-taggable-on', '~> 3.4'
-#Used to dictate different roles for privacy and viewership
+#To be used for implementing privacy Settings
 gem 'cancancan', '~> 1.10'
 
 

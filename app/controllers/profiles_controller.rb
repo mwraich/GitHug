@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-
+  before_action :verify_user, only: :show
   def index
     @profiles = if params[:search]
       Profile.search(params[:search]).order('profiles.created_at DESC')
@@ -14,6 +14,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
     @message = Message.new
 
+    @profiles = Profile.all
   end
 
   def new
@@ -32,7 +33,6 @@ class ProfilesController < ApplicationController
       flash[:notice] = "Profile did not save. Please double check that all mandatory fields have been filled out."
       render :new
     end
-
   end
 
   def edit
@@ -67,6 +67,12 @@ class ProfilesController < ApplicationController
   end
 
   private
+
+  def verify_user
+    if Profile.find(params[:id]).blocked_by?(current_user)
+      redirect_to :root, notice: "You have been blocked by this user"
+    end
+  end
 
   def profile_params
     params.require(:profile)

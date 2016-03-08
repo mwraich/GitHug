@@ -10,7 +10,9 @@
 
 locations = ["Toronto,Ontario", "Montreal,Quebec", "Vancouver,BC", "Calgary,Alberta"]
 languages = ["Ruby", "Javascript", "Ember.JS", "PHP", "C"]
-10.times do |n|
+system = ["Linux, Unix"]
+20.times do |n|
+
   u = User.create!({
     username: Faker::Internet.domain_word,
     email: Faker::Internet.email,
@@ -25,21 +27,21 @@ languages = ["Ruby", "Javascript", "Ember.JS", "PHP", "C"]
     female:     false,
     other:      false,
     birthday:   Faker::Date.backward(365*20),
-    operating_system: Faker::App.version,
+    operating_system: languages.sample,
     about_me:   Faker::Hacker.say_something_smart,
     image:      Faker::Avatar.image,
     user: u
   })
 end
 
-100.times do |n|
+20.times do |n|
   Language.create ({
     language: languages.sample,
     skill_level: Faker::Number.between(1, 5)
   })
 end
 
-100.times do |n|
+20.times do |n|
   Preference.create ({
     location:   locations.sample + ", " + "Canada",
     male:       true,

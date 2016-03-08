@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20160307234047) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -62,6 +63,7 @@ ActiveRecord::Schema.define(version: 20160307234047) do
     t.string   "subject_line"
     t.boolean  "read_status",  default: false
   end
+
 
   create_table "preferences", force: :cascade do |t|
     t.string   "location"

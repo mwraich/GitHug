@@ -1,0 +1,33 @@
+/* line 5, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#tag_cloud {
+  width: 400px;
+  line-height: 1.6em;
+}
+/* line 8, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#tag_cloud .s {
+  font-size: 0.8em;
+}
+/* line 9, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#tag_cloud .m {
+  font-size: 1.2em;
+}
+/* line 10, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#tag_cloud .l {
+  font-size: 1.8em;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
