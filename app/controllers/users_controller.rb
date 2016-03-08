@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   def index
     @users = if params[:search]
       User.where('LOWER(name) LIKE LOWER(?)', "%#{params[:search]}%")

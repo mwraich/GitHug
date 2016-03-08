@@ -1,5 +1,7 @@
 class ProfilesController < ApplicationController
+
   before_action :verify_user, only: :show
+  skip_before_action :has_profile, only: [:new]
   def index
     @profiles = if params[:search]
       Profile.search(params[:search]).order('profiles.created_at DESC')
