@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_many :authentications
   has_one :profile
   has_many :blocked_users, foreign_key: :blocker_id
+  has_many :enemies, through: :blocked_users
 
   authenticates_with_sorcery!
   # accepts_nested_attributes_for :images

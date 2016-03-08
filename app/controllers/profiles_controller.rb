@@ -12,8 +12,6 @@ class ProfilesController < ApplicationController
     @user = current_user
     @profile = Profile.find(params[:id])
     @profiles = Profile.all
-    @blocked = BlockedUser.find(@profile.user_id)
-    # authorize! :read, @profiles
   end
 
   def new
@@ -65,16 +63,10 @@ class ProfilesController < ApplicationController
     end
   end
 
-  def create_block_user
-    BlockedUser.create(blocker_id: current_user.id, blocked_id: params[:id])
-    redirect_to :back
-  end
-
-
   private
 
   def verify_user
-    if User.find(params[:id]).blocked_users.find_by_blocked_id(current_user.id)
+    if Profile.find(params[:id]).blocked_by?(current_user)
       redirect_to :root, notice: "You have been blocked by this user"
     end
   end

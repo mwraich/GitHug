@@ -12,6 +12,7 @@ class Profile < ActiveRecord::Base
   has_many :preferences
   has_many :images
   has_many :blocked_users, through: :user
+  has_many :enemies, through: :blocked_users, class_name: User
 
   accepts_nested_attributes_for :images, allow_destroy: true
   accepts_nested_attributes_for :languages, :preferences
@@ -48,5 +49,8 @@ class Profile < ActiveRecord::Base
     end
   end
 
+  def blocked_by?(current_user)
+    current_user.enemies.include?(self.user)    
+  end
 
 end
