@@ -10,5 +10,40 @@ FactoryGirl.define do
     other { FFaker::Boolean.random }
   end
 
+  factory :profile1 do
+    first_name { Joe }
+    last_name { Bob }
+    location { Toronto }
+    birthday { 10/05/1990 }
+    female { true }
+    male { false }
+    other { false }
 
+  end
+  factory :profile2, parent: :profile1 do
+    female true
+  end
+
+  factory :profile3, parent: :profile1 do
+  end
+
+  factory :profil4, parent: :profile1 do
+  end
+
+  factory :profile5, parent: :profile1 do
+  end
+
+  factory :profile6, parent: :profile1 do
+  end
+
+  factory :profile7, parent: :profile1 do
+  end
+
+  factory :profile8, parent: :profile1 do
+  end
+
+  factory :profile9, parent: profile1 do
+  end
+
+  end
 end
