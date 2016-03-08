@@ -4,7 +4,8 @@ class MessagesController < ApplicationController
     @profile = current_user.profile
     @messages_sent_messages = Message.where(sender: current_user).order(:recipient_id, :created_at)
     @messages_recipient_messages = Message.where(recipient: current_user).order(:sender_id, :created_at)
-    # @message = Message.new
+    @messages = Message.all
+    $notice = @profile.notification
   end
 
   def reply
