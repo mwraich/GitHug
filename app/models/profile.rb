@@ -21,6 +21,7 @@ class Profile < ActiveRecord::Base
 
   accepts_nested_attributes_for :images, :languages, :preferences, allow_destroy: true
 
+
   validates_presence_of :first_name, :last_name, :location, :birthday, :about_me
   validates_with ValidatesGender
 
@@ -40,7 +41,8 @@ class Profile < ActiveRecord::Base
 
     near(search_params['location']).includes(:languages).where(
        male: m, female: f, other: o
-    ).where('birthday BETWEEN ? AND ?', max_age, min_age
+  ).where('birthday BETWEEN ? AND ?', min_age, max_age
+
     ).where('languages.language = ? OR operating_system like ?', search_params['language'],search_params['operating_system']
     ).references(:languages)
   end
