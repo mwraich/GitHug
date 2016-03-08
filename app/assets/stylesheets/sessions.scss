@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body.sessions {
-  background-color: $base-background-color;
+  background-color: #4078c0;
   height: 100vh;
 }
 @include keyframes(fadeIn) {
@@ -99,7 +99,7 @@ body.sessions {
 
 @include media ($large-screen-up){
   body.sessions .yeild{
-    background-color: $base-background-color;
+    background-color: #4078c0;
   }
   .logo-animated {
     padding-left: 50%;

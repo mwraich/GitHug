@@ -35,7 +35,7 @@ body{
 }
 
 .menu-bar{
-  background-color: $base-background-color;
+  background-color: #4078c0;
   padding-bottom: 3%;
   position: fixed;
   width: 100%;
@@ -350,9 +350,9 @@ nav#nav-mobile li{
   }
 
   .logo{
-    width: 10%;
+    width: 7%;
     margin-left: 1%;
-    margin-top: 2%;
+    margin-top: 1%;
 
   }
 
@@ -382,7 +382,7 @@ nav#nav-mobile li{
   }
   .page-title{
     font-size: 1.7rem;
-    margin-top: 12%;
+    margin-top: 10%;
     color: #597288;
   }
 
@@ -398,14 +398,14 @@ nav#nav-mobile li{
     border-radius: 20px;
   }
   .yeild{
-    width: 92%;
+    margin-top: -5%;
+    width: 100%;
     background-color: #F3F5F9;
-    float: right;
   }
 
   .profile-form{
     background-color: white;
-    width: 92%;
+    width: 60%;
     margin-left: 4%;
     padding-top: 2%;
   }
