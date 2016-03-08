@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160307222940) do
+=======
+ActiveRecord::Schema.define(version: 20160307234047) do
+>>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +48,7 @@ ActiveRecord::Schema.define(version: 20160307222940) do
   end
 
   add_index "languages", ["profile_id"], name: "index_languages_on_profile_id", using: :btree
+<<<<<<< HEAD
 
   create_table "messages", force: :cascade do |t|
     t.integer  "recipient_id"
@@ -54,19 +59,22 @@ ActiveRecord::Schema.define(version: 20160307222940) do
     t.string   "subject_line"
     t.boolean  "read_status",  default: false
   end
+=======
+>>>>>>> master
 
   create_table "preferences", force: :cascade do |t|
     t.string   "location"
     t.boolean  "male"
     t.boolean  "female"
     t.boolean  "other"
-    t.integer  "age"
     t.string   "operating_system"
     t.boolean  "partner"
     t.boolean  "paired_programmer"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.integer  "profile_id"
+    t.integer  "min_age"
+    t.integer  "max_age"
   end
 
   add_index "preferences", ["profile_id"], name: "index_preferences_on_profile_id", using: :btree
@@ -87,7 +95,8 @@ ActiveRecord::Schema.define(version: 20160307222940) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "image"
-    t.integer  "age"
+    t.integer  "min_age"
+    t.integer  "max_age"
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree

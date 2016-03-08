@@ -14,16 +14,11 @@
     <%= label_tag('search[language]','C++') %>
 
   <%= label(:age,'What age-range are you looking for?')%>
-    <%= check_box_tag('search[age]', '20-25') %>
-    <%= label_tag('search[age]','20-25') %>
-    <%= check_box_tag('search[age]', '25-30') %>
-    <%= label_tag('search[age]', '25-30') %>
-    <%= check_box_tag('search[age]', '30-35') %>
-    <%= label_tag('search[age]', '30-35') %>
-    <%= check_box_tag('search[age]', '40-45') %>
-    <%= label_tag('search[age]','40-45') %><br>
-    <%= check_box_tag('search[age]', '50+') %>
-    <%= label_tag('search[age]','50+') %><br>
+    <%= number_field_tag('search[min_age]', min: 18 ) %>
+    <%= label_tag('search[min_age]','min') %>
+    <%= number_field_tag('search[max_age]', min: 18 ) %>
+    <%= label_tag('search[max_age]','max') %>
+ <br>
 
   <%= label_tag(:gender,"Gender:") %>
     <%= check_box_tag('search[male]') %>
@@ -37,7 +32,3 @@
     <%= text_field_tag :search, params[:search] %>
   <%= submit_tag("Search", :id => "search") %>
 <% end %>
-
-<div id="users">
-<!-- render all users here -->
-</div>

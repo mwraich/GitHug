@@ -16,13 +16,22 @@ $(document).on('page:load ready', function() {
   $('#search-form').on('submit', function(e) {
     e.preventDefault();
   $.ajax({
-    url: '/profiles?search=' + $('#search').val(),
-    type:'GET',
-    dataType: 'script',
-    success:function(data){
-    $('#users').html(data);
+    url: $(this).attr('action'),
+    type: $(this).attr('method'),
+    dataType:'script',
+    data: $(this).serialize(),
+    success: function(data) {
+      if (data) {
   }
-  });
-  })
+  else {
+   $("#search-result").html("Sorry, nobody matches your search");
+  }
+}
   });
 });
+  });
+});
+
+// url: '/profiles?search=' + $('#search').val(),
+// type:'GET',
+// dataType: 'script',
