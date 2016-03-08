@@ -2,32 +2,58 @@
 <html>
 <head>
   <title>GitHug</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <link href='https://fonts.googleapis.com/css?family=Exo:800' rel='stylesheet' type='text/css'>
+  <meta name="viewport" content="initial-scale=1.0" width="device-width">
+  <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= controller.controller_name %>">
 
   <% if current_user %>
-    <li>Currently logged in as <%=current_user.username %></li>
-    <li><%= link_to 'Logout', session_path(current_user), method: 'delete' %></li>
 
-  <% else %>
-    <li><%= link_to 'Login with GitHub', auth_at_provider_path(provider: :github) %></li>
+
+  <div class="menu-bar">
+    <div class="message">
+      <%= image_tag "message.svg", class: "message" %>
+    </div>
+
+    <div class="logo" >
+      <%= image_tag "GitHugLogo3.svg", class: "logo" %>
+    </div>
+
+    <nav id="nav-main">
+      <ul>
+        <li><%= link_to 'Find A Match', profiles_path %></li>
+        <li><%= link_to 'Profile', profile_path(current_user) %></li>
+        <li><%= link_to 'Update Profile', edit_profile_path(current_user) %></li>
+        <li><%= link_to 'Logout', session_path(current_user), method: 'delete' %></li>
+      </ul>
+    </nav>
+
+    <div id="nav-trigger">
+      <span class="menu-icon">
+        <%= image_tag "menu.svg", class: "menu" %>
+      </span>
+    </div>
+
+    <nav id="nav-mobile"></nav>
+
+  </div>
+
+
   <% end %>
+  <div class="yeild">
+    <% if flash[:notice] %>
+      <p><%= flash[:notice] %></p>
+    <% end %>
 
-  <% if flash[:notice] %>
-    <p><%= flash[:notice] %></p>
-  <% end %>
+    <% if flash[:alert] %>
+      <p> <%= flash[:alert] %></p>
+    <% end %>
 
-  <% if flash[:alert] %>
-    <p> <%= flash[:alert] %></p>
-  <% end %>
-
-
-<%= yield %>
-
+    <%= yield %>
+  </div>
 </body>
 </html>
