@@ -1,1 +1,4 @@
-$('#users').html('<%=j render @profiles %>');
+
+<% if params[:search].present? %>
+ $('#search-result').prepend("<%= j render @profiles %>");
+<% end %>

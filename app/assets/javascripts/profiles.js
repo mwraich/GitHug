@@ -2,6 +2,17 @@
 // # All this logic will automatically be available in application.js.
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).on('page:load ready', function() {
+  $("#nav-mobile").html($("#nav-main").html());
+    $("#nav-trigger span").click(function(){
+      if ($("nav#nav-mobile ul").hasClass("expanded")) {
+          $("nav#nav-mobile ul.expanded").removeClass("expanded").slideUp(250);
+          $(this).removeClass("open");
+      } else {
+          $("nav#nav-mobile ul").addClass("expanded").slideDown(250);
+          $(this).addClass("open");
+      }
+  });
+
   $('#pair-search').hide();
   $('#date-search').hide();
   $('input[type="radio"]').click(function() {
@@ -16,13 +27,22 @@ $(document).on('page:load ready', function() {
   $('#search-form').on('submit', function(e) {
     e.preventDefault();
   $.ajax({
-    url: '/profiles?search=' + $('#search').val(),
-    type:'GET',
-    dataType: 'script',
-    success:function(data){
-    $('#users').html(data);
+    url: $(this).attr('action'),
+    type: $(this).attr('method'),
+    dataType:'script',
+    data: $(this).serialize(),
+    success: function(data) {
+      if (data) {
   }
-  });
-  })
+  else {
+   $("#search-result").html("Sorry, nobody matches your search");
+  }
+}
   });
 });
+  });
+});
+
+// url: '/profiles?search=' + $('#search').val(),
+// type:'GET',
+// dataType: 'script',

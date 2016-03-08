@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 #On command line type gem install faker, run bundle, and then rake db:seed
+
 locations = ["Toronto,Ontario", "Montreal,Quebec", "Vancouver,BC", "Calgary,Alberta"]
 languages = ["Ruby", "Javascript", "Ember.JS", "PHP", "C"]
 10.times do |n|
@@ -49,4 +50,5 @@ end
     partner:    Faker::Boolean.boolean(0.5),
     paired_programmer: Faker::Boolean.boolean(0.5),
   })
+
 end

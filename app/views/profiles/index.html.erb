@@ -1,4 +1,4 @@
-<h1> User Search </h1>
+<h1 class="page-title"> User Search </h1>
 
 <<<<<<< HEAD
 <% @profiles.each do |profile| %>
@@ -13,10 +13,10 @@
 <% end %>
 =======
 <div id = "first_option">
-  <%= form_tag users_path, method: :get, id: 'search-form' do %>
+  <%= form_tag users_path, method: :get, id: 'search-choice' do %>
   <label>Who are you looking for?</label><br>
-  <input type="radio" id=pairchoice name="choice" value="pair"> Paired <br>
-  <input type="radio" id=datechoice name="choice" value="date"> Date <br>
+  <input type="radio" id="pairchoice" name="choice" value="pair"> <label for="pairchoice" class="button-label">Pair</label><br>
+  <input type="radio" id="datechoice" name="choice" value="date"> <label for="datechoice" class="button-label">Date</label><br>
   <% end %>
 </div>
 >>>>>>> 198d93a3dbcc9439312fb8472ca3b30259777c62
@@ -31,9 +31,10 @@
   </div>
 </div>
 
-<div id = "profiles">
-<!-- <% @profiles.each do |profile| %>
-  <%= profile.first_name%><%=profile.last_name %>
-  <%= profile.location %>
-<% end %> -->
+
+
+<div id = "search-result">
+</div>
+<div id = "profile">
+  <%= render 'profile' %>
 </div>

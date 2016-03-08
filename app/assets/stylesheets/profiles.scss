@@ -1,11 +1,642 @@
-// Place all the styles related to the profiles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+//Main CSS
+body{
+  background-color: white;
+}
 
-#tag_cloud {
-  width: 400px;
-  line-height: 1.6em;
-    .s { font-size: 0.8em; }
-    .m { font-size: 1.2em; }
-    .l { font-size: 1.8em; }
+.page-title{
+  font-size: 1.7rem;
+  margin-top: 25%;
+}
+
+//Nav Bar
+.message{
+  width: 10%;
+  margin-top: 2%;
+  margin-left: 3%;
+  display: inline;
+}
+
+.logo{
+  width: 30%;
+  margin-top: 4%;
+  display: inline;
+  margin-left: 10%;
+  margin-right: 1%;
+
+}
+
+.menu{
+  display: inline;
+  width: 10%;
+  float: right;
+  margin-top: -12%;
+  margin-right: 5%;
+
+}
+
+.menu-bar{
+  background-color: $base-background-color;
+  padding-bottom: 3%;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left:0;
+}
+
+//Edit and Create Profile Pages Form Styling
+
+.form_checkbox_input label{
+  display: inline;
+  font-size: 1.1rem;
+  color: #1E2542;
+}
+
+.form_radio_button label{
+  display: inline;
+  font-size: 1.2rem;
+  color: #1E2542;
+}
+
+
+label.select_label{
+  font-size: 1.3rem;
+  color: #597288;
+
+}
+
+#tag{
+  padding-left: 5%;
+  font-size: 1.3rem;
+  color: #1E2542;
+  text-align: center;
+  margin-top: 5%;
+}
+
+a.add_fields{
+  color: #1E2542;
+}
+
+.actions input{
+  width: 87%;
+  margin-left: 6.5%;
+  border: 5px solid $base-background-color;
+  margin-bottom: 5%;
+  font-size: 1.2rem;
+}
+
+.actions{
+  margin-top: 10%;
+}
+.language-fields-label{
+  display: inline;
+  font-size: 1.1rem;
+  color: #1E2542;
+}
+
+#add_language{
+  background-color: #AADBE8;
+  border-radius: $button-border-radius;
+  border: 5px solid $base-background-color;
+  font-size: 1rem;
+  padding-left: 25%;
+  padding-right: 25%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  margin-left: 9%;
+
+}
+.add-language-spacing{
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+
+#remove_language{
+  background-color: #AADBE8;
+  border-radius: $button-border-radius;
+  border: 5px solid $base-background-color;
+  font-size: 1rem;
+  padding-left: 22.5%;
+  padding-right: 22.5%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  margin-left: 9%;
+  font-style: $base-font-family;
+  color: $base-background-color;
+}
+
+#add_photo{
+  background-color: #AADBE8;
+  border-radius: $button-border-radius;
+  border: 5px solid $base-background-color;
+  margin-bottom: 10%;
+  font-size: 1rem;
+  padding-left: 21%;
+  padding-right: 21%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  margin-left: 9%;
+
+}
+
+#remove_photo{
+  background-color: #AADBE8;
+  border-radius: $button-border-radius;
+  border: 5px solid $base-background-color;
+  margin-bottom: 10%;
+  font-size: 1rem;
+  padding-left: 25%;
+  padding-right: 25%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  color: $base-background-color;
+  margin-left: 9%;
+
+}
+
+.image-fields input{
+  padding-left: 5%;
+}
+
+//Index View Profile Styling
+
+.profile-image{
+  background-color:  #AADBE8;
+  border-radius: 200px;
+  width: 30%;
+  display: inline;
+  float: left;
+  margin-left: 5%;
+  margin-right: 5%;
+
+}
+
+#index-view-profile-info{
+  font-size: 1.5rem;
+  display: inline;
+  clear:left;
+  &p{
+    padding-top: 5%;
+    padding-left: 5%;
+ }
+}
+
+.line-break{
+  margin-top: 20%;
+
+}
+
+#pairchoice{
+  margin-left: 10%;
+}
+
+#datechoice{
+  margin-left: 10%;
+}
+
+.location-search-label{
+  font-size: 1rem;
+}
+
+.preference-form label{
+  font-size: 1rem;
+}
+
+input#search_location{
+  width: 40%;
+  height: 2rem;
+  border-radius: $base-border-radius;
+  font-size: 1rem;
+  border-width: 3px;
+  display: inline;
+  margin-left: 1%;
+  border-color:#859CB0;
+}
+
+input#search{
+  margin-left: 5%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.button-label{
+  font-size: 1.2rem;
+  color: $base-background-color;
+
+}
+
+#search{
+  margin-left: 35%;
+}
+.index-search-form{
+  background-color: white;
+  border: $base-border;
+  border-color: #859CB0;
+  width: 92%;
+  margin-left: 4%;
+  padding-top: 2%;
+  padding-bottom: 1%;
+  margin-bottom: 2%;
+}
+
+#first_option{
+  background-color: white;
+  border: $base-border;
+  border-color: #859CB0;
+  width: 92%;
+  margin-left: 4%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  margin-bottom: 5%;
+  & label{
+    font-size: 1.1rem;
+  }
+}
+
+//Profile Page
+#profile-images{
+  width: 60%;
+  margin-left: 20%;
+}
+
+#profile-aboutme{
+  margin-top: 5%;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+#profile-details{
+  margin-left: 10%;
+  padding-bottom: 5%;
+}
+
+#profile-languages{
+  margin-left: 10%;
+  padding-bottom: 5%;
+}
+
+.profile-tags{
+  text-align: center;
+  padding-bottom: 10%;
+  & a{
+    background-color: #AADBE8;
+    padding: 2%;
+    border: $base-border;
+    border-radius: $base-border-radius;
+    border-color: $base-background-color;
+    color:black;
+  }
+}
+//Responsive Nav Bar
+
+#nav-trigger{
+  display: none;
+
+  &span{
+   display: inline;
+
+     &:after{
+     display: inline;
+     content: "";
+   }
+  }
+}
+nav#nav-mobile{
+  position: relative;
+  display: none;
+}
+
+nav#nav-mobile ul{
+  display: none;
+  position: absolute;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  background-color: $base-background-color;
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+nav#nav-mobile li{
+  display: block;
+  border-bottom: solid 1px #AADBE8;
+  &:last-child{
+    border-bottom: none;
+  }
+}
+
+
+@media all and (max-width: 900px) {
+  #nav-trigger {
+    display: block;
+  }
+
+  nav#nav-main {
+    display: none;
+  }
+
+  nav#nav-mobile {
+    display: block;
+  }
+}
+
+@include media ($large-screen-up){
+  body{
+    background-color: $base-background-color;
+  }
+  .message{
+    display: none;
+  }
+
+  .logo{
+    width: 10%;
+    margin-left: 1%;
+    margin-top: 2%;
+
+  }
+
+  .menu-bar{
+    padding-bottom: 1%;
+  }
+
+  #nav-main{
+    width: 70%;
+  }
+  nav#nav-main{
+    position: fixed;
+    margin-left: 55%;
+    margin-top: -3%;
+
+    & li{
+      display: inline;
+      font-size: 1rem;
+      padding-left: 5%;
+
+    }
+
+    & a:hover{
+      color: #A6D6E4;
+      border-bottom: 2px solid $base-border-color;
+    }
+  }
+  .page-title{
+    font-size: 1.7rem;
+    margin-top: 12%;
+    color: #597288;
+  }
+
+  #profile-images{
+    display: inline;
+    width: 50%;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  #profile-images img{
+    height: 300px;
+    width: 30%;
+    border-radius: 20px;
+  }
+  .yeild{
+    width: 92%;
+    background-color: #F3F5F9;
+    float: right;
+  }
+
+  .profile-form{
+    background-color: white;
+    width: 92%;
+    margin-left: 4%;
+    padding-top: 2%;
+  }
+  .form_input input{
+    width: 50%;
+    height: 2rem;
+    border-radius: $base-border-radius;
+    border-color:#859CB0;
+    font-size: 1rem;
+    border-width: 3px;
+    display: inline;
+    margin-left: 2%;
+
+  }
+
+  .form_input label{
+    display: inline-block;
+    width: 15%;
+    font-size: 1rem;
+  }
+
+  textarea#profile_about_me{
+    width: 50%;
+    border-radius: $base-border-radius;
+    border-color:#859CB0;
+    font-size: 1rem;
+    border-width: 3px;
+    display: inline;
+    margin-left: 2%;
+    margin-bottom: -2%;
+  }
+  .form_checkbox_input label{
+    display: inline-block;
+    width: 12%;
+    font-size: 1rem;
+  }
+  .form_radio_button label{
+    font-size: 1rem;
+  }
+  label.select_label{
+    font-size: 1rem;
+
+  }
+  .language-fields label{
+    font-size: 1rem;
+    display: inline-block;
+    width: 15%;
+
+  }
+
+  .language-fields input{
+    width: 50%;
+    height: 2rem;
+    border-radius: $base-border-radius;
+    border-color: #859CB0;
+    font-size: 1rem;
+    border-width: 3px;
+    display: inline;
+    margin-left: 2%;
+
+  }
+
+  .language-fields-radio input{
+    font-size: 1rem;
+    display: inline;
+    margin-left: 0.5%;
+  }
+  .language-fields-radio label{
+    display: inline-block;
+    width: 15%;
+    font-size: 1rem;
+
+  }
+
+  .skill-level{
+    font-size: 1rem;
+  }
+
+  #tag{
+    text-align: left;
+    padding-top: 0%;
+  }
+
+  #remove_language{
+    border-radius: 0px;
+    border: 3px solid $base-background-color;
+    font-size: 1rem;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-left: 5%;
+
+  }
+
+  #add_language{
+    border-radius: 0px;
+    border: 3px solid $base-background-color;
+    font-size: 1rem;
+    padding-left: 6.1%;
+    padding-right: 6.1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-left: 5%;
+
+  }
+
+  #add_photo{
+    border-radius: 0px;
+    border: 3px solid $base-background-color;
+    font-size: 1rem;
+    padding-left: 6.1%;
+    padding-right: 6.1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-left: 5%;
+
+  }
+
+  #remove_photo{
+    border-radius: 0px;
+    border: 3px solid $base-background-color;
+    font-size: 1rem;
+    padding-left: 7.5%;
+    padding-right: 7.5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-left: 5%;
+
+  }
+
+  .image-fields img{
+    margin-left: 5%;
+  }
+
+  .actions input{
+    width: 30%;
+    margin-left: 35%;
+    margin-bottom: 5%;
+    font-size: 1.2rem;
+    border: none;
+  }
+
+  .actions{
+    margin-top: 0%;
+  }
+
+
+  .button-label{
+    font-size: 1rem;
+  }
+
+  #first_option{
+    margin-bottom: 1%;
+
+  }
+
+  #pairchoice{
+    margin-left: 10%;
+  }
+
+  .preference-form{
+    margin-bottom: 1%;
+
+      & label{
+        font-size: 1rem;
+      }
+  }
+
+  .index-search-form{
+    background-color: white;
+    border: $base-border;
+    border-color: #859CB0;
+    width: 92%;
+    margin-left: 4%;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    margin-bottom: 2%;
+  }
+
+
+
+  input#search_location{
+    width: 40%;
+    height: 2rem;
+    border-radius: $base-border-radius;
+    font-size: 1rem;
+    border-width: 3px;
+    display: inline;
+    margin-left: 1%;
+    border-color:#859CB0;
+  }
+
+  input#search{
+    margin-left: 5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+  }
+
+  img.profile-image{
+    width: 15%;
+  }
+
+  .index-users{
+    background-color: white;
+    width: 92%;
+    margin-left: 4%;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    margin-bottom: 2%;
+  }
+
+  .line-break{
+    margin-top: 10%;
+
+  }
+
+  .profile-details-title{
+    font-size: 1.2rem;
+    color: #859CB0;
+  }
+
+  .profile-tags{
+    text-align: center;
+    padding-bottom: 10%;
+    & a{
+      background-color: #AADBE8;
+      padding: 1%;
+    }
+  }
+
+
+
 }

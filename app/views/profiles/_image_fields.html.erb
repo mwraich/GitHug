@@ -5,6 +5,7 @@
     <%= f.file_field :image %>
     <%= f.hidden_field :image_cache %>
   </div>
-
-  <%= link_to_remove_association 'Remove Image', f %>
+  <div class="add-language-spacing">
+  <%= link_to_remove_association 'Remove Image', f, id: 'remove_photo' %>
+</div>
 </div>
