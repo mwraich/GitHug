@@ -12,6 +12,7 @@ class ProfilesController < ApplicationController
     @user = current_user
     @profile = Profile.find(params[:id])
     @profiles = Profile.all
+    @blocked = BlockedUser.find(@profile.user_id)
     # authorize! :read, @profiles
   end
 
