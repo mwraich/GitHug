@@ -85,7 +85,8 @@ class ProfilesController < ApplicationController
           [:id, :language, :skill_level, :_destroy], images_attributes: [:id, :image,
           :image_cache, :_destroy, :remove_image], preferences_attributes:
           [:id, :location, :male, :female, :other, :operating_system, :partner,
-          :paired_programmer, :profile_id, :min_age, :max_age])
+          :paired_programmer, :profile_id, :min_age, :max_age,:destroy,
+          pref_languages_attributes: [:id, :pref_lang, :skill_level, :_destroy]])
   end
 
 end

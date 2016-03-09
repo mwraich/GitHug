@@ -46,5 +46,12 @@
       <%= link_to_remove_association 'Remove Preference', f, id: 'remove_preference' %>
       <br>
     </div>
+  </div>
+    <div>
+      <br>
+      <%= link_to_add_association "Add A Preferred Language", f, :pref_languages, id: 'add_pref_language',
+      'data-association-insertion-method' => 'before',
+      'data-association-insertion-traversal' => 'closest' %>
+    </div><br>
 
 </div>

@@ -14,7 +14,7 @@ class Profile < ActiveRecord::Base
   has_many :images
   has_many :sent_messages, class_name: :Message, foreign_key: :sender_id
   has_many :recipient_messages, class_name: :Message, foreign_key: :recipient_id
-  has_many :blocked_users, through: :user
+  has_many :blocked_users, through: :users
   has_many :enemies, through: :blocked_users, class_name: User
 
   accepts_nested_attributes_for :images, :languages, :preferences, allow_destroy: true
