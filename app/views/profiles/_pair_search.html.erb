@@ -1,6 +1,7 @@
 <div class="index-search-form">
 <%= form_tag(profiles_path, method: :get, :id =>'search-form') do %>
 
+
 <div class="preference-form">
   <%= label(:language, 'What are your preferred languages?') %><br>
 
@@ -42,6 +43,9 @@
 
     <%= label_tag('search[max_age]','Max:') %>
     <%= number_field_tag('search[max_age]', min: 18 ) %>
+
+ <br>
+
 
 </div>
 

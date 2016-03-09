@@ -6,17 +6,19 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-#On command line type gem install faker, run bundle, and then rake db:seed
+# # On command line type gem install faker, run bundle, and then rake db:seed
 
 locations = ["Toronto,Ontario", "Montreal,Quebec", "Vancouver,BC", "Calgary,Alberta"]
 languages = ["Ruby", "Javascript", "Ember.JS", "PHP", "C"]
-10.times do |n|
+system = ["Linux, Unix"]
+20.times do |n|
+
   u = User.create!({
     username: Faker::Internet.domain_word,
     email: Faker::Internet.email,
     github_image: Faker::Avatar.image
   })
-  sleep(1)
+    # sleep(1)
   x = Profile.create!({
     first_name: Faker::Name.first_name,
     last_name:  Faker::Name.last_name,
@@ -25,26 +27,39 @@ languages = ["Ruby", "Javascript", "Ember.JS", "PHP", "C"]
     female:     false,
     other:      false,
     birthday:   Faker::Date.backward(365*20),
-    operating_system: Faker::App.version,
+    operating_system: languages.sample,
     about_me:   Faker::Hacker.say_something_smart,
+    image:      Faker::Avatar.image,
     user: u
   })
 end
 
-100.times do |n|
+20.times do |n|
   Language.create ({
     language: languages.sample,
     skill_level: Faker::Number.between(1, 5)
   })
 end
+# 100.times do |n|
+#   Language.create ({
+#     language: languages.sample,
+#     skill_level: Faker::Number.between(1, 5)
+#   })
+# end
 
-100.times do |n|
+20.times do |n|
   Preference.create ({
+    location:   locations.sample + ", " + "Canada",
+    male:       true,
+    female:     false,
+    other:      false,
+    age:        Faker::Number.between(18, 75),
     location:   Faker::Address.city,
     male:       Faker::Boolean.boolean(0.5),
     female:     Faker::Boolean.boolean(0.5),
     other:      Faker::Boolean.boolean(0.5),
-    age:        Faker::Number.between(18, 75),
+    min_age:    Faker::Number.between(18),
+    max_age:   Faker::Number.between(75),
     operating_system: Faker::App.version,
     partner:    Faker::Boolean.boolean(0.5),
     paired_programmer: Faker::Boolean.boolean(0.5),

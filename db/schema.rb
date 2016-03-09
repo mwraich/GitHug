@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20160307234047) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -25,6 +26,14 @@ ActiveRecord::Schema.define(version: 20160307234047) do
   end
 
   add_index "authentications", ["provider", "uid"], name: "index_authentications_on_provider_and_uid", using: :btree
+
+  create_table "blocked_users", force: :cascade do |t|
+    t.integer "blocker_id"
+    t.integer "blocked_id"
+  end
+
+  add_index "blocked_users", ["blocked_id"], name: "index_blocked_users_on_blocked_id", using: :btree
+  add_index "blocked_users", ["blocker_id"], name: "index_blocked_users_on_blocker_id", using: :btree
 
   create_table "images", force: :cascade do |t|
     t.string   "image"
@@ -44,6 +53,17 @@ ActiveRecord::Schema.define(version: 20160307234047) do
   end
 
   add_index "languages", ["profile_id"], name: "index_languages_on_profile_id", using: :btree
+
+  create_table "messages", force: :cascade do |t|
+    t.integer  "recipient_id"
+    t.integer  "sender_id"
+    t.text     "message"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "subject_line"
+    t.boolean  "read_status",  default: false
+  end
+
 
   create_table "preferences", force: :cascade do |t|
     t.string   "location"
@@ -110,6 +130,7 @@ ActiveRecord::Schema.define(version: 20160307234047) do
     t.datetime "updated_at"
     t.string   "username"
     t.string   "github_image"
+    t.integer  "roles_mask"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

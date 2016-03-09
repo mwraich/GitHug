@@ -6,7 +6,13 @@ Rails.application.routes.draw do
 
   resources :profiles
 
+  resources :messages do
+    get 'reply' => 'messages#reply'
+  end
+
+
   resources :sessions, only: [:new, :create, :destroy]
+  resources :blocked_users, only: [:create]
 
 
   get "oauth/callback" => "oauths#callback" # for use with Github, Facebook

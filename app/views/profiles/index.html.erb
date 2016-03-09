@@ -1,3 +1,13 @@
+<% @profiles.each do |profile| %>
+<%= image_tag profile.image %>
+<%= profile.first_name%><%=profile.last_name %>
+<hr class="line-break">
+<% end %>
+
+<%= form_tag profiles_path, method: :get do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Go!" %>
+<% end %>
 
 
 <div id = "first_option">
@@ -17,8 +27,6 @@
     <%= render 'date_search' %>
   </div>
 </div>
-
-
 
 <div id = "search-result">
 </div>

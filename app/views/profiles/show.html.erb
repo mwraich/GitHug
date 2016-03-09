@@ -10,6 +10,15 @@
 <p id= "profile-location"> <%= @profile.location %> </p>
 
 
+<% if @profile.blocked_by?(current_user) %>
+  <%= "This user has already been blocked" %>
+  <%else %>
+<%= form_for BlockedUser.new do |f| %>
+  <%= f.hidden_field :blocked_id, value: @profile.user_id %>
+  <%= f.submit 'block' %>
+  <% end %>
+<% end%>
+
 <div id="profile-aboutme">
   <p> <%= @profile.about_me %></p>
 </div>
@@ -39,7 +48,6 @@
 <p class="profile-details-title"> Languages </p>
 
 <ul>
-  <li>
   <% @profile.languages.each do |lang| %>
     <li> <%= lang.language %> Skill Level: <%= lang.skill_level %></li>
   <% end %>
@@ -53,4 +61,8 @@
 <% end %>
 </div>
 
-</div>
+<% @profile.images.each do |img| %>
+  <%= image_tag(img.image)%>
+<% end %>
+
+<%= render "messages/new_message" %>
