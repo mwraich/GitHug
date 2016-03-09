@@ -88,6 +88,18 @@
       'data-association-insertion-traversal' => 'closest' %>
     </div>
 
+    <p class="preferences">Tell Us What Your Looking For?</p>
+    <div>
+      <%= f.fields_for :preferences do |pref| %>
+        <%= render "preference_fields", f: pref %>
+      <% end %>
+    </div>
+    <br>
+    <div class="add-preferences-spacing">
+      <%= link_to_add_association "Add Another Preference", f, :preferences, id: 'add_pref',
+      'data-association-insertion-method' => 'before',
+      'data-association-insertion-traversal' => 'closest' %>
+    </div>
 
     <br>
   <div class="actions">

@@ -1,0 +1,50 @@
+<div class="nested-fields">
+    <div class="form_radio_button">
+      <%= label_tag "partner_type", "Looking For:", class: "select_label"  %>
+
+        <%= f.label(:partner, "Partner") %>
+        <%= f.radio_button(:partner, value: true) %>
+
+        <%= f.label(:paired_programmer, "Paired Programmer") %>
+        <%= f.radio_button(:paired_programmer, value: true) %>
+
+    <div class="form_input">
+      <%= f.label :location, "Location:"%>
+      <%= f.text_field :location%>
+    </div>
+    <div class="form_checkbox_input">
+      <%= label_tag "gender", "Gender:", class: "select_label" %>
+        <%= f.label(:male, "Male" )%>
+        <%= f.check_box(:male) %>
+
+        <%= f.label(:female, "Female")%>
+        <%= f.check_box(:female) %>
+
+        <%= f.label(:other, "Other")%>
+        <%= f.check_box(:other) %>
+    </div><br>
+    <div class="form_input">
+      <%= f.label(:min_age, "Minimun Age:") %>
+      <%= f.number_field(:min_age) %>
+    </div>
+    <div class="form_input">
+      <%= f.label(:max_age, "Maximum Age:") %>
+      <%= f.number_field(:max_age) %>
+    </div>
+    <div class="form_radio_button">
+      <%= label :opperating_system, "Operating System:", class: "select_label"  %>
+
+        <%= f.label(:operating_system, "Linux") %>
+        <%= f.radio_button(:operating_system, "Linux") %>
+
+        <%= f.label(:operating_system, "UNIX") %>
+        <%= f.radio_button(:operating_system, "UNIX") %>
+    </div>
+
+    <div class="add-preference-spacing">
+      <br>
+      <%= link_to_remove_association 'Remove Preference', f, id: 'remove_preference' %>
+      <br>
+    </div>
+
+</div>
