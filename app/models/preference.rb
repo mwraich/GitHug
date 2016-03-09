@@ -10,5 +10,9 @@ class Preference < ActiveRecord::Base
     #needs to call Profile.search
   # end
 
+  def preferences_recos
+    pref_array = (Preference.all + PrefLanguage.all).to_a
+    search(pref_array)
+  end
 
 end
