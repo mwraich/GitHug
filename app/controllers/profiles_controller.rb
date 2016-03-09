@@ -18,7 +18,6 @@ class ProfilesController < ApplicationController
     @profiles = Profile.all
     @profile = Profile.find(params[:id])
     @message = Message.new
-
     @profiles = Profile.all
   end
 
@@ -84,7 +83,10 @@ class ProfilesController < ApplicationController
           .permit(:first_name, :last_name, :location, :male, :female, :other,
           :birthday, :operating_system, :about_me, :tag_list, languages_attributes:
           [:id, :language, :skill_level, :_destroy], images_attributes: [:id, :image,
-          :image_cache, :_destroy, :remove_image])
+          :image_cache, :_destroy, :remove_image], preferences_attributes:
+          [:id, :location, :male, :female, :other, :operating_system, :partner,
+          :paired_programmer, :profile_id, :min_age, :max_age,:destroy,
+          pref_languages_attributes: [:id, :pref_lang, :skill_level, :_destroy]])
   end
 
 end
