@@ -7,4 +7,6 @@ class Preference < ActiveRecord::Base
     #convert itself into a hash to pass to search
     #needs to call Profile.search
   # end
+
+
 end
