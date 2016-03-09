@@ -17,7 +17,7 @@ label {
   margin-bottom: $small-spacing / 2;
   padding-left: 5%;
   font-size: 1.3rem;
-  color: #597288;
+  color: #6a6a6a;
 }
 
 input,
@@ -31,9 +31,11 @@ select {
 
 #{$all-text-inputs},
 select[multiple] {
-  background-color: #FFF9EA;
-  border: $base-border;
-  border-radius: $form-border-radius;
+  background-color: #a9a9a9;
+  border: solid;
+  border-color: #6a6a6a;
+  border-width: 0.5px;
+  border-radius: 5px;
   box-shadow: $form-box-shadow;
   box-sizing: border-box;
   font-family: $base-font-family;
@@ -43,24 +45,26 @@ select[multiple] {
   transition: border-color $base-duration $base-timing;
   width: 90%;
   margin-left: 5%;
-  color: white;
-
+  color: #3b3b3b;
+  height: 1.5rem;
   &:hover {
-    border-color: shade($base-border-color, 20%);
+    border-color: shade(#00aca1, 20%);
   }
 
   &:focus {
-    border-color: $action-color;
+    border-color: #00aca1;
     box-shadow: $form-box-shadow-focus;
     outline: none;
   }
 
   &:disabled {
-    background-color: shade($base-background-color, 5%);
+    background-color: shade(#a9a9a9, 5%);
     cursor: not-allowed;
 
     &:hover {
-      border: $base-border;
+      border: solid;
+      border-width: 0.5px;
+
     }
   }
 }

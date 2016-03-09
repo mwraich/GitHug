@@ -1,9 +1,9 @@
 #{$all-buttons} {
   appearance: none;
-  background-color: #AADBE8;
+  background-color: #00aca1;
   border: 0;
   border-radius: $button-border-radius;
-  color: $base-background-color;
+  color: white;
   cursor: pointer;
   display: inline-block;
   font-family: $base-font-family;
@@ -20,7 +20,7 @@
 
   &:hover,
   &:focus {
-    background-color: shade($action-color, 20%);
+    background-color: shade(#a9a9a9, 20%);
     color: #fff;
   }
 

@@ -1,8 +1,8 @@
-<h1 class="page-title"> User Search </h1>
+
 
 <div id = "first_option">
   <%= form_tag users_path, method: :get, id: 'search-choice' do %>
-  <label>Who are you looking for?</label><br>
+  <label id="first_option_label">Who are you looking for?</label><br>
   <input type="radio" id="pairchoice" name="choice" value="pair"> <label for="pairchoice" class="button-label">Pair</label><br>
   <input type="radio" id="datechoice" name="choice" value="date"> <label for="datechoice" class="button-label">Date</label><br>
   <% end %>
@@ -21,7 +21,4 @@
 
 
 <div id = "search-result">
-</div>
-<div id = "profile">
-  <%= render 'profile' %>
 </div>

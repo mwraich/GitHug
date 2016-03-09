@@ -35,15 +35,12 @@
 </div>
 
 <div class="preference-form">
-
-
   <%= label(:age,'What age-range are you looking for?')%>
 
-    <%= label_tag('search[min_age]','min') %>
+    <%= label_tag('search[min_age]','Min:') %>
       <%= number_field_tag('search[min_age]', min: 18 ) %>
-    <%= label_tag('search[max_age]','max') %>
+    <%= label_tag('search[max_age]','Max:') %>
         <%= number_field_tag('search[max_age]', min: 18 ) %>
- <br>
 
 </div>
 
