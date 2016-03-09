@@ -4,8 +4,9 @@ body{
 }
 
 .page-title{
-  font-size: 1.7rem;
-  margin-top: 5%;
+  margin-top: 2%;
+  font-size: 1.6rem;
+  color: #3b3b3b;
 }
 
 //Nav Bar
@@ -49,7 +50,7 @@ body{
 .form_checkbox_input label{
   display: inline;
   font-size: 1.1rem;
-  color: #1E2542;
+  color: #3b3b3b;
 }
 
 .form_radio_button label{
@@ -60,15 +61,15 @@ body{
 
 
 label.select_label{
-  font-size: 1.3rem;
-  color: #597288;
+  font-size: 1rem;
+  color: #6a6a6a;
 
 }
 
 #tag{
   padding-left: 5%;
   font-size: 1.3rem;
-  color: #1E2542;
+  color: #00aca1;
   text-align: center;
   margin-top: 5%;
 }
@@ -90,8 +91,8 @@ a.add_fields{
 }
 .language-fields-label{
   display: inline;
-  font-size: 1.1rem;
-  color: #1E2542;
+  font-size: 1rem;
+  color: #3b3b3b;
 }
 
 #add_language{
@@ -277,7 +278,7 @@ label#first_option_label{
 }
 
 #profile-aboutme{
-  margin-top: 5%;
+  margin-top: 30%;
   text-align: center;
   font-size: 1.2rem;
 }
@@ -296,12 +297,10 @@ label#first_option_label{
   text-align: center;
   padding-bottom: 10%;
   & a{
-    background-color: #AADBE8;
+    background-color: #00aca1;
     padding: 2%;
-    border: $base-border;
-    border-radius: $base-border-radius;
-    border-color: $base-background-color;
-    color:black;
+    border-radius: 5px;
+    color:white;
   }
 }
 //Responsive Nav Bar
@@ -396,10 +395,20 @@ nav#nav-mobile li{
       border-bottom: 2px solid #00aca1;
     }
   }
-  .page-title{
+  .profile-name{
     font-size: 1.6rem;
-    margin-top: 1%;
-    color: #234766;
+    color: #3b3b3b;
+    float: left;
+    margin-left: 2%;
+    margin-top: 17%;
+
+
+  }
+
+  #profile-location{
+    float: left;
+    margin-left: -26.5%;
+    margin-top: 22%;
   }
 
   #profile-images{
@@ -407,11 +416,14 @@ nav#nav-mobile li{
     width: 50%;
     margin-left: 2%;
     margin-right: 2%;
+
   }
   #profile-images img{
-    height: 300px;
+    height: 200px;
     width: 30%;
     border-radius: 20px;
+    float: left;
+    margin-left: 5%;
   }
   .yeild{
     margin-top: -8%;
@@ -421,17 +433,19 @@ nav#nav-mobile li{
 
   .profile-form{
     background-color: white;
+    border-radius: 10px;
     width: 60%;
-    margin-left: 4%;
+    margin-left: 20%;
+    margin-top: 15%;
     padding-top: 2%;
   }
   .form_input input{
-    width: 50%;
-    height: 2rem;
-    border-radius: $base-border-radius;
-    border-color:#859CB0;
+    width: 40%;
+    height: 1.7rem;
+    border-color: #6a6a6a;
+    border-width: 0.5px;
+    border-radius: 5px;
     font-size: 1rem;
-    border-width: 3px;
     display: inline;
     margin-left: 2%;
 
@@ -439,19 +453,20 @@ nav#nav-mobile li{
 
   .form_input label{
     display: inline-block;
-    width: 15%;
+    width: 20%;
     font-size: 1rem;
   }
 
   textarea#profile_about_me{
-    width: 50%;
-    border-radius: $base-border-radius;
-    border-color:#859CB0;
+    width: 40%;
+    border-color: #6a6a6a;
+    border-width: 0.5px;
+    border-radius: 5px;
     font-size: 1rem;
-    border-width: 3px;
     display: inline;
     margin-left: 2%;
-    margin-bottom: -2%;
+    margin-bottom: -1%;
+    height: 4rem;
   }
   .form_checkbox_input label{
     display: inline-block;
@@ -463,35 +478,36 @@ nav#nav-mobile li{
   }
   label.select_label{
     font-size: 1rem;
+    width: 17%;
 
   }
   .language-fields label{
     font-size: 1rem;
     display: inline-block;
-    width: 15%;
+    width: 20%;
 
   }
 
   .language-fields input{
-    width: 50%;
-    height: 2rem;
-    border-radius: $base-border-radius;
-    border-color: #859CB0;
+    width: 40%;
+    height: 1.7rem;
+    border-color: #6a6a6a;
+    border-width: 0.5px;
+    border-radius: 5px;
     font-size: 1rem;
-    border-width: 3px;
     display: inline;
     margin-left: 2%;
 
   }
 
   .language-fields-radio input{
-    font-size: 1rem;
+    font-size: 0.7rem;
     display: inline;
-    margin-left: 0.5%;
+
   }
   .language-fields-radio label{
-    display: inline-block;
-    width: 15%;
+    display: inline;
+    width: 20%;
     font-size: 1rem;
 
   }
@@ -506,51 +522,114 @@ nav#nav-mobile li{
   }
 
   #remove_language{
-    border-radius: 0px;
-    border: 3px solid $base-background-color;
-    font-size: 1rem;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 1%;
-    padding-bottom: 1%;
+    background-color: #00aca1;
+    border: 0;
+    border-radius: $button-border-radius;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 600;
+    line-height: 1;
+    padding: $small-spacing $base-spacing;
+    transition: background-color $base-duration $base-timing;
+    vertical-align: middle;
+    white-space: nowrap;
     margin-left: 5%;
+
+    &:hover,
+    &:focus {
+      background-color: shade(#a9a9a9, 20%);
+      color: #fff;
+    }
 
   }
 
   #add_language{
-    border-radius: 0px;
-    border: 3px solid $base-background-color;
-    font-size: 1rem;
-    padding-left: 6.1%;
-    padding-right: 6.1%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    margin-left: 5%;
+      background-color: #00aca1;
+      border: 0;
+      border-radius: $button-border-radius;
+      color: white;
+      cursor: pointer;
+      display: inline-block;
+      font-family: $base-font-family;
+      font-size: $base-font-size;
+      -webkit-font-smoothing: antialiased;
+      font-weight: 600;
+      line-height: 1;
+      padding: $small-spacing $base-spacing;
+      transition: background-color $base-duration $base-timing;
+      vertical-align: middle;
+      white-space: nowrap;
+      margin-left: 5%;
+      padding-left: 5.25%;
+      padding-right: 5.25%;
+
+      &:hover,
+      &:focus {
+        background-color: shade(#a9a9a9, 20%);
+        color: #fff;
+      }
 
   }
 
   #add_photo{
-    border-radius: 0px;
-    border: 3px solid $base-background-color;
-    font-size: 1rem;
-    padding-left: 6.1%;
-    padding-right: 6.1%;
-    padding-top: 1%;
-    padding-bottom: 1%;
+    background-color: #00aca1;
+    border: 0;
+    border-radius: $button-border-radius;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 600;
+    line-height: 1;
+    padding: $small-spacing $base-spacing;
+    text-decoration: none;
+    transition: background-color $base-duration $base-timing;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
     margin-left: 5%;
 
+
+    &:hover,
+    &:focus {
+      background-color: shade(#a9a9a9, 20%);
+      color: #fff;
+    }
   }
 
   #remove_photo{
-    border-radius: 0px;
-    border: 3px solid $base-background-color;
-    font-size: 1rem;
-    padding-left: 7.5%;
-    padding-right: 7.5%;
-    padding-top: 1%;
-    padding-bottom: 1%;
+    background-color: #00aca1;
+    border: 0;
+    border-radius: $button-border-radius;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 600;
+    line-height: 1;
+    padding: $small-spacing $base-spacing;
+    text-decoration: none;
+    transition: background-color $base-duration $base-timing;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
     margin-left: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
 
+    &:hover,
+    &:focus {
+      background-color: shade(#a9a9a9, 20%);
+      color: #fff;
+    }
   }
 
   .image-fields img{
@@ -659,14 +738,14 @@ nav#nav-mobile li{
 
   .profile-details-title{
     font-size: 1.2rem;
-    color: #859CB0;
+    color: #00aca1;
   }
 
   .profile-tags{
     text-align: center;
     padding-bottom: 10%;
     & a{
-      background-color: #AADBE8;
+      background-color: #00aca1;
       padding: 1%;
     }
   }

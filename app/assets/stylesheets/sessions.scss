@@ -25,7 +25,7 @@ body.sessions {
 }
 
 .logo-animated {
-  @include animation-duration(1s);
+  @include animation-duration(2s);
   @include animation-timing-function(ease);
   @include animation-fill-mode(forwards);
   animation-name: fadeIn;
