@@ -1,5 +1,6 @@
 class Preference < ActiveRecord::Base
   belongs_to :profile
+  has_many :pref_languages
 
   # def self.recommended_profiles
     #in the controller create a new instance variable that will be a collection

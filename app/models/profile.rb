@@ -10,24 +10,20 @@ class Profile < ActiveRecord::Base
   belongs_to :user
   has_many :languages
   has_many :preferences
+  has_many :pref_language
   has_many :images
-
   has_many :sent_messages, class_name: :Message, foreign_key: :sender_id
   has_many :recipient_messages, class_name: :Message, foreign_key: :recipient_id
-
   has_many :blocked_users, through: :user
   has_many :enemies, through: :blocked_users, class_name: User
-
 
   accepts_nested_attributes_for :images, :languages, :preferences, allow_destroy: true
 
   validates_presence_of :first_name, :last_name, :location, :birthday, :about_me
   validates_with ValidatesGender
-
   validates :user_id, uniqueness: {message: "Error. Looks like you already have a profile. You can update your profile by clicking on update."}
   geocoded_by :location
   after_validation :geocode, if: :location_changed?
-
   acts_as_taggable_on :tags
 
 
