@@ -42,8 +42,7 @@ $(document).on('page:load ready', function() {
           $("#date-search").hide();
           $("#pair-search").hide();
         }else{
-          $("#date-search").hide();
-          $("#pair-search").hide();
+          
           $("#search-result").html("Sorry, nobody matches your search");
         }
       }

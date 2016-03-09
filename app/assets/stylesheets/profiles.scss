@@ -719,6 +719,32 @@ nav#nav-mobile li{
     margin-bottom: 2%;
   }
 
+  input#search_min_age{
+    width: 20%;
+    height: 1.5rem;
+    font-size: 0.7rem;
+    border-width: 3px;
+    display: inline;
+    margin-left: 2.5%;
+    border: solid;
+    border-color: #6a6a6a;
+    border-width: 0.5px;
+    border-radius: 5px;
+  }
+  input#search_max_age{
+    width: 20%;
+    height: 1.5rem;
+    font-size: 0.7rem;
+    border-width: 3px;
+    display: inline;
+    margin-left: 2.5%;
+    margin-top: -2.5%;
+    border: solid;
+    border-color: #6a6a6a;
+    border-width: 0.5px;
+    border-radius: 5px;
+  }
+
   img.profile-image{
     width: 15%;
   }
