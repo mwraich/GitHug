@@ -11,7 +11,7 @@
 </head>
 <body class="<%= controller.controller_name %>">
 
-  <% if current_user && current_user.profile %>
+  <% if current_user %>
 
   <div class="menu-bar">
     <div class="message">
@@ -55,6 +55,7 @@
     <% end %>
 
     <%= yield %>
+
   </div>
 </body>
 </html>
