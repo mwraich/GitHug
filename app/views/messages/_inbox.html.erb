@@ -6,8 +6,8 @@
     <div class="form_update">
     <%= form_for msg do |f|%>
       <%= f.label( :read_status, "Read", class: 'unread') %>
-      <%= f.check_box(:read_status, value: false, class: 'unread-checkbox') %>
-      <% f.submit "SEND" %>
+      <%= f.check_box(:read_status, value: true, class: 'unread-checkbox') %>
+      <% f.submit%>
     <% end %>
     </div>
 
