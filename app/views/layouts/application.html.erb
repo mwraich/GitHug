@@ -2,22 +2,21 @@
 <html>
 <head>
   <title>GitHug</title>
+  <link rel="icon" href="http://www.clker.com/cliparts/G/x/G/O/Z/h/think-line-turquoise-and-brown-heart-hi.png">
   <meta name="viewport" content="initial-scale=1.0" width="device-width">
   <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true %>
   <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <link href='https://fonts.googleapis.com/css?family=Exo:800' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= controller.controller_name %>">
 
-  <% if current_user && current_user.profile %>
+  <% if current_user %>
 
   <div class="menu-bar">
     <div class="message">
-      <%= image_tag "message.svg", class: "message" %>
+      <%= link_to image_tag("message.svg"), messages_path, class: "message-icon"%>
     </div>
 
     <div class="logo" >
@@ -27,6 +26,7 @@
     <nav id="nav-main">
       <ul>
         <li><%= link_to 'Find A Match', profiles_path %></li>
+        <li><%= link_to 'Mailbox', messages_path %></li>
         <li><%= link_to 'Profile', profile_path(current_user.profile) %></li>
         <li><%= link_to 'Update Profile', edit_profile_path(current_user.profile) %></li>
         <li><%= link_to 'Logout', session_path(current_user), method: 'delete' %></li>
@@ -58,6 +58,7 @@
     <% end %>
 
     <%= yield %>
+
   </div>
 </body>
 </html>

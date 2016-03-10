@@ -1,5 +1,6 @@
 $(document).on('page:load ready', function() {
 
+  $('.sent_message').hide();
 
   $(this).on('click','.reply', function(eventHandler){
     eventHandler.preventDefault();
@@ -20,7 +21,17 @@ $(document).on('page:load ready', function() {
     });
   });
 
-  $('.unread').on('click',function(){
+  $('.unread-checkbox').on('click',function(){
   $(this).parent().submit();
+  });
+
+  $('#sent_message_show').on('click', function(){
+    $('#show-inbox').hide();
+    $('.sent_message').fadeIn(1000);
+  });
+
+  $('#show-inbox-button').on('click', function(){
+    $('.sent_message').hide();
+    $('#show-inbox').fadeIn(1000);
   });
 });

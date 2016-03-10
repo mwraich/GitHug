@@ -1,26 +1,27 @@
-<h1 class="page-title"><%= @profile.first_name %> <%= @profile.last_name %></h1>
-
 <div class="profile-form">
 
+  <div id="profile-images">
+  <% if @profile.images.any? %>
+    <% @profile.images.each do |img| %>
+      <%= image_tag(img.image)%>
+    <% end %>
+  <% else %>
+    <%= render "no_profile_image" %>
+  <% end %>
+  </div>
+
+<h1 class="profile-name"><%= @profile.first_name %> <%= @profile.last_name %></h1>
 
 <% if @profile.blocked_by?(current_user) %>
   <%= "This user has already been blocked" %>
   <%else %>
 <%= form_for BlockedUser.new do |f| %>
   <%= f.hidden_field :blocked_id, value: @profile.user_id %>
-  <%= f.submit 'block' %>
+  <%= f.submit 'Block User', :class => "block_button" %>
   <% end %>
 <% end%>
 
-<div id="profile-images">
-  <% if @profile.images.empty? %>
-    <%= image_tag(@user.github_image) %>
-  <% else %>
-    <% @profile.images.each do |img| %>
-  <%= image_tag(img.image)%>
-    <% end %>
-  <% end %>
-</div>
+
 
 <div id="profile-aboutme">
   <p> <%= @profile.about_me %></p>
@@ -39,16 +40,15 @@
     <% end %>
   </li>
   <li>
-    Location: <%= @profile.location %>
-  </li>
-  <li>
     Birthday: <%= @profile.birthday %>
   </li>
   <li>
     Operating System: <%= @profile.operating_system %>
   </li>
+  <li> <%= @profile.location %> </li>
 </ul>
 </div>
+
 
 <div id="profile-languages">
 <p class="profile-details-title"> Languages </p>
@@ -66,10 +66,6 @@
   <%= link_to tag.name, tagged_url(:tag => tag.name) %>
 <% end %>
 </div>
-
-<% @profile.images.each do |img| %>
-  <%= image_tag(img.image)%>
-<% end %>
 
 <%= render "messages/new_message" %>
 

@@ -3,10 +3,4 @@ class Message < ActiveRecord::Base
   belongs_to :sender, class_name: :Profile
 
 
-
-  def notification
-    where('read_status = false').count
-  end
-
-
 end
