@@ -21,7 +21,9 @@
       <%= f.text_field :last_name%>
     </div>
     <div class="form_input">
-      <%= f.label :location, "Location:"%>
+      <%= f.label :location, "City:", class: "select_label"%>
+      <%= f.text_field :location%>
+      <%= f.label :location, "Province:", class: "select_label"%>
       <%= f.text_field :location%>
     </div>
     <div class="form_checkbox_input">

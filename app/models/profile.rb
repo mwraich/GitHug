@@ -17,6 +17,7 @@ class Profile < ActiveRecord::Base
   has_many :blocked_users, through: :users
   has_many :enemies, through: :blocked_users, class_name: User
 
+
   accepts_nested_attributes_for :images, :languages, :preferences, allow_destroy: true
 
 
@@ -26,7 +27,6 @@ class Profile < ActiveRecord::Base
   geocoded_by :location
   after_validation :geocode, if: :location_changed?
   acts_as_taggable_on :tags
-
 
   def self.search(search_params)
     m = search_params['male'].to_i.positive?
@@ -49,7 +49,7 @@ class Profile < ActiveRecord::Base
   end
 
   def blocked_by?(current_user)
-    current_user.enemies.include?(self.user) #Have you blocked this person? 
+    current_user.enemies.include?(self.user) #Have you blocked this person?
   end
 
 end
