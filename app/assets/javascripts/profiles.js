@@ -13,6 +13,9 @@ $(document).on('page:load ready', function() {
       }
   });
 
+  $('#login-notice').delay(1000).slideUp(1000);
+
+
   $('#pair-search').hide();
   $('#date-search').hide();
   $('input[type="radio"]').click(function() {
@@ -42,7 +45,7 @@ $(document).on('page:load ready', function() {
           $("#date-search").hide();
           $("#pair-search").hide();
         }else{
-          
+
           $("#search-result").html("Sorry, nobody matches your search");
         }
       }

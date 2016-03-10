@@ -92,12 +92,15 @@ a.add_fields{
 .actions input{
   width: 87%;
   margin-left: 6.5%;
+  margin-top: 5%;
   margin-bottom: 5%;
   font-size: 1.2rem;
+  background-color: #57c8b9;
 }
 
 .actions{
   margin-top: 10%;
+
 }
 .language-fields-label{
   display: inline;
@@ -139,31 +142,19 @@ a.add_fields{
   padding-bottom: 5%;
 }
 
+  #remove_language{
+    color: #00aca1;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 5%;
 
-#remove_language{
-  background-color: #00aca1;
-  border: 0;
-  border-radius: $button-border-radius;
-  color: white;
-  cursor: pointer;
-  display: inline-block;
-  font-family: $base-font-family;
-  font-size: $base-font-size;
-  -webkit-font-smoothing: antialiased;
-  font-weight: 600;
-  line-height: 1;
-  padding: $small-spacing $base-spacing;
-  transition: background-color $base-duration $base-timing;
-  vertical-align: middle;
-  white-space: nowrap;
-  margin-left: 5%;
+    &:hover,
+    &:focus {
+      color: #3b3b3b;
+    }
 
-  &:hover,
-  &:focus {
-    background-color: shade(#a9a9a9, 20%);
-    color: #fff;
   }
-}
+
 
 #add_photo{
   background-color: #00aca1;
@@ -195,61 +186,30 @@ a.add_fields{
 }
 
 #remove_photo{
-  background-color: #00aca1;
-  border: 0;
-  border-radius: $button-border-radius;
-  color: white;
+  color: #00aca1;
   cursor: pointer;
   display: inline-block;
-  font-family: $base-font-family;
-  font-size: $base-font-size;
-  -webkit-font-smoothing: antialiased;
-  font-weight: 600;
-  line-height: 1;
-  padding: $small-spacing $base-spacing;
-  transition: background-color $base-duration $base-timing;
-  vertical-align: middle;
-  white-space: nowrap;
   margin-left: 5%;
-  padding-left: 9%;
-  padding-right: 9%;
 
   &:hover,
   &:focus {
-    background-color: shade(#a9a9a9, 20%);
-    color: #fff;
+    color: #3b3b3b;
   }
+
 
 }
 
 #remove_preference{
-  background-color: #00aca1;
-  border: 0;
-  border-radius: $button-border-radius;
-  color: white;
+  color: #00aca1;
   cursor: pointer;
   display: inline-block;
-  font-family: $base-font-family;
-  font-size: $base-font-size;
-  -webkit-font-smoothing: antialiased;
-  font-weight: 600;
-  line-height: 1;
-  padding: $small-spacing $base-spacing;
-  text-decoration: none;
-  transition: background-color $base-duration $base-timing;
-  user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
   margin-left: 5%;
-  padding-left: 13%;
-  padding-right: 13%;
-  margin-bottom: 5%;
 
   &:hover,
   &:focus {
-    background-color: shade(#a9a9a9, 20%);
-    color: #fff;
+    color: #3b3b3b;
   }
+
 }
 
 .image-fields input{
@@ -275,7 +235,8 @@ a.add_fields{
   vertical-align: middle;
   white-space: nowrap;
   margin-left: 5%;
-
+  padding-left: 3.5%;
+  padding-right: 3.5%;
 
   &:hover,
   &:focus {
@@ -303,8 +264,7 @@ a.add_fields{
   vertical-align: middle;
   white-space: nowrap;
   margin-left: 5%;
-  padding-left: 9%;
-  padding-right: 9%;
+
 
   &:hover,
   &:focus {
@@ -426,6 +386,7 @@ input#search{
   border-width: 0.5px;
   border-radius: 5px;
   width: 92%;
+  margin-top: 15%;
   margin-left: 4%;
   padding-top: 2%;
   padding-bottom: 1%;
@@ -758,6 +719,32 @@ textarea#message_message{
     }
   }
 
+  #login-notice{
+    margin-top: 6%;
+    margin-left: 2%;
+    background-color: #00aca1;
+    color: white;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+    border-radius: 5px;
+    width: 15%;
+  }
+
+  #unread-messages-notice{
+    margin-top: 7%;
+    margin-left: 1%;
+    background-color: #00aca1;
+    color: white;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
+    border-radius: 5px;
+    width: 15.5%;
+  }
+
   //-------------Profile Show Page Styles------------//
 
 
@@ -766,7 +753,7 @@ textarea#message_message{
     color: #3b3b3b;
     float: left;
     margin-left: 2%;
-    margin-top: 20%;
+    margin-top: 15%;
 
   }
 
@@ -795,21 +782,25 @@ textarea#message_message{
     margin-left: 5%;
   }
 
+  #profile-details{
+    margin-top:5%;
+  }
+
   #profile-aboutme{
-    margin-top: 25%;
+    text-align: left;
+    margin-top: 5%;
+    margin-left: 10%;
   }
 
   input.block_button{
     background-color: #f16a6b;
     font-size: 0.7rem;
-    margin-left: 15%;
+    margin-left: -20%;
     width: 12%;
-    margin-top: -5%;
+    margin-top: 17%;
   }
   #profile-languages{
-    float: right;
-    margin-top: -25%;
-    margin-right: 8%;
+    margin-left: 10%;
   }
 
   .send-message-profile{
@@ -860,7 +851,7 @@ textarea#message_message{
     border-radius: 10px;
     width: 60%;
     margin-left: 20%;
-    margin-top: 7%;
+    margin-top: -7%;
     padding-top: 2%;
     margin-bottom: 2%;
   }
@@ -947,27 +938,14 @@ textarea#message_message{
   }
 
   #remove_language{
-    background-color: #00aca1;
-    border: 0;
-    border-radius: $button-border-radius;
-    color: white;
+    color: #00aca1;
     cursor: pointer;
     display: inline-block;
-    font-family: $base-font-family;
-    font-size: $base-font-size;
-    -webkit-font-smoothing: antialiased;
-    font-weight: 600;
-    line-height: 1;
-    padding: $small-spacing $base-spacing;
-    transition: background-color $base-duration $base-timing;
-    vertical-align: middle;
-    white-space: nowrap;
     margin-left: 5%;
 
     &:hover,
     &:focus {
-      background-color: shade(#a9a9a9, 20%);
-      color: #fff;
+      color: #3b3b3b;
     }
 
   }
@@ -1029,62 +1007,28 @@ textarea#message_message{
   }
 
   #remove_photo{
-    background-color: #00aca1;
-    border: 0;
-    border-radius: $button-border-radius;
-    color: white;
+    color: #00aca1;
     cursor: pointer;
     display: inline-block;
-    font-family: $base-font-family;
-    font-size: $base-font-size;
-    -webkit-font-smoothing: antialiased;
-    font-weight: 600;
-    line-height: 1;
-    padding: $small-spacing $base-spacing;
-    text-decoration: none;
-    transition: background-color $base-duration $base-timing;
-    user-select: none;
-    vertical-align: middle;
-    white-space: nowrap;
     margin-left: 5%;
-    padding-left: 5%;
-    padding-right: 5%;
 
     &:hover,
     &:focus {
-      background-color: shade(#a9a9a9, 20%);
-      color: #fff;
+      color: #3b3b3b;
     }
   }
 
   #remove_preference{
-    background-color: #00aca1;
-    border: 0;
-    border-radius: $button-border-radius;
-    color: white;
+    color: #00aca1;
     cursor: pointer;
     display: inline-block;
-    font-family: $base-font-family;
-    font-size: $base-font-size;
-    -webkit-font-smoothing: antialiased;
-    font-weight: 600;
-    line-height: 1;
-    padding: $small-spacing $base-spacing;
-    text-decoration: none;
-    transition: background-color $base-duration $base-timing;
-    user-select: none;
-    vertical-align: middle;
-    white-space: nowrap;
     margin-left: 5%;
-    padding-left: 7%;
-    padding-right: 7%;
-    margin-bottom: 5%;
 
     &:hover,
     &:focus {
-      background-color: shade(#a9a9a9, 20%);
-      color: #fff;
+      color: #3b3b3b;
     }
+
   }
 
   #add_pref_language{
@@ -1134,8 +1078,8 @@ textarea#message_message{
     vertical-align: middle;
     white-space: nowrap;
     margin-left: 5%;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 3.5%;
+    padding-right: 3.5%;
 
     &:hover,
     &:focus {
@@ -1174,7 +1118,7 @@ textarea#message_message{
   #first_option{
     width: 60%;
     margin-left: 20%;
-    margin-top: 25%;
+    margin-top: -7%;
     margin-bottom: 1%;
 
   }
@@ -1203,7 +1147,7 @@ textarea#message_message{
     border-width: 0.5px;
     border-radius: 5px;
     width: 60%;
-    margin-top: 20%;
+    margin-top: 10%;
     margin-left: 20%;
     padding-top: 2%;
     padding-bottom: 1%;
@@ -1211,11 +1155,11 @@ textarea#message_message{
   }
 
   #date-search{
-    margin-top: -5%;
+    margin-top: -16%;
   }
 
   #pair-search{
-    margin-top: -5%;
+    margin-top: -16%;
   }
 
 
@@ -1284,7 +1228,7 @@ textarea#message_message{
   #link-to-profile img{
     width: 5%;
     float:right;
-    margin-top: -12%;
+    margin-top: -8%;
     margin-right: 6%;
   }
 
@@ -1308,7 +1252,8 @@ textarea#message_message{
   }
 
   .profile-tags{
-    text-align: center;
+    text-align: left;
+    margin-left: 10%;
     padding-bottom: 10%;
     margin-top: 2%;
     & a{
@@ -1350,6 +1295,7 @@ textarea#message_message{
 
   #mailbox h1{
     font-size: 1.5rem;
+    margin-top: -7%;
   }
 
   #show-inbox-button{
