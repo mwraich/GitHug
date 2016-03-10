@@ -17,7 +17,7 @@
     <p class="message-info">Subject:<span class="subject_line"> <%= msg.subject_line %></span></p>
     <p class="message-info">Sent By:<span class="sent_by"> <%= msg.sender.first_name %></span></p>
 
-    <%= msg.message %>
+    <%= msg.message %><br>
 
       <%= link_to "Reply", message_reply_path(msg), class: 'reply' %>
       <div class="reply_form"></div>
