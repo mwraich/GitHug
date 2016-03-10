@@ -27,11 +27,12 @@ ActiveRecord::Schema.define(version: 20160309011008) do
   add_index "authentications", ["provider", "uid"], name: "index_authentications_on_provider_and_uid", using: :btree
 
   create_table "blocked_users", force: :cascade do |t|
-    t.integer  "blocker_id"
-    t.integer  "blocked_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "blocker_id"
+    t.integer "blocked_id"
   end
+
+  add_index "blocked_users", ["blocked_id"], name: "index_blocked_users_on_blocked_id", using: :btree
+  add_index "blocked_users", ["blocker_id"], name: "index_blocked_users_on_blocker_id", using: :btree
 
   create_table "images", force: :cascade do |t|
     t.string   "image"

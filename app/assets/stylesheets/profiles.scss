@@ -279,6 +279,7 @@ label#first_option_label{
 
 #profile-aboutme{
   margin-top: 30%;
+  margin-bottom: 5%;
   text-align: center;
   font-size: 1.2rem;
 }
@@ -429,6 +430,47 @@ nav#nav-mobile li{
   input.block_button{
     background-color: #f16a6b;
     font-size: 0.7rem;
+    margin-left: 15%;
+    margin-top: -5%;
+  }
+  #profile-languages{
+    float: right;
+    margin-top: -23%;
+    margin-right: 8%;
+  }
+  .send-message-profile p{
+    font-size: 1.2rem;
+    color: #00aca1;
+    margin-top: -2%;;
+  }
+
+  .send-message-profile{
+    margin-left: 10%;
+  }
+
+  .new_message label{
+    font-size: 1rem;
+
+  }
+
+  .new_message input{
+    margin-bottom: 5%;
+    margin-left: 5%;
+    margin-top: 2%;
+  }
+
+ input#message_subject_line{
+
+    width: 50%;
+  }
+  textarea#message_message{
+    width: 50%;
+    height: 50%;
+    display: block;
+  }
+
+  form#new_message{
+    margin-right: 10%;
   }
   .yeild{
     margin-top: -8%;
@@ -441,7 +483,7 @@ nav#nav-mobile li{
     border-radius: 10px;
     width: 60%;
     margin-left: 20%;
-    margin-top: 15%;
+    margin-top: 7%;
     padding-top: 2%;
     margin-bottom: 2%;
   }
@@ -793,6 +835,7 @@ nav#nav-mobile li{
   .profile-tags{
     text-align: center;
     padding-bottom: 10%;
+    margin-top: 2%;
     & a{
       background-color: #00aca1;
       padding: 1%;
