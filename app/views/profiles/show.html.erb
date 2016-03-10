@@ -19,6 +19,19 @@
   <% end %>
 <% end%>
 
+<<<<<<< HEAD
+=======
+<div id="profile-images">
+  <% if @profile.images.empty? %>
+    <%= image_tag(@user.github_image) %>
+  <% else %>
+    <% @profile.images.each do |img| %>
+  <%= image_tag(img.image)%>
+    <% end %>
+  <% end %>
+</div>
+
+>>>>>>> 365462c223a83e26f86c61b761c0380c2639d86d
 <div id="profile-aboutme">
   <p> <%= @profile.about_me %></p>
 </div>
@@ -62,3 +75,6 @@
 </div>
 
 <%= render "messages/new_message" %>
+
+<div class="reco_matches">
+</div>

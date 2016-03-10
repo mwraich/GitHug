@@ -8,6 +8,7 @@ class BlockedUsersController < ApplicationController
   end
 
 private
+
 def blocked_user_params
   params.require(:blocked_user).permit(:blocked_id)
 end
