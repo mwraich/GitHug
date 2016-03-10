@@ -45,8 +45,11 @@ gem 'autoprefixer-rails'
 
 
 gem 'carrierwave'
+
 gem 'mini_magick'
+
 gem 'fog-aws'
+
 gem 'cocoon'
 
 # Use ActiveModel has_secure_password
@@ -57,7 +60,18 @@ gem 'cocoon'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+group :test do
+  gem 'rspec-rails', ' ~> 3.0'
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'ffaker'
+  gem 'guard-rspec', require: false
+  gem 'shoulda-matchers'
+  gem 'simplecov', :require => false
 
+end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'best_debugger'

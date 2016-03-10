@@ -14,6 +14,7 @@ class ProfilesController < ApplicationController
 
   def show
     @user = current_user
+    # @github_image = @user.github_image
     @profiles = Profile.all
     @profile = Profile.find(params[:id])
     @message = Message.new
@@ -72,8 +73,9 @@ class ProfilesController < ApplicationController
   private
 
   def verify_user
-    if Profile.find(params[:id]).blocked_by?(current_user)
-      redirect_to :root, notice: "You have been blocked by this user"
+    if (current_user.profile).blocked_by?(Profile.find(params[:id]).user)
+      flash[:notice] = "You have been blocked by this user"
+      redirect_to profile_path(current_user.profile)
     end
   end
 

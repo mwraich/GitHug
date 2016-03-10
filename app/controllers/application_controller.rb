@@ -4,7 +4,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
 
+  before_action :require_login
+
+    # include CanCan::ControllerAdditions
   # before_action :require_login
+
+  # rescue_from CanCan::AccessDenied do |exception|
+  #   redirect_to root_url, :alert => "You do not have access to this page"
+  # end
 
   before_action :has_profile
 
@@ -13,6 +20,5 @@ class ApplicationController < ActionController::Base
       redirect_to new_profile_path
     end
   end
-
 
 end

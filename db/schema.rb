@@ -103,8 +103,6 @@ ActiveRecord::Schema.define(version: 20160309011008) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "image"
-    t.integer  "min_age"
-    t.integer  "max_age"
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
