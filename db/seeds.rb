@@ -10,10 +10,9 @@
 
 locations = ["Toronto,Ontario", "Montreal,Quebec", "Vancouver,BC", "Calgary,Alberta"]
 languages = ["Ruby", "Javascript", "Ember.JS", "PHP", "C"]
-operating_system = ["Linux, Unix"]
+operating_system = ["Linux", "Unix"]
 
 10.times do |n|
-
   u = User.create!({
     username: Faker::Internet.domain_word,
     email: Faker::Internet.email,
@@ -24,9 +23,9 @@ operating_system = ["Linux, Unix"]
     first_name: Faker::Name.first_name,
     last_name:  Faker::Name.last_name,
     location:   locations.sample + ", " + "Canada",
-    male:       Faker::Boolean.boolean,
-    female:     Faker::Boolean.boolean,
-    other:      Faker::Boolean.boolean,
+    male:       true,
+    female:     false,
+    other:      false,
     birthday:   Faker::Date.backward(365*20),
     operating_system: operating_system.sample,
     about_me:   Faker::Hacker.say_something_smart,
@@ -62,5 +61,54 @@ operating_system = ["Linux, Unix"]
     preference: z
     })
   end
+end
 
+10.times do |n|
+  u = User.create!({
+    username: Faker::Internet.domain_word,
+    email: Faker::Internet.email,
+    github_image: Faker::Avatar.image
+  })
+  x = Profile.create!({
+    first_name: Faker::Name.first_name,
+    last_name:  Faker::Name.last_name,
+    location:   locations.sample + ", " + "Canada",
+    male:       false,
+    female:     true,
+    other:      false,
+    birthday:   Faker::Date.backward(365*20),
+    operating_system: operating_system.sample,
+    about_me:   Faker::Hacker.say_something_smart,
+    image:      Faker::Avatar.image,
+    user: u
+  })
+
+  2.times do |n|
+  Language.create!({
+    language: languages.sample,
+    skill_level: Faker::Number.between(1, 5),
+    profile: x
+  })
+  end
+
+  z = Preference.create!({
+    location:   locations.sample + ", " + "Canada",
+    male:       Faker::Boolean.boolean,
+    female:     Faker::Boolean.boolean,
+    other:      Faker::Boolean.boolean,
+    min_age:    Faker::Number.between(18),
+    max_age:   Faker::Number.between(75),
+    operating_system: operating_system.sample,
+    partner:    Faker::Boolean.boolean(0.5),
+    paired_programmer: Faker::Boolean.boolean(0.5),
+    profile: x
+  })
+
+  2.times do |n|
+    PrefLanguage.create!({
+    pref_lang: languages.sample,
+    skill_level: Faker::Number.between(1, 5),
+    preference: z
+    })
+  end
 end
