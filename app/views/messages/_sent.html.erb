@@ -1,13 +1,14 @@
-<h3>Sent Messages</h3>
 <div class="sent_message">
 <% if @profile.sent_messages.any? %>
   <% @messages_sent_messages.each do |message| %>
     <div class="chat-message">
-      <p>To: <%= message.recipient.first_name %></p>
-      <p>Subject: <%= message.subject_line %></p>
-      <p>Sent By: <%= message.sender.first_name %></p>
-      <%= message.message %>
+      <p>To: <span class="recipient_id"><%= message.recipient.first_name %></span></p>
+      <p>Subject: <span class="subject_line"><%= message.subject_line %></span></p>
+      <p>Sent By: <span class="sent_by"><%= message.sender.first_name %></span></p>
+      <div id="message_message"><%= message.message %></div>
+      <hr class="line-break-inbox">
     </div>
   <% end %>
 <% end %>
+
 </div>

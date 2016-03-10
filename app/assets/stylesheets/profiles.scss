@@ -929,7 +929,124 @@ nav#nav-mobile li{
     }
   }
 
+  .reply{
+    background-color: #00aca1;
+    border: 0;
+    border-radius: $button-border-radius;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 600;
+    line-height: 1;
+    padding: $small-spacing $base-spacing;
+    transition: background-color $base-duration $base-timing;
+    vertical-align: middle;
+    white-space: nowrap;
+    margin-left: 5%;
 
+    &:hover,
+    &:focus {
+      background-color: shade(#a9a9a9, 20%);
+      color: #fff;
+    }
+  }
 
+  #mailbox{
+    margin-top: 5%;
+  }
+
+  #mailbox h1{
+    font-size: 1.5rem;
+  }
+
+  #show-inbox-button{
+    float: left;
+    margin-left: 1%;
+    margin-top: 1%;
+    width: 16%;
+    background-color: #6A6A6A;
+    border-radius: 5px;
+  }
+
+  #show-inbox{
+    margin-left: 20%;
+    margin-top: 2%;
+    background-color: white;
+    margin-right: 20%;
+    padding-top: 2%;
+    padding-left: 2%;
+    border-radius: 5px;
+  }
+  .sent_message{
+    margin-left: 20%;
+    margin-top: 2%;
+    background-color: white;
+    margin-right: 20%;
+    padding-top: 2%;
+    padding-left: 2%;
+    border-radius: 5px;
+  }
+  .unread{
+    float: right;
+    margin-right: 5%;
+    margin-top: -1%;
+    font-size: 1.2rem;
+  }
+
+  .unread-checkbox{
+    float: right;
+    margin-right: -2%;
+  }
+
+  .reply{
+    float: right;
+    margin-top: -8%;
+    margin-right: 2%;
+  }
+
+  .line-break-inbox{
+    width: 100%;
+    margin-left: -2%;
+
+  }
+
+  .message-info{
+    font-size: 1rem;
+  }
+
+  .recipient_id{
+    color: #3b3b3b;
+  }
+
+  .subject_line{
+    color: #3b3b3b;
+  }
+
+  .sent_by{
+    color: #3b3b3b;
+  }
+
+  .reply_message{
+    margin-top: 2%;
+  }
+
+  .reply-name{
+    color: #3b3b3b;
+  }
+  #sent_message_show{
+    float: left;
+    margin-left: -16%;
+    margin-top: 5%;
+    width: 16%;
+    background-color: #6A6A6A;
+    border-radius: 5px;
+  }
+
+  #message_message{
+    margin-top: 2.5%;
+  }
 
 }
