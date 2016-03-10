@@ -63,7 +63,7 @@
   <p id="tag">Add your Languages!</p>
     <div>
       <br>
-      <%= link_to_add_association "Add Languages", f, :languages, id: 'add_language',
+      <%= link_to_add_association "Add Language", f, :languages, id: 'add_language',
       'data-association-insertion-method' => 'before',
       'data-association-insertion-traversal' => 'closest' %>
     </div><br>
@@ -88,7 +88,7 @@
       'data-association-insertion-traversal' => 'closest' %>
     </div>
 
-    <p class="preferences">Tell Us What Your Looking For?</p>
+    <p class="preferences" id="tag">Tell Us What Your Looking For?</p>
     <div>
       <%= f.fields_for :preferences do |pref| %>
         <%= render "preference_fields", f: pref %>

@@ -1,6 +1,14 @@
-<h1 class="page-title"><%= @profile.first_name %> <%= @profile.last_name %></h1>
-
 <div class="profile-form">
+
+  <div id="profile-images">
+  <% @profile.images.each do |img| %>
+    <%= image_tag(img.image)%>
+  <% end %>
+  </div>
+
+<h1 class="profile-name"><%= @profile.first_name %> <%= @profile.last_name %></h1>
+<p id= "profile-location"> <%= @profile.location %> </p>
+
 
 
 <% if @profile.blocked_by?(current_user) %>
@@ -8,19 +16,11 @@
   <%else %>
 <%= form_for BlockedUser.new do |f| %>
   <%= f.hidden_field :blocked_id, value: @profile.user_id %>
-  <%= f.submit 'block' %>
+  <%= f.submit 'Block User', :class => "block_button" %>
   <% end %>
 <% end%>
 
-<div id="profile-images">
-  <% if @profile.images.empty? %>
-    <%= image_tag(@user.github_image) %>
-  <% else %>
-    <% @profile.images.each do |img| %>
-  <%= image_tag(img.image)%>
-    <% end %>
-  <% end %>
-</div>
+
 
 <div id="profile-aboutme">
   <p> <%= @profile.about_me %></p>
@@ -37,9 +37,6 @@
     <% else %>
     Other
     <% end %>
-  </li>
-  <li>
-    Location: <%= @profile.location %>
   </li>
   <li>
     Birthday: <%= @profile.birthday %>
@@ -66,10 +63,6 @@
   <%= link_to tag.name, tagged_url(:tag => tag.name) %>
 <% end %>
 </div>
-
-<% @profile.images.each do |img| %>
-  <%= image_tag(img.image)%>
-<% end %>
 
 <%= render "messages/new_message" %>
 
