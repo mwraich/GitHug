@@ -548,7 +548,7 @@ input.block_button{
 }
 
 
-//Responsive Nav Bar
+//--------------Responsive Nav Bar---------------//
 
 #nav-trigger{
   display: none;
@@ -711,12 +711,14 @@ textarea#message_message{
 
 
 
-//--------Desktop Size------------//
+//------------Desktop Size------------//
 
 
 
 
 @include media ($large-screen-up){
+
+
   body{
     background-color: #ededed;
   }
@@ -755,6 +757,10 @@ textarea#message_message{
       border-bottom: 2px solid #00aca1;
     }
   }
+
+  //-------------Profile Show Page Styles------------//
+
+
   .profile-name{
     font-size: 1.6rem;
     color: #3b3b3b;
@@ -770,13 +776,13 @@ textarea#message_message{
     margin-left: 2%;
     margin-right: 2%;
 
-  }
-  #profile-images img{
+    & img{
     height: 200px;
     width: 30%;
     border-radius: 20px;
     float: left;
     margin-left: 5%;
+    }
   }
 
   #no-profile-image{
@@ -788,9 +794,11 @@ textarea#message_message{
     float: left;
     margin-left: 5%;
   }
+
   #profile-aboutme{
     margin-top: 25%;
   }
+
   input.block_button{
     background-color: #f16a6b;
     font-size: 0.7rem;
@@ -803,14 +811,14 @@ textarea#message_message{
     margin-top: -25%;
     margin-right: 8%;
   }
-  .send-message-profile p{
-    font-size: 1.2rem;
-    color: #00aca1;
-    margin-top: -2%;
-  }
 
   .send-message-profile{
     margin-left: 10%;
+    & p{
+      font-size: 1.2rem;
+      color: #00aca1;
+      margin-top: -2%;
+    }
   }
 
   .new_message label{
@@ -843,6 +851,9 @@ textarea#message_message{
     width: 100%;
 
   }
+
+  //---------------Edit/New Profile Form Desktop Size-----------//
+
 
   .profile-form{
     background-color: white;
@@ -1154,6 +1165,12 @@ textarea#message_message{
     font-size: 1rem;
   }
 
+
+
+  //----------------Index Search Forms Desktop Size-----------------//
+
+
+
   #first_option{
     width: 60%;
     margin-left: 20%;
@@ -1247,6 +1264,9 @@ textarea#message_message{
     border-radius: 5px;
   }
 
+//--------------Index User Profiles Desktop Styles-------------//
+
+
   img.profile-image{
     width: 15%;
   }
@@ -1296,6 +1316,8 @@ textarea#message_message{
       padding: 1%;
     }
   }
+
+  //---------------Desktop MailBox Styles-------------//
 
   .reply{
     background-color: #00aca1;
