@@ -282,6 +282,8 @@ label#first_option_label{
   margin-bottom: 5%;
   text-align: center;
   font-size: 1.2rem;
+  margin-right: 5%;
+  margin-left: 5%;
 }
 
 #profile-details{
@@ -401,15 +403,8 @@ nav#nav-mobile li{
     color: #3b3b3b;
     float: left;
     margin-left: 2%;
-    margin-top: 17%;
+    margin-top: 20%;
 
-
-  }
-
-  #profile-location{
-    float: left;
-    margin-left: -26.5%;
-    margin-top: 22%;
   }
 
   #profile-images{
@@ -427,15 +422,26 @@ nav#nav-mobile li{
     margin-left: 5%;
   }
 
+  #no-profile-image{
+    height: 200px;
+    width: 30%;
+    border: dashed;
+    border-color: #ededed;
+    border-radius: 20px;
+    float: left;
+    margin-left: 5%;
+  }
+
   input.block_button{
     background-color: #f16a6b;
     font-size: 0.7rem;
     margin-left: 15%;
+    width: 12%;
     margin-top: -5%;
   }
   #profile-languages{
     float: right;
-    margin-top: -23%;
+    margin-top: -25%;
     margin-right: 8%;
   }
   .send-message-profile p{

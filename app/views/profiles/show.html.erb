@@ -1,15 +1,16 @@
 <div class="profile-form">
 
   <div id="profile-images">
-  <% @profile.images.each do |img| %>
-    <%= image_tag(img.image)%>
+  <% if @profile.images.any? %>
+    <% @profile.images.each do |img| %>
+      <%= image_tag(img.image)%>
+    <% end %>
+  <% else %>
+    <%= render "no_profile_image" %>
   <% end %>
   </div>
 
 <h1 class="profile-name"><%= @profile.first_name %> <%= @profile.last_name %></h1>
-<p id= "profile-location"> <%= @profile.location %> </p>
-
-
 
 <% if @profile.blocked_by?(current_user) %>
   <%= "This user has already been blocked" %>
@@ -44,8 +45,10 @@
   <li>
     Operating System: <%= @profile.operating_system %>
   </li>
+  <li> <%= @profile.location %> </li>
 </ul>
 </div>
+
 
 <div id="profile-languages">
 <p class="profile-details-title"> Languages </p>
