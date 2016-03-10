@@ -381,8 +381,8 @@ nav#nav-mobile li{
   }
   nav#nav-main{
     position: fixed;
-    margin-left: 55%;
-    margin-top: -3%;
+    margin-left: 50%;
+    margin-top: -2.5%;
 
     & li{
       display: inline;
@@ -680,6 +680,93 @@ nav#nav-mobile li{
     }
   }
 
+  #remove_preference{
+    background-color: #00aca1;
+    border: 0;
+    border-radius: $button-border-radius;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 600;
+    line-height: 1;
+    padding: $small-spacing $base-spacing;
+    text-decoration: none;
+    transition: background-color $base-duration $base-timing;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    margin-left: 5%;
+    padding-left: 7%;
+    padding-right: 7%;
+    margin-bottom: 5%;
+
+    &:hover,
+    &:focus {
+      background-color: shade(#a9a9a9, 20%);
+      color: #fff;
+    }
+  }
+
+  #add_pref_language{
+    background-color: #00aca1;
+    border: 0;
+    border-radius: $button-border-radius;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 600;
+    line-height: 1;
+    padding: $small-spacing $base-spacing;
+    text-decoration: none;
+    transition: background-color $base-duration $base-timing;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    margin-left: 5%;
+
+
+    &:hover,
+    &:focus {
+      background-color: shade(#a9a9a9, 20%);
+      color: #fff;
+    }
+  }
+
+  #add_pref{
+    background-color: #00aca1;
+    border: 0;
+    border-radius: $button-border-radius;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 600;
+    line-height: 1;
+    padding: $small-spacing $base-spacing;
+    text-decoration: none;
+    transition: background-color $base-duration $base-timing;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    margin-left: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+
+    &:hover,
+    &:focus {
+      background-color: shade(#a9a9a9, 20%);
+      color: #fff;
+    }
+  }
+
   .image-fields img{
     margin-left: 5%;
   }
@@ -841,6 +928,7 @@ nav#nav-mobile li{
       padding: 1%;
     }
   }
+
 
 
 
