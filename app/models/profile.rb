@@ -20,7 +20,7 @@ class Profile < ActiveRecord::Base
   accepts_nested_attributes_for :images, :languages, :preferences, allow_destroy: true
 
   validates_presence_of :first_name, :last_name, :location, :birthday, :about_me
-  validates_with ValidatesGender
+  # validates_with ValidatesGender
   validates :user_id, uniqueness: {message: "Error. Looks like you already have a profile. You can update your profile by clicking on update."}
   geocoded_by :location
   after_validation :geocode, if: :location_changed?

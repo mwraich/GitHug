@@ -1,9 +1,8 @@
 class ProfilesController < ApplicationController
 
   skip_before_action :has_profile, only: [:new, :create]
-
   before_action :verify_user, only: :show
-  skip_before_action :has_profile, only: [:new]
+
 
   def index
     @profiles = if params[:search]

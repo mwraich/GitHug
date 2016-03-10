@@ -10,9 +10,19 @@ class Preference < ActiveRecord::Base
     #needs to call Profile.search
   # end
 
-  def preferences_recos
-    pref_array = (Preference.all + PrefLanguage.all).to_a
-    search(pref_array)
+  def to_hash
+
+    {
+    'male' => self.male ? 1 : 0,
+    # 'female' => self.female ? 1 : 0,
+    # 'other' => self.other ? 1 : 0,
+    # 'operating_system' => self.operating_system,
+    'language' => self.pref_languages.first.pref_lang,
+    'min_age' => self.min_age,
+    'max_age' => self.max_age
+    }
+
   end
+
 
 end
