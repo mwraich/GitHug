@@ -21,7 +21,7 @@ $(document).on('page:load ready', function() {
     });
   });
 
-  $('.unread').on('click',function(){
+  $('.unread-checkbox').on('click',function(){
   $(this).parent().submit();
   });
 

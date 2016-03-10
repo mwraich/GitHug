@@ -8,13 +8,7 @@ describe User, type: :model do
   it 'check' do
     message = Message.create(recipient: profile)
     message2 = Message.create(recipient: profile, read_status: true)
-    byebug
 
-    expect(user.notice).to eq(565)
-  end
-
-  it 'fails' do
-    expect(message1).to be nil
-    expect(true).to be false
+    expect(user.notice).to eq(1)
   end
 end
