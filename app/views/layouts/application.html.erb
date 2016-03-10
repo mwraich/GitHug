@@ -45,16 +45,11 @@
 
   <div class="yield">
     <% if flash[:notice] %>
-
-      <p><%= flash[:notice] %></p>
-    <% end %>
-    <% if flash[:alert] %>
-      <p> <%= flash[:alert] %></p>
+      <p id="login-notice"><%= flash[:notice] %></p>
     <% end %>
 
-        <p>You have <%= current_user.notice %> unread messages</p>
+      <p id="unread-messages-notice">You have <%= current_user.notice %> unread messages!</p>
 
-        <%= current_user.username %>
     <% end %>
 
     <%= yield %>

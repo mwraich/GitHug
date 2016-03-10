@@ -719,6 +719,32 @@ textarea#message_message{
     }
   }
 
+  #login-notice{
+    margin-top: 6%;
+    margin-left: 2%;
+    background-color: #00aca1;
+    color: white;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+    border-radius: 5px;
+    width: 15%;
+  }
+
+  #unread-messages-notice{
+    margin-top: 7%;
+    margin-left: 1%;
+    background-color: #00aca1;
+    color: white;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
+    border-radius: 5px;
+    width: 15.5%;
+  }
+
   //-------------Profile Show Page Styles------------//
 
 
@@ -825,7 +851,7 @@ textarea#message_message{
     border-radius: 10px;
     width: 60%;
     margin-left: 20%;
-    margin-top: 7%;
+    margin-top: -7%;
     padding-top: 2%;
     margin-bottom: 2%;
   }
@@ -1092,7 +1118,7 @@ textarea#message_message{
   #first_option{
     width: 60%;
     margin-left: 20%;
-    margin-top: 10%;
+    margin-top: -7%;
     margin-bottom: 1%;
 
   }
@@ -1129,11 +1155,11 @@ textarea#message_message{
   }
 
   #date-search{
-    margin-top: -5%;
+    margin-top: -16%;
   }
 
   #pair-search{
-    margin-top: -5%;
+    margin-top: -16%;
   }
 
 
@@ -1269,6 +1295,7 @@ textarea#message_message{
 
   #mailbox h1{
     font-size: 1.5rem;
+    margin-top: -7%;
   }
 
   #show-inbox-button{
