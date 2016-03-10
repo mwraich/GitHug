@@ -15,7 +15,7 @@
   <%else %>
 <%= form_for BlockedUser.new do |f| %>
   <%= f.hidden_field :blocked_id, value: @profile.user_id %>
-  <%= f.submit 'block' %>
+  <%= f.submit 'Block User', :class => "block_button" %>
   <% end %>
 <% end%>
 

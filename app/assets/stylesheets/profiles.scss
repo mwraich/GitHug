@@ -425,6 +425,11 @@ nav#nav-mobile li{
     float: left;
     margin-left: 5%;
   }
+
+  input.block_button{
+    background-color: #f16a6b;
+    font-size: 0.7rem;
+  }
   .yeild{
     margin-top: -8%;
     width: 100%;
@@ -756,6 +761,23 @@ nav#nav-mobile li{
     padding-top: 2%;
     padding-bottom: 1%;
     margin-bottom: 2%;
+    border-radius: 5px;
+  }
+
+  #link-to-profile img{
+    width: 5%;
+    float:right;
+    margin-top: -12%;
+    margin-right: 6%;
+  }
+
+  #index-profile-name{
+    color: #3b3b3b;
+  }
+
+  #index-profile-location{
+    font-size: 1rem;
+    margin-top: -2%;
   }
 
   .line-break{
