@@ -46,8 +46,7 @@ FactoryGirl.define do
   factory :profile8, parent: :profile1 do
   end
 
-  factory :profile9, parent: profile1 do
+  factory :profile9, parent: :profile1 do
   end
 
-  end
 end
