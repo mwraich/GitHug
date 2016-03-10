@@ -488,7 +488,6 @@ input#search_max_age{
 
 
 
-
 .profile-form{
   margin-top: 20%;
 }
@@ -687,6 +686,9 @@ textarea#message_message{
   margin-left: 5%;
 }
 
+#message_message{
+  margin-left: 5%;
+}
 
 
 
@@ -786,7 +788,9 @@ textarea#message_message{
     float: left;
     margin-left: 5%;
   }
-
+  #profile-aboutme{
+    margin-top: 25%;
+  }
   input.block_button{
     background-color: #f16a6b;
     font-size: 0.7rem;
