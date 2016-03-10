@@ -1,13 +1,11 @@
-
-
-
 <div id = "first_option">
   <%= form_tag users_path, method: :get, id: 'search-choice' do %>
-  <label>Who are you looking for?</label><br>
+  <label id="first_option_label">Who are you looking for?</label><br>
   <input type="radio" id="pairchoice" name="choice" value="pair"> <label for="pairchoice" class="button-label">Pair</label><br>
   <input type="radio" id="datechoice" name="choice" value="date"> <label for="datechoice" class="button-label">Date</label><br>
   <% end %>
 </div>
+
 
 <div class = "choices">
   <div id = "pair-search">
@@ -19,8 +17,21 @@
   </div>
 </div>
 
-<div id = "search-result">
+<div class ="index-users">
+<% @profiles.each do |profile| %>
+ <%= image_tag (profile.user.github_image), class: 'profile-image' %>
+ <div id="index-view-profile-info">
+   <p id = "index-profile-name"><%= profile.first_name%><p>
+    <p id="index-profile-location"><%=profile.location %></p>
+    <div id="link-to-profile">
+    <%= link_to image_tag("profile.svg"), profile_path(profile) %>
+  </div>
+ </div>
+<hr class="line-break">
+ <% end %>
 </div>
-<div id = "profile">
-  <%= render 'profile' %>
+
+
+
+<div id = "search-result">
 </div>

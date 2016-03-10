@@ -9,7 +9,8 @@
         <%= f.radio_button(:paired_programmer, value: true) %>
 
     <div class="form_input">
-      <%= f.label :location, "Location:"%>
+      <br>
+      <%= f.label :location, "Location:", class: "select_label"%>
       <%= f.text_field :location%>
     </div>
     <div class="form_checkbox_input">
@@ -24,11 +25,11 @@
         <%= f.check_box(:other) %>
     </div><br>
     <div class="form_input">
-      <%= f.label(:min_age, "Minimun Age:") %>
+      <%= f.label(:min_age, "Minimun Age:", class: "select_label") %>
       <%= f.number_field(:min_age) %>
     </div>
     <div class="form_input">
-      <%= f.label(:max_age, "Maximum Age:") %>
+      <%= f.label(:max_age, "Maximum Age:", class: "select_label") %>
       <%= f.number_field(:max_age) %>
     </div>
     <div class="form_radio_button">
@@ -47,7 +48,7 @@
       <br>
     </div>
   </div>
-  
+
     <div>
       <br>
       <%= link_to_add_association "Add A Preferred Language", f, :pref_languages, id: 'add_pref_language',
