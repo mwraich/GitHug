@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
   def create
     if @user = login(params[:email])
-      redirect_to profiles_path
+      redirect_to profile_path
     else
       render action: 'new'
     end

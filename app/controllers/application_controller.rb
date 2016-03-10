@@ -6,6 +6,13 @@ class ApplicationController < ActionController::Base
 
   before_action :require_login
 
+    # include CanCan::ControllerAdditions
+  # before_action :require_login
+
+  # rescue_from CanCan::AccessDenied do |exception|
+  #   redirect_to root_url, :alert => "You do not have access to this page"
+  # end
+
   before_action :has_profile
 
   def has_profile
