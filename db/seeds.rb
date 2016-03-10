@@ -37,7 +37,8 @@ end
 20.times do |n|
   Language.create ({
     language: languages.sample,
-    skill_level: Faker::Number.between(1, 5)
+    skill_level: Faker::Number.between(1, 5),
+    profile: x
   })
 end
 # 100.times do |n|

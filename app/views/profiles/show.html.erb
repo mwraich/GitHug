@@ -13,9 +13,13 @@
 <% end%>
 
 <div id="profile-images">
-<% @profile.images.each do |img| %>
+  <% if @profile.images.empty? %>
+    <%= image_tag(@user.github_image) %>
+  <% else %>
+    <% @profile.images.each do |img| %>
   <%= image_tag(img.image)%>
-<% end %>
+    <% end %>
+  <% end %>
 </div>
 
 <div id="profile-aboutme">

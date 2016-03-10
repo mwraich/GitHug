@@ -3,7 +3,7 @@ class Image < ActiveRecord::Base
   belongs_to :profiles
   mount_uploader :image, ImageUploader
   validates :image,
-  :presence => true,
+  # :presence => true,
   :file_size => {
      :maximum => 0.5.megabytes.to_i
   }
