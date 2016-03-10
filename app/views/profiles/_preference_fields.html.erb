@@ -33,14 +33,17 @@
       <%= f.number_field(:max_age) %>
     </div>
     <div class="form_radio_button">
-      <%= label :opperating_system, "Operating System:", class: "select_label"  %>
+      <%= f.label(:operating_system, "Linux") %>
+      <%= f.radio_button(:operating_system, "Linux") %>
 
-        <%= f.label(:operating_system, "Linux") %>
-        <%= f.radio_button(:operating_system, "Linux") %>
+      <%= f.label(:operating_system, "OS X") %>
+      <%= f.radio_button(:operating_system, "OS X") %>
 
-        <%= f.label(:operating_system, "UNIX") %>
-        <%= f.radio_button(:operating_system, "UNIX") %>
-    </div>
+      <%= f.label(:operating_system, "Windows") %>
+      <%= f.radio_button(:operating_system, "Windows") %>
+
+      <%= f.label(:operating_system, "Ubuntu") %>
+      <%= f.radio_button(:operating_system, "Ubuntu") %>
 
     <div class="add-preference-spacing">
       <br>

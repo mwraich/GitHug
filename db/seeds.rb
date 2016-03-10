@@ -8,9 +8,67 @@
 
 # # On command line type gem install faker, run bundle, and then rake db:seed
 
+
+User.create!()
+Profile.create!()
 locations = ["Toronto,Ontario", "Montreal,Quebec", "Vancouver,BC", "Calgary,Alberta"]
-languages = ["Ruby", "Javascript", "Ember.JS", "PHP", "C"]
+languages = ["Ruby", "Javascript", "PHP", "C"]
 operating_system = ["Linux", "Unix"]
+
+  u = User.create!({
+    username: "emsmith",
+    email: "em@gmail.com",
+    github_image: Faker::Avatar.image
+  })
+    # sleep(1)
+  x = Profile.create!({
+    first_name: "Emily",
+    last_name:  "Smith",
+    location:   locations.sample + ", " + "Canada",
+    male:       true,
+    female:     false,
+    other:      false,
+    birthday:   Faker::Date.backward(365*20),
+    operating_system: operating_system.sample,
+    about_me:   Faker::Hacker.say_something_smart,
+    image:      Faker::Avatar.image,
+    user: u
+  })
+
+  Language.create!({
+    language: languages.sample,
+    skill_level: Faker::Number.between(1, 5),
+    profile: x
+  })
+  end
+
+  z = Preference.create!({
+    location:   locations.sample + ", " + "Canada",
+    male:       Faker::Boolean.boolean,
+    female:     Faker::Boolean.boolean,
+    other:      Faker::Boolean.boolean,
+    min_age:    Faker::Number.between(18),
+    max_age:   Faker::Number.between(75),
+    operating_system: operating_system.sample,
+    partner:    Faker::Boolean.boolean(0.5),
+    paired_programmer: Faker::Boolean.boolean(0.5),
+    profile: x
+  })
+
+    PrefLanguage.create!({
+    pref_lang: languages.sample,
+    skill_level: Faker::Number.between(1, 5),
+    preference: z
+    })
+  end
+end
+
+
+
+
+
+
+
 
 10.times do |n|
   u = User.create!({
