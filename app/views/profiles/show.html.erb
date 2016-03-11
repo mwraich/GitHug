@@ -11,7 +11,6 @@
   </div>
 
 <h1 class="profile-name"><%= @profile.first_name %> <%= @profile.last_name %></h1>
-
 <% if @profile.blocked_by?(current_user) %>
   <%= "This user has already been blocked" %>
   <%else %>
@@ -70,4 +69,7 @@
 <%= render "messages/new_message" %>
 
 <div class="reco_matches">
+  <% @profiles.pref_search(@profile.preferences).each do |reco| %>
+    <%= reco.first_name %>
+  <% end %>
 </div>
