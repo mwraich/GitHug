@@ -16,21 +16,8 @@
 <!-- Add aligator tags and this will stop block button from appear, waiting to get CSS Styling done before implementing this -->
 <!-- if current_user.profile == @profile   -->
 <!-- <div id ='No_block_button'></div> -->
-<% if @profile.blocked_by?(current_user) %>
-  <%= "This user has already been blocked" %>
-  <%else %>
-<%= form_for BlockedUser.new do |f| %>
-  <%= f.hidden_field :blocked_id, value: @profile.user_id %>
-  <%= f.submit 'Block User', :class => "block_button" %>
-  <% end %>
-<% end%>
 
-
-<% if current_user.profile == @profile %>
-<%else %>
-<%= render "messages/new_message" %>
 <button class= "message-to-button">Message</button>
-<% end %>
 
 
 <% if @profile.blocked_by?(current_user) %>
@@ -88,11 +75,7 @@
 <% end %>
 </div>
 
-  <% if current_user.profile == @profile %>
-  <%else %>
-<%= render "messages/new_message" %>
-<button class= "message-to-button">message</button>
-  <% end %>
+
 
 <!--  Add aligator tags and this will stop block button from appear, waiting to get CSS Styling done before implementing this
 if current_user.profile == @profile  -->

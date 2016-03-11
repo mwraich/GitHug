@@ -458,12 +458,24 @@ input#search_max_age{
   }
 }
 
+button.message-to-button{
+  font-size: 1rem;
+  background-color:black;
+  color: #00fe06 ;
+  font-size: 0.7rem;
+  text-align: center;
+  width: 25%;
+  margin-top: -2%;
+  margin-left: 20%;
+}
+
 input.block_button{
   background-color: #f16a6b;
   font-size: 0.7rem;
-  margin-left: 37%;
+  text-align: center;
   width: 25%;
-  margin-top: -2%;
+  margin-top: -14%;
+  margin-left: 55%;
 }
 
 #No_block_button{
@@ -690,15 +702,7 @@ textarea#message_message {
      color:white;
    }
  }
- button.message-to-button{
-   font-size: .9rem;
-   background-color:black;
-   margin-left: 0;
-   margin-top: 22%;
-   color: #00fe06 ;
-   // text-align: center;
-   padding: 2%;
- }
+
 
 
 
@@ -831,12 +835,7 @@ textarea#message_message {
     margin-left: 10%;
   }
 
-  input.block_button{
-    background-color: #f16a6b;
-    font-size: 0.7rem;
-    margin-left: -20%;
-    margin-top: 17%;
-  }
+
   #profile-languages{
     margin-left: 10%;
   }
@@ -894,16 +893,28 @@ textarea#message_message {
      }
    }
    button.message-to-button{
-     font-size: 1rem;
+     font-size: 0.7rem;
      background-color:black;
-     margin-left: 0;
+     margin-left: -30%;
      width: 12%;
-     margin-bottom:2%;
-     margin-top: 22%;
+     margin-top: 20%;
      color: #00fe06 ;
-     // text-align: center;
-     padding: 2%;
+     padding-top: 1%;
+     padding-bottom: 1%;
    }
+
+   input.block_button{
+     background-color: #f16a6b;
+     font-size: 0.7rem;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    width: 12%;
+    margin-left: 15%;
+    margin-top: -6.7%;
+
+   }
+
+
 
   //---------------Edit/New Profile Form Desktop Size-----------//
 
