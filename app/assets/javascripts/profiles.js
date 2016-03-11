@@ -14,30 +14,27 @@ $(document).on('page:load ready', function() {
   });
   $('#login-notice').delay(1000).slideUp(1000);
 // Slideshow
-  // Add hover feature
+  var currentIndex = 0,
+    items = $('.container div'),
+    itemAmt = items.length;
 
+    function cycleItems() {
+      var item = $('.container div').eq(currentIndex);
+      items.hide();
+      item.css('display','inline-block');
+    }
 
-  $('#profile-images').click(function() {
-    $('#imageslideshow ul li').first().css("display", "inline-block");
-        var currentImage = 0;
-        var allImages  = $('#imageslideshow li img').length;
-        var imageWidth = 600;
-        console.log(allImages);
-        //
-        $('#imageslideshow ul').width(allImages*imageWidth);
-        $('.right_arrow').click(function() {
-          currentImage++;
-          if(currentImage>=allImages) currentImage = 0;
-          setFramePosition(currentImage);
-        });
+    $('.right_arrow').click(function() {
+  
+    currentIndex += 1;
+    if (currentIndex > itemAmt - 1) {
+      currentIndex = 0;
+    }
+    cycleItems();
   });
 
-  function setFramePosition(pos){
-    var px = imageWidth*pos*-1;
-    $('#imageslideshow ul').animate({
-      left:px
-    }, 300);
-  }
+
+
 
 
   $('#pair-search').hide();
