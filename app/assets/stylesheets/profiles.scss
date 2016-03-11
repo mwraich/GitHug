@@ -135,7 +135,7 @@ label.select_label{
 #tag{
   padding-left: 5%;
   font-size: 1.3rem;
-  color: #00aca1;
+  color: #3b3b3b;
   text-align: center;
   margin-top: 5%;
 }
@@ -150,7 +150,7 @@ a.add_fields{
   margin-top: 5%;
   margin-bottom: 5%;
   font-size: 1.2rem;
-  background-color: #57c8b9;
+  background-color: #00aca1;
 }
 
 .actions{
@@ -165,30 +165,16 @@ a.add_fields{
 
 
   #add_language{
-      background-color: #00aca1;
-      border: 0;
-      border-radius: $button-border-radius;
-      color: white;
-      cursor: pointer;
-      display: inline-block;
-      font-family: $base-font-family;
-      font-size: $base-font-size;
-      -webkit-font-smoothing: antialiased;
-      font-weight: 600;
-      line-height: 1;
-      padding: $small-spacing $base-spacing;
-      transition: background-color $base-duration $base-timing;
-      vertical-align: middle;
-      white-space: nowrap;
-      margin-left: 5%;
-      padding-left: 10%;
-      padding-right: 10%;
+    color: #00aca1;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 5%;
 
-      &:hover,
-      &:focus {
-        background-color: shade(#a9a9a9, 20%);
-        color: #fff;
-      }
+    &:hover,
+    &:focus {
+      color: #3b3b3b;
+    }
+
 
   }
 
@@ -212,30 +198,14 @@ a.add_fields{
 
 
 #add_photo{
-  background-color: #00aca1;
-  border: 0;
-  border-radius: $button-border-radius;
-  color: white;
+  color: #00aca1;
   cursor: pointer;
   display: inline-block;
-  font-family: $base-font-family;
-  font-size: $base-font-size;
-  -webkit-font-smoothing: antialiased;
-  font-weight: 600;
-  line-height: 1;
-  padding: $small-spacing $base-spacing;
-  text-decoration: none;
-  transition: background-color $base-duration $base-timing;
-  user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
   margin-left: 5%;
-
-
+  margin-top: -10%;
   &:hover,
   &:focus {
-    background-color: shade(#a9a9a9, 20%);
-    color: #fff;
+    color: #3b3b3b;
   }
 
 }
@@ -245,6 +215,7 @@ a.add_fields{
   cursor: pointer;
   display: inline-block;
   margin-left: 5%;
+
 
   &:hover,
   &:focus {
@@ -272,59 +243,26 @@ a.add_fields{
 }
 
 #add_pref_language{
-  background-color: #00aca1;
-  border: 0;
-  border-radius: $button-border-radius;
-  color: white;
+  color: #00aca1;
   cursor: pointer;
   display: inline-block;
-  font-family: $base-font-family;
-  font-size: $base-font-size;
-  -webkit-font-smoothing: antialiased;
-  font-weight: 600;
-  line-height: 1;
-  padding: $small-spacing $base-spacing;
-  text-decoration: none;
-  transition: background-color $base-duration $base-timing;
-  user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
   margin-left: 5%;
-  padding-left: 3.5%;
-  padding-right: 3.5%;
 
   &:hover,
   &:focus {
-    background-color: shade(#a9a9a9, 20%);
-    color: #fff;
+    color: #3b3b3b;
   }
 }
 
 #add_pref{
-  background-color: #00aca1;
-  border: 0;
-  border-radius: $button-border-radius;
-  color: white;
+  color: #00aca1;
   cursor: pointer;
   display: inline-block;
-  font-family: $base-font-family;
-  font-size: $base-font-size;
-  -webkit-font-smoothing: antialiased;
-  font-weight: 600;
-  line-height: 1;
-  padding: $small-spacing $base-spacing;
-  text-decoration: none;
-  transition: background-color $base-duration $base-timing;
-  user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
   margin-left: 5%;
-
 
   &:hover,
   &:focus {
-    background-color: shade(#a9a9a9, 20%);
-    color: #fff;
+    color: #3b3b3b;
   }
 }
 
@@ -520,12 +458,24 @@ input#search_max_age{
   }
 }
 
+button.message-to-button{
+  font-size: 1rem;
+  background-color:black;
+  color: #00fe06 ;
+  font-size: 0.7rem;
+  text-align: center;
+  width: 25%;
+  margin-top: -2%;
+  margin-left: 20%;
+}
+
 input.block_button{
   background-color: #f16a6b;
   font-size: 0.7rem;
-  margin-left: 37%;
+  text-align: center;
   width: 25%;
-  margin-top: -2%;
+  margin-top: -14%;
+  margin-left: 55%;
 }
 
 #No_block_button{
@@ -752,15 +702,7 @@ textarea#message_message {
      color:white;
    }
  }
- button.message-to-button{
-   font-size: .9rem;
-   background-color:black;
-   margin-left: 0;
-   margin-top: 22%;
-   color: #00fe06 ;
-   // text-align: center;
-   padding: 2%;
- }
+
 
 
 
@@ -893,12 +835,7 @@ textarea#message_message {
     margin-left: 10%;
   }
 
-  input.block_button{
-    background-color: #f16a6b;
-    font-size: 0.7rem;
-    margin-left: -20%;
-    margin-top: 17%;
-  }
+
   #profile-languages{
     margin-left: 10%;
   }
@@ -956,16 +893,28 @@ textarea#message_message {
      }
    }
    button.message-to-button{
-     font-size: 1rem;
+     font-size: 0.7rem;
      background-color:black;
-     margin-left: 0;
+     margin-left: -30%;
      width: 12%;
-     margin-bottom:2%;
-     margin-top: 22%;
+     margin-top: 20%;
      color: #00fe06 ;
-     // text-align: center;
-     padding: 2%;
+     padding-top: 1%;
+     padding-bottom: 1%;
    }
+
+   input.block_button{
+     background-color: #f16a6b;
+     font-size: 0.7rem;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    width: 12%;
+    margin-left: 15%;
+    margin-top: -6.7%;
+
+   }
+
+
 
   //---------------Edit/New Profile Form Desktop Size-----------//
 
@@ -1057,7 +1006,7 @@ textarea#message_message {
   }
 
   #tag{
-    text-align: left;
+    text-align: center;
     padding-top: 0%;
   }
 
@@ -1075,58 +1024,28 @@ textarea#message_message {
   }
 
   #add_language{
-      background-color: #00aca1;
-      border: 0;
-      border-radius: $button-border-radius;
-      color: white;
-      cursor: pointer;
-      display: inline-block;
-      font-family: $base-font-family;
-      font-size: $base-font-size;
-      -webkit-font-smoothing: antialiased;
-      font-weight: 600;
-      line-height: 1;
-      padding: $small-spacing $base-spacing;
-      transition: background-color $base-duration $base-timing;
-      vertical-align: middle;
-      white-space: nowrap;
-      margin-left: 5%;
-      padding-left: 5.25%;
-      padding-right: 5.25%;
+    color: #00aca1;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 5%;
 
-      &:hover,
-      &:focus {
-        background-color: shade(#a9a9a9, 20%);
-        color: #fff;
-      }
+    &:hover,
+    &:focus {
+      color: #3b3b3b;
+    }
+
 
   }
 
   #add_photo{
-    background-color: #00aca1;
-    border: 0;
-    border-radius: $button-border-radius;
-    color: white;
+    color: #00aca1;
     cursor: pointer;
     display: inline-block;
-    font-family: $base-font-family;
-    font-size: $base-font-size;
-    -webkit-font-smoothing: antialiased;
-    font-weight: 600;
-    line-height: 1;
-    padding: $small-spacing $base-spacing;
-    text-decoration: none;
-    transition: background-color $base-duration $base-timing;
-    user-select: none;
-    vertical-align: middle;
-    white-space: nowrap;
     margin-left: 5%;
-
 
     &:hover,
     &:focus {
-      background-color: shade(#a9a9a9, 20%);
-      color: #fff;
+      color: #3b3b3b;
     }
   }
 
@@ -1156,59 +1075,26 @@ textarea#message_message {
   }
 
   #add_pref_language{
-    background-color: #00aca1;
-    border: 0;
-    border-radius: $button-border-radius;
-    color: white;
+    color: #00aca1;
     cursor: pointer;
     display: inline-block;
-    font-family: $base-font-family;
-    font-size: $base-font-size;
-    -webkit-font-smoothing: antialiased;
-    font-weight: 600;
-    line-height: 1;
-    padding: $small-spacing $base-spacing;
-    text-decoration: none;
-    transition: background-color $base-duration $base-timing;
-    user-select: none;
-    vertical-align: middle;
-    white-space: nowrap;
     margin-left: 5%;
-
 
     &:hover,
     &:focus {
-      background-color: shade(#a9a9a9, 20%);
-      color: #fff;
+      color: #3b3b3b;
     }
   }
 
   #add_pref{
-    background-color: #00aca1;
-    border: 0;
-    border-radius: $button-border-radius;
-    color: white;
+    color: #00aca1;
     cursor: pointer;
     display: inline-block;
-    font-family: $base-font-family;
-    font-size: $base-font-size;
-    -webkit-font-smoothing: antialiased;
-    font-weight: 600;
-    line-height: 1;
-    padding: $small-spacing $base-spacing;
-    text-decoration: none;
-    transition: background-color $base-duration $base-timing;
-    user-select: none;
-    vertical-align: middle;
-    white-space: nowrap;
     margin-left: 5%;
-    padding-left: 3.5%;
-    padding-right: 3.5%;
 
     &:hover,
     &:focus {
-      background-color: shade(#a9a9a9, 20%);
-      color: #fff;
+      color: #3b3b3b;
     }
   }
 
@@ -1218,7 +1104,7 @@ textarea#message_message {
 
   .actions input{
     width: 30%;
-    margin-left: 35%;
+    margin-left: 37%;
     margin-bottom: 5%;
     font-size: 1.2rem;
     border: none;
@@ -1233,6 +1119,9 @@ textarea#message_message {
     font-size: 1rem;
   }
 
+  input#profile_tag_list{
+    margin-left: -7%;
+  }
 
 
   //----------------Index Search Forms Desktop Size-----------------//
