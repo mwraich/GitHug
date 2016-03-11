@@ -27,12 +27,17 @@
 <div class="preference-form">
   <%=label_tag(:operating_system,"What Operating System do you use?") %><br>
 
-    <%= label_tag('search[operating_system]','Unix',  class: 'button-label') %>
-    <%= check_box_tag('search[operating_system]', 'Unix') %>
+    <%= label_tag('search[operating_system]','OS X',  class: 'button-label') %>
+    <%= check_box_tag('search[operating_system]', 'OS X') %>
 
     <%= label_tag('search[operating_system]','Linux',  class: 'button-label') %>
     <%= check_box_tag('search[operating_system]', 'Linux') %><br>
 
+    <%= label_tag('search[operating_system]','Windows',  class: 'button-label') %>
+    <%= check_box_tag('search[operating_system]', 'Windows') %><br>
+
+    <%= label_tag('search[operating_system]','Ubuntu',  class: 'button-label') %>
+    <%= check_box_tag('search[operating_system]', 'Ubuntu') %><br>
 </div>
 
 <div class="preference-form">
