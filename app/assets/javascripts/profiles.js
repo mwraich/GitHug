@@ -151,7 +151,7 @@ $(".message-to-button").on('click', function(e){
 
  $(".new_message").toggle();
 });
-});
+
 
     //Gender button validation
 //     var validateButton = false;
@@ -209,5 +209,5 @@ $(".message-to-button").on('click', function(e){
 //     $(this).siblings('input:checkbox').prop('checked', false);
 //   });
 //
-});
+
 //
