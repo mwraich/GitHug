@@ -1,0 +1,2593 @@
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS and IE text size adjust after device orientation change,
+ *    without disabling user zoom.
+ */
+/* line 9, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+/* line 19, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+body {
+  margin: 0;
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+/* line 33, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+/* line 54, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+/* line 67, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
+ */
+/* line 77, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+[hidden],
+template {
+  display: none;
+}
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+/* line 89, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+a {
+  background-color: transparent;
+}
+
+/**
+ * Improve readability of focused elements when they are also in an
+ * active/hover state.
+ */
+/* line 98, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+/* line 110, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+/* line 118, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+/* line 127, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+/* line 136, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+/* line 145, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+/* line 154, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+/* line 162, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 170, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+sup {
+  top: -0.5em;
+}
+
+/* line 174, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+sub {
+  bottom: -0.25em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+/* line 185, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+img {
+  border: 0;
+}
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+/* line 193, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+/* line 204, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+/* line 212, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Contain overflow in all browsers.
+ */
+/* line 221, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+pre {
+  overflow: auto;
+}
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+/* line 229, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+/* line 252, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+/* line 266, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+button {
+  overflow: visible;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+/* line 277, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+/* line 290, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+/* line 302, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+/* line 311, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+/* line 322, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+input {
+  line-height: normal;
+}
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+/* line 334, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+/* line 346, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
+ */
+/* line 356, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  box-sizing: content-box;
+  /* 2 */
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+/* line 367, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+/* line 376, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+/* line 387, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+/* line 396, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+/* line 405, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+optgroup {
+  font-weight: bold;
+}
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+/* line 416, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 421, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/vendor/assets/stylesheets/normalize.css */
+td,
+th {
+  padding: 0;
+}
+
+/* line 1, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_buttons.scss */
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #00aca1;
+  border: 0;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Droid Sans", sans-serif;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.75em 1.5em;
+  text-decoration: none;
+  -webkit-transition: background-color 150ms ease;
+  transition: background-color 150ms ease;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+/* line 21, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_buttons.scss */
+button:hover, button:focus, input[type="button"]:hover, input[type="button"]:focus, input[type="reset"]:hover, input[type="reset"]:focus, input[type="submit"]:hover, input[type="submit"]:focus {
+  background-color: #878787;
+  color: #fff;
+}
+/* line 27, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_buttons.scss */
+button:disabled, input[type="button"]:disabled, input[type="reset"]:disabled, input[type="submit"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+/* line 31, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_buttons.scss */
+button:disabled:hover, input[type="button"]:disabled:hover, input[type="reset"]:disabled:hover, input[type="submit"]:disabled:hover {
+  background-color: white;
+}
+
+/* line 1, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_forms.scss */
+fieldset {
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 8, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_forms.scss */
+legend {
+  font-weight: 800;
+  margin-bottom: 0.375em;
+  padding: 0;
+}
+
+/* line 14, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_forms.scss */
+label {
+  display: inline;
+  font-weight: 600;
+  margin-bottom: 0.375em;
+  padding-left: 5%;
+  font-size: 1.3rem;
+  color: #6a6a6a;
+}
+
+/* line 23, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_forms.scss */
+input,
+select {
+  display: block;
+  font-family: "Droid Sans", sans-serif;
+  font-size: 1em;
+  color: white;
+}
+
+/* line 32, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_forms.scss */
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea,
+select[multiple] {
+  background-color: #ededed;
+  border: solid;
+  border-color: #6a6a6a;
+  border-width: 0.5px;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  font-family: "Droid Sans", sans-serif;
+  font-size: 1em;
+  margin-bottom: 0.75em;
+  padding: 0.5em;
+  -webkit-transition: border-color 150ms ease;
+  transition: border-color 150ms ease;
+  width: 90%;
+  margin-left: 5%;
+  color: #3b3b3b;
+  height: 1.5rem;
+}
+/* line 50, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_forms.scss */
+input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, input:not([type]):hover, textarea:hover,
+select[multiple]:hover {
+  border-color: #008a81;
+}
+/* line 54, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_forms.scss */
+input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, input:not([type]):focus, textarea:focus,
+select[multiple]:focus {
+  border-color: #00aca1;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(242, 242, 242, 0.7);
+  outline: none;
+}
+/* line 60, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_forms.scss */
+input[type="color"]:disabled, input[type="date"]:disabled, input[type="datetime"]:disabled, input[type="datetime-local"]:disabled, input[type="email"]:disabled, input[type="month"]:disabled, input[type="number"]:disabled, input[type="password"]:disabled, input[type="search"]:disabled, input[type="tel"]:disabled, input[type="text"]:disabled, input[type="time"]:disabled, input[type="url"]:disabled, input[type="week"]:disabled, input:not([type]):disabled, textarea:disabled,
+select[multiple]:disabled {
+  background-color: #a1a1a1;
+  cursor: not-allowed;
+}
+/* line 64, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_forms.scss */
+input[type="color"]:disabled:hover, input[type="date"]:disabled:hover, input[type="datetime"]:disabled:hover, input[type="datetime-local"]:disabled:hover, input[type="email"]:disabled:hover, input[type="month"]:disabled:hover, input[type="number"]:disabled:hover, input[type="password"]:disabled:hover, input[type="search"]:disabled:hover, input[type="tel"]:disabled:hover, input[type="text"]:disabled:hover, input[type="time"]:disabled:hover, input[type="url"]:disabled:hover, input[type="week"]:disabled:hover, input:not([type]):disabled:hover, textarea:disabled:hover,
+select[multiple]:disabled:hover {
+  border: solid;
+  border-width: 0.5px;
+}
+
+/* line 72, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_forms.scss */
+textarea {
+  resize: vertical;
+}
+
+/* line 76, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_forms.scss */
+[type="search"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+/* line 80, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_forms.scss */
+[type="checkbox"],
+[type="radio"] {
+  display: inline;
+  margin-left: 0.375em;
+}
+
+/* line 87, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_forms.scss */
+[type="file"] {
+  margin-bottom: 0.75em;
+  width: 100%;
+}
+
+/* line 92, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_forms.scss */
+select {
+  margin-bottom: 1.5em;
+  max-width: 100%;
+  width: auto;
+}
+
+/* line 1, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_lists.scss */
+ul,
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 8, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_lists.scss */
+dl {
+  margin-bottom: 0.75em;
+}
+/* line 11, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_lists.scss */
+dl dt {
+  font-weight: 600;
+  margin-top: 0.75em;
+}
+/* line 16, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_lists.scss */
+dl dd {
+  margin: 0;
+}
+
+/* line 1, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_tables.scss */
+table {
+  border-collapse: collapse;
+  margin: 0.75em 0;
+  table-layout: fixed;
+  width: 100%;
+}
+
+/* line 8, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_tables.scss */
+th {
+  border-bottom: 1px solid #b8b8b8;
+  font-weight: 600;
+  padding: 0.75em 0;
+  text-align: left;
+}
+
+/* line 15, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_tables.scss */
+td {
+  border-bottom: 5px solid #f5f5f5;
+  padding: 0.75em 0;
+}
+
+/* line 20, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_tables.scss */
+tr,
+td,
+th {
+  vertical-align: middle;
+}
+
+/* line 1, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_typography.scss */
+html {
+  color: #6a6a6a;
+  font-family: "Droid Sans", sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+/* line 8, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_typography.scss */
+h1 {
+  font-family: "Raleway", sans-serif;
+  font-size: 1em;
+  line-height: 1.2;
+  text-align: center;
+  margin: 0 0 0.75em;
+}
+
+/* line 16, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_typography.scss */
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
+  font-size: 1em;
+  line-height: 1.2;
+  margin: 0 0 0.75em;
+}
+
+/* line 27, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_typography.scss */
+p {
+  margin: 0 0 0.75em;
+  color: #6a6a6a;
+}
+
+/* line 32, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_typography.scss */
+a {
+  color: white;
+  text-decoration: none;
+  -webkit-transition: color 150ms ease;
+  transition: color 150ms ease;
+}
+/* line 37, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_typography.scss */
+a:active, a:focus, a:hover {
+  color: #bfbfbf;
+}
+
+/* line 44, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_typography.scss */
+hr {
+  border-bottom: 5px solid #f5f5f5;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: 1.5em 0;
+}
+
+/* line 52, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/base/_typography.scss */
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}
+
+/* line 4, /Users/Meep/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/neat-1.7.4/app/assets/stylesheets/grid/_box-sizing.scss */
+html {
+  box-sizing: border-box;
+}
+
+/* line 9, /Users/Meep/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/neat-1.7.4/app/assets/stylesheets/grid/_box-sizing.scss */
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+/* line 4, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/sessions.scss */
+body.sessions {
+  background-color: #57c8b9;
+  height: 100vh;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    -webkit-transform: scale(0.5);
+  }
+  to {
+    -webkit-transform: scale(2);
+  }
+}
+@keyframes fadeIn {
+  from {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  to {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+  }
+}
+@-webkit-keyframes fadeInButtons {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+  }
+}
+@keyframes fadeInButtons {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+}
+/* line 27, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/sessions.scss */
+.logo-animated {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  padding-left: 33%;
+  padding-top: 45%;
+  padding-bottom: 40%;
+}
+
+/* line 39, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/sessions.scss */
+.githug-logo {
+  display: block;
+}
+
+/* line 43, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/sessions.scss */
+.session-links {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 20, /Users/Meep/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bourbon-4.2.6/app/assets/stylesheets/addons/_clearfix.scss */
+.session-links::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+/* line 46, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/sessions.scss */
+.session-links .link-wrap {
+  float: left;
+  display: block;
+  margin-right: 7.42297%;
+  width: 73.14426%;
+  margin-left: 13.42787%;
+}
+/* line 89, /Users/Meep/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/neat-1.7.4/app/assets/stylesheets/grid/_span-columns.scss */
+.session-links .link-wrap:last-child {
+  margin-right: 0;
+}
+/* line 50, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/sessions.scss */
+.session-links .link-wrap a {
+  text-align: center;
+  font-size: 1.5rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  border: 5px solid #f5f5f5;
+  border-color: white;
+  margin-bottom: 50px;
+  display: block;
+  width: 100%;
+  color: white;
+}
+
+/* line 65, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/sessions.scss */
+.login {
+  opacity: 0;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-delay: 2.5s;
+  animation-delay: 2.5s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-name: fadeInButtons;
+          animation-name: fadeInButtons;
+}
+
+/* line 74, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/sessions.scss */
+.signup {
+  opacity: 0;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-name: fadeInButtons;
+          animation-name: fadeInButtons;
+}
+
+/* line 83, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/sessions.scss */
+#or {
+  opacity: 0;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-name: fadeInButtons;
+          animation-name: fadeInButtons;
+  display: block;
+  text-align: center;
+  padding-right: 7%;
+  padding-left: 7%;
+  margin-top: 17.5%;
+  margin-bottom: 2.5%;
+  color: white;
+}
+
+@media screen and (min-width: 900px) {
+  /* line 101, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/sessions.scss */
+  body.sessions .yeild {
+    background-color: #57c8b9;
+  }
+
+  /* line 104, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/sessions.scss */
+  .logo-animated {
+    padding-left: 60%;
+    padding-top: 15%;
+    padding-bottom: 10%;
+    width: 160%;
+  }
+
+  /* line 112, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/sessions.scss */
+  .session-links {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* line 20, /Users/Meep/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bourbon-4.2.6/app/assets/stylesheets/addons/_clearfix.scss */
+  .session-links::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+  /* line 115, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/sessions.scss */
+  .session-links .link-wrap {
+    float: left;
+    display: block;
+    margin-right: 3.57866%;
+    width: 35.26334%;
+    margin-left: 6.47367%;
+  }
+  /* line 89, /Users/Meep/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/neat-1.7.4/app/assets/stylesheets/grid/_span-columns.scss */
+  .session-links .link-wrap:last-child {
+    margin-right: 0;
+  }
+  /* line 119, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/sessions.scss */
+  .session-links .link-wrap a {
+    width: 80%;
+    margin-left: 80%;
+  }
+}
+/* line 4, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+body {
+  background-color: white;
+}
+
+/* line 8, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.page-title {
+  margin-top: 2%;
+  font-size: 1.6rem;
+  color: #3b3b3b;
+}
+
+/* line 15, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.container {
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+/* line 20, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.container div {
+  width: 100%;
+  display: inline-block;
+  display: none;
+}
+
+/* line 26, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.container img {
+  width: 250px;
+  height: 250px;
+  margin-left: 22.5%;
+  margin-top: -40%;
+}
+
+/* line 34, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.right_arrow {
+  position: absolute;
+  float: right;
+  margin-top: -50%;
+  margin-left: 125%;
+  width: 100%;
+}
+
+/* line 43, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.left_arrow {
+  position: absolute;
+  margin-left: 5%;
+  margin-top: -50%;
+}
+
+/* line 49, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.x {
+  position: absolute;
+  margin-left: 120%;
+  width: 100%;
+  margin-top: -90%;
+}
+
+/* line 57, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#dim-page {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+/* line 72, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.message-icon img {
+  width: 10%;
+}
+
+/* line 75, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.message {
+  width: 10%;
+  margin-top: 2%;
+  margin-left: 5%;
+  display: inline;
+}
+
+/* line 82, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.logo {
+  width: 30%;
+  margin-top: 4%;
+  display: inline;
+  margin-left: 10%;
+  margin-right: 1%;
+}
+
+/* line 91, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.menu {
+  display: inline;
+  width: 10%;
+  float: right;
+  margin-top: -12%;
+  margin-right: 5%;
+}
+
+/* line 100, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.menu-bar {
+  background-color: #57c8b9;
+  padding-bottom: 3%;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+/* line 116, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.form_checkbox_input label {
+  display: inline;
+  font-size: 1.1rem;
+  color: #3b3b3b;
+}
+
+/* line 122, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.form_radio_button label {
+  display: inline;
+  font-size: 1.2rem;
+  color: #3b3b3b;
+}
+
+/* line 129, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+label.select_label {
+  font-size: 1rem;
+  color: #6a6a6a;
+}
+
+/* line 135, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#tag {
+  padding-left: 5%;
+  font-size: 1.3rem;
+  color: #00aca1;
+  text-align: center;
+  margin-top: 5%;
+}
+
+/* line 143, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+a.add_fields {
+  color: #1E2542;
+}
+
+/* line 147, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.actions input {
+  width: 87%;
+  margin-left: 6.5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  font-size: 1.2rem;
+  background-color: #57c8b9;
+}
+
+/* line 156, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.actions {
+  margin-top: 10%;
+}
+
+/* line 160, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.language-fields-label {
+  display: inline;
+  font-size: 1rem;
+  color: #3b3b3b;
+}
+
+/* line 167, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#add_language {
+  background-color: #00aca1;
+  border: 0;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Droid Sans", sans-serif;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.75em 1.5em;
+  -webkit-transition: background-color 150ms ease;
+  transition: background-color 150ms ease;
+  vertical-align: middle;
+  white-space: nowrap;
+  margin-left: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+/* line 187, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#add_language:hover, #add_language:focus {
+  background-color: #878787;
+  color: #fff;
+}
+
+/* line 195, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.add-language-spacing {
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+/* line 200, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#remove_language {
+  color: #00aca1;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 5%;
+}
+/* line 206, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#remove_language:hover, #remove_language:focus {
+  color: #3b3b3b;
+}
+
+/* line 214, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#add_photo {
+  background-color: #00aca1;
+  border: 0;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Droid Sans", sans-serif;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.75em 1.5em;
+  text-decoration: none;
+  -webkit-transition: background-color 150ms ease;
+  transition: background-color 150ms ease;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  margin-left: 5%;
+}
+/* line 235, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#add_photo:hover, #add_photo:focus {
+  background-color: #878787;
+  color: #fff;
+}
+
+/* line 243, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#remove_photo {
+  color: #00aca1;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 5%;
+}
+/* line 249, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#remove_photo:hover, #remove_photo:focus {
+  color: #3b3b3b;
+}
+
+/* line 257, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#remove_preference {
+  color: #00aca1;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 5%;
+}
+/* line 263, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#remove_preference:hover, #remove_preference:focus {
+  color: #3b3b3b;
+}
+
+/* line 270, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.image-fields input {
+  padding-left: 5%;
+}
+
+/* line 274, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#add_pref_language {
+  background-color: #00aca1;
+  border: 0;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Droid Sans", sans-serif;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.75em 1.5em;
+  text-decoration: none;
+  -webkit-transition: background-color 150ms ease;
+  transition: background-color 150ms ease;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  margin-left: 5%;
+  padding-left: 3.5%;
+  padding-right: 3.5%;
+}
+/* line 296, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#add_pref_language:hover, #add_pref_language:focus {
+  background-color: #878787;
+  color: #fff;
+}
+
+/* line 303, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#add_pref {
+  background-color: #00aca1;
+  border: 0;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Droid Sans", sans-serif;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.75em 1.5em;
+  text-decoration: none;
+  -webkit-transition: background-color 150ms ease;
+  transition: background-color 150ms ease;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  margin-left: 5%;
+}
+/* line 324, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#add_pref:hover, #add_pref:focus {
+  background-color: #878787;
+  color: #fff;
+}
+
+/* line 331, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+textarea#profile_about_me {
+  height: 3rem;
+}
+
+/* line 343, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.profile-image {
+  background-color: #AADBE8;
+  border-radius: 200px;
+  width: 30%;
+  display: inline;
+  float: left;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+/* line 354, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#index-view-profile-info {
+  font-size: 1.5rem;
+  display: inline;
+  clear: left;
+}
+/* line 358, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#index-view-profile-infop {
+  padding-top: 5%;
+  padding-left: 5%;
+}
+
+/* line 366, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#link-to-profile img {
+  width: 10%;
+  float: right;
+  margin-top: 1%;
+  margin-right: 6%;
+}
+
+/* line 373, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#index-profile-name {
+  color: #3b3b3b;
+}
+
+/* line 377, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#index-profile-location {
+  font-size: 1rem;
+  margin-top: -2%;
+}
+
+/* line 382, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.index-users {
+  margin-top: 2%;
+}
+
+/* line 386, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.line-break {
+  margin-top: 20%;
+}
+
+/* line 391, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#pairchoice {
+  margin-left: 10%;
+}
+
+/* line 395, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#datechoice {
+  margin-left: 10%;
+}
+
+/* line 399, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.location-search-label {
+  font-size: 1rem;
+}
+
+/* line 403, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.preference-form label {
+  font-size: 1rem;
+}
+
+/* line 408, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+input#search_location {
+  width: 40%;
+  height: 2rem;
+  font-size: 1rem;
+  display: block;
+  margin-left: 5%;
+  border: solid;
+  border-color: #6a6a6a;
+  border-width: 0.5px;
+  border-radius: 5px;
+}
+
+/* line 420, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+input#search {
+  margin-left: 5%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+/* line 426, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.button-label {
+  font-size: 1.2rem;
+  color: #3b3b3b;
+}
+
+/* line 432, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#search {
+  margin-left: 35%;
+}
+
+/* line 437, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.index-search-form {
+  background-color: white;
+  border: solid;
+  border-color: #6a6a6a;
+  border-width: 0.5px;
+  border-radius: 5px;
+  width: 92%;
+  margin-top: 15%;
+  margin-left: 4%;
+  padding-top: 2%;
+  padding-bottom: 1%;
+  margin-bottom: 2%;
+}
+
+/* line 451, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#first_option {
+  background-color: white;
+  border: solid;
+  border-color: #6a6a6a;
+  border-width: 0.5px;
+  margin-top: 20%;
+  width: 90%;
+  margin-left: 5%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  margin-bottom: 5%;
+  border-radius: 5px;
+}
+/* line 463, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#first_option label {
+  font-size: 1rem;
+  color: #3b3b3b;
+}
+
+/* line 469, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+label#first_option_label {
+  color: #6a6a6a;
+  font-size: 1.2rem;
+}
+
+/* line 475, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+input#search_min_age {
+  width: 20%;
+  height: 1.5rem;
+  font-size: 0.7rem;
+  border-width: 3px;
+  display: inline;
+  margin-left: 2.5%;
+  border: solid;
+  border-color: #6a6a6a;
+  border-width: 0.5px;
+  border-radius: 5px;
+}
+
+/* line 487, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+input#search_max_age {
+  width: 20%;
+  height: 1.5rem;
+  font-size: 0.7rem;
+  border-width: 3px;
+  display: inline;
+  margin-left: 2.5%;
+  margin-top: -2.5%;
+  border: solid;
+  border-color: #6a6a6a;
+  border-width: 0.5px;
+  border-radius: 5px;
+}
+
+/* line 507, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.profile-form {
+  margin-top: 20%;
+}
+
+/* line 511, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.profile-name {
+  font-size: 1.5rem;
+}
+
+/* line 514, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#profile-images {
+  width: 60%;
+  margin-left: 20%;
+}
+/* line 518, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#profile-images img {
+  border-radius: 10px;
+}
+
+/* line 523, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+input.block_button {
+  background-color: #f16a6b;
+  font-size: 0.7rem;
+  margin-left: 37%;
+  width: 25%;
+  margin-top: -2%;
+}
+
+/* line 531, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#No_block_button {
+  margin-left: 37%;
+  width: 25%;
+  margin-top: -2%;
+}
+
+/* line 537, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#profile-aboutme {
+  margin-top: 10%;
+  margin-bottom: 5%;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+/* line 546, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#profile-details {
+  margin-left: 10%;
+  padding-bottom: 5%;
+}
+
+/* line 551, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#profile-languages {
+  margin-left: 10%;
+  padding-bottom: 5%;
+}
+
+/* line 556, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.profile-tags {
+  text-align: center;
+  padding-bottom: 10%;
+}
+/* line 559, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.profile-tags a {
+  background-color: #00aca1;
+  padding: 2%;
+  border-radius: 5px;
+  color: white;
+}
+
+/* line 567, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.send-message-profile {
+  margin-left: 5%;
+  margin-bottom: 5%;
+}
+
+/* line 575, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#nav-trigger {
+  display: none;
+}
+/* line 578, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#nav-triggerspan {
+  display: inline;
+}
+/* line 581, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#nav-triggerspan:after {
+  display: inline;
+  content: "";
+}
+
+/* line 587, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+nav#nav-mobile {
+  position: relative;
+  display: none;
+}
+
+/* line 592, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+nav#nav-mobile ul {
+  display: none;
+  position: absolute;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  background-color: #57c8b9;
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+/* line 603, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+nav#nav-mobile li {
+  display: block;
+  border-bottom: solid 3px #00aca1;
+  padding-bottom: 2%;
+  padding-top: 2%;
+}
+/* line 608, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+nav#nav-mobile li:last-child {
+  border-bottom: none;
+}
+
+/* line 614, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#show-inbox-button {
+  margin-left: 5%;
+  margin-top: 10%;
+  margin-bottom: 5%;
+  width: 40%;
+  background-color: #6A6A6A;
+  border-radius: 5px;
+}
+
+/* line 622, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#sent_message_show {
+  margin-left: 7%;
+  margin-top: 10%;
+  margin-bottom: 5%;
+  width: 43%;
+  background-color: #6A6A6A;
+  border-radius: 5px;
+}
+
+/* line 631, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.unread {
+  float: right;
+  margin-right: 5%;
+  margin-top: -1%;
+  font-size: 1.2rem;
+}
+
+/* line 638, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.unread-checkbox {
+  float: right;
+  margin-right: -2%;
+}
+
+/* line 643, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+#message_message {
+  margin-top: 2.5%;
+}
+
+/* line 647, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.reply {
+  background-color: #00aca1;
+  border: 0;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Droid Sans", sans-serif;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.75em 1.5em;
+  -webkit-transition: background-color 150ms ease;
+  transition: background-color 150ms ease;
+  vertical-align: middle;
+  white-space: nowrap;
+  margin-top: 2.5%;
+}
+/* line 665, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.reply:hover, .reply:focus {
+  background-color: #878787;
+  color: #fff;
+}
+
+/* line 672, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+input#message_subject_line {
+  height: 2rem;
+}
+
+/* line 675, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+textarea#message_message {
+  height: 3rem;
+}
+
+/* line 680, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.recipient_id {
+  color: #3b3b3b;
+}
+
+/* line 684, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.subject_line {
+  color: #3b3b3b;
+}
+
+/* line 688, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.sent_by {
+  color: #3b3b3b;
+}
+
+/* line 692, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.reply_message {
+  margin-top: 2%;
+}
+
+/* line 696, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.reply-name {
+  color: #3b3b3b;
+}
+
+/* line 700, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.reply {
+  margin-top: -2%;
+  margin-left: 5%;
+}
+
+/* line 704, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.message-text {
+  margin-left: 5%;
+}
+
+/* line 707, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.message-info {
+  margin-left: 5%;
+}
+
+/* line 711, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.new_message p {
+  color: #00fe06;
+  padding-left: 6%;
+}
+
+/* line 716, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+.new_message {
+  bottom: 0;
+  z-index: 150;
+  position: fixed;
+  background-color: black;
+  width: 100%;
+  display: block;
+  font-family: 'VT323';
+}
+
+/* line 726, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+textarea#message_message {
+  background-color: black;
+  border: none;
+  color: #00fe06;
+  width: 100%;
+  height: 50%;
+  display: block;
+  font-family: 'VT323';
+}
+/* line 734, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+textarea#message_message:hover {
+  border-color: black, 20%;
+}
+/* line 737, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+textarea#message_message:focus {
+  border-color: black;
+  box-shadow: none;
+  outline: none;
+}
+
+/* line 744, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+input#commit {
+  border-radius: none;
+  background-color: black;
+  padding: 0;
+  color: #00fe06;
+  font-size: 1.5rem;
+  font-family: 'VT323';
+}
+/* line 751, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+input#commit:hover {
+  color: white;
+}
+
+/* line 755, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+button.message-to-button {
+  font-size: .9rem;
+  background-color: black;
+  margin-left: 0;
+  margin-top: 22%;
+  color: #00fe06;
+  padding: 2%;
+}
+
+@media all and (max-width: 900px) {
+  /* line 769, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #nav-trigger {
+    display: block;
+  }
+
+  /* line 773, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  nav#nav-main {
+    display: none;
+  }
+
+  /* line 777, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  nav#nav-mobile {
+    display: block;
+  }
+}
+@media screen and (min-width: 900px) {
+  /* line 794, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  body {
+    background-color: #ededed;
+  }
+
+  /* line 797, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .message {
+    display: none;
+  }
+
+  /* line 801, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .logo {
+    width: 7%;
+    margin-left: 1%;
+    margin-top: 1%;
+  }
+
+  /* line 808, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .menu-bar {
+    padding-bottom: 1%;
+  }
+
+  /* line 812, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #nav-main {
+    width: 70%;
+  }
+
+  /* line 815, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  nav#nav-main {
+    position: fixed;
+    margin-left: 50%;
+    margin-top: -2.5%;
+  }
+  /* line 820, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  nav#nav-main li {
+    display: inline;
+    font-size: 1rem;
+    padding-left: 5%;
+  }
+  /* line 827, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  nav#nav-main a:hover {
+    color: #00aca1;
+    border-bottom: 2px solid #00aca1;
+  }
+
+  /* line 833, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #login-notice {
+    margin-top: 6%;
+    margin-left: 2%;
+    background-color: #00aca1;
+    color: white;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+    border-radius: 5px;
+    width: 15%;
+  }
+
+  /* line 846, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #unread-messages-notice {
+    margin-top: 7%;
+    margin-left: 1%;
+    background-color: #00aca1;
+    color: white;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
+    border-radius: 5px;
+    width: 15.5%;
+  }
+
+  /* line 862, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .profile-name {
+    font-size: 1.6rem;
+    color: #3b3b3b;
+    float: left;
+    margin-left: 2%;
+    margin-top: 15%;
+  }
+
+  /* line 871, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-images {
+    display: inline;
+    width: 50%;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  /* line 877, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-images img {
+    height: 200px;
+    width: 30%;
+    border-radius: 20px;
+    float: left;
+    margin-left: 5%;
+  }
+
+  /* line 886, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-details {
+    margin-top: 5%;
+  }
+
+  /* line 890, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-aboutme {
+    text-align: left;
+    margin-top: 5%;
+    margin-left: 10%;
+  }
+
+  /* line 896, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  input.block_button {
+    background-color: #f16a6b;
+    font-size: 0.7rem;
+    margin-left: -20%;
+    margin-top: 17%;
+  }
+
+  /* line 902, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-languages {
+    margin-left: 10%;
+  }
+
+  /* line 906, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .send-message-profile {
+    margin-left: 10%;
+  }
+  /* line 908, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .send-message-profile p {
+    font-size: 1.2rem;
+    color: #00aca1;
+    margin-top: -2%;
+  }
+
+  /* line 914, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .new_message p {
+    color: #00fe06;
+    padding-left: 6%;
+  }
+
+  /* line 919, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .new_message {
+    bottom: 0;
+    z-index: 150;
+    position: fixed;
+    background-color: black;
+    width: 60%;
+    display: block;
+    font-family: 'VT323';
+  }
+
+  /* line 929, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  textarea#message_message {
+    background-color: black;
+    border: none;
+    color: #00fe06;
+    width: 80%;
+    height: 50%;
+    display: block;
+    font-family: 'VT323';
+  }
+  /* line 937, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  textarea#message_message:hover {
+    border-color: black, 20%;
+  }
+  /* line 940, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  textarea#message_message:focus {
+    border-color: black;
+    box-shadow: none;
+    outline: none;
+  }
+
+  /* line 947, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  input#commit {
+    border-radius: none;
+    background-color: black;
+    padding: 0;
+    color: #00fe06;
+    font-size: 1.5rem;
+    font-family: 'VT323';
+  }
+  /* line 954, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  input#commit:hover {
+    color: white;
+  }
+
+  /* line 958, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  button.message-to-button {
+    font-size: 1rem;
+    background-color: black;
+    margin-left: 0;
+    width: 12%;
+    margin-bottom: 2%;
+    margin-top: 22%;
+    color: #00fe06;
+    padding: 2%;
+  }
+
+  /* line 973, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .profile-form {
+    background-color: white;
+    border-radius: 10px;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: -7%;
+    padding-top: 2%;
+    margin-bottom: 2%;
+  }
+
+  /* line 982, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .form_input input {
+    width: 40%;
+    height: 1.7rem;
+    border-color: #6a6a6a;
+    border-width: 0.5px;
+    border-radius: 5px;
+    font-size: 1rem;
+    display: inline;
+    margin-left: 2%;
+  }
+
+  /* line 994, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .form_input label {
+    display: inline-block;
+    width: 20%;
+    font-size: 1rem;
+  }
+
+  /* line 1000, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  textarea#profile_about_me {
+    width: 40%;
+    border-color: #6a6a6a;
+    border-width: 0.5px;
+    border-radius: 5px;
+    font-size: 1rem;
+    display: inline;
+    margin-left: 2%;
+    margin-bottom: -1%;
+    height: 4rem;
+  }
+
+  /* line 1011, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .form_checkbox_input label {
+    display: inline-block;
+    width: 12%;
+    font-size: 1rem;
+  }
+
+  /* line 1016, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .form_radio_button label {
+    font-size: 1rem;
+  }
+
+  /* line 1019, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  label.select_label {
+    font-size: 1rem;
+    width: 17%;
+  }
+
+  /* line 1024, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .language-fields label {
+    font-size: 1rem;
+    display: inline-block;
+    width: 20%;
+  }
+
+  /* line 1031, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .language-fields input {
+    width: 40%;
+    height: 1.7rem;
+    border-color: #6a6a6a;
+    border-width: 0.5px;
+    border-radius: 5px;
+    font-size: 1rem;
+    display: inline;
+    margin-left: 2%;
+  }
+
+  /* line 1043, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .language-fields-radio input {
+    font-size: 0.7rem;
+    display: inline;
+  }
+
+  /* line 1048, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .language-fields-radio label {
+    display: inline;
+    width: 20%;
+    font-size: 1rem;
+  }
+
+  /* line 1055, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .skill-level {
+    font-size: 1rem;
+  }
+
+  /* line 1059, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #tag {
+    text-align: left;
+    padding-top: 0%;
+  }
+
+  /* line 1064, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #remove_language {
+    color: #00aca1;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 5%;
+  }
+  /* line 1070, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #remove_language:hover, #remove_language:focus {
+    color: #3b3b3b;
+  }
+
+  /* line 1077, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #add_language {
+    background-color: #00aca1;
+    border: 0;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Droid Sans", sans-serif;
+    font-size: 1em;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 600;
+    line-height: 1;
+    padding: 0.75em 1.5em;
+    -webkit-transition: background-color 150ms ease;
+    transition: background-color 150ms ease;
+    vertical-align: middle;
+    white-space: nowrap;
+    margin-left: 5%;
+    padding-left: 5.25%;
+    padding-right: 5.25%;
+  }
+  /* line 1097, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #add_language:hover, #add_language:focus {
+    background-color: #878787;
+    color: #fff;
+  }
+
+  /* line 1105, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #add_photo {
+    background-color: #00aca1;
+    border: 0;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Droid Sans", sans-serif;
+    font-size: 1em;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 600;
+    line-height: 1;
+    padding: 0.75em 1.5em;
+    text-decoration: none;
+    -webkit-transition: background-color 150ms ease;
+    transition: background-color 150ms ease;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    margin-left: 5%;
+  }
+  /* line 1126, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #add_photo:hover, #add_photo:focus {
+    background-color: #878787;
+    color: #fff;
+  }
+
+  /* line 1133, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #remove_photo {
+    color: #00aca1;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 5%;
+  }
+  /* line 1139, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #remove_photo:hover, #remove_photo:focus {
+    color: #3b3b3b;
+  }
+
+  /* line 1145, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #remove_preference {
+    color: #00aca1;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 5%;
+  }
+  /* line 1151, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #remove_preference:hover, #remove_preference:focus {
+    color: #3b3b3b;
+  }
+
+  /* line 1158, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #add_pref_language {
+    background-color: #00aca1;
+    border: 0;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Droid Sans", sans-serif;
+    font-size: 1em;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 600;
+    line-height: 1;
+    padding: 0.75em 1.5em;
+    text-decoration: none;
+    -webkit-transition: background-color 150ms ease;
+    transition: background-color 150ms ease;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    margin-left: 5%;
+  }
+  /* line 1179, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #add_pref_language:hover, #add_pref_language:focus {
+    background-color: #878787;
+    color: #fff;
+  }
+
+  /* line 1186, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #add_pref {
+    background-color: #00aca1;
+    border: 0;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Droid Sans", sans-serif;
+    font-size: 1em;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 600;
+    line-height: 1;
+    padding: 0.75em 1.5em;
+    text-decoration: none;
+    -webkit-transition: background-color 150ms ease;
+    transition: background-color 150ms ease;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    margin-left: 5%;
+    padding-left: 3.5%;
+    padding-right: 3.5%;
+  }
+  /* line 1208, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #add_pref:hover, #add_pref:focus {
+    background-color: #878787;
+    color: #fff;
+  }
+
+  /* line 1215, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .image-fields img {
+    margin-left: 5%;
+  }
+
+  /* line 1219, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .actions input {
+    width: 30%;
+    margin-left: 35%;
+    margin-bottom: 5%;
+    font-size: 1.2rem;
+    border: none;
+  }
+
+  /* line 1227, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .actions {
+    margin-top: 0%;
+  }
+
+  /* line 1232, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .button-label {
+    font-size: 1rem;
+  }
+
+  /* line 1242, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #first_option {
+    width: 60%;
+    margin-left: 20%;
+    margin-top: -7%;
+    margin-bottom: 1%;
+  }
+
+  /* line 1250, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #search-choice {
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+  }
+
+  /* line 1255, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #pairchoice {
+    margin-left: 10%;
+  }
+
+  /* line 1259, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .preference-form {
+    margin-bottom: 1%;
+  }
+  /* line 1262, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .preference-form label {
+    font-size: 1rem;
+  }
+
+  /* line 1267, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .index-search-form {
+    background-color: white;
+    border: solid;
+    border-color: #6a6a6a;
+    border-width: 0.5px;
+    border-radius: 5px;
+    width: 60%;
+    margin-top: 10%;
+    margin-left: 20%;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    margin-bottom: 2%;
+  }
+
+  /* line 1281, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #date-search {
+    margin-top: -16%;
+  }
+
+  /* line 1285, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #pair-search {
+    margin-top: -16%;
+  }
+
+  /* line 1290, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  input#search_location {
+    width: 30%;
+    height: 1.5rem;
+    font-size: 1rem;
+    border-width: 3px;
+    display: inline;
+    margin-left: 1%;
+    border: solid;
+    border-color: #6a6a6a;
+    border-width: 0.5px;
+    border-radius: 5px;
+  }
+
+  /* line 1303, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  input#search {
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+
+  /* line 1309, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  input#search_min_age {
+    width: 20%;
+    height: 1.5rem;
+    font-size: 0.7rem;
+    border-width: 3px;
+    display: inline;
+    margin-left: 2.5%;
+    border: solid;
+    border-color: #6a6a6a;
+    border-width: 0.5px;
+    border-radius: 5px;
+  }
+
+  /* line 1321, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  input#search_max_age {
+    width: 20%;
+    height: 1.5rem;
+    font-size: 0.7rem;
+    border-width: 3px;
+    display: inline;
+    margin-left: 2.5%;
+    margin-top: -2.5%;
+    border: solid;
+    border-color: #6a6a6a;
+    border-width: 0.5px;
+    border-radius: 5px;
+  }
+
+  /* line 1338, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  img.profile-image {
+    width: 15%;
+  }
+
+  /* line 1342, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .index-users {
+    background-color: white;
+    width: 60%;
+    margin-left: 20%;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    margin-bottom: 2%;
+    border-radius: 5px;
+  }
+
+  /* line 1352, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #link-to-profile img {
+    width: 5%;
+    float: right;
+    margin-top: -8%;
+    margin-right: 6%;
+  }
+
+  /* line 1359, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #index-profile-name {
+    color: #3b3b3b;
+  }
+
+  /* line 1363, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #index-profile-location {
+    font-size: 1rem;
+    margin-top: -2%;
+  }
+
+  /* line 1368, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .line-break {
+    margin-top: 10%;
+  }
+
+  /* line 1373, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .profile-details-title {
+    font-size: 1.2rem;
+    color: #00aca1;
+  }
+
+  /* line 1378, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .profile-tags {
+    text-align: left;
+    margin-left: 10%;
+    padding-bottom: 10%;
+    margin-top: 2%;
+  }
+  /* line 1383, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .profile-tags a {
+    background-color: #00aca1;
+    padding: 1%;
+  }
+
+  /* line 1391, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .reply {
+    background-color: #00aca1;
+    border: 0;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Droid Sans", sans-serif;
+    font-size: 1em;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 600;
+    line-height: 1;
+    padding: 0.75em 1.5em;
+    -webkit-transition: background-color 150ms ease;
+    transition: background-color 150ms ease;
+    vertical-align: middle;
+    white-space: nowrap;
+    margin-left: 5%;
+  }
+  /* line 1409, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .reply:hover, .reply:focus {
+    background-color: #878787;
+    color: #fff;
+  }
+
+  /* line 1416, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #mailbox {
+    margin-top: 5%;
+  }
+
+  /* line 1420, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #mailbox h1 {
+    font-size: 1.5rem;
+    margin-top: -7%;
+  }
+
+  /* line 1425, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #show-inbox-button {
+    float: left;
+    margin-left: 1%;
+    margin-top: 1%;
+    width: 16%;
+    background-color: #6A6A6A;
+    border-radius: 5px;
+  }
+
+  /* line 1434, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #show-inbox {
+    margin-left: 20%;
+    margin-top: 2%;
+    background-color: white;
+    margin-right: 20%;
+    padding-top: 2%;
+    padding-left: 2%;
+    border-radius: 5px;
+  }
+
+  /* line 1443, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .sent_message {
+    margin-left: 20%;
+    margin-top: 2%;
+    background-color: white;
+    margin-right: 20%;
+    padding-top: 2%;
+    padding-left: 2%;
+    border-radius: 5px;
+  }
+
+  /* line 1452, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .unread {
+    float: right;
+    margin-right: 5%;
+    margin-top: -1%;
+    font-size: 1.2rem;
+  }
+
+  /* line 1459, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .unread-checkbox {
+    float: right;
+    margin-right: -2%;
+  }
+
+  /* line 1464, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .reply {
+    float: right;
+    margin-top: -8%;
+    margin-right: 2%;
+  }
+
+  /* line 1470, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .line-break-inbox {
+    width: 100%;
+    margin-left: -2%;
+  }
+
+  /* line 1476, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .message-info {
+    font-size: 1rem;
+  }
+
+  /* line 1480, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .recipient_id {
+    color: #3b3b3b;
+  }
+
+  /* line 1484, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .subject_line {
+    color: #3b3b3b;
+  }
+
+  /* line 1488, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .sent_by {
+    color: #3b3b3b;
+  }
+
+  /* line 1492, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .reply_message {
+    margin-top: 2%;
+  }
+
+  /* line 1497, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .reply-name {
+    color: #3b3b3b;
+  }
+
+  /* line 1500, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #sent_message_show {
+    float: left;
+    margin-left: -16%;
+    margin-top: 5%;
+    width: 16%;
+    background-color: #6A6A6A;
+    border-radius: 5px;
+  }
+
+  /* line 1509, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #message_message {
+    margin-top: 2.5%;
+  }
+
+  /* line 1514, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .container {
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+  }
+
+  /* line 1519, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .container div {
+    width: 100%;
+    display: inline-block;
+    display: none;
+  }
+
+  /* line 1525, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .container img {
+    width: 300px;
+    height: 300px;
+    margin-left: 50%;
+    margin-right: 50%;
+    margin-top: 10%;
+  }
+
+  /* line 1534, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .right_arrow {
+    position: absolute;
+    float: right;
+    margin-top: -50%;
+    margin-left: 230%;
+    width: 100%;
+  }
+
+  /* line 1543, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .left_arrow {
+    position: absolute;
+    margin-left: -30%;
+    margin-top: -50%;
+  }
+
+  /* line 1549, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  .x {
+    position: absolute;
+    margin-left: 160%;
+    width: 240%;
+    margin-top: -15%;
+  }
+
+  /* line 1557, /Users/Meep/Desktop/Bitmaker/Assignments/GitHug/app/assets/stylesheets/profiles.scss */
+  #dim-page {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 999;
+    top: 0;
+    left: 0;
+  }
+}
