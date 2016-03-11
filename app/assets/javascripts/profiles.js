@@ -12,8 +12,54 @@ $(document).on('page:load ready', function() {
           $(this).addClass("open");
       }
   });
-
   $('#login-notice').delay(1000).slideUp(1000);
+
+// Slideshow
+
+  $('#imageslideshow').hide();
+
+  $('#profile-images').click(function(){
+    $("#dim-page").css("opacity",0.6).fadeIn(100, function(){
+      $('#imageslideshow').css({'position':'absolute', 'display':'block', 'z-index': 99999});
+    });
+
+
+    var presentIndex = 0,
+      photos = $('.container div'),
+      photoAmount = photos.length;
+
+      function nextPhoto() {
+        var photo = $('.container div').eq(presentIndex);
+        photos.hide();
+        photo.css('display','inline-block');
+      }
+
+      $('.right_arrow').click(function() {
+        presentIndex++;
+          if (presentIndex > photoAmount - 1) {
+            presentIndex = 0;
+          }
+        nextPhoto();
+      });
+
+      $('.left_arrow').click(function(){
+        presentIndex--;
+          if (presentIndex < 0){
+            presentIndex = photoAmount - 1;
+          }
+        nextPhoto();
+      });
+    });
+
+    $('.x').click(function(){
+      $("#dim-page").css("opacity",0).fadeOut(50, function(){
+        $('#imageslideshow').css('display', 'none');
+    });
+
+  });
+
+
+
 
 
   $('#pair-search').hide();

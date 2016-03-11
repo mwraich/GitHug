@@ -1,14 +1,16 @@
 <div class="profile-form">
 
   <div id="profile-images">
-  <% if @profile.images.any? %>
-    <% @profile.images.each do |img| %>
-      <%= image_tag(img.image)%>
+    <% if @profile.images.empty? %>
+      <%= image_tag(@profile.user.github_image) %>
+    <% else %>
+      <%= image_tag(@profile.images[0].image_url) %>
     <% end %>
-  <% else %>
-    <%= render "no_profile_image" %>
-  <% end %>
   </div>
+
+  <%= render 'imageslideshow' %>
+
+  <div id="dim-page"></div>
 
 <h1 class="profile-name"><%= @profile.first_name %> <%= @profile.last_name %></h1>
 
@@ -20,7 +22,6 @@
   <%= f.submit 'Block User', :class => "block_button" %>
   <% end %>
 <% end%>
-
 
 
 <div id="profile-aboutme">
