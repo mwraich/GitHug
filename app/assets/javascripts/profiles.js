@@ -17,30 +17,51 @@ $(document).on('page:load ready', function() {
   $('#login-notice').delay(1000).slideUp(1000);
 
 // Slideshow
-  // Add hover feature
+
+  $('#imageslideshow').hide();
+
+  $('#profile-images').click(function(){
+    $("#dim-page").css("opacity",0.6).fadeIn(100, function(){
+      $('#imageslideshow').css({'position':'absolute', 'display':'block', 'z-index': 99999});
+    });
 
 
-  $('#profile-images').click(function() {
-    $('#imageslideshow ul li').first().css("display", "inline-block");
-        var currentImage = 0;
-        var allImages  = $('#imageslideshow li img').length;
-        var imageWidth = 600;
-        console.log(allImages);
-        //
-        $('#imageslideshow ul').width(allImages*imageWidth);
-        $('.right_arrow').click(function() {
-          currentImage++;
-          if(currentImage>=allImages) currentImage = 0;
-          setFramePosition(currentImage);
-        });
+    var presentIndex = 0,
+      photos = $('.container div'),
+      photoAmount = photos.length;
+
+      function nextPhoto() {
+        var photo = $('.container div').eq(presentIndex);
+        photos.hide();
+        photo.css('display','inline-block');
+      }
+
+      $('.right_arrow').click(function() {
+        presentIndex++;
+          if (presentIndex > photoAmount - 1) {
+            presentIndex = 0;
+          }
+        nextPhoto();
+      });
+
+      $('.left_arrow').click(function(){
+        presentIndex--;
+          if (presentIndex < 0){
+            presentIndex = photoAmount - 1;
+          }
+        nextPhoto();
+      });
+    });
+
+    $('.x').click(function(){
+      $("#dim-page").css("opacity",0).fadeOut(50, function(){
+        $('#imageslideshow').css('display', 'none');
+    });
+
   });
 
-  function setFramePosition(pos){
-    var px = imageWidth*pos*-1;
-    $('#imageslideshow ul').animate({
-      left:px
-    }, 300);
-  }
+
+
 
 
   $('#pair-search').hide();
@@ -130,6 +151,7 @@ $(document).on('page:load ready', function() {
   //   }
   //   console.log(buttonschecked)
 
+
     //Gender button validation
 //     var validateButton = false;
 //     $('.gender_validation').each(function(){
@@ -186,5 +208,5 @@ $(document).on('page:load ready', function() {
 //     $(this).siblings('input:checkbox').prop('checked', false);
 //   });
 //
-});
+
 //
