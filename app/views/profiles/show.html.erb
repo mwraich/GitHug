@@ -1,14 +1,15 @@
 <div class="profile-form">
 
   <div id="profile-images">
-  <% if @profile.images.any? %>
-    <% @profile.images.each do |img| %>
-      <%= image_tag(img.image)%>
+    <% if (@profile.images.length < 2) %>
+      <%= image_tag(@profile.user.github_image) %>
+    <% else %>
+      <%= image_tag(@profile.images[0].imagee_url) %>
     <% end %>
-  <% else %>
-    <%= render "no_profile_image" %>
-  <% end %>
   </div>
+
+
+<h1 class="profile-name"><%= @profile.first_name %> <%= @profile.last_name %></h1>
 
 
 <div id="profile-aboutme">
@@ -55,9 +56,15 @@
 <% end %>
 </div>
 
+  <% if current_user.profile == @profile %>
+  <%else %>
 <%= render "messages/new_message" %>
+  <% end %>
 
 <button class= "message-to-button">message</button>
+<!--  Add aligator tags and this will stop block button from appear, waiting to get CSS Styling done before implementing this
+if current_user.profile == @profile  -->
+<!-- <div id ='No_block_button'></div> -->
 
 <% if @profile.blocked_by?(current_user) %>
   <%= "This user has already been blocked" %>
@@ -67,5 +74,6 @@
   <%= f.submit 'Block User', :class => "block_button" %>
   <% end %>
 <% end%>
+
 <div class="reco_matches">
 </div>
