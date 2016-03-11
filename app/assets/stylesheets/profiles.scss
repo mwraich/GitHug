@@ -647,9 +647,61 @@ textarea#message_message{
   margin-left: 5%;
 }
 
-#message_message{
-  margin-left: 5%;
+.new_message p {
+   color:#00fe06 ;
+   padding-left:6%;
+
+ }
+ .new_message {
+   bottom: 0;
+   z-index: 150;
+   position:fixed;
+   background-color: black;
+   width:100%;
+   display:block;
+   font-family: 'VT323';
 }
+
+textarea#message_message {
+   background-color: black;
+   border:none;
+   color:#00fe06 ;
+   width: 100%;
+   height: 50%;
+   display: block;
+  font-family: 'VT323';
+   &:hover {
+     border-color:black, 20%;
+   }
+   &:focus {
+     border-color:black;
+     box-shadow:none;
+     outline: none;
+   }
+}
+
+ input#commit {
+   border-radius:none;
+   background-color:black;
+   padding:0;
+   color:#00fe06 ;
+   font-size: 1.5rem;
+  font-family: 'VT323';
+   &:hover {
+     color:white;
+   }
+ }
+ button.message-to-button{
+   font-size: 1rem;
+   background-color:black;
+   margin-left: 0;
+   width: 12%;
+   margin-bottom:4%;
+   margin-top: 22%;
+   color: #00fe06 ;
+   // text-align: center;
+   padding: 2%;
+ }
 
 
 
