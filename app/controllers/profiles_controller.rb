@@ -7,7 +7,7 @@ class ProfilesController < ApplicationController
 
   def index
     @profiles = if params[:search]
-      Profile.search(params[:search]).order('profiles.created_at DESC')
+      Profile.search(params[:search])
     else
       Profile.order("profiles.created_at DESC")
     end

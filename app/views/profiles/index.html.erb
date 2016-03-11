@@ -18,20 +18,5 @@
 </div>
 
 <div class ="index-users">
-<% @profiles.each do |profile| %>
- <%= image_tag (profile.user.github_image), class: 'profile-image' %>
- <div id="index-view-profile-info">
-   <p id = "index-profile-name"><%= profile.first_name%><p>
-    <p id="index-profile-location"><%=profile.location %></p>
-    <div id="link-to-profile">
-    <%= link_to image_tag("profile.svg"), profile_path(profile) %>
-  </div>
- </div>
-<hr class="line-break">
- <% end %>
-</div>
 
-
-
-<div id = "search-result">
 </div>
