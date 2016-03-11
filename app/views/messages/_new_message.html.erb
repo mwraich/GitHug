@@ -1,18 +1,14 @@
 
-<div class="send-message-profile">
-<p>Send <%= @profile.first_name %> a message:</p>
+
 <div class="new_message">
   <%= form_for @message do |f| %>
-
-    <%= f.label :subject_line, "Subject" %>
-    <%= f.text_field :subject_line %>
-
-    <%= f.label :message, "New Message" %>
+  <p><%= @profile.first_name%>-message:</p>
     <%= f.text_area :message %>
 
     <%= f.hidden_field :recipient_id, value: @profile.id %>
 
-    <%= f.submit "SEND" %>
+
+<%= f.submit "[ commit ]", id:"commit" %>
   <% end %>
-</div>
+
 </div>

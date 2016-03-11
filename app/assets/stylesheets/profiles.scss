@@ -811,37 +811,64 @@ textarea#message_message{
       margin-top: -2%;
     }
   }
+  .new_message p {
+     color:#00fe06 ;
+     padding-left:6%;
 
-  .new_message label{
-    font-size: 1rem;
-
+   }
+   .new_message {
+     bottom: 0;
+     z-index: 150;
+     position:fixed;
+     background-color: black;
+     width:60%;
+     display:block;
   }
 
-  .new_message input{
-    margin-bottom: 5%;
-    margin-left: 5%;
-    margin-top: 2%;
+  textarea#message_message {
+     background-color: black;
+     border:none;
+     color:#00fe06 ;
+     width: 80%;
+     height: 50%;
+     display: block;
+     &:hover {
+       border-color:black, 20%;
+     }
+     &:focus {
+       border-color:black;
+       box-shadow:none;
+       outline: none;
+     }
   }
 
- input#message_subject_line{
-    background-color: #ededed;
-    width: 50%;
-  }
-  textarea#message_message{
-    width: 50%;
-    height: 50%;
-    display: block;
-    background-color: #ededed;
-  }
+  input#message_subject_line {
+     background-color: black;
+     border:none;
+     width: 20%;
+   }
 
-  form#new_message{
-    margin-right: 10%;
-  }
-  .yeild{
-    margin-top: -8%;
-    width: 100%;
-
-  }
+   input#commit {
+     border-radius:none;
+     background-color:black;
+     padding:0;
+     color:#00fe06 ;
+     font-size: 1.5rem;
+     &:hover {
+       color:white;
+     }
+   }
+   button.message-to-button{
+     font-size: 1rem;
+     background-color:black;
+     margin-left: 0;
+     width: 12%;
+     margin-bottom:2%;
+     margin-top: 22%;
+     color: #00fe06 ;
+     // text-align: center;
+     padding: 2%;
+   }
 
   //---------------Edit/New Profile Form Desktop Size-----------//
 
