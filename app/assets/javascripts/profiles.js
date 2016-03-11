@@ -35,7 +35,7 @@ $(document).on('page:load ready', function() {
       }
 
       $('.right_arrow').click(function() {
-        presentIndex += 1;
+        presentIndex++;
           if (presentIndex > photoAmount - 1) {
             presentIndex = 0;
           }
@@ -43,7 +43,7 @@ $(document).on('page:load ready', function() {
       });
 
       $('.left_arrow').click(function(){
-        presentIndex -=1;
+        presentIndex--;
           if (presentIndex < 0){
             presentIndex = photoAmount - 1;
           }
