@@ -35,8 +35,7 @@ class ProfilesController < ApplicationController
     if @profile.save
       redirect_to profile_path(@profile), notice: "Profile Saved!"
     else
-      flash[:notice] = "Profile did not save. Please double check that all mandatory fields have been filled out."
-      render :new
+      redirect_to new_user_url
     end
   end
 
@@ -49,8 +48,6 @@ class ProfilesController < ApplicationController
 
     if @profile.update_attributes(profile_params)
       redirect_to profile_path(@profile)
-    else
-      render :edit
     end
 
   end

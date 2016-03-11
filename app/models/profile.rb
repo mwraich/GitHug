@@ -49,7 +49,7 @@ class Profile < ActiveRecord::Base
   end
 
   def blocked_by?(current_user)
-    current_user.enemies.include?(self.user) #Have you blocked this person? 
+    current_user.enemies.include?(self.user) #Have you blocked this person?
   end
 
 end

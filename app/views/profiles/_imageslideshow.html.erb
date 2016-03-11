@@ -3,7 +3,7 @@
   <ul>
     <% range = (0..(@profile.images.length)) %>
     <% range.select do |r| %>
-    <li><%=  image_tag(@profile.images[r-1].image_url) %></li>
+    <%= image_tag(@profile.images[r-1].image_url) %>
     <% end %>
 </ul>
 <%= link_to image_tag('right_arrow.png'), '#', class:'right_arrow'%>
