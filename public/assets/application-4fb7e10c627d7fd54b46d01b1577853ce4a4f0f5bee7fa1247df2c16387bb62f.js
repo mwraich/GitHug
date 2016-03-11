@@ -12569,10 +12569,6 @@ $(document).on('page:load ready', function() {
 
   });
 
-
-
-
-
   $('#pair-search').hide();
   $('#date-search').hide();
   $('input[type="radio"]').click(function() {
@@ -12617,6 +12613,7 @@ $(document).on('page:load ready', function() {
   // // url: '/profiles?search=' + $('#search').val(),
   // // type:'GET',
   // // dataType: 'script',
+  });
   });
 
   //Front end New Profile Form Validations
@@ -12719,7 +12716,7 @@ $(document).on('page:load ready', function() {
 //
 
 //
-// ;
+;
 (function() {
 
 
@@ -12727,7 +12724,7 @@ $(document).on('page:load ready', function() {
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 // You can use CoffeeScript in this file: http://coffeescript.org/
-
+;
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -12740,3 +12737,8 @@ $(document).on('page:load ready', function() {
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
+
+
+
+
