@@ -79,6 +79,11 @@ $(document).on('page:load ready', function() {
     });
   });
   //
+  $(".new_message").toggle();
+  $(".message-to-button").on('click', function(e){
+
+    $(".new_message").toggle();
+  });
   // // url: '/profiles?search=' + $('#search').val(),
   // // type:'GET',
   // // dataType: 'script',
@@ -124,13 +129,6 @@ $(document).on('page:load ready', function() {
   //     i++;
   //   }
   //   console.log(buttonschecked)
-});
-$(".new_message").toggle();
-$(".message-to-button").on('click', function(e){
-
- $(".new_message").toggle();
-});
-});
 
     //Gender button validation
 //     var validateButton = false;
