@@ -14,6 +14,10 @@
 
 <h1 class="profile-name"><%= @profile.first_name %> <%= @profile.last_name %></h1>
 
+<%= render "messages/new_message" %>
+
+<button class= "message-to-button">message</button>
+
 <% if @profile.blocked_by?(current_user) %>
   <%= "This user has already been blocked" %>
   <%else %>
@@ -22,6 +26,7 @@
   <%= f.submit 'Block User', :class => "block_button" %>
   <% end %>
 <% end%>
+
 
 
 <div id="profile-aboutme">
@@ -68,7 +73,6 @@
 <% end %>
 </div>
 
-<%= render "messages/new_message" %>
 
 <div class="reco_matches">
 </div>
