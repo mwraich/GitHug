@@ -78,6 +78,10 @@ $(document).on('page:load ready', function() {
       }
     });
   });
+  //
+  // // url: '/profiles?search=' + $('#search').val(),
+  // // type:'GET',
+  // // dataType: 'script',
   });
 
   //Front end New Profile Form Validations
@@ -179,7 +183,3 @@ $(document).on('page:load ready', function() {
 //
 });
 //
-//
-// // url: '/profiles?search=' + $('#search').val(),
-// // type:'GET',
-// // dataType: 'script',

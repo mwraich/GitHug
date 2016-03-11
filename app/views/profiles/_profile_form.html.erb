@@ -1,6 +1,15 @@
 
 <%= form_for @profile do |f| %>
-
+    <% if @profile.errors.any? %>
+      <div class="error_messages">
+        <h2>Form Is Invalid</h2>
+        <ul>
+          <% @profile.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
     <div class="form_input">
       <%= f.label :first_name, "First Name:" %>
