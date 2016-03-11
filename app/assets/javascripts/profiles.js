@@ -13,24 +13,49 @@ $(document).on('page:load ready', function() {
       }
   });
   $('#login-notice').delay(1000).slideUp(1000);
+
 // Slideshow
-  var currentIndex = 0,
-    items = $('.container div'),
-    itemAmt = items.length;
 
-    function cycleItems() {
-      var item = $('.container div').eq(currentIndex);
-      items.hide();
-      item.css('display','inline-block');
-    }
+  $('#imageslideshow').hide();
 
-    $('.right_arrow').click(function() {
-  
-    currentIndex += 1;
-    if (currentIndex > itemAmt - 1) {
-      currentIndex = 0;
-    }
-    cycleItems();
+  $('#profile-images').click(function(){
+    $("#dim-page").css("opacity",0.6).fadeIn(100, function(){
+      $('#imageslideshow').css({'position':'absolute', 'display':'block', 'z-index': 99999});
+    });
+
+
+    var presentIndex = 0,
+      photos = $('.container div'),
+      photoAmount = photos.length;
+
+      function nextPhoto() {
+        var photo = $('.container div').eq(presentIndex);
+        photos.hide();
+        photo.css('display','inline-block');
+      }
+
+      $('.right_arrow').click(function() {
+        presentIndex += 1;
+          if (presentIndex > photoAmount - 1) {
+            presentIndex = 0;
+          }
+        nextPhoto();
+      });
+
+      $('.left_arrow').click(function(){
+        presentIndex -=1;
+          if (presentIndex < 0){
+            presentIndex = photoAmount - 1;
+          }
+        nextPhoto();
+      });
+    });
+
+    $('.x').click(function(){
+      $("#dim-page").css("opacity",0).fadeOut(50, function(){
+        $('#imageslideshow').css('display', 'none');
+    });
+
   });
 
 
