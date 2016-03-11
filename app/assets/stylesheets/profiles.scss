@@ -520,12 +520,24 @@ input#search_max_age{
   }
 }
 
+button.message-to-button{
+  font-size: 1rem;
+  background-color:black;
+  color: #00fe06 ;
+  font-size: 0.7rem;
+  text-align: center;
+  width: 25%;
+  margin-top: -2%;
+  margin-left: 20%;
+}
+
 input.block_button{
   background-color: #f16a6b;
   font-size: 0.7rem;
-  margin-left: 37%;
+  text-align: center;
   width: 25%;
-  margin-top: -2%;
+  margin-top: -14%;
+  margin-left: 55%;
 }
 
 #profile-aboutme{
@@ -746,15 +758,7 @@ textarea#message_message {
      color:white;
    }
  }
- button.message-to-button{
-   font-size: .9rem;
-   background-color:black;
-   margin-left: 0;
-   margin-top: 22%;
-   color: #00fe06 ;
-   // text-align: center;
-   padding: 2%;
- }
+
 
 
 
@@ -965,6 +969,8 @@ textarea#message_message {
     margin-top: -6.7%;
 
    }
+
+
 
   //---------------Edit/New Profile Form Desktop Size-----------//
 
