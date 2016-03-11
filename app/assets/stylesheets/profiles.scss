@@ -823,6 +823,7 @@ textarea#message_message{
      background-color: black;
      width:60%;
      display:block;
+     font-family: 'VT323';
   }
 
   textarea#message_message {
@@ -832,6 +833,7 @@ textarea#message_message{
      width: 80%;
      height: 50%;
      display: block;
+    font-family: 'VT323';
      &:hover {
        border-color:black, 20%;
      }
@@ -842,18 +844,13 @@ textarea#message_message{
      }
   }
 
-  input#message_subject_line {
-     background-color: black;
-     border:none;
-     width: 20%;
-   }
-
    input#commit {
      border-radius:none;
      background-color:black;
      padding:0;
      color:#00fe06 ;
      font-size: 1.5rem;
+    font-family: 'VT323';
      &:hover {
        color:white;
      }
