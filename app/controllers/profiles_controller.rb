@@ -6,7 +6,7 @@ class ProfilesController < ApplicationController
 
   def index
     @profiles = if params[:search]
-      Profile.search(params[:search]).order('profiles.created_at DESC')
+      Profile.search(params[:search])
     else
       Profile.order("profiles.created_at DESC")
     end
@@ -81,7 +81,7 @@ class ProfilesController < ApplicationController
 
   def profile_params
     params.require(:profile)
-          .permit(:first_name, :last_name, :location, :male, :female, :other,
+          .permit(:first_name, :last_name, :city, :province, :male, :female, :other,
           :birthday, :operating_system, :about_me, :tag_list, languages_attributes:
           [:id, :language, :skill_level, :_destroy], images_attributes: [:id, :image,
           :image_cache, :_destroy, :remove_image], preferences_attributes:

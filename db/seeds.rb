@@ -8,8 +8,8 @@
 
 # # On command line type gem install faker, run bundle, and then rake db:seed
 
-
-locations = ["Toronto,Ontario", "Montreal,Quebec", "Vancouver,BC", "Calgary,Alberta"]
+province = ["Ontario"]
+city = ["Toronto", "Ottawa", "London", "Waterloo", "Hamilton"]
 languages = ["Ruby", "Javascript", "PHP", "C", "Java"]
 operating_system = ["Linux", "OS X", "Windows", "Ubuntu"]
 
@@ -22,7 +22,8 @@ operating_system = ["Linux", "OS X", "Windows", "Ubuntu"]
   x1 = Profile.create!({
     first_name: "Emily",
     last_name:  "Smith",
-    location:   "Toronto, Ontario",
+    city:       "Toronto",
+    province:   "Ontario",
     male:       false,
     female:     true,
     other:      false,
@@ -46,7 +47,8 @@ operating_system = ["Linux", "OS X", "Windows", "Ubuntu"]
   })
 
   z1 = Preference.create!({
-    location:   "Toronto, Ontario",
+    city:       "Toronto",
+    province:   "Ontario",
     male:       false,
     female:     false,
     other:      true,
@@ -58,29 +60,29 @@ operating_system = ["Linux", "OS X", "Windows", "Ubuntu"]
     profile: x1
   })
 
-    PrefLanguage.create!({
+  PrefLanguage.create!({
     pref_lang: "JavaScript",
     skill_level: 2,
     preference: z1
-    })
+  })
 
-    PrefLanguage.create!({
+  PrefLanguage.create!({
     pref_lang: "Ruby",
     skill_level: 1,
     preference: z1
-    })
+  })
 
-
-u2 = User.create!({
-  username: "joepotato",
-  email: "joe@gmail.com",
-  github_image: Faker::Avatar.image
-})
+  u2 = User.create!({
+    username: "joepotato",
+    email: "joe@gmail.com",
+    github_image: Faker::Avatar.image
+  })
 
 x2 = Profile.create!({
   first_name: "Joe",
   last_name:  "Potato",
-  location:   "Toronto, Ontario",
+  city:       "Toronto",
+  province:   "Ontario",
   male:       true,
   female:     false,
   other:      false,
@@ -89,7 +91,7 @@ x2 = Profile.create!({
   about_me:   Faker::Hacker.say_something_smart,
   image:      Faker::Avatar.image,
   user: u2
-})
+  })
 
 Language.create!({
   language: "Java",
@@ -109,9 +111,9 @@ Language.create!({
   profile: x2
 })
 
-
 z2 = Preference.create!({
-  location:   "Toronto, Ontario",
+  city:       "Toronto",
+  province:   "Ontario",
   male:       false,
   female:     false,
   other:      true,
@@ -141,6 +143,32 @@ Language.create!({
   profile: x2
 })
 
+  z1 = Preference.create!({
+    city:       "Toronto",
+    province:   "Ontario",
+    male:       false,
+    female:     false,
+    other:      true,
+    min_age:    28,
+    max_age:   35,
+    operating_system: "OS X",
+    partner:    true,
+    paired_programmer: false,
+    profile: x2
+  })
+
+    PrefLanguage.create!({
+    pref_lang: "JavaScript",
+    skill_level: 2,
+    preference: z2
+    })
+
+    PrefLanguage.create!({
+    pref_lang: "Ruby",
+    skill_level: 1,
+    preference: z2
+    })
+
 
 5.times do |n|
   u = User.create!({
@@ -148,19 +176,20 @@ Language.create!({
     email: Faker::Internet.email,
     github_image: Faker::Avatar.image
   })
-    # sleep(1)
   x = Profile.create!({
     first_name: Faker::Name.first_name,
     last_name:  Faker::Name.last_name,
-    location:   locations.sample + ", " + "Canada",
-    male:       true,
-    female:     false,
+    city:   city.sample,
+    province:   province.sample,
+    male:       false,
+    female:     true,
     other:      false,
     birthday:   Faker::Date.backward(365*20),
     operating_system: operating_system.sample,
     about_me:   Faker::Hacker.say_something_smart,
     image:      Faker::Avatar.image,
     user: u
+
   })
 
   2.times do |n|
@@ -172,7 +201,8 @@ Language.create!({
   end
 
   z = Preference.create!({
-    location:   locations.sample + ", " + "Canada",
+    city:   city.sample,
+    province:   province.sample,
     male:       Faker::Boolean.boolean,
     female:     Faker::Boolean.boolean,
     other:      Faker::Boolean.boolean,
@@ -202,7 +232,8 @@ end
   x = Profile.create!({
     first_name: Faker::Name.first_name,
     last_name:  Faker::Name.last_name,
-    location:   locations.sample + ", " + "Canada",
+    city:   city.sample,
+    province:   province.sample,
     male:       false,
     female:     true,
     other:      false,
@@ -211,6 +242,7 @@ end
     about_me:   Faker::Hacker.say_something_smart,
     image:      Faker::Avatar.image,
     user: u
+
   })
 
   2.times do |n|
@@ -222,7 +254,8 @@ end
   end
 
   z = Preference.create!({
-    location:   locations.sample + ", " + "Canada",
+    city:   city.sample,
+    province:   province.sample,
     male:       Faker::Boolean.boolean,
     female:     Faker::Boolean.boolean,
     other:      Faker::Boolean.boolean,

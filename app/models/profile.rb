@@ -19,13 +19,14 @@ class Profile < ActiveRecord::Base
 
 
   accepts_nested_attributes_for :images, :languages, :preferences, allow_destroy: true
+  before_create :location, :latitude  => :lat, :longitude => :lon
+  before_update :location, :latitude  => :lat, :longitude => :lon
 
-
-  validates_presence_of :first_name, :last_name, :location, :birthday, :about_me
+  validates_presence_of :first_name, :last_name, :city, :province, :birthday, :about_me
   # validates_with ValidatesGender
   validates :user_id, uniqueness: {message: "Error. Looks like you already have a profile. You can update your profile by clicking on update."}
-  geocoded_by :city, :location
-  after_validation :geocode, if: :location_changed?
+  geocoded_by :location
+  # after_validation :geocode, if: :location_changed?
   acts_as_taggable_on :tags
 
   def self.search(search_params)
@@ -37,7 +38,7 @@ class Profile < ActiveRecord::Base
 
     near(search_params['location']).includes(:languages).where(
        male: m, female: f, other: o
-  ).where('birthday BETWEEN ? AND ?', min_age, max_age
+  ).where('birthday BETWEEN ? AND ?', max_age, min_age
     ).where('languages.language = ? OR operating_system like ?', search_params['language'],search_params['operating_system']
     ).references(:languages)
   end
@@ -52,4 +53,7 @@ class Profile < ActiveRecord::Base
     current_user.enemies.include?(self.user) #Have you blocked this person?
   end
 
+  def location
+    location = [self.city, self.province].compact.join(', ')
+  end
 end

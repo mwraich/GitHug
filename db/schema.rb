@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160311000648) do
+ActiveRecord::Schema.define(version: 20160311020728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 20160311000648) do
   end
 
   create_table "preferences", force: :cascade do |t|
-    t.string   "location"
+    t.string   "city"
     t.boolean  "male"
     t.boolean  "female"
     t.boolean  "other"
@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 20160311000648) do
     t.integer  "profile_id"
     t.integer  "min_age"
     t.integer  "max_age"
+    t.string   "province"
   end
 
   add_index "preferences", ["profile_id"], name: "index_preferences_on_profile_id", using: :btree
