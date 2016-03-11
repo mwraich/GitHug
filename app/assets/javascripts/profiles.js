@@ -60,10 +60,6 @@ $(document).on('page:load ready', function() {
 
   });
 
-
-
-
-
   $('#pair-search').hide();
   $('#date-search').hide();
   $('input[type="radio"]').click(function() {
@@ -108,6 +104,7 @@ $(document).on('page:load ready', function() {
   // // url: '/profiles?search=' + $('#search').val(),
   // // type:'GET',
   // // dataType: 'script',
+  });
   });
 
   //Front end New Profile Form Validations
