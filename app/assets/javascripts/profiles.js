@@ -4,6 +4,13 @@
 // # All this logic will automatically be available in application.js.
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).on('page:load ready', function() {
+
+  $(".new_message").toggle();
+  $(".message-to-button").on('click', function(e){
+
+    $(".new_message").toggle();
+  });
+
   $("#nav-mobile").html($("#nav-main").html());
     $("#nav-trigger span").click(function(){
       if ($("nav#nav-mobile ul").hasClass("expanded")) {
@@ -96,11 +103,6 @@ $(document).on('page:load ready', function() {
     });
   });
   //
-  $(".new_message").toggle();
-  $(".message-to-button").on('click', function(e){
-
-    $(".new_message").toggle();
-  });
   // // url: '/profiles?search=' + $('#search').val(),
   // // type:'GET',
   // // dataType: 'script',

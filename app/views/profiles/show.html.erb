@@ -17,8 +17,8 @@
 <!-- if current_user.profile == @profile   -->
 <!-- <div id ='No_block_button'></div> -->
 
-<button class= "message-to-button">Message</button>
 
+<button class= "message-to-button">Message</button>
 
 <% if @profile.blocked_by?(current_user) %>
   <%= "This user has already been blocked" %>
@@ -75,6 +75,7 @@
 <% end %>
 </div>
 
+<%= render "messages/new_message" %>
 
 
 <!--  Add aligator tags and this will stop block button from appear, waiting to get CSS Styling done before implementing this
