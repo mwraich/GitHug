@@ -90,8 +90,10 @@ group :development do
   # added gems for development
   gem 'letter_opener'
 
-
   gem 'faker'
+
+    # #server
+    # gem 'puma'
 
 
 end

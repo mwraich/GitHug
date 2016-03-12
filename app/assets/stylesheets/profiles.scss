@@ -155,7 +155,6 @@ a.add_fields{
 
   }
 
-
 #add_photo{
   background-color: #00aca1;
   border: 0;
@@ -199,6 +198,35 @@ a.add_fields{
 
 }
 
+// #add_photo{
+//   color: #00aca1;
+//   cursor: pointer;
+//   display: inline-block;
+//   margin-left: 5%;
+//   margin-top: -10%;
+//   &:hover,
+//   &:focus {
+//     color: #3b3b3b;
+//   }
+//
+// }
+
+// #remove_photo{
+//   color: #00aca1;
+//   cursor: pointer;
+//   display: inline-block;
+//   margin-left: 5%;
+
+
+//   &:hover,
+//   &:focus {
+//     color: #3b3b3b;
+//   }
+//
+//
+// }
+
+
 #remove_preference{
   color: #00aca1;
   cursor: pointer;
@@ -212,9 +240,9 @@ a.add_fields{
 
 }
 
-.image-fields input{
-  padding-left: 5%;
-}
+// .image-fields input{
+//   padding-left: 5%;
+// }
 
 #add_pref_language{
   background-color: #00aca1;
