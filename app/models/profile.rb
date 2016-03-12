@@ -22,11 +22,11 @@ class Profile < ActiveRecord::Base
   before_create :location, :latitude  => :latitude, :longitude => :lon
   before_update :location, :latitude  => :lat, :longitude => :lon
 
-  validates_presence_of :first_name, :last_name, :city, :province, :birthday, :about_me
+  validates_presence_of :first_name, :last_name, :location, :birthday, :about_me
   # validates_with ValidatesGender
   validates :user_id, uniqueness: {message: "Error. Looks like you already have a profile. You can update your profile by clicking on update."}
   geocoded_by :location
-  # after_validation :geocode, if: :location_changed?
+  after_validation :geocode, if: :location_changed?
   acts_as_taggable_on :tags
 
   def self.search(search_params)
@@ -50,7 +50,7 @@ class Profile < ActiveRecord::Base
     min_age = ('min_age').to_i.years.ago
     max_age = (('max_age').to_i + 1).years.ago
 
-    where(['location']).includes(:languages).where(male: m, female: f, other: o).where('birthday BETWEEN ? AND ?', max_age, min_age
+    where('location').includes(:languages).where(male: m, female: f, other: o).where('birthday BETWEEN ? AND ?', max_age, min_age
     ).where('languages.language = ? OR operating_system like ?', ['language'], ['operating_system']
     ).references(:languages)
   end
@@ -65,11 +65,8 @@ class Profile < ActiveRecord::Base
     current_user.enemies.include?(self.user) #Have you blocked this person?
   end
 
-  # def location
-  #   location = [self.city, self.province].compact.join(', ')
-  # end
 
-  def to_hash
+  def tohash
     {
     'male' => self.male ? 1 : 0,
     'female' => self.female ? 1 : 0,

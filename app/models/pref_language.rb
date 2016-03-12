@@ -1,4 +1,4 @@
 class PrefLanguage < ActiveRecord::Base
-  has_one :preference
+  belongs_to :preference
   has_one :profile, through: :preference
 end
