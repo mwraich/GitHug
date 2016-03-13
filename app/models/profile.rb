@@ -18,7 +18,7 @@ class Profile < ActiveRecord::Base
   has_many :enemies, through: :blocked_users, class_name: User
 
 
-  accepts_nested_attributes_for :images, :languages, :preferences, allow_destroy: true
+  accepts_nested_attributes_for :images, :languages, :partner, :paired_programmer, allow_destroy: true
   before_create :location, :latitude  => :latitude, :longitude => :lon
   before_update :location, :latitude  => :lat, :longitude => :lon
 
