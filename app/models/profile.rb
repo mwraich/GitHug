@@ -8,7 +8,7 @@ end
 
 class Profile < ActiveRecord::Base
   belongs_to :user
-  has_many :languages, :as => :languageable_id
+  has_many :languages, :as => :languageable
   has_many :partners
   has_many :pair_programmers
   has_many :images
