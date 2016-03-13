@@ -69,7 +69,9 @@
 <%= render "messages/new_message" %>
 
 <div class="reco_matches">
-  <% @profiles.pref_search(@profile.preferences[0]).each do |reco| %>
+  <h3>Recos</h3>
+  <% @profiles.pref_search(@profile.preferences[0].tohash).each do |reco| %>
     <%= reco.first_name %>
+    <%= reco.last_name %>
   <% end %>
 </div>

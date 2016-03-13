@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160309011008) do
+ActiveRecord::Schema.define(version: 20160313212232) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,12 +46,13 @@ ActiveRecord::Schema.define(version: 20160309011008) do
   create_table "languages", force: :cascade do |t|
     t.string   "language"
     t.integer  "skill_level"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "profile_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "languageable_id"
+    t.string   "languageable_type"
   end
 
-  add_index "languages", ["profile_id"], name: "index_languages_on_profile_id", using: :btree
+  add_index "languages", ["languageable_id"], name: "index_languages_on_languageable_id", using: :btree
 
   create_table "messages", force: :cascade do |t|
     t.integer  "recipient_id"
@@ -63,30 +64,31 @@ ActiveRecord::Schema.define(version: 20160309011008) do
     t.boolean  "read_status",  default: false
   end
 
-  create_table "pref_languages", force: :cascade do |t|
-    t.string   "pref_lang"
-    t.integer  "skill_level"
-    t.integer  "preference_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+  create_table "pair_programmers", force: :cascade do |t|
+    t.string   "location"
+    t.boolean  "male"
+    t.boolean  "female"
+    t.boolean  "other"
+    t.integer  "age"
+    t.string   "operating_system"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
-  create_table "preferences", force: :cascade do |t|
+  create_table "partners", force: :cascade do |t|
     t.string   "location"
     t.boolean  "male"
     t.boolean  "female"
     t.boolean  "other"
     t.string   "operating_system"
-    t.boolean  "partner",           default: false
-    t.boolean  "paired_programmer", default: false
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.integer  "profile_id"
     t.integer  "min_age"
     t.integer  "max_age"
   end
 
-  add_index "preferences", ["profile_id"], name: "index_preferences_on_profile_id", using: :btree
+  add_index "partners", ["profile_id"], name: "index_partners_on_profile_id", using: :btree
 
   create_table "profiles", force: :cascade do |t|
     t.string   "first_name"
@@ -98,12 +100,14 @@ ActiveRecord::Schema.define(version: 20160309011008) do
     t.date     "birthday"
     t.string   "operating_system"
     t.text     "about_me"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.integer  "user_id"
     t.float    "latitude"
     t.float    "longitude"
     t.string   "image"
+    t.boolean  "partner",           default: false
+    t.boolean  "paired_programmer", default: false
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
