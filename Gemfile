@@ -35,6 +35,9 @@ gem 'geocoder'
 gem 'acts-as-taggable-on', '~> 3.4'
 #To be used for implementing privacy Settings
 gem 'cancancan', '~> 1.10'
+#To enable text message notifications
+gem 'twilio-ruby', '~> 4.11.1'
+
 
 
 
