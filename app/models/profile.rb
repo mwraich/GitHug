@@ -43,15 +43,17 @@ class Profile < ActiveRecord::Base
     ).references(:languages)
   end
 
-  def self.pref_search(to_hash)
-    m = ('male').to_i.positive?
-    f = ('female').to_i.positive?
-    o = ('other').to_i.positive?
-    min_age = ('min_age').to_i.years.ago
-    max_age = (('max_age').to_i + 1).years.ago
+  def self.pref_search(search_params)
+    m = search_params['male'].to_i.positive?
+    f = search_params['female'].to_i.positive?
+    o = search_params['other'].to_i.positive?
+    min_age = search_params['min_age'].to_i.years.ago
+    max_age = (search_params['max_age'].to_i + 1).years.ago
 
-    where('location').includes(:languages).where(male: m, female: f, other: o).where('birthday BETWEEN ? AND ?', max_age, min_age
-    ).where('languages.language = ? OR operating_system like ?', ['language'], ['operating_system']
+    near(search_params['location']).includes(:languages).where(
+       male: m, female: f, other: o
+  ).where('birthday BETWEEN ? AND ?', max_age, min_age
+    ).where('languages.language = ? OR operating_system like ?', search_params['language'],search_params['operating_system']
     ).references(:languages)
   end
 
@@ -66,17 +68,17 @@ class Profile < ActiveRecord::Base
   end
 
 
-  def tohash
-    {
-    'male' => self.male ? 1 : 0,
-    'female' => self.female ? 1 : 0,
-    'other' => self.other ? 1 : 0,
-    'operating_system' => self.operating_system,
-    'language' => self.pref_languages.first.pref_lang,
-    'min_age' => self.min_age,
-    'max_age' => self.max_age,
-    'location' => self.location
-    }
-  end
+  # def tohash
+  #   {
+  #   'male' => self.male ? 1 : 0,
+  #   'female' => self.female ? 1 : 0,
+  #   'other' => self.other ? 1 : 0,
+  #   'operating_system' => self.operating_system,
+  #   'language' => self.pref_languages.last.pref_lang,
+  #   'min_age' => self.min_age,
+  #   'max_age' => self.max_age,
+  #   'location' => self.location
+  #   }
+  # end
 
 end

@@ -18,7 +18,7 @@ class Preference < ActiveRecord::Base
     'female' => self.female ? 1 : 0,
     'other' => self.other ? 1 : 0,
     'operating_system' => self.operating_system,
-    'pref_languages' => self.pref_languages.first.pref_lang,
+    'language' => self.pref_languages.last.pref_lang,
     'min_age' => self.min_age,
     'max_age' => self.max_age,
     'location' => self.location
