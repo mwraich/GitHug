@@ -83,7 +83,7 @@ class ProfilesController < ApplicationController
   def profile_params
     params.require(:profile)
           .permit(:first_name, :last_name, :location, :male, :female, :other,
-          :birthday, :operating_system, :about_me, :tag_list, :partner,
+          :birthday, :operating_system, :about_me, :tag_list, :date,
           :paired_programmer,  languages_attributes: [:id, :language,
           :skill_level, :languageable_id, :languageable_type :_destroy],
           images_attributes: [:id, :image, :image_cache, :_destroy, :remove_image],

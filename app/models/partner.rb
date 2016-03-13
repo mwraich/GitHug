@@ -2,7 +2,6 @@ class Partner < ActiveRecord::Base
   belongs_to :profile
   has_many :languages, :as => :languageable
 
-  accepts_nested_attributes_for :pref_languages
 
 
   # def self.recommended_profiles
