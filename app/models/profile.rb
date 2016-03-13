@@ -8,9 +8,9 @@ end
 
 class Profile < ActiveRecord::Base
   belongs_to :user
-  has_many :languages
-  has_many :preferences
-  has_many :pref_language
+  has_many :languages, :as => :languageable_id
+  has_many :partners
+  has_many :paired_programmers
   has_many :images
   has_many :sent_messages, class_name: :Message, foreign_key: :sender_id
   has_many :recipient_messages, class_name: :Message, foreign_key: :recipient_id

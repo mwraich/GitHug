@@ -1,6 +1,6 @@
-class Preference < ActiveRecord::Base
+class Partner < ActiveRecord::Base
   belongs_to :profile
-  has_many :pref_languages
+  has_many :languages, :as => :languageable
 
   accepts_nested_attributes_for :pref_languages
 
