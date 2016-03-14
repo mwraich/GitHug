@@ -22,7 +22,7 @@ class Profile < ActiveRecord::Base
 
   validates_presence_of :first_name, :last_name, :location, :birthday, :about_me
   validates_with ValidatesGender
-  validate :over_18
+  # validate :legal_age
   validates :user_id, uniqueness: {message: "Error. Looks like you already have a profile. You can update your profile by clicking on update."}
   geocoded_by :location
   after_validation :geocode, if: :location_changed?
@@ -64,11 +64,11 @@ class Profile < ActiveRecord::Base
   # end
 
 
-  def over_18
-    if birthday + 18.years >= Date.today
-      errors.add(:birthday, "can't be under 18")
-    end
-  end
+  # def legal_age
+  #   if birthday + 18.years >= Date.today
+  #     errors.add(:birthday, "Must be over 18 to use this site")
+  #   end
+  # end
 
   def blocked_by?(current_user)
     current_user.enemies.include?(self.user) #Have you blocked this person?
