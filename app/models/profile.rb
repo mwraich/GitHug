@@ -54,16 +54,12 @@ class Profile < ActiveRecord::Base
   ).where('birthday BETWEEN ? AND ?', max_age, min_age
     )
 
-    if search_params['language'].is_a? Array
       match = a.select do |x|
         search_params['language'].each do |lang|
           x.languages == lang.language
         end
       end
-    else
-      a.where('languages.language = ? OR operating_system like ?', search_params['language'],search_params['operating_system']
-    ).references(:languages)
-    end
+
   end
 
   def self.validate_gender

@@ -89,14 +89,14 @@ operating_system = ["Linux", "OS X", "Windows", "Ubuntu"]
       language: "JavaScript",
       skill_level: 2,
       languageable_id: z2.id,
-      languageable_type: PairedProgrammer
+      languageable_type: PairProgrammer
     })
 
     Language.create!({
       language: "Ruby",
       skill_level: 1,
       languageable_id: z2.id,
-      languageable_type: PairedProgrammer
+      languageable_type: PairProgrammer
     })
 
 
@@ -126,15 +126,15 @@ x2 = Profile.create!({
 Language.create!({
   language: "Java",
   skill_level: 5,
-  languageable_id: x2
-  # languageable_type: Profile
+  languageable_id: x2.id,
+  languageable_type: Profile
 })
 
 Language.create!({
   language: "C",
   skill_level: 5,
-  languageable_id: x2
-  # languageable_type: Profile
+  languageable_id: x2.id,
+  languageable_type: Profile
 })
 
 
@@ -152,15 +152,15 @@ z2 = PairProgrammer.create!({
 Language.create!({
   language: "Java",
   skill_level: 5,
-  languageable_id: z2
-  # languageable_type: PairedProgrammer
+  languageable_id: z2.id,
+  languageable_type: PairProgrammer
 })
 
 Language.create!({
   language: "C",
   skill_level: 5,
-  languageable_id: z2
-  # languageable_type: PairedProgrammer
+  languageable_id: z2.id,
+  languageable_type: PairProgrammer
 })
 
 5.times do |n|
@@ -189,8 +189,8 @@ Language.create!({
   Language.create!({
     language: languages.sample,
     skill_level: Faker::Number.between(1, 5),
-    languageable_id: x
-    # languageable_type: PairedProgrammer
+    languageable_id: x.id,
+    languageable_type: PairProgrammer
   })
 
   z = PairProgrammer.create!({
@@ -208,8 +208,8 @@ Language.create!({
     Language.create!({
       language: languages.sample,
       skill_level: Faker::Number.between(1, 5),
-      languageable_id: z
-      # languageable_type: PairedProgrammer
+      languageable_id: z.id,
+      languageable_type: PairProgrammer
     })
   end
 
@@ -239,8 +239,8 @@ Language.create!({
     Language.create!({
       language: languages.sample,
       skill_level: Faker::Number.between(1, 5),
-      languageable_id: x
-      # languageable_type: Profile
+      languageable_id: x.id,
+      languageable_type: Profile
   })
   end
 
@@ -259,8 +259,8 @@ Language.create!({
     Language.create!({
       language: languages.sample,
       skill_level: Faker::Number.between(1, 5),
-      languageable_id: x
-      # languageable_type: Partner
+      languageable_id: x.id,
+      languageable_type: Partner
   })
   end
   end
