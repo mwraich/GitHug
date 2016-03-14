@@ -3,7 +3,7 @@ class UserMailer < ApplicationMailer
   def welcome_email(user)
     @user = user
     mail(to: @user.email, subject: "Welcome to GitHub")
-  end
+end
 
   def user_message_notification(recipient)
     @user = recipient

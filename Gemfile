@@ -42,7 +42,7 @@ gem 'bourbon'
 gem 'neat'
 gem 'autoprefixer-rails'
 
-
+gem 'delayed_job_active_record'
 
 gem 'carrierwave'
 

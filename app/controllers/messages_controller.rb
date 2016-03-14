@@ -28,8 +28,8 @@ class MessagesController < ApplicationController
     else
       redirect_to messages_url, alert: "SORRY THERE WAS AN ERROR!"
     end
-
   end
+
 
   def show
     @profile = Profile.find(params[:id])
