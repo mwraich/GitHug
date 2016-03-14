@@ -49,11 +49,21 @@ class Profile < ActiveRecord::Base
     min_age = search_params['min_age'].to_i.years.ago
     max_age = (search_params['max_age'].to_i + 1).years.ago
 
-    near(search_params['location']).includes(:languages).where(
+    a = near(search_params['location']).includes(:languages).where(
        male: m, female: f, other: o
   ).where('birthday BETWEEN ? AND ?', max_age, min_age
-    ).where('languages.language = ? OR operating_system like ?', search_params['language'],search_params['operating_system']
+    )
+
+    if search_params['language'].is_a? Array
+      match = a.select do |x|
+        search_params['language'].each do |lang|
+          x.languages == lang.language
+        end
+      end
+    else
+      a.where('languages.language = ? OR operating_system like ?', search_params['language'],search_params['operating_system']
     ).references(:languages)
+    end
   end
 
   def self.validate_gender

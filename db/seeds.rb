@@ -1,4 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
+  # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
 # Examples:
@@ -34,18 +34,19 @@ operating_system = ["Linux", "OS X", "Windows", "Ubuntu"]
     user: u1
   })
 
+
   Language.create!({
     language: "Ruby",
     skill_level: 1,
-    languageable_id: x1
-    # languageable_type: Profile
+    languageable_id: x1.id,
+    languageable_type: Profile
   })
 
   Language.create!({
     language: "JavaScript",
     skill_level: 2,
-    languageable_id: x1
-    # languageable_type: Profile
+    languageable_id: x1.id,
+    languageable_type: Profile
   })
 
   z1 = Partner.create!({
@@ -62,15 +63,15 @@ operating_system = ["Linux", "OS X", "Windows", "Ubuntu"]
     Language.create!({
       language: "JavaScript",
       skill_level: 2,
-      languageable_id: z1
-      # languageable_type: Partner
+      languageable_id: z1.id,
+      languageable_type: Partner
     })
 
     Language.create!({
       language: "Ruby",
       skill_level: 1,
-      languageable_id: z1
-      # languageable_type: Partner
+      languageable_id: z1.id,
+      languageable_type: Partner
     })
 
     z2 = PairProgrammer.create!({
@@ -87,15 +88,15 @@ operating_system = ["Linux", "OS X", "Windows", "Ubuntu"]
     Language.create!({
       language: "JavaScript",
       skill_level: 2,
-      languageable_id: z2
-      # languageable_type: PairedProgrammer
+      languageable_id: z2.id,
+      languageable_type: PairedProgrammer
     })
 
     Language.create!({
       language: "Ruby",
       skill_level: 1,
-      languageable_id: z2
-      # languageable_type: PairedProgrammer
+      languageable_id: z2.id,
+      languageable_type: PairedProgrammer
     })
 
 

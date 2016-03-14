@@ -96,6 +96,19 @@
 
       <p class="partners" id="tag">Tell Us What Your Looking For?</p>
 
+
+      <% if @profile.date == true && @profile.paired_programmer == true %>
+        <div>
+          <%= f.fields_for :partners do |partner| %>
+            <%= render "partner_fields", f: partner %>
+          <% end %>
+        </div>
+        <div class="add-partners-spacing">
+          <%= link_to_add_association "Add Partner", f, :partners, id: 'add_partner',
+          'data-association-insertion-method' => 'before',
+          'data-association-insertion-traversal' => 'closest', :force_non_association_create => true %>
+        </div>
+      <% elsif @profile.date == true %>
       <div>
         <%= f.fields_for :partners do |partner| %>
           <%= render "partner_fields", f: partner %>
@@ -107,6 +120,7 @@
         'data-association-insertion-traversal' => 'closest', :force_non_association_create => true %>
       </div>
 
+      <% elsif @profile.paired_programmer == true %>
       <div>
         <%= f.fields_for :pair_programmers do |pair| %>
           <%= render "pair_programmer_fields", f: pair %>
@@ -118,6 +132,9 @@
         'data-association-insertion-traversal' => 'closest', :force_non_association_create => true %>
       </div>
 
+      <% else %>
+        <p>Select a date or a paired programmer</p>
+      <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
