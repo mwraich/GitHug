@@ -10,6 +10,7 @@
         </ul>
       </div>
     <% end %>
+
   <div id = 'showFirstName'>
     <div class="form_input">
       <%= f.label :first_name, "First Name:" %>
@@ -21,17 +22,21 @@
       <%= f.text_field :last_name, :class => "required"%>
       <label id="errorLastName"></label>
     </div>
-    <button type ='button' class = 'next'> Next </button>
-  </div> <!-- end showFirstName-->
-  <div id="showLocation">
-    <div class="form_input">
-      <%= f.label :location, "Location:"%>
-      <%= f.text_field :location, :class => "required"%>
-      <label id="errorLocation"></label>
+    <p id="tag">Add Some Photos!</p>
+    <div>
+      <%= f.fields_for :images do |image| %>
+      <%= render "image_fields", f: image %>
+      <% end %>
     </div>
-    <button type ='button' class = 'previous'> Previous </button>
-    <button type ='button' class = 'next'> Next </button>
-  </div> <!-- end showLocation -->
+    <br>
+    <div class="add-language-spacing">
+      <%= link_to_add_association "Add Another Photo", f, :images, id: 'add_photo',
+      'data-association-insertion-method' => 'before',
+      'data-association-insertion-traversal' => 'closest' %>
+    </div>
+    <button type ='button' id = 'nameNext'> Next </button>
+  </div> <!-- end showFirstName-->
+
   <div id="showGenderAndBirthday">
 
     <div class="form_checkbox_input">
@@ -46,34 +51,50 @@
         <%= f.check_box(:other, class:'gender_validation') %>
         <label id="errorGender"></label>
 
-        <div class="form_radio_button">
-          <%= label :opperating_system, "Operating System:", class: "select_label"  %>
-
-          <%= f.label(:operating_system, "Linux") %>
-          <%= f.radio_button(:operating_system, "Linux") %>
-
-          <%= f.label(:operating_system, "UNIX") %>
-          <%= f.radio_button(:operating_system, "UNIX") %>
-          <label id="errorOperating"></label>
-
-        </div><br>
     </div><br>
+
+    <div class="form_input">
+      <%= f.label :location, "Location:"%>
+      <%= f.text_field :location, :class => "required"%>
+      <label id="errorLocation"></label>
+    </div>
+
     <div class="form_input">
       <%= f.label(:birthday, "Date of Birth:") %>
       <%= f.date_field(:birthday) %>
       <label id="errorBirthday"></label>
     </div>
-    <button type ='button' class = 'previous'> Previous </button>
-    <button type ='button' class = 'next'> Next </button>
+    <button type ='button' id = 'birthdayPrevious'> Previous </button>
+    <button type ='button' id = 'birthdayNext'> Next </button>
   </div> <!--  end showGenderAndBirthdayandOperatingsystem-->
+
   <div id="showAboutMe">
     <div class="form_input">
       <%= f.label :about_me, "About Me:" %>
       <%= f.text_area :about_me %>
     </div><br>
-  </div>
+      <div class="form_input">
+        <br>
+        <p id="tag">Tag your Hobbies!</p>
+        <%= f.label :tag_list, 'Tags:' %>
+        <%= f.text_field :tag_list %>
+      </div>
+    <button type ='button' id = 'aboutMePrevious'> Previous </button>
+    <button type ='button' id = 'aboutMeNext'> Next </button>
+  </div><!--end about me div-->
 
   <div id="showLanguage">
+    <div class="form_radio_button">
+      <%= label :opperating_system, "Operating System:", class: "select_label"  %>
+
+      <%= f.label(:operating_system, "Linux") %>
+      <%= f.radio_button(:operating_system, "Linux") %>
+
+      <%= f.label(:operating_system, "UNIX") %>
+      <%= f.radio_button(:operating_system, "UNIX") %>
+      <label id="errorOperating"></label>
+
+    </div><br>
     <div>
     <%= f.fields_for :languages do |language| %>
       <%= render "language_fields", f: language %>
@@ -86,36 +107,12 @@
       'data-association-insertion-method' => 'before',
       'data-association-insertion-traversal' => 'closest' %>
     </div><br>
-    <button type ='button' class = 'previous'> Previous </button>
-    <button type ='button' class = 'next'> Next </button>
+    <button type ='button' id = 'languagePrevious'> Previous </button>
+    <button type ='button' id = 'languageNext'> Next </button>
   </div>  <!-- showLanguages -->
-  <div id="showTags">
-    <div class="form_input">
-      <br>
-      <p id="tag">Tag your Hobbies!</p>
-      <%= f.label :tag_list, 'Tags:' %>
-      <%= f.text_field :tag_list %>
-    </div>
-    <button type ='button' class = 'previous'> Previous </button>
-    <button type ='button' class = 'next'> Next </button>
-  </div><!-- ShowTags -->
 
-    <div id="showPhoto">
-    <p id="tag">Add Some Photos!</p>
-    <div>
-      <%= f.fields_for :images do |image| %>
-        <%= render "image_fields", f: image %>
-      <% end %>
-    </div>
-    <br>
-    <div class="add-language-spacing">
-      <%= link_to_add_association "Add Another Photo", f, :images, id: 'add_photo',
-      'data-association-insertion-method' => 'before',
-      'data-association-insertion-traversal' => 'closest' %>
-    </div>
-    <button type ='button' class = 'previous'> Previous </button>
-    <button type ='button' class = 'next'> Next </button>
-  </div><!--close showPhoto  -->
+
+
 
   <div id="showPreferences">
     <p class="preferences" id="tag">Tell Us What Your Looking For?</p>

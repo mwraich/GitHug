@@ -23,13 +23,35 @@ $(document).on('page:load ready', function() {
   });
   $('#login-notice').delay(1000).slideUp(1000);
 
+  // Form Functionality
   $('#showLocation').hide();
   $('#showGenderAndBirthday').hide();
   $('#showAboutMe').hide();
   $('#showLanguage').hide();
-  $('#showTags').hide();
-  $('#showPhoto').hide();
   $('#showPreferences').hide();
+
+  $('#nameNext').click(function(){
+    $('#showFirstName').hide();
+    $('#showGenderAndBirthday').show(1000);
+  });
+
+  $('#birthdayNext').click(function(){
+    $('#showGenderAndBirthday').hide();
+    $('#showAboutMe').show(1000);
+  });
+
+  $('#aboutMeNext').click(function(){
+    $('#showAboutMe').hide();
+    $('#showLanguage').show(1000);
+  });
+
+
+    $('#languageNext').click(function(){
+      $('#showLanguage').hide();
+      $('#showPreferences').show(1000);
+    });
+
+
 
 // Slideshow
 
