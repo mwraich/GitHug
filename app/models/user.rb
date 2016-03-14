@@ -14,6 +14,10 @@ class User < ActiveRecord::Base
     UserMailer.delay.welcome_email
   end
 
+  # def delay_email
+  #   puts "aaaaa"
+  # end
+
   def has_linked_with?(provider)
     authentication.where(provider: provider).present?
   end
