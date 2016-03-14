@@ -47,13 +47,11 @@
 
         <%= f.label(:operating_system, "UNIX") %>
         <%= f.radio_button(:operating_system, "UNIX") %>
-    </div><br>
+    </div>
     <div class="form_input">
       <%= f.label :about_me, "About Me:" %>
       <%= f.text_area :about_me %>
-    </div><br>
-
-
+    </div>
 
     <div>
     <%= f.fields_for :languages do |language| %>
@@ -87,20 +85,31 @@
       'data-association-insertion-traversal' => 'closest' %>
     </div>
 
-    <p class="preferences" id="tag">Tell Us What Your Looking For?</p>
+    <p class="partners" id="tag">Tell Us What Your Looking For?</p>
     <div>
-      <%= f.fields_for :preferences do |pref| %>
-        <%= render "preference_fields", f: pref %>
+      <%= f.fields_for :partners do |partner| %>
+        <%= render "partner_fields", f: partner %>
       <% end %>
     </div>
     <br>
-    <div class="add-preferences-spacing">
-      <%= link_to_add_association "Add Another Preference", f, :preferences, id: 'add_pref',
+    <div class="add-partners-spacing">
+      <%= link_to_add_association "Add A Partner", f, :partners, id: 'add_partner',
       'data-association-insertion-method' => 'before',
       'data-association-insertion-traversal' => 'closest' %>
     </div>
 
-    <br>
+    <p class="pair_programmer" id="tag">Tell Us What Your Looking For?</p>
+    <div>
+      <%= f.fields_for :pair_programmers do |pair| %>
+        <%= render "pair_programmer_fields", f: pair %>
+      <% end %>
+    </div>
+    <div class="add-pair_programmer-spacing">
+      <%= link_to_add_association "Add A Pair Programmer", f, :pair_programmers, id: 'add_pair_programmer',
+      'data-association-insertion-method' => 'before',
+      'data-association-insertion-traversal' => 'closest' %>
+    </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

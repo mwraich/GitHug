@@ -1,12 +1,4 @@
 <div class="nested-fields">
-    <div class="form_radio_button">
-      <%= label_tag "partner_type", "Looking For:", class: "select_label"  %>
-
-        <%= f.label(:partner, "Partner") %>
-        <%= f.radio_button(:partner, value: true) %>
-
-        <%= f.label(:paired_programmer, "Paired Programmer") %>
-        <%= f.radio_button(:paired_programmer, value: true) %>
 
     <div class="form_input">
       <br>
@@ -23,7 +15,7 @@
 
         <%= f.label(:other, "Other")%>
         <%= f.check_box(:other) %>
-    </div><br>
+    </div>
     <div class="form_input">
       <%= f.label(:min_age, "Minimun Age:", class: "select_label") %>
       <%= f.number_field(:min_age) %>
@@ -43,17 +35,14 @@
     </div>
 
     <div class="add-preference-spacing">
-      <br>
-      <%= link_to_remove_association 'Remove Preference', f, id: 'remove_preference' %>
-      <br>
+      <%= link_to_remove_association 'Remove Pair Programmer', f, id: 'remove_pair_programmer' %>
     </div>
   </div>
 
     <div>
-      <br>
-      <%= link_to_add_association "Add A Preferred Language", f, :pref_languages, id: 'add_pref_language',
+      <%= link_to_add_association "Add A Language", f, :languages, id: 'add_language',
       'data-association-insertion-method' => 'before',
       'data-association-insertion-traversal' => 'closest' %>
-    </div><br>
+    </div>
 
 </div>

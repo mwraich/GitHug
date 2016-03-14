@@ -69,9 +69,19 @@
 <%= render "messages/new_message" %>
 
 <div class="reco_matches">
-  <h3>Recos</h3>
-  <% @profiles.pref_search(@profile.preferences[0].tohash).each do |reco| %>
-    <%= reco.first_name %>
-    <%= reco.last_name %>
+  <% if @profile.partners.nil? %>
+    <h3>Lover Matches</h3>
+    <% @profiles.pref_search(@profile.partners.tohash).each do |reco| %>
+      <%= reco.first_name %>
+      <%= reco.last_name %>
+    <% end %>
+  <% elseif @profile.pair_programmers.nil? %>
+    <h3>Pair Programming Matches </h3>
+    <% @profiles.pref_search(@profile.pair_programmers.tohash).each do |reco| %>
+      <%= reco.first_name %>
+      <%= reco.last_name %>
+    <% end %>
+  <% else %>
+    <h3>Fill out your preferences to find your matches.</h3>
   <% end %>
 </div>

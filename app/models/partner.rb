@@ -17,7 +17,7 @@ class Partner < ActiveRecord::Base
     'female' => self.female ? 1 : 0,
     'other' => self.other ? 1 : 0,
     'operating_system' => self.operating_system,
-    'language' => self.pref_languages.last.pref_lang,
+    'language' => self.languages.language, 
     'min_age' => self.min_age,
     'max_age' => self.max_age,
     'location' => self.location

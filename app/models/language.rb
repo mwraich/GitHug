@@ -1,5 +1,5 @@
 class Language < ActiveRecord::Base
-  belongs_to :languable, :polymorphic => true
+  belongs_to :languageable, polymorphic: true
   belongs_to :profile
   belongs_to :partner
   belongs_to :pair_programmer
