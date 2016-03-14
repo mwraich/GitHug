@@ -85,30 +85,29 @@
       'data-association-insertion-traversal' => 'closest' %>
     </div>
 
-    <p class="partners" id="tag">Tell Us What Your Looking For?</p>
-    <div>
-      <%= f.fields_for :partners do |partner| %>
-        <%= render "partner_fields", f: partner %>
-      <% end %>
-    </div>
-    <br>
-    <div class="add-partners-spacing">
-      <%= link_to_add_association "Add A Partner", f, :partners, id: 'add_partner',
-      'data-association-insertion-method' => 'before',
-      'data-association-insertion-traversal' => 'closest', :force_non_association_create => true %>
-    </div>
+      <p class="partners" id="tag">Tell Us What Your Looking For?</p>
 
-    <p class="pair_programmer" id="tag">Tell Us What Your Looking For?</p>
-    <div>
-      <%= f.fields_for :pair_programmers do |pair| %>
-        <%= render "pair_programmer_fields", f: pair %>
-      <% end %>
-    </div>
-    <div class="add-pair_programmer-spacing">
-      <%= link_to_add_association "Add A Pair Programmer", f, :pair_programmers, id: 'add_pair_programmer',
-      'data-association-insertion-method' => 'before',
-      'data-association-insertion-traversal' => 'closest', :force_non_association_create => true %>
-    </div>
+      <div>
+        <%= f.fields_for :partners do |partner| %>
+          <%= render "partner_fields", f: partner %>
+        <% end %>
+      </div>
+      <div class="add-partners-spacing">
+        <%= link_to_add_association "Add Partner", f, :partners, id: 'add_partner',
+        'data-association-insertion-method' => 'before',
+        'data-association-insertion-traversal' => 'closest', :force_non_association_create => true %>
+      </div>
+
+      <div>
+        <%= f.fields_for :pair_programmers do |pair| %>
+          <%= render "pair_programmer_fields", f: pair %>
+        <% end %>
+      </div>
+      <div class="add-pair_programmer-spacing">
+        <%= link_to_add_association "Add Pair Programmer", f, :pair_programmers, id: 'add_pair_programmer',
+        'data-association-insertion-method' => 'before',
+        'data-association-insertion-traversal' => 'closest', :force_non_association_create => true %>
+      </div>
 
   <div class="actions">
     <%= f.submit %>

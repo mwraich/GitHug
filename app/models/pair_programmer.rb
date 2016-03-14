@@ -4,13 +4,13 @@ class PairProgrammer < ActiveRecord::Base
 
   accepts_nested_attributes_for :languages, allow_destroy: true
 
-  def somemethod
+  def tohash
     {
     'male' => self.male ? 1 : 0,
     'female' => self.female ? 1 : 0,
     'other' => self.other ? 1 : 0,
     'operating_system' => self.operating_system,
-    'language' => self.languages.language,
+    'language' => self.languages,
     'min_age' => self.min_age,
     'max_age' => self.max_age,
     'location' => self.location

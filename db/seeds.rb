@@ -38,15 +38,15 @@ operating_system = ["Linux", "OS X", "Windows", "Ubuntu"]
   Language.create!({
     language: "Ruby",
     skill_level: 1,
-    languageable_id: x1
-    # languageable_type: Profile
+    languageable_id: x1,
+    languageable_type: Profile
   })
 
   Language.create!({
     language: "JavaScript",
     skill_level: 2,
-    languageable_id: x1
-    # languageable_type: Profile
+    languageable_id: x1,
+    languageable_type: Profile
   })
 
   z1 = Partner.create!({
@@ -63,15 +63,15 @@ operating_system = ["Linux", "OS X", "Windows", "Ubuntu"]
     Language.create!({
       language: "JavaScript",
       skill_level: 2,
-      languageable_id: z1
-      # languageable_type: Partner
+      languageable_id: z1,
+      languageable_type: Partner
     })
 
     Language.create!({
       language: "Ruby",
       skill_level: 1,
-      languageable_id: z1
-      # languageable_type: Partner
+      languageable_id: z1,
+      languageable_type: Partner
     })
 
     z2 = PairProgrammer.create!({
@@ -88,15 +88,15 @@ operating_system = ["Linux", "OS X", "Windows", "Ubuntu"]
     Language.create!({
       language: "JavaScript",
       skill_level: 2,
-      languageable_id: z2
-      # languageable_type: PairedProgrammer
+      languageable_id: z2,
+      languageable_type: PairProgrammer
     })
 
     Language.create!({
       language: "Ruby",
       skill_level: 1,
-      languageable_id: z2
-      # languageable_type: PairedProgrammer
+      languageable_id: z2,
+      languageable_type: PairProgrammer
     })
 
 
@@ -111,7 +111,7 @@ x2 = Profile.create!({
   first_name: "Joe",
   last_name:  "Potato",
   location:   "Toronto, Ontario",
-  date:    false,
+  date:       false,
   paired_programmer: true,
   male:       true,
   female:     false,
@@ -126,15 +126,15 @@ x2 = Profile.create!({
 Language.create!({
   language: "Java",
   skill_level: 5,
-  languageable_id: x2
-  # languageable_type: Profile
+  languageable_id: x2,
+  languageable_type: Profile
 })
 
 Language.create!({
   language: "C",
   skill_level: 5,
-  languageable_id: x2
-  # languageable_type: Profile
+  languageable_id: x2,
+  languageable_type: Profile
 })
 
 
@@ -144,7 +144,7 @@ z2 = PairProgrammer.create!({
   female:     true,
   other:      true,
   min_age:    30,
-  max_age:   40,
+  max_age:    40,
   operating_system: "Ubuntu",
   profile: x2
 })
@@ -152,15 +152,15 @@ z2 = PairProgrammer.create!({
 Language.create!({
   language: "Java",
   skill_level: 5,
-  languageable_id: z2
-  # languageable_type: PairedProgrammer
+  languageable_id: z2,
+  languageable_type: PairProgrammer
 })
 
 Language.create!({
   language: "C",
   skill_level: 5,
-  languageable_id: z2
-  # languageable_type: PairedProgrammer
+  languageable_id: z2,
+  languageable_type: PairProgrammer
 })
 
 5.times do |n|
@@ -174,7 +174,7 @@ Language.create!({
     first_name: Faker::Name.first_name,
     last_name:  Faker::Name.last_name,
     location:   locations.sample + ", " + "Canada",
-    date:    false,
+    date:       false,
     paired_programmer: true,
     male:       true,
     female:     false,
@@ -189,8 +189,8 @@ Language.create!({
   Language.create!({
     language: languages.sample,
     skill_level: Faker::Number.between(1, 5),
-    languageable_id: x
-    # languageable_type: PairedProgrammer
+    languageable_id: x,
+    languageable_type: Profile
   })
 
   z = PairProgrammer.create!({
@@ -199,7 +199,7 @@ Language.create!({
     female:     Faker::Boolean.boolean,
     other:      Faker::Boolean.boolean,
     min_age:    Faker::Number.between(18),
-    max_age:   Faker::Number.between(75),
+    max_age:    Faker::Number.between(75),
     operating_system: operating_system.sample,
     profile: x
   })
@@ -208,8 +208,8 @@ Language.create!({
     Language.create!({
       language: languages.sample,
       skill_level: Faker::Number.between(1, 5),
-      languageable_id: z
-      # languageable_type: PairedProgrammer
+      languageable_id: z,
+      languageable_type: PairProgrammer
     })
   end
 
@@ -223,7 +223,7 @@ Language.create!({
     first_name: Faker::Name.first_name,
     last_name:  Faker::Name.last_name,
     location:   locations.sample + ", " + "Canada",
-    date:    true,
+    date:       true,
     paired_programmer: false,
     male:       false,
     female:     true,
@@ -239,8 +239,8 @@ Language.create!({
     Language.create!({
       language: languages.sample,
       skill_level: Faker::Number.between(1, 5),
-      languageable_id: x
-      # languageable_type: Profile
+      languageable_id: x,
+      languageable_type: Profile
   })
   end
 
@@ -259,8 +259,8 @@ Language.create!({
     Language.create!({
       language: languages.sample,
       skill_level: Faker::Number.between(1, 5),
-      languageable_id: x
-      # languageable_type: Partner
+      languageable_id: x,
+      languageable_type: Partner
   })
   end
   end

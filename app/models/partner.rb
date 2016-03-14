@@ -4,6 +4,8 @@ class Partner < ActiveRecord::Base
 
   accepts_nested_attributes_for :languages, allow_destroy: true
 
+  # validates_presence_of :languages
+
   # def self.recommended_profiles
     #in the controller create a new instance variable that will be a collection
     #of profiles returned by this method (in show method profiles controller)
@@ -17,7 +19,7 @@ class Partner < ActiveRecord::Base
     'female' => self.female ? 1 : 0,
     'other' => self.other ? 1 : 0,
     'operating_system' => self.operating_system,
-    'language' => self.languages.language,
+    'language' => self.languages,
     'min_age' => self.min_age,
     'max_age' => self.max_age,
     'location' => self.location
