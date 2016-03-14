@@ -42,6 +42,7 @@ GEM
     arel (6.0.3)
     autoprefixer-rails (6.3.3.1)
       execjs
+    aws_cf_signer (0.1.3)
     bcrypt (3.1.11)
     best_debugger (1.0)
       better_errors
@@ -73,6 +74,9 @@ GEM
       json (>= 1.7)
       mime-types (>= 1.16)
     cliver (0.3.2)
+    cloudinary (1.1.2)
+      aws_cf_signer
+      rest-client
     cocoon (1.2.8)
     coderay (1.1.1)
     coffee-rails (4.1.1)
@@ -92,6 +96,8 @@ GEM
       delayed_job (>= 3.0, < 5)
     diff-lcs (1.2.5)
     docile (1.1.5)
+    domain_name (0.5.20160309)
+      unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     excon (0.48.0)
     execjs (2.6.0)
@@ -141,6 +147,8 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
+    http-cookie (1.0.2)
+      domain_name (~> 0.5)
     i18n (0.7.0)
     ipaddress (0.8.3)
     jbuilder (2.4.1)
@@ -176,6 +184,7 @@ GEM
       bourbon (>= 4.0)
       sass (>= 3.3)
     nenv (0.3.0)
+    netrc (0.11.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     notiffany (0.0.8)
@@ -238,6 +247,10 @@ GEM
       ffi (>= 0.5.0)
     rdoc (4.2.2)
       json (~> 1.4)
+    rest-client (1.8.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
@@ -300,6 +313,9 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.2)
     web-console (2.3.0)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
@@ -322,6 +338,7 @@ DEPENDENCIES
   cancancan (~> 1.10)
   capybara
   carrierwave
+  cloudinary
   cocoon
   coffee-rails (~> 4.1.0)
   database_cleaner
