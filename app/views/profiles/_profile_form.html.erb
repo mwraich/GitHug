@@ -95,7 +95,7 @@
     <div class="add-partners-spacing">
       <%= link_to_add_association "Add A Partner", f, :partners, id: 'add_partner',
       'data-association-insertion-method' => 'before',
-      'data-association-insertion-traversal' => 'closest' %>
+      'data-association-insertion-traversal' => 'closest', :force_non_association_create => true %>
     </div>
 
     <p class="pair_programmer" id="tag">Tell Us What Your Looking For?</p>
@@ -107,7 +107,7 @@
     <div class="add-pair_programmer-spacing">
       <%= link_to_add_association "Add A Pair Programmer", f, :pair_programmers, id: 'add_pair_programmer',
       'data-association-insertion-method' => 'before',
-      'data-association-insertion-traversal' => 'closest' %>
+      'data-association-insertion-traversal' => 'closest', :force_non_association_create => true %>
     </div>
 
   <div class="actions">

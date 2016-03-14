@@ -34,15 +34,22 @@
         <%= f.radio_button(:operating_system, "UNIX") %>
     </div>
 
+
+
     <div class="add-preference-spacing">
       <%= link_to_remove_association 'Remove Pair Programmer', f, id: 'remove_pair_programmer' %>
     </div>
-  </div>
-
+      <div>
+      <%= f.fields_for :languages do |lang| %>
+        <%= render "language_fields", f: lang %>
+      <% end %>
+    </div>
     <div>
-      <%= link_to_add_association "Add A Language", f, :languages, id: 'add_language',
+      <%= link_to_add_association "Add A Pair Partner Language", f, :languages, id: 'add_language',
       'data-association-insertion-method' => 'before',
       'data-association-insertion-traversal' => 'closest' %>
     </div>
+  </div>
+
 
 </div>

@@ -2,7 +2,7 @@ class Partner < ActiveRecord::Base
   belongs_to :profile
   has_many :languages, :as => :languageable
 
-
+  accepts_nested_attributes_for :languages, allow_destroy: true
 
   # def self.recommended_profiles
     #in the controller create a new instance variable that will be a collection
@@ -17,7 +17,7 @@ class Partner < ActiveRecord::Base
     'female' => self.female ? 1 : 0,
     'other' => self.other ? 1 : 0,
     'operating_system' => self.operating_system,
-    'language' => self.languages.language, 
+    'language' => self.languages.language,
     'min_age' => self.min_age,
     'max_age' => self.max_age,
     'location' => self.location

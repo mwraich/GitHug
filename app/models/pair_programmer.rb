@@ -2,6 +2,8 @@ class PairProgrammer < ActiveRecord::Base
   has_many :languages, :as => :languageable
   belongs_to :profile
 
+  accepts_nested_attributes_for :languages, allow_destroy: true
+
   def somemethod
     {
     'male' => self.male ? 1 : 0,
