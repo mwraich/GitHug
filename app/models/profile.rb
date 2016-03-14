@@ -22,10 +22,12 @@ class Profile < ActiveRecord::Base
 
   validates_presence_of :first_name, :last_name, :location, :birthday, :about_me
   validates_with ValidatesGender
+  validate :over_18
   validates :user_id, uniqueness: {message: "Error. Looks like you already have a profile. You can update your profile by clicking on update."}
   geocoded_by :location
   after_validation :geocode, if: :location_changed?
   acts_as_taggable_on :tags
+
 
 
   def self.search(search_params)
@@ -45,6 +47,26 @@ class Profile < ActiveRecord::Base
   def self.validate_gender
     unless profile.male.present? || profile.female.present? || profile.other.present?
       profile.errors[:gender] << "can't be blank"
+    end
+  end
+
+  # def self.calculate_age
+  #   difference = Date.
+  #   //   // Birthday validation method
+  #   //   function mustBeLegal(birthday) {
+  #   //     var difference = Date.now() - birthday;
+  #   //     var ageYear = new Date(difference);
+  #   //     var age = Math.abs(ageYear.getUTCFullYear() - 1970);
+  #   //     return age;
+  #   //   }
+  #   //   var birthdaydate = Date.parse(profileBirthdayValue);
+  #   //
+  # end
+
+
+  def over_18
+    if birthday + 18.years >= Date.today
+      errors.add(:birthday, "can't be under 18")
     end
   end
 

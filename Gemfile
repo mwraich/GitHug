@@ -34,9 +34,9 @@ gem 'geocoder'
 #allows taging
 gem 'acts-as-taggable-on', '~> 3.4'
 #To be used for implementing privacy Settings
-gem 'cancancan', '~> 1.10'
-
-
+# gem 'cancancan', '~> 1.10'
+#To enable text message notifications
+# gem 'twilio-ruby', '~> 4.11.1'
 
 gem 'bourbon'
 gem 'neat'
@@ -97,7 +97,7 @@ group :development do
     gem 'rails_12factor'
 
     #server
-    gem 'puma'
+    # gem 'puma'
 
 
 end

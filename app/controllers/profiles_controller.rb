@@ -76,7 +76,7 @@ class ProfilesController < ApplicationController
     if (current_user.profile).blocked_by?(Profile.find(params[:id]).user)
       flash[:notice] = "You have been blocked by this user"
       # redirect_to profile_path(current_user.profile)
-      
+
     end
   end
 
