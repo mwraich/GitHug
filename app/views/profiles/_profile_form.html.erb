@@ -13,6 +13,15 @@
     <% end %>
 
     <div class="form_input">
+      <%= label_tag "looking_for", "What are you looking for?", class: "select_label" %>
+      <%= f.label :date, "Partner" %>
+      <%= f.radio_button :date, true %>
+      <%= f.label :paired_programmer, "Pair Programmer" %>
+      <%= f.radio_button :paired_programmer, true %>
+
+    </div>
+
+    <div class="form_input">
       <%= f.label :first_name, "First Name:"%>
       <%= f.text_field :first_name%>
     </div>
