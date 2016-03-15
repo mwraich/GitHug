@@ -4,39 +4,43 @@
       <%= f.label :location, "Location:", class: "select_label"%>
       <%= f.text_field :location%>
     </div>
+
     <div class="form_checkbox_input">
       <%= label_tag "gender", "Gender:", class: "select_label" %>
-        <%= f.label(:male, "Male" )%>
-        <%= f.check_box(:male) %>
 
-        <%= f.label(:female, "Female")%>
-        <%= f.check_box(:female) %>
+      <%= f.label(:male, "Male" )%>
+      <%= f.check_box(:male) %>
 
-        <%= f.label(:other, "Other")%>
-        <%= f.check_box(:other) %>
+      <%= f.label(:female, "Female")%>
+      <%= f.check_box(:female) %>
+
+      <%= f.label(:other, "Other")%>
+      <%= f.check_box(:other) %>
     </div>
+
     <div class="form_input">
       <%= f.label(:min_age, "Minimun Age:", class: "select_label") %>
       <%= f.number_field(:min_age) %>
     </div>
+
     <div class="form_input">
       <%= f.label(:max_age, "Maximum Age:", class: "select_label") %>
       <%= f.number_field(:max_age) %>
     </div>
+
     <div class="form_radio_button">
       <%= label :opperating_system, "Operating System:", class: "select_label"  %>
 
-        <%= f.label(:operating_system, "Linux") %>
-        <%= f.radio_button(:operating_system, "Linux") %>
+      <%= f.label(:operating_system, "Linux") %>
+      <%= f.radio_button(:operating_system, "Linux") %>
 
-        <%= f.label(:operating_system, "UNIX") %>
-        <%= f.radio_button(:operating_system, "UNIX") %>
+      <%= f.label(:operating_system, "UNIX") %>
+      <%= f.radio_button(:operating_system, "UNIX") %>
     </div>
 
     <div class="add-preference-spacing">
       <%= link_to_remove_association 'Remove Partner', f, id: 'remove_partner' %>
     </div>
-  </div>
 
   <div>
     <%= f.fields_for :languages do |lang| %>
@@ -49,7 +53,5 @@
     'data-association-insertion-method' => 'before',
     'data-association-insertion-traversal' => 'closest' %>
   </div>
-
-</div>
 
 </div>

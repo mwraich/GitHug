@@ -13,10 +13,12 @@ class Partner < ActiveRecord::Base
     #needs to call Profile.search
   # end
 
+
+
   def tohash
     {
     'date' => true,
-    'paired_programmer' => false, 
+    'paired_programmer' => false,
     'male' => self.male ? 1 : 0,
     'female' => self.female ? 1 : 0,
     'other' => self.other ? 1 : 0,

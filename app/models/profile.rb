@@ -49,7 +49,7 @@ class Profile < ActiveRecord::Base
     min_age = search_params['min_age'].to_i.years.ago
     max_age = (search_params['max_age'].to_i + 1).years.ago
 
-    a = near(search_params['location']).where(date: search_params['date'], paired_programmer: search_params['paired_programmer']).includes(:languages).where(
+    a = near(search_params['location']).where(paired_programmer: search_params['paired_programmer'], date: search_params['date']).includes(:languages).where(
        male: m, female: f, other: o
   ).where('birthday BETWEEN ? AND ?', max_age, min_age
     )
@@ -60,6 +60,19 @@ class Profile < ActiveRecord::Base
         end
       end
 
+  end
+
+  def partnerReco
+    if partner.present?
+      Profile.pref_search(Profile.find(user).partner.tohash)
+    end
+
+  end
+
+  def pairReco
+    if pair_programmer.present?
+      Profile.pref_search(Profile.find(user).pair_programmer.tohash)
+    end
   end
 
   def self.validate_gender
@@ -73,17 +86,5 @@ class Profile < ActiveRecord::Base
   end
 
 
-  # def tohash
-  #   {
-  #   'male' => self.male ? 1 : 0,
-  #   'female' => self.female ? 1 : 0,
-  #   'other' => self.other ? 1 : 0,
-  #   'operating_system' => self.operating_system,
-  #   'language' => self.pref_languages.last.pref_lang,
-  #   'min_age' => self.min_age,
-  #   'max_age' => self.max_age,
-  #   'location' => self.location
-  #   }
-  # end
 
 end
