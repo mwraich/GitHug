@@ -27,9 +27,11 @@
 </div>
 
 <div id="profile-details">
-  <li> <%= @profile.city %> </li>
-  <li> <%= @profile.province %> </li>
-</ul
+  <ul>
+    <li> <%= @profile.city %> </li>
+    <li> <%= @profile.province %> </li>
+  </ul>
+
   <p class="profile-details-title">My Details</p>
   <ul>
     <li> Gender:
@@ -46,7 +48,6 @@
 
 <div id="profile-languages">
   <p class="profile-details-title"> Languages </p>
-
   <ul>
     <% @profile.languages.each do |lang| %>
       <li> <%= lang.language %> Skill Level: <%= lang.skill_level %></li>

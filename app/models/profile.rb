@@ -25,7 +25,7 @@ class Profile < ActiveRecord::Base
   # validates_with ValidatesGender
   validates :user_id, uniqueness: {message: "Error. Looks like you already have a profile. You can update your profile by clicking on update."}
   geocoded_by :location
-  # after_validation :geocode, if: :location_changed?
+  after_validation :geocode
   acts_as_taggable_on :tags
 
   def self.search(search_params)
@@ -92,7 +92,7 @@ class Profile < ActiveRecord::Base
 
 
   def location
-    location = [self.city, self.province].compact.join(', ')
+    [city, province].compact.join(', ')
   end
 
 

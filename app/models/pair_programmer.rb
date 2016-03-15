@@ -15,7 +15,8 @@ class PairProgrammer < ActiveRecord::Base
     'language' => self.languages,
     'min_age' => self.min_age,
     'max_age' => self.max_age,
-    'location' => self.location
+    'city' => self.city,
+    'province' => self.province
     }
   end
 end

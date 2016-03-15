@@ -1,14 +1,13 @@
 <div class="nested-fields">
-this is before the div
+
   <div class="image-fields">
-    this before the thumb
     <%= image_tag f.object.image_url(:thumb) if f.object.image_url.present? %>
-this is after the thumb
     <%= f.file_field :image %>
-    this is adter the image
     <%= f.hidden_field :image_cache %>
   </div>
+
   <div class="add-language-spacing">
-  <%= link_to_remove_association 'Remove Image', f, id: 'remove_photo' %>
-</div>
+    <%= link_to_remove_association 'Remove Image', f, id: 'remove_photo' %>
+  </div>
+
 </div>

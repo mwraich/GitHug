@@ -1,10 +1,15 @@
 <div class="nested-fields">
 
-    <div class="form_input">
-      <%= f.label :location, "Location:", class: "select_label"%>
-      <%= f.text_field :location%>
-    </div>
+  <div class="form_input">
+    <%= f.label :city, "City:", class: "select_label"%>
+    <%= f.text_field :city%>
+  </div>
 
+  <div class="form_input">
+    <%= f.label :province, "Province:", class: "select_label"%>
+    <%= f.text_field :province%>
+  </div>
+  
     <div class="form_checkbox_input">
       <%= label_tag "gender", "Gender:", class: "select_label" %>
 
@@ -31,11 +36,17 @@
     <div class="form_radio_button">
       <%= label :opperating_system, "Operating System:", class: "select_label"  %>
 
-      <%= f.label(:operating_system, "Linux") %>
-      <%= f.radio_button(:operating_system, "Linux") %>
+        <%= f.label(:operating_system, "Linux") %>
+        <%= f.radio_button(:operating_system, "Linux") %>
 
-      <%= f.label(:operating_system, "UNIX") %>
-      <%= f.radio_button(:operating_system, "UNIX") %>
+        <%= f.label(:operating_system, "OS X") %>
+        <%= f.radio_button(:operating_system, "OS X") %>
+
+        <%= f.label(:operating_system, "Windows") %>
+        <%= f.radio_button(:operating_system, "Windows") %>
+
+        <%= f.label(:operating_system, "Ubuntu") %>
+        <%= f.radio_button(:operating_system, "Ubuntu") %>
     </div>
 
     <div class="add-preference-spacing">

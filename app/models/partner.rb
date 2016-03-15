@@ -26,7 +26,8 @@ class Partner < ActiveRecord::Base
     'language' => self.languages.to_a,
     'min_age' => self.min_age,
     'max_age' => self.max_age,
-    'location' => self.location
+    'city' => self.city,
+    'province' => self.province
     }
   end
 

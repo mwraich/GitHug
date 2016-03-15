@@ -63,7 +63,6 @@ operating_system = ["Linux", "OS X", "Windows", "Ubuntu"]
     profile: x1
   })
 
-<<<<<<< HEAD
   z1 = Preference.create!({
     city:       "Toronto",
     province:   "Ontario",
@@ -265,7 +264,6 @@ end
       languageable_id: x.id,
       languageable_type: Partner
   })
-  end
   end
 
   z = Preference.create!({
