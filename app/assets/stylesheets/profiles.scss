@@ -734,7 +734,7 @@ textarea#message_message {
 
 
   body{
-    background-color: #ededed;
+    background-color: $base-background-color;
   }
   .message{
     display: none;
@@ -920,8 +920,7 @@ textarea#message_message {
 
 
   .profile-form{
-    background-color: white;
-    border-radius: 10px;
+    background-color: #D4D7DD;
     width: 60%;
     margin-left: 20%;
     margin-top: -7%;
