@@ -30,13 +30,7 @@
   <p class="profile-details-title">My Details</p>
   <ul>
     <li> Gender:
-      <% if @profile.male == true %>
-      Male
-      <% elsif @profile.female == true %>
-      Female
-      <% else %>
-      Other
-      <% end %>
+      <%= show_gender(@profile) %>
     </li>
     <li>
       Birthday: <%= @profile.birthday %>
@@ -68,8 +62,10 @@
 
 <%= render "messages/new_message" %>
 
+<% if current_user = @profile %>
 
   <div class="reco_matches">
+
     <% if @profile.partnerReco.any?  %>
     <h3>People You Might Like To Date</h3>
         <%= render "reco_partner" %>
@@ -80,4 +76,10 @@
       <%= render "reco_pair" %>
   <% end %>
 
+  <!-- <% if @profile.pairReco.empty? && @profile.partnerReco.empty? %>
+  <p>no matched :( <p>
+  <%end %> -->
+
+
+<% end %>
 </div>
