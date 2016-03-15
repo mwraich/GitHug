@@ -1,11 +1,11 @@
-<div class="index-search-form">
+<div class="search-form">
 <%= form_tag(profiles_path, method: :get, :id =>'search-form') do %>
 
-<%= label_tag(:paired_programmer, "Pair")%>
-<%= check_box_tag(:paired_programmer, true) %>
+<%= label_tag('search[paired_programmer]', "Pair")%>
+<%= check_box_tag('search[paired_programmer]') %>
 
-<%= label_tag(:date, "Date") %>
-<%= check_box_tag(:date, true) %>
+<%= label_tag('search[date]', "Date") %>
+<%= check_box_tag('search[date]') %>
 
 <%=label_tag(:operating_system,"What Operating System do you use?") %>
 
@@ -64,6 +64,6 @@
   <%= label_tag(:location, "Where do you want the person you're searching for to live?", class: 'location-search-label') %>
     <%= text_field_tag ('search[location]') %>
 
-  <%= submit_tag("Search", :id => "search") %>
+  <%= submit_tag("Search", :id => "submit") %>
 <% end %>
 </div>

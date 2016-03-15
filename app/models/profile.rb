@@ -38,11 +38,12 @@ class Profile < ActiveRecord::Base
     part = search_params['date'].to_i.positive?
     pair = search_params['paired_programmer'].to_i.positive?
 
-    near(search_params['location']).includes(:languages).where( male: m, female: f, other: o )
-    .where('paired_programmer = ? OR date = ?', pair, part)
+    near(search_params['location']).where('paired_programmer = ? OR date = ?', pair, part)
+    .includes(:languages).where( male: m, female: f, other: o )
     .where('birthday BETWEEN ? AND ?', max_age, min_age)
     .where('languages.language = ? OR operating_system like ?',
-    search_params['language'],search_params['operating_system']).references(:languages)
+    search_params['language'], search_params['operating_system']).references(:languages)
+
   end
 
   def self.pref_search(search_params)
@@ -54,10 +55,10 @@ class Profile < ActiveRecord::Base
     part = search_params['date'].to_i.positive?
     pair = search_params['paired_programmer'].to_i.positive?
 
-    a = near(search_params['location']).where('paired_programmer = ? OR date = ?', pair, part).includes(:languages).where(
-       male: m, female: f, other: o
-  ).where('birthday BETWEEN ? AND ?', max_age, min_age
-    )
+    a = near(search_params['location']).where('paired_programmer = ? OR date = ?', pair, part)
+    .includes(:languages).where( male: m, female: f, other: o)
+    .where('birthday BETWEEN ? AND ?', max_age, min_age)
+    .where('operating_system like ?', search_params['operating_system'])
 
       match = a.select do |x|
         search_params['language'].each do |lang|

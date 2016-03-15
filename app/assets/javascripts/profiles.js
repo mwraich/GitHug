@@ -33,7 +33,7 @@ $(document).on('page:load ready', function() {
     //   $("#date-search").fadeIn(3000);
     //   $("#pair-search").hide();
     // }
-  $('#search-form').on('search', function(e) {
+  $('#search-form').on('submit', function(e) {
     e.preventDefault();
     $.ajax({
       url: $(this).attr('action'),
@@ -41,12 +41,15 @@ $(document).on('page:load ready', function() {
       dataType:'script',
       data: $(this).serialize(),
       success: function(data) {
-        if (data) {
-          $("#date-search").hide();
-          $("#pair-search").hide();
+        console.log("This works!")
+        if (data)
+        {
+            console.log("This still works!")
+        //   // $("#date-search").hide();
+        //   // $("#pair-search").hide();
         }else{
-
-          $("#search-result").html("Sorry, nobody matches your search");
+          console.log("fail")
+          $(".index-users").html("Sorry, nobody matches your search");
         }
       }
     });
