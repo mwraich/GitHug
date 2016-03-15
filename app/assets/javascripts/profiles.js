@@ -23,14 +23,53 @@ $(document).on('page:load ready', function() {
   });
   $('#login-notice').delay(1000).slideUp(1000);
 
-  $('#showLocation').hide();
-  $('#showGenderAndBirthday').hide();
-  $('#showAboutMe').hide();
-  $('#showLanguage').hide();
-  $('#showTags').hide();
-  $('#showPhoto').hide();
-  $('#showPreferences').hide();
 
+    // Form Functionality
+    $('#showLocation').hide();
+    $('#showGenderAndBirthday').hide();
+    $('#showAboutMe').hide();
+    $('#showLanguage').hide();
+    $('#showPreferences').hide();
+  // For next button
+  //   $('#nameNext').click(function(){
+  //     $('#showFirstName').hide();
+  //     $('#showGenderAndBirthday').show(1000);
+  //   });
+  //
+  //   $('#birthdayNext').click(function(){
+  //     $('#showGenderAndBirthday').hide();
+  //     $('#showAboutMe').show(1000);
+  //   });
+  //
+  //   $('#aboutMeNext').click(function(){
+  //     $('#showAboutMe').hide();
+  //     $('#showLanguage').show(1000);
+  //   });
+  //
+  //     $('#languageNext').click(function(){
+  //       $('#showLanguage').hide();
+  //       $('#showPreferences').show(1000);
+  //     });
+  // // For previous button
+    // $('#birthdayPrevious').click(function(){
+    //   $('#showFirstName').show(1000);
+    //   $('#showGenderAndBirthday').hide();
+    // });
+    //
+    // $('#aboutMePrevious').click(function(){
+    //   $('#showGenderAndBirthday').show(1000);
+    //   $('#showAboutMe').hide();
+    // });
+    //
+    // $('#languagePrevious').click(function(){
+    //   $('#showAboutMe').show(1000);
+    //   $('#showLanguage').hide();
+    // });
+    //
+    // $('#preferencesPrevious').click(function(){
+    //   $('#showLanguage').show(1000);
+    //   $('#showPreferences').hide();
+    // });
 // Slideshow
 
   $('#imageslideshow').hide();
@@ -110,15 +149,11 @@ $(document).on('page:load ready', function() {
       }
     });
   });
+  });
+  });
+
   //
-  // // url: '/profiles?search=' + $('#search').val(),
-  // // type:'GET',
-  // // dataType: 'script',
-  });
-  });
-
-
-  $(document).ready(function () {
-     $('#new_profile').validate();
-     console.log("Hello")
-  });
+  // $(document).ready(function () {
+  //    $('#new_profile').validate();
+  //    console.log("Hello")
+  // });
