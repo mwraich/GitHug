@@ -1,3 +1,15 @@
+@include keyframes(fadeIn) {
+  0%{
+    @include transform(scale(0.7));
+  }
+  50%{
+    @include transform(scale(1));
+  }
+  100%{
+    @include transform(scale(0.7));
+  }
+}
+
 body.sessions{
   background-color: #31333f;
 }
@@ -15,7 +27,15 @@ body.sessions{
 }
 
 .power-icon img{
-  width: 30%;
+  @include animation-duration(2s);
+  @include animation-fill-mode(backwards);
+  @include animation-timing-function(ease);
+  @include animation-iteration-count(infinite);
+  animation-name: fadeIn;
+
+  margin-left: 27.5%;
+  margin-top: 5%;
+
 }
 .typed-cursor{
   background-color: #98ea8f;
