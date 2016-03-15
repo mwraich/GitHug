@@ -35,11 +35,14 @@ class Profile < ActiveRecord::Base
     o = search_params['other'].to_i.positive?
     min_age = search_params['min_age'].to_i.years.ago
     max_age = (search_params['max_age'].to_i + 1).years.ago
-    near(search_params['location']).where(date: search_params['date'], paired_programmer: search_params['paired_programmer']).includes(:languages).where(
-       male: m, female: f, other: o
-  ).where('birthday BETWEEN ? AND ?', max_age, min_age
-    ).where('languages.language = ? OR operating_system like ?', search_params['language'],search_params['operating_system']
-    ).references(:languages)
+    part = search_params['date'].to_i.positive?
+    pair = search_params['paired_programmer'].to_i.positive?
+
+    near(search_params['location']).includes(:languages).where( male: m, female: f, other: o )
+    .where('paired_programmer = ? OR date = ?', pair, part)
+    .where('birthday BETWEEN ? AND ?', max_age, min_age)
+    .where('languages.language = ? OR operating_system like ?',
+    search_params['language'],search_params['operating_system']).references(:languages)
   end
 
   def self.pref_search(search_params)
@@ -48,8 +51,10 @@ class Profile < ActiveRecord::Base
     o = search_params['other'].to_i.positive?
     min_age = search_params['min_age'].to_i.years.ago
     max_age = (search_params['max_age'].to_i + 1).years.ago
+    part = search_params['date'].to_i.positive?
+    pair = search_params['paired_programmer'].to_i.positive?
 
-    a = near(search_params['location']).where(paired_programmer: search_params['paired_programmer'], date: search_params['date']).includes(:languages).where(
+    a = near(search_params['location']).where('paired_programmer = ? OR date = ?', pair, part).includes(:languages).where(
        male: m, female: f, other: o
   ).where('birthday BETWEEN ? AND ?', max_age, min_age
     )

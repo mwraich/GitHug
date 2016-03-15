@@ -17,8 +17,8 @@ class Partner < ActiveRecord::Base
 
   def tohash
     {
-    'date' => true,
-    'paired_programmer' => false,
+    'date' => 1 ,
+    'paired_programmer' => 0,
     'male' => self.male ? 1 : 0,
     'female' => self.female ? 1 : 0,
     'other' => self.other ? 1 : 0,

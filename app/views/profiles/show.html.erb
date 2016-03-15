@@ -72,8 +72,9 @@
 
   <div class="reco_matches">
     <% if @profile.partnerReco.any?  %>
-      <h3>Recos</h3>
+      <h3>People You Might Like to Date</h3>
       <% @profile.partnerReco.each do |reco| %>
+        <%= image_tag(reco.user.github_image) %>
         <%= reco.first_name %>
         <%= reco.last_name %>
         <%= reco.location %>
@@ -81,9 +82,9 @@
     <% end %>
 
   <% if @profile.pairReco.any?  %>
-    <h3>Recos</h3>
+    <h3>People You Might Like To Code With</h3>
     <% @profile.pairReco.each do |reco| %>
-      <%= @profile.pairReco.empty? %>
+      <%= image_tag(reco.user.github_image) %>
       <%= reco.first_name %>
       <%= reco.last_name %>
       <%= reco.location %>

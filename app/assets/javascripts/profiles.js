@@ -16,24 +16,24 @@ $(document).on('page:load ready', function() {
   $('#login-notice').delay(1000).slideUp(1000);
 
 
-  $('#pair-search').hide();
-  $('#date-search').hide();
-  $('input[type="radio"]').click(function() {
-    if ($(this).attr("value") == "pair") {
-        $("#search-choice").fadeOut(1000);
-        $("#first_option").fadeOut(1000);
-        $("#pair-search").fadeIn(3000);
-        $("#date-search").hide();
-
-
-    }
-    else {
-      $("#search-choice").fadeOut(1000);
-      $("#first_option").fadeOut(1000);
-      $("#date-search").fadeIn(3000);
-      $("#pair-search").hide();
-    }
-  $('#search-form').on('submit', function(e) {
+  // $('#pair-search').hide();
+  // $('#date-search').hide();
+  // $('input[type="radio"]').click(function() {
+  //   if ($(this).attr("value") == "pair") {
+  //       // $("#search-choice").fadeOut(1000);
+  //       // $("#first_option").fadeOut(1000);
+  //       $("#pair-search").fadeIn(3000);
+  //       $("#date-search").hide();
+  //
+  //
+  //   }
+    // else {
+    //   // $("#search-choice").fadeOut(1000);
+    //   // $("#first_option").fadeOut(1000);
+    //   $("#date-search").fadeIn(3000);
+    //   $("#pair-search").hide();
+    // }
+  $('#search-form').on('search', function(e) {
     e.preventDefault();
     $.ajax({
       url: $(this).attr('action'),
@@ -50,7 +50,7 @@ $(document).on('page:load ready', function() {
         }
       }
     });
-  });
+  // });
 });
 
 });

@@ -6,8 +6,8 @@ class PairProgrammer < ActiveRecord::Base
 
   def tohash
     {
-    'date' => false,
-    'paired_programmer' => true,
+    'date' => 0,
+    'paired_programmer' => 1,
     'male' => self.male ? 1 : 0,
     'female' => self.female ? 1 : 0,
     'other' => self.other ? 1 : 0,
