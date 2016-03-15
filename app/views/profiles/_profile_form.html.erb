@@ -13,6 +13,15 @@
     <% end %>
 
     <div class="form_input">
+      <%= label_tag "looking_for", "What are you looking for?", class: "select_label" %>
+      <%= f.label :date, "Partner" %>
+      <%= f.check_box :date %>
+      <%= f.label :paired_programmer, "Pair Programmer" %>
+      <%= f.check_box :paired_programmer %>
+
+    </div>
+
+    <div class="form_input">
       <%= f.label :first_name, "First Name:"%>
       <%= f.text_field :first_name%>
     </div>
@@ -55,12 +64,13 @@
 
         <%= f.label(:operating_system, "Ubuntu") %>
         <%= f.radio_button(:operating_system, "Ubuntu") %>
-    </div><br>
+    </div>
+
     <div class="form_input">
       <%= f.label :about_me, "About Me:" %>
       <%= f.text_area :about_me %>
-    </div><br>
-
+    </div>
+  
     <div>
     <%= f.fields_for :languages do |language| %>
       <%= render "language_fields", f: language %>
@@ -68,11 +78,10 @@
   </div>
   <p id="tag">Add your Languages!</p>
     <div>
-      <br>
       <%= link_to_add_association "Add Language", f, :languages, id: 'add_language',
       'data-association-insertion-method' => 'before',
       'data-association-insertion-traversal' => 'closest' %>
-    </div><br>
+    </div>
 
     <div class="form_input">
       <br>
@@ -94,20 +103,30 @@
       'data-association-insertion-traversal' => 'closest' %>
     </div>
 
-    <p class="preferences" id="tag">Tell Us What Your Looking For?</p>
-    <div>
-      <%= f.fields_for :preferences do |pref| %>
-        <%= render "preference_fields", f: pref %>
-      <% end %>
-    </div>
-    <br>
-    <div class="add-preferences-spacing">
-      <%= link_to_add_association "Add Another Preference", f, :preferences, id: 'add_pref',
-      'data-association-insertion-method' => 'before',
-      'data-association-insertion-traversal' => 'closest' %>
-    </div>
+      <p class="partners" id="tag">Tell Us What Your Looking For?</p>
 
-    <br>
+      <div>
+        <%= f.fields_for :partner do |partner| %>
+          <%= render "partner_fields", f: partner %>
+        <% end %>
+      </div>
+      <div class="add-partners-spacing">
+        <%= link_to_add_association "Add Partner", f, :partner, id: 'add_partner',
+        'data-association-insertion-method' => 'before',
+        'data-association-insertion-traversal' => 'closest', :force_non_association_create => true %>
+      </div>
+
+      <div>
+        <%= f.fields_for :pair_programmer do |pair| %>
+          <%= render "pair_programmer_fields", f: pair %>
+        <% end %>
+      </div>
+      <div class="add-pair_programmer-spacing">
+        <%= link_to_add_association "Add Pair Programmer", f, :pair_programmer, id: 'add_pair_programmer',
+        'data-association-insertion-method' => 'before',
+        'data-association-insertion-traversal' => 'closest', :force_non_association_create => true %>
+      </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

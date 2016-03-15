@@ -1,15 +1,6 @@
-<div class="nested-fields">
-    <div class="form_radio_button">
-      <%= label_tag "partner_type", "Looking For:", class: "select_label"  %>
-
-        <%= f.label(:partner, "Partner") %>
-        <%= f.radio_button(:partner, value: true) %>
-
-        <%= f.label(:paired_programmer, "Paired Programmer") %>
-        <%= f.radio_button(:paired_programmer, value: true) %>
+<div class="partner-fields">
 
     <div class="form_input">
-      <br>
       <%= f.label :location, "City:", class: "select_label"%>
       <%= f.text_field :location%>
       <%= f.label :location, "Province:", class: "select_label"%>
@@ -25,7 +16,7 @@
 
         <%= f.label(:other, "Other")%>
         <%= f.check_box(:other) %>
-    </div><br>
+    </div>
     <div class="form_input">
       <%= f.label(:min_age, "Minimun Age:", class: "select_label") %>
       <%= f.number_field(:min_age) %>
@@ -48,17 +39,22 @@
       <%= f.radio_button(:operating_system, "Ubuntu") %>
 
     <div class="add-preference-spacing">
-      <br>
-      <%= link_to_remove_association 'Remove Preference', f, id: 'remove_preference' %>
-      <br>
+      <%= link_to_remove_association 'Remove Partner', f, id: 'remove_partner' %>
     </div>
   </div>
 
-    <div>
-      <br>
-      <%= link_to_add_association "Add A Preferred Language", f, :pref_languages, id: 'add_pref_language',
-      'data-association-insertion-method' => 'before',
-      'data-association-insertion-traversal' => 'closest' %>
-    </div><br>
+  <div>
+    <%= f.fields_for :languages do |lang| %>
+      <%= render "language_fields", f: lang %>
+    <% end %>
+  </div>
+
+  <div>
+    <%= link_to_add_association "Add Language", f, :languages, id: 'add_language',
+    'data-association-insertion-method' => 'before',
+    'data-association-insertion-traversal' => 'closest' %>
+  </div>
+
+</div>
 
 </div>

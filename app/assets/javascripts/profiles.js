@@ -16,23 +16,6 @@ $(document).on('page:load ready', function() {
   $('#login-notice').delay(1000).slideUp(1000);
 
 
-  $('#pair-search').hide();
-  $('#date-search').hide();
-  $('input[type="radio"]').click(function() {
-    if ($(this).attr("value") == "pair") {
-        $("#search-choice").fadeOut(1000);
-        $("#first_option").fadeOut(1000);
-        $("#pair-search").fadeIn(3000);
-        $("#date-search").hide();
-
-
-    }
-    else {
-      $("#search-choice").fadeOut(1000);
-      $("#first_option").fadeOut(1000);
-      $("#date-search").fadeIn(3000);
-      $("#pair-search").hide();
-    }
   $('#search-form').on('submit', function(e) {
     e.preventDefault();
     $.ajax({
@@ -41,19 +24,15 @@ $(document).on('page:load ready', function() {
       dataType:'script',
       data: $(this).serialize(),
       success: function(data) {
-        if (data) {
-          $("#date-search").hide();
-          $("#pair-search").hide();
-        }else{
+        if (data){
 
-          $("#search-result").html("Sorry, nobody matches your search");
+        }else{
+          console.log("fail")
+          $(".index-users").html("Sorry, nobody matches your search");
         }
       }
     });
-  });
-});
+  // });
 });
 
-// url: '/profiles?search=' + $('#search').val(),
-// type:'GET',
-// dataType: 'script',
+});

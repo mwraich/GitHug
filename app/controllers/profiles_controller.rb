@@ -82,12 +82,16 @@ class ProfilesController < ApplicationController
   def profile_params
     params.require(:profile)
           .permit(:first_name, :last_name, :city, :province, :male, :female, :other,
-          :birthday, :operating_system, :about_me, :tag_list, languages_attributes:
-          [:id, :language, :skill_level, :_destroy], images_attributes: [:id, :image,
-          :image_cache, :_destroy, :remove_image], preferences_attributes:
-          [:id, :location, :male, :female, :other, :operating_system, :partner,
-          :paired_programmer, :profile_id, :min_age, :max_age,:_destroy,
-          pref_languages_attributes: [:id, :pref_lang, :skill_level, :_destroy]])
+          :birthday, :operating_system, :about_me, :tag_list, :date,
+          :paired_programmer, languages_attributes: [:id, :language,
+          :skill_level, :_destroy],images_attributes: [:id, :image,
+          :image_cache, :_destroy, :remove_image], partner_attributes:
+          [:id, :location, :male, :female, :other, :operating_system, :profile_id,
+          :min_age, :max_age,:_destroy, languages_attributes: [:id, :language,
+          :skill_level, :_destroy]], pair_programmer_attributes:
+          [:id, :location, :male, :female, :other, :operating_system,
+          :profile_id, :min_age, :max_age, :_destroy, languages_attributes: [:id, :language,
+          :skill_level, :_destroy]])
   end
 
 end
