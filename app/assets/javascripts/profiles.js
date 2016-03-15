@@ -52,8 +52,5 @@ $(document).on('page:load ready', function() {
     });
   });
 });
-});
 
-// url: '/profiles?search=' + $('#search').val(),
-// type:'GET',
-// dataType: 'script',
+});

@@ -86,10 +86,10 @@ class ProfilesController < ApplicationController
           :birthday, :operating_system, :about_me, :tag_list, :date,
           :paired_programmer, languages_attributes: [:id, :language,
           :skill_level, :_destroy],images_attributes: [:id, :image,
-          :image_cache, :_destroy, :remove_image], partners_attributes:
+          :image_cache, :_destroy, :remove_image], partner_attributes:
           [:id, :location, :male, :female, :other, :operating_system, :profile_id,
           :min_age, :max_age,:_destroy, languages_attributes: [:id, :language,
-          :skill_level, :_destroy]], pair_programmers_attributes:
+          :skill_level, :_destroy]], pair_programmer_attributes:
           [:id, :location, :male, :female, :other, :operating_system,
           :profile_id, :min_age, :max_age, :_destroy, languages_attributes: [:id, :language,
           :skill_level, :_destroy]])
