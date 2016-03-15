@@ -66,20 +66,13 @@
 
   <div class="reco_matches">
 
-    <% if @profile.partnerReco.any?  %>
-    <h3>People You Might Like To Date</h3>
+    <% if @profile.partnerReco.present?  %>
         <%= render "reco_partner" %>
     <% end %>
 
-  <% if @profile.pairReco.any?  %>
-    <h3>People You Might Like To Code With</h3>
+  <% if @profile.pairReco.present?  %>
       <%= render "reco_pair" %>
   <% end %>
-
-  <!-- <% if @profile.pairReco.empty? && @profile.partnerReco.empty? %>
-  <p>no matched :( <p>
-  <%end %> -->
-
 
 <% end %>
 </div>
