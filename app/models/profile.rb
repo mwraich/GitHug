@@ -35,7 +35,7 @@ class Profile < ActiveRecord::Base
     o = search_params['other'].to_i.positive?
     min_age = search_params['min_age'].to_i.years.ago
     max_age = (search_params['max_age'].to_i + 1).years.ago
-    near(search_params['location']).includes(:languages).where(
+    near(search_params['location']).where(date: search_params['date'], paired_programmer: search_params['paired_programmer']).includes(:languages).where(
        male: m, female: f, other: o
   ).where('birthday BETWEEN ? AND ?', max_age, min_age
     ).where('languages.language = ? OR operating_system like ?', search_params['language'],search_params['operating_system']

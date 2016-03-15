@@ -68,30 +68,32 @@
 
 <%= render "messages/new_message" %>
 
-<div class="reco_matches">
-  <% if @profile.partner.present? && @profile.pair_programmer.present?  %>
-    <h3>Recos</h3>
-    <% @profiles.pref_search(@profile.partner.tohash).each do |reco| %>
-      <%= reco.first_name %>
-      <%= reco.last_name %>
-    <% end %>
-    <% @profiles.pref_search(@profile.pair_programmer.tohash).each do |reco| %>
-      <%= reco.first_name %>
-      <%= reco.last_name %>
-    <% end %>
-  <% elsif @profile.partner.present? %>
-    <h3>Recos</h3>
-    <% @profiles.pref_search(@profile.partner.tohash).each do |reco| %>
-      <%= reco.first_name %>
-      <%= reco.last_name %>
-    <% end %>
-  <% elsif  @profile.pair_programmer.present? %>
-    <% @profiles.pref_search(@profile.pair_programmer.tohash).each do |reco| %>
-      <%= reco.first_name %>
-      <%= reco.last_name %>
+<% if current_user = @profile %>
+  <div class="reco_matches">
+    <% if @profile.partner.present? && @profile.pair_programmer.present?  %>
+      <h3>Recos</h3>
+      <% @profiles.pref_search(@profile.partner.tohash).each do |reco| %>
+        <%= reco.first_name %>
+        <%= reco.last_name %>
+      <% end %>
+      <% @profiles.pref_search(@profile.pair_programmer.tohash).each do |reco| %>
+        <%= reco.first_name %>
+        <%= reco.last_name %>
+      <% end %>
+    <% elsif @profile.partner.present? %>
+      <h3>Recos</h3>
+      <% @profiles.pref_search(@profile.partner.tohash).each do |reco| %>
+        <%= reco.first_name %>
+        <%= reco.last_name %>
+      <% end %>
+    <% elsif  @profile.pair_programmer.present? %>
+      <% @profiles.pref_search(@profile.pair_programmer.tohash).each do |reco| %>
+        <%= reco.first_name %>
+        <%= reco.last_name %>
+      <% end %>
+    <% else %>
+      <p>Update your profile and tell us what you are looking for</p>
     <% end %>
   <% else %>
-    <p>Update your profile and tell us what you are looking for</p>
-  <% end %>
-
+<% end %>
 </div>
