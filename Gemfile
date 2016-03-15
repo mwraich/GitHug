@@ -41,8 +41,7 @@ gem 'cancancan', '~> 1.10'
 gem 'bourbon'
 gem 'neat'
 gem 'autoprefixer-rails'
-
-
+gem 'typedJS'
 
 gem 'carrierwave'
 
