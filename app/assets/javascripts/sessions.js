@@ -8,7 +8,7 @@ $(document).on('page:load ready', function() {
       });
   });
 
-  $(".power-icon").hide().delay(12000).queue(function(n) {
+  $(".login").hide().delay(12000).queue(function(n) {
     $(this).show(); n();
   });
 

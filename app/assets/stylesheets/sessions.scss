@@ -26,7 +26,7 @@ body.sessions{
   margin-top: 15%;
 }
 
-.power-icon img{
+.login img{
   @include animation-duration(2s);
   @include animation-fill-mode(backwards);
   @include animation-timing-function(ease);
