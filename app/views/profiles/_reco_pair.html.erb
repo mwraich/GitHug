@@ -1,0 +1,12 @@
+
+<div id="index-view-profile-info">
+<% @profile.pairReco.each do |reco| %>
+  <%= image_tag(reco.user.github_image, class: 'profile-image') %>
+  <p id = "index-profile-name"><%= reco.first_name %></p>
+  <p id="index-profile-location"><<%= reco.location %></p>
+  <div id="link-to-profile">
+    <%= link_to image_tag("profile.svg"), profile_path(reco) %>
+  </div>
+<% end %>
+</div>
+<hr class="line-break">

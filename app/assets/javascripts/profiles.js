@@ -16,6 +16,7 @@ $(document).on('page:load ready', function() {
   $('#login-notice').delay(1000).slideUp(1000);
 
 
+
   $('#search-form').on('submit', function(e) {
     e.preventDefault();
     $.ajax({
@@ -24,7 +25,6 @@ $(document).on('page:load ready', function() {
       dataType:'script',
       data: $(this).serialize(),
       success: function(data) {
-        console.log("This works!")
         if (data){
 
         }else{
