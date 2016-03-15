@@ -16,7 +16,6 @@ $(document).on('page:load ready', function() {
   $('#login-notice').delay(1000).slideUp(1000);
 
 
-
   $('#search-form').on('submit', function(e) {
     e.preventDefault();
     $.ajax({
