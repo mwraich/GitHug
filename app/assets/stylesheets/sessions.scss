@@ -20,10 +20,11 @@ body.sessions{
   font-size: 1.5rem;
 
 }
+.typed-cursor{
+  background-color: #98ea8f;
+  color: #98ea8f;
+  font-size: 1.2rem;
 
-#loadAnimation{
-  margin-left: 40%;
-  margin-top: 15%;
 }
 
 .login img{
@@ -32,14 +33,23 @@ body.sessions{
   @include animation-timing-function(ease);
   @include animation-iteration-count(infinite);
   animation-name: fadeIn;
-
-  margin-left: 27.5%;
-  margin-top: 5%;
-
 }
-.typed-cursor{
-  background-color: #98ea8f;
-  color: #98ea8f;
-  font-size: 1.2rem;
 
+#loadAnimation{
+  margin-top: 45%;
+  margin-bottom: 5%;
+  margin-left: 25%;
+}
+
+@include media ($large-screen-up){
+
+  #loadAnimation{
+    margin-left: 40%;
+    margin-top: 15%;
+  }
+
+  .login img{
+    margin-left: 27.5%;
+    margin-top: 5%;
+  }
 }
