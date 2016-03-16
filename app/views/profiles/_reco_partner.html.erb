@@ -1,7 +1,7 @@
 <h3>People You Might Like To Date</h3>
 
 <div id="index-view-profile-info">
-<% @profile.partnerReco.each do |reco| %>
+<% @profile_partnerReco.each do |reco| %>
   <%= image_tag(reco.user.github_image, class: 'profile-image') %>
   <p id = "index-profile-name"><%= reco.first_name %></p>
   <p id="index-profile-location"><<%= reco.location %></p>

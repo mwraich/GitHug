@@ -34,7 +34,11 @@
   <%= f.label :city, "City:", class: "select_label"%>
   <%= f.text_field :city%>
   <%= f.label :province, "Province:", class: "select_label"%>
-  <%= f.select(:province, options_for_select(provinces, selected: @profile.province), include_blank: true)%>
+  <% if current_user.profile.nil?%>
+    <%= f.select(:province, options_for_select(provinces, selected: @profile.province), include_blank: true)%>
+  <% else %>
+      <%= f.select(:province, options_for_select(provinces), include_blank: true)%>
+  <% end %>
   <label id="errorLocation"></label>
 </div>
 
