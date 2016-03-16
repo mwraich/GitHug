@@ -1,19 +1,12 @@
 <div id= "imageslideshow">
-  <%= link_to image_tag('circle.png'), '#', class: 'x'%>
-
-
   <% if (@profile.images.length < 2) %>
        <%= image_tag(@profile.user.github_image) %>
      <% else %>
-     <div class= "container">
-       <div style="display: inline-block;"><%= image_tag(@profile.images[0].image_url) %></div>
-       <% range = (0..(@profile.images.length)) %>
-       <% range.select do |r| %>
-       <div><%=  image_tag(@profile.images[r-1].image_url) %></div>
-       <% end %>
-     </div>
-     <%= link_to image_tag('left_arrow.png'), '#', class:'left_arrow'%>
-     <%= link_to image_tag('right_arrow.png'), '#', class:'right_arrow'%>
-
+       <ul class="bxslider">
+         <% range = (0..(@profile.images.length)) %>
+         <% range.select do |r| %>
+           <li><%=  image_tag(@profile.images[r+1].image_url) %></li>
+         <% end %>
+       </ul>
      <% end %>
 </div>

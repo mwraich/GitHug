@@ -4,12 +4,15 @@
     <% if (@profile.images.length < 2) %>
       <%= image_tag(@profile.user.github_image) %>
     <% else %>
-      <%= image_tag(@profile.images[0].image_url) %>
+      <ul class="bxslider">
+        <li><%= image_tag(@profile.images[0].image_url) %></li>
+        <% range = (0..(@profile.images.length)) %>
+        <% range.select do |r| %>
+        <li><%=  image_tag(@profile.images[r-1].image_url) %></li>
+         <% end %>
+      </ul>
     <% end %>
 </div>
-
-  <%= render 'imageslideshow' %>
-  <div id="dim-page"></div>
 
 <div id="profile-page-title">
 <div id="profile-name">

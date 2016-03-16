@@ -44,6 +44,7 @@ gem 'bourbon'
 gem 'neat'
 gem 'autoprefixer-rails'
 gem 'typedJS'
+gem 'bxslider-rails'
 
 gem 'carrierwave'
 
@@ -96,7 +97,7 @@ group :development do
 
   group :production do
     gem 'rails_12factor'
-    
+
     # gem 'puma'
 
 
