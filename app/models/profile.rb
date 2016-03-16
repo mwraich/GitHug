@@ -16,6 +16,8 @@ class Profile < ActiveRecord::Base
   has_many :recipient_messages, class_name: :Message, foreign_key: :recipient_id
   has_many :blocked_users, through: :users
   has_many :enemies, through: :blocked_users, class_name: User
+  has_many :sent_requests, class_name: :PullRequest, foreign_key: :requestor_id
+  has_many :received_requests, class_name: :PullRequest, foreign_key: :requestee_id
 
   accepts_nested_attributes_for :images, :languages, :preferences, allow_destroy: true
 
@@ -48,8 +50,17 @@ class Profile < ActiveRecord::Base
     end
   end
 
+  def check_pull_request_permission(current_user)
+    if self.sent_requests.where(requestor_id: current_user, requestee_id: user.id, read: true, permission: true)
+      return true
+      #permission granted
+    else
+      return false
+    end
+  end
+
   def blocked_by?(current_user)
-    current_user.enemies.include?(self.user) #Have you blocked this person? 
+    current_user.enemies.include?(self.user) #Have you blocked this person?
   end
 
 end

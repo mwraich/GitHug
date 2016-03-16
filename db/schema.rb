@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160314165004) do
+ActiveRecord::Schema.define(version: 20160315203644) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,10 +73,12 @@ ActiveRecord::Schema.define(version: 20160314165004) do
     t.integer  "recipient_id"
     t.integer  "sender_id"
     t.text     "message"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "subject_line"
-    t.boolean  "read_status",  default: false
+    t.boolean  "read_status",     default: false
+    t.boolean  "permission",      default: false
+    t.integer  "pull_request_id"
   end
 
   create_table "pref_languages", force: :cascade do |t|
@@ -123,6 +125,15 @@ ActiveRecord::Schema.define(version: 20160314165004) do
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
+
+  create_table "pull_requests", force: :cascade do |t|
+    t.integer  "requestor_id"
+    t.integer  "requestee_id"
+    t.boolean  "permission",   default: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.boolean  "read",         default: false
+  end
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"

@@ -3,7 +3,7 @@
   <div id="profile-images">
   <% if @profile.images.any? %>
     <% @profile.images.each do |img| %>
-      <%= image_tag(img.image)%>
+      <%= cl_image_tag(img.image)%>
     <% end %>
   <% else %>
     <%= render "no_profile_image" %>
@@ -67,7 +67,13 @@
 <% end %>
 </div>
 
+<button> Pull Request </button>
+<% if authorize_pull_request(@profile) %>
 <%= render "messages/new_message" %>
+
+<% else %>
+<pre>Not authorized</pre>
+<% end %>
 
 <div class="reco_matches">
 </div>
