@@ -11,7 +11,6 @@ Rails.application.config.sorcery.configure do |config|
 
   config.user_config do |user|
     user.username_attribute_names = :first_name
-
     user.authentications_class = Authentication
   end
 
