@@ -26,6 +26,10 @@ class PairProgrammer < ActiveRecord::Base
     }
   end
 
+  def location
+    [city, province].compact.join(', ')
+  end
+
   def location_changed?
     city_changed? || province_changed?
   end

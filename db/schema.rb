@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160315212224) do
+ActiveRecord::Schema.define(version: 20160316023642) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,8 @@ ActiveRecord::Schema.define(version: 20160315212224) do
     t.integer  "max_age"
     t.integer  "profile_id"
     t.string   "province"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "partners", force: :cascade do |t|
@@ -89,6 +91,8 @@ ActiveRecord::Schema.define(version: 20160315212224) do
     t.integer  "min_age"
     t.integer  "max_age"
     t.string   "province"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "partners", ["profile_id"], name: "index_partners_on_profile_id", using: :btree

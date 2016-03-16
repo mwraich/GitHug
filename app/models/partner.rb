@@ -10,8 +10,6 @@ class Partner < ActiveRecord::Base
   geocoded_by :location
   after_validation :geocode, if: :location_changed?
 
-
-
   def tohash
     {
     'date' => 1 ,
@@ -26,6 +24,10 @@ class Partner < ActiveRecord::Base
     'city' => self.city,
     'province' => self.province
     }
+  end
+
+  def location
+    [city, province].compact.join(', ')
   end
 
   def location_changed?

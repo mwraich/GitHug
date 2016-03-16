@@ -89,7 +89,7 @@ class ProfilesController < ApplicationController
           [:id, :city, :province, :male, :female, :other, :operating_system, :profile_id,
           :min_age, :max_age,:_destroy, languages_attributes: [:id, :language,
           :skill_level, :_destroy]], pair_programmer_attributes:
-          [:id, :city, :province,, :male, :female, :other, :operating_system,
+          [:id, :city, :province, :male, :female, :other, :operating_system,
           :profile_id, :min_age, :max_age, :_destroy, languages_attributes: [:id, :language,
           :skill_level, :_destroy]])
   end
