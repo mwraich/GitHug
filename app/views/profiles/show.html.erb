@@ -90,14 +90,6 @@
   <%= link_to tag.name, tag_path(tag.id) %>
 <% end %>
 
-<h2>Languages</h2>
-<ul>
-  <% @profile.languages.each do |lang| %>
-    <li> <%= lang.language %> Skill Level: <%= lang.skill_level %></li>
-  <% end %>
-</ul>
-</div>
-
 <div class="profile-tags">
 <h2>Tags</h2>
   <div id="tag-spacing">
