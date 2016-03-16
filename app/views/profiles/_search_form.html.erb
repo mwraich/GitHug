@@ -25,11 +25,9 @@
     <%= check_box_tag('search[language]', 'PHP') %>
 
     <%= label_tag('search[language]','C++',  class: 'button-label') %>
-    <%= check_box_tag('search[language]', 'C++') %><br>
+    <%= check_box_tag('search[language]', 'C++') %>
 
-
-
-  <%=label_tag(:operating_system,"What Operating System do you use?") %><br>
+  <%=label_tag(:operating_system,"What Operating System do you use?") %>
 
     <%= label_tag('search[operating_system]','OS X',  class: 'button-label') %>
     <%= check_box_tag('search[operating_system]', 'OS X') %>
@@ -46,7 +44,7 @@
 
 <div class="preference-form">
 
-  <%= label(:age,'What age-range are you looking for?')%><br>
+  <%= label(:age,'What age-range are you looking for?')%>
 
     <%= label_tag('search[min_age]','Min:') %>
     <%= number_field_tag('search[min_age]', min: 18 ) %>
@@ -68,9 +66,7 @@
     <%= label_tag('search[other]', 'Other',  class: 'button-label')%>
     <%= check_box_tag('search[other]') %>
 
-
-
-  <%= label_tag(:location, "Where do you want the person you're searching for to live?", class: 'location-search-label') %>
+    <%= label_tag(:location, "Where do you want the person you're searching for to live?", class: 'location-search-label') %>
     <%= text_field_tag ('search[location]') %>
 
   <%= submit_tag("Search", :id => "submit") %>

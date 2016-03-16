@@ -7,9 +7,9 @@
 
   <div class="form_input">
     <%= f.label :province, "Province:", class: "select_label"%>
-    <%= f.text_field :province%>
+    <%= f.select(:province, options_for_select(provinces, selected: @profile.pair_programmer.province), include_blank: true)%>
   </div>
-  
+
     <div class="form_checkbox_input">
       <%= label_tag "gender", "Gender:", class: "select_label" %>
 

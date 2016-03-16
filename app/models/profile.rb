@@ -37,11 +37,13 @@ class Profile < ActiveRecord::Base
     part = search_params['date'].to_i.positive?
     pair = search_params['paired_programmer'].to_i.positive?
 
+
     near(search_params['location']).where('paired_programmer = ? OR date = ?', pair, part)
     .includes(:languages).where( male: m, female: f, other: o )
     .where('birthday BETWEEN ? AND ?', max_age, min_age)
     .where('languages.language = ? OR operating_system like ?',
-    search_params['language'], search_params['operating_system']).references(:languages)
+    search_params['language'], search_params['operating_system'])
+    .references(:languages)
 
   end
 
@@ -99,5 +101,8 @@ class Profile < ActiveRecord::Base
     city_changed? || province_changed?
   end
 
+  def user_current
+    current_user.profile
+  end
 
 end
