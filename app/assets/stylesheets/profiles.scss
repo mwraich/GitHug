@@ -11,6 +11,10 @@ body{
   color: #3b3b3b;
 }
 
+#main-menu{
+  display: none;
+}
+
 //------------------Slideshow Styles---------------//
 .container {
   margin: 0 auto;
@@ -68,6 +72,9 @@ body{
 
 //-------------------Nav Bar-----------------//
 
+.logout-icon{
+  display: none;
+}
 
 .message-icon img{
   width: 10%;
@@ -179,8 +186,8 @@ a.add_fields{
   }
 
 .add-language-spacing{
-  padding-top: 5%;
-  padding-bottom: 5%;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 
   #remove_language{
@@ -750,52 +757,54 @@ textarea#message_message {
   .menu-bar{
     padding-bottom: 1%;
   }
-
+  .logout-icon{
+    display: block;
+    float: right;
+    margin-right: -28%;
+    & img{
+      width: 40%;
+      padding-top: 2.5%;
+    }
+  }
   #nav-main{
-    width: 70%;
+    display: none;
   }
-  nav#nav-main{
+
+  #main-menu{
+    display: block;
+    background-color: $secondary-background-color;
+    width: 15%;
     position: fixed;
-    margin-left: 50%;
-    margin-top: -2.5%;
-
     & li{
-      display: inline;
-      font-size: 1rem;
-      padding-left: 5%;
-
+      padding-left: 7.5%;
+      border-bottom: 5px solid $base-background-color;
+      padding-bottom: 5%;
+      padding-top: 5%;
+      & :hover{
+        color: $secondary-font-color;
+      }
     }
 
-    & a:hover{
-      color: #00aca1;
-      border-bottom: 2px solid #00aca1;
-    }
   }
-
   #login-notice{
-    margin-top: 6%;
-    margin-left: 2%;
-    background-color: #00aca1;
-    color: white;
+    float: right;
+    margin-top: 15%;
+    background-color: #9fed9c;
+    color: $base-background-color;
     padding-top: 1%;
     padding-bottom: 1%;
-    padding-left: 2%;
-    padding-right: 2%;
-    border-radius: 5px;
+    padding-left: 3%;
     width: 15%;
   }
 
   #unread-messages-notice{
-    margin-top: 7%;
-    margin-left: 1%;
-    background-color: #00aca1;
-    color: white;
+    float: right;
+    background-color: #9fed9c;
+    color: $base-background-color;
     padding-top: 1%;
     padding-bottom: 1%;
-    padding-left: 1%;
-    padding-right: 1%;
-    border-radius: 5px;
-    width: 15.5%;
+    padding-left: 3%;
+    width: 15%;
   }
 
   //-------------Profile Show Page Styles------------//
@@ -920,11 +929,12 @@ textarea#message_message {
 
 
   .profile-form{
-    background-color: #D4D7DD;
+    background-color: #f5f7fa;
     width: 60%;
     margin-left: 20%;
-    margin-top: -7%;
+    margin-top: 7%;
     padding-top: 2%;
+    padding-bottom: 2%;
     margin-bottom: 2%;
   }
   .form_input input{
@@ -952,8 +962,8 @@ textarea#message_message {
     border-radius: 5px;
     font-size: 1rem;
     display: inline;
-    margin-left: 2%;
-    margin-bottom: -1%;
+    margin-left: -5%;
+    margin-bottom: -3%;
     height: 4rem;
   }
   .form_checkbox_input label{
@@ -1007,10 +1017,17 @@ textarea#message_message {
   #tag{
     text-align: center;
     padding-top: 0%;
+    padding-left: 0%;
+  }
+  #tag-explained{
+    text-align: center;
+    color: #919293;
+    margin-top: -1%;
   }
 
   #remove_language{
-    color: #00aca1;
+    color: #e06c75;
+    font-size: 1.2rem;
     cursor: pointer;
     display: inline-block;
     margin-left: 5%;
@@ -1023,7 +1040,8 @@ textarea#message_message {
   }
 
   #add_language{
-    color: #00aca1;
+    color: #3b99fc;
+    font-size: 1.2rem;
     cursor: pointer;
     display: inline-block;
     margin-left: 5%;
@@ -1037,10 +1055,12 @@ textarea#message_message {
   }
 
   #add_photo{
-    color: #00aca1;
+    color: #3b99fc;
     cursor: pointer;
     display: inline-block;
     margin-left: 5%;
+    margin-top: -15%;
+    font-size: 1.2rem;
 
     &:hover,
     &:focus {
@@ -1049,10 +1069,12 @@ textarea#message_message {
   }
 
   #remove_photo{
-    color: #00aca1;
+    margin-top: -15%;
+    color: #e06c75;
     cursor: pointer;
     display: inline-block;
     margin-left: 5%;
+    font-size: 1.2rem;
 
     &:hover,
     &:focus {
@@ -1061,10 +1083,11 @@ textarea#message_message {
   }
 
   #remove_preference{
-    color: #00aca1;
+    color: #e06c75;
     cursor: pointer;
     display: inline-block;
     margin-left: 5%;
+    font-size: 1.2rem;
 
     &:hover,
     &:focus {
@@ -1074,10 +1097,12 @@ textarea#message_message {
   }
 
   #add_pref_language{
-    color: #00aca1;
+    color: #3b99fc;
     cursor: pointer;
     display: inline-block;
     margin-left: 5%;
+    margin-top: -15%;
+    font-size: 1.2rem;
 
     &:hover,
     &:focus {
@@ -1086,10 +1111,12 @@ textarea#message_message {
   }
 
   #add_pref{
-    color: #00aca1;
+    color: #3b99fc;
     cursor: pointer;
     display: inline-block;
     margin-left: 5%;
+    margin-top: -15%;
+    font-size: 1.2rem;
 
     &:hover,
     &:focus {
@@ -1107,6 +1134,7 @@ textarea#message_message {
     margin-bottom: 5%;
     font-size: 1.2rem;
     border: none;
+    background-color: #3b99fc;
   }
 
   .actions{
@@ -1119,9 +1147,43 @@ textarea#message_message {
   }
 
   input#profile_tag_list{
-    margin-left: -7%;
+    margin-left: -5%;
   }
 
+  button#nameNext{
+    float: right;
+    margin-top: -3%;
+    margin-right: 2%;
+  }
+  button#birthdayNext{
+    float: right;
+    margin-right: 5%;
+    margin-top: 2%;
+  }
+  button#birthdayPrevious{
+    margin-left: 5%;
+    margin-top: 2%;
+  }
+  button#aboutMePrevious{
+    margin-left: 5%;
+    margin-top: 2%;
+  }
+  button#aboutMeNext{
+    float: right;
+    margin-right: 5%;
+    margin-top: 2%;
+  }
+
+  button#languagePrevious{
+    margin-left: 5%;
+    margin-top: 2%;
+  }
+
+  button#languageNext{
+    float: right;
+    margin-right: 5%;
+    margin-top: 2%;
+  }
 
   //----------------Index Search Forms Desktop Size-----------------//
 

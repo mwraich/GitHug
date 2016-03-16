@@ -28,7 +28,6 @@
       <%= render "image_fields", f: image %>
       <% end %>
     </div>
-    <br>
     <div class="add-language-spacing">
       <%= link_to_add_association "Add Another Photo", f, :images, id: 'add_photo',
       'data-association-insertion-method' => 'before',
@@ -72,10 +71,10 @@
     <div class="form_input">
       <%= f.label :about_me, "About Me:" %>
       <%= f.text_area :about_me %>
-    </div><br>
+    </div>
       <div class="form_input">
-        <br>
         <p id="tag">Tag your Hobbies!</p>
+        <p id="tag-explained">(Separate with commas)</p>
         <%= f.label :tag_list, 'Tags:' %>
         <%= f.text_field :tag_list %>
       </div>
