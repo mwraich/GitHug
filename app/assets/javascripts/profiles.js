@@ -99,6 +99,7 @@ $(document).on('page:load ready', function() {
 
   $('#pair-search').hide();
   $('#date-search').hide();
+  $('.index-users').hide();
   $('input[type="radio"]').click(function() {
     if ($(this).attr("value") == "pair") {
         $("#search-choice").fadeOut(1000);
@@ -125,6 +126,7 @@ $(document).on('page:load ready', function() {
         if (data) {
           $("#date-search").hide();
           $("#pair-search").hide();
+          $('.index-users').show();
         }else{
 
           $("#search-result").html("Sorry, nobody matches your search");
