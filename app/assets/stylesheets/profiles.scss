@@ -1669,3 +1669,49 @@ textarea#message_message {
 
 
 }
+
+//------------------Large Screen------------------//
+@include media ($extra-large-screen-up){
+  .logout-icon{
+    display: block;
+    position: absolute;
+    margin-left: 90%;
+    margin-top: -2.5%;
+    & img{
+      width: 50%;
+      padding-top: 2.5%;
+      z-index: 5;
+    }
+  }
+  #profile-info-container{
+    padding-bottom: 5%;
+    margin-top: -3%;
+  }
+  button.message-to-button{
+    margin-top: 0%;
+  }
+  #profile-images{
+    margin-top: 0%;
+    & img{
+      border-radius: 0;
+      height: 250px;
+      width: 100%;
+
+    }
+
+  }
+  .bx-wrapper{
+
+    height: 250px;
+  }
+  input.block_button{
+    margin-top: -6%;
+  }
+  #profile-name{
+    margin-top: -15%;
+  }
+  #profile-languages{
+    margin-top: -18%;
+    height: 225px;
+  }
+}
