@@ -1,10 +1,6 @@
-<div class="logo-animated" >
-    <%= image_tag "GitHugLogo3.svg", class: "logo" %>
+<div id="loadAnimation">
+  <span class="logoTyped"></span>
+  <span class="typed-cursor">|</span>
 </div>
 
-<div class="session-links">
-  <div class="link-wrap">
-    <%= link_to 'LOGIN', auth_at_provider_path(provider: :github), class: "login" %>
-    <%= link_to 'SIGN UP', auth_at_provider_path(provider: :github), class: "signup" %>
-  </div>
-</div>
+<%= link_to image_tag("power.svg"), auth_at_provider_path(provider: :github), class: "login"%>

@@ -14,6 +14,8 @@
 //= require jquery.validate
 //= require jquery.validate.additional-methods
 //= require jquery_ujs
+//= require bxslider
+//= require typed
 //= require cocoon
 //= require turbolinks
 //= require_tree .

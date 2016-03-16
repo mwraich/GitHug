@@ -25,13 +25,13 @@ select {
   display: block;
   font-family: $base-font-family;
   font-size: $base-font-size;
-  color: white;
+  color: #6a6a6a;
 
 }
 
 #{$all-text-inputs},
 select[multiple] {
-  background-color: #ededed;
+  background-color: #ffffff;
   border: solid;
   border-color: #6a6a6a;
   border-width: 0.5px;

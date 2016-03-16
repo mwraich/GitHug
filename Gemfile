@@ -43,8 +43,8 @@ gem 'twilio-ruby', '~> 4.11.1'
 gem 'bourbon'
 gem 'neat'
 gem 'autoprefixer-rails'
-
-
+gem 'typedJS'
+gem 'bxslider-rails'
 
 gem 'carrierwave'
 
@@ -98,7 +98,6 @@ group :development do
   group :production do
     gem 'rails_12factor'
 
-    #server
     # gem 'puma'
 
     # #server

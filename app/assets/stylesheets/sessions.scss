@@ -1,125 +1,55 @@
-// Place all the styles related to the sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-body.sessions {
-  background-color: #57c8b9;
-  height: 100vh;
-}
 @include keyframes(fadeIn) {
-  from {
-    @include transform(scale(0.5));
+  0%{
+    @include transform(scale(0.7));
   }
-  to {
-    @include transform(scale(2));
+  50%{
+    @include transform(scale(1));
   }
-}
-@include keyframes(fadeInButtons) {
-  from {
-    opacity: 0;
-    @include transform(translateY(100%));
-  }
-  to {
-    opacity: 1;
-    @include transform(translateY(0%));
+  100%{
+    @include transform(scale(0.7));
   }
 }
 
-.logo-animated {
+body.sessions{
+  background-color: #31333f;
+}
+
+.logoTyped{
+  font-family: $base-font-family;
+  color: #98ea8f;
+  font-size: 1.5rem;
+
+}
+.typed-cursor{
+  background-color: #98ea8f;
+  color: #98ea8f;
+  font-size: 1.2rem;
+
+}
+
+.login img{
   @include animation-duration(2s);
+  @include animation-fill-mode(backwards);
   @include animation-timing-function(ease);
-  @include animation-fill-mode(forwards);
+  @include animation-iteration-count(infinite);
   animation-name: fadeIn;
-
-  padding-left: 33%;
-  padding-top: 45%;
-  padding-bottom: 40%;
-
 }
 
-.githug-logo{
-  display:block;
-}
-
-.session-links {
-  @include outer-container;
-
-  .link-wrap {
-    @include span-columns(3);
-    @include shift(0.5);
-
-    a {
-      text-align: center;
-      font-size: 1.5rem;
-      padding-top: 0.2rem;
-      padding-bottom: 0.2rem;
-      border: $base-border;
-      border-color: white;
-      margin-bottom: 50px;
-      display: block;
-      width: 100%;
-      color: white;
-    }
-  }
-}
-
-.login{
-  opacity: 0;
-  @include animation-duration(1s);
-  @include animation-timing-function(ease);
-  @include animation-delay(2.5s);
-  @include animation-fill-mode(forwards);
-  animation-name: fadeInButtons;
-
-}
-.signup{
-  opacity: 0;
-  @include animation-duration(1s);
-  @include animation-timing-function(ease);
-  @include animation-delay(3s);
-  @include animation-fill-mode(forwards);
-  animation-name: fadeInButtons;
-}
-
-#or{
-  opacity: 0;
-  @include animation-duration(1s);
-  @include animation-timing-function(ease);
-  @include animation-delay(2s);
-  @include animation-fill-mode(forwards);
-  animation-name: fadeInButtons;
-
-  display: block;
-  text-align: center;
-  padding-right: 7%;
-  padding-left: 7%;
-  margin-top: 17.5%;
-  margin-bottom: 2.5%;
-  color: $secondary-font-color;
+#loadAnimation{
+  margin-top: 45%;
+  margin-bottom: 5%;
+  margin-left: 25%;
 }
 
 @include media ($large-screen-up){
-  body.sessions .yeild{
-    background-color: #57c8b9;
-  }
-  .logo-animated {
-    padding-left: 60%;
-    padding-top: 15%;
-    padding-bottom: 10%;
-    width:160%;
 
+  #loadAnimation{
+    margin-left: 40%;
+    margin-top: 15%;
   }
 
-  .session-links {
-    @include outer-container;
-
-    .link-wrap {
-      @include span-columns(3);
-      @include shift(0.5);
-
-      a {
-        width: 80%;
-        margin-left: 80%;
-      }
-    }
+  .login img{
+    margin-left: 27.5%;
+    margin-top: 5%;
   }
 }
