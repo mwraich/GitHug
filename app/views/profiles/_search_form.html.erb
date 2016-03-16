@@ -1,75 +1,74 @@
 <div class="search-form">
-<%= form_tag(profiles_path, method: :get, :id =>'search-form') do %>
+  <%= form_tag(profiles_path, method: :get, :id =>'search-form') do %>
 
-<%= label_tag('search[paired_programmer]', "Pair")%>
-<%= check_box_tag('search[paired_programmer]') %>
+  <%= label_tag('search[paired_programmer]', "Pair")%>
+  <%= check_box_tag('search[paired_programmer]') %>
 
-<%= label_tag('search[date]', "Date") %>
-<%= check_box_tag('search[date]') %>
+  <%= label_tag('search[date]', "Date") %>
+  <%= check_box_tag('search[date]') %>
 
-<%=label_tag(:operating_system,"What Operating System do you use?") %>
+  <%=label_tag(:languages,"What languages do you know?") %>
 
-    <%= label_tag('search[language]', 'Ruby',  class: 'button-label') %>
-    <%= check_box_tag('search[language]', 'Ruby') %>
+  <%= label_tag('search[language]', 'Ruby',  class: 'button-label') %>
+  <%= check_box_tag('search[language]', 'Ruby') %>
 
-    <%= label_tag('search[language]','JavaScript',  class: 'button-label') %>
-    <%= check_box_tag('search[language]', 'JavaScript') %>
+  <%= label_tag('search[language]','JavaScript',  class: 'button-label') %>
+  <%= check_box_tag('search[language]', 'JavaScript') %>
 
-    <%= label_tag('search[language]', 'Python',  class: 'button-label') %>
-    <%= check_box_tag('search[language]', 'Python') %>
+  <%= label_tag('search[language]', 'Python',  class: 'button-label') %>
+  <%= check_box_tag('search[language]', 'Python') %>
 
-    <%= label_tag('search[language]','Java',  class: 'button-label') %>
-    <%= check_box_tag('search[language]', 'Java') %>
+  <%= label_tag('search[language]','Java',  class: 'button-label') %>
+  <%= check_box_tag('search[language]', 'Java') %>
 
-    <%= label_tag('search[language]','PHP',  class: 'button-label') %>
-    <%= check_box_tag('search[language]', 'PHP') %>
+  <%= label_tag('search[language]','PHP',  class: 'button-label') %>
+  <%= check_box_tag('search[language]', 'PHP') %>
 
-    <%= label_tag('search[language]','C++',  class: 'button-label') %>
-    <%= check_box_tag('search[language]', 'C++') %>
+  <%= label_tag('search[language]','C++',  class: 'button-label') %>
+  <%= check_box_tag('search[language]', 'C++') %>
 
   <%=label_tag(:operating_system,"What Operating System do you use?") %>
 
-    <%= label_tag('search[operating_system]','OS X',  class: 'button-label') %>
-    <%= check_box_tag('search[operating_system]', 'OS X') %>
+  <%= label_tag('search[operating_system]','OS X',  class: 'button-label') %>
+  <%= check_box_tag('search[operating_system]', 'OS X') %>
 
-    <%= label_tag('search[operating_system]','Linux',  class: 'button-label') %>
-    <%= check_box_tag('search[operating_system]', 'Linux') %><br>
+  <%= label_tag('search[operating_system]','Linux',  class: 'button-label') %>
+  <%= check_box_tag('search[operating_system]', 'Linux') %><br>
 
-    <%= label_tag('search[operating_system]','Windows',  class: 'button-label') %>
-    <%= check_box_tag('search[operating_system]', 'Windows') %><br>
+  <%= label_tag('search[operating_system]','Windows',  class: 'button-label') %>
+  <%= check_box_tag('search[operating_system]', 'Windows') %><br>
 
-    <%= label_tag('search[operating_system]','Ubuntu',  class: 'button-label') %>
-    <%= check_box_tag('search[operating_system]', 'Ubuntu') %><br>
+  <%= label_tag('search[operating_system]','Ubuntu',  class: 'button-label') %>
+  <%= check_box_tag('search[operating_system]', 'Ubuntu') %><br>
 </div>
 
 <div class="preference-form">
 
   <%= label(:age,'What age-range are you looking for?')%>
 
-    <%= label_tag('search[min_age]','Min:') %>
-    <%= number_field_tag('search[min_age]', min: 18 ) %>
+  <%= label_tag('search[min_age]','Min:') %>
+  <%= number_field_tag('search[min_age]', min: 18 ) %>
 
-    <%= label_tag('search[max_age]','Max:') %>
-    <%= number_field_tag('search[max_age]', min: 18 ) %>
-
+  <%= label_tag('search[max_age]','Max:') %>
+  <%= number_field_tag('search[max_age]', min: 18 ) %>
 
 
   <%= label_tag(:gender, "Gender:") %>
 
-    <%= label_tag('search[male]', 'Male',  class: 'button-label' )%>
-    <%= check_box_tag('search[male]') %>
+  <%= label_tag('search[male]', 'Male',  class: 'button-label' )%>
+  <%= check_box_tag('search[male]') %>
 
-    <%= label_tag('search[female]', 'Female',  class: 'button-label')%>
-    <%= check_box_tag('search[female]')%>
+  <%= label_tag('search[female]', 'Female',  class: 'button-label')%>
+  <%= check_box_tag('search[female]')%>
 
 
-    <%= label_tag('search[other]', 'Other',  class: 'button-label')%>
-    <%= check_box_tag('search[other]') %>
+  <%= label_tag('search[other]', 'Other',  class: 'button-label')%>
+  <%= check_box_tag('search[other]') %>
 
-    <%= label_tag(:location, "Where do you want the person you're searching for to live?", class: 'location-search-label') %>
-    <%= text_field_tag('search[city]') %>
-    <%= select_tag('search[province]', options_for_select(provinces, current_user.profile.province ), include_blank: true)%>
+  <%= label_tag(:location, "Where do you want the person you're searching for to live?", class: 'location-search-label') %>
+  <%= text_field_tag('search[city]') %>
+  <%= select_tag('search[province]', options_for_select(provinces, current_user.profile.province ), include_blank: true)%>
 
   <%= submit_tag("Search", :id => "submit") %>
-<% end %>
+  <% end %>
 </div>
