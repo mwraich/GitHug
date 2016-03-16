@@ -10,9 +10,9 @@ class User < ActiveRecord::Base
   authenticates_with_sorcery!
   after_create :email_user
 
-  def email_user
-    UserMailer.delay.welcome_email
-  end
+  # def email_user
+  #   UserMailer.delay.welcome_email
+  # end
 
   # def delay_email
   #   puts "aaaaa"
@@ -26,5 +26,7 @@ class User < ActiveRecord::Base
     profile.recipient_messages.where('read_status = false').count
   end
 
-
+  def pull_request_notice
+    profile.received_requests.where('read = true AND permission = true').count
+  end
 end

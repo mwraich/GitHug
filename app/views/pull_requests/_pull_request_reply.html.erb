@@ -1,0 +1,11 @@
+<%= form_for @pull_request_reply do |f| %>
+  <div class="pull_request_reply_message">
+    <%= f.label_tag "Do you accept #{requestor_id.profile.first_name} the request to message you?" %>
+    <%= f.label(:permission, "Yes") %>
+    <%= f.radio_button(:permission, "true") %>
+    <%= f.label(:permission, "No") %>
+    <%= f.radio_button(:permission, "false") %>
+    <%= f.submit "SEND" %>
+
+  </div>
+<% end %>

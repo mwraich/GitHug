@@ -5,6 +5,10 @@
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).on('page:load ready', function() {
 
+$(".message-to-button").hide();
+$("#pull-request").on('click', function(){
+  alert("Your request to message was successful")
+});
   $(".new_message").toggle();
   $(".message-to-button").on('click', function(e){
 
@@ -107,7 +111,9 @@ $(document).on('page:load ready', function() {
   // // type:'GET',
   // // dataType: 'script',
   });
+
   });
+
 
   //Front end New Profile Form Validations
   // var profileForm = document.forms[0];

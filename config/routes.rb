@@ -6,8 +6,10 @@ Rails.application.routes.draw do
 
   resources :profiles
 
+
   resources :messages do
     get 'reply' => 'messages#reply'
+    get 'pull_request_reply' => 'messages#pull_request_reply'
   end
 
 

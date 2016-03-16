@@ -13,12 +13,14 @@ class MessagesController < ApplicationController
     render partial: "reply"
   end
 
+
   def new
     @message = Message.new
   end
 
   def create
-    # @profile = Profile.find(params[:id])
+    @pull_request = PullRequest.find(params[:profile_id])
+    if @pull_request = true
     @message = Message.new(message_params)
     @message.sender = current_user.profile
 
@@ -33,18 +35,9 @@ class MessagesController < ApplicationController
 
   def show
     @profile = Profile.find(params[:id])
-    @messge = Message.find(params[:id])
+    @message = Message.find(params[:id])
   end
 
-  # def inbox
-  #   @profile = Profile.find(params[:id])
-  #   @messge = Message.find(params[:id])
-  # end
-  #
-  # def sent
-  #   @profile = Profile.find(params[:id])
-  #   @messge = Message.find(params[:id])
-  # end
 
   def edit
     @message = Message.find(params[:id])

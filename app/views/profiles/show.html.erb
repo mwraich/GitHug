@@ -30,8 +30,6 @@
   <% end %>
 <% end%>
 
-
-
 <div id="profile-aboutme">
   <p> <%= @profile.about_me %></p>
 </div>
@@ -76,21 +74,11 @@
 <% end %>
 </div>
 
-<button> Pull Request </button>
+<button id = "pull-request"> Pull Request </button>
 <% if authorize_pull_request(@profile) %>
 <%= render "messages/new_message" %>
-
-<<<<<<< HEAD
-<% else %>
-<pre>Not authorized</pre>
 <% end %>
-=======
 
-<!--  Add aligator tags and this will stop block button from appear, waiting to get CSS Styling done before implementing this
-if current_user.profile == @profile  -->
-<!-- <div id ='No_block_button'></div> -->
-
->>>>>>> 91b9410e1a9e61a07304f7cf049053d83cd8bd58
 
 <div class="reco_matches">
 </div>
