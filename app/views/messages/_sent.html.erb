@@ -5,7 +5,7 @@
       <p class="message-info">To: <span class="recipient_id"><%= message.recipient.first_name %></span></p>
       <p class="message-info">Subject: <span class="subject_line"><%= message.subject_line %></span></p>
       <p class="message-info">Sent By: <span class="sent_by"><%= message.sender.first_name %></span></p>
-      <div id="message_message"><%= message.message %></div>
+      <p class="message-text"><%= message.message %></p>
       <hr class="line-break-inbox">
     </div>
   <% end %>
