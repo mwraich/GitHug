@@ -153,6 +153,9 @@ $(document).on('page:load ready', function() {
   });
 
   $(document).ready(function () {
+    $('.gender_validation').click(function() {
+      $(this).siblings('input:checkbox').prop('checked', false);
+    });
        $('#new_profile').validate({
          rules: {
            'profile[first_name]': {
@@ -163,9 +166,6 @@ $(document).on('page:load ready', function() {
              required: true,
              minlength: 2
            },
-    //         gender_validation: {
-    //           minlength: 1,
-    //         },
             'profile[location]': {
               required: true,
               minlength: 2
@@ -210,7 +210,4 @@ $(document).on('page:load ready', function() {
 //       errorGender.focus();
 //       errorGender.style.color = 'red';}
 // // Gender Validations
-// $('.gender_validation').click(function() {
-//   $(this).siblings('input:checkbox').prop('checked', false);
-// });
 //
