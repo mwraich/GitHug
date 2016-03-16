@@ -1,4 +1,3 @@
-
 <%= form_for @profile do |f| %>
     <% if @profile.errors.any? %>
       <div class="error_messages">
@@ -11,17 +10,20 @@
       </div>
     <% end %>
 
+
   <div id = 'showFirstName'>
+
     <div class="form_input">
       <%= f.label :first_name, "First Name:" %>
-      <%= f.text_field :first_name, :class => "required" %>
+      <%= f.text_field :first_name  %>
       <label id="errorFirstName"></label>
     </div>
     <div class="form_input">
       <%= f.label :last_name, "Last Name:"%>
-      <%= f.text_field :last_name, :class => "required"%>
+      <%= f.text_field :last_name %>
       <label id="errorLastName"></label>
     </div>
+
     <p id="tag">Add Some Photos!</p>
     <div>
       <%= f.fields_for :images do |image| %>
@@ -44,24 +46,25 @@
         <%= f.check_box(:male, class:'gender_validation') %>
 
         <%= f.label(:female, "Female")%>
-        <%= f.check_box(:female, class:'gender_validation') %>
+        <%= f.check_box(:female, class:'gender_validation')%>
 
         <%= f.label(:other, "Other")%>
-        <%= f.check_box(:other, class:'gender_validation') %>
+        <%= f.check_box(:other, class:'gender_validation')%>
         <label id="errorGender"></label>
 
     </div><br>
+
 
     <div class="form_input">
       <%= f.label :location, "Location:"%>
       <%= f.text_field :location, :class => "required"%>
       <label id="errorLocation"></label>
     </div>
-
     <div class="form_input">
       <%= f.label(:birthday, "Date of Birth:") %>
       <%= f.date_field(:birthday) %>
       <label id="errorBirthday"></label>
+
     </div>
     <button type ='button' id = 'birthdayPrevious'> Previous </button>
     <button type ='button' id = 'birthdayNext'> Next </button>
@@ -94,6 +97,7 @@
       <label id="errorOperating"></label>
 
     </div><br>
+
     <div>
     <%= f.fields_for :languages do |language| %>
       <%= render "language_fields", f: language %>
@@ -106,10 +110,10 @@
       'data-association-insertion-method' => 'before',
       'data-association-insertion-traversal' => 'closest' %>
     </div><br>
+
     <button type ='button' id = 'languagePrevious'> Previous </button>
     <button type ='button' id = 'languageNext'> Next </button>
   </div>  <!-- showLanguages -->
-
 
 
 
@@ -126,11 +130,10 @@
       'data-association-insertion-method' => 'before',
       'data-association-insertion-traversal' => 'closest' %>
     </div>
+  <br>
 
-    <br>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
-  </div><!-- end show preferences -->
-
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+</div><!-- end show preferences -->
 <% end %>

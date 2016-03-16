@@ -1,8 +1,4 @@
 
-
-// # Place all the behaviors and hooks related to the matching controller here.
-// # All this logic will automatically be available in application.js.
-// # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).on('page:load ready', function() {
 
 // Responsive Nav Bar
@@ -22,7 +18,6 @@ $(document).on('page:load ready', function() {
           $(this).addClass("open");
       }
   });
-
 
 // Form Functionality
   $('#showLocation').hide();
@@ -47,10 +42,36 @@ $(document).on('page:load ready', function() {
   });
 
 
-    $('#languageNext').click(function(){
-      $('#showLanguage').hide();
-      $('#showPreferences').show(1000);
-    });
+  $('#languageNext').click(function(){
+    $('#showLanguage').hide();
+    $('#showPreferences').show(1000);
+  });
+
+
+
+  // // For previous button
+    // $('#birthdayPrevious').click(function(){
+    //   $('#showFirstName').show(1000);
+    //   $('#showGenderAndBirthday').hide();
+    // });
+    //
+    // $('#aboutMePrevious').click(function(){
+    //   $('#showGenderAndBirthday').show(1000);
+    //   $('#showAboutMe').hide();
+    // });
+    //
+    // $('#languagePrevious').click(function(){
+    //   $('#showAboutMe').show(1000);
+    //   $('#showLanguage').hide();
+    // });
+    //
+    // $('#preferencesPrevious').click(function(){
+    //   $('#showLanguage').show(1000);
+    //   $('#showPreferences').hide();
+    // });
+
+
+
 
 
 
@@ -87,15 +108,65 @@ $(document).on('page:load ready', function() {
       }
     });
   });
-  //
-  // // url: '/profiles?search=' + $('#search').val(),
-  // // type:'GET',
-  // // dataType: 'script',
   });
   });
-
 
   $(document).ready(function () {
-     $('#new_profile').validate();
-     console.log("Hello")
-  });
+    $('.gender_validation').click(function() {
+      $(this).siblings('input:checkbox').prop('checked', false);
+    });
+       $('#new_profile').validate({
+         rules: {
+           'profile[first_name]': {
+             required: true,
+             minlength: 2
+           },
+           'profile[last_name]': {
+             required: true,
+             minlength: 2
+           },
+            'profile[location]': {
+              required: true,
+              minlength: 2
+            },
+          'profile[birthday]': {
+              check_date_of_birth: true,
+              require: true
+            },
+            'profile[operating_system]': {
+              minlength: 1
+            },
+            'profile[about_me]': {
+              required: true,
+              minlength: 5,
+              maxlength: 500
+            }
+         }
+       })
+    });
+
+    $.validator.addMethod("check_date_of_birth", function(value, element) {
+
+    var birthday = $("#profile_birthday").val();
+    var birthdaydate = Date.parse(birthday);
+    var difference = Date.now() - birthdaydate;
+    var ageYear = new Date(difference);
+    var age = Math.abs(ageYear.getUTCFullYear() - 1970);
+    return age > 18;
+    }, "You must be at least 18 years of age.");
+
+// // Gender button validation
+// $('.gender_validation').click
+// var validateButton = false;
+// $('.gender_validation').each(function(){
+//   if ($(this).is(':checked')) {
+//     validateButton = true;
+//   }
+// });
+// if(validateButton !== true) {
+//       var errorGender = document.getElementById('errorGender');
+//       errorGender.innerHTML = 'Please select a Gender';
+//       errorGender.focus();
+//       errorGender.style.color = 'red';}
+// // Gender Validations
+//
