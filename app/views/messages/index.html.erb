@@ -1,7 +1,9 @@
-<div id="mailbox">
-  <h1><%= @profile.first_name %>'s MailBox</h1>
+<div class="content">
+  <div id="mailbox">
+    <h1><%= @profile.first_name %>'s MailBox</h1>
 
-  <%= render "inbox" %>
+    <%= render "inbox" %>
 
-  <%= render "sent" %>
+    <%= render "sent" %>
+  </div>
 </div>

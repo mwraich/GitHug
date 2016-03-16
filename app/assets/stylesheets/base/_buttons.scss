@@ -1,9 +1,9 @@
 #{$all-buttons} {
   appearance: none;
-  background-color: #3b99fc;
+  background-color: $base-background-color;
   border: 0;
-  
-  color: white;
+  border-radius: 2px;
+  color: #9fed9c;
   cursor: pointer;
   display: inline-block;
   font-family: $base-font-family;
