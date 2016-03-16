@@ -1,6 +1,5 @@
 
 <%= form_for @profile do |f| %>
-
     <% if @profile.errors.any? %>
       <div class="error_messages">
         <h2>Form Is Invalid</h2>
@@ -13,31 +12,38 @@
     <% end %>
 
     <div class="form_input">
-      <%= f.label :first_name, "First Name:"%>
-      <%= f.text_field :first_name%>
+      <%= f.label :first_name, "First Name:" %>
+      <%= f.text_field :first_name %>
+      <label id="errorFirstName"></label>
     </div>
     <div class="form_input">
       <%= f.label :last_name, "Last Name:"%>
       <%= f.text_field :last_name%>
+      <label id="errorLastName"></label>
     </div>
     <div class="form_input">
       <%= f.label :location, "Location:"%>
       <%= f.text_field :location%>
+      <label id="errorLocation"></label>
     </div>
     <div class="form_checkbox_input">
       <%= label_tag "gender", "Gender:", class: "select_label" %>
         <%= f.label(:male, "Male" )%>
-        <%= f.check_box(:male) %>
+        <%= f.check_box(:male, class:'gender_validation') %>
 
         <%= f.label(:female, "Female")%>
-        <%= f.check_box(:female) %>
+        <%= f.check_box(:female, class:'gender_validation') %>
 
         <%= f.label(:other, "Other")%>
-        <%= f.check_box(:other) %>
+        <%= f.check_box(:other, class:'gender_validation') %>
+        <label id="errorGender"></label>
+
     </div><br>
     <div class="form_input">
       <%= f.label(:birthday, "Date of Birth:") %>
       <%= f.date_field(:birthday) %>
+      <label id="errorBirthday"></label>
+
     </div>
     <div class="form_radio_button">
       <%= label :opperating_system, "Operating System:", class: "select_label"  %>
@@ -47,6 +53,8 @@
 
         <%= f.label(:operating_system, "UNIX") %>
         <%= f.radio_button(:operating_system, "UNIX") %>
+        <label id="errorOperating"></label>
+
     </div><br>
     <div class="form_input">
       <%= f.label :about_me, "About Me:" %>

@@ -1,16 +1,25 @@
 <div class="profile-form">
 
   <div id="profile-images">
-  <% if @profile.images.any? %>
-    <% @profile.images.each do |img| %>
-      <%= cl_image_tag(img.image)%>
+    <% if (@profile.images.length < 2) %>
+      <%= image_tag(@profile.user.github_image) %>
+    <% else %>
+      <%= image_tag(@profile.images[0].image_url) %>
+
     <% end %>
-  <% else %>
-    <%= render "no_profile_image" %>
-  <% end %>
   </div>
 
+  <%= render 'imageslideshow' %>
+  <div id="dim-page"></div>
+
 <h1 class="profile-name"><%= @profile.first_name %> <%= @profile.last_name %></h1>
+
+<!-- Add aligator tags and this will stop block button from appear, waiting to get CSS Styling done before implementing this -->
+<!-- if current_user.profile == @profile   -->
+<!-- <div id ='No_block_button'></div> -->
+
+
+<button class= "message-to-button">Message</button>
 
 <% if @profile.blocked_by?(current_user) %>
   <%= "This user has already been blocked" %>
@@ -71,9 +80,17 @@
 <% if authorize_pull_request(@profile) %>
 <%= render "messages/new_message" %>
 
+<<<<<<< HEAD
 <% else %>
 <pre>Not authorized</pre>
 <% end %>
+=======
+
+<!--  Add aligator tags and this will stop block button from appear, waiting to get CSS Styling done before implementing this
+if current_user.profile == @profile  -->
+<!-- <div id ='No_block_button'></div> -->
+
+>>>>>>> 91b9410e1a9e61a07304f7cf049053d83cd8bd58
 
 <div class="reco_matches">
 </div>

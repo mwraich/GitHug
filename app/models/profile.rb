@@ -39,7 +39,7 @@ class Profile < ActiveRecord::Base
 
     near(search_params['location']).includes(:languages).where(
        male: m, female: f, other: o
-  ).where('birthday BETWEEN ? AND ?', min_age, max_age
+  ).where('birthday BETWEEN ? AND ?', max_age, min_age
     ).where('languages.language = ? OR operating_system like ?', search_params['language'],search_params['operating_system']
     ).references(:languages)
   end

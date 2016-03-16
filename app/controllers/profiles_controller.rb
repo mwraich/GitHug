@@ -7,7 +7,7 @@ class ProfilesController < ApplicationController
 
   def index
     @profiles = if params[:search]
-      Profile.search(params[:search]).order('profiles.created_at DESC')
+      Profile.search(params[:search])
     else
       Profile.order("profiles.created_at DESC")
     end
@@ -52,7 +52,6 @@ class ProfilesController < ApplicationController
     else
       render :edit
     end
-
   end
 
   def destroy
@@ -76,7 +75,8 @@ class ProfilesController < ApplicationController
   def verify_user
     if (current_user.profile).blocked_by?(Profile.find(params[:id]).user)
       flash[:notice] = "You have been blocked by this user"
-      redirect_to profile_path(current_user.profile)
+      # redirect_to profile_path(current_user.profile)
+      
     end
   end
 
