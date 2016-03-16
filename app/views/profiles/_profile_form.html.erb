@@ -106,6 +106,20 @@
       'data-association-insertion-traversal' => 'closest' %>
     </div>
 
+    <div class="field">
+      <%= f.label :notification_email do %>
+        <%= f.check_box :notification_email %>
+        Email
+      <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :notification_sms do %>
+        <%= f.check_box :notification_sms %>
+        SMS
+      <% end %>
+    </div>
+
     <br>
   <div class="actions">
     <%= f.submit %>
