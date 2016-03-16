@@ -88,7 +88,7 @@ body{
 
 
 label.select_label{
-  font-size: 1rem;
+  font-size: 1.4rem;
   color: #6a6a6a;
 
 }
@@ -111,7 +111,7 @@ a.add_fields{
   margin-top: 5%;
   margin-bottom: 5%;
   font-size: 1.2rem;
-  background-color: #00aca1;
+  background-color: #31343F;
 }
 
 .actions{
@@ -124,9 +124,15 @@ a.add_fields{
   color: #3b3b3b;
 }
 
+#tag-explained{
+  text-align: center;
+  color: #919293;
+  margin-top: -1%;
+}
 
   #add_language{
-    color: #00aca1;
+    color: #52ce4c;
+    font-size: 1.2rem;
     cursor: pointer;
     display: inline-block;
     margin-left: 5%;
@@ -145,7 +151,8 @@ a.add_fields{
 }
 
   #remove_language{
-    color: #00aca1;
+    color: #e06c75;
+    font-size: 1.2rem;
     cursor: pointer;
     display: inline-block;
     margin-left: 5%;
@@ -157,13 +164,41 @@ a.add_fields{
 
   }
 
+  #remove_pref_language{
+    color: #e06c75;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 5%;
+
+    &:hover,
+    &:focus {
+      color: #3b3b3b;
+    }
+  }
+
+  #remove_preference{
+    color: #e06c75;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 5%;
+    font-size: 1.2rem;
+
+    &:hover,
+    &:focus {
+      color: #3b3b3b;
+    }
+
+  }
+
 
 #add_photo{
-  color: #00aca1;
+  color: #52ce4c;
+  font-size: 1.2rem;
   cursor: pointer;
   display: inline-block;
   margin-left: 5%;
-  margin-top: -10%;
+
   &:hover,
   &:focus {
     color: #3b3b3b;
@@ -172,11 +207,11 @@ a.add_fields{
 }
 
 #remove_photo{
-  color: #00aca1;
+  color: #e06c75;
+  font-size: 1.2rem;
   cursor: pointer;
   display: inline-block;
   margin-left: 5%;
-
 
   &:hover,
   &:focus {
@@ -187,7 +222,8 @@ a.add_fields{
 }
 
 #remove_preference{
-  color: #00aca1;
+  color: #e06c75;
+  font-size: 1.2rem;
   cursor: pointer;
   display: inline-block;
   margin-left: 5%;
@@ -204,7 +240,8 @@ a.add_fields{
 }
 
 #add_pref_language{
-  color: #00aca1;
+  color: #52ce4c;
+  font-size: 1.2rem;
   cursor: pointer;
   display: inline-block;
   margin-left: 5%;
@@ -216,7 +253,8 @@ a.add_fields{
 }
 
 #add_pref{
-  color: #00aca1;
+  color: #52ce4c;
+  font-size: 1.2rem;
   cursor: pointer;
   display: inline-block;
   margin-left: 5%;
@@ -231,6 +269,43 @@ textarea#profile_about_me{
   height: 3rem;
 }
 
+button#nameNext{
+  float: right;
+  margin-top: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+}
+button#birthdayNext{
+  float: right;
+  margin-right: 5%;
+  margin-top: 2%;
+}
+button#birthdayPrevious{
+  margin-left: 5%;
+  margin-top: 2%;
+}
+button#aboutMePrevious{
+  margin-left: 5%;
+  margin-top: 2%;
+}
+button#aboutMeNext{
+  float: right;
+  margin-right: 5%;
+  margin-top: 2%;
+}
+
+button#languagePrevious{
+  margin-left: 5%;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+
+button#languageNext{
+  float: right;
+  margin-right: 5%;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
 
 
 
@@ -406,6 +481,7 @@ input#search_max_age{
   border-width: 0.5px;
   border-radius: 5px;
 }
+
 
 
 
