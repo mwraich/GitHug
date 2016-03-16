@@ -22,7 +22,7 @@ $(document).on('page:load ready', function() {
           $(this).addClass("open");
       }
   });
-  $('#login-notice').delay(1000).slideUp(1000);
+
 
 // Form Functionality
   $('#showLocation').hide();

@@ -43,6 +43,10 @@
 
     <nav id="nav-mobile"></nav>
 
+    <% if flash[:notice] %>
+    <p id="login-notice"><%= flash[:notice] %></p>
+    <% end %>
+    
     <div class="logout-icon">
       <%= link_to image_tag('power2.svg'), session_path(current_user), method: 'delete' %>
     </div>
@@ -60,9 +64,6 @@
   </aside>
 
   <div class="yield">
-    <% if flash[:notice] %>
-      <p id="login-notice"><%= flash[:notice] %></p>
-    <% end %>
 
       <p id="unread-messages-notice"><%= current_user.notice %> New Messages!</p>
 
