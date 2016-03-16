@@ -53,3 +53,10 @@ body.sessions{
     margin-top: 5%;
   }
 }
+
+@include media ($extra-large-screen-up){
+  .login img{
+    margin-left: 35%;
+    margin-top: 0%;
+  }
+}
