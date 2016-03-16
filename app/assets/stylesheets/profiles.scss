@@ -24,6 +24,11 @@ body{
   display: none;
 }
 
+  label.error {
+    display: block;
+    color: #e06c75;
+    width: 100%;
+  }
 //-------------------Nav Bar-----------------//
 
 .logout-icon{
@@ -1632,5 +1637,9 @@ textarea#message_message {
     margin-top: 2.5%;
   }
 
-
+  label.error {
+    display: block;
+    color: #e06c75;
+    width: 60%;
+  }
 }

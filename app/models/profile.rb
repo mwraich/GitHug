@@ -20,9 +20,13 @@ class Profile < ActiveRecord::Base
   accepts_nested_attributes_for :images, :languages, :preferences, allow_destroy: true
 
 
-  validates_presence_of :first_name, :last_name, :location, :birthday, :about_me
+  validates_presence_of :location, :birthday
+  validates :first_name, presence: true, length: { minimum: 2 }
+  validates :last_name, presence: true, length: { minimum: 2 }
+  validates :about_me, presence: true, length: { minimum: 5, maximum: 500 }
+
   validates_with ValidatesGender
-  # validate :legal_age
+  validate :legal_age
   validates :user_id, uniqueness: {message: "Error. Looks like you already have a profile. You can update your profile by clicking on update."}
   geocoded_by :location
   after_validation :geocode, if: :location_changed?
@@ -64,11 +68,11 @@ class Profile < ActiveRecord::Base
   # end
 
 
-  # def legal_age
-  #   if birthday + 18.years >= Date.today
-  #     errors.add(:birthday, "Must be over 18 to use this site")
-  #   end
-  # end
+  def legal_age
+    if birthday + 18.years >= Date.today
+      errors.add(:birthday, "Must be over 18 to use this site")
+    end
+  end
 
   def blocked_by?(current_user)
     current_user.enemies.include?(self.user) #Have you blocked this person?
