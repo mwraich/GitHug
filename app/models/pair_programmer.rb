@@ -12,7 +12,6 @@ class PairProgrammer < ActiveRecord::Base
 
   def tohash
     {
-    'date' => 0,
     'paired_programmer' => 1,
     'male' => self.male ? 1 : 0,
     'female' => self.female ? 1 : 0,
@@ -21,8 +20,7 @@ class PairProgrammer < ActiveRecord::Base
     'language' => self.languages,
     'min_age' => self.min_age,
     'max_age' => self.max_age,
-    'city' => self.city,
-    'province' => self.province
+    'location' => self.city + ", " + self.province 
     }
   end
 

@@ -5,7 +5,7 @@ class ProfilesController < ApplicationController
 
 
   def index
-    @profiles = if params[:search]
+      @profiles = if params[:search]
       Profile.search(params[:search])
     else
       Profile.order("profiles.created_at DESC")
@@ -15,10 +15,9 @@ class ProfilesController < ApplicationController
   def show
     @user = current_user
     # @github_image = @user.github_image
-    @profiles = Profile.all
+
     @profile = Profile.find(params[:id])
     @message = Message.new
-    @profiles = Profile.all
   end
 
   def new

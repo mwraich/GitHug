@@ -29,8 +29,8 @@ class Profile < ActiveRecord::Base
   acts_as_taggable_on :tags
 
 
-
   def self.search(search_params)
+
     m = search_params['male'].to_i.positive?
     f = search_params['female'].to_i.positive?
     o = search_params['other'].to_i.positive?
@@ -38,7 +38,7 @@ class Profile < ActiveRecord::Base
     max_age = (search_params['max_age'].to_i + 1).years.ago
     part = search_params['date'].to_i.positive?
     pair = search_params['paired_programmer'].to_i.positive?
-    location = (search_params['city'] + ',' + search_params['province'])
+    location = (search_params['city'] + ', ' + search_params['province'])
 
 
     near(location).where('paired_programmer = ? OR date = ?', pair, part)
@@ -102,10 +102,6 @@ class Profile < ActiveRecord::Base
 
   def location_changed?
     city_changed? || province_changed?
-  end
-
-  def user_current
-    current_user.profile
   end
 
 end
