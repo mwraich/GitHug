@@ -64,17 +64,10 @@ $(document).on('page:load ready', function() {
   $('.index-users').hide();
   $('input[type="radio"]').click(function() {
     if ($(this).attr("value") == "pair") {
-        $("#search-choice").fadeOut(1000);
-        $("#first_option").fadeOut(1000);
-        $("#pair-search").fadeIn(3000);
+        $("#pair-search").fadeIn(1000);
         $("#date-search").hide();
-
-
-    }
-    else {
-      $("#search-choice").fadeOut(1000);
-      $("#first_option").fadeOut(1000);
-      $("#date-search").fadeIn(3000);
+    }else{
+      $("#date-search").fadeIn(1000);
       $("#pair-search").hide();
     }
   $('#search-form').on('submit', function(e) {
@@ -86,8 +79,6 @@ $(document).on('page:load ready', function() {
       data: $(this).serialize(),
       success: function(data) {
         if (data) {
-          $("#date-search").hide();
-          $("#pair-search").hide();
           $('.index-users').show();
         }else{
 
