@@ -2,7 +2,9 @@
 <div id="profile-info-container">
 <div id="profile-images">
     <% if (@profile.images.length < 2) %>
-      <%= image_tag(@profile.user.github_image) %>
+    <ul class="bxslider">
+      <li><%= image_tag(@profile.user.github_image) %></li>
+    </ul>
     <% else %>
       <ul class="bxslider">
         <li><%= image_tag(@profile.images[0].image_url) %></li>

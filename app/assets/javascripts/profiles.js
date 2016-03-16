@@ -5,6 +5,7 @@
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).on('page:load ready', function() {
 
+// Responsive Nav Bar
   $(".new_message").toggle();
   $(".message-to-button").on('click', function(e){
 
@@ -23,7 +24,7 @@ $(document).on('page:load ready', function() {
   });
   $('#login-notice').delay(1000).slideUp(1000);
 
-  // Form Functionality
+// Form Functionality
   $('#showLocation').hide();
   $('#showGenderAndBirthday').hide();
   $('#showAboutMe').hide();
@@ -57,7 +58,7 @@ $(document).on('page:load ready', function() {
   $('.bxslider').bxSlider();
 
 
-
+//Search Function
   $('#pair-search').hide();
   $('#date-search').hide();
   $('.index-users').hide();
