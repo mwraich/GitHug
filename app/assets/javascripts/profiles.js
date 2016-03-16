@@ -1,10 +1,8 @@
 
 $(document).on('page:load ready', function() {
-
-// Responsive Nav Bar
+// Message pop-up
   $(".new_message").toggle();
   $(".message-to-button").on('click', function(e){
-
     $(".new_message").toggle();
   });
 
@@ -95,15 +93,12 @@ $(document).on('page:load ready', function() {
         }
       }
     });
-
-  // });
+  });
 });
-
-});
-
-  });
-  });
-  });
+//
+//   });
+//   });
+//   });
 
   $(document).ready(function () {
     $('.gender_validation').click(function() {
@@ -139,17 +134,17 @@ $(document).on('page:load ready', function() {
        })
     });
 
-    $.validator.addMethod("check_date_of_birth", function(value, element) {
-
-    var birthday = $("#profile_birthday").val();
-    var birthdaydate = Date.parse(birthday);
-    var difference = Date.now() - birthdaydate;
-    var ageYear = new Date(difference);
-    var age = Math.abs(ageYear.getUTCFullYear() - 1970);
-    return age > 18;
-    }, "You must be at least 18 years of age.");
-
-// // Gender button validation
+//     $.validator.addMethod("check_date_of_birth", function(value, element) {
+//
+//     var birthday = $("#profile_birthday").val();
+//     var birthdaydate = Date.parse(birthday);
+//     var difference = Date.now() - birthdaydate;
+//     var ageYear = new Date(difference);
+//     var age = Math.abs(ageYear.getUTCFullYear() - 1970);
+//     return age > 18;
+//     }, "You must be at least 18 years of age.");
+//
+// // // Gender button validation
 // $('.gender_validation').click
 // var validateButton = false;
 // $('.gender_validation').each(function(){

@@ -6,7 +6,7 @@ class ProfilesController < ApplicationController
 
   def index
       @profiles = if params[:search]
-      Profile.search(params[:search])
+      Profile.search(params[:search]).reject {|x| x if x.id == current_user.id }
     else
       Profile.order("profiles.created_at DESC")
     end
@@ -18,6 +18,9 @@ class ProfilesController < ApplicationController
 
     @profile = Profile.find(params[:id])
     @message = Message.new
+
+    @profile_partnerReco = @profile.partnerReco
+    @profile_partnerReco = @profile.partnerReco
   end
 
   def new

@@ -51,36 +51,26 @@
   </ul>
 
   <p class="profile-details-title">My Details</p>
-  <ul>
-    <li> Gender:
-      <%= show_gender(@profile) %>
-    </li>
-    <li>
-      Birthday: <%= @profile.birthday %>
-    </li>
-    <li>
-      Operating System: <%= @profile.operating_system %>
-    </li>
-<h2>My Details</h2>
-<ul>
+  <h2>My Details</h2>
+
   <li> Gender:
-    <% if @profile.male == true %>
-    Male
-    <% elsif @profile.female == true %>
-    Female
-    <% else %>
-    Other
-    <% end %>
+    <%= show_gender(@profile) %>
   </li>
+
   <li>
     Birthday: <%= @profile.birthday %>
   </li>
+
   <li>
     Operating System: <%= @profile.operating_system %>
   </li>
-  <li> <%= @profile.location %> </li>
-</ul>
->>>>>>> master
+
+  <li>
+    <%= @profile.city %>
+  </li>
+  <li>
+    <%= @profile.province %>
+  </li>
 </div>
 
 
@@ -101,7 +91,6 @@
 <% end %>
 
 <h2>Languages</h2>
-
 <ul>
   <% @profile.languages.each do |lang| %>
     <li> <%= lang.language %> Skill Level: <%= lang.skill_level %></li>
@@ -119,15 +108,12 @@
   </div>
 </div>
 
-<%= render "messages/new_message" %>
-
-
-<% if current_user = @profile %>
+<% if check_current_user %>
   <div class="reco_matches">
-    <% if @profile.partnerReco.present?  %>
+    <% if @profile_partnerReco.present?  %>
         <%= render "reco_partner" %>
     <% end %>
-  <% if @profile.pairReco.present?  %>
+  <% if @profile_pairReco.present?  %>
       <%= render "reco_pair" %>
   <% end %>
 <% end %>

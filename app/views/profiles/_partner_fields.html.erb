@@ -7,7 +7,11 @@
 
     <div class="form_input">
       <%= f.label :province, "Province:", class: "select_label"%>
-      <%= f.select(:province, options_for_select(provinces, selected: @profile.partner.province), include_blank: true)%>
+       <% if current_user.profile.partner.present?%>
+        <%= f.select(:province, options_for_select(provinces, selected: @profile.pair_programmer.province), include_blank: true)%>
+      <% else %>
+        <%= f.select(:province, options_for_select(provinces), include_blank: true)%>
+      <% end  %>
     </div>
 
     <div class="form_checkbox_input">

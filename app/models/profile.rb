@@ -32,7 +32,6 @@ class Profile < ActiveRecord::Base
 
 
   def self.search(search_params)
-
     m = search_params['male'].to_i.positive?
     f = search_params['female'].to_i.positive?
     o = search_params['other'].to_i.positive?
@@ -49,7 +48,6 @@ class Profile < ActiveRecord::Base
     .where('languages.language = ? OR operating_system like ?',
     search_params['language'], search_params['operating_system'])
     .references(:languages)
-
   end
 
   def self.pref_search(search_params)
@@ -76,14 +74,13 @@ class Profile < ActiveRecord::Base
 
   def partnerReco
     if partner.present?
-      Profile.pref_search(Profile.find(user).partner.tohash)
+      Profile.pref_search(Profile.find(user).partner.tohash).reject {|x| x if x.id == self.id }
     end
-
   end
 
   def pairReco
     if pair_programmer.present?
-      Profile.pref_search(Profile.find(user).pair_programmer.tohash)
+      Profile.pref_search(Profile.find(user).pair_programmer.tohash).reject {|x| x if x.id == self.id }
     end
   end
 
