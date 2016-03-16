@@ -2,7 +2,7 @@
 
 
 body{
-  background-color: $base-background-color;
+  background-color: #DCE4EF;
 }
 
 .page-title{
@@ -419,69 +419,76 @@ input#search_max_age{
 
 .profile-name{
   font-size: 1.5rem;
+  color: $secondary-background-color;
 }
+
 #profile-images{
   width: 60%;
   margin-left: 20%;
+  margin-top: 20%;
 
   & img{
-  border-radius: 10px;
+  border-radius: 0px;
+  height: 225px;
+  width: 100%;
   }
 }
+button.message-to-button{
+ background-color: #9FED9C;
+ color: #262831;
+ width: 35%;
+ margin-left: 10%;
 
-// button.message-to-button{
-//   font-size: 1rem;
-//   background-color:black;
-//   color: #00fe06 ;
-//   font-size: 0.7rem;
-//   text-align: center;
-//   width: 25%;
-//   margin-top: -2%;
-//   margin-left: 20%;
-// }
-//
-// input.block_button{
-//   background-color: #f16a6b;
-//   font-size: 0.7rem;
-//   text-align: center;
-//   width: 25%;
-//   margin-top: -14%;
-//   margin-left: 55%;
-// }
-//
-// #No_block_button{
-//   margin-left: 37%;
-//   width: 25%;
-//   margin-top: -2%;
-// }
+}
+
+input.block_button{
+  background-color: #e06c75;
+  color: white;
+  width: 35%;
+  margin-left: 55%;
+  margin-top: -18%;
+
+}
 
 #profile-aboutme{
-  margin-top: 10%;
+  margin-top: 5%;
   margin-bottom: 5%;
   text-align: center;
   font-size: 1.2rem;
   margin-right: 5%;
   margin-left: 5%;
+  color: #262831;
+  & p{
+    color: #3B3B3B;
+  }
 }
 
 #profile-details{
-  margin-left: 10%;
   padding-bottom: 5%;
+  color: #262831;
+  text-align: center;
+  & h2{
+    font-size: 1.2rem;
+  }
 }
 
 #profile-languages{
-  margin-left: 10%;
   padding-bottom: 5%;
+  color: #262831;
+  text-align: center;
+  & h2{
+    font-size: 1.2rem;
+  }
 }
 
 .profile-tags{
   text-align: center;
   padding-bottom: 10%;
   & a{
-    background-color: #00aca1;
+    background-color: $base-background-color;
+    color:#9fed9c;
     padding: 2%;
-    border-radius: 5px;
-    color:white;
+    border-radius: 2px;
   }
 }
 
@@ -534,19 +541,26 @@ nav#nav-mobile li{
 //-------------Mobile Screen Messages Page----------------//
 #show-inbox-button{
   margin-left: 5%;
-  margin-top: 10%;
+  margin-top: 5%;
   margin-bottom: 5%;
   width: 40%;
-  background-color: #6A6A6A;
-  border-radius: 5px;
+  background-color: #31343f;
+  border-radius: 2px;
+  color: #dee2f8
 }
+
+#show-inbox{
+  padding-top: 5%;
+}
+
 #sent_message_show{
   margin-left: 7%;
-  margin-top: 10%;
+  margin-top: 5%;
   margin-bottom: 5%;
   width: 43%;
-  background-color: #6A6A6A;
-  border-radius: 5px;
+  background-color: #31343f;
+  border-radius: 2px;
+  color: #dee2f8
 }
 
 .unread{
@@ -566,10 +580,10 @@ nav#nav-mobile li{
 }
 
 .reply{
-  background-color: #00aca1;
+  background-color: #9fed9c;
   border: 0;
-  border-radius: $button-border-radius;
-  color: white;
+  border-radius: 2px;
+  color: #31343f;
   cursor: pointer;
   display: inline-block;
   font-family: $base-font-family;
@@ -581,7 +595,7 @@ nav#nav-mobile li{
   transition: background-color $base-duration $base-timing;
   vertical-align: middle;
   white-space: nowrap;
-  margin-top: 2.5%;
+  margin-left: 5%;
 
   &:hover,
   &:focus {
@@ -669,7 +683,6 @@ textarea#message_message {
      color:white;
    }
  }
-
 
 
 
@@ -805,7 +818,7 @@ textarea#message_message {
   }
 
   #profile-images{
-
+    margin-top: 0%;
     & img{
       border-radius: 0;
       height: 200px;
@@ -822,6 +835,7 @@ textarea#message_message {
     margin-top: -3%;
     border-radius: 2px;
     padding-top: 1%;
+    text-align: left;
     & h2{
       background-color: #dce4ef;
       font-size: 1.5rem;
@@ -874,7 +888,8 @@ textarea#message_message {
     margin-right: 7.5%;
     border-radius: 2px;
     padding-top: 1%;
-    height: 195px;
+    height: 196px;
+    text-align: left;
     & h2{
       background-color: #dce4ef;
       font-size: 1.5rem;
@@ -1267,7 +1282,7 @@ textarea#message_message {
     width: 90%;
     margin-left: 2.5%;
     padding-top: 2%;
-    padding-bottom: 5%;
+    padding-bottom: 9%;
     margin-top: 1%;
 
   }
