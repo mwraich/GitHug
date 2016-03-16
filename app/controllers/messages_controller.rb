@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
 
   def reply
     @message = Message.find(params[:message_id])
-    @reply = Message.new(recipient:@message.sender, subject_line:"RE: #{@message.subject_line}")
+    @reply = Message.new(recipient:@message.sender)
     render partial: "reply"
   end
 
@@ -56,6 +56,6 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:recipient_id, :message, :subject_line, :read_status)
+    params.require(:message).permit(:recipient_id, :message, :read_status)
   end
 end
