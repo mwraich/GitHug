@@ -34,7 +34,7 @@
   <%= f.label :city, "City:", class: "select_label"%>
   <%= f.text_field :city%>
   <%= f.label :province, "Province:", class: "select_label"%>
-  <% if current_user.profile.nil?%>
+  <% if current_user.profile.present?%>
     <%= f.select(:province, options_for_select(provinces, selected: @profile.province), include_blank: true)%>
   <% else %>
       <%= f.select(:province, options_for_select(provinces), include_blank: true)%>
