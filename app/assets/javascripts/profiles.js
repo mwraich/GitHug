@@ -160,7 +160,7 @@ $(document).on('page:load ready', function() {
 //     });
 //
 //
-//     if (profileFirstNameValue === "" || profileFirstNameValue === null) {
+//     if (profileFirstNalsmeValue === "" || profileFirstNameValue === null) {
 //       var errorFirstName = document.getElementById('errorFirstName');
 //       errorFirstName.innerHTML = 'Please Enter First Name!';
 //       profileFirstName.focus();
