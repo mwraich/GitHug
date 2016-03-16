@@ -28,6 +28,8 @@ class Profile < ActiveRecord::Base
   after_validation :geocode, if: :location_changed?
   acts_as_taggable_on :tags
 
+
+
   def self.search(search_params)
     m = search_params['male'].to_i.positive?
     f = search_params['female'].to_i.positive?
@@ -36,9 +38,10 @@ class Profile < ActiveRecord::Base
     max_age = (search_params['max_age'].to_i + 1).years.ago
     part = search_params['date'].to_i.positive?
     pair = search_params['paired_programmer'].to_i.positive?
+    location = (search_params['city'] + ',' + search_params['province'])
 
 
-    near(search_params['location']).where('paired_programmer = ? OR date = ?', pair, part)
+    near(location).where('paired_programmer = ? OR date = ?', pair, part)
     .includes(:languages).where( male: m, female: f, other: o )
     .where('birthday BETWEEN ? AND ?', max_age, min_age)
     .where('languages.language = ? OR operating_system like ?',
