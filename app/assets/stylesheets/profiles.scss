@@ -682,10 +682,11 @@ nav#nav-mobile li{
 
 input#message_subject_line{
   height: 2rem;
+  background-color: #31343f;
 }
 textarea#message_message{
   height: 3rem;
-
+  background-color: #31343f;
 }
 
 .recipient_id{
@@ -738,7 +739,7 @@ textarea#message_message{
 textarea#message_message {
    border:none;
    color: #9fed9c;
-   width: 100%;
+   width: 80%;
    height: 50%;
    display: block;
    &:hover {
@@ -755,6 +756,7 @@ textarea#message_message {
    border-radius:none;
    padding-bottom: 1%;
    font-size: 1.5rem;
+   background-color: #262831;
    &:hover {
      color:white;
    }
