@@ -4,6 +4,12 @@ class PairProgrammer < ActiveRecord::Base
 
   accepts_nested_attributes_for :languages, allow_destroy: true
 
+  before_create :location, :latitude  => :latitude, :longitude => :lon
+  before_update :location, :latitude  => :lat, :longitude => :lon
+
+  geocoded_by :location
+  after_validation :geocode, if: :location_changed?
+
   def tohash
     {
     'date' => 0,
@@ -19,4 +25,10 @@ class PairProgrammer < ActiveRecord::Base
     'province' => self.province
     }
   end
+
+  def location_changed?
+    city_changed? || province_changed?
+  end
+
+
 end

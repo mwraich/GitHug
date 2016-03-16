@@ -53,7 +53,8 @@ operating_system = ["Linux", "OS X", "Windows", "Ubuntu"]
   })
 
   z1 = Partner.create!({
-    location:   "Toronto, Ontario",
+    city:       city.sample,
+    province:   province.sample,
     male:       false,
     female:     false,
     other:      true,
@@ -63,77 +64,85 @@ operating_system = ["Linux", "OS X", "Windows", "Ubuntu"]
     profile: x1
   })
 
-  z1 = Preference.create!({
-    city:       "Toronto",
-    province:   "Ontario",
-    male:       false,
-    female:     false,
-    other:      true,
-    min_age:    28,
-    max_age:   35,
-    operating_system: "OS X",
-    partner:    true,
-    paired_programmer: false,
-    profile: x1
-  })
 
-  PrefLanguage.create!({
-    pref_lang: "JavaScript",
+  Language.create!({
+    language: "JavaScript",
     skill_level: 2,
-    preference: z1
+    languageable_id: x1.id,
+    languageable_type: Profile
   })
 
-  PrefLanguage.create!({
-    pref_lang: "Ruby",
-    skill_level: 1,
-    preference: z1
+  Language.create!({
+    language: "JavaScript",
+    skill_level: 2,
+    languageable_id: x1.id,
+    languageable_type: Profile
   })
 
-  u2 = User.create!({
-    username: "joepotato",
-    email: "joe@gmail.com",
+  u1 = User.create!({
+    username: "joeypotato",
+    email: "joe@potato.com",
     github_image: Faker::Avatar.image
   })
 
-    Language.create!({
-      language: "JavaScript",
-      skill_level: 2,
-      languageable_id: z1.id,
-      languageable_type: Partner
-    })
+  x1 = Profile.create!({
+    first_name: "Joe",
+    last_name:  "Potato",
+    city:       "Toronto",
+    province:   "Ontario",
+    male:       true,
+    female:     false,
+    other:      false,
+    birthday:   "1980-01-24",
+    operating_system: "Ubuntu",
+    about_me:   Faker::Hacker.say_something_smart,
+    image:      Faker::Avatar.image,
+    date:        true,
+    paired_programmer: false,
+    user: u1
+  })
 
-    Language.create!({
-      language: "Ruby",
-      skill_level: 1,
-      languageable_id: z1.id,
-      languageable_type: Partner
-    })
 
-    z2 = PairProgrammer.create!({
-      location:   "Toronto, Ontario",
-      male:       true,
-      female:     false,
-      other:      false,
-      min_age:    28,
-      max_age:   35,
-      operating_system: "OS X",
-      profile: x1
-    })
+  Language.create!({
+    language: "Ruby",
+    skill_level: 1,
+    languageable_id: x1.id,
+    languageable_type: Profile
+  })
 
-    Language.create!({
-      language: "JavaScript",
-      skill_level: 2,
-      languageable_id: z2.id,
-      languageable_type: PairProgrammer
-    })
+  Language.create!({
+    language: "JavaScript",
+    skill_level: 2,
+    languageable_id: x1.id,
+    languageable_type: Profile
+  })
 
-    Language.create!({
-      language: "Ruby",
-      skill_level: 1,
-      languageable_id: z2.id,
-      languageable_type: PairProgrammer
-    })
+  z1 = Partner.create!({
+    city:       city.sample,
+    province:   province.sample,
+    male:       false,
+    female:     false,
+    other:      true,
+    min_age:    28,
+    max_age:   35,
+    operating_system: "OS X",
+    profile: x1
+  })
 
+
+  Language.create!({
+    language: "JavaScript",
+    skill_level: 2,
+    languageable_id: x1.id,
+    languageable_type: Profile
+  })
+
+  Language.create!({
+    language: "JavaScript",
+    skill_level: 2,
+    languageable_id: x1.id,
+    languageable_type: Profile
+  })
 
 5.times do |n|
   u = User.create!({
@@ -141,6 +150,9 @@ operating_system = ["Linux", "OS X", "Windows", "Ubuntu"]
     email: Faker::Internet.email,
     github_image: Faker::Avatar.image
   })
+
+   sleep(1)
+
   x = Profile.create!({
     first_name: Faker::Name.first_name,
     last_name:  Faker::Name.last_name,
@@ -166,7 +178,8 @@ operating_system = ["Linux", "OS X", "Windows", "Ubuntu"]
   })
 
   z = PairProgrammer.create!({
-    location:   locations.sample + ", " + "Canada",
+    city:       city.sample,
+    province:   province.sample,
     male:       Faker::Boolean.boolean,
     female:     Faker::Boolean.boolean,
     other:      Faker::Boolean.boolean,
@@ -184,29 +197,6 @@ operating_system = ["Linux", "OS X", "Windows", "Ubuntu"]
       languageable_type: PairProgrammer
     })
   end
-
-
-  z = Preference.create!({
-    city:   city.sample,
-    province:   province.sample,
-    male:       Faker::Boolean.boolean,
-    female:     Faker::Boolean.boolean,
-    other:      Faker::Boolean.boolean,
-    min_age:    Faker::Number.between(18),
-    max_age:   Faker::Number.between(75),
-    operating_system: operating_system.sample,
-    partner:    Faker::Boolean.boolean(0.5),
-    paired_programmer: Faker::Boolean.boolean(0.5),
-    profile: x
-  })
-
-  2.times do |n|
-    PrefLanguage.create!({
-    pref_lang: languages.sample,
-    skill_level: Faker::Number.between(1, 5),
-    preference: z
-    })
-  end
 end
 
 
@@ -216,12 +206,15 @@ end
     email: Faker::Internet.email,
     github_image: Faker::Avatar.image
   })
+
+  sleep(1)
+
   x = Profile.create!({
     first_name: Faker::Name.first_name,
     last_name:  Faker::Name.last_name,
-    city:   city.sample,
+    city:       city.sample,
     province:   province.sample,
-    date:    true,
+    date:        true,
     paired_programmer: false,
     male:       false,
     female:     true,
@@ -231,7 +224,6 @@ end
     about_me:   Faker::Hacker.say_something_smart,
     image:      Faker::Avatar.image,
     user: u
-
   })
 
   2.times do |n|
@@ -244,27 +236,7 @@ end
   end
 
   z = Partner.create!({
-    location:   locations.sample + ", " + "Canada",
-    male:       Faker::Boolean.boolean,
-    female:     Faker::Boolean.boolean,
-    other:      Faker::Boolean.boolean,
-    min_age:    Faker::Number.between(18),
-    max_age:   Faker::Number.between(75),
-    operating_system: operating_system.sample,
-    profile: x
-  })
-
-  2.times do |n|
-    Language.create!({
-      language: languages.sample,
-      skill_level: Faker::Number.between(1, 5),
-      languageable_id: x.id,
-      languageable_type: Partner
-  })
-  end
-
-  z = Preference.create!({
-    city:   city.sample,
+    city:       city.sample,
     province:   province.sample,
     male:       Faker::Boolean.boolean,
     female:     Faker::Boolean.boolean,
@@ -272,16 +244,16 @@ end
     min_age:    Faker::Number.between(18),
     max_age:   Faker::Number.between(75),
     operating_system: operating_system.sample,
-    partner:    Faker::Boolean.boolean(0.5),
-    paired_programmer: Faker::Boolean.boolean(0.5),
     profile: x
   })
 
+
   2.times do |n|
-    PrefLanguage.create!({
-    pref_lang: languages.sample,
-    skill_level: Faker::Number.between(1, 5),
-    preference: z
-    })
+    Language.create!({
+      language: languages.sample,
+      skill_level: Faker::Number.between(1, 5),
+      languageable_id: x.id,
+      languageable_type: Profile
+  })
   end
 end

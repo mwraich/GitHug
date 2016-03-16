@@ -4,14 +4,11 @@ class Partner < ActiveRecord::Base
 
   accepts_nested_attributes_for :languages, allow_destroy: true
 
-  # validates_presence_of :languages
+  before_create :location, :latitude  => :latitude, :longitude => :lon
+  before_update :location, :latitude  => :lat, :longitude => :lon
 
-  # def self.recommended_profiles
-    #in the controller create a new instance variable that will be a collection
-    #of profiles returned by this method (in show method profiles controller)
-    #convert itself into a hash to pass to search
-    #needs to call Profile.search
-  # end
+  geocoded_by :location
+  after_validation :geocode, if: :location_changed?
 
 
 
@@ -30,6 +27,11 @@ class Partner < ActiveRecord::Base
     'province' => self.province
     }
   end
+
+  def location_changed?
+    city_changed? || province_changed?
+  end
+
 
 
 end
