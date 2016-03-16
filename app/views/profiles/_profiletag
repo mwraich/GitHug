@@ -1,0 +1,1 @@
+<h2><%= link_to profile.first_name, post_path(post) %></h2>

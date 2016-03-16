@@ -22,10 +22,12 @@ class Profile < ActiveRecord::Base
 
   validates_presence_of :first_name, :last_name, :location, :birthday, :about_me
   validates_with ValidatesGender
+  # validate :legal_age
   validates :user_id, uniqueness: {message: "Error. Looks like you already have a profile. You can update your profile by clicking on update."}
   geocoded_by :location
   after_validation :geocode, if: :location_changed?
   acts_as_taggable_on :tags
+
 
 
   def self.search(search_params)
@@ -47,6 +49,26 @@ class Profile < ActiveRecord::Base
       profile.errors[:gender] << "can't be blank"
     end
   end
+
+  # def self.calculate_age
+  #   difference = Date.
+  #   //   // Birthday validation method
+  #   //   function mustBeLegal(birthday) {
+  #   //     var difference = Date.now() - birthday;
+  #   //     var ageYear = new Date(difference);
+  #   //     var age = Math.abs(ageYear.getUTCFullYear() - 1970);
+  #   //     return age;
+  #   //   }
+  #   //   var birthdaydate = Date.parse(profileBirthdayValue);
+  #   //
+  # end
+
+
+  # def legal_age
+  #   if birthday + 18.years >= Date.today
+  #     errors.add(:birthday, "Must be over 18 to use this site")
+  #   end
+  # end
 
   def blocked_by?(current_user)
     current_user.enemies.include?(self.user) #Have you blocked this person?
