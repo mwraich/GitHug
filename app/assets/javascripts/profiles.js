@@ -1,10 +1,8 @@
 
 $(document).on('page:load ready', function() {
-
-// Responsive Nav Bar
+// Message pop-up
   $(".new_message").toggle();
-  $(".message-to-button").on('click', function(e){
-
+  $(".message-to-button").on('click', function(){
     $(".new_message").toggle();
   });
 
@@ -41,11 +39,6 @@ $(document).on('page:load ready', function() {
     $('#showLanguage').show(1000);
   });
 
-
-  $('#languageNext').click(function(){
-    $('#showLanguage').hide();
-    $('#showPreferences').show(1000);
-  });
 
 
 
@@ -106,7 +99,7 @@ $(document).on('page:load ready', function() {
         }
     });
 
-    
+
     // $( '#nameNext').click(function() {
     //   alert( "Valid: " + form.valid() );
     // });
@@ -156,19 +149,6 @@ $(document).on('page:load ready', function() {
 // Slideshow
   $('.bxslider').bxSlider();
 
-
-//Search Function
-  $('#pair-search').hide();
-  $('#date-search').hide();
-  $('.index-users').hide();
-  $('input[type="radio"]').click(function() {
-    if ($(this).attr("value") == "pair") {
-        $("#pair-search").fadeIn(1000);
-        $("#date-search").hide();
-    }else{
-      $("#date-search").fadeIn(1000);
-      $("#pair-search").hide();
-    }
   $('#search-form').on('submit', function(e) {
     e.preventDefault();
     $.ajax({
@@ -180,11 +160,10 @@ $(document).on('page:load ready', function() {
         if (data) {
           $('.index-users').show();
         }else{
-
-          $("#search-result").html("Sorry, nobody matches your search");
+          console.log("fail")
+          $(".index-users").html("Sorry, nobody matches your search");
         }
       }
     });
-  });
   });
 });

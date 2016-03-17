@@ -1,13 +1,12 @@
 class ProfilesController < ApplicationController
 
   skip_before_action :has_profile, only: [:new, :create]
-
   before_action :verify_user, only: :show
-  skip_before_action :has_profile, only: [:new]
+
 
   def index
-    @profiles = if params[:search]
-      Profile.search(params[:search])
+      @profiles = if params[:search]
+      Profile.search(params[:search]).reject {|x| x if x.id == current_user.id }
     else
       Profile.order("profiles.created_at DESC")
     end
@@ -16,10 +15,12 @@ class ProfilesController < ApplicationController
   def show
     @user = current_user
     # @github_image = @user.github_image
-    @profiles = Profile.all
+
     @profile = Profile.find(params[:id])
     @message = Message.new
-    @profiles = Profile.all
+
+    @profile_partnerReco = @profile.partnerReco
+    @profile_partnerReco = @profile.partnerReco
   end
 
   def new
@@ -35,7 +36,6 @@ class ProfilesController < ApplicationController
     if @profile.save
       redirect_to profile_path(@profile), notice: "Profile Saved!"
     else
-      flash[:notice] = "Profile did not save. Please double check that all mandatory fields have been filled out."
       render :new
     end
   end
@@ -81,14 +81,18 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile)
-          .permit(:first_name, :last_name, :location, :male, :female, :other,
-          :birthday, :operating_system, :about_me, :tag_list, languages_attributes:
-          [:id, :language, :skill_level, :_destroy], images_attributes: [:id, :image,
-          :image_cache, :_destroy, :remove_image], preferences_attributes:
-          [:id, :location, :male, :female, :other, :operating_system, :partner,
-          :paired_programmer, :profile_id, :min_age, :max_age,:destroy,
-          pref_languages_attributes: [:id, :pref_lang, :skill_level, :_destroy]])
+    params.require(:profile).permit(:first_name, :last_name, :city, :province, :male, :female, :other,
+          :birthday, :operating_system, :about_me, :tag_list, :date,
+          :paired_programmer, :phone_number, :notification_email,
+          :notification_sms, languages_attributes: [:id, :language,
+          :skill_level, :_destroy],images_attributes: [:id, :image,
+          :image_cache, :_destroy, :remove_image], partner_attributes:
+          [:id, :city, :province, :male, :female, :other, :operating_system, :profile_id,
+          :min_age, :max_age,:_destroy, languages_attributes: [:id, :language,
+          :skill_level, :_destroy]], pair_programmer_attributes:
+          [:id, :city, :province, :male, :female, :other, :operating_system,
+          :profile_id, :min_age, :max_age, :_destroy, languages_attributes: [:id, :language,
+          :skill_level, :_destroy]])
   end
 
 end

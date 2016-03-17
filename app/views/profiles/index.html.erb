@@ -1,23 +1,7 @@
 <div class="content">
-  <div id = "first_option">
-    <h2>Find A Match</h2>
-      <%= form_tag users_path, method: :get, id: 'search-choice' do %>
-        <label id="first_option_label">Who are you looking for?</label><br>
-        <input type="radio" id="pairchoice" name="choice" value="pair"> <label for="pairchoice" class="button-label">Pair</label><br>
-        <input type="radio" id="datechoice" name="choice" value="date"> <label for="datechoice" class="button-label">Date</label><br>
-      <% end %>
-  </div>
+  <%= render "search_form" %>
+</div>
 
-
-  <div class = "choices">
-    <div id = "pair-search">
-      <%= render 'pair_search' %>
-    </div>
-
-    <div id = "date-search">
-      <%= render 'date_search' %>
-    </div>
-  </div>
 
   <div class ="index-users">
 
