@@ -22,7 +22,7 @@
     </div>
 
     <div class="logo" >
-      <%= image_tag "GitHugLogo3.svg", class: "logo" %>
+      <%= image_tag "GitHugLogo.svg", class: "logo" %>
     </div>
 
     <nav id="nav-main">
@@ -46,7 +46,7 @@
     <% if flash[:notice] %>
     <p id="login-notice"><%= flash[:notice] %></p>
     <% end %>
-    
+
     <div class="logout-icon">
       <%= link_to image_tag('power2.svg'), session_path(current_user), method: 'delete' %>
     </div>
