@@ -54,19 +54,6 @@ class Profile < ActiveRecord::Base
     end
   end
 
-  # def self.calculate_age
-  #   difference = Date.
-  #   //   // Birthday validation method
-  #   //   function mustBeLegal(birthday) {
-  #   //     var difference = Date.now() - birthday;
-  #   //     var ageYear = new Date(difference);
-  #   //     var age = Math.abs(ageYear.getUTCFullYear() - 1970);
-  #   //     return age;
-  #   //   }
-  #   //   var birthdaydate = Date.parse(profileBirthdayValue);
-  #   //
-  # end
-
 
   def legal_age
     if birthday + 18.years >= Date.today
