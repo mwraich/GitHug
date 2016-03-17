@@ -6,10 +6,6 @@
       <li><%= image_tag(@profile.user.github_image) %></li>
     </ul>
     <% else %>
-<<<<<<< HEAD
-      <%= image_tag(@profile.images[0].image_url) %>
-
-=======
       <ul class="bxslider">
         <li><%= image_tag(@profile.images[0].image_url) %></li>
         <% range = (0..(@profile.images.length)) %>
@@ -17,7 +13,7 @@
         <li><%=  image_tag(@profile.images[r-1].image_url) %></li>
          <% end %>
       </ul>
->>>>>>> b812d378ea90f3eb6e7393c87991ce67fd27f3d4
+
     <% end %>
 </div>
 
@@ -25,22 +21,13 @@
 <div id="profile-name">
 <h1 class="profile-name"><%= @profile.first_name %> <%= @profile.last_name %></h1>
 </div>
-<!-- Add aligator tags and this will stop block button from appear, waiting to get CSS Styling done before implementing this -->
-<!-- if current_user.profile == @profile   -->
-<!-- <div id ='No_block_button'></div> -->
 
-<button class= "message-to-button">Message</button>
+
+<button id="message-to-button" class= "message-and-request-button">Message</button>
 
 <% if @profile.blocked_by?(current_user) %>
   <%= "This user has already been blocked" %>
   <%else %>
-<<<<<<< HEAD
-<%= form_for BlockedUser.new do |f| %>
-  <%= f.hidden_field :blocked_id, value: @profile.user_id %>
-  <%= f.submit 'Block User', :class => "block_button" %>
-  <% end %>
-<% end%>
-=======
     <%= form_for BlockedUser.new do |f| %>
       <%= f.hidden_field :blocked_id, value: @profile.user_id %>
       <%= f.submit 'Block User', :class => "block_button" %>
@@ -49,7 +36,7 @@
 
 </div>
 </div>
->>>>>>> b812d378ea90f3eb6e7393c87991ce67fd27f3d4
+
 
 <div id="profile-aboutme">
   <h2>About Me</h2>
@@ -101,7 +88,7 @@
 </div>
 
 
-<button id = "pull-request"> Pull Request </button>
+<button id = "pull-request" class ="message-and-request-button"> Pull Request </button>
 <% if authorize_pull_request(@profile) %>
 <%= render "messages/new_message" %>
 

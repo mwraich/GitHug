@@ -1,10 +1,10 @@
 
 $(document).on('page:load ready', function() {
 
-
-$(".message-to-button").hide();
+$("#message-to-button").hide();
 $("#pull-request").on('click', function(){
-  alert("Your request to message was successful")
+  alert("Your request was successful")
+    });
 
 // Message pop-up
   $(".new_message").toggle();
@@ -22,7 +22,7 @@ $("#pull-request").on('click', function(){
           $(this).addClass("open");
       }
   });
-  });
+
 
 // Form Functionality
   $('#showLocation').hide();
@@ -68,7 +68,5 @@ $("#pull-request").on('click', function(){
     });
   });
 
-
-  });
 
   });

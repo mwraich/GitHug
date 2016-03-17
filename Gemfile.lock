@@ -61,6 +61,7 @@ GEM
     builder (3.2.2)
     bxslider-rails (4.2.5.1)
     byebug (8.2.2)
+    cancancan (1.13.1)
     capybara (2.6.2)
       addressable
       mime-types (>= 1.16)
@@ -349,6 +350,7 @@ DEPENDENCIES
   best_debugger
   bourbon
   bxslider-rails
+  cancancan (~> 1.10)
   capybara
   carrierwave
   cloudinary
