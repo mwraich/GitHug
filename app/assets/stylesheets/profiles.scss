@@ -220,36 +220,7 @@ a.add_fields{
 
 }
 
-// #add_photo{
-//   color: #00aca1;
-//   cursor: pointer;
-//   display: inline-block;
-//   margin-left: 5%;
-//   margin-top: -10%;
-//   &:hover,
-//   &:focus {
-//     color: #3b3b3b;
-//   }
-//
-// }
-
-// #remove_photo{
-//   color: #00aca1;
-//   cursor: pointer;
-//   display: inline-block;
-//   margin-left: 5%;
-
-
-//   &:hover,
-//   &:focus {
-//     color: #3b3b3b;
-//   }
-//
-//
-// }
-
-
-#remove_preference{
+#remove_partner{
   color: #e06c75;
   font-size: 1.2rem;
   cursor: pointer;
@@ -263,11 +234,20 @@ a.add_fields{
 
 }
 
-// .image-fields input{
-//   padding-left: 5%;
-// }
+#remove_pair_programmer{
+  color: #e06c75;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 5%;
 
-#add_pref_language{
+  &:hover,
+  &:focus {
+    color: #3b3b3b;
+  }
+}
+
+#add_partner{
   color: #52ce4c;
   font-size: 1.2rem;
   cursor: pointer;
@@ -280,7 +260,7 @@ a.add_fields{
   }
 }
 
-#add_pref{
+#add_pair_programmer{
   color: #52ce4c;
   font-size: 1.2rem;
   cursor: pointer;
@@ -743,7 +723,7 @@ textarea#message_message{
 }
 
 .reply-name{
-  color: #3b3b3b;
+  color: #9fed9c;
 }
 
 .reply{
@@ -1012,11 +992,11 @@ textarea#message_message {
     float: right;
     background-color: #f5f7fa;
     width: 44%;
-    margin-top: -23.6%;
+    margin-top: -26.5%;
     margin-right: 7.5%;
     border-radius: 2px;
     padding-top: 1%;
-    height: 196px;
+    height: 220px;
     text-align: left;
     & h2{
       background-color: #dce4ef;
@@ -1203,6 +1183,14 @@ textarea#message_message {
     margin-top: -1%;
   }
 
+  select#profile_partner_attributes_province{
+    display: inline;
+  }
+
+  select#profile_pair_programmer_attributes_province{
+    display: inline;
+  }
+
   #remove_language{
     color: #e06c75;
     font-size: 1.2rem;
@@ -1260,20 +1248,6 @@ textarea#message_message {
     }
   }
 
-  #remove_preference{
-    color: #e06c75;
-    cursor: pointer;
-    display: inline-block;
-    margin-left: 5%;
-    font-size: 1.2rem;
-
-    &:hover,
-    &:focus {
-      color: #3b3b3b;
-    }
-
-  }
-
   #add_pref_language{
     color: #52ce4c;
     cursor: pointer;
@@ -1323,7 +1297,15 @@ textarea#message_message {
     margin-top: 0%;
   }
 
+  label#looking_for{
+    width: 40%;
+  }
 
+
+  select#profile_province{
+    display: inline;
+    margin-left: 2%;
+  }
   .button-label{
     font-size: 1rem;
   }
@@ -1686,7 +1668,7 @@ textarea#message_message {
 
 
   .reply-name{
-    color: #3b3b3b;
+    color: #9fed9c;
   }
   #sent_message_show{
     float: left;

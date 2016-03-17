@@ -40,11 +40,6 @@ $(document).on('page:load ready', function() {
   });
 
 
-  $('#languageNext').click(function(){
-    $('#showLanguage').hide();
-    $('#showPreferences').show(1000);
-  });
-
 
 
   // // For previous button
