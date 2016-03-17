@@ -13,7 +13,7 @@ class Message < ActiveRecord::Base
 
   @twilio_client.account.sms.messages.create(
     :from => "#{twilio_phone_number}",
-    :to => profile.phone_number,
+    :to => self.phone_number,
     :body => message
   )
   end

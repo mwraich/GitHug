@@ -22,7 +22,7 @@
     </div>
     <div class="form_input">
       <%= f.label :location, "Location:"%>
-      <%= f.text_field :location%>
+      <%= f.text_field :location, placeholder: "Toronto, Ontario"%>
       <label id="errorLocation"></label>
     </div>
     <div class="form_checkbox_input">
@@ -60,6 +60,11 @@
       <%= f.text_area :about_me %>
     </div><br>
 
+    <div class="form_input">
+      <%= f.label :phone_number %>
+      <%= f.telephone_field :phone_number, placeholder: "(555)-555-5555" %>
+    </div>
+
     <div>
     <%= f.fields_for :languages do |language| %>
       <%= render "language_fields", f: language %>
@@ -93,7 +98,7 @@
       'data-association-insertion-traversal' => 'closest' %>
     </div>
 
-    <p class="preferences" id="tag">Tell Us What Your Looking For?</p>
+    <p class="preferences" id="tag">Tell Us What You're Looking For?</p>
     <div>
       <%= f.fields_for :preferences do |pref| %>
         <%= render "preference_fields", f: pref %>

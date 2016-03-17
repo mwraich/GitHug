@@ -24,6 +24,9 @@ class Profile < ActiveRecord::Base
   # validates :phone_number, format: { with: /\d{3}-\d{3}-\d{4}/, message: "bad format" }
   validates_with ValidatesGender
   validates :user_id, uniqueness: {message: "Error. Looks like you already have a profile. You can update your profile by clicking on update."}
+  phony_normalize :phone_number, default_country_code: 'CA'
+  validates :phone_number, phony_plausible: true
+  validates :phone_number, uniqueness: {message: "Error, looks like that phone number is already in use"}
   geocoded_by :location
   after_validation :geocode, if: :location_changed?
   acts_as_taggable_on :tags
@@ -51,6 +54,25 @@ class Profile < ActiveRecord::Base
 
   def blocked_by?(current_user)
     current_user.enemies.include?(self.user) #Have you blocked this person?
+  end
+
+  def send_text_message
+  # number_to_send_to = profile.phone
+
+  @twilio_sid = ENV["twilio_sid"]
+  @twilio_token = ENV["twilio_token"]
+  @twilio_phone_number = ENV["twilio_phone_number"]
+
+  @twilio_client = Twilio::REST::Client.new @twilio_sid, @twilio_token
+
+  @twilio_client.account.sms.messages.create(
+    :from => "#{@twilio_phone_number}",
+    :to => self.phone_number,
+    :body => 'message'
+  )
+    puts "SMS from :#{@twilio_phone_number}"
+    puts "SMS to : #{self.phone_number}"
+    puts "message"
   end
 
 end

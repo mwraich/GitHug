@@ -18,7 +18,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @profile = Profile.find(params[:id])
+    @profile = current_user.profile
     @message = Message.new(message_params)
     @message.sender = current_user.profile
 
@@ -29,8 +29,8 @@ class MessagesController < ApplicationController
       redirect_to messages_url, alert: "SORRY THERE WAS AN ERROR!"
     end
 
-    if @message.save && @profile.notification_email? && @profile.phone_number.any?
-        send_text_message
+    if @message.save && @profile.notification_email? && @profile.phone_number?
+        @profile.send_text_message
     end
   end
 
