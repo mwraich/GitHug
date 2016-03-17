@@ -8,18 +8,13 @@ class OauthsController < ApplicationController
   def callback
     provider = auth_params[:provider]
     if @user = login_from(provider)
-      redirect_to profiles_path, :notice => "Logged in from #{provider.titleize}!"
+       redirect_to profiles_path, :notice => "Logged in from #{provider.titleize}!"
     else
-      # begin
-        @user = create_from(provider)
-        # this is the place to add '@user.activate!' if you are using user_activation submodule
-        UserMailer.welcome_email(@user).deliver_later
-        reset_session # protect from session fixation attack
-        auto_login(@user)
-        redirect_to new_profile_path, :notice => "Account created from #{provider.titleize}!"
-      # rescue
-      #   redirect_to root_path, :alert => "Failed to login from #{provider.titleize}!"
-      # end
+       @user = create_from(provider)
+       UserMailer.delay.welcome_email(@user)
+       reset_session # protect from session fixation attack
+       auto_login(@user)
+       redirect_to new_profile_path, :notice => "Account created from #{provider.titleize}!"
     end
   end
 

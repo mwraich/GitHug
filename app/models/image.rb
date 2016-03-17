@@ -7,4 +7,5 @@ class Image < ActiveRecord::Base
   :file_size => {
      :maximum => 0.5.megabytes.to_i
   }
+  # process_in_background :image, DelayedJob
 end

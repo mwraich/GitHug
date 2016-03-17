@@ -8,15 +8,7 @@ class User < ActiveRecord::Base
   has_many :authentications, dependent: :destroy
   has_one :profile, dependent: :destroy
   authenticates_with_sorcery!
-  after_create :email_user
-
-  def email_user
-    UserMailer.delay.welcome_email
-  end
-
-  # def delay_email
-  #   puts "aaaaa"
-  # end
+  
 
   def has_linked_with?(provider)
     authentication.where(provider: provider).present?

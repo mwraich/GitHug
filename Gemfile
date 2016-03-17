@@ -45,6 +45,8 @@ gem 'cloudinary'
 #To enable text message notifications
 gem 'twilio-ruby', '~> 4.11.1'
 
+gem 'daemons'
+
 
 gem 'bourbon'
 gem 'neat'

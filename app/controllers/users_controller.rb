@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def index
     @users = if params[:search]
       User.where('LOWER(name) LIKE LOWER(?)', "%#{params[:search]}%")
@@ -36,17 +37,17 @@ class UsersController < ApplicationController
     end
   end
 
-  def create
-    @user = User.new(user_params)
+  # def create
+  #   @user = User.new(user_params)
+  #
+  #   if @user.save
+  #     auto_login(current_user)
+  #     redirect_to user_path(current_user)
+  #   else
+  #     render :new
+  #   end
+  # end
 
-    if @user.save
-      auto_login(current_user)
-
-      redirect_to user_path(current_user)
-    else
-      render :new
-    end
-  end
 
   def edit
     @user = User.find(params[:id])
