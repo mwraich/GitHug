@@ -20,7 +20,7 @@ class MessagesController < ApplicationController
 
   def create
     @pull_request = PullRequest.find(params[:profile_id])
-    if @pull_request = true
+    if @pull_request == true
     @message = Message.new(message_params)
     @message.sender = current_user.profile
 
@@ -29,6 +29,7 @@ class MessagesController < ApplicationController
       redirect_to messages_path, notice: "Message sent!"
     else
       redirect_to messages_url, alert: "SORRY THERE WAS AN ERROR!"
+    end
     end
   end
 

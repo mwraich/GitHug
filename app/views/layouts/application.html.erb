@@ -53,7 +53,7 @@
     <% if flash[:notice] %>
       <p id="login-notice"><%= flash[:notice] %></p>
     <% end %>
-      <p id= "unread-pull-request"> You have <%= current_user.pull_request_notice %> unread requests!</p>
+      <p id= "unread-pull-request"> You have <%= current_user.pull_request_notice %> pending requests!</p>
       <p id="unread-messages-notice">You have <%= current_user.notice %> unread messages!</p>
 
     <% end %>

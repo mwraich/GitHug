@@ -7,7 +7,7 @@ def index
 end
 
 def reply
-  @pull_request_reply = PullRequest.new
+  @pull_request_reply = PullRequest.find(params[:id])
   render partial: "pull_request_reply"
 end
 
@@ -33,7 +33,6 @@ def show
 end
 
 private
-
 def pull_request_params
   params.require(:pull_request).permit(:requestor_id, :requestee_id, :read, :permission)
 end
