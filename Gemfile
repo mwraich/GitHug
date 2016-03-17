@@ -101,7 +101,7 @@ group :development do
     gem 'rails_12factor'
 
     #server
-    # gem 'puma'
+    gem 'puma'
 
 
 end
