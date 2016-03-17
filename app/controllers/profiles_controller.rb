@@ -36,7 +36,6 @@ class ProfilesController < ApplicationController
     if @profile.save
       redirect_to profile_path(@profile), notice: "Profile Saved!"
     else
-      flash[:notice] = "Profile did not save. Please double check that all mandatory fields have been filled out."
       render :new
     end
   end

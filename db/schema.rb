@@ -113,12 +113,12 @@ ActiveRecord::Schema.define(version: 20160316230009) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "image"
-    t.string   "phone_number"
-    t.boolean  "notification_email", default: true
-    t.boolean  "notification_sms",   default: true
     t.string   "province"
     t.boolean  "date",               default: false
     t.boolean  "paired_programmer",  default: false
+    t.string   "phone_number"
+    t.boolean  "notification_email", default: true
+    t.boolean  "notification_sms",   default: true
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree

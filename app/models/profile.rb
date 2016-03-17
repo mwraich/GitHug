@@ -21,10 +21,15 @@ class Profile < ActiveRecord::Base
   before_create :location, :latitude  => :latitude, :longitude => :lon
   before_update :location, :latitude  => :lat, :longitude => :lon
 
+  validates_presence_of :location, :birthday
+  validates :first_name, presence: true, length: { minimum: 2 }
+  validates :last_name, presence: true, length: { minimum: 2 }
+  validates :about_me, presence: true, length: { minimum: 5, maximum: 500 }
+
   validates_presence_of :first_name, :last_name, :location, :birthday, :about_me
   # validates :phone_number, format: { with: /\d{3}-\d{3}-\d{4}/, message: "bad format" }
   validates_with ValidatesGender
-  # validate :legal_age
+  validate :legal_age
   validates :user_id, uniqueness: {message: "Error. Looks like you already have a profile. You can update your profile by clicking on update."}
   phony_normalize :phone_number, default_country_code: 'CA'
   validates :phone_number, phony_plausible: true
@@ -94,25 +99,12 @@ class Profile < ActiveRecord::Base
     end
   end
 
-  # def self.calculate_age
-  #   difference = Date.
-  #   //   // Birthday validation method
-  #   //   function mustBeLegal(birthday) {
-  #   //     var difference = Date.now() - birthday;
-  #   //     var ageYear = new Date(difference);
-  #   //     var age = Math.abs(ageYear.getUTCFullYear() - 1970);
-  #   //     return age;
-  #   //   }
-  #   //   var birthdaydate = Date.parse(profileBirthdayValue);
-  #   //
-  # end
 
-
-  # def legal_age
-  #   if birthday + 18.years >= Date.today
-  #     errors.add(:birthday, "Must be over 18 to use this site")
-  #   end
-  # end
+  def legal_age
+    if birthday + 18.years >= Date.today
+      errors.add(:birthday, "Must be over 18 to use this site")
+    end
+  end
 
   def blocked_by?(current_user)
     current_user.enemies.include?(self.user) #Have you blocked this person?
