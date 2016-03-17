@@ -2,12 +2,13 @@
 <html>
 <head>
   <title>GitHug</title>
-  <link rel="icon" href="http://www.clker.com/cliparts/G/x/G/O/Z/h/think-line-turquoise-and-brown-heart-hi.png">
+  <link rel="icon" href="http://www.clker.com/cliparts/5/H/k/W/F/F/green-heart-md.png">
   <meta name="viewport" content="initial-scale=1.0" width="device-width">
   <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true %>
   <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -21,7 +22,7 @@
     </div>
 
     <div class="logo" >
-      <%= image_tag "GitHugLogo3.svg", class: "logo" %>
+      <%= image_tag "GitHugLogo.svg", class: "logo" %>
     </div>
 
     <nav id="nav-main">
@@ -46,14 +47,34 @@
 
     <nav id="nav-mobile"></nav>
 
-  </div>
-
-  <div class="yield">
     <% if flash[:notice] %>
-      <p id="login-notice"><%= flash[:notice] %></p>
+    <p id="login-notice"><%= flash[:notice] %></p>
     <% end %>
 
-      <p id="unread-messages-notice">You have <%= current_user.notice %> unread messages!</p>
+    <div class="logout-icon">
+      <%= link_to image_tag('power2.svg'), session_path(current_user), method: 'delete' %>
+    </div>
+
+
+  </div>
+
+  <aside id="main-menu">
+      <ul>
+        <% if current_user.profile.id == nil %>
+        <li><%= link_to 'Logout', session_path(current_user), method: 'delete' %></li>
+        <% else %>
+        <li><%= link_to 'Find A Match', profiles_path %></li>
+        <li><%= link_to 'Mailbox', messages_path %></li>
+        <li><%= link_to 'Profile', profile_path(current_user.profile) %></li>
+        <li><%= link_to 'Update Profile', edit_profile_path(current_user.profile) %></li>
+        <li><%= link_to 'Logout', session_path(current_user), method: 'delete' %></li>
+        <% end %>
+      </ul>
+  </aside>
+
+  <div class="yield">
+
+      <p id="unread-messages-notice"><%= current_user.notice %> New Messages!</p>
 
     <% end %>
 
