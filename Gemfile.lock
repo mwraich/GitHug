@@ -187,6 +187,10 @@ GEM
       multi_xml (~> 0.5)
       rack (>= 1.2, < 3)
     pg (0.18.4)
+    phony (2.15.18)
+    phony_rails (0.13.0)
+      activesupport (>= 3.0)
+      phony (~> 2.12)
     poltergeist (1.9.0)
       capybara (~> 2.1)
       cliver (~> 0.3.1)
@@ -347,6 +351,7 @@ DEPENDENCIES
   mini_magick
   neat
   pg
+  phony_rails
   poltergeist
   pry-rails
   quiet_assets

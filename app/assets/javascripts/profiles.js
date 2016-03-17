@@ -162,6 +162,24 @@ $(document).on('page:load ready', function() {
 //
 //     $.validator.addMethod("check_date_of_birth", function(value, element) {
 //
+//     if (profileFirstNalsmeValue === "" || profileFirstNameValue === null) {
+//       var errorFirstName = document.getElementById('errorFirstName');
+//       errorFirstName.innerHTML = 'Please Enter First Name!';
+//       profileFirstName.focus();
+//       errorFirstName.style.color = 'red';
+//
+//     }else if(profileLastNameValue === "" || profileLastNameValue === null){
+//       var errorLastName = document.getElementById('errorLastName');
+//       errorLastName.innerHTML = 'Please Enter Last Name!';
+//       profileLastName.focus();
+//       errorLastName.style.color = 'red';
+//
+//     }else if(profileLocationValue === "" || profileLocationValue === null){
+//       var errorLocation = document.getElementById('errorLocation');
+//       errorLocation.innerHTML = 'Please Enter Location!';
+//       profileLocation.focus();
+//       errorLocation.style.color = 'red';
+
 //     var birthday = $("#profile_birthday").val();
 //     var birthdaydate = Date.parse(birthday);
 //     var difference = Date.now() - birthdaydate;
