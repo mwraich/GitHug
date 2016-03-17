@@ -2,7 +2,7 @@
 $(document).on('page:load ready', function() {
 // Message pop-up
   $(".new_message").toggle();
-  $(".message-to-button").on('click', function(e){
+  $(".message-to-button").on('click', function(){
     $(".new_message").toggle();
   });
 
@@ -69,13 +69,8 @@ $(document).on('page:load ready', function() {
     // });
 
 
-
-
-
-
 // Slideshow
   $('.bxslider').bxSlider();
-
 
   $('#search-form').on('submit', function(e) {
     e.preventDefault();
