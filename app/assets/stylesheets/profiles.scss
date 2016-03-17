@@ -499,7 +499,17 @@ input#search_max_age{
   border-radius: 5px;
 }
 
+select#profile_partner_attributes_province{
+  display: inline;
+}
 
+select#profile_pair_programmer_attributes_province{
+  display: inline;
+}
+
+select#profile_province{
+  display: inline;
+}
 
 
 //--------------Profile  Show Page------------------//
@@ -1137,6 +1147,7 @@ textarea#message_message {
     width: 17%;
 
   }
+
   .language-fields label{
     font-size: 1rem;
     display: inline-block;

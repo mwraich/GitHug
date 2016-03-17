@@ -33,7 +33,7 @@
         <li><%= link_to 'Find A Match', profiles_path %></li>
         <li><%= link_to 'Mailbox', messages_path %></li>
         <li><%= link_to 'Profile', profile_path(current_user.profile) %></li>
-        <li><%= link_to 'Updagit te Profile', edit_profile_path(current_user.profile) %></li>
+        <li><%= link_to 'Update Profile', edit_profile_path(current_user.profile) %></li>
         <li><%= link_to 'Logout', session_path(current_user), method: 'delete' %></li>
         <% end %>
       </ul>
