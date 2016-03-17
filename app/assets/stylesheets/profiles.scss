@@ -396,20 +396,31 @@ button#languageNext{
 
 }
 
-#pairchoice{
+.preference-form{
+  margin-bottom: 1%;
+  margin-left: 2.5%;
+  padding-bottom: 10%;
+}
+
+.lang_pref_form{
+  margin-bottom: 3%;
+}
+
+input#search_city{
+  width: 50%;
+  display: inline;
   margin-left: 10%;
 }
-
-#datechoice{
-  margin-left: 10%;
+select#search_province{
+  width: 50%;
+  display: inline;
+  margin-left: 1%;
 }
 
-.location-search-label{
-  font-size: 1rem;
-}
-
-.preference-form label{
-  font-size: 1rem;
+input#submit{
+  float:right;
+  margin-top: -5%;
+  margin-right: 5%;
 }
 
 
@@ -441,17 +452,20 @@ input#search{
 }
 
 
-.index-search-form{
+.search-form{
   background-color: #f5f7fa;
   margin-top: 2%;
   width: 90%;
   margin-left: 5%;
   padding-top: 1%;
-  padding-bottom: 14%;
   margin-bottom: 2%;
   border-radius: 2px;
 }
 
+label#first_option_label{
+  color: #6a6a6a;
+  font-size: 1.2rem;
+}
 
 #first_option{
   background-color: #f5f7fa;
@@ -478,11 +492,6 @@ input#search{
   }
 }
 
-label#first_option_label{
-  color: #6a6a6a;
-  font-size: 1.2rem;
-
-}
 
 input#search_min_age{
   width: 20%;
@@ -1367,8 +1376,7 @@ textarea#message_message {
     border-radius: 2px;
     width: 90%;
     margin-left: 2.5%;
-    padding-top: 2%;
-    padding-bottom: 1%;
+    padding-top: 1%;
     margin-top: -3%;
     & h2{
       background-color: #dce4ef;
@@ -1376,11 +1384,11 @@ textarea#message_message {
       color: #31343f;
       margin-left: 5%;
       margin-right: 5%;
-      margin-top: 1%;
       text-align: center;
       border-radius: 2px;
     }
   }
+
 
   #search-choice{
     margin-top: 2.5%;
@@ -1393,19 +1401,37 @@ textarea#message_message {
 
   .preference-form{
     margin-bottom: 1%;
-
-      & label{
-        font-size: 1rem;
-      }
+    margin-left: 2.5%;
+    padding-bottom: 2.5%;
   }
 
-  .index-search-form{
+  .lang_pref_form{
+    margin-bottom: 3%;
+  }
+
+  input#search_city{
+    width: 25%;
+    display: inline;
+    margin-left: 5%;
+  }
+  select#search_province{
+    width: 25%;
+    display: inline;
+    margin-left: 1%;
+  }
+
+  input#submit{
+    float:right;
+    margin-top: -5%;
+    margin-right: 5%;
+  }
+
+  .search-form{
     background-color: #f5f7fa;
     border-radius: 2px;
     width: 90%;
     margin-left: 2.5%;
     padding-top: 2%;
-    padding-bottom: 9%;
     margin-top: 1%;
 
   }
