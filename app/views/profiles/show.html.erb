@@ -1,84 +1,117 @@
-<div class="profile-form">
-
-  <div id="profile-images">
+<div class="content">
+<div id="profile-info-container">
+<div id="profile-images">
     <% if (@profile.images.length < 2) %>
-      <%= image_tag(@profile.user.github_image) %>
+    <ul class="bxslider">
+      <li><%= image_tag(@profile.user.github_image) %></li>
+    </ul>
     <% else %>
+<<<<<<< HEAD
       <%= image_tag(@profile.images[0].image_url) %>
 
+=======
+      <ul class="bxslider">
+        <li><%= image_tag(@profile.images[0].image_url) %></li>
+        <% range = (0..(@profile.images.length)) %>
+        <% range.select do |r| %>
+        <li><%=  image_tag(@profile.images[r-1].image_url) %></li>
+         <% end %>
+      </ul>
+>>>>>>> b812d378ea90f3eb6e7393c87991ce67fd27f3d4
     <% end %>
-  </div>
+</div>
 
-  <%= render 'imageslideshow' %>
-  <div id="dim-page"></div>
-
+<div id="profile-page-title">
+<div id="profile-name">
 <h1 class="profile-name"><%= @profile.first_name %> <%= @profile.last_name %></h1>
-
+</div>
 <!-- Add aligator tags and this will stop block button from appear, waiting to get CSS Styling done before implementing this -->
 <!-- if current_user.profile == @profile   -->
 <!-- <div id ='No_block_button'></div> -->
-
 
 <button class= "message-to-button">Message</button>
 
 <% if @profile.blocked_by?(current_user) %>
   <%= "This user has already been blocked" %>
   <%else %>
+<<<<<<< HEAD
 <%= form_for BlockedUser.new do |f| %>
   <%= f.hidden_field :blocked_id, value: @profile.user_id %>
   <%= f.submit 'Block User', :class => "block_button" %>
   <% end %>
 <% end%>
+=======
+    <%= form_for BlockedUser.new do |f| %>
+      <%= f.hidden_field :blocked_id, value: @profile.user_id %>
+      <%= f.submit 'Block User', :class => "block_button" %>
+    <% end %>
+  <% end%>
+
+</div>
+</div>
+>>>>>>> b812d378ea90f3eb6e7393c87991ce67fd27f3d4
 
 <div id="profile-aboutme">
+  <h2>About Me</h2>
   <p> <%= @profile.about_me %></p>
 </div>
 
 <div id="profile-details">
-<p class="profile-details-title">My Details</p>
-<ul>
+  <h2>My Details</h2>
+
   <li> Gender:
-    <% if @profile.male == true %>
-    Male
-    <% elsif @profile.female == true %>
-    Female
-    <% else %>
-    Other
-    <% end %>
+    <%= show_gender(@profile) %>
   </li>
+
   <li>
     Birthday: <%= @profile.birthday %>
   </li>
+
   <li>
     Operating System: <%= @profile.operating_system %>
   </li>
-  <li> <%= @profile.location %> </li>
-</ul>
+
+  <li>
+    <%= @profile.city %>
+  </li>
+  <li>
+    <%= @profile.province %>
+  </li>
 </div>
 
 
 <div id="profile-languages">
-<p class="profile-details-title"> Languages </p>
 
-<ul>
-  <% @profile.languages.each do |lang| %>
-    <li> <%= lang.language %> Skill Level: <%= lang.skill_level %></li>
-  <% end %>
-</ul>
+  <h2> Languages </h2>
+  <ul>
+    <% @profile.languages.each do |lang| %>
+      <li> <%= lang.language %> Skill Level: <%= lang.skill_level %></li>
+    <% end %>
+  </ul>
 </div>
 
 <div class="profile-tags">
-<% @profile.tags.any? %>
-<% @profile.tags.each do |tag| %>
-  <%= link_to tag.name, tagged_url(:tag => tag.name) %>
-<% end %>
+<h2>Tags</h2>
+  <div id="tag-spacing">
+    <% @profile.tags.any? %>
+    <% @profile.tags.each do |tag| %>
+      <%= link_to tag.name, tag_path(tag.id) %>
+    <% end %>
+  </div>
 </div>
+
 
 <button id = "pull-request"> Pull Request </button>
 <% if authorize_pull_request(@profile) %>
 <%= render "messages/new_message" %>
+
+<% if check_current_user %>
+  <div class="reco_matches">
+    <% if @profile_partnerReco.present?  %>
+        <%= render "reco_partner" %>
+    <% end %>
+  <% if @profile_pairReco.present?  %>
+      <%= render "reco_pair" %>
+  <% end %>
 <% end %>
-
-
-<div class="reco_matches">
-</div>
+<% end %>

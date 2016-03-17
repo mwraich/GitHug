@@ -17,6 +17,8 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+# Install jquery validation as javascript library
+gem 'jquery-validation-rails', '~> 1.13', '>= 1.13.1'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -34,15 +36,26 @@ gem 'geocoder'
 #allows taging
 gem 'acts-as-taggable-on', '~> 3.4'
 #To be used for implementing privacy Settings
+<<<<<<< HEAD
 gem 'cancancan', '~> 1.10'
 
 gem 'cloudinary'
+=======
+# gem 'cancancan', '~> 1.10'
+#To enable text message notifications
+gem 'twilio-ruby', '~> 4.11.1'
+>>>>>>> b812d378ea90f3eb6e7393c87991ce67fd27f3d4
 
 gem 'bourbon'
 gem 'neat'
 gem 'autoprefixer-rails'
+<<<<<<< HEAD
 
 gem 'delayed_job_active_record'
+=======
+gem 'typedJS'
+gem 'bxslider-rails'
+>>>>>>> b812d378ea90f3eb6e7393c87991ce67fd27f3d4
 
 gem 'carrierwave'
 
@@ -96,8 +109,15 @@ group :development do
   group :production do
     gem 'rails_12factor'
 
+<<<<<<< HEAD
     #server
 
+=======
+    # gem 'puma'
+
+    # #server
+    # gem 'puma'
+>>>>>>> b812d378ea90f3eb6e7393c87991ce67fd27f3d4
 
 
 end

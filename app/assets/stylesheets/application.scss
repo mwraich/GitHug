@@ -1,8 +1,11 @@
+//= require blink
+//= require bxslider
+
 @import 'normalize';
 
 @import 'bourbon';
 @import 'base/base';
 @import 'neat';
 
-@import 'sessions'; //this is how to import other style sheets
+@import 'sessions';
 @import 'profiles';
