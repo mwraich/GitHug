@@ -78,12 +78,6 @@
 </div>
 
 <div class="profile-tags">
-<% @profile.tags.any? %>
-<% @profile.tags.each do |tag| %>
-  <%= link_to tag.name, tag_path(tag.id) %>
-<% end %>
-
-<div class="profile-tags">
 <h2>Tags</h2>
   <div id="tag-spacing">
     <% @profile.tags.any? %>
@@ -95,6 +89,7 @@
 
 <% if check_current_user %>
   <div class="reco_matches">
+    <h2>Recomended For You</h2>
     <% if @profile_partnerReco.present?  %>
         <%= render "reco_partner" %>
     <% end %>

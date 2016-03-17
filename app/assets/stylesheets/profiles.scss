@@ -220,36 +220,7 @@ a.add_fields{
 
 }
 
-// #add_photo{
-//   color: #00aca1;
-//   cursor: pointer;
-//   display: inline-block;
-//   margin-left: 5%;
-//   margin-top: -10%;
-//   &:hover,
-//   &:focus {
-//     color: #3b3b3b;
-//   }
-//
-// }
-
-// #remove_photo{
-//   color: #00aca1;
-//   cursor: pointer;
-//   display: inline-block;
-//   margin-left: 5%;
-
-
-//   &:hover,
-//   &:focus {
-//     color: #3b3b3b;
-//   }
-//
-//
-// }
-
-
-#remove_preference{
+#remove_partner{
   color: #e06c75;
   font-size: 1.2rem;
   cursor: pointer;
@@ -263,11 +234,20 @@ a.add_fields{
 
 }
 
-// .image-fields input{
-//   padding-left: 5%;
-// }
+#remove_pair_programmer{
+  color: #e06c75;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 5%;
 
-#add_pref_language{
+  &:hover,
+  &:focus {
+    color: #3b3b3b;
+  }
+}
+
+#add_partner{
   color: #52ce4c;
   font-size: 1.2rem;
   cursor: pointer;
@@ -280,7 +260,7 @@ a.add_fields{
   }
 }
 
-#add_pref{
+#add_pair_programmer{
   color: #52ce4c;
   font-size: 1.2rem;
   cursor: pointer;
@@ -396,20 +376,31 @@ button#languageNext{
 
 }
 
-#pairchoice{
+.preference-form{
+  margin-bottom: 1%;
+  margin-left: 2.5%;
+  padding-bottom: 10%;
+}
+
+.lang_pref_form{
+  margin-bottom: 3%;
+}
+
+input#search_city{
+  width: 50%;
+  display: inline;
   margin-left: 10%;
 }
-
-#datechoice{
-  margin-left: 10%;
+select#search_province{
+  width: 50%;
+  display: inline;
+  margin-left: 1%;
 }
 
-.location-search-label{
-  font-size: 1rem;
-}
-
-.preference-form label{
-  font-size: 1rem;
+input#submit{
+  float:right;
+  margin-top: -5%;
+  margin-right: 5%;
 }
 
 
@@ -441,17 +432,20 @@ input#search{
 }
 
 
-.index-search-form{
+.search-form{
   background-color: #f5f7fa;
   margin-top: 2%;
   width: 90%;
   margin-left: 5%;
   padding-top: 1%;
-  padding-bottom: 14%;
   margin-bottom: 2%;
   border-radius: 2px;
 }
 
+label#first_option_label{
+  color: #6a6a6a;
+  font-size: 1.2rem;
+}
 
 #first_option{
   background-color: #f5f7fa;
@@ -478,11 +472,6 @@ input#search{
   }
 }
 
-label#first_option_label{
-  color: #6a6a6a;
-  font-size: 1.2rem;
-
-}
 
 input#search_min_age{
   width: 20%;
@@ -510,7 +499,17 @@ input#search_max_age{
   border-radius: 5px;
 }
 
+select#profile_partner_attributes_province{
+  display: inline;
+}
 
+select#profile_pair_programmer_attributes_province{
+  display: inline;
+}
+
+select#profile_province{
+  display: inline;
+}
 
 
 //--------------Profile  Show Page------------------//
@@ -734,7 +733,7 @@ textarea#message_message{
 }
 
 .reply-name{
-  color: #3b3b3b;
+  color: #9fed9c;
 }
 
 .reply{
@@ -998,16 +997,37 @@ textarea#message_message {
     }
   }
 
+  .reco_matches{
+    text-align: left;
+    margin-top: 2%;
+    background-color:#f5f7fa;
+    border-radius: 2px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-left: 2.5%;
+    width: 90%;
+    & h2{
+      background-color: #dce4ef;
+      font-size: 1.6rem;
+      color: #31343f;
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-top: 1%;
+      text-align: center;
+      border-radius: 2px;
+    }
+  }
+
 
   #profile-languages{
     float: right;
     background-color: #f5f7fa;
     width: 44%;
-    margin-top: -23.6%;
+    margin-top: -26.5%;
     margin-right: 7.5%;
     border-radius: 2px;
     padding-top: 1%;
-    height: 196px;
+    height: 220px;
     text-align: left;
     & h2{
       background-color: #dce4ef;
@@ -1148,6 +1168,7 @@ textarea#message_message {
     width: 17%;
 
   }
+
   .language-fields label{
     font-size: 1rem;
     display: inline-block;
@@ -1192,6 +1213,14 @@ textarea#message_message {
     text-align: center;
     color: #919293;
     margin-top: -1%;
+  }
+
+  select#profile_partner_attributes_province{
+    display: inline;
+  }
+
+  select#profile_pair_programmer_attributes_province{
+    display: inline;
   }
 
   #remove_language{
@@ -1251,20 +1280,6 @@ textarea#message_message {
     }
   }
 
-  #remove_preference{
-    color: #e06c75;
-    cursor: pointer;
-    display: inline-block;
-    margin-left: 5%;
-    font-size: 1.2rem;
-
-    &:hover,
-    &:focus {
-      color: #3b3b3b;
-    }
-
-  }
-
   #add_pref_language{
     color: #52ce4c;
     cursor: pointer;
@@ -1314,7 +1329,15 @@ textarea#message_message {
     margin-top: 0%;
   }
 
+  label#looking_for{
+    width: 40%;
+  }
 
+
+  select#profile_province{
+    display: inline;
+    margin-left: 2%;
+  }
   .button-label{
     font-size: 1rem;
   }
@@ -1367,8 +1390,7 @@ textarea#message_message {
     border-radius: 2px;
     width: 90%;
     margin-left: 2.5%;
-    padding-top: 2%;
-    padding-bottom: 1%;
+    padding-top: 1%;
     margin-top: -3%;
     & h2{
       background-color: #dce4ef;
@@ -1376,11 +1398,11 @@ textarea#message_message {
       color: #31343f;
       margin-left: 5%;
       margin-right: 5%;
-      margin-top: 1%;
       text-align: center;
       border-radius: 2px;
     }
   }
+
 
   #search-choice{
     margin-top: 2.5%;
@@ -1393,19 +1415,37 @@ textarea#message_message {
 
   .preference-form{
     margin-bottom: 1%;
-
-      & label{
-        font-size: 1rem;
-      }
+    margin-left: 2.5%;
+    padding-bottom: 2.5%;
   }
 
-  .index-search-form{
+  .lang_pref_form{
+    margin-bottom: 3%;
+  }
+
+  input#search_city{
+    width: 25%;
+    display: inline;
+    margin-left: 5%;
+  }
+  select#search_province{
+    width: 25%;
+    display: inline;
+    margin-left: 1%;
+  }
+
+  input#submit{
+    float:right;
+    margin-top: -5%;
+    margin-right: 5%;
+  }
+
+  .search-form{
     background-color: #f5f7fa;
     border-radius: 2px;
     width: 90%;
     margin-left: 2.5%;
     padding-top: 2%;
-    padding-bottom: 9%;
     margin-top: 1%;
 
   }
@@ -1660,7 +1700,7 @@ textarea#message_message {
 
 
   .reply-name{
-    color: #3b3b3b;
+    color: #9fed9c;
   }
   #sent_message_show{
     float: left;
