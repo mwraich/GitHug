@@ -1,14 +1,10 @@
 
 
-<div class="new_message">
   <%= form_for @message do |f| %>
   <p><%= @profile.first_name%><%= @profile.last_name%>$</p>
     <%= f.text_area :message %>
 
     <%= f.hidden_field :recipient_id, value: @profile.id %>
 
-
 <%= f.submit "[ commit ]", id:"commit" %>
   <% end %>
-
-</div>

@@ -2,8 +2,8 @@ class MessagesController < ApplicationController
 
   def index
     @profile = current_user.profile
-    @messages_sent_messages = Message.where(sender: current_user).order(:recipient_id, :created_at)
-    @messages_recipient_messages = Message.where(recipient: current_user).order(:sender_id, :created_at)
+    @messages_sent_messages = Message.where(sender: current_user.profile.id).order(:recipient_id, created_at: :desc)
+    @messages_recipient_messages = Message.where(recipient: current_user.profile.id).order(:sender_id, created_at: :desc)
     @messages = Message.all
   end
 
