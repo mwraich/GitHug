@@ -379,10 +379,10 @@ button#languageNext{
 #index-profile-location{
   font-size: 1rem;
   margin-top: -2%;
+  color: #3B3B3B;
 }
 
 .index-users{
-  background-color: #f5f7fa;
   border-radius: 2px;
   width: 90%;
   margin-left: 5%;
@@ -791,6 +791,19 @@ textarea#message_message {
  }
 
 
+   #tag-name{
+     text-align: center;
+     font-size: 1.5rem;
+     width: 80%;
+     margin-left: 10%;
+     background-color: $base-background-color;
+     color:#9fed9c;
+     padding: 2%;
+     border-radius: 2px;
+     margin-top: 15%;
+
+
+   }
 
 
 @media all and (max-width: 900px) {
@@ -1450,7 +1463,6 @@ textarea#message_message {
   }
 
   .index-users{
-    background-color: #f5f7fa;
     border-radius: 2px;
     width: 90%;
     margin-left: 2.5%;
@@ -1664,5 +1676,78 @@ textarea#message_message {
     margin-top: 2.5%;
   }
 
+  #tag-name{
+    text-align: center;
+    font-size: 1.5rem;
+    width: 40%;
+    margin-left: 25%;
+    background-color: $base-background-color;
+    color:#9fed9c;
+    padding: 2%;
+    border-radius: 2px;
+    margin-top: -3%;
 
+
+  }
+
+  #tags-content{
+    border-radius: 2px;
+    width: 90%;
+    margin-left: 2.5%;
+    padding-top: 2%;
+    padding-bottom: 10%;
+    margin-top: 1%;
+  }
+
+
+}
+
+//------------------Large Screen------------------//
+@include media ($extra-large-screen-up){
+  .logout-icon{
+    display: block;
+    position: absolute;
+    margin-left: 90%;
+    margin-top: -2.5%;
+    & img{
+      width: 50%;
+      padding-top: 2.5%;
+      z-index: 5;
+    }
+  }
+  #profile-info-container{
+    padding-bottom: 5%;
+    margin-top: -3%;
+  }
+  button.message-to-button{
+    margin-top: 0%;
+  }
+  #profile-images{
+    margin-top: 0%;
+    & img{
+      border-radius: 0;
+      height: 250px;
+      width: 100%;
+
+    }
+
+  }
+  .bx-wrapper{
+
+    height: 250px;
+  }
+  input.block_button{
+    margin-top: -6%;
+  }
+  #profile-name{
+    margin-top: -15%;
+  }
+  #profile-languages{
+    margin-top: -18%;
+    height: 225px;
+  }
+
+  .line-break{
+    margin-top: 12.5%;
+  }
 }

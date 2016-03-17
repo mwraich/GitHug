@@ -134,6 +134,42 @@ $(document).on('page:load ready', function() {
        })
     });
 
+
+
+//   $(document).ready(function () {
+//     $('.gender_validation').click(function() {
+//       $(this).siblings('input:checkbox').prop('checked', false);
+//     });
+//        $('#new_profile').validate({
+//          rules: {
+//            'profile[first_name]': {
+//              required: true,
+//              minlength: 2
+//            },
+//            'profile[last_name]': {
+//              required: true,
+//              minlength: 2
+//            },
+//             'profile[location]': {
+//               required: true,
+//               minlength: 2
+//             },
+//           'profile[birthday]': {
+//               check_date_of_birth: true,
+//               require: true
+//             },
+//             'profile[operating_system]': {
+//               minlength: 1
+//             },
+//             'profile[about_me]': {
+//               required: true,
+//               minlength: 5,
+//               maxlength: 500
+//             }
+//          }
+//        })
+//     });
+//
 //     $.validator.addMethod("check_date_of_birth", function(value, element) {
 //
 //     var birthday = $("#profile_birthday").val();
@@ -159,3 +195,18 @@ $(document).on('page:load ready', function() {
 //       errorGender.style.color = 'red';}
 // // Gender Validations
 //
+// // // Gender button validation
+// // $('.gender_validation').click
+// // var validateButton = false;
+// // $('.gender_validation').each(function(){
+// //   if ($(this).is(':checked')) {
+// //     validateButton = true;
+// //   }
+// // });
+// // if(validateButton !== true) {
+// //       var errorGender = document.getElementById('errorGender');
+// //       errorGender.innerHTML = 'Please select a Gender';
+// //       errorGender.focus();
+// //       errorGender.style.color = 'red';}
+// // // Gender Validations
+// //
