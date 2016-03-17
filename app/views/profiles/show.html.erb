@@ -24,17 +24,16 @@
 <!-- if current_user.profile == @profile   -->
 <!-- <div id ='No_block_button'></div> -->
 
-
 <button class= "message-to-button">Message</button>
 
 <% if @profile.blocked_by?(current_user) %>
   <%= "This user has already been blocked" %>
   <%else %>
-<%= form_for BlockedUser.new do |f| %>
-  <%= f.hidden_field :blocked_id, value: @profile.user_id %>
-  <%= f.submit 'Block User', :class => "block_button" %>
-  <% end %>
-<% end%>
+    <%= form_for BlockedUser.new do |f| %>
+      <%= f.hidden_field :blocked_id, value: @profile.user_id %>
+      <%= f.submit 'Block User', :class => "block_button" %>
+    <% end %>
+  <% end%>
 
 </div>
 </div>
@@ -45,37 +44,44 @@
 </div>
 
 <div id="profile-details">
-<h2>My Details</h2>
-<ul>
+  <h2>My Details</h2>
+
   <li> Gender:
-    <% if @profile.male == true %>
-    Male
-    <% elsif @profile.female == true %>
-    Female
-    <% else %>
-    Other
-    <% end %>
+    <%= show_gender(@profile) %>
   </li>
+
   <li>
     Birthday: <%= @profile.birthday %>
   </li>
+
   <li>
     Operating System: <%= @profile.operating_system %>
   </li>
-  <li> <%= @profile.location %> </li>
-</ul>
+
+  <li>
+    <%= @profile.city %>
+  </li>
+  <li>
+    <%= @profile.province %>
+  </li>
 </div>
 
 
 <div id="profile-languages">
-<h2>Languages</h2>
 
-<ul>
-  <% @profile.languages.each do |lang| %>
-    <li> <%= lang.language %> Skill Level: <%= lang.skill_level %></li>
-  <% end %>
-</ul>
+  <h2> Languages </h2>
+  <ul>
+    <% @profile.languages.each do |lang| %>
+      <li> <%= lang.language %> Skill Level: <%= lang.skill_level %></li>
+    <% end %>
+  </ul>
 </div>
+
+<div class="profile-tags">
+<% @profile.tags.any? %>
+<% @profile.tags.each do |tag| %>
+  <%= link_to tag.name, tag_path(tag.id) %>
+<% end %>
 
 <div class="profile-tags">
 <h2>Tags</h2>
@@ -87,14 +93,12 @@
   </div>
 </div>
 
-<%= render "messages/new_message" %>
-
-
-<!--  Add aligator tags and this will stop block button from appear, waiting to get CSS Styling done before implementing this
-if current_user.profile == @profile  -->
-<!-- <div id ='No_block_button'></div> -->
-
-
-<div class="reco_matches">
-
-</div>
+<% if check_current_user %>
+  <div class="reco_matches">
+    <% if @profile_partnerReco.present?  %>
+        <%= render "reco_partner" %>
+    <% end %>
+  <% if @profile_pairReco.present?  %>
+      <%= render "reco_pair" %>
+  <% end %>
+<% end %>

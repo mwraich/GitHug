@@ -191,7 +191,6 @@ a.add_fields{
 
   }
 
-
 #add_photo{
   color: #52ce4c;
   font-size: 1.2rem;
@@ -221,6 +220,35 @@ a.add_fields{
 
 }
 
+// #add_photo{
+//   color: #00aca1;
+//   cursor: pointer;
+//   display: inline-block;
+//   margin-left: 5%;
+//   margin-top: -10%;
+//   &:hover,
+//   &:focus {
+//     color: #3b3b3b;
+//   }
+//
+// }
+
+// #remove_photo{
+//   color: #00aca1;
+//   cursor: pointer;
+//   display: inline-block;
+//   margin-left: 5%;
+
+
+//   &:hover,
+//   &:focus {
+//     color: #3b3b3b;
+//   }
+//
+//
+// }
+
+
 #remove_preference{
   color: #e06c75;
   font-size: 1.2rem;
@@ -235,9 +263,9 @@ a.add_fields{
 
 }
 
-.image-fields input{
-  padding-left: 5%;
-}
+// .image-fields input{
+//   padding-left: 5%;
+// }
 
 #add_pref_language{
   color: #52ce4c;
@@ -1268,6 +1296,10 @@ textarea#message_message {
   .image-fields img{
     margin-left: 5%;
   }
+
+  // .image-fields input{
+  //   width: 100%;
+  // }
 
   .actions input{
     width: 30%;

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160316230009) do
+ActiveRecord::Schema.define(version: 20160313215709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,11 +27,12 @@ ActiveRecord::Schema.define(version: 20160316230009) do
   add_index "authentications", ["provider", "uid"], name: "index_authentications_on_provider_and_uid", using: :btree
 
   create_table "blocked_users", force: :cascade do |t|
-    t.integer  "blocker_id"
-    t.integer  "blocked_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "blocker_id"
+    t.integer "blocked_id"
   end
+
+  add_index "blocked_users", ["blocked_id"], name: "index_blocked_users_on_blocked_id", using: :btree
+  add_index "blocked_users", ["blocker_id"], name: "index_blocked_users_on_blocker_id", using: :btree
 
   create_table "images", force: :cascade do |t|
     t.string   "image"
@@ -59,27 +60,23 @@ ActiveRecord::Schema.define(version: 20160316230009) do
     t.text     "message"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+    t.string   "subject_line"
     t.boolean  "read_status",  default: false
   end
 
   create_table "pair_programmers", force: :cascade do |t|
-    t.string   "city"
+    t.string   "location"
     t.boolean  "male"
     t.boolean  "female"
     t.boolean  "other"
-    t.integer  "min_age"
+    t.integer  "age"
     t.string   "operating_system"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.integer  "max_age"
-    t.integer  "profile_id"
-    t.string   "province"
-    t.float    "latitude"
-    t.float    "longitude"
   end
 
   create_table "partners", force: :cascade do |t|
-    t.string   "city"
+    t.string   "location"
     t.boolean  "male"
     t.boolean  "female"
     t.boolean  "other"
@@ -89,9 +86,6 @@ ActiveRecord::Schema.define(version: 20160316230009) do
     t.integer  "profile_id"
     t.integer  "min_age"
     t.integer  "max_age"
-    t.string   "province"
-    t.float    "latitude"
-    t.float    "longitude"
   end
 
   add_index "partners", ["profile_id"], name: "index_partners_on_profile_id", using: :btree
@@ -99,7 +93,7 @@ ActiveRecord::Schema.define(version: 20160316230009) do
   create_table "profiles", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "city"
+    t.string   "location"
     t.boolean  "male"
     t.boolean  "female"
     t.boolean  "other"
@@ -112,7 +106,6 @@ ActiveRecord::Schema.define(version: 20160316230009) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "image"
-    t.string   "province"
     t.boolean  "date",              default: false
     t.boolean  "paired_programmer", default: false
   end
@@ -150,8 +143,4 @@ ActiveRecord::Schema.define(version: 20160316230009) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
-  add_foreign_key "images", "users", column: "profile_id"
-  add_foreign_key "languages", "users", column: "languageable_id"
-  add_foreign_key "partners", "users", column: "profile_id"
-  add_foreign_key "profiles", "users"
 end
