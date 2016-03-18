@@ -1,7 +1,6 @@
 $(document).on('page:load ready', function() {
 
   $('.sent_message').hide();
-
   $(this).on('click','.reply', function(eventHandler){
     eventHandler.preventDefault();
     var self = $(this);
@@ -14,8 +13,6 @@ $(document).on('page:load ready', function() {
       if ($(self).siblings('form').length == 0){
         $(data).insertAfter(self);
       }
-
-
       }
 
     });
