@@ -3,7 +3,7 @@ $(document).on('page:load ready', function() {
 
 // Message pop-up
   $('.message-to-button').on('click', function(){
-    $('.new_message').toggleClass('new_message_expanded');
+    $('.new_message_pop_up').toggleClass('new_message_pop_up_expanded');
   });
 
   $("#nav-mobile").html($("#nav-main").html());
