@@ -755,11 +755,7 @@ textarea#message_message{
 
  }
  .new_message {
-   bottom: 0;
-   z-index: 150;
-   position:fixed;
    height: 0px;
-   width:100%;
    display:block;
    background-color: $secondary-background-color;
    -webkit-transition: height 0.6s ease-out;
