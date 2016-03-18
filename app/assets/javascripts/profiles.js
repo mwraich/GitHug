@@ -69,7 +69,7 @@ $(document).on('page:load ready', function() {
 
       var form = $("#new_profile");
 
-        form.validate({
+      form.validate({
         rules: {
           'profile[first_name]': {
             minlength: 2,
@@ -103,6 +103,7 @@ $(document).on('page:load ready', function() {
     // $( '#nameNext').click(function() {
     //   alert( "Valid: " + form.valid() );
     // });
+
   $('.edit_profile').validate({
     rules: {
         'profile[first_name]': {
@@ -145,6 +146,35 @@ $(document).on('page:load ready', function() {
     return age > 18;
   }, "You must be at least 18 years of age.");
 
+
+  //Search form validation
+  $('#search-form').validate({
+    rules: {
+      'search[language]': {
+        required: true,
+        minlength: 1
+      },
+      'search[operating_system]': {
+        required: true,
+        minlength: 1
+      },
+      'search[min_age]': {
+        required: true,
+        min: 18
+      },
+      'search[max_age]': {
+        required: true,
+        max: 100
+      },
+      'search[city]': {
+        required: true,
+        minlength: 1
+      },
+      'search[province]': {
+        required:true
+      }
+    }
+  })
 
 // Slideshow
   $('.bxslider').bxSlider();
