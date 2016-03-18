@@ -1,11 +1,9 @@
 
 $(document).on('page:load ready', function() {
-// Message pop-up
-  $(".new_message").toggle();
-  $(".message-to-button").on('click', function(){
-    $(".new_message").toggle("slide", 'easeInSine');
-      // $(".new_message").toggle();
 
+// Message pop-up
+  $('.message-to-button').on('click', function(){
+    $('.new_message').toggleClass('new_message_expanded');
   });
 
   $("#nav-mobile").html($("#nav-main").html());

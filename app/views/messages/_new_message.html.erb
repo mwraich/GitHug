@@ -1,5 +1,5 @@
 
-
+<div class="message_effect">
   <%= form_for @message do |f| %>
   <p><%= @profile.first_name%><%= @profile.last_name%>$</p>
     <%= f.text_area :message %>
@@ -8,3 +8,4 @@
 
 <%= f.submit "[ commit ]", id:"commit" %>
   <% end %>
+</div>
