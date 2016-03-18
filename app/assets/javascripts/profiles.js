@@ -1,9 +1,9 @@
 
 // # Place all the behaviors and hooks related to the matching controller here.
 // # All this logic will automatically be available in application.js.
-// # You can use CoffeeScript in this file: http://coffeescript.org/
-$(document).on('page:load ready', function() {
+// # You can use CoffeeScript in this file: http://coffeescript.org/$(document).on('page:load ready', function() {
 
+$(document).on('page:load ready', function() {
 
 // Message pop-up
   $('.message-to-button').on('click', function(){
@@ -109,7 +109,7 @@ $(document).on('page:load ready', function() {
       }
     });
   });
-});
+  });
 
   $(document).ready(function () {
     $('.gender_validation').click(function() {
