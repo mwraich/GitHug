@@ -33,7 +33,7 @@ class MessagesController < ApplicationController
 
   def show
     @profile = Profile.find(params[:id])
-    @messge = Message.find(params[:id])
+    @message = Message.find(params[:id])
   end
 
   def edit
