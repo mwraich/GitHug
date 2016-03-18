@@ -779,21 +779,21 @@ textarea#message_message{
   background-color: $secondary-background-color;
 }
 
-textarea#message_message.new_message_pop_up {
-   border:none;
-   color: #9fed9c;
-   width: 80%;
-  //  height: 50%;
-   display: block;
-   &:hover {
-     border-color:black, 20%;
-   }
-   &:focus {
-     border-color:black;
-     box-shadow:none;
-     outline: none;
-   }
-}
+// textarea#message_message.new_message_pop_up {
+//    border:none;
+//    color: #9fed9c;
+//    width: 80%;
+//   //  height: 50%;
+//    display: block;
+//    &:hover {
+//      border-color:black, 20%;
+//    }
+//    &:focus {
+//      border-color:black;
+//      box-shadow:none;
+//      outline: none;
+//    }
+// }
 
  input#commit {
    border-radius:none;
