@@ -205,7 +205,6 @@ GEM
       pry (~> 0.10)
     pry-rails (0.3.4)
       pry (>= 0.9.10)
-    puma (2.15.3)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.4)
@@ -355,7 +354,6 @@ DEPENDENCIES
   phony_rails
   poltergeist
   pry-rails
-  puma
   quiet_assets
   rails (= 4.2.5.1)
   rails_12factor
