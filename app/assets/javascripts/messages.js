@@ -1,6 +1,7 @@
 $(document).on('page:load ready', function() {
 
   $('.sent_message').hide();
+
   $(this).on('click','.reply', function(eventHandler){
     eventHandler.preventDefault();
     var self = $(this);
@@ -18,7 +19,7 @@ $(document).on('page:load ready', function() {
     });
   });
 
-  $('.unread-checkbox').on('click',function(){
+  $('.checkbox').on('click',function(){
   $(this).parent().submit();
   });
 
@@ -30,5 +31,10 @@ $(document).on('page:load ready', function() {
   $('#show-inbox-button').on('click', function(){
     $('.sent_message').hide();
     $('#show-inbox').fadeIn(1000);
+  });
+
+  $('.chat-message-content').toggle();
+  $('.chat-message').on('click', function(e){
+    $(this).next('.chat-message-content').toggle();
   });
 });
