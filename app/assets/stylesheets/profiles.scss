@@ -890,9 +890,9 @@ textarea#message_message {
 
   }
   #login-notice{
-    margin-left: 63%;
+    margin-left: 1%;
     display: inline;
-    color: #9fed9c;
+    color: #5378BC;
   }
 
   #unread-messages-notice{
@@ -1787,6 +1787,10 @@ textarea#message_message {
 
     }
 
+  }
+  #login-notice{
+    margin-left: 1%;
+    margin-top: 5%;
   }
   .bx-wrapper{
 
