@@ -831,6 +831,11 @@ textarea#message_message{
 
 @include media ($large-screen-up){
 
+  .spacing{
+     margin-left: 37%;
+     height:55px;
+     width: 100%;
+  }
 
   body{
     background-color: #D7DAE0;
@@ -1763,7 +1768,7 @@ textarea#message_message{
     }
   }
   #profile-info-container{
-    padding-bottom: 5%;
+    padding-bottom: 2.5%;
     margin-top: -3%;
   }
   button.message-to-button{
@@ -1819,6 +1824,12 @@ textarea#message_message{
   }
   #sent_message_show{
     margin-top: 10%;
+  }
+
+  .spacing{
+     margin-left: 37%;
+     height:50px;
+     width: 100%;
   }
 
 }

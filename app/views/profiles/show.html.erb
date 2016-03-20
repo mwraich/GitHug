@@ -24,7 +24,11 @@
 <!-- else  -->
 
 <% if current_user.profile == @profile  %>
+  <div class="spacing">  </div>
+
 <% elsif @profile.blocked_by?(current_user) %>
+  <div class="spacing">    </div>
+
   <%else %>
     <button class= "message-to-button">Message</button>
     <%= form_for BlockedUser.new do |f| %>
