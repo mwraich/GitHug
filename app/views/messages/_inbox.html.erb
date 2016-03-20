@@ -1,26 +1,6 @@
 
 <div id="show-inbox">
   <% if @profile.recipient_messages.any?%>
-  <% @messages_recipient_messages.each do |msg| %>
-
-  <div class="chat-message">
-      <%= form_for(msg, remote:true) do |f|%>
-      <%= f.check_box(:read_status, value: true, class: 'unread-checkbox') %>
-      <% f.submit%>
-      <% end %>
-    <p class="message-info">From:<span class="sent_by"> <%= msg.sender.first_name %></span></p>
-
-  </div>
-  <div class="chat-message-content">
-
-    <p class="message-info">To:<span class="recipient_id"> <%= msg.recipient.first_name %></span></p>
-    <p class="message-text"><%= msg.message %></p><br>
-
-    <%= link_to "Reply", message_reply_path(msg), class: 'reply' %>
-  </div>
-    <div class="reply_form">
-
-    </div>
-  <hr class="line-break-inbox">
+    <%= render @messages_recipient_messages %>
   <% end %>
-  <% end %>
+</div>
