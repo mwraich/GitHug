@@ -5,8 +5,12 @@ $(document).on('page:load ready', function() {
   $('.chat-message-content').toggle();
   $('.chat-message').on('click', function(e){
     $(this).next('.chat-message-content').toggle();
+    if($(this).find('input[type=checkbox]').prop("checked") === true){
+
+    }else{
     $(this).find('input[type=checkbox]').prop("checked", !$(this).find('input[type=checkbox]').prop("checked"));
     $('.edit_message').submit();
+  }
   });
 
 
