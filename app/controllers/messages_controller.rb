@@ -43,7 +43,15 @@ class MessagesController < ApplicationController
   def update
     @message = Message.find(params[:id])
     if @message.update_attributes(message_params)
-      redirect_to messages_path
+      respond_to do |format|
+        format.html do
+          if request.xhr?
+            @message
+          else
+            render messages_path
+          end
+        end
+      end
     else
       render :new
     end

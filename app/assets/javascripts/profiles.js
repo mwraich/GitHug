@@ -6,8 +6,9 @@
 $(document).on('page:load ready', function() {
 
 // Message pop-up
+  $('.new_message_pop_up_expanded').hide();
   $('.message-to-button').on('click', function(){
-    $('.new_message_pop_up').toggleClass('new_message_pop_up_expanded');
+    $('.new_message_pop_up_expanded').slideToggle();
   });
 
   $("#nav-mobile").html($("#nav-main").html());

@@ -1,8 +1,8 @@
 
-<div class="new_message_pop_up">
+<div class="new_message_pop_up_expanded">
   <%= form_for @message do |f| %>
   <p><%= @profile.first_name%><%= @profile.last_name%>$</p>
-    <%= f.text_area :message, class: 'new_message_pop_up' %>
+    <%= f.text_area :message %>
     <%= f.hidden_field :recipient_id, value: @profile.id %>
 
 <%= f.submit "[ commit ]", id:"commit" %>
