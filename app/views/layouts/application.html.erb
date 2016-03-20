@@ -73,9 +73,10 @@
 
   <div class="yield">
 
+    <% if current_user.notice > 0 %>
       <p id="unread-messages-notice"><%= current_user.notice %> New Messages!</p>
-
-    <% end %>
+    <%end%>
+  <% end %>
 
     <%= yield %>
 
