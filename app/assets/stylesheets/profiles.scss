@@ -680,7 +680,7 @@ nav#nav-mobile li{
 
 .unread-checkbox{
   float: right;
-  margin-right: -2%;
+  margin-right: 5%;
 }
 
 #message_message{
@@ -737,10 +737,13 @@ textarea#message_message{
 
 .reply_message{
   margin-top: 2%;
+  & input {
+    margin-left: 5%;
+  }
 }
 
 .reply-name{
-  color: #9fed9c;
+  color: #3b3b3b;
 }
 
 .reply{
@@ -1070,39 +1073,6 @@ textarea#message_message{
      width:40%;
      display:block;
   }
-
-  // textarea.new_message_pop_up {
-  //    border:none;
-  //    color: black;
-  //    width: 80%;
-  //    height: 50%;
-  //    display: block;
-  //    background-color: white;
-  //    &:hover {
-  //      border-color:black, 20%;
-  //    }
-  //    &:focus {
-  //      border-color:black;
-  //      box-shadow:none;
-  //      outline: none;
-  //    }
-  // }
-  // textarea#message_message.new_message_pop_up {
-  //    border:none;
-  //    color:#31343f;
-  //    width: 80%;
-  //   //  height: 50%;s
-  //    display: block;
-  //    background-color: white;
-  //    &:hover {
-  //      border-color:black, 20%;
-  //    }
-  //    &:focus {
-  //      border-color:black;
-  //      box-shadow:none;
-  //      outline: none;
-  //    }
-  // }
 
   .new_message_pop_up_expanded {
     width: 40%;

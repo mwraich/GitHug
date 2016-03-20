@@ -4,10 +4,11 @@
 <% if @profile.recipient_messages.any?%>
   <% @messages_recipient_messages.each do |msg| %>
 
+
   <div class="chat-message">
     <div class='unread-checkbox'>
-      <%= form_for msg, remote: true do |f|%>
-      <%= f.label( :read_status, "unread", class: 'unread') %>
+      <%= form_for msg, remote:true do |f|%>
+      <!-- <%= f.label( :read_status, class: 'unread') %> -->
       <%= f.check_box(:read_status, value: true, class: 'checkbox') %>
       <% f.submit%>
       <% end %>
