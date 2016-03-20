@@ -2,8 +2,8 @@ class MessagesController < ApplicationController
 
   def index
     @profile = current_user.profile
-    @messages_sent_messages = Message.where(sender: current_user).order(:recipient_id, :created_at)
-    @messages_recipient_messages = Message.where(recipient: current_user).order(:sender_id, :created_at)
+    @messages_sent_messages = Message.where(sender: current_user.profile.id).order(:recipient_id, created_at: :desc)
+    @messages_recipient_messages = Message.where(recipient: current_user.profile.id).order(:sender_id, created_at: :desc)
     @messages = Message.all
   end
 
@@ -36,7 +36,7 @@ class MessagesController < ApplicationController
 
   def show
     @profile = Profile.find(params[:id])
-    @messge = Message.find(params[:id])
+    @message = Message.find(params[:id])
   end
 
   def edit
@@ -46,7 +46,15 @@ class MessagesController < ApplicationController
   def update
     @message = Message.find(params[:id])
     if @message.update_attributes(message_params)
-      redirect_to messages_path
+      respond_to do |format|
+        format.html do
+          if request.xhr?
+            @message
+          else
+            render messages_path
+          end
+        end
+      end
     else
       render :new
     end

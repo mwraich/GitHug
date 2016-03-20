@@ -2,6 +2,7 @@ $(document).on('page:load ready', function() {
 
   $('.sent_message').hide();
 
+// This handles the the reply partial
   $(this).on('click','.reply', function(eventHandler){
     eventHandler.preventDefault();
     var self = $(this);
@@ -14,17 +15,12 @@ $(document).on('page:load ready', function() {
       if ($(self).siblings('form').length == 0){
         $(data).insertAfter(self);
       }
-
-
       }
 
     });
   });
 
-  $('.unread-checkbox').on('click',function(){
-  $(this).parent().submit();
-  });
-
+  // this handles the change in read status
   $('#sent_message_show').on('click', function(){
     $('#show-inbox').hide();
     $('.sent_message').fadeIn(1000);
@@ -33,5 +29,14 @@ $(document).on('page:load ready', function() {
   $('#show-inbox-button').on('click', function(){
     $('.sent_message').hide();
     $('#show-inbox').fadeIn(1000);
+  });
+
+ // This toggles the message area of an inbox message when you click the div
+  $('.chat-message-content').toggle();
+
+  $('.chat-message').on('click', function(e){
+      $(this).next('.chat-message-content').toggle();
+      $(this).find('input[type=checkbox]').prop("checked", !$(this).find('input[type=checkbox]').prop("checked"));
+      $('.edit_message').submit();
   });
 });

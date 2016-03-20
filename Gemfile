@@ -99,8 +99,9 @@ group :development do
 
   group :production do
     # gem 'rails_12factor'
-    #
-    # #server
+    gem 'rails_12factor'
+
+    #server
     # gem 'puma'
 
 
