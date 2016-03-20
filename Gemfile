@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+# ruby '2.3.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
 # Use sqlite3 as the database for Active Record
@@ -36,9 +36,11 @@ gem 'geocoder'
 #allows taging
 gem 'acts-as-taggable-on', '~> 3.4'
 #To be used for implementing privacy Settings
-# gem 'cancancan', '~> 1.10'
+
 #To enable text message notifications
 gem 'twilio-ruby', '~> 4.11.1'
+# To validiate phone numbers
+gem 'phony_rails'
 
 gem 'bourbon'
 gem 'neat'
@@ -98,9 +100,7 @@ group :development do
   group :production do
     gem 'rails_12factor'
 
-    # gem 'puma'
-
-    # #server
+    #server
     # gem 'puma'
 
 

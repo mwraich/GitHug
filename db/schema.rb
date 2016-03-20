@@ -34,6 +34,22 @@ ActiveRecord::Schema.define(version: 20160316230009) do
   add_index "blocked_users", ["blocked_id"], name: "index_blocked_users_on_blocked_id", using: :btree
   add_index "blocked_users", ["blocker_id"], name: "index_blocked_users_on_blocker_id", using: :btree
 
+  create_table "delayed_jobs", force: :cascade do |t|
+    t.integer  "priority",   default: 0, null: false
+    t.integer  "attempts",   default: 0, null: false
+    t.text     "handler",                null: false
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
+
   create_table "images", force: :cascade do |t|
     t.string   "image"
     t.integer  "profile_id"
@@ -58,9 +74,11 @@ ActiveRecord::Schema.define(version: 20160316230009) do
     t.integer  "recipient_id"
     t.integer  "sender_id"
     t.text     "message"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.boolean  "read_status",  default: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.boolean  "read_status",     default: false
+    t.boolean  "permission",      default: false
+    t.integer  "pull_request_id"
   end
 
   create_table "pair_programmers", force: :cascade do |t|
@@ -107,18 +125,30 @@ ActiveRecord::Schema.define(version: 20160316230009) do
     t.date     "birthday"
     t.string   "operating_system"
     t.text     "about_me"
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.integer  "user_id"
     t.float    "latitude"
     t.float    "longitude"
     t.string   "image"
     t.string   "province"
-    t.boolean  "date",              default: false
-    t.boolean  "paired_programmer", default: false
+    t.boolean  "date",               default: false
+    t.boolean  "paired_programmer",  default: false
+    t.string   "phone_number"
+    t.boolean  "notification_email", default: true
+    t.boolean  "notification_sms",   default: true
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
+
+  create_table "pull_requests", force: :cascade do |t|
+    t.integer  "requestor_id"
+    t.integer  "requestee_id"
+    t.boolean  "permission",   default: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.boolean  "read",         default: false
+  end
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
@@ -146,7 +176,6 @@ ActiveRecord::Schema.define(version: 20160316230009) do
     t.datetime "updated_at"
     t.string   "username"
     t.string   "github_image"
-    t.integer  "roles_mask"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

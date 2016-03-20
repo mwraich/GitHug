@@ -50,47 +50,108 @@ $(document).on('page:load ready', function() {
 
   $('#login-notice').delay(1000).slideUp(1000);
 
+  // For previous button
+    $('#birthdayPrevious').click(function(){
+      $('#showFirstName').show(1000);
+      $('#showGenderAndBirthday').hide();
+    });
 
-  $('#imageslideshow').hide();
+    $('#aboutMePrevious').click(function(){
+      $('#showGenderAndBirthday').show(1000);
+      $('#showAboutMe').hide();
+    });
 
-  $('#profile-images').click(function(){
-    $("#dim-page").css("opacity",0.6).fadeIn(100, function(){
-      $('#imageslideshow').css({'position':'absolute', 'display':'block', 'z-index': 99999});
+    $('#languagePrevious').click(function(){
+      $('#showAboutMe').show(1000);
+      $('#showLanguage').hide();
+    });
+
+    $('#preferencesPrevious').click(function(){
+      $('#showLanguage').show(1000);
+      $('#showPreferences').hide();
+    });
+
+          $('.gender_validation').click(function() {
+        $(this).siblings('input:checkbox').prop('checked', false);
+      });
+
+      var form = $("#new_profile");
+
+        form.validate({
+        rules: {
+          'profile[first_name]': {
+            minlength: 2,
+            required: true
+          },
+          'profile[last_name]': {
+            minlength: 2,
+            required: true
+          },
+          'profile[location]': {
+            minlength: 2,
+            required: true
+          },
+          'profile[birthday]': {
+            check_date_of_birth: true,
+            required: true
+          },
+          'profile[operating_system]': {
+            minlength: 1,
+            required: true
+          },
+          'profile[about_me]': {
+            minlength: 5,
+            maxlength: 500,
+            required: true
+          }
+        }
     });
 
 
-    var presentIndex = 0,
-      photos = $('.container div'),
-      photoAmount = photos.length;
-
-      function nextPhoto() {
-        var photo = $('.container div').eq(presentIndex);
-        photos.hide();
-        photo.css('display','inline-block');
+    // $( '#nameNext').click(function() {
+    //   alert( "Valid: " + form.valid() );
+    // });
+  $('.edit_profile').validate({
+    rules: {
+        'profile[first_name]': {
+          required: true,
+          minlength: 2
+        },
+        'profile[last_name]': {
+          required: true,
+          minlength: 2
+        },
+        'profile[location]': {
+          required: true,
+          minlength: 2
+        },
+        'profile[birthday]': {
+          check_date_of_birth: true,
+          required: true
+        },
+        'profile[operating_system]': {
+          required: true,
+          minlength: 1
+        },
+        'profile[about_me]': {
+          required: true,
+          minlength: 5,
+          maxlength: 500
+        },
       }
-
-      $('.right_arrow').click(function() {
-        presentIndex++;
-          if (presentIndex > photoAmount - 1) {
-            presentIndex = 0;
-          }
-        nextPhoto();
-      });
-
-      $('.left_arrow').click(function(){
-        presentIndex--;
-          if (presentIndex < 0){
-            presentIndex = photoAmount - 1;
-          }
-        nextPhoto();
-      });
-    });
-
-    $('.x').click(function(){
-      $("#dim-page").css("opacity",0).fadeOut(50, function(){
-        $('#imageslideshow').css('display', 'none');
-    });
   });
+
+  $.validator.addMethod("check_date_of_birth", function(value, element) {
+    if (this.optional(element)) {
+      return true;
+    }
+    var birthday = $("#profile_birthday").val();
+    var birthdaydate = Date.parse(birthday);
+    var difference = Date.now() - birthdaydate;
+    var ageYear = new Date(difference);
+    var age = Math.abs(ageYear.getUTCFullYear() - 1970);
+    return age > 18;
+  }, "You must be at least 18 years of age.");
 
 // AJAX call for search - if search isn't returning results this is liking getting broken
   $('#search-form').on('submit', function(e) {
@@ -110,9 +171,7 @@ $(document).on('page:load ready', function() {
       }
     });
   });
-  });
 
-  $(document).ready(function () {
     $('.gender_validation').click(function() {
       $(this).siblings('input:checkbox').prop('checked', false);
     });

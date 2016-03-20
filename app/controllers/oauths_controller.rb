@@ -12,7 +12,7 @@ class OauthsController < ApplicationController
     else
       # begin
         @user = create_from(provider)
-        # this is the place to add '@user.activate!' if you are using user_activation submodule
+        # this is the place to add '@user.activate!' if you are using user_activation submodules
         UserMailer.delay.welcome_email(@user)
         reset_session # protect from session fixation attack
         auto_login(@user)

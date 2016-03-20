@@ -18,17 +18,20 @@ class MessagesController < ApplicationController
   end
 
   def create
-    # @profile = Profile.find(params[:id])
+    @profile = current_user.profile
     @message = Message.new(message_params)
     @message.sender = current_user.profile
 
-    if @message.save
+    if @message.save && @profile.notification_email?
       UserMailer.user_message_notification(Profile.find(@message.recipient)).deliver_later
       redirect_to messages_path, notice: "Message sent!"
     else
       redirect_to messages_url, alert: "SORRY THERE WAS AN ERROR!"
     end
 
+    if @message.save && @profile.notification_email? && @profile.phone_number?
+        @profile.send_text_message
+    end
   end
 
   def show

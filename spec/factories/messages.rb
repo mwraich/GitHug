@@ -1,5 +1,4 @@
 FactoryGirl.define do
-
   factory :message do
     recipient_id
     sender_id
