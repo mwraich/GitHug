@@ -1,16 +1,14 @@
-<div id = "first_option">
   <div class="search-form">
     <h2>Find A Match</h2>
 
     <%= form_tag(profiles_path, method: :get, :id =>'search-form') do %>
 
     <label >Who are you looking for?</label><br>
-    <%= label_tag('search[paired_programmer]', "Pair")%>
+    <%= label_tag('search[paired_programmer]', "Pair", class:'partner')%>
     <%= check_box_tag('search[paired_programmer]') %>
 
-    <%= label_tag('search[date]', "Date") %>
+    <%= label_tag('search[date]', "Date", class:'partner') %>
     <%= check_box_tag('search[date]') %>
-  </div>
 
 
   <div class="preference-form">

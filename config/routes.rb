@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
 
   resources :sessions, only: [:new, :create, :destroy]
-  resources :blocked_users, only: [:create]
+  resources :blocked_users, only: [:create, :destroy]
 
 
   get "oauth/callback" => "oauths#callback" # for use with Github, Facebook
