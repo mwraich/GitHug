@@ -18,20 +18,17 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @profile = current_user.profile
+    # @profile = Profile.find(params[:id])
     @message = Message.new(message_params)
     @message.sender = current_user.profile
 
-    if @message.save && @profile.notification_email?
+    if @message.save
       UserMailer.user_message_notification(Profile.find(@message.recipient)).deliver_later
       redirect_to messages_path, notice: "Message sent!"
     else
       redirect_to messages_url, alert: "SORRY THERE WAS AN ERROR!"
     end
 
-    if @message.save && @profile.notification_email? && @profile.phone_number?
-        @profile.send_text_message
-    end
   end
 
   def show
@@ -46,15 +43,7 @@ class MessagesController < ApplicationController
   def update
     @message = Message.find(params[:id])
     if @message.update_attributes(message_params)
-      respond_to do |format|
-        format.html do
-          if request.xhr?
-            @message
-          else
-            render messages_path
-          end
-        end
-      end
+      redirect_to messages_path
     else
       render :new
     end

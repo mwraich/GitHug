@@ -2,6 +2,14 @@ $(document).on('page:load ready', function() {
 
   $('.sent_message').hide();
 
+  $('.chat-message-content').toggle();
+  $('.chat-message').on('click', function(e){
+    $(this).next('.chat-message-content').toggle();
+    $(this).find('input[type=checkbox]').prop("checked", !$(this).find('input[type=checkbox]').prop("checked"));
+    $('.edit_message').submit();
+  });
+
+
 // This handles the the reply partial
   $(this).on('click','.reply', function(eventHandler){
     eventHandler.preventDefault();
@@ -12,9 +20,9 @@ $(document).on('page:load ready', function() {
       type: 'GET',
       // dataType: "script",
       success: function(data){
-      if ($(self).siblings('form').length == 0){
-        $(data).insertAfter(self);
-      }
+        if ($(self).siblings('form').length == 0){
+          $(data).insertAfter(self);
+        }
       }
 
     });
@@ -32,11 +40,4 @@ $(document).on('page:load ready', function() {
   });
 
  // This toggles the message area of an inbox message when you click the div
-  $('.chat-message-content').toggle();
-
-  $('.chat-message').on('click', function(e){
-      $(this).next('.chat-message-content').toggle();
-      $(this).find('input[type=checkbox]').prop("checked", !$(this).find('input[type=checkbox]').prop("checked"));
-      $('.edit_message').submit();
-  });
 });
