@@ -101,8 +101,6 @@
 
 
 <% if check_current_user %>
-  <div class="reco_matches">
-    <h2>Recomended For You</h2>
     <% if @profile.partnerReco.present?  %>
         <%= render "reco_partner" %>
     <% end %>

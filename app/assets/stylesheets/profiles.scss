@@ -338,11 +338,45 @@ button#languageNext{
 
 }
 
+.recos {
+  margin-left: 20px;
+  margin-right: 20px;
+
+  & img {
+      background-color: #AADBE8;
+      border-radius: 200px;
+      width: 13%;
+      display: inline;
+      float: left;
+      margin-right: 10px;
+  }
+  & p {
+    color: #262831;
+    margin: -2px;
+  }
+  & hr{
+    width: 100%;
+    height: 1px;
+  }
+  & h2 {
+    font-family: "Inconsolata";
+    text-align: center;
+    color: #262831;
+    font-size: 1.2rem;
+    line-height: 1.2em;
+    margin-bottom: 2rem;
+  }
+}
+.individual-reco{
+  margin-bottom: 28px;
+}
+
 #index-view-profile-info{
   font-size: 1.5rem;
   display: inline;
   clear:left;
-  &p{
+
+  &p {
     padding-top: 5%;
     padding-left: 5%;
  }
