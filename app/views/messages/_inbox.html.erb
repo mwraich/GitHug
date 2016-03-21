@@ -1,5 +1,9 @@
 <div id="show-inbox">
   <% if @profile.recipient_messages.any?%>
     <%= render @messages_recipient_messages %>
+  <% else %>
+    <div id="empty_mailbox">
+      <p>No Messages</p>
+    </div>
   <% end %>
 </div>
