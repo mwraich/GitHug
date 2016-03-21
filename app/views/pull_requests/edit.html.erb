@@ -1,0 +1,12 @@
+<%= form_for @pull_request_received_requests do |f| %>
+  <div class="pull_request_reply_message">
+    <%= f.label "Do you accept #{@pull_request_received_requests.requestor.first_name}'s request to message you?" %>
+    <%= f.hidden_field :read, value: true %>
+    <%= f.label(:permission, "Yes") %>
+    <%= f.radio_button(:permission, "true") %>
+    <%= f.label(:permission, "No") %>
+    <%= f.radio_button(:permission, "false") %>
+    <%= f.submit "SEND" %>
+
+  </div>
+<% end %>

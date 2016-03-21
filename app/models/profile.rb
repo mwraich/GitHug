@@ -16,6 +16,8 @@ class Profile < ActiveRecord::Base
   has_many :recipient_messages, class_name: :Message, foreign_key: :recipient_id
   has_many :blocked_users, through: :users
   has_many :enemies, through: :blocked_users, class_name: User
+  has_many :sent_requests, class_name: :PullRequest, foreign_key: :requestor_id
+  has_many :received_requests, class_name: :PullRequest, foreign_key: :requestee_id
 
   accepts_nested_attributes_for :images, :languages, :partner, :pair_programmer, allow_destroy: true
   before_create :location, :latitude  => :latitude, :longitude => :lon
@@ -98,7 +100,6 @@ class Profile < ActiveRecord::Base
       profile.errors[:gender] << "can't be blank"
     end
   end
-
 
   def legal_age
     if birthday + 18.years >= Date.today

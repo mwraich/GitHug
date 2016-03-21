@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
     @messages_sent_messages = Message.where(sender: current_user.profile.id).order(:recipient_id, created_at: :desc)
     @messages_recipient_messages = Message.where(recipient: current_user.profile.id).order(:sender_id, created_at: :desc)
     @messages = Message.all
+    @received_requests = PullRequest.where(requestee_id: current_user)
   end
 
   def reply
@@ -13,12 +14,14 @@ class MessagesController < ApplicationController
     render partial: "reply"
   end
 
+
   def new
     @message = Message.new
   end
 
   def create
-    # @profile = Profile.find(params[:id])
+    @pull_request = PullRequest.find(params[:profile_id])
+    if @pull_request == true
     @message = Message.new(message_params)
     @message.sender = current_user.profile
 
@@ -28,8 +31,9 @@ class MessagesController < ApplicationController
     else
       redirect_to messages_url, alert: "Sorry someething went wrong &   your message could not be send. "
     end
-
+    end
   end
+
 
   def show
     @profile = Profile.find(params[:id])

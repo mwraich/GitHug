@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :authentications, dependent: :destroy
   has_one :profile, dependent: :destroy
   authenticates_with_sorcery!
-  
+
   def has_linked_with?(provider)
     authentication.where(provider: provider).present?
   end
@@ -17,5 +17,7 @@ class User < ActiveRecord::Base
     profile.recipient_messages.where('read_status = false').count
   end
 
-
+  def pull_request_notice
+    profile.received_requests.where('read = false').count
+  end
 end

@@ -1,6 +1,7 @@
 module ProfilesHelper
   include ActsAsTaggableOn::TagsHelper
 
+
   def check_current_user
     current_user.profile == @profile
   end
@@ -33,7 +34,5 @@ module ProfilesHelper
       ['Yukon']
     ]
   end
-
-
 
 end

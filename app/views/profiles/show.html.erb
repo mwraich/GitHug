@@ -15,6 +15,7 @@
       <ul class="bxslider">
         <li><%= image_tag(@profile.user.github_image) %></li>
       </ul>
+
     <% end %>
 
 </div>
@@ -22,6 +23,7 @@
 <div id="profile-name">
 <h1 class="profile-name"><%= @profile.first_name %> <%= @profile.last_name %></h1>
 </div>
+
 <!-- To turn message button off, uncomment these and put in erb tags -->
 <!-- if current_user.profile == @profile  -->
 <!-- else  -->
@@ -31,6 +33,7 @@
 
 <% elsif @profile.blocked_by?(current_user) %>
   <div class="spacing">    </div>
+
 
   <%else %>
     <button class= "message-to-button">Message</button>
@@ -42,6 +45,7 @@
 
 </div>
 </div>
+
 
 <div id="profile-aboutme">
   <h2>About Me</h2>
@@ -91,6 +95,10 @@
     <% end %>
   </div>
 </div>
+
+  <%= render "messages/new_message" %>
+
+
 
 <% if check_current_user %>
   <div class="reco_matches">

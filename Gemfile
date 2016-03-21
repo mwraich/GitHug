@@ -37,16 +37,28 @@ gem 'geocoder'
 gem 'acts-as-taggable-on', '~> 3.4'
 #To be used for implementing privacy Settings
 
+
+
+gem 'cloudinary'
+
 #To enable text message notifications
 gem 'twilio-ruby', '~> 4.11.1'
 # To validiate phone numbers
 gem 'phony_rails'
 
+gem 'daemons'
+
+
 gem 'bourbon'
 gem 'neat'
 gem 'autoprefixer-rails'
+
+
+gem 'delayed_job_active_record'
+
 gem 'typedJS'
 gem 'bxslider-rails'
+
 
 gem 'carrierwave'
 

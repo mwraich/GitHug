@@ -558,7 +558,7 @@ select#profile_province{
   width: 100%;
   }
 }
-button.message-to-button{
+button.message-and-request-button{
  background-color: #9FED9C;
  color: #262831;
  width: 35%;
@@ -1116,7 +1116,7 @@ textarea#message_message{
        color:white;
      }
    }
-   button.message-to-button{
+   button.message-and-request-button{
     margin-left: 37%;
     background-color: #9FED9C;
     color: #262831;
@@ -1657,6 +1657,17 @@ textarea#message_message{
     }
   }
 
+  // #pull_requests{
+  //   background-color: #f5f7fa;
+  //   border-radius: 2px;
+  //   padding-top: 2%;
+  //   padding-bottom: 3%;
+  //   width: 95%;
+  //   margin-left: -2.5%;
+  //   margin-top: 2%;
+  // }
+
+
   #show-inbox-button{
     float: left;
     margin-left: 2%;
@@ -1798,7 +1809,7 @@ textarea#message_message{
     padding-bottom: 2.5%;
     margin-top: -3%;
   }
-  button.message-to-button{
+  button.message-and-request-button{
     margin-top: 0%;
   }
   #profile-images{
