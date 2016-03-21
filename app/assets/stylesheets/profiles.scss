@@ -821,6 +821,28 @@ textarea#message_message{
 
    }
 
+//------------About Us Page------------------//
+.about-us{
+  background-color: #f5f7fa;
+  width: 95%;
+  margin-left: 2.5%;
+  margin-top: 15%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  margin-bottom: 2%;
+  border-radius: 2px;
+  & h2{
+    background-color: #dce4ef;
+    font-size: 1.6rem;
+    color: #31343f;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    text-align: center;
+    border-radius: 2px;
+  }
+}
+
 
 @media all and (max-width: 900px) {
   #nav-trigger {
@@ -1778,8 +1800,31 @@ textarea#message_message{
     margin-top: 1%;
   }
 
+  //------------------About Us Styles----------------//
+  .about-us{
+    background-color: #f5f7fa;
+    width: 95%;
+    margin-left: -1%;
+    margin-top: -3%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-bottom: 2%;
+    border-radius: 2px;
+    & h2{
+      background-color: #dce4ef;
+      font-size: 1.6rem;
+      color: #31343f;
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-top: 1%;
+      text-align: center;
+      border-radius: 2px;
+    }
+  }
 
 }
+
+
 
 //------------------Large Screen------------------//
 @include media ($extra-large-screen-up){
