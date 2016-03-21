@@ -1,13 +1,19 @@
-<div class='index-users'>
-<% @profile.partnerReco.each do |reco| %>
-  <%= link_to(profile_path(profile)) do %>
-  <%= image_tag(reco.user.github_image, class: 'profile-image') %>
-  <div id="index-view-profile-info">
-    <p id = "index-profile-name"><%= reco.first_name %></p>
-    <p id="index-profile-location"><<%= reco.location %></p>
-    <br>
+<div class='recos'>
+  <h2>People you may want to date</h2>
+
+  <% @profile.partnerReco.each do |reco| %>
+
+  <div class="individual-reco">
+    <%= link_to(profile_path(profile)) do %>
+    <%= image_tag(reco.user.github_image, class: 'recos-image') %>
+
+    <div class='reco-info'>
+      <p><%= reco.first_name %></p>
+      <p><%= reco.location %></p>
+    </div>
+
   </div>
+  <hr>
+    <% end %>
   <% end %>
-  <br>
-<% end %>
 </div>

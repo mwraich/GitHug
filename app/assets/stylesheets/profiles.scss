@@ -343,12 +343,12 @@ button#languageNext{
   font-size: 1.5rem;
   display: inline;
   clear:left;
-  &p{
+
+  &p {
     padding-top: 5%;
     padding-left: 5%;
  }
 }
-
 
 
 #link-to-profile img{
@@ -628,7 +628,38 @@ input.block_button{
   margin-bottom: 5%;
 }
 
+.recos {
+  margin-left: 20px;
+  margin-right: 20px;
 
+  & img {
+      background-color: #AADBE8;
+      border-radius: 200px;
+      width: 13%;
+      display: inline;
+      float: left;
+      margin-right: 10px;
+  }
+  & p {
+    color: #262831;
+    margin: -2px;
+  }
+  & hr{
+    width: 100%;
+    height: 1px;
+  }
+  & h2 {
+    font-family: "Inconsolata";
+    text-align: center;
+    color: #262831;
+    font-size: 1.2rem;
+    line-height: 1.2em;
+    margin-bottom: 2rem;
+  }
+}
+.individual-reco{
+  margin-bottom: 28px;
+}
 //--------------Responsive Nav Bar---------------//
 
 #nav-trigger{
@@ -917,7 +948,17 @@ textarea#message_message{
 }
 
 
+#empty_mailbox{
 
+  height: 500px;
+  & p{
+    font-style: italic;
+  }
+}
+.message-text{
+  padding-right: 2%;
+  word-wrap: break-word;
+}
 
 
 //------------Desktop Size------------//
@@ -1001,6 +1042,21 @@ textarea#message_message{
     padding-left: 3%;
     width: 15%;
     border-radius: 2px;
+    font-style: none;
+
+    & p {
+      color:$base-background-color;
+      font-style: none;
+
+    }
+    & a {
+        color:$base-background-color;
+    }
+
+    & :active {
+      background-color: #31343f;
+      font-style: none;
+    }
   }
 
   //-------------Profile Show Page Styles------------//
@@ -1211,7 +1267,45 @@ textarea#message_message{
      width: 16%;
 
    }
+   .recos {
+     margin-top: 2%;
+     background-color: #f5f7fa;
+     border-radius: 2px;
+     padding-top: 1%;
+     padding-bottom: 2%;
+     margin-left: 2.5%;
+     width: 90%;
 
+     & img {
+         width: 10%;
+         margin-right: 40px;
+         margin-left: 40px;
+     }
+     & p {
+       margin-left: 6%;
+       margin-right: 6%;
+       list-style: 1.2rem;
+     }
+     & hr{
+      border-bottom: 5px solid #dce4ef;
+      width: 90%;
+      margin-left: 5%;
+      margin-right: 5%;
+     }
+     & h2 {
+       background-color: #dce4ef;
+       font-size: 1.5rem;
+       color: #31343f;
+       margin-left: 5%;
+       margin-right: 5%;
+       margin-top: 1%;
+       text-align: center;
+       border-radius: 2px;
+     }
+   }
+   .reco-info{
+     padding-top: 18px;
+   }
 
 
   //---------------Edit/New Profile Form Desktop Size-----------//
@@ -1420,9 +1514,6 @@ textarea#message_message{
     margin-left: 5%;
   }
 
-  // .image-fields input{
-  //   width: 100%;
-  // }
 
   .actions input{
     width: 30%;
@@ -1746,16 +1837,6 @@ textarea#message_message{
     }
   }
 
-  // #pull_requests{
-  //   background-color: #f5f7fa;
-  //   border-radius: 2px;
-  //   padding-top: 2%;
-  //   padding-bottom: 3%;
-  //   width: 95%;
-  //   margin-left: -2.5%;
-  //   margin-top: 2%;
-  // }
-
 
   #show-inbox-button{
     float: left;
@@ -1959,10 +2040,6 @@ textarea#message_message{
 
 }
 
-
-
-
-
 //------------------Large Screen------------------//
 @include media ($extra-large-screen-up){
   .logout-icon{
@@ -2045,6 +2122,15 @@ textarea#message_message{
     margin-top: -3.5%;
   }
 
+  .recos img {
+    margin-bottom: 2%;
+    margin-left: 5%;
+  }
+
+  .reco-info {
+    padding-top: 3%;
+}
+
   .footer{
     margin-top: 12.5%;
   }
@@ -2052,5 +2138,6 @@ textarea#message_message{
 
 //-----------------iMac Screen---------------//
 @include media ($iMac-screen-up){
+
 
 }
