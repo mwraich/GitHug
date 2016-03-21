@@ -101,6 +101,7 @@ class Profile < ActiveRecord::Base
     end
   end
 
+
   def legal_age
     if birthday + 18.years >= Date.today
       errors.add(:birthday, "Must be over 18 to use this site")
