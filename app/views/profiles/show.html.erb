@@ -15,7 +15,6 @@
       </ul>
     <% end %>
 </div>
-
 <div id="profile-page-title">
 <div id="profile-name">
 <h1 class="profile-name"><%= @profile.first_name %> <%= @profile.last_name %></h1>
@@ -23,12 +22,15 @@
 <!-- To turn message button off, uncomment these and put in erb tags -->
 <!-- if current_user.profile == @profile  -->
 <!-- else  -->
-<button class= "message-to-button">Message</button>
 
 <% if current_user.profile == @profile  %>
+  <div class="spacing">  </div>
+
 <% elsif @profile.blocked_by?(current_user) %>
-  <%= "This user has already been blocked" %>
+  <div class="spacing">    </div>
+
   <%else %>
+    <button class= "message-to-button">Message</button>
     <%= form_for BlockedUser.new do |f| %>
       <%= f.hidden_field :blocked_id, value: @profile.user_id %>
       <%= f.submit 'Block User', :class => "block_button" %>
@@ -98,4 +100,6 @@
   <% end %>
 <% end %>
 
-<%= render "messages/new_message" %>
+<div class="new_message">
+  <%= render "messages/new_message" %>
+</div>

@@ -1,9 +1,14 @@
 
+// # Place all the behaviors and hooks related to the matching controller here.
+// # All this logic will automatically be available in application.js.
+// # You can use CoffeeScript in this file: http://coffeescript.org/$(document).on('page:load ready', function() {
+
 $(document).on('page:load ready', function() {
+
 // Message pop-up
-  $(".new_message").toggle();
-  $(".message-to-button").on('click', function(){
-    $(".new_message").toggle();
+  $('.new_message_pop_up_expanded').hide();
+  $('.message-to-button').on('click', function(){
+    $('.new_message_pop_up_expanded').slideToggle();
   });
 
   $("#nav-mobile").html($("#nav-main").html());
@@ -15,7 +20,8 @@ $(document).on('page:load ready', function() {
           $("nav#nav-mobile ul").addClass("expanded").slideDown(250);
           $(this).addClass("open");
       }
-  });
+    });
+
 
 // Form Functionality
   $('#showLocation').hide();
@@ -39,8 +45,10 @@ $(document).on('page:load ready', function() {
     $('#showLanguage').show(1000);
   });
 
+// Slideshow
+  $('.bxslider').bxSlider();
 
-
+  $('#login-notice').delay(1000).slideUp(1000);
 
   // For previous button
     $('#birthdayPrevious').click(function(){
@@ -63,46 +71,40 @@ $(document).on('page:load ready', function() {
       $('#showPreferences').hide();
     });
 
-          $('.gender_validation').click(function() {
-        $(this).siblings('input:checkbox').prop('checked', false);
-      });
 
-      var form = $("#new_profile");
-
-        form.validate({
-        rules: {
-          'profile[first_name]': {
-            minlength: 2,
-            required: true
-          },
-          'profile[last_name]': {
-            minlength: 2,
-            required: true
-          },
-          'profile[location]': {
-            minlength: 2,
-            required: true
-          },
-          'profile[birthday]': {
-            check_date_of_birth: true,
-            required: true
-          },
-          'profile[operating_system]': {
-            minlength: 1,
-            required: true
-          },
-          'profile[about_me]': {
-            minlength: 5,
-            maxlength: 500,
-            required: true
-          }
-        }
+    $('.gender_validation').click(function() {
+      $(this).siblings('input:checkbox').prop('checked', false);
     });
 
+    $('#new_profile').validate({
+      rules: {
+        'profile[first_name]': {
+          required: true,
+          minlength: 2
+        },
+        'profile[last_name]': {
+          required: true,
+          minlength: 2
+        },
+        'profile[location]': {
+          required: true,
+          minlength: 2
+        },
+        'profile[birthday]': {
+          check_date_of_birth: true,
+          require: true
+        },
+        'profile[operating_system]': {
+          minlength: 1
+        },
+        'profile[about_me]': {
+          required: true,
+          minlength: 5,
+          maxlength: 500
+        }
+      }
+    });
 
-    // $( '#nameNext').click(function() {
-    //   alert( "Valid: " + form.valid() );
-    // });
   $('.edit_profile').validate({
     rules: {
         'profile[first_name]': {
@@ -146,9 +148,41 @@ $(document).on('page:load ready', function() {
   }, "You must be at least 18 years of age.");
 
 
-// Slideshow
-  $('.bxslider').bxSlider();
+  //Search form validation
+  $('#search-form').validate({
+    rules: {
+      'search[language]': {
+        required: true,
+        minlength: 1
+      },
+      'search[operating_system]': {
+        required: true,
+        minlength: 1
+      },
+      'search[min_age]': {
+        required: true,
+        min: 18
+      },
+      'search[max_age]': {
+        required: true,
+        max: 100
+      },
+      'search[city]': {
+        required: true,
+        minlength: 1
+      },
+      'search[province]': {
+        required:true
+      }
+    }
+  });
 
+  // Slideshow
+    $('.bxslider').bxSlider();
+
+    $('#login-notice').delay(1000).slideUp(1000);
+
+// AJAX call for search - if search isn't returning results this is liking getting broken
   $('#search-form').on('submit', function(e) {
     e.preventDefault();
     $.ajax({
@@ -166,4 +200,5 @@ $(document).on('page:load ready', function() {
       }
     });
   });
-});
+
+    });

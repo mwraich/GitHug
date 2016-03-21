@@ -13,4 +13,5 @@ end
    subject_line {FFaker::Hacker.adjective }
    read_status {FFaker::Hacker.noun}
   end
+
 end
