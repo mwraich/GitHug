@@ -1,8 +1,9 @@
 //------------------Base Document Styles------------//
 
-
 body{
   background-color: #DCE4EF;
+  min-height: 100%;
+
 }
 
 .page-title{
@@ -821,6 +822,79 @@ textarea#message_message{
 
    }
 
+//------------About Us Page------------------//
+.about-us{
+  background-color: #f5f7fa;
+  width: 95%;
+  margin-left: 2.5%;
+  margin-top: 15%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  margin-bottom: 2%;
+  border-radius: 2px;
+  & h2{
+    background-color: #dce4ef;
+    font-size: 1.6rem;
+    color: #31343f;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    text-align: center;
+    border-radius: 2px;
+  }
+}
+.contact-us{
+  background-color: #f5f7fa;
+  width: 95%;
+  margin-left: 2.5%;
+  margin-top: 15%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  margin-bottom: 2%;
+  border-radius: 2px;
+  & h2{
+    background-color: #dce4ef;
+    font-size: 1.6rem;
+    color: #31343f;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    text-align: center;
+    border-radius: 2px;
+  }
+  & p{
+    text-align: center;
+    color: #333333;
+  }
+}
+
+//------------------Footer----------------------//
+.footer{
+  clear: both;
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  background-color: #9ea1b4;
+  margin-top: 110%;
+  padding-top: 1%;
+  padding-bottom: 0%;
+  & a{
+    color: #eaeae8;
+    margin-left: 1%;
+    font-size: 1.1rem;
+    padding-bottom: 0.5%;
+    display: block;
+  }
+
+  & p{
+    color: #d1d3d6;
+    float: right;
+    font-size: 0.9rem;
+    margin-right: 1%;
+  }
+}
+
 
 @media all and (max-width: 900px) {
   #nav-trigger {
@@ -856,6 +930,7 @@ textarea#message_message{
 
   body{
     background-color: #D7DAE0;
+    min-height: 100%;
   }
   .message{
     display: none;
@@ -1789,8 +1864,90 @@ textarea#message_message{
     margin-top: 1%;
   }
 
+  //------------------About Us Styles----------------//
+  .about-us{
+    background-color: #f5f7fa;
+    width: 95%;
+    margin-left: -1%;
+    margin-top: -3%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-bottom: 2%;
+    border-radius: 2px;
+    & h2{
+      background-color: #dce4ef;
+      font-size: 1.6rem;
+      color: #31343f;
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-top: 1%;
+      text-align: center;
+      border-radius: 2px;
+    }
+  }
+  .contact-us{
+    background-color: #f5f7fa;
+    width: 95%;
+    margin-left: -1%;
+    margin-top: -3%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-bottom: 2%;
+    border-radius: 2px;
+    & h2{
+      background-color: #dce4ef;
+      font-size: 1.6rem;
+      color: #31343f;
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-top: 1%;
+      text-align: center;
+      border-radius: 2px;
+    }
+    & p{
+      text-align: center;
+      color: #333333;
+      margin-top: 5%;
+      padding-bottom: 3%;
+      font-size: 1.3rem;
+    }
+  }
+  //------------------Footer----------------------//
+  .footer{
+    clear: both;
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    background-color: #dce4ef;
+    margin-top: 27%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    & a{
+      color: #31343f;
+      margin-left: 1%;
+      font-size: 1.1rem;
+      padding-bottom: 0.5%;
+      display: block;
+    }
+
+    & a:hover{
+      color: white;
+    }
+
+    & p{
+      color: #31343f;
+      float: right;
+      font-size: 0.9rem;
+      margin-right: 1%;
+    }
+  }
 
 }
+
+
+
+
 
 //------------------Large Screen------------------//
 @include media ($extra-large-screen-up){
@@ -1873,5 +2030,13 @@ textarea#message_message{
   .search-form{
     margin-top: -3.5%;
   }
+
+  .footer{
+    margin-top: 12.5%;
+  }
+}
+
+//-----------------iMac Screen---------------//
+@include media ($iMac-screen-up){
 
 }
