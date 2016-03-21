@@ -842,6 +842,30 @@ textarea#message_message{
     border-radius: 2px;
   }
 }
+.contact-us{
+  background-color: #f5f7fa;
+  width: 95%;
+  margin-left: 2.5%;
+  margin-top: 15%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  margin-bottom: 2%;
+  border-radius: 2px;
+  & h2{
+    background-color: #dce4ef;
+    font-size: 1.6rem;
+    color: #31343f;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    text-align: center;
+    border-radius: 2px;
+  }
+  & p{
+    text-align: center;
+    color: #333333;
+  }
+}
 
 
 @media all and (max-width: 900px) {
@@ -1819,6 +1843,33 @@ textarea#message_message{
       margin-top: 1%;
       text-align: center;
       border-radius: 2px;
+    }
+  }
+  .contact-us{
+    background-color: #f5f7fa;
+    width: 95%;
+    margin-left: -1%;
+    margin-top: -3%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-bottom: 2%;
+    border-radius: 2px;
+    & h2{
+      background-color: #dce4ef;
+      font-size: 1.6rem;
+      color: #31343f;
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-top: 1%;
+      text-align: center;
+      border-radius: 2px;
+    }
+    & p{
+      text-align: center;
+      color: #333333;
+      margin-top: 5%;
+      padding-bottom: 3%;
+      font-size: 1.3rem;
     }
   }
 
