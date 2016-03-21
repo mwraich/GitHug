@@ -75,7 +75,7 @@
   <div class="yield">
 
     <% if current_user.notice > 0 %>
-      <p id="unread-messages-notice"><%= current_user.notice %> New Messages!</p>
+      <p id="unread-messages-notice"><%= link_to "#{current_user.notice} New Messages", messages_path %></p>
     <%end%>
   <% end %>
 
