@@ -9,153 +9,176 @@
         </ul>
       </div>
     <% end %>
-    <div id = 'showFirstName'>
-        <div class="form_input">
-          <%= label_tag "looking_for", "What are you looking for?", id: "looking_for" %><br>
-          <%= f.label :date, "Partner", id: "partner_label" %>
-            <%= f.check_box :date %><br>
-          <%= f.label :paired_programmer, "Pair Programmer", id: "pair_label" %>
-              <%= f.check_box :paired_programmer %>
-        </div><br>
 
-        <div class="form_input">
-          <%= f.label :first_name, "First Name:" %>
-          <%= f.text_field :first_name  %>
-          <label id="errorFirstName"></label>
-        </div>
-        <div class="form_input">
-          <%= f.label :last_name, "Last Name:"%>
-          <%= f.text_field :last_name %>
-          <label id="errorLastName"></label>
-        </div>
+<div id = 'showFirstName'>
+<div class="form_input">
+<%= label_tag "looking_for", "What are you looking for?", id: "looking_for" %><br>
+<%= f.label :date, "Partner", id: "partner_label" %>
+  <%= f.check_box :date %><br>
+<%= f.label :paired_programmer, "Pair Programmer", id: "pair_label" %>
+    <%= f.check_box :paired_programmer %>
+</div><br>
 
-        <p id="tag">Add Some Photos!</p>
-        <div>
-          <%= f.fields_for :images do |image| %>
-          <%= render "image_fields", f: image %>
-          <% end %>
-        </div>
-        <div class="add-language-spacing">
-          <%= link_to_add_association "Add Another Photo", f, :images, id: 'add_photo',
-          'data-association-insertion-method' => 'before',
-          'data-association-insertion-traversal' => 'closest' %>
-        </div>
-        <button type ='button' id = 'nameNext'> Next </button>
-      </div> <!-- end showFirstName-->
+<div class="form_input">
+<%= f.label :first_name, "First Name:" %>
+<%= f.text_field :first_name  %>
+<label id="errorFirstName"></label>
+</div>
 
-      <div id="showGenderAndBirthday">
+<div class="form_input">
+<%= f.label :last_name, "Last Name:"%>
+<%= f.text_field :last_name %>
+<label id="errorLastName"></label>
+</div>
 
-        <div class="form_checkbox_input">
-          <%= label_tag "gender", "Gender:", class: "select_label" %>
-            <%= f.label(:male, "Male" )%>
-            <%= f.check_box(:male, class:'gender_validation') %>
+<div class="form_input">
+  <%= f.label :phone_number %>
+  <%= f.telephone_field :phone_number, placeholder: "(555)-555-5555" %>
+</div>
 
-            <%= f.label(:female, "Female")%>
-            <%= f.check_box(:female, class:'gender_validation')%>
+<p id="tag">Add Some Photos!</p>
+<div>
+<%= f.fields_for :images do |image| %>
+<%= render "image_fields", f: image %>
+<% end %>
+</div>
+<div class="add-language-spacing">
+<%= link_to_add_association "Add Another Photo", f, :images, id: 'add_photo',
+'data-association-insertion-method' => 'before',
+'data-association-insertion-traversal' => 'closest' %>
+</div>
+<button type ='button' id = 'nameNext'> Next </button>
+</div> <!-- end showFirstName-->
 
-            <%= f.label(:other, "Other")%>
-            <%= f.check_box(:other, class:'gender_validation')%>
-            <label id="errorGender"></label>
+<div id="showGenderAndBirthday">
 
-        </div><br>
+<div class="form_checkbox_input">
+<%= label_tag "gender", "Gender:", class: "select_label" %>
+  <%= f.label(:male, "Male" )%>
+  <%= f.check_box(:male, class:'gender_validation') %>
 
-        <div class="form_input">
-          <%= f.label :city, "City:", class: "select_label"%>
-          <%= f.text_field :city%><br>
-          <%= f.label :province, "Province:", class: "select_label"%>
-          <% if current_user.profile.present?%>
-            <%= f.select(:province, options_for_select(provinces, selected: @profile.province), include_blank: true)%>
-          <% else %>
-              <%= f.select(:province, options_for_select(provinces), include_blank: true)%>
-          <% end %>
-          <label id="errorLocation"></label>
-        </div>
+  <%= f.label(:female, "Female")%>
+  <%= f.check_box(:female, class:'gender_validation')%>
 
-        <div class="form_input">
-          <%= f.label(:birthday, "Date of Birth:") %>
-          <%= f.date_field(:birthday) %>
-          <label id="errorBirthday"></label>
+  <%= f.label(:other, "Other")%>
+  <%= f.check_box(:other, class:'gender_validation')%>
+  <label id="errorGender"></label>
 
-        </div>
-        <button type ='button' id = 'birthdayPrevious'> Previous </button>
-        <button type ='button' id = 'birthdayNext'> Next </button>
-      </div> <!--  end showGenderAndBirthdayandOperatingsystem-->
+</div><br>
 
-      <div id="showAboutMe">
-        <div class="form_input">
-          <%= f.label :about_me, "About Me:" %>
-          <%= f.text_area :about_me %>
-        </div>
-          <div class="form_input">
-            <p id="tag">Tag your Hobbies!</p>
-            <p id="tag-explained">(Separate with commas)</p>
-            <%= f.label :tag_list, 'Tags:' %>
-            <%= f.text_field :tag_list %>
-          </div>
-        <button type ='button' id = 'aboutMePrevious'> Previous </button>
-        <button type ='button' id = 'aboutMeNext'> Next </button>
-      </div><!--end about me div-->
+<div class="form_input">
+<%= f.label :city, "City:", class: "select_label"%>
+<%= f.text_field :city%><br>
+<%= f.label :province, "Province:", class: "select_label"%>
+<% if current_user.profile.present?%>
+  <%= f.select(:province, options_for_select(provinces, selected: @profile.province), include_blank: true)%>
+<% else %>
+    <%= f.select(:province, options_for_select(provinces), include_blank: true)%>
+<% end %>
+<label id="errorLocation"></label>
+</div>
 
-      <div id="showLanguage">
-          <div class="form_radio_button">
-            <%= label :opperating_system, "Operating System:" %>
+<div class="form_input">
+<%= f.label(:birthday, "Date of Birth:") %>
+<%= f.date_field(:birthday) %>
+<label id="errorBirthday"></label>
 
-            <%= f.label(:operating_system, "Linux") %>
-            <%= f.radio_button(:operating_system, "Linux", :type => 'radio_button') %>
+</div>
+<button type ='button' id = 'birthdayPrevious'> Previous </button>
+<button type ='button' id = 'birthdayNext'> Next </button>
+</div> <!--  end showGenderAndBirthdayandOperatingsystem-->
 
-            <%= f.label(:operating_system, "OS X") %>
-            <%= f.radio_button(:operating_system, "OS X") %>
+<div id="showAboutMe">
+<div class="form_input">
+<%= f.label :about_me, "About Me:" %>
+<%= f.text_area :about_me %>
+</div>
+<div class="form_input">
+  <p id="tag">Tag your Hobbies!</p>
+  <p id="tag-explained">(Separate with commas)</p>
+  <%= f.label :tag_list, 'Tags:' %>
+  <%= f.text_field :tag_list %>
+</div>
 
-            <%= f.label(:operating_system, "Windows") %>
-            <%= f.radio_button(:operating_system, "Windows") %>
+<button type ='button' id = 'aboutMePrevious'> Previous </button>
+<button type ='button' id = 'aboutMeNext'> Next </button>
+</div><!--end about me div-->
 
-            <%= f.label(:operating_system, "Ubuntu") %>
-            <%= f.radio_button(:operating_system, "Ubuntu") %>
-            <label id="errorOperating"></label>
-          </div>
+<div id="showLanguage">
+<div class="form_radio_button">
+  <%= label :opperating_system, "Operating System:" %>
 
-        <div>
-          <div>
-            <%= f.fields_for :languages do |language| %>
-            <%= render "language_fields", f: language %>
-            <% end %>
-          </div>
+  <%= f.label(:operating_system, "Linux") %>
+  <%= f.radio_button(:operating_system, "Linux", :type => 'radio_button') %>
 
-          <p id="tag">Add your Languages!</p>
-          <div>
-            <%= link_to_add_association "Add Language", f, :languages, id: 'add_language',
-            'data-association-insertion-method' => 'before',
-            'data-association-insertion-traversal' => 'closest' %>
-          </div>
+  <%= f.label(:operating_system, "OS X") %>
+  <%= f.radio_button(:operating_system, "OS X") %>
 
-          <p id="tag">Tell Us What Your Looking For?</p>
+  <%= f.label(:operating_system, "Windows") %>
+  <%= f.radio_button(:operating_system, "Windows") %>
 
-              <div>
-                <%= f.fields_for :partner do |partner| %>
-                <%= render "partner_fields", f: partner %>
-                <% end %>
-              </div>
+  <%= f.label(:operating_system, "Ubuntu") %>
+  <%= f.radio_button(:operating_system, "Ubuntu") %>
+  <label id="errorOperating"></label>
+</div>
 
-              <div class="add-partners-spacing">
-                <%= link_to_add_association "Add Partner", f, :partner, id: 'add_partner',
-                'data-association-insertion-method' => 'before',
-                'data-association-insertion-traversal' => 'closest', :force_non_association_create => true %>
-              </div>
+<div>
+<div>
+  <%= f.fields_for :languages do |language| %>
+  <%= render "language_fields", f: language %>
+  <% end %>
+</div>
 
-              <div>
-                <%= f.fields_for :pair_programmer do |pair| %>
-                <%= render "pair_programmer_fields", f: pair %>
-                <% end %>
-              </div>
+<p id="tag">Add your Languages!</p>
+<div>
+  <%= link_to_add_association "Add Language", f, :languages, id: 'add_language',
+  'data-association-insertion-method' => 'before',
+  'data-association-insertion-traversal' => 'closest' %>
+</div>
 
-              <div class="add-pair_programmer-spacing">
-                <%= link_to_add_association "Add Pair Programmer", f, :pair_programmer, id: 'add_pair_programmer',
-                'data-association-insertion-method' => 'before',
-                'data-association-insertion-traversal' => 'closest', :force_non_association_create => true %>
-              </div>
+<p id="tag">Tell Us What Your Looking For?</p>
 
-    <div class="actions">
-      <%= f.submit %>
+    <div>
+      <%= f.fields_for :partner do |partner| %>
+      <%= render "partner_fields", f: partner %>
+      <% end %>
     </div>
-    </div><!-- end show preferences -->
-    <% end %>
+
+    <div class="add-partners-spacing">
+      <%= link_to_add_association "Add Partner", f, :partner, id: 'add_partner',
+      'data-association-insertion-method' => 'before',
+      'data-association-insertion-traversal' => 'closest', :force_non_association_create => true %>
+    </div>
+
+    <div>
+      <%= f.fields_for :pair_programmer do |pair| %>
+      <%= render "pair_programmer_fields", f: pair %>
+      <% end %>
+    </div>
+
+    <div class="add-pair_programmer-spacing">
+      <%= link_to_add_association "Add Pair Programmer", f, :pair_programmer, id: 'add_pair_programmer',
+      'data-association-insertion-method' => 'before',
+      'data-association-insertion-traversal' => 'closest', :force_non_association_create => true %>
+    </div>
+
+
+    <div class="field">
+      <%= f.label :notification_email do %>
+        <%= f.check_box :notification_email %>
+        Email
+      <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :notification_sms do %>
+        <%= f.check_box :notification_sms %>
+        SMS
+      <% end %>
+    </div>
+
+  <div class="actions", id="profile_submit">
+    <%= f.submit %>
+  </div>
+</div><!-- end show preferences -->
+<% end %>

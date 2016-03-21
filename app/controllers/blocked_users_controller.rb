@@ -7,6 +7,12 @@ class BlockedUsersController < ApplicationController
       redirect_to :back
   end
 
+  def destroy
+  @blocked_user = BlockedUser.find(params[:id])
+  @blocked_user.destroy
+    redirect_to :back
+end
+
 private
 
 def blocked_user_params

@@ -125,15 +125,18 @@ ActiveRecord::Schema.define(version: 20160316230009) do
     t.date     "birthday"
     t.string   "operating_system"
     t.text     "about_me"
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.integer  "user_id"
     t.float    "latitude"
     t.float    "longitude"
     t.string   "image"
     t.string   "province"
-    t.boolean  "date",              default: false
-    t.boolean  "paired_programmer", default: false
+    t.boolean  "date",               default: false
+    t.boolean  "paired_programmer",  default: false
+    t.string   "phone_number"
+    t.boolean  "notification_email", default: true
+    t.boolean  "notification_sms",   default: true
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
@@ -173,7 +176,6 @@ ActiveRecord::Schema.define(version: 20160316230009) do
     t.datetime "updated_at"
     t.string   "username"
     t.string   "github_image"
-    t.integer  "roles_mask"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

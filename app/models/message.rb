@@ -7,5 +7,4 @@ class Message < ActiveRecord::Base
     UserMailer.delay.user_message_notification
   end
 
-
 end

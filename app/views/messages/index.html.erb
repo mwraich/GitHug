@@ -2,7 +2,8 @@
     <div id="mailbox-title">
       <h1><%= @profile.first_name %>'s MailBox</h1>
     </div>
-
+    <button type="button" id="show-inbox-button">Inbox</button>
+    <button type="button" id="sent_message_show">Sent Messages</button>
     <div id="mailbox">
       <%= render "inbox" %>
 

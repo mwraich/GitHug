@@ -10,10 +10,17 @@
   }
 }
 
+
 body.sessions{
   background-color: #31333f;
 }
 
+.skip_login{
+  color: #707783;
+  float: right;
+  margin-top: -40%;
+  padding-right: 5%;
+}
 .logoTyped{
   font-family: $base-font-family;
   color: #98ea8f;
@@ -52,11 +59,19 @@ body.sessions{
     margin-left: 27.5%;
     margin-top: 5%;
   }
+
+  .skip_login{
+    margin-top: -12.5%;
+  }
 }
 
 @include media ($extra-large-screen-up){
   .login img{
     margin-left: 35%;
     margin-top: 0%;
+  }
+
+  .skip_login{
+    margin-top: -12.5%;
   }
 }

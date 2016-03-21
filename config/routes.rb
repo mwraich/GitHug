@@ -21,14 +21,17 @@ Rails.application.routes.draw do
 
 
   resources :sessions, only: [:new, :create, :destroy]
-  resources :blocked_users, only: [:create]
+  resources :blocked_users, only: [:create, :destroy]
 
 
   get "oauth/callback" => "oauths#callback" # for use with Github, Facebook
   get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
 
+
   # get 'tagged/tag.id' => 'profiles#tagged', :as => 'tagged'
 
+  resources :about, only: [:index]
+  get "about/contact" => "about#contact"
 
 
   # The priority is based upon order of creation: first created -> highest priority.

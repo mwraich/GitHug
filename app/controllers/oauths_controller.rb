@@ -15,6 +15,7 @@ class OauthsController < ApplicationController
        reset_session # protect from session fixation attack
        auto_login(@user)
        redirect_to new_profile_path, :notice => "Account created from #{provider.titleize}!"
+
     end
   end
 

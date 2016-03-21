@@ -1,28 +1,5 @@
-<button type="button" id="show-inbox-button">Inbox</button>
-<button type="button" id="sent_message_show">Sent Messages</button>
-<button type="button" id="message_requests_show">Message Requests</button>
 <div id="show-inbox">
-<% if @profile.recipient_messages.any?%>
-  <% @messages_recipient_messages.each do |msg| %>
-    <div class="form_update">
-    <%= form_for msg do |f|%>
-      <%= f.label( :read_status, "Read", class: 'unread') %>
-      <%= f.check_box(:read_status, value: true, class: 'unread-checkbox') %>
-      <% f.submit%>
-    <% end %>
-    </div>
-
-  <div class="chat-message">
-    <p class="message-info">To:<span class="recipient_id"> <%= msg.recipient.first_name %></span></p>
-
-    <p class="message-info">Sent By:<span class="sent_by"> <%= msg.sender.first_name %></span></p>
-
-    <p class="message-text"><%= msg.message %></p><br>
-
-      <%= link_to "Reply", message_reply_path(msg), class: 'reply' %>
-      <div class="reply_form"></div>
-    </div>
-    <hr class="line-break-inbox">
+  <% if @profile.recipient_messages.any?%>
+    <%= render @messages_recipient_messages %>
   <% end %>
-<% end %>
 </div>
