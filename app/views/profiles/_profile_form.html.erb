@@ -150,41 +150,44 @@
 <div id="showPreferences">
 <p id="tag">Tell Us What Your Looking For?</p>
 
-    <div class="form_input">
-    <%= label_tag "looking_for", "What are you looking for?", id: "looking_for" %><br>
-    <%= f.label :date, "Partner", id: "partner_label" %>
-      <%= f.check_box :date %><br>
+   <div class="form_input">
+     <%= label_tag "looking_for", "What are you looking for?", id: "looking_for" %><br>
+   </div>
+   <div>
+     <%= f.label :date, "Partner", id: "partner_label" %>
+     <%= f.check_box :date %><br>
+   </div>
+   <div id="add-partner">
+     <%= f.fields_for :partner do |partner| %>
+     <%= render "partner_fields", f: partner %>
+     <% end %>
+   </div>
+   <div class="add-partners-spacing">
+     <%= link_to_add_association "Add Partner", f, :partner, id: 'add_partner',
+     'data-association-insertion-method' => 'before',
+     'data-association-insertion-traversal' => 'closest', :force_non_association_create => true %>
+   </div>
+   <div>
+     <%= f.label :paired_programmer, "Pair Programmer", id: "pair_label" %>
+     <%= f.check_box :paired_programmer %>
+   </div><br>
 
-        <div id="add-partner">
-        <%= f.fields_for :partner do |partner| %>
-        <%= render "partner_fields", f: partner %>
-        <% end %>
-      <div class="add-partners-spacing">
-        <%= link_to_add_association "Add Partner", f, :partner, id: 'add_partner',
-        'data-association-insertion-method' => 'before',
-        'data-association-insertion-traversal' => 'closest', :force_non_association_create => true %>
-      </div>
-    </div>
-    <%= f.label :paired_programmer, "Pair Programmer", id: "pair_label" %>
-        <%= f.check_box :paired_programmer %>
-    </div><br>
+   <div>
+     <%= f.fields_for :pair_programmer do |pair| %>
+     <%= render "pair_programmer_fields", f: pair %>
+     <% end %>
+   </div>
 
-    <div>
-      <%= f.fields_for :pair_programmer do |pair| %>
-      <%= render "pair_programmer_fields", f: pair %>
-      <% end %>
-    </div>
-
-    <div class="add-pair_programmer-spacing", id="add-pair_programmer">
-      <%= link_to_add_association "Add Pair Programmer", f, :pair_programmer, id: 'add_pair_programmer',
-      'data-association-insertion-method' => 'before',
-      'data-association-insertion-traversal' => 'closest', :force_non_association_create => true %>
-    </div>
+   <div class="add-pair_programmer-spacing", id="add-pair_programmer">
+     <%= link_to_add_association "Add Pair Programmer", f, :pair_programmer, id: 'add_pair_programmer',
+     'data-association-insertion-method' => 'before',
+     'data-association-insertion-traversal' => 'closest', :force_non_association_create => true %>
+   </div>
 
 
-    <button type ='button' id = 'preferencesPrevious'> Previous </button>
-  <div class="actions", id="profile_submit">
-    <%= f.submit %>
-  </div>
+   <button type ='button' id = 'preferencesPrevious'> Previous </button>
+ <div class="actions", id="profile_submit">
+   <%= f.submit %>
+ </div>
 </div><!-- end show preferences -->
 <% end %>
