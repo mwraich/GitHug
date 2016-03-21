@@ -34,7 +34,7 @@ class Profile < ActiveRecord::Base
   validate :legal_age
   validates :user_id, uniqueness: {message: "Error. Looks like you already have a profile. You can update your profile by clicking on update."}
   phony_normalize :phone_number, default_country_code: 'CA'
-  validates ]:phone_number, phony_plausible: true
+  validates :phone_number, phony_plausible: true
   validates :phone_number, uniqueness: {message: "Error, looks like that phone number is already in use"}
   geocoded_by :location
   after_validation :geocode, if: :location_changed?

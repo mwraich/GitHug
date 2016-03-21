@@ -289,9 +289,9 @@ textarea#profile_about_me{
 
 button#nameNext{
   float: right;
-  margin-top: 5%;
+  margin-top: 2%;
   margin-right: 5%;
-  margin-bottom: 5%;
+
 }
 button#birthdayNext{
   float: right;
@@ -321,6 +321,12 @@ button#languagePrevious{
 button#languageNext{
   float: right;
   margin-right: 5%;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+
+button#preferencesPrevious{
+  margin-left: 5%;
   margin-top: 2%;
   margin-bottom: 5%;
 }
