@@ -93,7 +93,7 @@ class Profile < ActiveRecord::Base
   end
 
   def check_pull_request_permission(current_user)
-    if self.sent_requests.where(requestor_id: current_user, requestee_id: user.id, read: true, permission: true)
+    if @profile.sent_requests.where(requestor_id: current_user, requestee_id: self.id, read: true, permission: true)
       return true
       #permission granted
     else

@@ -1,6 +1,7 @@
 $(document).on('page:load ready', function() {
 
   $('.sent_message').hide();
+  $('#pull_requests').hide();
 
   $(this).on('click','.reply', function(eventHandler){
     eventHandler.preventDefault();
@@ -34,4 +35,10 @@ $(document).on('page:load ready', function() {
     $('.sent_message').hide();
     $('#show-inbox').fadeIn(1000);
   });
+
+  $('#message_requests_show').on('click', function(){
+    $('#pull_requests').fadeIn(1000);
+  });
+
+
 });

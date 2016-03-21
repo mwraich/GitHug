@@ -8,9 +8,15 @@ Rails.application.routes.draw do
   resources :tags, only: [:index, :show]
 
 
+  resources :pull_requests
+  # get 'reply' => 'pull_requests#reply'
+  # get 'reply' => 'pull_requests#reply'
+
   resources :messages do
     get 'reply' => 'messages#reply'
-    get 'pull_request_reply' => 'messages#pull_request_reply'
+
+
+    # get 'pull_request_reply' => 'messages#pull_request_reply'
   end
 
 

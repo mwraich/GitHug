@@ -1,5 +1,6 @@
 <button type="button" id="show-inbox-button">Inbox</button>
 <button type="button" id="sent_message_show">Sent Messages</button>
+<button type="button" id="message_requests_show">Message Requests</button>
 <div id="show-inbox">
 <% if @profile.recipient_messages.any?%>
   <% @messages_recipient_messages.each do |msg| %>

@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
     @messages_sent_messages = Message.where(sender: current_user).order(:recipient_id, :created_at)
     @messages_recipient_messages = Message.where(recipient: current_user).order(:sender_id, :created_at)
     @messages = Message.all
+    @received_requests = PullRequest.where(requestee_id: current_user)
   end
 
   def reply
@@ -37,6 +38,7 @@ class MessagesController < ApplicationController
   def show
     @profile = Profile.find(params[:id])
     @message = Message.find(params[:id])
+
   end
 
   def edit
