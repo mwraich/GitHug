@@ -1467,7 +1467,7 @@ textarea#message_message{
     width: 90%;
     margin-left: 2.5%;
     padding-top: 2%;
-    margin-top: 1%;
+    margin-top: -2.5%;
     & h2{
       background-color: #dce4ef;
       font-size: 1.6rem;
@@ -1857,6 +1857,10 @@ textarea#message_message{
      margin-left: 37%;
      height:50px;
      width: 100%;
+  }
+
+  .search-form{
+    margin-top: -3.5%;
   }
 
 }
