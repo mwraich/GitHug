@@ -1,0 +1,22 @@
+<div class="chat-message">
+    <%= form_for(message, remote:true) do |f|%>
+    <%= f.check_box(:read_status, value: true, class: 'unread-checkbox') %>
+    <% f.submit%>
+    <% end %>
+    <p class="message-info">From:<span class="sent_by">
+      <%= message.sender.first_name %></span></p>
+
+  </div>
+
+  <div class="chat-message-content">
+    <p class="message-info">To:<span class="recipient_id">
+      <%= message.recipient.first_name %></span></p>
+    <p class="message-text"><%= message.message %></p><br>
+
+    <%= link_to "Reply", message_reply_path(message), class: 'reply' %>
+  </div>
+
+  <div class="reply_form">
+</div>
+
+<hr class="line-break-inbox">
