@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
 
   def reply
     @message = Message.find(params[:message_id])
-    @reply = Message.new(recipient:@message.sender, subject_line:"RE: #{@message.subject_line}")
+    @reply = Message.new(recipient:@message.sender)
     render partial: "reply"
   end
 
@@ -18,33 +18,26 @@ class MessagesController < ApplicationController
   end
 
   def create
-    # @profile = Profile.find(params[:id])
+    @profile = current_user.profile
     @message = Message.new(message_params)
     @message.sender = current_user.profile
 
-    if @message.save
+    if @message.save && @profile.notification_email?
       UserMailer.user_message_notification(Profile.find(@message.recipient)).deliver_later
       redirect_to messages_path, notice: "Message sent!"
     else
       redirect_to messages_url, alert: "SORRY THERE WAS AN ERROR!"
     end
 
+    if @message.save && @profile.notification_email? && @profile.phone_number?
+        @profile.send_text_message
+    end
   end
 
   def show
     @profile = Profile.find(params[:id])
     @messge = Message.find(params[:id])
   end
-
-  # def inbox
-  #   @profile = Profile.find(params[:id])
-  #   @messge = Message.find(params[:id])
-  # end
-  #
-  # def sent
-  #   @profile = Profile.find(params[:id])
-  #   @messge = Message.find(params[:id])
-  # end
 
   def edit
     @message = Message.find(params[:id])
@@ -66,6 +59,6 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:recipient_id, :message, :subject_line, :read_status)
+    params.require(:message).permit(:recipient_id, :message, :read_status)
   end
 end

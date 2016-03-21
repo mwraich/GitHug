@@ -1,0 +1,11 @@
+<div class='index-users'>
+<% @profile_partnerReco.each do |reco| %>
+  <%= link_to(profile_path(profile)) do %>
+  <%= image_tag(reco.user.github_image, class: 'profile-image') %>
+  <div id="index-view-profile-info">
+    <p id = "index-profile-name"><%= reco.first_name %></p>
+    <p id="index-profile-location"><<%= reco.location %></p>
+  </div>
+  <% end %>
+<% end %>
+</div>

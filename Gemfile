@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+# ruby '2.3.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
 # Use sqlite3 as the database for Active Record
@@ -17,6 +17,8 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+# Install jquery validation as javascript library
+gem 'jquery-validation-rails', '~> 1.13', '>= 1.13.1'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -34,15 +36,17 @@ gem 'geocoder'
 #allows taging
 gem 'acts-as-taggable-on', '~> 3.4'
 #To be used for implementing privacy Settings
-gem 'cancancan', '~> 1.10'
 
-
+#To enable text message notifications
+gem 'twilio-ruby', '~> 4.11.1'
+# To validiate phone numbers
+gem 'phony_rails'
 
 gem 'bourbon'
 gem 'neat'
 gem 'autoprefixer-rails'
-
-
+gem 'typedJS'
+gem 'bxslider-rails'
 
 gem 'carrierwave'
 

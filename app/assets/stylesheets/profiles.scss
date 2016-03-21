@@ -2,89 +2,55 @@
 
 
 body{
-  background-color: white;
+  background-color: #DCE4EF;
 }
 
 .page-title{
-  margin-top: 2%;
   font-size: 1.6rem;
-  color: #3b3b3b;
-}
-
-//------------------Slideshow Styles---------------//
-.container {
-  margin: 0 auto;
-  text-align: center;
-  position: relative;
-}
-.container div {
-  width: 100%;
-  display: inline-block;
-  display: none;
-
-}
-.container img {
-  width: 250px;
-  height: 250px;
-  margin-left: 22.5%;
-  margin-top: -40%;
-
-}
-
-.right_arrow {
-  position: absolute;
-  float:right;
-  margin-top: -50%;
-  margin-left: 125%;
-  width:100%;
-
-}
-
-.left_arrow {
-  position: absolute;
+  color: #31343f;
+  background-color: #dce4ef;
+  width: 90%;
   margin-left: 5%;
-  margin-top: -50%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border-radius: 2px;
 }
 
-.x{
-  position: absolute;
-  margin-left: 120%;
-  width: 100%;
-  margin-top: -90%;
-}
-
-
-#dim-page{
+#main-menu{
   display: none;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  z-index: 999;
-  top: 0;
-  left: 0;
-  right: 0;
 }
 
+#login-notice{
+  display: none;
+}
+
+  label.error {
+    display: block;
+    color: #e06c75;
+    width: 100%;
+  }
 //-------------------Nav Bar-----------------//
 
+.logout-icon{
+  display: none;
+}
 
 .message-icon img{
   width: 10%;
 }
-.message{
+.message img{
   width: 10%;
-  margin-top: 2%;
   margin-left: 5%;
   display: inline;
+  margin-top: 2.5%;
 }
 
-.logo{
-  width: 30%;
-  margin-top: 4%;
-  display: inline;
-  margin-left: 10%;
-  margin-right: 1%;
+.logo h1{
+  font-family: 'VT323', ;
+  color: #9FED9C;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: -13%;
 
 }
 
@@ -92,14 +58,14 @@ body{
   display: inline;
   width: 10%;
   float: right;
-  margin-top: -12%;
+  margin-top: -19%;
   margin-right: 5%;
 
 }
 
 .menu-bar{
-  background-color: #57c8b9;
-  padding-bottom: 3%;
+  background-color: $secondary-background-color;
+  height: 4rem;
   position: fixed;
   width: 100%;
   top: 0;
@@ -127,7 +93,7 @@ body{
 
 
 label.select_label{
-  font-size: 1rem;
+  font-size: 1.4rem;
   color: #6a6a6a;
 
 }
@@ -135,7 +101,7 @@ label.select_label{
 #tag{
   padding-left: 5%;
   font-size: 1.3rem;
-  color: #00aca1;
+  color: #3b3b3b;
   text-align: center;
   margin-top: 5%;
 }
@@ -150,7 +116,7 @@ a.add_fields{
   margin-top: 5%;
   margin-bottom: 5%;
   font-size: 1.2rem;
-  background-color: #57c8b9;
+  background-color: #31343F;
 }
 
 .actions{
@@ -163,42 +129,35 @@ a.add_fields{
   color: #3b3b3b;
 }
 
+#tag-explained{
+  text-align: center;
+  color: #919293;
+  margin-top: -1%;
+}
 
   #add_language{
-      background-color: #00aca1;
-      border: 0;
-      border-radius: $button-border-radius;
-      color: white;
-      cursor: pointer;
-      display: inline-block;
-      font-family: $base-font-family;
-      font-size: $base-font-size;
-      -webkit-font-smoothing: antialiased;
-      font-weight: 600;
-      line-height: 1;
-      padding: $small-spacing $base-spacing;
-      transition: background-color $base-duration $base-timing;
-      vertical-align: middle;
-      white-space: nowrap;
-      margin-left: 5%;
-      padding-left: 10%;
-      padding-right: 10%;
+    color: #52ce4c;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 5%;
 
-      &:hover,
-      &:focus {
-        background-color: shade(#a9a9a9, 20%);
-        color: #fff;
-      }
+    &:hover,
+    &:focus {
+      color: #3b3b3b;
+    }
+
 
   }
 
 .add-language-spacing{
-  padding-top: 5%;
-  padding-bottom: 5%;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 
   #remove_language{
-    color: #00aca1;
+    color: #e06c75;
+    font-size: 1.2rem;
     cursor: pointer;
     display: inline-block;
     margin-left: 5%;
@@ -210,38 +169,50 @@ a.add_fields{
 
   }
 
+  #remove_pref_language{
+    color: #e06c75;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 5%;
+
+    &:hover,
+    &:focus {
+      color: #3b3b3b;
+    }
+  }
+
+  #remove_preference{
+    color: #e06c75;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 5%;
+    font-size: 1.2rem;
+
+    &:hover,
+    &:focus {
+      color: #3b3b3b;
+    }
+
+  }
 
 #add_photo{
-  background-color: #00aca1;
-  border: 0;
-  border-radius: $button-border-radius;
-  color: white;
+  color: #52ce4c;
+  font-size: 1.2rem;
   cursor: pointer;
   display: inline-block;
-  font-family: $base-font-family;
-  font-size: $base-font-size;
-  -webkit-font-smoothing: antialiased;
-  font-weight: 600;
-  line-height: 1;
-  padding: $small-spacing $base-spacing;
-  text-decoration: none;
-  transition: background-color $base-duration $base-timing;
-  user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
   margin-left: 5%;
-
 
   &:hover,
   &:focus {
-    background-color: shade(#a9a9a9, 20%);
-    color: #fff;
+    color: #3b3b3b;
   }
 
 }
 
 #remove_photo{
-  color: #00aca1;
+  color: #e06c75;
+  font-size: 1.2rem;
   cursor: pointer;
   display: inline-block;
   margin-left: 5%;
@@ -254,8 +225,9 @@ a.add_fields{
 
 }
 
-#remove_preference{
-  color: #00aca1;
+#remove_partner{
+  color: #e06c75;
+  font-size: 1.2rem;
   cursor: pointer;
   display: inline-block;
   margin-left: 5%;
@@ -267,64 +239,42 @@ a.add_fields{
 
 }
 
-.image-fields input{
-  padding-left: 5%;
-}
-
-#add_pref_language{
-  background-color: #00aca1;
-  border: 0;
-  border-radius: $button-border-radius;
-  color: white;
+#remove_pair_programmer{
+  color: #e06c75;
+  font-size: 1.2rem;
   cursor: pointer;
   display: inline-block;
-  font-family: $base-font-family;
-  font-size: $base-font-size;
-  -webkit-font-smoothing: antialiased;
-  font-weight: 600;
-  line-height: 1;
-  padding: $small-spacing $base-spacing;
-  text-decoration: none;
-  transition: background-color $base-duration $base-timing;
-  user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
   margin-left: 5%;
-  padding-left: 3.5%;
-  padding-right: 3.5%;
 
   &:hover,
   &:focus {
-    background-color: shade(#a9a9a9, 20%);
-    color: #fff;
+    color: #3b3b3b;
   }
 }
 
-#add_pref{
-  background-color: #00aca1;
-  border: 0;
-  border-radius: $button-border-radius;
-  color: white;
+#add_partner{
+  color: #52ce4c;
+  font-size: 1.2rem;
   cursor: pointer;
   display: inline-block;
-  font-family: $base-font-family;
-  font-size: $base-font-size;
-  -webkit-font-smoothing: antialiased;
-  font-weight: 600;
-  line-height: 1;
-  padding: $small-spacing $base-spacing;
-  text-decoration: none;
-  transition: background-color $base-duration $base-timing;
-  user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
   margin-left: 5%;
-
 
   &:hover,
   &:focus {
-    background-color: shade(#a9a9a9, 20%);
-    color: #fff;
+    color: #3b3b3b;
+  }
+}
+
+#add_pair_programmer{
+  color: #52ce4c;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 5%;
+
+  &:hover,
+  &:focus {
+    color: #3b3b3b;
   }
 }
 
@@ -332,6 +282,43 @@ textarea#profile_about_me{
   height: 3rem;
 }
 
+button#nameNext{
+  float: right;
+  margin-top: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+}
+button#birthdayNext{
+  float: right;
+  margin-right: 5%;
+  margin-top: 2%;
+}
+button#birthdayPrevious{
+  margin-left: 5%;
+  margin-top: 2%;
+}
+button#aboutMePrevious{
+  margin-left: 5%;
+  margin-top: 2%;
+}
+button#aboutMeNext{
+  float: right;
+  margin-right: 5%;
+  margin-top: 2%;
+}
+
+button#languagePrevious{
+  margin-left: 5%;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+
+button#languageNext{
+  float: right;
+  margin-right: 5%;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
 
 
 
@@ -371,16 +358,22 @@ textarea#profile_about_me{
 }
 
 #index-profile-name{
-  color: #3b3b3b;
+  color: #262831;
 }
 
 #index-profile-location{
   font-size: 1rem;
   margin-top: -2%;
+  color: #3B3B3B;
 }
 
 .index-users{
-  margin-top: 2%;
+  border-radius: 2px;
+  width: 90%;
+  margin-left: 5%;
+  padding-top: 2%;
+  padding-bottom: 10%;
+  margin-top: 1%;
 }
 
 .line-break{
@@ -388,20 +381,31 @@ textarea#profile_about_me{
 
 }
 
-#pairchoice{
+.preference-form{
+  margin-bottom: 1%;
+  margin-left: 2.5%;
+  padding-bottom: 10%;
+}
+
+.lang_pref_form{
+  margin-bottom: 3%;
+}
+
+input#search_city{
+  width: 50%;
+  display: inline;
   margin-left: 10%;
 }
-
-#datechoice{
-  margin-left: 10%;
+select#search_province{
+  width: 50%;
+  display: inline;
+  margin-left: 1%;
 }
 
-.location-search-label{
-  font-size: 1rem;
-}
-
-.preference-form label{
-  font-size: 1rem;
+input#submit{
+  float:right;
+  margin-top: -5%;
+  margin-right: 5%;
 }
 
 
@@ -418,9 +422,8 @@ input#search_location{
 }
 
 input#search{
-  margin-left: 5%;
-  margin-top: 1%;
-  margin-bottom: 1%;
+  float: right;
+  margin-right: 7%;
 }
 
 .button-label{
@@ -434,43 +437,46 @@ input#search{
 }
 
 
-.index-search-form{
-  background-color: white;
-  border: solid;
-  border-color: #6a6a6a;
-  border-width: 0.5px;
-  border-radius: 5px;
-  width: 92%;
-  margin-top: 15%;
-  margin-left: 4%;
-  padding-top: 2%;
-  padding-bottom: 1%;
+.search-form{
+  background-color: #f5f7fa;
+  margin-top: 2%;
+  width: 90%;
+  margin-left: 5%;
+  padding-top: 1%;
   margin-bottom: 2%;
+  border-radius: 2px;
+}
+
+label#first_option_label{
+  color: #6a6a6a;
+  font-size: 1.2rem;
 }
 
 #first_option{
-  background-color: white;
-  border: solid;
-  border-color: #6a6a6a;
-  border-width: 0.5px;
+  background-color: #f5f7fa;
   margin-top: 20%;
   width: 90%;
   margin-left: 5%;
   padding-top: 1%;
   padding-bottom: 1%;
-  margin-bottom: 5%;
-  border-radius: 5px;
+  margin-bottom: 2%;
+  border-radius: 2px;
+  & h2{
+    background-color: #dce4ef;
+    font-size: 1.6rem;
+    color: #31343f;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    text-align: center;
+    border-radius: 2px;
+  }
   & label{
     font-size: 1rem;
     color: #3b3b3b;
   }
 }
 
-label#first_option_label{
-  color: #6a6a6a;
-  font-size: 1.2rem;
-
-}
 
 input#search_min_age{
   width: 20%;
@@ -498,6 +504,17 @@ input#search_max_age{
   border-radius: 5px;
 }
 
+select#profile_partner_attributes_province{
+  display: inline;
+}
+
+select#profile_pair_programmer_attributes_province{
+  display: inline;
+}
+
+select#profile_province{
+  display: inline;
+}
 
 
 //--------------Profile  Show Page------------------//
@@ -510,57 +527,76 @@ input#search_max_age{
 
 .profile-name{
   font-size: 1.5rem;
+  color: $secondary-background-color;
 }
+
 #profile-images{
   width: 60%;
   margin-left: 20%;
+  margin-top: 20%;
 
   & img{
-  border-radius: 10px;
+  border-radius: 0px;
+  height: 225px;
+  width: 100%;
   }
+}
+button.message-to-button{
+ background-color: #9FED9C;
+ color: #262831;
+ width: 35%;
+ margin-left: 10%;
+
 }
 
 input.block_button{
-  background-color: #f16a6b;
-  font-size: 0.7rem;
-  margin-left: 37%;
-  width: 25%;
-  margin-top: -2%;
-}
+  background-color: #e06c75;
+  color: white;
+  width: 35%;
+  margin-left: 55%;
+  margin-top: -18%;
 
-#No_block_button{
-  margin-left: 37%;
-  width: 25%;
-  margin-top: -2%;
 }
 
 #profile-aboutme{
-  margin-top: 10%;
+  margin-top: 5%;
   margin-bottom: 5%;
   text-align: center;
   font-size: 1.2rem;
   margin-right: 5%;
   margin-left: 5%;
+  color: #262831;
+  & p{
+    color: #3B3B3B;
+  }
 }
 
 #profile-details{
-  margin-left: 10%;
   padding-bottom: 5%;
+  color: #262831;
+  text-align: center;
+  & h2{
+    font-size: 1.2rem;
+  }
 }
 
 #profile-languages{
-  margin-left: 10%;
   padding-bottom: 5%;
+  color: #262831;
+  text-align: center;
+  & h2{
+    font-size: 1.2rem;
+  }
 }
 
 .profile-tags{
   text-align: center;
   padding-bottom: 10%;
   & a{
-    background-color: #00aca1;
+    background-color: $base-background-color;
+    color:#9fed9c;
     padding: 2%;
-    border-radius: 5px;
-    color:white;
+    border-radius: 2px;
   }
 }
 
@@ -595,14 +631,14 @@ nav#nav-mobile ul{
   margin-right: auto;
   margin-left: auto;
   text-align: center;
-  background-color: #57c8b9;
+  background-color: $secondary-background-color;
   width: 100%;
   font-size: 1.5rem;
 }
 
 nav#nav-mobile li{
   display: block;
-  border-bottom: solid 3px #00aca1;
+  border-bottom: solid 3px #61647d;
   padding-bottom: 2%;
   padding-top: 2%;
   &:last-child{
@@ -613,19 +649,26 @@ nav#nav-mobile li{
 //-------------Mobile Screen Messages Page----------------//
 #show-inbox-button{
   margin-left: 5%;
-  margin-top: 10%;
+  margin-top: 5%;
   margin-bottom: 5%;
   width: 40%;
-  background-color: #6A6A6A;
-  border-radius: 5px;
+  background-color: #31343f;
+  border-radius: 2px;
+  color: #dee2f8
 }
+
+#show-inbox{
+  padding-top: 5%;
+}
+
 #sent_message_show{
   margin-left: 7%;
-  margin-top: 10%;
+  margin-top: 5%;
   margin-bottom: 5%;
   width: 43%;
-  background-color: #6A6A6A;
-  border-radius: 5px;
+  background-color: #31343f;
+  border-radius: 2px;
+  color: #dee2f8
 }
 
 .unread{
@@ -645,10 +688,10 @@ nav#nav-mobile li{
 }
 
 .reply{
-  background-color: #00aca1;
+  background-color: #9fed9c;
   border: 0;
-  border-radius: $button-border-radius;
-  color: white;
+  border-radius: 2px;
+  color: #31343f;
   cursor: pointer;
   display: inline-block;
   font-family: $base-font-family;
@@ -660,7 +703,7 @@ nav#nav-mobile li{
   transition: background-color $base-duration $base-timing;
   vertical-align: middle;
   white-space: nowrap;
-  margin-top: 2.5%;
+  margin-left: 5%;
 
   &:hover,
   &:focus {
@@ -671,10 +714,11 @@ nav#nav-mobile li{
 
 input#message_subject_line{
   height: 2rem;
+  background-color: #31343f;
 }
 textarea#message_message{
   height: 3rem;
-
+  background-color: #31343f;
 }
 
 .recipient_id{
@@ -694,7 +738,7 @@ textarea#message_message{
 }
 
 .reply-name{
-  color: #3b3b3b;
+  color: #9fed9c;
 }
 
 .reply{
@@ -703,13 +747,15 @@ textarea#message_message{
 }
 .message-text{
   margin-left: 5%;
+  color: #31343f
 }
 .message-info{
   margin-left: 5%;
+  color: #7f7f7f;
 }
 
 .new_message p {
-   color:#00fe06 ;
+   color: #9fed9c;
    padding-left:6%;
 
  }
@@ -717,20 +763,17 @@ textarea#message_message{
    bottom: 0;
    z-index: 150;
    position:fixed;
-   background-color: black;
    width:100%;
    display:block;
-   font-family: 'VT323';
+   background-color: $secondary-background-color;
 }
 
 textarea#message_message {
-   background-color: black;
    border:none;
-   color:#00fe06 ;
-   width: 100%;
+   color: #9fed9c;
+   width: 80%;
    height: 50%;
    display: block;
-  font-family: 'VT323';
    &:hover {
      border-color:black, 20%;
    }
@@ -743,26 +786,28 @@ textarea#message_message {
 
  input#commit {
    border-radius:none;
-   background-color:black;
-   padding:0;
-   color:#00fe06 ;
+   padding-bottom: 1%;
    font-size: 1.5rem;
-  font-family: 'VT323';
+   background-color: #262831;
    &:hover {
      color:white;
    }
  }
- button.message-to-button{
-   font-size: .9rem;
-   background-color:black;
-   margin-left: 0;
-   margin-top: 22%;
-   color: #00fe06 ;
-   // text-align: center;
-   padding: 2%;
- }
 
 
+   #tag-name{
+     text-align: center;
+     font-size: 1.5rem;
+     width: 80%;
+     margin-left: 10%;
+     background-color: $base-background-color;
+     color:#9fed9c;
+     padding: 2%;
+     border-radius: 2px;
+     margin-top: 15%;
+
+
+   }
 
 
 @media all and (max-width: 900px) {
@@ -776,6 +821,7 @@ textarea#message_message {
 
   nav#nav-mobile {
     display: block;
+    margin-top: -5%;
   }
 }
 
@@ -792,148 +838,254 @@ textarea#message_message {
 
 
   body{
-    background-color: #ededed;
+    background-color: #D7DAE0;
   }
   .message{
     display: none;
   }
 
-  .logo{
-    width: 7%;
-    margin-left: 1%;
-    margin-top: 1%;
+  .logo h1{
+    font-family: 'VT323', ;
+    color: #9FED9C;
+    font-size: 1.6rem;
+    text-align: left;
+    margin-top: 0.5%;
+    margin-left: 2%;
 
   }
 
   .menu-bar{
-    padding-bottom: 1%;
+    background-color: $base-background-color;
+    height: 3.5rem;
+  }
+  .logout-icon{
+    display: block;
+    float: right;
+    margin-right: -28%;
+    margin-top: -4.25%;
+    & img{
+      width: 40%;
+      padding-top: 2.5%;
+    }
+  }
+  #nav-main{
+    display: none;
   }
 
-  #nav-main{
-    width: 70%;
-  }
-  nav#nav-main{
+  #main-menu{
+    display: block;
+    background-color: $base-background-color;
+    width: 15%;
     position: fixed;
-    margin-left: 50%;
-    margin-top: -2.5%;
 
     & li{
-      display: inline;
-      font-size: 1rem;
-      padding-left: 5%;
-
+      padding-left: 7.5%;
+      border-bottom: 5px solid #D7DAE0;
+      padding-bottom: 5%;
+      padding-top: 5%;
+      & :hover{
+        color: $secondary-font-color;
+      }
     }
 
-    & a:hover{
-      color: #00aca1;
-      border-bottom: 2px solid #00aca1;
-    }
   }
-
   #login-notice{
-    margin-top: 6%;
-    margin-left: 2%;
-    background-color: #00aca1;
-    color: white;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    padding-left: 2%;
-    padding-right: 2%;
-    border-radius: 5px;
-    width: 15%;
+    margin-left: 63%;
+    display: inline;
+    color: #9fed9c;
   }
 
   #unread-messages-notice{
-    margin-top: 7%;
-    margin-left: 1%;
-    background-color: #00aca1;
-    color: white;
+    float: right;
+    background-color: #9fed9c;
+    color: $base-background-color;
     padding-top: 1%;
     padding-bottom: 1%;
-    padding-left: 1%;
-    padding-right: 1%;
-    border-radius: 5px;
-    width: 15.5%;
+    padding-left: 3%;
+    width: 15%;
+    border-radius: 2px;
   }
 
   //-------------Profile Show Page Styles------------//
 
+  .content{
+    width: 65%;
+    margin-left: 20%;
+    margin-top: 7%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-bottom: 2%;
+  }
+  #profile-info-container{
+    background-color: #f5f7fa;
+    border-radius: 2px;
+    width: 90%;
+    margin-left: 2.5%;
+    padding-top: 2%;
+    padding-bottom: 3%;
+    margin-top: -3%;
+  }
+  #profile-name{
+    width: 60%;
+    margin-top: -22%;
+    margin-left: 37%;
+    & h1{
+    text-align: left;
+    font-size: 2rem;
+    color: #31343f;
+    }
+  }
 
-  .profile-name{
-    font-size: 1.6rem;
-    color: #3b3b3b;
-    float: left;
-    margin-left: 2%;
-    margin-top: 15%;
+  .bx-wrapper{
+    width: 45%;
+    border: none;
+    margin-left: -25%;
+    height: 200px;
+
 
   }
 
   #profile-images{
-    display: inline;
-    width: 50%;
-    margin-left: 2%;
-    margin-right: 2%;
-
+    margin-top: 0%;
     & img{
-    height: 200px;
-    width: 30%;
-    border-radius: 20px;
-    float: left;
-    margin-left: 5%;
+      border-radius: 0;
+      height: 200px;
+      width: 100%;
+
     }
+
   }
 
   #profile-details{
-    margin-top:5%;
+    background-color: #f5f7fa;
+    width: 44%;
+    margin-left: 2.5%;
+    margin-top: -3%;
+    border-radius: 2px;
+    padding-top: 1%;
+    text-align: left;
+    & h2{
+      background-color: #dce4ef;
+      font-size: 1.5rem;
+      color: #31343f;
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-top: 1%;
+      text-align: center;
+      border-radius: 2px;
+    }
+    & li{
+      color: #3b3b3b;
+      margin-left: 6%;
+      margin-right: 6%;
+    }
   }
 
   #profile-aboutme{
     text-align: left;
-    margin-top: 5%;
-    margin-left: 10%;
+    margin-top: 2%;
+    background-color:#f5f7fa;
+    border-radius: 2px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-left: 2.5%;
+    width: 90%;
+    & h2{
+      background-color: #dce4ef;
+      font-size: 1.6rem;
+      color: #31343f;
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-top: 1%;
+      text-align: center;
+      border-radius: 2px;
+    }
+    & p{
+      color: #3b3b3b;
+      margin-left: 6%;
+      margin-right: 6%;
+    }
   }
 
-  input.block_button{
-    background-color: #f16a6b;
-    font-size: 0.7rem;
-    margin-left: -20%;
-    margin-top: 17%;
+  .reco_matches{
+    text-align: left;
+    margin-top: 2%;
+    background-color:#f5f7fa;
+    border-radius: 2px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-left: 2.5%;
+    width: 90%;
+    & h2{
+      background-color: #dce4ef;
+      font-size: 1.6rem;
+      color: #31343f;
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-top: 1%;
+      text-align: center;
+      border-radius: 2px;
+    }
   }
+
+
   #profile-languages{
-    margin-left: 10%;
+    float: right;
+    background-color: #f5f7fa;
+    width: 44%;
+    margin-top: -26.5%;
+    margin-right: 7.5%;
+    border-radius: 2px;
+    padding-top: 1%;
+    height: 220px;
+    text-align: left;
+    & h2{
+      background-color: #dce4ef;
+      font-size: 1.5rem;
+      color: #31343f;
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-top: 1%;
+      text-align: center;
+      border-radius: 2px;
+    }
+    & li{
+      color: #3b3b3b;
+      margin-left: 6%;
+      margin-right: 6%;
+    }
   }
 
   .send-message-profile{
     margin-left: 10%;
     & p{
       font-size: 1.2rem;
-      color: #00aca1;
+      color: #00fe06;
       margin-top: -2%;
     }
   }
   .new_message p {
-     color:#00fe06 ;
+     color: #9fed9c;
      padding-left:6%;
 
    }
    .new_message {
      bottom: 0;
+     border-radius: 2px;
+     right: 10px;
      z-index: 150;
      position:fixed;
-     background-color: black;
-     width:60%;
+     width:40%;
      display:block;
-     font-family: 'VT323';
   }
 
   textarea#message_message {
-     background-color: black;
      border:none;
-     color:#00fe06 ;
+     color:#9fed9c;
      width: 80%;
      height: 50%;
      display: block;
-    font-family: 'VT323';
+     background-color: $base-background-color;
      &:hover {
        border-color:black, 20%;
      }
@@ -945,39 +1097,44 @@ textarea#message_message {
   }
 
    input#commit {
-     border-radius:none;
-     background-color:black;
-     padding:0;
-     color:#00fe06 ;
+     padding-bottom: 1%;
+     background-color: $secondary-background-color;
+     color: #9fed9c;
      font-size: 1.5rem;
-    font-family: 'VT323';
      &:hover {
        color:white;
      }
    }
    button.message-to-button{
-     font-size: 1rem;
-     background-color:black;
-     margin-left: 0;
-     width: 12%;
-     margin-bottom:2%;
-     margin-top: 22%;
-     color: #00fe06 ;
-     // text-align: center;
-     padding: 2%;
+    margin-left: 37%;
+    background-color: #9FED9C;
+    color: #262831;
+    width: 15%;
    }
+
+   input.block_button{
+     margin-left: 55%;
+     margin-top: -8.7%;
+     background-color: #e06c75;
+     color: white;
+     width: 16%;
+
+   }
+
+
 
   //---------------Edit/New Profile Form Desktop Size-----------//
 
 
   .profile-form{
-    background-color: white;
-    border-radius: 10px;
-    width: 60%;
-    margin-left: 20%;
-    margin-top: -7%;
+    background-color: #f5f7fa;
+    width: 65%;
+    margin-left: 17.5%;
+    margin-top: 7%;
     padding-top: 2%;
+    padding-bottom: 2%;
     margin-bottom: 2%;
+    border-radius: 2px;
   }
   .form_input input{
     width: 40%;
@@ -1004,8 +1161,8 @@ textarea#message_message {
     border-radius: 5px;
     font-size: 1rem;
     display: inline;
-    margin-left: 2%;
-    margin-bottom: -1%;
+    margin-left: -5%;
+    margin-bottom: -3%;
     height: 4rem;
   }
   .form_checkbox_input label{
@@ -1021,6 +1178,7 @@ textarea#message_message {
     width: 17%;
 
   }
+
   .language-fields label{
     font-size: 1rem;
     display: inline-block;
@@ -1057,12 +1215,27 @@ textarea#message_message {
   }
 
   #tag{
-    text-align: left;
+    text-align: center;
     padding-top: 0%;
+    padding-left: 0%;
+  }
+  #tag-explained{
+    text-align: center;
+    color: #919293;
+    margin-top: -1%;
+  }
+
+  select#profile_partner_attributes_province{
+    display: inline;
+  }
+
+  select#profile_pair_programmer_attributes_province{
+    display: inline;
   }
 
   #remove_language{
-    color: #00aca1;
+    color: #e06c75;
+    font-size: 1.2rem;
     cursor: pointer;
     display: inline-block;
     margin-left: 5%;
@@ -1075,140 +1248,73 @@ textarea#message_message {
   }
 
   #add_language{
-      background-color: #00aca1;
-      border: 0;
-      border-radius: $button-border-radius;
-      color: white;
-      cursor: pointer;
-      display: inline-block;
-      font-family: $base-font-family;
-      font-size: $base-font-size;
-      -webkit-font-smoothing: antialiased;
-      font-weight: 600;
-      line-height: 1;
-      padding: $small-spacing $base-spacing;
-      transition: background-color $base-duration $base-timing;
-      vertical-align: middle;
-      white-space: nowrap;
-      margin-left: 5%;
-      padding-left: 5.25%;
-      padding-right: 5.25%;
+    color: #52ce4c;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 5%;
 
-      &:hover,
-      &:focus {
-        background-color: shade(#a9a9a9, 20%);
-        color: #fff;
-      }
+    &:hover,
+    &:focus {
+      color: #3b3b3b;
+    }
+
 
   }
 
   #add_photo{
-    background-color: #00aca1;
-    border: 0;
-    border-radius: $button-border-radius;
-    color: white;
+    color: #52ce4c;
     cursor: pointer;
     display: inline-block;
-    font-family: $base-font-family;
-    font-size: $base-font-size;
-    -webkit-font-smoothing: antialiased;
-    font-weight: 600;
-    line-height: 1;
-    padding: $small-spacing $base-spacing;
-    text-decoration: none;
-    transition: background-color $base-duration $base-timing;
-    user-select: none;
-    vertical-align: middle;
-    white-space: nowrap;
     margin-left: 5%;
-
+    margin-top: -15%;
+    font-size: 1.2rem;
 
     &:hover,
     &:focus {
-      background-color: shade(#a9a9a9, 20%);
-      color: #fff;
+      color: #3b3b3b;
     }
   }
 
   #remove_photo{
-    color: #00aca1;
+    margin-top: -15%;
+    color: #e06c75;
     cursor: pointer;
     display: inline-block;
     margin-left: 5%;
+    font-size: 1.2rem;
 
     &:hover,
     &:focus {
       color: #3b3b3b;
     }
-  }
-
-  #remove_preference{
-    color: #00aca1;
-    cursor: pointer;
-    display: inline-block;
-    margin-left: 5%;
-
-    &:hover,
-    &:focus {
-      color: #3b3b3b;
-    }
-
   }
 
   #add_pref_language{
-    background-color: #00aca1;
-    border: 0;
-    border-radius: $button-border-radius;
-    color: white;
+    color: #52ce4c;
     cursor: pointer;
     display: inline-block;
-    font-family: $base-font-family;
-    font-size: $base-font-size;
-    -webkit-font-smoothing: antialiased;
-    font-weight: 600;
-    line-height: 1;
-    padding: $small-spacing $base-spacing;
-    text-decoration: none;
-    transition: background-color $base-duration $base-timing;
-    user-select: none;
-    vertical-align: middle;
-    white-space: nowrap;
     margin-left: 5%;
-
+    margin-top: -15%;
+    font-size: 1.2rem;
 
     &:hover,
     &:focus {
-      background-color: shade(#a9a9a9, 20%);
-      color: #fff;
+      color: #3b3b3b;
     }
   }
 
   #add_pref{
-    background-color: #00aca1;
-    border: 0;
-    border-radius: $button-border-radius;
-    color: white;
+    color: #52ce4c;
     cursor: pointer;
     display: inline-block;
-    font-family: $base-font-family;
-    font-size: $base-font-size;
-    -webkit-font-smoothing: antialiased;
-    font-weight: 600;
-    line-height: 1;
-    padding: $small-spacing $base-spacing;
-    text-decoration: none;
-    transition: background-color $base-duration $base-timing;
-    user-select: none;
-    vertical-align: middle;
-    white-space: nowrap;
     margin-left: 5%;
-    padding-left: 3.5%;
-    padding-right: 3.5%;
+    margin-top: -15%;
+    font-size: 1.2rem;
 
     &:hover,
     &:focus {
-      background-color: shade(#a9a9a9, 20%);
-      color: #fff;
+      color: #3b3b3b;
     }
   }
 
@@ -1216,36 +1322,97 @@ textarea#message_message {
     margin-left: 5%;
   }
 
+  // .image-fields input{
+  //   width: 100%;
+  // }
+
   .actions input{
     width: 30%;
-    margin-left: 35%;
+    margin-left: 37%;
     margin-bottom: 5%;
     font-size: 1.2rem;
     border: none;
+    background-color: $base-background-color;
   }
 
   .actions{
     margin-top: 0%;
   }
 
+  label#looking_for{
+    width: 40%;
+  }
 
+
+  select#profile_province{
+    display: inline;
+    margin-left: 2%;
+  }
   .button-label{
     font-size: 1rem;
   }
 
+  input#profile_tag_list{
+    margin-left: -5%;
+  }
 
+  button#nameNext{
+    float: right;
+    margin-top: -3%;
+    margin-right: 2%;
+  }
+  button#birthdayNext{
+    float: right;
+    margin-right: 5%;
+    margin-top: 2%;
+  }
+  button#birthdayPrevious{
+    margin-left: 5%;
+    margin-top: 2%;
+  }
+  button#aboutMePrevious{
+    margin-left: 5%;
+    margin-top: 2%;
+  }
+  button#aboutMeNext{
+    float: right;
+    margin-right: 5%;
+    margin-top: 2%;
+  }
+
+  button#languagePrevious{
+    margin-left: 5%;
+    margin-top: 2%;
+  }
+
+  button#languageNext{
+    float: right;
+    margin-right: 5%;
+    margin-top: 2%;
+  }
 
   //----------------Index Search Forms Desktop Size-----------------//
 
 
 
   #first_option{
-    width: 60%;
-    margin-left: 20%;
-    margin-top: -7%;
-    margin-bottom: 1%;
-
+    background-color: #f5f7fa;
+    border-radius: 2px;
+    width: 90%;
+    margin-left: 2.5%;
+    padding-top: 1%;
+    margin-top: -3%;
+    & h2{
+      background-color: #dce4ef;
+      font-size: 1.6rem;
+      color: #31343f;
+      margin-left: 5%;
+      margin-right: 5%;
+      text-align: center;
+      border-radius: 2px;
+    }
   }
+
 
   #search-choice{
     margin-top: 2.5%;
@@ -1258,32 +1425,39 @@ textarea#message_message {
 
   .preference-form{
     margin-bottom: 1%;
-
-      & label{
-        font-size: 1rem;
-      }
+    margin-left: 2.5%;
+    padding-bottom: 2.5%;
   }
 
-  .index-search-form{
-    background-color: white;
-    border: solid;
-    border-color: #6a6a6a;
-    border-width: 0.5px;
-    border-radius: 5px;
-    width: 60%;
-    margin-top: 10%;
-    margin-left: 20%;
+  .lang_pref_form{
+    margin-bottom: 3%;
+  }
+
+  input#search_city{
+    width: 25%;
+    display: inline;
+    margin-left: 5%;
+  }
+  select#search_province{
+    width: 25%;
+    display: inline;
+    margin-left: 1%;
+  }
+
+  input#submit{
+    float:right;
+    margin-top: -5%;
+    margin-right: 5%;
+  }
+
+  .search-form{
+    background-color: #f5f7fa;
+    border-radius: 2px;
+    width: 90%;
+    margin-left: 2.5%;
     padding-top: 2%;
-    padding-bottom: 1%;
-    margin-bottom: 2%;
-  }
+    margin-top: 1%;
 
-  #date-search{
-    margin-top: -16%;
-  }
-
-  #pair-search{
-    margin-top: -16%;
   }
 
 
@@ -1301,9 +1475,9 @@ textarea#message_message {
   }
 
   input#search{
-    margin-left: 5%;
-    margin-top: 2%;
-    margin-bottom: 2%;
+    float: right;
+    margin-right: 7%;
+    margin-top: 3%;
   }
 
   input#search_min_age{
@@ -1325,7 +1499,6 @@ textarea#message_message {
     border-width: 3px;
     display: inline;
     margin-left: 2.5%;
-    margin-top: -2.5%;
     border: solid;
     border-color: #6a6a6a;
     border-width: 0.5px;
@@ -1340,13 +1513,12 @@ textarea#message_message {
   }
 
   .index-users{
-    background-color: white;
-    width: 60%;
-    margin-left: 20%;
+    border-radius: 2px;
+    width: 90%;
+    margin-left: 2.5%;
     padding-top: 2%;
-    padding-bottom: 1%;
-    margin-bottom: 2%;
-    border-radius: 5px;
+    padding-bottom: 10%;
+    margin-top: 1%;
   }
 
   #link-to-profile img{
@@ -1377,22 +1549,43 @@ textarea#message_message {
 
   .profile-tags{
     text-align: left;
-    margin-left: 10%;
-    padding-bottom: 10%;
     margin-top: 2%;
+    background-color:#f5f7fa;
+    border-radius: 2px;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    margin-left: 2.5%;
+    width: 90%;
+    & h2{
+      background-color: #dce4ef;
+      font-size: 1.5rem;
+      color: #31343f;
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-top: 1%;
+      text-align: center;
+      border-radius: 2px;
+    }
     & a{
-      background-color: #00aca1;
+      background-color: $base-background-color;
+      color:#9fed9c;
       padding: 1%;
     }
   }
 
+  #tag-spacing{
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
   //---------------Desktop MailBox Styles-------------//
 
+
   .reply{
-    background-color: #00aca1;
+    background-color: #9fed9c;
     border: 0;
-    border-radius: $button-border-radius;
-    color: white;
+    border-radius: 2px;
+    color: #31343f;
     cursor: pointer;
     display: inline-block;
     font-family: $base-font-family;
@@ -1413,41 +1606,63 @@ textarea#message_message {
     }
   }
 
+
   #mailbox{
-    margin-top: 5%;
+    background-color: #f5f7fa;
+    border-radius: 2px;
+    padding-top: 2%;
+    padding-bottom: 3%;
+    width: 95%;
+    margin-left: -2.5%;
+    margin-top: 2%;
   }
 
-  #mailbox h1{
-    font-size: 1.5rem;
-    margin-top: -7%;
+  #mailbox-title{
+    background-color:#f5f7fa;
+    border-radius: 2px;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    width: 95%;
+    margin-left: -2.5%;
+    margin-top: -3%;
+    & h1{
+      background-color: #dce4ef;
+      font-size: 1.5rem;
+      color: #31343f;
+      width: 90%;
+      border-radius: 2px;
+      margin-left: 5%;
+      margin-top: 1%;
+    }
   }
 
   #show-inbox-button{
     float: left;
-    margin-left: 1%;
-    margin-top: 1%;
-    width: 16%;
-    background-color: #6A6A6A;
-    border-radius: 5px;
+    margin-left: 2%;
+    margin-top: 2%;
+    width: 25%;
+    background-color: #31343f;
+    border-radius: 2px;
+    color: #dee2f8
   }
 
   #show-inbox{
-    margin-left: 20%;
+    margin-left: 30%;
     margin-top: 2%;
     background-color: white;
-    margin-right: 20%;
+    margin-right: 5%;
     padding-top: 2%;
     padding-left: 2%;
-    border-radius: 5px;
+    border-radius: 2px;
   }
   .sent_message{
-    margin-left: 20%;
+    margin-left: 30%;
     margin-top: 2%;
     background-color: white;
-    margin-right: 20%;
+    margin-right: 5%;
     padding-top: 2%;
     padding-left: 2%;
-    border-radius: 5px;
+    border-radius: 2px;
   }
   .unread{
     float: right;
@@ -1468,8 +1683,8 @@ textarea#message_message {
   }
 
   .line-break-inbox{
-    width: 100%;
-    margin-left: -2%;
+    width: 103.5%;
+    margin-left: -3.5%;
 
   }
 
@@ -1495,75 +1710,100 @@ textarea#message_message {
 
 
   .reply-name{
-    color: #3b3b3b;
+    color: #9fed9c;
   }
   #sent_message_show{
     float: left;
-    margin-left: -16%;
-    margin-top: 5%;
-    width: 16%;
-    background-color: #6A6A6A;
-    border-radius: 5px;
+    margin-left: -25%;
+    margin-top: 9%;
+    width: 25%;
+    background-color: #31343f;
+    border-radius: 2px;
+    color: #dee2f8
   }
 
   #message_message{
     margin-top: 2.5%;
   }
 
-  //--------------Slideshow Styles------------------//
-  .container {
-    margin: 0 auto;
+  label.error {
+    display: block;
+    color: #e06c75;
+    width: 60%;
+  }
+
+  #tag-name{
     text-align: center;
-    position: relative;
-  }
-  .container div {
-    width: 100%;
-    display: inline-block;
-    display: none;
+    font-size: 1.5rem;
+    width: 40%;
+    margin-left: 25%;
+    background-color: $base-background-color;
+    color:#9fed9c;
+    padding: 2%;
+    border-radius: 2px;
+    margin-top: -3%;
 
-  }
-  .container img {
-    width: 300px;
-    height: 300px;
-    margin-left: 50%;
-    margin-right: 50%;
-    margin-top: 10%;
 
   }
 
-  .right_arrow {
+  #tags-content{
+    border-radius: 2px;
+    width: 90%;
+    margin-left: 2.5%;
+    padding-top: 2%;
+    padding-bottom: 10%;
+    margin-top: 1%;
+  }
+
+
+}
+
+//------------------Large Screen------------------//
+@include media ($extra-large-screen-up){
+  .logout-icon{
+    display: block;
     position: absolute;
-    float:right;
-    margin-top: -50%;
-    margin-left: 230%;
-    width:100%;
+    margin-left: 90%;
+    margin-top: -2.5%;
+    & img{
+      width: 50%;
+      padding-top: 2.5%;
+      z-index: 5;
+    }
+  }
+  #profile-info-container{
+    padding-bottom: 5%;
+    margin-top: -3%;
+  }
+  button.message-to-button{
+    margin-top: 0%;
+  }
+  #profile-images{
+    margin-top: 0%;
+    & img{
+      border-radius: 0;
+      height: 250px;
+      width: 100%;
+
+    }
 
   }
+  .bx-wrapper{
 
-  .left_arrow {
-    position: absolute;
-    margin-left: -30%;
-    margin-top: -50%;
+    height: 250px;
   }
-
-  .x{
-    position: absolute;
-    margin-left: 160%;
-    width: 240%;
+  input.block_button{
+    margin-top: -6%;
+  }
+  #profile-name{
     margin-top: -15%;
   }
-
-
-  #dim-page{
-    display: none;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    z-index: 999;
-    top: 0;
-    left: 0;
+  #profile-languages{
+    margin-top: -18%;
+    height: 225px;
   }
 
-
+  .line-break{
+    margin-top: 12.5%;
+  }
 }

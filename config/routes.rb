@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :destroy]
 
   resources :profiles
+  resources :tags, only: [:index, :show]
 
   resources :messages do
     get 'reply' => 'messages#reply'
@@ -18,7 +19,7 @@ Rails.application.routes.draw do
   get "oauth/callback" => "oauths#callback" # for use with Github, Facebook
   get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
 
-  get 'tagged' => 'profiles#tagged', :as => 'tagged'
+  # get 'tagged/tag.id' => 'profiles#tagged', :as => 'tagged'
 
 
 
