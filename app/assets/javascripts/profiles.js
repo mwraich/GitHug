@@ -172,10 +172,10 @@ $(document).on('page:load ready', function() {
         required: true,
         minlength: 1
       },
-      'search[operating_system]': {
-        required: true,
-        minlength: 1
-      },
+      // 'search[operating_system]': {
+      //   required: true,
+      //   minlength: 1
+      // },
       'search[min_age]': {
         required: true,
         min: 18
@@ -191,8 +191,20 @@ $(document).on('page:load ready', function() {
       'search[province]': {
         required:true
       }
+    },
+    errorPlacement: function(error, element) {
+        if ($("#lang_pref_form").has(element).size() > 0) {
+            error.insertAfter($("#lang_pref_form input:checkbox:last"));
+        } else {
+            error.insertAfter(element);
+        }
     }
   });
+
+
+  $.validator.addMethod("one_required", function() {
+    return $("#myform").find(".one_required:checked").length > 0;
+}, 'Please select at least one vehicle.');
 
   // Slideshow
     $('.bxslider').bxSlider();

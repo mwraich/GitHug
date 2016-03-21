@@ -12,29 +12,34 @@
 
 
   <div class="preference-form">
-    <div class="lang_pref_form">
+    <div class="lang_pref_form" id="lang_pref_form">
+      <ul class="checkboxes">
+
       <%=label_tag(:languages,"What languages do you know?" )%><br>
 
-      <%= label_tag('search[language]', 'Ruby',  class: 'button-label') %>
+      <%= label_tag('search[language]', 'Ruby',  class: 'button-label', class: "one_required") %>
       <%= check_box_tag('search[language]', 'Ruby') %>
 
-      <%= label_tag('search[language]','JavaScript',  class: 'button-label') %>
+      <%= label_tag('search[language]','JavaScript',  class: 'button-label', class: "one_required") %>
       <%= check_box_tag('search[language]', 'JavaScript') %>
 
-      <%= label_tag('search[language]', 'Python',  class: 'button-label') %>
+      <%= label_tag('search[language]', 'Python',  class: 'button-label', class: "one_required") %>
       <%= check_box_tag('search[language]', 'Python') %>
 
-      <%= label_tag('search[language]','Java',  class: 'button-label') %>
+      <%= label_tag('search[language]','Java',  class: 'button-label', class: "one_required") %>
       <%= check_box_tag('search[language]', 'Java') %>
 
-      <%= label_tag('search[language]','PHP',  class: 'button-label') %>
+      <%= label_tag('search[language]','PHP',  class: 'button-label', class: "one_required") %>
       <%= check_box_tag('search[language]', 'PHP') %>
 
-      <%= label_tag('search[language]','C++',  class: 'button-label') %>
+      <%= label_tag('search[language]','C++',  class: 'button-label', class: "one_required") %>
       <%= check_box_tag('search[language]', 'C++') %>
+    </ul>
     </div>
-    <div class="lang_pref_form">
+    <div class="lang_pref_form", id="operating_pref_form">
+
       <%=label_tag(:operating_system,"What Operating System do you use?") %><br>
+      <ul class="checkboxes">
 
       <%= label_tag('search[operating_system]','OS X',  class: 'button-label') %>
       <%= check_box_tag('search[operating_system]', 'OS X') %>
