@@ -521,14 +521,19 @@ input#search_max_age{
 
 select#profile_partner_attributes_province{
   display: inline;
+  height: 2rem;
+  margin-left: 2%;
 }
 
 select#profile_pair_programmer_attributes_province{
   display: inline;
+  height: 2rem;
+  margin-left: 2%;
 }
 
 select#profile_province{
   display: inline;
+  height: 2rem;
 }
 
 
@@ -1233,9 +1238,12 @@ textarea#message_message{
     margin-bottom: 2%;
     border-radius: 2px;
   }
+  input#profile_birthday{
+    margin-left: -1%;
+  }
   .form_input input{
     width: 40%;
-    height: 1.7rem;
+    height: 2rem;
     border-color: #6a6a6a;
     border-width: 0.5px;
     border-radius: 5px;
@@ -1250,6 +1258,8 @@ textarea#message_message{
     width: 20%;
     font-size: 1rem;
   }
+
+
 
   textarea#profile_about_me{
     width: 40%;
@@ -1324,10 +1334,12 @@ textarea#message_message{
 
   select#profile_partner_attributes_province{
     display: inline;
+    margin-left: 2%;
   }
 
   select#profile_pair_programmer_attributes_province{
     display: inline;
+    margin-left: 2%;
   }
 
   #remove_language{
@@ -1534,11 +1546,13 @@ textarea#message_message{
     width: 25%;
     display: inline;
     margin-left: 5%;
+    height: 2rem;
   }
   select#search_province{
     width: 25%;
     display: inline;
     margin-left: 1%;
+    height: 2rem;
   }
 
   input#submit{
@@ -1593,8 +1607,8 @@ textarea#message_message{
 
   input#search_min_age{
     width: 20%;
-    height: 1.5rem;
-    font-size: 0.7rem;
+    height: 2.0rem;
+    font-size: 1rem;
     border-width: 3px;
     display: inline;
     margin-left: 2.5%;
@@ -1605,8 +1619,8 @@ textarea#message_message{
   }
   input#search_max_age{
     width: 20%;
-    height: 1.5rem;
-    font-size: 0.7rem;
+    height: 2.0rem;
+    font-size: 1rem;
     border-width: 3px;
     display: inline;
     margin-left: 2.5%;
