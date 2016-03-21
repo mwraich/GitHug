@@ -25,7 +25,7 @@ class MessagesController < ApplicationController
     @message.sender = current_user.profile
 
     if @message.save
-      UserMailer.user_message_notification(Profile.find(@message.recipient)).deliver_later
+      UserMailer.delay.user_message_notification(Profile.find(@message.recipient))
       redirect_to messages_path, notice: "Message sent!"
     else
       redirect_to messages_url, alert: "Sorry someething went wrong &   your message could not be send. "
