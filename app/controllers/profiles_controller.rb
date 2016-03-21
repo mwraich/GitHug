@@ -19,7 +19,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
     @message = Message.new
 
-    @profile_partnerReco = @profile.partnerReco
+    @qprofile_pairReco = @profile.pairReco
     @profile_partnerReco = @profile.partnerReco
   end
 

@@ -26,7 +26,7 @@ class MessagesController < ApplicationController
       UserMailer.user_message_notification(Profile.find(@message.recipient)).deliver_later
       redirect_to messages_path, notice: "Message sent!"
     else
-      redirect_to messages_url, alert: "SORRY THERE WAS AN ERROR!"
+      redirect_to messages_url, alert: "Sorry someething went wrong &   your message could not be send. "
     end
 
   end

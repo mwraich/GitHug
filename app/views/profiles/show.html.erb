@@ -1,19 +1,22 @@
 <div class="content">
 <div id="profile-info-container">
 <div id="profile-images">
-    <% if (@profile.images.length < 2) %>
+
+    <% if (@profile.images.any?) %>
+
     <ul class="bxslider">
+      <% @profile.images.map do |r| %>
+      <li><%=  image_tag(r.image_url) %></li>
+      <% end %>
       <li><%= image_tag(@profile.user.github_image) %></li>
     </ul>
+
     <% else %>
       <ul class="bxslider">
-        <li><%= image_tag(@profile.images[0].image_url) %></li>
-        <% range = (0..(@profile.images.length)) %>
-        <% range.select do |r| %>
-        <li><%=  image_tag(@profile.images[r-1].image_url) %></li>
-         <% end %>
+        <li><%= image_tag(@profile.user.github_image) %></li>
       </ul>
     <% end %>
+
 </div>
 <div id="profile-page-title">
 <div id="profile-name">
@@ -92,10 +95,10 @@
 <% if check_current_user %>
   <div class="reco_matches">
     <h2>Recomended For You</h2>
-    <% if @profile_partnerReco.present?  %>
+    <% if @profile.partnerReco.present?  %>
         <%= render "reco_partner" %>
     <% end %>
-  <% if @profile_pairReco.present?  %>
+  <% if @profile.pairReco.present?  %>
       <%= render "reco_pair" %>
   <% end %>
 <% end %>
