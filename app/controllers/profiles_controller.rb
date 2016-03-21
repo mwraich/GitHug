@@ -18,7 +18,7 @@ class ProfilesController < ApplicationController
 
     @profile = Profile.find(params[:id])
     @message = Message.new
-
+    @pull_request = PullRequest.new 
     @profile_partnerReco = @profile.partnerReco
     @profile_partnerReco = @profile.partnerReco
   end

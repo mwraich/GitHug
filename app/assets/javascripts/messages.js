@@ -1,7 +1,7 @@
 $(document).on('page:load ready', function() {
 
   $('.sent_message').hide();
-  
+
 // This toggles the message area of an inbox message when you click the div
   $('.chat-message-content').toggle();
   $('.chat-message').on('click', function(e){
@@ -43,5 +43,8 @@ $(document).on('page:load ready', function() {
     $('.sent_message').hide();
     $('#show-inbox').fadeIn(1000);
   });
+
+
+
 
 });

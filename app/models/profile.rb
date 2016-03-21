@@ -16,6 +16,8 @@ class Profile < ActiveRecord::Base
   has_many :recipient_messages, class_name: :Message, foreign_key: :recipient_id
   has_many :blocked_users, through: :users
   has_many :enemies, through: :blocked_users, class_name: User
+  has_many :sent_requests, class_name: :PullRequest, foreign_key: :requestor_id
+  has_many :received_requests, class_name: :PullRequest, foreign_key: :requestee_id
 
   accepts_nested_attributes_for :images, :languages, :partner, :pair_programmer, allow_destroy: true
   before_create :location, :latitude  => :latitude, :longitude => :lon
@@ -99,10 +101,19 @@ class Profile < ActiveRecord::Base
     end
   end
 
+<<<<<<< HEAD
+  def check_pull_request_permission(current_user)
+    if @profile.sent_requests.where(requestor_id: current_user, requestee_id: self.id, read: true, permission: true)
+      return true
+      #permission granted
+    else
+      return false
+=======
 
   def legal_age
     if birthday + 18.years >= Date.today
       errors.add(:birthday, "Must be over 18 to use this site")
+>>>>>>> 9186f41609be934be6ab96d5b43e9e3de0c677cf
     end
   end
 
