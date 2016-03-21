@@ -7,7 +7,7 @@ body{
 }
 
 .content{
-  margin-top: 10%;
+  margin-top: 20%;
 }
 
 .page-title{
@@ -825,6 +825,9 @@ textarea#message_message{
   color: #7f7f7f;
 }
 
+#mailbox-title{
+  display: none;
+}
 
 .new_message_pop_up_expanded  {
   bottom: 0;
@@ -1860,6 +1863,7 @@ textarea#message_message{
   }
 
   #mailbox-title{
+    display: block;
     background-color:#f5f7fa;
     border-radius: 2px;
     padding-top: 2%;
