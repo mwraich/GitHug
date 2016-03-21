@@ -26,6 +26,7 @@ select {
   font-family: $base-font-family;
   font-size: $base-font-size;
   color: #6a6a6a;
+  height:2rem;
 
 }
 
@@ -46,7 +47,7 @@ select[multiple] {
   width: 90%;
   margin-left: 5%;
   color: #3b3b3b;
-  height: 1.5rem;
+  height: 2rem;
   &:hover {
     border-color: shade(#00aca1, 20%);
   }
