@@ -869,7 +869,13 @@ textarea#message_message{
 }
 
 
+#empty_mailbox{
 
+  height: 500px;
+  & p{
+    font-style: italic;
+  }
+}
 
 
 //------------Desktop Size------------//
