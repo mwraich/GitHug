@@ -1556,6 +1556,10 @@ textarea#message_message{
 
   }
 
+  .looking-form{
+    margin-left: 2.5%;
+  }
+
 
   input#search_location{
     width: 30%;
@@ -1955,7 +1959,7 @@ textarea#message_message{
     display: block;
     position: absolute;
     margin-left: 91%;
-    margin-top: -3%;
+    margin-top: -2.25%;
     & img{
       width: 45%;
       padding-top: 2.5%;
@@ -2034,9 +2038,8 @@ textarea#message_message{
   .footer{
     margin-top: 12.5%;
   }
-}
 
-//-----------------iMac Screen---------------//
-@include media ($iMac-screen-up){
-
+  input#search_city{
+    margin-left: 3%;
+  }
 }

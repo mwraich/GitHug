@@ -3,13 +3,15 @@
 
     <%= form_tag(profiles_path, method: :get, :id =>'search-form') do %>
 
-    <label >Who are you looking for?</label><br>
-    <%= label_tag('search[paired_programmer]', "Pair", class:'partner')%>
+  <div class="looking-form">
+    <%=label_tag("Who are you looking for?" )%><br>
+    <%= label_tag('search[paired_programmer]', "Pair", class:'button-label')%>
     <%= check_box_tag('search[paired_programmer]') %>
 
-    <%= label_tag('search[date]', "Date", class:'partner') %>
+    <%= label_tag('search[date]', "Date", class:'button-label') %>
     <%= check_box_tag('search[date]') %>
-
+  </div>
+  <br>
 
   <div class="preference-form">
     <div class="lang_pref_form">
@@ -75,10 +77,10 @@
     <div class="lang_pref_form">
       <%= label_tag(:location, "What location works best for you?", class: 'location-search-label') %><br>
 
-      <%= label_tag('search[city]', 'City:')%>
+      <%= label_tag('search[city]', 'City:', class: 'button-label')%>
       <%= text_field_tag('search[city]') %><br>
 
-      <%= label_tag('search[province]', 'Province:')%>
+      <%= label_tag('search[province]', 'Province:', class: 'button-label')%>
       <%= select_tag('search[province]', options_for_select(provinces, current_user.profile.province ), include_blank: true)%>
     </div>
 
