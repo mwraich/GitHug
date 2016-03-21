@@ -11,13 +11,6 @@
     <% end %>
 
 <div id = 'showFirstName'>
-<div class="form_input">
-<%= label_tag "looking_for", "What are you looking for?", id: "looking_for" %><br>
-<%= f.label :date, "Partner", id: "partner_label" %>
-  <%= f.check_box :date %><br>
-<%= f.label :paired_programmer, "Pair Programmer", id: "pair_label" %>
-    <%= f.check_box :paired_programmer %>
-</div><br>
 
 <div class="form_input">
 <%= f.label :first_name, "First Name:" %>
@@ -46,8 +39,8 @@
 <%= f.fields_for :images do |image| %>
 <%= render "image_fields", f: image %>
 <% end %>
-</div>
 <button type ='button' id = 'nameNext'> Next </button>
+</div>
 </div> <!-- end showFirstName-->
 
 <div id="showGenderAndBirthday">
@@ -97,7 +90,7 @@
   <p id="tag">Tag your Hobbies!</p>
   <p id="tag-explained">(Separate with commas)</p>
   <%= f.label :tag_list, 'Tags:' %>
-  <%= f.text_field :tag_list %>
+  <%= f.text_field(:tag_list, value: @profile.tag_list.join(",")) %>
 </div>
 
 <button type ='button' id = 'aboutMePrevious'> Previous </button>
@@ -123,7 +116,6 @@
 </div>
 
 <div>
-<div>
   <%= f.fields_for :languages do |language| %>
   <%= render "language_fields", f: language %>
   <% end %>
@@ -136,19 +128,46 @@
   'data-association-insertion-traversal' => 'closest' %>
 </div>
 
+<p id="tag">Notification Preferences</p>
+
+<div class="field">
+  <%= f.label :notification_email do %>
+  <%= f.check_box :notification_email %>
+  Email
+  <% end %>
+</div>
+
+<div class="field">
+  <%= f.label :notification_sms do %>
+  <%= f.check_box :notification_sms %>
+  SMS
+  <% end %>
+</div>
+<button type ='button' id = 'languagePrevious'> Previous </button>
+<button type ='button' id = 'languageNext'> Next </button>
+</div>
+
+<div id="showPreferences">
 <p id="tag">Tell Us What Your Looking For?</p>
 
-    <div>
-      <%= f.fields_for :partner do |partner| %>
-      <%= render "partner_fields", f: partner %>
-      <% end %>
-    </div>
+    <div class="form_input">
+    <%= label_tag "looking_for", "What are you looking for?", id: "looking_for" %><br>
+    <%= f.label :date, "Partner", id: "partner_label" %>
+      <%= f.check_box :date %><br>
 
-    <div class="add-partners-spacing">
-      <%= link_to_add_association "Add Partner", f, :partner, id: 'add_partner',
-      'data-association-insertion-method' => 'before',
-      'data-association-insertion-traversal' => 'closest', :force_non_association_create => true %>
+        <div id="add-partner">
+        <%= f.fields_for :partner do |partner| %>
+        <%= render "partner_fields", f: partner %>
+        <% end %>
+      <div class="add-partners-spacing">
+        <%= link_to_add_association "Add Partner", f, :partner, id: 'add_partner',
+        'data-association-insertion-method' => 'before',
+        'data-association-insertion-traversal' => 'closest', :force_non_association_create => true %>
+      </div>
     </div>
+    <%= f.label :paired_programmer, "Pair Programmer", id: "pair_label" %>
+        <%= f.check_box :paired_programmer %>
+    </div><br>
 
     <div>
       <%= f.fields_for :pair_programmer do |pair| %>
@@ -156,27 +175,14 @@
       <% end %>
     </div>
 
-    <div class="add-pair_programmer-spacing">
+    <div class="add-pair_programmer-spacing", id="add-pair_programmer">
       <%= link_to_add_association "Add Pair Programmer", f, :pair_programmer, id: 'add_pair_programmer',
       'data-association-insertion-method' => 'before',
       'data-association-insertion-traversal' => 'closest', :force_non_association_create => true %>
     </div>
 
-  <p id="tag">Notification Preferences</p>
-    <div class="field">
-      <%= f.label :notification_email do %>
-        <%= f.check_box :notification_email %>
-        Email
-      <% end %>
-    </div>
 
-    <div class="field">
-      <%= f.label :notification_sms do %>
-        <%= f.check_box :notification_sms %>
-        SMS
-      <% end %>
-    </div>
-
+    <button type ='button' id = 'preferencesPrevious'> Previous </button>
   <div class="actions", id="profile_submit">
     <%= f.submit %>
   </div>
