@@ -65,8 +65,12 @@ body.sessions{
 }
 
 @include media ($extra-large-screen-up){
+
+  #loadAnimation{
+    margin-left: 45%;
+  }
   .login img{
-    margin-left: 35%;
+    margin-left: 40%;
     margin-top: 0%;
   }
 
