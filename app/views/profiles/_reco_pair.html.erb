@@ -1,17 +1,18 @@
 <div class='recos'>
   <h2>People you may want to code with</h2>
-<% @profile.pairReco.each do |reco| %>
-<div class="individual-reco">
+    <% @profile.pairReco.each do |reco| %>
+  <div class="individual-reco">
 
-  <%= link_to(profile_path(reco)) do %>
-  <%= image_tag(reco.user.github_image, class: 'recos-image') %>
+    <%= link_to(profile_path(reco)) do %>
+    <%= image_tag(reco.user.github_image, class: 'recos-image') %>
 
-    <p><%= reco.first_name %></p>
-    <p><%= reco.location %></p>
+    <div class='reco-info'>
+      <p><%= reco.first_name %></p>
+      <p><%= reco.location %></p>
+    </div>
 
-</div>
-<hr>
+  </div>
+  <hr>
+    <% end %>
   <% end %>
-
-<% end %>
 </div>
