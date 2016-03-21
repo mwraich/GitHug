@@ -531,6 +531,7 @@ select#profile_pair_programmer_attributes_province{
   margin-left: 2%;
 }
 
+
 select#profile_province{
   display: inline;
   height: 2rem;
@@ -582,7 +583,7 @@ input.block_button{
   width: 35%;
   margin-left: 55%;
   margin-top: -18%;
-
+  height: 2.5rem;
 }
 
 button.message-to-button{
@@ -814,7 +815,7 @@ textarea#message_message{
 
  input#commit {
    border-radius:none;
-   padding-bottom: 1%;
+   padding-bottom: 7%;
    font-size: 1.5rem;
    background-color: #262831;
    margin-left: -5%;
@@ -843,7 +844,7 @@ textarea#message_message{
   background-color: #f5f7fa;
   width: 95%;
   margin-left: 2.5%;
-  margin-top: 15%;
+  margin-top: 25%;
   padding-top: 2%;
   padding-bottom: 2%;
   margin-bottom: 2%;
@@ -883,6 +884,22 @@ textarea#message_message{
     color: #333333;
   }
 }
+.about-image img{
+  width: 75%;
+  height: 250px;
+  border-radius: 2px;
+  margin-left: 12.5%;
+}
+
+.index-about-name{
+  color: #31343f;
+  margin-left: 35%;
+  margin-top: 2%;
+  margin-bottom: 1%;
+  font-size: 1.5rem;
+}
+
+
 
 //------------------Footer----------------------//
 .footer{
@@ -1198,11 +1215,13 @@ textarea#message_message{
   }
 
    input#commit {
-     padding-bottom: 1%;
+
      background-color: $secondary-background-color;
      color: #9fed9c;
      font-size: 1.5rem;
      margin-left: -1%;
+     margin-top: -2%;
+     padding-bottom: 5%;
      &:hover {
        color:white;
      }
@@ -1217,6 +1236,7 @@ textarea#message_message{
    input.block_button{
      margin-left: 55%;
      margin-top: -9%;
+     height: 2.5rem;
      background-color: #e06c75;
      color: white;
      width: 16%;
@@ -1947,6 +1967,22 @@ textarea#message_message{
       font-size: 1.3rem;
     }
   }
+
+  .about-image img{
+    width: 20%;
+    height: 150px;
+    border-radius: 2px;
+    margin-left: 5%;
+  }
+
+  .index-about-name{
+    color: #31343f;
+    margin-left: 35%;
+    margin-top: -15%;
+    margin-bottom: 15%;
+    font-size: 1.5rem;
+  }
+
   //------------------Footer----------------------//
   .footer{
     clear: both;
@@ -2024,6 +2060,7 @@ textarea#message_message{
   }
   input.block_button{
     margin-top: -4.5%;
+    height: 2.5rem;
   }
   #profile-name{
     margin-top: -15%;
@@ -2072,5 +2109,19 @@ textarea#message_message{
 
   input#search_city{
     margin-left: 3%;
+  }
+  .about-image img{
+    width: 20%;
+    height: 250px;
+    border-radius: 2px;
+    margin-left: 5%;
+  }
+
+  .index-about-name{
+    color: #31343f;
+    margin-left: 35%;
+    margin-top: -10%;
+    margin-bottom: 10%;
+    font-size: 1.5rem;
   }
 }
