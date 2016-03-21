@@ -22,8 +22,8 @@ Rails.application.routes.draw do
 
   # get 'tagged/tag.id' => 'profiles#tagged', :as => 'tagged'
 
-  get "profiles/about" => "profiles#about"
-  get "profiles/contact" => "profiles#contact"
+  resources :about, only: [:index]
+  get "about/contact" => "about#contact"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
