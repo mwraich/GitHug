@@ -1,8 +1,9 @@
 //------------------Base Document Styles------------//
 
-
 body{
   background-color: #DCE4EF;
+  min-height: 100%;
+
 }
 
 .page-title{
@@ -867,6 +868,33 @@ textarea#message_message{
   }
 }
 
+//------------------Footer----------------------//
+.footer{
+  clear: both;
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  background-color: #9ea1b4;
+  margin-top: 110%;
+  padding-top: 1%;
+  padding-bottom: 0%;
+  & a{
+    color: #eaeae8;
+    margin-left: 1%;
+    font-size: 1.1rem;
+    padding-bottom: 0.5%;
+    display: block;
+  }
+
+  & p{
+    color: #d1d3d6;
+    float: right;
+    font-size: 0.9rem;
+    margin-right: 1%;
+  }
+}
+
 
 @media all and (max-width: 900px) {
   #nav-trigger {
@@ -902,6 +930,7 @@ textarea#message_message{
 
   body{
     background-color: #D7DAE0;
+    min-height: 100%;
   }
   .message{
     display: none;
@@ -1872,8 +1901,40 @@ textarea#message_message{
       font-size: 1.3rem;
     }
   }
+  //------------------Footer----------------------//
+  .footer{
+    clear: both;
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    background-color: #dce4ef;
+    margin-top: 27%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    & a{
+      color: #31343f;
+      margin-left: 1%;
+      font-size: 1.1rem;
+      padding-bottom: 0.5%;
+      display: block;
+    }
+
+    & a:hover{
+      color: white;
+    }
+
+    & p{
+      color: #31343f;
+      float: right;
+      font-size: 0.9rem;
+      margin-right: 1%;
+    }
+  }
 
 }
+
+
 
 
 
@@ -1959,4 +2020,7 @@ textarea#message_message{
     margin-top: -3.5%;
   }
 
+  .footer{
+    margin-top: 12.5%;
+  }
 }
