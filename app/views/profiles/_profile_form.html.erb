@@ -90,7 +90,7 @@
   <p id="tag">Tag your Hobbies!</p>
   <p id="tag-explained">(Separate with commas)</p>
   <%= f.label :tag_list, 'Tags:' %>
-  <%= f.text_field :tag_list %>
+  <%= f.text_field(:tag_list, value: @profile.tag_list.join(",")) %>
 </div>
 
 <button type ='button' id = 'aboutMePrevious'> Previous </button>
@@ -179,6 +179,21 @@
       'data-association-insertion-traversal' => 'closest', :force_non_association_create => true %>
     </div>
 
+
+  <p id="tag">Notification Preferences</p>
+    <div class="field">
+      <%= f.label :notification_email do %>
+        <%= f.check_box :notification_email %>
+        Email
+      <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :notification_sms do %>
+        <%= f.check_box :notification_sms %>
+        SMS
+      <% end %>
+    </div>
 
   <div class="actions", id="profile_submit">
     <%= f.submit %>

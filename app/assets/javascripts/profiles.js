@@ -105,6 +105,8 @@ $(document).on('page:load ready', function() {
     });
 
     $('#add-partner').hide
+    // $('#add-partner').hide
+
     var partnerPreference = $('#profile_date');
     // var pairPreference = $('#profile_paired_programmer');
     //
@@ -117,7 +119,7 @@ $(document).on('page:load ready', function() {
     //
     // partnerPreference.click(function() {
     //   addPartner[this.checked ? "removeClass" : "addClass"]('hide');
-    //   addPartnerInputs.attr("disabled", this.checked);
+    //   addPartnerInputs.attr("disabled", :this.checked);
     // });
 
   $('.edit_profile').validate({
