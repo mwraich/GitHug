@@ -104,23 +104,24 @@ $(document).on('page:load ready', function() {
       }
     });
 
-    $('#add-partner').hide
-    // $('#add-partner').hide
-
-    var partnerPreference = $('#profile_date');
+    // var partnerPreference = $('#profile_date');
     // var pairPreference = $('#profile_paired_programmer');
     //
     // var initialPartner = partnerPreference.is(':checked');
     // var initialPair = pairPreference.is(':checked');
-
+    //
     // var addPartner = $("#add-partner")[initialPartner ? "removeClass" : "addClass"]("hide");
     //
     // var addPartnerInputs = addPartner.find("input").attr('disabled', !initialPartner);
     //
     // partnerPreference.click(function() {
     //   addPartner[this.checked ? "removeClass" : "addClass"]('hide');
-    //   addPartnerInputs.attr("disabled", :this.checked);
+    //   addPartnerInputs.attr("disabled", this.checked);
     // });
+// 
+//     $('#profile_date').change(function() {
+//     $('#add-partner').toggle();
+// });
 
   $('.edit_profile').validate({
     rules: {
@@ -200,11 +201,6 @@ $(document).on('page:load ready', function() {
         }
     }
   });
-
-
-  $.validator.addMethod("one_required", function() {
-    return $("#myform").find(".one_required:checked").length > 0;
-}, 'Please select at least one vehicle.');
 
   // Slideshow
     $('.bxslider').bxSlider();

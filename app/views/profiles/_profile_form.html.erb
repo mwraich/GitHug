@@ -39,8 +39,8 @@
 <%= f.fields_for :images do |image| %>
 <%= render "image_fields", f: image %>
 <% end %>
-</div>
 <button type ='button' id = 'nameNext'> Next </button>
+</div>
 </div> <!-- end showFirstName-->
 
 <div id="showGenderAndBirthday">
@@ -128,6 +128,8 @@
   'data-association-insertion-traversal' => 'closest' %>
 </div>
 
+<p id="tag">Notification Preferences</p>
+
 <div class="field">
   <%= f.label :notification_email do %>
   <%= f.check_box :notification_email %>
@@ -152,21 +154,21 @@
     <%= label_tag "looking_for", "What are you looking for?", id: "looking_for" %><br>
     <%= f.label :date, "Partner", id: "partner_label" %>
       <%= f.check_box :date %><br>
-      <div>
-        <fieldset id="add-partner">
+
+        <div id="add-partner">
         <%= f.fields_for :partner do |partner| %>
         <%= render "partner_fields", f: partner %>
         <% end %>
-      </div>
       <div class="add-partners-spacing">
         <%= link_to_add_association "Add Partner", f, :partner, id: 'add_partner',
         'data-association-insertion-method' => 'before',
         'data-association-insertion-traversal' => 'closest', :force_non_association_create => true %>
       </div>
-    </fieldset>
+    </div>
     <%= f.label :paired_programmer, "Pair Programmer", id: "pair_label" %>
         <%= f.check_box :paired_programmer %>
     </div><br>
+
     <div>
       <%= f.fields_for :pair_programmer do |pair| %>
       <%= render "pair_programmer_fields", f: pair %>
@@ -180,24 +182,9 @@
     </div>
 
 
-  <p id="tag">Notification Preferences</p>
-    <div class="field">
-      <%= f.label :notification_email do %>
-        <%= f.check_box :notification_email %>
-        Email
-      <% end %>
-    </div>
-
-    <div class="field">
-      <%= f.label :notification_sms do %>
-        <%= f.check_box :notification_sms %>
-        SMS
-      <% end %>
-    </div>
-
+    <button type ='button' id = 'preferencesPrevious'> Previous </button>
   <div class="actions", id="profile_submit">
     <%= f.submit %>
   </div>
-  <button type ='button' id = 'preferencesPrevious'> Previous </button>
 </div><!-- end show preferences -->
 <% end %>
