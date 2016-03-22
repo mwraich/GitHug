@@ -15,6 +15,7 @@ Natalie Doak - (https://github.com/ndoak)
 ## Getting Started
 
 Do the following to get started with GitHug!
+
 ```
 $ bundle install
 $ rake db:migrate
