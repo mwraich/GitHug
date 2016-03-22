@@ -47,7 +47,7 @@ class MessagesController < ApplicationController
     end
 
     if @message.save && @profile.notification_sms? && @profile.phone_number?
-       @profile.send_text_message
+       Profile.find(@message.recipient).send_text_message(@message)
     end
 
   end
