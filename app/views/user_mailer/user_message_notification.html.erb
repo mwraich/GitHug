@@ -8,8 +8,8 @@
   <div style="padding-left:25px">
     <p>Hey <%= @user.first_name %>,</p>
 
-    <p>Looks like someone likes! <br> You just got a new message from
-    <%= @sender.first_name %>. <span style="color:#9FED9C;"><%= link_to "Log in", sessions_url %></span>
+    <p>Looks like someone likes you! <br> You just got a new message from
+    <%= @sender.first_name %>. <span style="color:#9FED9C;"><%= link_to "Log in", new_session_url %></span>
     to check it out!</p>
 
     <p style="color:#E06C75; font-family:VT323; font-size:25px;"><bold><3</bold></p>
