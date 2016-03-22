@@ -29,19 +29,19 @@ class MessagesController < ApplicationController
       UserMailer.delay.user_message_notification(Profile.find(@message.recipient), Profile.find(@message.sender))
       respond_to do |format|
         format.html do
-            if request.xhr?
-              render_ profile_path(@profile.recipient)
-            else
-              redirect_to messages_url
-            end
+          if request.xhr?
+            render_ profile_path(@profile.recipient)
+          else
+            redirect_to messages_url
           end
-          format.js
         end
-      else
-        respond_to do |format|
-          format.html do
-            format.html { render partial:"reply", alert: "Sorry, something went wrong. Your message did not send" }
-          end
+        format.js
+      end
+    else
+      respond_to do |format|
+        format.html do
+          format.html { render partial:"reply", alert: "Sorry, something went wrong. Your message did not send" }
+        end
         format.js
       end
     end
