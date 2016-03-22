@@ -1,7 +1,7 @@
 <% if @message.errors.present? %>
   $('.message_error_messages').html('<%=j render "messages/messages_form_errors" %>');
 <% else %>
-  $('.new_message_message').val('');
+  $('.new_message').val('');
   $('.message_error_messages').html('');
   $('.new_message_pop_up_expanded').slideToggle();
   $('.reply_message_message').val('');
