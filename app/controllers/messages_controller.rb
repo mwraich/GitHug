@@ -28,12 +28,12 @@ class MessagesController < ApplicationController
       UserMailer.delay.user_message_notification(Profile.find(@message.recipient), Profile.find(@message.sender))
       respond_to do |format|
         format.html do
-            if request.xhr?
-              render_ profile_path(@profile.recipient)
-            else
-              redirect_to messages_path
-            end
+          if request.xhr?
+            render_ profile_path(@profile.recipient)
+          else
+            redirect_to messages_path
           end
+        end
           format.js
         end
       else
@@ -41,8 +41,7 @@ class MessagesController < ApplicationController
           format.html do
             format.html { render partial:"reply", alert: "Sorry, something went wrong. Your message did not send" }
           end
-        format.js
-      end
+        end
     else
       redirect_to messages_url, alert: "Sorry someething went wrong & your message could not be send. "
     end
