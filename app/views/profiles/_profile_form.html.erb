@@ -1,6 +1,7 @@
 <%= form_for @profile do |f| %>
     <% if @profile.errors.any? %>
-      <div class="error_messages">
+    <label class = "error">
+      <div class="error">
         <h2>Form Is Invalid</h2>
         <ul>
           <% @profile.errors.full_messages.each do |message| %>
@@ -8,6 +9,7 @@
           <% end %>
         </ul>
       </div>
+    </label>
     <% end %>
 
 <div id = 'showFirstName'>
