@@ -35,12 +35,8 @@
   'data-association-insertion-method' => 'before',
   'data-association-insertion-traversal' => 'closest' %>
 </div>
-<div>
-<%= f.fields_for :images do |image| %>
-<%= render "image_fields", f: image %>
-<% end %>
+
 <button type ='button' id = 'nameNext'> Next </button>
-</div>
 </div> <!-- end showFirstName-->
 
 <div id="showGenderAndBirthday">
@@ -102,7 +98,7 @@
   <%= label :opperating_system, "Operating System:" %>
 
   <%= f.label(:operating_system, "Linux") %>
-  <%= f.radio_button(:operating_system, "Linux", :type => 'radio_button') %>
+  <%= f.radio_button(:operating_system, "Linux") %>
 
   <%= f.label(:operating_system, "OS X") %>
   <%= f.radio_button(:operating_system, "OS X") %>

@@ -5,6 +5,9 @@ body{
   min-height: 100%;
 
 }
+textarea#message_message {
+  color:black; 
+}
 
 .content{
   margin-top: 20%;
@@ -782,6 +785,10 @@ nav#nav-mobile li{
     background-color: shade(#a9a9a9, 20%);
     color: #fff;
   }
+}
+
+#inbox_reply {
+  color:black;
 }
 
 textarea#message_message.reply_message_message{
