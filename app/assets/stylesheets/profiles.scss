@@ -6,7 +6,7 @@ body{
 
 }
 textarea#message_message {
-  color:black; 
+  color:black;
 }
 
 .content{
@@ -31,7 +31,11 @@ textarea#message_message {
 #login-notice{
   display: none;
 }
-
+  li.error{
+    display: block;
+    color: #e06c75;
+    width: 100%;
+  }
   label.error {
     display: block;
     color: #e06c75;
@@ -681,6 +685,12 @@ button.message-to-button{
 .individual-reco{
   margin-bottom: 28px;
 }
+
+.message_error_messages{
+  color:#9FED9C;
+  padding-left: 6%;
+  margin-top: -2%;
+}
 //--------------Responsive Nav Bar---------------//
 
 #nav-trigger{
@@ -793,10 +803,10 @@ nav#nav-mobile li{
 
 textarea#message_message.reply_message_message{
   height: 3rem;
-  background-color: white;
+  color: #31343f;
 }
 
-textarea#message_message{
+textarea#message_message.new_message{
   height: 3rem;
   background-color: #31343f;
   color:white;
@@ -862,10 +872,12 @@ textarea#message_message{
 
  input#commit {
    border-radius:none;
-   padding-bottom: 7%;
+   padding-bottom: 5%;
    font-size: 1.5rem;
    background-color: #262831;
    margin-left: -5%;
+   margin-top: -1%;
+   margin-bottom: 5%;
    &:hover {
      color:white;
    }
@@ -1266,18 +1278,10 @@ textarea#message_message{
      padding-left:6%;
 
    }
-   .new_message_pop_up {
-     bottom: 0;
-     border-radius: 2px;
-     right: 10px;
-     z-index: 150;
-     position:fixed;
-     width:40%;
-     display:block;
-  }
 
   .new_message_pop_up_expanded {
     width: 40%;
+    height: 23%;
     float: right;
     right: 0;
     & textarea#message_message {
@@ -1293,7 +1297,7 @@ textarea#message_message{
      font-size: 1.5rem;
      margin-left: -1%;
      margin-top: -2%;
-     padding-bottom: 5%;
+     padding-bottom: 0;
      &:hover {
        color:white;
      }
@@ -1992,6 +1996,12 @@ textarea#message_message{
     color: #e06c75;
     width: 60%;
   }
+  li.error{
+    display: block;
+    color: #e06c75;
+    width: 100%;
+
+  }
 
   #tag-name{
     text-align: center;
@@ -2168,19 +2178,21 @@ textarea#message_message{
   }
 
   .new_message_pop_up_expanded {
+      height: 15%;
+      padding-left: 0px;
     & textarea#message_message {
       width: 75%;
-      height: 9rem;
-      margin-left: 10%;
+      height: 50%;
+      margin-left: 5%;
     }
     & p {
-      margin-left: 5%;
       padding-top: 2%;
     }
   }
 
   input#commit {
-    margin-left: 5%;
+    display: inline-block;
+    padding-left: 6%
   }
   #sent_message_show{
     margin-top: 10%;

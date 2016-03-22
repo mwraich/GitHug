@@ -8,7 +8,7 @@
 #
 # # # On command line type gem install faker, run bundle, and then rake db:seed
 
-#
+
 # province = ["Ontario"]
 # city = ["Toronto", "Ottawa", "London", "Waterloo", "Hamilton"]
 # languages = ["Ruby", "Javascript", "PHP", "C", "Java"]

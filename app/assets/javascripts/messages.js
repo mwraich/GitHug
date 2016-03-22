@@ -44,7 +44,14 @@ $(document).on('page:load ready', function() {
     $('#show-inbox').fadeIn(1000);
   });
 
-
-
-
+  $('#commit').on('click', function(eventHandler){
+    eventHandler.preventDefault();
+    eventHandler.stopPropagation();
+  $.ajax({
+    url: $(self).attr('action'),
+    type: 'POST',
+    dataType: 'script',
+    data: $(self).serialize(),
+  });
+  });
 });
