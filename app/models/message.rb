@@ -7,4 +7,6 @@ class Message < ActiveRecord::Base
     UserMailer.delay.user_message_notification
   end
 
+  validates :message, presence: true
+
 end
