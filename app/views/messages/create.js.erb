@@ -1,0 +1,6 @@
+<% if @message.errors.present? %>
+  $('.message_error_messages').html('<%=j render "messages/messages_form_errors" %>');
+<% else %>
+  $('.new_message_message').val('');
+  $('.new_message_pop_up_expanded').slideToggle();
+<% end %>

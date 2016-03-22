@@ -26,10 +26,25 @@ class MessagesController < ApplicationController
 
     if @message.save
       UserMailer.user_message_notification(Profile.find(@message.recipient)).deliver_later
-      # redirect_to messages_path, notice: "Message sent!"
-    else
-      redirect_to messages_url, alert: "Sorry someething went wrong & your message could not be sent. "
+      respond_to do |format|
+        format.html do
+            if request.xhr?
+              render profile_path(@profile.recipient)
+            else
+              render profile_path(@profile.recipient)
+            end
+          end
+          format.js
+        end
+      else
+        respond_to do |format|
+          format.html do
+            format.html { render partial:"new_message", alert: "Sorry, something went wrong. Your message did not send" }
+          end
+        format.js
+      end
     end
+
   end
 
 
