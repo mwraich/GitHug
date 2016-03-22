@@ -42,9 +42,6 @@ class MessagesController < ApplicationController
             format.html { render partial:"reply", alert: "Sorry, something went wrong. Your message did not send" }
           end
         end
-    else
-      redirect_to messages_url, alert: "Sorry someething went wrong & your message could not be send. "
-    end
 
   end
 
