@@ -43,6 +43,8 @@ class MessagesController < ApplicationController
           end
         format.js
       end
+    else
+      redirect_to messages_url, alert: "Sorry someething went wrong & your message could not be send. "
     end
 
   end
