@@ -24,9 +24,8 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.sender = current_user.profile
 
-    if @message.save
-
-      UserMailer.delay.user_message_notification(Profile.find(@message.recipient))
+    if @message.save && @profile.notification_email?
+      UserMailer.delay.user_message_notification(Profile.find(@message.recipient), Profile.find(@message.sender))
       respond_to do |format|
         format.html do
             if request.xhr?
@@ -45,6 +44,10 @@ class MessagesController < ApplicationController
         format.js
       end
 
+    end
+
+    if @message.save && @profile.notification_email? && @profile.phone_number?
+       @profile.send_text_message
     end
 
   end
