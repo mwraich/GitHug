@@ -5,9 +5,13 @@
 
 
   <p><%= @profile.first_name%><%= @profile.last_name%>$</p>
+<<<<<<< HEAD
   <div class="message_error_messages">
   </div>
     <%= f.text_area :message, class:"new_message_message" %>
+=======
+    <%= f.text_area :message, class:"new_message" %>
+>>>>>>> mailerViews
     <%= f.hidden_field :recipient_id, value: @profile.id %>
 
   <%= f.submit "[ commit ]", id:"commit" %>

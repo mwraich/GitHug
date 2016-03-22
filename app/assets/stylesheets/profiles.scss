@@ -803,10 +803,10 @@ nav#nav-mobile li{
 
 textarea#message_message.reply_message_message{
   height: 3rem;
-  background-color: white;
+  color: #31343f;
 }
 
-textarea#message_message{
+textarea#message_message.new_message{
   height: 3rem;
   background-color: #31343f;
   color:white;
