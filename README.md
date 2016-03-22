@@ -7,10 +7,17 @@ To see the live version of the app go to http://githug.ca
 
 ## Contributors
 
-Mandeep Wraich - (https://github.com/mwraich)
-Ann Marie Doyle - (https://github.com/amdoyle)
-Miranda Gagnon - (https://github.com/mirandagagnon)
-Natalie Doak - (https://github.com/ndoak)
+Mandeep Wraich
+(https://github.com/mwraich)
+
+Ann Marie Doyle
+(https://github.com/amdoyle)
+
+Miranda Gagnon
+(https://github.com/mirandagagnon)
+
+Natalie Doak
+(https://github.com/ndoak)
 
 ## Getting Started
 
