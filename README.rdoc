@@ -3,26 +3,22 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+GitHug is a dating app for coders who are DTC (“Down to Code"). GitHug leverages the GitHub API to ensure only coders sign up for the app.
+The app is built on Rails and utilizes JavaScript, jQuery, CSS, Sass, and an assortment of gems including Figaro, Geocoder, Bourbon and Neat, and CarrierWave.
 
-* Ruby version
+To see the live version of the app go to http://githug.ca
 
-* System dependencies
+Contributors
+<a href= "https://github.com/mwraich">Mandeep Wraich </a>,  <a href= "https://github.com/amdoyle">Ann Marie Doyle</a>, <a href="https://github.com/mirandagagnon">Miranda Gagnon</a> and <a href = "https://github.com/ndoak"> Natalie Doak</a>
 
-* Configuration
+Getting Started
+If you're using bundler, do the following to get started with GitHug!
 
-* Database creation
+$ bundle install
+$ rake db:migrate
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Contact
+Mandeep Wraich
+Miranda Gagnon
+Natalie Doak
+Ann Marie Doyle
