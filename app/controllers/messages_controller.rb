@@ -35,13 +35,14 @@ class MessagesController < ApplicationController
           end
         end
           format.js
-        end
+      end
       else
         respond_to do |format|
           format.html do
             format.html { render partial:"reply", alert: "Sorry, something went wrong. Your message did not send" }
           end
         end
+    end
 
   end
 
