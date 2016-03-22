@@ -76,6 +76,7 @@ textarea#message_message {
 }
 
 .menu-bar{
+  z-index: 100;
   background-color: $secondary-background-color;
   height: 4rem;
   position: fixed;
@@ -83,7 +84,6 @@ textarea#message_message {
   top: 0;
   right: 0;
   left:0;
-  z-index: 100;
 }
 
 
