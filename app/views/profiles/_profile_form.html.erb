@@ -30,15 +30,17 @@
 </div>
 
 <p id="tag">Add Some Photos!</p>
-<%= f.fields_for :images do |image| %>
-<%= render "image_fields", f: image %>
-<% end %>
 <div class="add-language-spacing">
-  <%= link_to_add_association "Add Photo", f, :images, id: 'add_photo',
+  <%= link_to_add_association "Add Another Photo", f, :images, id: 'add_photo',
   'data-association-insertion-method' => 'before',
   'data-association-insertion-traversal' => 'closest' %>
 </div>
+<div>
+<%= f.fields_for :images do |image| %>
+<%= render "image_fields", f: image %>
+<% end %>
 <button type ='button' id = 'nameNext'> Next </button>
+</div>
 </div> <!-- end showFirstName-->
 
 <div id="showGenderAndBirthday">
@@ -168,7 +170,7 @@
    <div>
      <%= f.label :paired_programmer, "Pair Programmer", id: "pair_label" %>
      <%= f.check_box :paired_programmer %>
-   </div>
+   </div><br>
 
    <div>
      <%= f.fields_for :pair_programmer do |pair| %>
