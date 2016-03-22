@@ -35,12 +35,8 @@
   'data-association-insertion-method' => 'before',
   'data-association-insertion-traversal' => 'closest' %>
 </div>
-<div>
-<%= f.fields_for :images do |image| %>
-<%= render "image_fields", f: image %>
-<% end %>
+
 <button type ='button' id = 'nameNext'> Next </button>
-</div>
 </div> <!-- end showFirstName-->
 
 <div id="showGenderAndBirthday">
