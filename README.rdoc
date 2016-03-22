@@ -5,17 +5,15 @@ The app is built on Rails and utilizes JavaScript, jQuery, CSS, Sass, and an ass
 
 To see the live version of the app go to http://githug.ca
 
-## Contributors
-Mandeep Wraich(https://github.com/mwraich), Ann Marie Doyle(https://github.com/amdoyle), Miranda Gagnon(https://github.com/mirandagagnon) and Natalie Doak(https://github.com/ndoak) 
+### Contributors
+Mandeep Wraich - (https://github.com/mwraich)
+Ann Marie Doyle - (https://github.com/amdoyle)
+Miranda Gagnon - (https://github.com/mirandagagnon)
+Natalie Doak - (https://github.com/ndoak)
 
 Getting Started
-If you're using bundler, do the following to get started with GitHug!
-
+Do the following to get started with GitHug!
+```sh
 $ bundle install
 $ rake db:migrate
-
-Contact
-Mandeep Wraich
-Miranda Gagnon
-Natalie Doak
-Ann Marie Doyle
+```
