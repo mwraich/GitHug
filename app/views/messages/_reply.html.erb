@@ -2,7 +2,7 @@
   <div class="reply_message">
     <%= f.label :recipient_id, "#{@reply.recipient.first_name}$", class: "reply-name" %>
     <%= f.hidden_field :recipient_id, class: "reply_to" %><br>
-    <%= f.text_area :message, class: "reply_message_message" %>
+    <%= f.text_area :message, class: "reply_message_message", id: "inbox_reply" %>
     <%= f.submit "SEND" %>
   </div>
 <% end %>

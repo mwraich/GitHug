@@ -25,7 +25,7 @@ class MessagesController < ApplicationController
     @message.sender = current_user.profile
 
     if @message.save
-      UserMailer.user_message_notification(Profile.find(@message.recipient)).deliver_later
+      UserMailer.delay.user_message_notification(Profile.find(@message.recipient))
       respond_to do |format|
         format.html do
             if request.xhr?

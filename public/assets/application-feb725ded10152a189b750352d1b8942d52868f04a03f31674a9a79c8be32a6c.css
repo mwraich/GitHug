@@ -1,0 +1,3503 @@
+
+ .typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+/**
+ * bxSlider v4.2.5
+ * Copyright 2013-2015 Steven Wanderski
+ * Written while drinking Belgian ales and listening to jazz
+
+ * Licensed under MIT (http://opensource.org/licenses/MIT)
+ */
+/** VARIABLES
+===================================*/
+/** RESET AND LAYOUT
+===================================*/
+/* line 14, /Users/nataliedoak/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper {
+  position: relative;
+  margin: 0 auto 60px;
+  padding: 0;
+  *zoom: 1;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+}
+
+/* line 22, /Users/nataliedoak/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper img {
+  max-width: 100%;
+  display: block;
+}
+
+/* line 26, /Users/nataliedoak/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bxslider {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 30, /Users/nataliedoak/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+ul.bxslider {
+  list-style: none;
+}
+
+/* line 33, /Users/nataliedoak/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-viewport {
+  /*fix other elements on the page moving (on Chrome)*/
+  -webkit-transform: translatez(0);
+}
+
+/** THEME
+===================================*/
+/* line 39, /Users/nataliedoak/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper {
+  box-shadow: 0 0 5px #ccc;
+  border: 5px solid #fff;
+  background: #fff;
+}
+
+/* line 46, /Users/nataliedoak/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
+}
+
+/* LOADER */
+/* line 53, /Users/nataliedoak/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-loading {
+  min-height: 50px;
+  background: url(/assets/bx_loader-6d46e2cf165a5a0584afba7bc9663da292ee08c97cfc7613de6013ed05be892a.gif) center center no-repeat #ffffff;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+}
+
+/* PAGER */
+/* line 64, /Users/nataliedoak/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-pager {
+  text-align: center;
+  font-size: .85em;
+  font-family: Arial;
+  font-weight: bold;
+  color: #666;
+  padding-top: 20px;
+}
+
+/* line 72, /Users/nataliedoak/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-pager.bx-default-pager a {
+  background: #666;
+  text-indent: -9999px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  outline: 0;
+  border-radius: 5px;
+}
+
+/* line 84, /Users/nataliedoak/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active,
+.bx-wrapper .bx-pager.bx-default-pager a:focus {
+  background: #000;
+}
+
+/* line 89, /Users/nataliedoak/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+}
+
+/* line 95, /Users/nataliedoak/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-pager-item {
+  font-size: 0;
+  line-height: 0;
+}
+
+/* DIRECTION CONTROLS (NEXT / PREV) */
+/* line 100, /Users/nataliedoak/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-prev {
+  left: 10px;
+  background: url(/assets/controls-257206c4fd6bcee36927eb0ef2ba087b5dfc6c9a18df7f8553878bf847616226.png) no-repeat 0 -32px;
+}
+
+/* line 104, /Users/nataliedoak/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-prev:hover,
+.bx-wrapper .bx-prev:focus {
+  background-position: 0 0;
+}
+
+/* line 108, /Users/nataliedoak/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-next {
+  right: 10px;
+  background: url(/assets/controls-257206c4fd6bcee36927eb0ef2ba087b5dfc6c9a18df7f8553878bf847616226.png) no-repeat -43px -32px;
+}
+
+/* line 112, /Users/nataliedoak/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-next:hover,
+.bx-wrapper .bx-next:focus {
+  background-position: -43px 0;
+}
+
+/* line 116, /Users/nataliedoak/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-controls-direction a {
+  position: absolute;
+  top: 50%;
+  margin-top: -16px;
+  outline: 0;
+  width: 32px;
+  height: 32px;
+  text-indent: -9999px;
+  z-index: 9999;
+}
+
+/* line 126, /Users/nataliedoak/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-controls-direction a.disabled {
+  display: none;
+}
+
+/* AUTO CONTROLS (START / STOP) */
+/* line 130, /Users/nataliedoak/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-controls-auto {
+  text-align: center;
+}
+
+/* line 133, /Users/nataliedoak/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-controls-auto .bx-start {
+  display: block;
+  text-indent: -9999px;
+  width: 10px;
+  height: 11px;
+  outline: 0;
+  background: url(/assets/controls-257206c4fd6bcee36927eb0ef2ba087b5dfc6c9a18df7f8553878bf847616226.png) -86px -11px no-repeat;
+  margin: 0 3px;
+}
+
+/* line 142, /Users/nataliedoak/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-controls-auto .bx-start:hover,
+.bx-wrapper .bx-controls-auto .bx-start.active,
+.bx-wrapper .bx-controls-auto .bx-start:focus {
+  background-position: -86px 0;
+}
+
+/* line 147, /Users/nataliedoak/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-controls-auto .bx-stop {
+  display: block;
+  text-indent: -9999px;
+  width: 9px;
+  height: 11px;
+  outline: 0;
+  background: url(/assets/controls-257206c4fd6bcee36927eb0ef2ba087b5dfc6c9a18df7f8553878bf847616226.png) -86px -44px no-repeat;
+  margin: 0 3px;
+}
+
+/* line 156, /Users/nataliedoak/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-controls-auto .bx-stop:hover,
+.bx-wrapper .bx-controls-auto .bx-stop.active,
+.bx-wrapper .bx-controls-auto .bx-stop:focus {
+  background-position: -86px -33px;
+}
+
+/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
+/* line 162, /Users/nataliedoak/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+  text-align: left;
+  width: 80%;
+}
+
+/* line 166, /Users/nataliedoak/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
+  right: 0;
+  width: 35px;
+}
+
+/* IMAGE CAPTIONS */
+/* line 171, /Users/nataliedoak/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #666;
+  background: rgba(80, 80, 80, 0.75);
+  width: 100%;
+}
+
+/* line 179, /Users/nataliedoak/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-caption span {
+  color: #fff;
+  font-family: Arial;
+  display: block;
+  font-size: .85em;
+  padding: 10px;
+}
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS and IE text size adjust after device orientation change,
+ *    without disabling user zoom.
+ */
+/* line 9, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+/* line 19, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+body {
+  margin: 0;
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+/* line 33, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+/* line 54, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+/* line 67, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
+ */
+/* line 77, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+[hidden],
+template {
+  display: none;
+}
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+/* line 89, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+a {
+  background-color: transparent;
+}
+
+/**
+ * Improve readability of focused elements when they are also in an
+ * active/hover state.
+ */
+/* line 98, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+/* line 110, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+/* line 118, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+/* line 127, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+/* line 136, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+/* line 145, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+/* line 154, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+/* line 162, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 170, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+sup {
+  top: -0.5em;
+}
+
+/* line 174, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+sub {
+  bottom: -0.25em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+/* line 185, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+img {
+  border: 0;
+}
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+/* line 193, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+/* line 204, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+/* line 212, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Contain overflow in all browsers.
+ */
+/* line 221, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+pre {
+  overflow: auto;
+}
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+/* line 229, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+/* line 252, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+/* line 266, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+button {
+  overflow: visible;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+/* line 277, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+/* line 290, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+/* line 302, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+/* line 311, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+/* line 322, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+input {
+  line-height: normal;
+}
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+/* line 334, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+/* line 346, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
+ */
+/* line 356, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  box-sizing: content-box;
+  /* 2 */
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+/* line 367, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+/* line 376, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+/* line 387, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+/* line 396, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+/* line 405, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+optgroup {
+  font-weight: bold;
+}
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+/* line 416, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 421, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/vendor/assets/stylesheets/normalize.css */
+td,
+th {
+  padding: 0;
+}
+
+/* line 1, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_buttons.scss */
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #31343f;
+  border: 0;
+  border-radius: 2px;
+  color: #9fed9c;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Inconsolata";
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.75em 1.5em;
+  text-decoration: none;
+  -webkit-transition: background-color 150ms ease;
+  transition: background-color 150ms ease;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+/* line 21, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_buttons.scss */
+button:hover, button:focus, input[type="button"]:hover, input[type="button"]:focus, input[type="reset"]:hover, input[type="reset"]:focus, input[type="submit"]:hover, input[type="submit"]:focus {
+  background-color: #878787;
+  color: #fff;
+}
+/* line 27, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_buttons.scss */
+button:disabled, input[type="button"]:disabled, input[type="reset"]:disabled, input[type="submit"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+/* line 31, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_buttons.scss */
+button:disabled:hover, input[type="button"]:disabled:hover, input[type="reset"]:disabled:hover, input[type="submit"]:disabled:hover {
+  background-color: #dee2f8;
+}
+
+/* line 1, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_forms.scss */
+fieldset {
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 8, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_forms.scss */
+legend {
+  font-weight: 800;
+  margin-bottom: 0.375em;
+  padding: 0;
+}
+
+/* line 14, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_forms.scss */
+label {
+  display: inline;
+  font-weight: 600;
+  margin-bottom: 0.375em;
+  padding-left: 5%;
+  font-size: 1.3rem;
+  color: #6a6a6a;
+}
+
+/* line 23, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_forms.scss */
+input,
+select {
+  display: block;
+  font-family: "Inconsolata";
+  font-size: 1em;
+  color: #6a6a6a;
+}
+
+/* line 33, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_forms.scss */
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea,
+select[multiple] {
+  background-color: #ffffff;
+  border: solid;
+  border-color: #6a6a6a;
+  border-width: 0.5px;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  font-family: "Inconsolata";
+  font-size: 1em;
+  margin-bottom: 0.75em;
+  padding: 0.5em;
+  -webkit-transition: border-color 150ms ease;
+  transition: border-color 150ms ease;
+  width: 90%;
+  margin-left: 5%;
+  color: #3b3b3b;
+  height: 2rem;
+}
+/* line 51, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_forms.scss */
+input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, input:not([type]):hover, textarea:hover,
+select[multiple]:hover {
+  border-color: #008a81;
+}
+/* line 55, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_forms.scss */
+input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, input:not([type]):focus, textarea:focus,
+select[multiple]:focus {
+  border-color: #00aca1;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(201, 208, 244, 0.7);
+  outline: none;
+}
+/* line 61, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_forms.scss */
+input[type="color"]:disabled, input[type="date"]:disabled, input[type="datetime"]:disabled, input[type="datetime-local"]:disabled, input[type="email"]:disabled, input[type="month"]:disabled, input[type="number"]:disabled, input[type="password"]:disabled, input[type="search"]:disabled, input[type="tel"]:disabled, input[type="text"]:disabled, input[type="time"]:disabled, input[type="url"]:disabled, input[type="week"]:disabled, input:not([type]):disabled, textarea:disabled,
+select[multiple]:disabled {
+  background-color: #a1a1a1;
+  cursor: not-allowed;
+}
+/* line 65, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_forms.scss */
+input[type="color"]:disabled:hover, input[type="date"]:disabled:hover, input[type="datetime"]:disabled:hover, input[type="datetime-local"]:disabled:hover, input[type="email"]:disabled:hover, input[type="month"]:disabled:hover, input[type="number"]:disabled:hover, input[type="password"]:disabled:hover, input[type="search"]:disabled:hover, input[type="tel"]:disabled:hover, input[type="text"]:disabled:hover, input[type="time"]:disabled:hover, input[type="url"]:disabled:hover, input[type="week"]:disabled:hover, input:not([type]):disabled:hover, textarea:disabled:hover,
+select[multiple]:disabled:hover {
+  border: solid;
+  border-width: 0.5px;
+}
+
+/* line 73, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_forms.scss */
+textarea {
+  resize: vertical;
+}
+
+/* line 77, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_forms.scss */
+[type="search"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+/* line 81, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_forms.scss */
+[type="checkbox"],
+[type="radio"] {
+  display: inline;
+  margin-left: 0.375em;
+}
+
+/* line 88, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_forms.scss */
+[type="file"] {
+  margin-bottom: 0.75em;
+  width: 100%;
+}
+
+/* line 93, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_forms.scss */
+select {
+  margin-bottom: 1.5em;
+  max-width: 100%;
+  width: auto;
+}
+
+/* line 1, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_lists.scss */
+ul,
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 8, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_lists.scss */
+dl {
+  margin-bottom: 0.75em;
+}
+/* line 11, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_lists.scss */
+dl dt {
+  font-weight: 600;
+  margin-top: 0.75em;
+}
+/* line 16, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_lists.scss */
+dl dd {
+  margin: 0;
+}
+
+/* line 1, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_tables.scss */
+table {
+  border-collapse: collapse;
+  margin: 0.75em 0;
+  table-layout: fixed;
+  width: 100%;
+}
+
+/* line 8, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_tables.scss */
+th {
+  border-bottom: 1px solid #b8b8b8;
+  font-weight: 600;
+  padding: 0.75em 0;
+  text-align: left;
+}
+
+/* line 15, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_tables.scss */
+td {
+  border-bottom: 5px solid #f5f5f5;
+  padding: 0.75em 0;
+}
+
+/* line 20, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_tables.scss */
+tr,
+td,
+th {
+  vertical-align: middle;
+}
+
+/* line 1, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_typography.scss */
+html {
+  color: #dee2f8;
+  font-family: "Inconsolata";
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+/* line 8, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_typography.scss */
+h1 {
+  font-family: "Inconsolata";
+  font-size: 1em;
+  line-height: 1.2;
+  text-align: center;
+  margin: 0 0 0.75em;
+}
+
+/* line 16, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_typography.scss */
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Inconsolata";
+  font-size: 1em;
+  line-height: 1.2;
+  margin: 0 0 0.75em;
+}
+
+/* line 27, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_typography.scss */
+p {
+  margin: 0 0 0.75em;
+  color: #dee2f8;
+}
+
+/* line 32, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_typography.scss */
+a {
+  color: #dee2f8;
+  text-decoration: none;
+  -webkit-transition: color 150ms ease;
+  transition: color 150ms ease;
+}
+/* line 37, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_typography.scss */
+a:active, a:focus, a:hover {
+  color: #a7aaba;
+}
+
+/* line 44, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_typography.scss */
+hr {
+  border-bottom: 5px solid #f5f5f5;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: 1.5em 0;
+}
+
+/* line 52, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/base/_typography.scss */
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}
+
+/* line 4, /Users/nataliedoak/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/neat-1.7.4/app/assets/stylesheets/grid/_box-sizing.scss */
+html {
+  box-sizing: border-box;
+}
+
+/* line 9, /Users/nataliedoak/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/neat-1.7.4/app/assets/stylesheets/grid/_box-sizing.scss */
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    -webkit-transform: scale(0.7);
+  }
+  50% {
+    -webkit-transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0.7);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+  }
+  50% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+  }
+}
+/* line 13, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/sessions.scss */
+body.sessions {
+  background-color: #31333f;
+}
+
+/* line 17, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/sessions.scss */
+.skip_login {
+  color: #707783;
+  float: right;
+  margin-top: -40%;
+  padding-right: 5%;
+}
+
+/* line 23, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/sessions.scss */
+.logoTyped {
+  font-family: "Inconsolata";
+  color: #98ea8f;
+  font-size: 1.5rem;
+}
+
+/* line 29, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/sessions.scss */
+.typed-cursor {
+  background-color: #98ea8f;
+  color: #98ea8f;
+  font-size: 1.2rem;
+}
+
+/* line 36, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/sessions.scss */
+.login img {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+}
+
+/* line 44, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/sessions.scss */
+#loadAnimation {
+  margin-top: 45%;
+  margin-bottom: 5%;
+  margin-left: 25%;
+}
+
+@media screen and (min-width: 900px) {
+  /* line 52, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/sessions.scss */
+  #loadAnimation {
+    margin-left: 40%;
+    margin-top: 15%;
+  }
+
+  /* line 57, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/sessions.scss */
+  .login img {
+    margin-left: 27.5%;
+    margin-top: 5%;
+  }
+
+  /* line 62, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/sessions.scss */
+  .skip_login {
+    margin-top: -12.5%;
+  }
+}
+@media screen and (min-width: 2500px) {
+  /* line 69, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/sessions.scss */
+  #loadAnimation {
+    margin-left: 45%;
+  }
+
+  /* line 72, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/sessions.scss */
+  .login img {
+    margin-left: 40%;
+    margin-top: 0%;
+  }
+
+  /* line 77, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/sessions.scss */
+  .skip_login {
+    margin-top: -12.5%;
+  }
+}
+/* line 3, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+body {
+  background-color: #DCE4EF;
+  min-height: 100%;
+}
+
+/* line 9, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.content {
+  margin-top: 20%;
+}
+
+/* line 13, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.page-title {
+  font-size: 1.6rem;
+  color: #31343f;
+  background-color: #dce4ef;
+  width: 90%;
+  margin-left: 5%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border-radius: 2px;
+}
+
+/* line 24, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#main-menu {
+  display: none;
+}
+
+/* line 28, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#login-notice {
+  display: none;
+}
+
+/* line 32, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+label.error {
+  display: block;
+  color: #e06c75;
+  width: 100%;
+}
+
+/* line 39, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.logout-icon {
+  display: none;
+}
+
+/* line 43, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.message-icon img {
+  width: 10%;
+}
+
+/* line 46, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.message img {
+  width: 10%;
+  margin-left: 5%;
+  display: inline;
+  margin-top: 2.5%;
+}
+
+/* line 53, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.logo h1 {
+  font-family: "VT323";
+  color: #9FED9C;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: -13%;
+}
+
+/* line 62, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.menu {
+  display: inline;
+  width: 10%;
+  float: right;
+  margin-top: -19%;
+  margin-right: 5%;
+}
+
+/* line 71, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.menu-bar {
+  background-color: #262831;
+  height: 4rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+/* line 87, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.form_checkbox_input label {
+  display: inline;
+  font-size: 1.1rem;
+  color: #3b3b3b;
+}
+
+/* line 93, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.form_radio_button label {
+  display: inline;
+  font-size: 1.2rem;
+  color: #3b3b3b;
+}
+
+/* line 100, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+label.select_label {
+  font-size: 1.4rem;
+  color: #6a6a6a;
+}
+
+/* line 106, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#tag {
+  padding-left: 5%;
+  font-size: 1.3rem;
+  color: #3b3b3b;
+  text-align: center;
+  margin-top: 5%;
+}
+
+/* line 114, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+a.add_fields {
+  color: #1E2542;
+}
+
+/* line 118, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.actions input {
+  width: 87%;
+  margin-left: 6.5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  font-size: 1.2rem;
+  background-color: #31343F;
+}
+
+/* line 127, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.actions {
+  margin-top: 10%;
+}
+
+/* line 131, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.language-fields-label {
+  display: inline;
+  font-size: 1rem;
+  color: #3b3b3b;
+}
+
+/* line 137, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#tag-explained {
+  text-align: center;
+  color: #919293;
+  margin-top: -1%;
+}
+
+/* line 143, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#add_language {
+  color: #52ce4c;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 5%;
+}
+/* line 150, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#add_language:hover, #add_language:focus {
+  color: #3b3b3b;
+}
+
+/* line 158, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.add-language-spacing {
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+/* line 163, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#remove_language {
+  color: #e06c75;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 5%;
+}
+/* line 170, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#remove_language:hover, #remove_language:focus {
+  color: #3b3b3b;
+}
+
+/* line 177, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#remove_pref_language {
+  color: #e06c75;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 5%;
+}
+/* line 184, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#remove_pref_language:hover, #remove_pref_language:focus {
+  color: #3b3b3b;
+}
+
+/* line 190, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#remove_preference {
+  color: #e06c75;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 5%;
+  font-size: 1.2rem;
+}
+/* line 197, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#remove_preference:hover, #remove_preference:focus {
+  color: #3b3b3b;
+}
+
+/* line 204, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#add_photo {
+  color: #52ce4c;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 5%;
+}
+/* line 211, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#add_photo:hover, #add_photo:focus {
+  color: #3b3b3b;
+}
+
+/* line 218, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#remove_photo {
+  color: #e06c75;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 5%;
+}
+/* line 225, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#remove_photo:hover, #remove_photo:focus {
+  color: #3b3b3b;
+}
+
+/* line 233, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#remove_partner {
+  color: #e06c75;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 5%;
+}
+/* line 240, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#remove_partner:hover, #remove_partner:focus {
+  color: #3b3b3b;
+}
+
+/* line 247, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#remove_pair_programmer {
+  color: #e06c75;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 5%;
+}
+/* line 254, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#remove_pair_programmer:hover, #remove_pair_programmer:focus {
+  color: #3b3b3b;
+}
+
+/* line 260, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#add_partner {
+  color: #52ce4c;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 5%;
+}
+/* line 267, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#add_partner:hover, #add_partner:focus {
+  color: #3b3b3b;
+}
+
+/* line 273, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#add_pair_programmer {
+  color: #52ce4c;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 5%;
+}
+/* line 280, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#add_pair_programmer:hover, #add_pair_programmer:focus {
+  color: #3b3b3b;
+}
+
+/* line 286, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+textarea#profile_about_me {
+  height: 3rem;
+}
+
+/* line 290, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+button#nameNext {
+  float: right;
+  margin-top: 2%;
+  margin-right: 5%;
+}
+
+/* line 296, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+button#birthdayNext {
+  float: right;
+  margin-right: 5%;
+  margin-top: 2%;
+}
+
+/* line 301, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+button#birthdayPrevious {
+  margin-left: 5%;
+  margin-top: 2%;
+}
+
+/* line 305, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+button#aboutMePrevious {
+  margin-left: 5%;
+  margin-top: 2%;
+}
+
+/* line 309, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+button#aboutMeNext {
+  float: right;
+  margin-right: 5%;
+  margin-top: 2%;
+}
+
+/* line 315, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+button#languagePrevious {
+  margin-left: 5%;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+
+/* line 321, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+button#languageNext {
+  float: right;
+  margin-right: 5%;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+
+/* line 328, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+button#preferencesPrevious {
+  margin-left: 5%;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+
+/* line 341, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.profile-image {
+  background-color: #AADBE8;
+  border-radius: 200px;
+  width: 30%;
+  display: inline;
+  float: left;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+/* line 352, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#index-view-profile-info {
+  font-size: 1.5rem;
+  display: inline;
+  clear: left;
+}
+/* line 357, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#index-view-profile-infop {
+  padding-top: 5%;
+  padding-left: 5%;
+}
+
+/* line 364, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#link-to-profile img {
+  width: 10%;
+  float: right;
+  margin-top: 1%;
+  margin-right: 6%;
+}
+
+/* line 371, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#index-profile-name {
+  color: #262831;
+}
+
+/* line 375, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#index-profile-location {
+  font-size: 1rem;
+  margin-top: -2%;
+  color: #3B3B3B;
+}
+
+/* line 381, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.index-users {
+  border-radius: 2px;
+  width: 90%;
+  margin-left: 5%;
+  padding-top: 2%;
+  padding-bottom: 10%;
+  margin-top: 1%;
+}
+
+/* line 390, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.line-break {
+  margin-top: 20%;
+}
+
+/* line 395, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.preference-form {
+  margin-bottom: 1%;
+  margin-left: 2.5%;
+  padding-bottom: 10%;
+}
+
+/* line 401, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.lang_pref_form {
+  margin-bottom: 3%;
+}
+
+/* line 405, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+input#search_city {
+  width: 50%;
+  display: inline;
+  margin-left: 10%;
+}
+
+/* line 410, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+select#search_province {
+  width: 50%;
+  display: inline;
+  margin-left: 1%;
+}
+
+/* line 416, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+input#submit {
+  float: right;
+  margin-top: -5%;
+  margin-right: 5%;
+}
+
+/* line 423, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+input#search_location {
+  width: 40%;
+  height: 2rem;
+  font-size: 1rem;
+  display: block;
+  margin-left: 5%;
+  border: solid;
+  border-color: #6a6a6a;
+  border-width: 0.5px;
+  border-radius: 5px;
+}
+
+/* line 435, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+input#search {
+  float: right;
+  margin-right: 7%;
+}
+
+/* line 440, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.button-label {
+  font-size: 1.2rem;
+  color: #3b3b3b;
+}
+
+/* line 446, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#search {
+  margin-left: 35%;
+}
+
+/* line 451, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.search-form {
+  background-color: #f5f7fa;
+  margin-top: 20%;
+  width: 90%;
+  margin-left: 5%;
+  padding-top: 1%;
+  margin-bottom: 2%;
+  border-radius: 2px;
+}
+/* line 459, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.search-form h2 {
+  background-color: #dce4ef;
+  font-size: 1.6rem;
+  color: #31343f;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 1%;
+  text-align: center;
+  border-radius: 2px;
+}
+
+/* line 471, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+label#first_option_label {
+  color: #6a6a6a;
+  font-size: 1.2rem;
+}
+
+/* line 476, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#first_option {
+  background-color: #f5f7fa;
+  margin-top: 20%;
+  width: 90%;
+  margin-left: 5%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  margin-bottom: 2%;
+  border-radius: 2px;
+}
+/* line 485, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#first_option h2 {
+  background-color: #dce4ef;
+  font-size: 1.6rem;
+  color: #31343f;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 1%;
+  text-align: center;
+  border-radius: 2px;
+}
+/* line 495, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#first_option label {
+  font-size: 1rem;
+  color: #3b3b3b;
+}
+
+/* line 502, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+input#search_min_age {
+  width: 20%;
+  height: 1.5rem;
+  font-size: 0.7rem;
+  border-width: 3px;
+  display: inline;
+  margin-left: 2.5%;
+  border: solid;
+  border-color: #6a6a6a;
+  border-width: 0.5px;
+  border-radius: 5px;
+}
+
+/* line 514, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+input#search_max_age {
+  width: 20%;
+  height: 1.5rem;
+  font-size: 0.7rem;
+  border-width: 3px;
+  display: inline;
+  margin-left: 2.5%;
+  margin-top: -2.5%;
+  border: solid;
+  border-color: #6a6a6a;
+  border-width: 0.5px;
+  border-radius: 5px;
+}
+
+/* line 528, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+select#profile_partner_attributes_province {
+  display: inline;
+  height: 2rem;
+  margin-left: 2%;
+}
+
+/* line 534, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+select#profile_pair_programmer_attributes_province {
+  display: inline;
+  height: 2rem;
+  margin-left: 2%;
+}
+
+/* line 541, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+select#profile_province {
+  display: inline;
+  height: 2rem;
+}
+
+/* line 551, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.profile-form {
+  margin-top: 20%;
+  background-color: #f5f7fa;
+  width: 95%;
+  margin-left: 2.5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  margin-bottom: 2%;
+  border-radius: 2px;
+}
+
+/* line 562, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.profile-name {
+  font-size: 1.5rem;
+  color: #262831;
+}
+
+/* line 567, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#profile-images {
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 20%;
+}
+/* line 572, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#profile-images img {
+  border-radius: 0px;
+  height: 225px;
+  width: 100%;
+}
+
+/* line 578, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+button.message-and-request-button {
+  background-color: #9FED9C;
+  color: #262831;
+  width: 35%;
+  margin-left: 10%;
+}
+
+/* line 586, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+input.block_button {
+  background-color: #e06c75;
+  color: white;
+  width: 35%;
+  margin-left: 55%;
+  margin-top: -18%;
+  height: 2.5rem;
+}
+
+/* line 595, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+button.message-to-button {
+  margin-left: 10%;
+  width: 35%;
+  background-color: #9fed9c;
+  color: #31343F;
+}
+
+/* line 602, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#profile-aboutme {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-right: 5%;
+  margin-left: 5%;
+  color: #262831;
+}
+/* line 610, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#profile-aboutme p {
+  color: #3B3B3B;
+}
+
+/* line 615, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#profile-details {
+  padding-bottom: 5%;
+  color: #262831;
+  text-align: center;
+}
+/* line 619, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#profile-details h2 {
+  font-size: 1.2rem;
+}
+
+/* line 624, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#profile-languages {
+  padding-bottom: 5%;
+  color: #262831;
+  text-align: center;
+}
+/* line 628, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#profile-languages h2 {
+  font-size: 1.2rem;
+}
+
+/* line 633, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.profile-tags {
+  text-align: center;
+  padding-bottom: 10%;
+}
+/* line 636, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.profile-tags a {
+  background-color: #31343f;
+  color: #9fed9c;
+  padding: 2%;
+  border-radius: 2px;
+}
+
+/* line 644, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.send-message-profile {
+  margin-left: 5%;
+  margin-bottom: 5%;
+}
+
+/* line 649, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.recos {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+/* line 653, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.recos img {
+  background-color: #AADBE8;
+  border-radius: 200px;
+  width: 13%;
+  display: inline;
+  float: left;
+  margin-right: 10px;
+}
+/* line 661, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.recos p {
+  color: #262831;
+  margin: -2px;
+}
+/* line 665, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.recos hr {
+  width: 100%;
+  height: 1px;
+}
+/* line 669, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.recos h2 {
+  font-family: "Inconsolata";
+  text-align: center;
+  color: #262831;
+  font-size: 1.2rem;
+  line-height: 1.2em;
+  margin-bottom: 2rem;
+}
+
+/* line 678, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.individual-reco {
+  margin-bottom: 28px;
+}
+
+/* line 683, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#nav-trigger {
+  display: none;
+}
+/* line 686, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#nav-triggerspan {
+  display: inline;
+}
+/* line 689, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#nav-triggerspan:after {
+  display: inline;
+  content: "";
+}
+
+/* line 695, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+nav#nav-mobile {
+  position: relative;
+  display: none;
+}
+
+/* line 700, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+nav#nav-mobile ul {
+  display: none;
+  position: absolute;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  background-color: #262831;
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+/* line 711, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+nav#nav-mobile li {
+  display: block;
+  border-bottom: solid 3px #61647d;
+  padding-bottom: 2%;
+  padding-top: 2%;
+}
+/* line 716, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+nav#nav-mobile li:last-child {
+  border-bottom: none;
+}
+
+/* line 722, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#show-inbox-button {
+  margin-left: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 40%;
+  background-color: #31343f;
+  border-radius: 2px;
+  color: #dee2f8;
+}
+
+/* line 732, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#show-inbox {
+  padding-top: 5%;
+}
+
+/* line 736, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#sent_message_show {
+  margin-left: 7%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 43%;
+  background-color: #31343f;
+  border-radius: 2px;
+  color: #dee2f8;
+}
+
+/* line 746, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.unread {
+  float: right;
+  margin-right: 5%;
+  margin-top: -1%;
+  font-size: 1.2rem;
+}
+
+/* line 753, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.unread-checkbox {
+  float: right;
+  margin-right: 5%;
+}
+
+/* line 758, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#message_message {
+  margin-top: 2.5%;
+}
+
+/* line 762, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.reply {
+  background-color: #9fed9c;
+  border: 0;
+  border-radius: 2px;
+  color: #31343f;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Inconsolata";
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.75em 1.5em;
+  -webkit-transition: background-color 150ms ease;
+  transition: background-color 150ms ease;
+  vertical-align: middle;
+  white-space: nowrap;
+  margin-left: 5%;
+}
+/* line 780, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.reply:hover, .reply:focus {
+  background-color: #878787;
+  color: #fff;
+}
+
+/* line 787, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+textarea#message_message.reply_message_message {
+  height: 3rem;
+  background-color: white;
+}
+
+/* line 792, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+textarea#message_message {
+  height: 3rem;
+  background-color: #31343f;
+  color: white;
+}
+
+/* line 798, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.recipient_id {
+  color: #3b3b3b;
+}
+
+/* line 802, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.subject_line {
+  color: #3b3b3b;
+}
+
+/* line 806, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.sent_by {
+  color: #3b3b3b;
+}
+
+/* line 810, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.reply_message {
+  margin-top: 2%;
+}
+/* line 812, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.reply_message input {
+  margin-left: 5%;
+}
+
+/* line 817, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.reply-name {
+  color: #3b3b3b;
+}
+
+/* line 821, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.reply {
+  margin-top: -2%;
+  margin-left: 5%;
+}
+
+/* line 825, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.message-text {
+  margin-left: 5%;
+  color: #31343f;
+}
+
+/* line 829, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.message-info {
+  margin-left: 5%;
+  color: #7f7f7f;
+}
+
+/* line 834, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#mailbox-title {
+  display: none;
+}
+
+/* line 838, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.new_message_pop_up_expanded {
+  bottom: 0;
+  z-index: 150;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 25%;
+  display: block;
+  background-color: #262831;
+}
+/* line 848, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.new_message_pop_up_expanded p {
+  color: #9fed9c;
+  padding-left: 6%;
+}
+
+/* line 856, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+input#commit {
+  border-radius: none;
+  padding-bottom: 7%;
+  font-size: 1.5rem;
+  background-color: #262831;
+  margin-left: -5%;
+}
+/* line 862, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+input#commit:hover {
+  color: white;
+}
+
+/* line 868, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#tag-name {
+  text-align: center;
+  font-size: 1.5rem;
+  width: 80%;
+  margin-left: 10%;
+  background-color: #31343f;
+  color: #9fed9c;
+  padding: 2%;
+  border-radius: 2px;
+  margin-top: 15%;
+}
+
+/* line 883, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.about-us {
+  background-color: #f5f7fa;
+  width: 95%;
+  margin-left: 2.5%;
+  margin-top: 25%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  margin-bottom: 2%;
+  border-radius: 2px;
+}
+/* line 892, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.about-us h2 {
+  background-color: #dce4ef;
+  font-size: 1.6rem;
+  color: #31343f;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 1%;
+  text-align: center;
+  border-radius: 2px;
+}
+
+/* line 903, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.contact-us {
+  background-color: #f5f7fa;
+  width: 95%;
+  margin-left: 2.5%;
+  margin-top: 15%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  margin-bottom: 2%;
+  border-radius: 2px;
+}
+/* line 912, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.contact-us h2 {
+  background-color: #dce4ef;
+  font-size: 1.6rem;
+  color: #31343f;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 1%;
+  text-align: center;
+  border-radius: 2px;
+}
+/* line 922, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.contact-us p {
+  text-align: center;
+  color: #333333;
+}
+
+/* line 927, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.about-image img {
+  width: 75%;
+  height: 250px;
+  border-radius: 2px;
+  margin-left: 12.5%;
+}
+
+/* line 934, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.index-about-name {
+  color: #31343f;
+  margin-left: 35%;
+  margin-top: 2%;
+  margin-bottom: 1%;
+  font-size: 1.5rem;
+}
+
+/* line 945, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.footer {
+  clear: both;
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  background-color: #9ea1b4;
+  margin-top: 110%;
+  padding-top: 1%;
+  padding-bottom: 0%;
+}
+/* line 955, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.footer a {
+  color: #eaeae8;
+  margin-left: 1%;
+  font-size: 1.1rem;
+  padding-bottom: 0.5%;
+  display: block;
+}
+/* line 963, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.footer p {
+  color: #d1d3d6;
+  float: right;
+  font-size: 0.9rem;
+  margin-right: 1%;
+}
+
+@media all and (max-width: 900px) {
+  /* line 973, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #nav-trigger {
+    display: block;
+  }
+
+  /* line 977, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  nav#nav-main {
+    display: none;
+  }
+
+  /* line 981, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  nav#nav-mobile {
+    display: block;
+    margin-top: -5%;
+  }
+}
+/* line 988, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#empty_mailbox {
+  height: 500px;
+}
+/* line 991, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+#empty_mailbox p {
+  font-style: italic;
+}
+
+/* line 995, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+.message-text {
+  padding-right: 2%;
+  word-wrap: break-word;
+}
+
+@media screen and (min-width: 900px) {
+  /* line 1008, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .spacing {
+    margin-left: 37%;
+    height: 55px;
+    width: 100%;
+  }
+
+  /* line 1014, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  body {
+    background-color: #D7DAE0;
+    min-height: 100%;
+  }
+
+  /* line 1018, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .message {
+    display: none;
+  }
+
+  /* line 1022, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .logo h1 {
+    font-family: "VT323";
+    color: #9FED9C;
+    font-size: 1.6rem;
+    text-align: left;
+    margin-top: 0.5%;
+    margin-left: 2%;
+  }
+
+  /* line 1032, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .menu-bar {
+    background-color: #31343f;
+    height: 3.5rem;
+  }
+
+  /* line 1036, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .logout-icon {
+    display: block;
+    float: right;
+    margin-right: -28%;
+    margin-top: -4.25%;
+  }
+  /* line 1041, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .logout-icon img {
+    width: 40%;
+    padding-top: 2.5%;
+  }
+
+  /* line 1046, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #nav-main {
+    display: none;
+  }
+
+  /* line 1050, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #main-menu {
+    display: block;
+    background-color: #31343f;
+    width: 15%;
+    position: fixed;
+  }
+  /* line 1056, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #main-menu li {
+    padding-left: 7.5%;
+    border-bottom: 5px solid #D7DAE0;
+    padding-bottom: 5%;
+    padding-top: 5%;
+  }
+  /* line 1061, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #main-menu li :hover {
+    color: #61AFEF;
+  }
+
+  /* line 1067, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #login-notice {
+    margin-left: 1%;
+    display: inline;
+    color: #5378BC;
+  }
+
+  /* line 1073, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #unread-messages-notice {
+    float: right;
+    background-color: #9fed9c;
+    color: #31343f;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 3%;
+    width: 15%;
+    border-radius: 2px;
+    font-style: none;
+  }
+  /* line 1084, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #unread-messages-notice p {
+    color: #31343f;
+    font-style: none;
+  }
+  /* line 1089, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #unread-messages-notice a {
+    color: #31343f;
+  }
+  /* line 1093, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #unread-messages-notice :active {
+    background-color: #31343f;
+    font-style: none;
+  }
+
+  /* line 1101, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .content {
+    width: 65%;
+    margin-left: 20%;
+    margin-top: 7%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-bottom: 2%;
+  }
+
+  /* line 1109, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-info-container {
+    background-color: #f5f7fa;
+    border-radius: 2px;
+    width: 90%;
+    margin-left: 2.5%;
+    padding-top: 2%;
+    padding-bottom: 3%;
+    margin-top: -3%;
+  }
+
+  /* line 1118, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-name {
+    width: 60%;
+    margin-top: -22%;
+    margin-left: 37%;
+  }
+  /* line 1122, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-name h1 {
+    text-align: left;
+    font-size: 2rem;
+    color: #31343f;
+  }
+
+  /* line 1129, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .bx-wrapper {
+    width: 45%;
+    border: none;
+    margin-left: -25%;
+    height: 200px;
+  }
+
+  /* line 1138, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-images {
+    margin-top: 0%;
+  }
+  /* line 1140, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-images img {
+    border-radius: 0;
+    height: 200px;
+    width: 100%;
+  }
+
+  /* line 1149, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-details {
+    background-color: #f5f7fa;
+    width: 44%;
+    margin-left: 2.5%;
+    margin-top: -3%;
+    border-radius: 2px;
+    padding-top: 1%;
+    text-align: left;
+  }
+  /* line 1157, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-details h2 {
+    background-color: #dce4ef;
+    font-size: 1.5rem;
+    color: #31343f;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    text-align: center;
+    border-radius: 2px;
+  }
+  /* line 1167, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-details li {
+    color: #3b3b3b;
+    margin-left: 6%;
+    margin-right: 6%;
+  }
+
+  /* line 1174, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-aboutme {
+    text-align: left;
+    margin-top: 2%;
+    background-color: #f5f7fa;
+    border-radius: 2px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-left: 2.5%;
+    width: 90%;
+  }
+  /* line 1183, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-aboutme h2 {
+    background-color: #dce4ef;
+    font-size: 1.6rem;
+    color: #31343f;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    text-align: center;
+    border-radius: 2px;
+  }
+  /* line 1193, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-aboutme p {
+    color: #3b3b3b;
+    margin-left: 6%;
+    margin-right: 6%;
+  }
+
+  /* line 1200, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .reco_matches {
+    text-align: left;
+    margin-top: 2%;
+    background-color: #f5f7fa;
+    border-radius: 2px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-left: 2.5%;
+    width: 90%;
+  }
+  /* line 1209, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .reco_matches h2 {
+    background-color: #dce4ef;
+    font-size: 1.6rem;
+    color: #31343f;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    text-align: center;
+    border-radius: 2px;
+  }
+
+  /* line 1222, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-languages {
+    float: right;
+    background-color: #f5f7fa;
+    width: 44%;
+    margin-top: -26.5%;
+    margin-right: 7.5%;
+    border-radius: 2px;
+    padding-top: 1%;
+    height: 220px;
+    text-align: left;
+  }
+  /* line 1232, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-languages h2 {
+    background-color: #dce4ef;
+    font-size: 1.5rem;
+    color: #31343f;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    text-align: center;
+    border-radius: 2px;
+  }
+  /* line 1242, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-languages li {
+    color: #3b3b3b;
+    margin-left: 6%;
+    margin-right: 6%;
+  }
+
+  /* line 1249, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .send-message-profile {
+    margin-left: 10%;
+  }
+  /* line 1251, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .send-message-profile p {
+    font-size: 1.2rem;
+    color: #00fe06;
+    margin-top: -2%;
+  }
+
+  /* line 1257, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .new_message p {
+    color: #9fed9c;
+    padding-left: 6%;
+  }
+
+  /* line 1262, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .new_message_pop_up {
+    bottom: 0;
+    border-radius: 2px;
+    right: 10px;
+    z-index: 150;
+    position: fixed;
+    width: 40%;
+    display: block;
+  }
+
+  /* line 1272, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .new_message_pop_up_expanded {
+    width: 40%;
+    float: right;
+    right: 0;
+  }
+  /* line 1276, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .new_message_pop_up_expanded textarea#message_message {
+    width: 75%;
+    height: 50%;
+  }
+
+  /* line 1282, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  input#commit {
+    background-color: #262831;
+    color: #9fed9c;
+    font-size: 1.5rem;
+    margin-left: -1%;
+    margin-top: -2%;
+    padding-bottom: 5%;
+  }
+  /* line 1290, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  input#commit:hover {
+    color: white;
+  }
+
+  /* line 1294, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  button.message-and-request-button {
+    margin-left: 37%;
+    background-color: #9FED9C;
+    color: #262831;
+    width: 15%;
+  }
+
+  /* line 1301, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  input.block_button {
+    margin-left: 55%;
+    margin-top: -9%;
+    height: 2.5rem;
+    background-color: #e06c75;
+    color: white;
+    width: 16%;
+  }
+
+  /* line 1310, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .recos {
+    margin-top: 2%;
+    background-color: #f5f7fa;
+    border-radius: 2px;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    margin-left: 2.5%;
+    width: 90%;
+  }
+  /* line 1319, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .recos img {
+    width: 10%;
+    margin-right: 40px;
+    margin-left: 40px;
+  }
+  /* line 1324, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .recos p {
+    margin-left: 6%;
+    margin-right: 6%;
+    list-style: 1.2rem;
+  }
+  /* line 1329, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .recos hr {
+    border-bottom: 5px solid #dce4ef;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  /* line 1335, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .recos h2 {
+    background-color: #dce4ef;
+    font-size: 1.5rem;
+    color: #31343f;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    text-align: center;
+    border-radius: 2px;
+  }
+
+  /* line 1346, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .reco-info {
+    padding-top: 18px;
+  }
+
+  /* line 1354, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .profile-form {
+    background-color: #f5f7fa;
+    width: 65%;
+    margin-left: 17.5%;
+    margin-top: 7%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-bottom: 2%;
+    border-radius: 2px;
+  }
+
+  /* line 1364, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  input#profile_birthday {
+    margin-left: -1%;
+  }
+
+  /* line 1367, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .form_input input {
+    width: 40%;
+    height: 2rem;
+    border-color: #6a6a6a;
+    border-width: 0.5px;
+    border-radius: 5px;
+    font-size: 1rem;
+    display: inline;
+    margin-left: 2%;
+  }
+
+  /* line 1379, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .form_input label {
+    display: inline-block;
+    width: 20%;
+    font-size: 1rem;
+  }
+
+  /* line 1387, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  textarea#profile_about_me {
+    width: 40%;
+    border-color: #6a6a6a;
+    border-width: 0.5px;
+    border-radius: 5px;
+    font-size: 1rem;
+    display: inline;
+    margin-left: -5%;
+    margin-bottom: -3%;
+    height: 4rem;
+  }
+
+  /* line 1398, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .form_checkbox_input label {
+    display: inline-block;
+    width: 12%;
+    font-size: 1rem;
+  }
+
+  /* line 1403, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .form_radio_button label {
+    font-size: 1rem;
+  }
+
+  /* line 1406, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  label.select_label {
+    font-size: 1rem;
+    width: 17%;
+  }
+
+  /* line 1412, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .language-fields label {
+    font-size: 1rem;
+    display: inline-block;
+    width: 20%;
+  }
+
+  /* line 1419, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .language-fields input {
+    width: 40%;
+    height: 1.7rem;
+    border-color: #6a6a6a;
+    border-width: 0.5px;
+    border-radius: 5px;
+    font-size: 1rem;
+    display: inline;
+    margin-left: 2%;
+  }
+
+  /* line 1431, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .language-fields-radio input {
+    font-size: 0.7rem;
+    display: inline;
+  }
+
+  /* line 1436, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .language-fields-radio label {
+    display: inline;
+    width: 20%;
+    font-size: 1rem;
+  }
+
+  /* line 1443, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .skill-level {
+    font-size: 1rem;
+  }
+
+  /* line 1447, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #tag {
+    text-align: center;
+    padding-top: 0%;
+    padding-left: 0%;
+  }
+
+  /* line 1452, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #tag-explained {
+    text-align: center;
+    color: #919293;
+    margin-top: -1%;
+  }
+
+  /* line 1458, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  select#profile_partner_attributes_province {
+    display: inline;
+    margin-left: 2%;
+  }
+
+  /* line 1463, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  select#profile_pair_programmer_attributes_province {
+    display: inline;
+    margin-left: 2%;
+  }
+
+  /* line 1468, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #remove_language {
+    color: #e06c75;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 5%;
+  }
+  /* line 1475, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #remove_language:hover, #remove_language:focus {
+    color: #3b3b3b;
+  }
+
+  /* line 1482, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #add_language {
+    color: #52ce4c;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 5%;
+  }
+  /* line 1489, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #add_language:hover, #add_language:focus {
+    color: #3b3b3b;
+  }
+
+  /* line 1497, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #add_photo {
+    color: #52ce4c;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 5%;
+    margin-top: -15%;
+    font-size: 1.2rem;
+  }
+  /* line 1505, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #add_photo:hover, #add_photo:focus {
+    color: #3b3b3b;
+  }
+
+  /* line 1511, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #remove_photo {
+    margin-top: -15%;
+    color: #e06c75;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 5%;
+    font-size: 1.2rem;
+  }
+  /* line 1519, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #remove_photo:hover, #remove_photo:focus {
+    color: #3b3b3b;
+  }
+
+  /* line 1525, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #add_pref_language {
+    color: #52ce4c;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 5%;
+    margin-top: -15%;
+    font-size: 1.2rem;
+  }
+  /* line 1533, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #add_pref_language:hover, #add_pref_language:focus {
+    color: #3b3b3b;
+  }
+
+  /* line 1539, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #add_pref {
+    color: #52ce4c;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 5%;
+    margin-top: -15%;
+    font-size: 1.2rem;
+  }
+  /* line 1547, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #add_pref:hover, #add_pref:focus {
+    color: #3b3b3b;
+  }
+
+  /* line 1553, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .image-fields img {
+    margin-left: 5%;
+  }
+
+  /* line 1558, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .actions input {
+    width: 30%;
+    margin-left: 37%;
+    margin-bottom: 5%;
+    font-size: 1.2rem;
+    border: none;
+    background-color: #31343f;
+  }
+
+  /* line 1567, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .actions {
+    margin-top: 0%;
+  }
+
+  /* line 1571, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  label#looking_for {
+    width: 40%;
+  }
+
+  /* line 1576, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  select#profile_province {
+    display: inline;
+    margin-left: 2%;
+  }
+
+  /* line 1580, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .button-label {
+    font-size: 1rem;
+  }
+
+  /* line 1584, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  input#profile_tag_list {
+    margin-left: -5%;
+  }
+
+  /* line 1588, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  button#nameNext {
+    float: right;
+    margin-top: -3%;
+    margin-right: 2%;
+  }
+
+  /* line 1593, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  button#birthdayNext {
+    float: right;
+    margin-right: 5%;
+    margin-top: 2%;
+  }
+
+  /* line 1598, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  button#birthdayPrevious {
+    margin-left: 5%;
+    margin-top: 2%;
+  }
+
+  /* line 1602, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  button#aboutMePrevious {
+    margin-left: 5%;
+    margin-top: 2%;
+  }
+
+  /* line 1606, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  button#aboutMeNext {
+    float: right;
+    margin-right: 5%;
+    margin-top: 2%;
+  }
+
+  /* line 1612, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  button#languagePrevious {
+    margin-left: 5%;
+    margin-top: 2%;
+  }
+
+  /* line 1617, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  button#languageNext {
+    float: right;
+    margin-right: 5%;
+    margin-top: 2%;
+  }
+
+  /* line 1627, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #first_option {
+    background-color: #f5f7fa;
+    border-radius: 2px;
+    width: 90%;
+    margin-left: 2.5%;
+    padding-top: 1%;
+    margin-top: -3%;
+  }
+  /* line 1634, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #first_option h2 {
+    background-color: #dce4ef;
+    font-size: 1.6rem;
+    color: #31343f;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+    border-radius: 2px;
+  }
+
+  /* line 1646, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #search-choice {
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+  }
+
+  /* line 1651, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #pairchoice {
+    margin-left: 10%;
+  }
+
+  /* line 1655, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .preference-form {
+    margin-bottom: 1%;
+    margin-left: 2.5%;
+    padding-bottom: 2.5%;
+  }
+
+  /* line 1661, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .lang_pref_form {
+    margin-bottom: 3%;
+  }
+
+  /* line 1665, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  input#search_city {
+    width: 25%;
+    display: inline;
+    margin-left: 5%;
+    height: 2rem;
+  }
+
+  /* line 1671, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  select#search_province {
+    width: 25%;
+    display: inline;
+    margin-left: 1%;
+    height: 2rem;
+  }
+
+  /* line 1678, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  input#submit {
+    float: right;
+    margin-top: -5%;
+    margin-right: 5%;
+  }
+
+  /* line 1684, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .search-form {
+    background-color: #f5f7fa;
+    border-radius: 2px;
+    width: 90%;
+    margin-left: 2.5%;
+    padding-top: 2%;
+    margin-top: -2.5%;
+  }
+  /* line 1691, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .search-form h2 {
+    background-color: #dce4ef;
+    font-size: 1.6rem;
+    color: #31343f;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    text-align: center;
+    border-radius: 2px;
+  }
+
+  /* line 1704, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .looking-form {
+    margin-left: 2.5%;
+  }
+
+  /* line 1709, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  input#search_location {
+    width: 30%;
+    height: 1.5rem;
+    font-size: 1rem;
+    border-width: 3px;
+    display: inline;
+    margin-left: 1%;
+    border: solid;
+    border-color: #6a6a6a;
+    border-width: 0.5px;
+    border-radius: 5px;
+  }
+
+  /* line 1722, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  input#search {
+    float: right;
+    margin-right: 7%;
+    margin-top: 3%;
+  }
+
+  /* line 1728, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  input#search_min_age {
+    width: 20%;
+    height: 2.0rem;
+    font-size: 1rem;
+    border-width: 3px;
+    display: inline;
+    margin-left: 2.5%;
+    border: solid;
+    border-color: #6a6a6a;
+    border-width: 0.5px;
+    border-radius: 5px;
+  }
+
+  /* line 1740, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  input#search_max_age {
+    width: 20%;
+    height: 2.0rem;
+    font-size: 1rem;
+    border-width: 3px;
+    display: inline;
+    margin-left: 2.5%;
+    border: solid;
+    border-color: #6a6a6a;
+    border-width: 0.5px;
+    border-radius: 5px;
+  }
+
+  /* line 1756, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  img.profile-image {
+    width: 15%;
+  }
+
+  /* line 1760, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .index-users {
+    border-radius: 2px;
+    width: 90%;
+    margin-left: 2.5%;
+    padding-top: 2%;
+    padding-bottom: 10%;
+    margin-top: 1%;
+  }
+
+  /* line 1769, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #link-to-profile img {
+    width: 5%;
+    float: right;
+    margin-top: -8%;
+    margin-right: 6%;
+  }
+
+  /* line 1776, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #index-profile-name {
+    color: #3b3b3b;
+  }
+
+  /* line 1780, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #index-profile-location {
+    font-size: 1rem;
+    margin-top: -2%;
+  }
+
+  /* line 1785, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .line-break {
+    margin-top: 10%;
+  }
+
+  /* line 1790, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .profile-details-title {
+    font-size: 1.2rem;
+    color: #00aca1;
+  }
+
+  /* line 1795, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .profile-tags {
+    text-align: left;
+    margin-top: 2%;
+    background-color: #f5f7fa;
+    border-radius: 2px;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    margin-left: 2.5%;
+    width: 90%;
+  }
+  /* line 1804, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .profile-tags h2 {
+    background-color: #dce4ef;
+    font-size: 1.5rem;
+    color: #31343f;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    text-align: center;
+    border-radius: 2px;
+  }
+  /* line 1814, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .profile-tags a {
+    background-color: #31343f;
+    color: #9fed9c;
+    padding: 1%;
+  }
+
+  /* line 1821, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #tag-spacing {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  /* line 1827, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  button.message-to-button {
+    margin-left: 37%;
+    width: 16%;
+    background-color: #9fed9c;
+    color: #31343F;
+  }
+
+  /* line 1835, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .reply {
+    background-color: #9fed9c;
+    border: 0;
+    border-radius: 2px;
+    color: #31343f;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Inconsolata";
+    font-size: 1em;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 600;
+    line-height: 1;
+    padding: 0.75em 1.5em;
+    -webkit-transition: background-color 150ms ease;
+    transition: background-color 150ms ease;
+    vertical-align: middle;
+    white-space: nowrap;
+    margin-left: 5%;
+  }
+  /* line 1853, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .reply:hover, .reply:focus {
+    background-color: #878787;
+    color: #fff;
+  }
+
+  /* line 1860, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #mailbox {
+    background-color: #f5f7fa;
+    border-radius: 2px;
+    padding-top: 2%;
+    padding-bottom: 3%;
+    width: 95%;
+    margin-left: -2.5%;
+    margin-top: 2%;
+  }
+
+  /* line 1870, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #mailbox-title {
+    display: block;
+    background-color: #f5f7fa;
+    border-radius: 2px;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    width: 95%;
+    margin-left: -2.5%;
+    margin-top: -3%;
+  }
+  /* line 1879, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #mailbox-title h1 {
+    background-color: #dce4ef;
+    font-size: 1.5rem;
+    color: #31343f;
+    width: 90%;
+    border-radius: 2px;
+    margin-left: 5%;
+    margin-top: 1%;
+  }
+
+  /* line 1891, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #show-inbox-button {
+    float: left;
+    margin-left: 2%;
+    margin-top: 6%;
+    width: 20%;
+    background-color: #31343f;
+    border-radius: 2px;
+    color: #dee2f8;
+  }
+
+  /* line 1901, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #show-inbox {
+    margin-left: 30%;
+    margin-top: 2%;
+    background-color: white;
+    margin-right: 5%;
+    padding-top: 2%;
+    padding-left: 2%;
+    border-radius: 2px;
+  }
+
+  /* line 1910, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .sent_message {
+    margin-left: 30%;
+    margin-top: 2%;
+    background-color: white;
+    margin-right: 5%;
+    padding-top: 2%;
+    padding-left: 2%;
+    border-radius: 2px;
+  }
+
+  /* line 1919, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .unread {
+    float: right;
+    margin-right: 5%;
+    margin-top: -1%;
+    font-size: 1.2rem;
+  }
+
+  /* line 1926, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .unread-checkbox {
+    float: right;
+    margin-right: 2%;
+  }
+
+  /* line 1931, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .reply {
+    float: right;
+    margin-top: -8%;
+    margin-right: 2%;
+  }
+
+  /* line 1937, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .line-break-inbox {
+    width: 103.5%;
+    margin-left: -3.5%;
+  }
+
+  /* line 1943, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .message-info {
+    font-size: 1rem;
+  }
+
+  /* line 1947, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .recipient_id {
+    color: #3b3b3b;
+  }
+
+  /* line 1951, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .subject_line {
+    color: #3b3b3b;
+  }
+
+  /* line 1955, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .sent_by {
+    color: #3b3b3b;
+  }
+
+  /* line 1959, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .reply_message {
+    margin-top: 2%;
+  }
+
+  /* line 1964, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .reply-name {
+    color: #7f7f7f;
+    font-size: 1.3rem;
+  }
+
+  /* line 1969, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #sent_message_show {
+    float: left;
+    margin-left: -20%;
+    margin-top: 12%;
+    width: 20%;
+    background-color: #31343f;
+    border-radius: 2px;
+    color: #dee2f8;
+  }
+
+  /* line 1979, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #message_message {
+    margin-top: 2.5%;
+  }
+
+  /* line 1983, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  label.error {
+    display: block;
+    color: #e06c75;
+    width: 60%;
+  }
+
+  /* line 1989, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #tag-name {
+    text-align: center;
+    font-size: 1.5rem;
+    width: 40%;
+    margin-left: 25%;
+    background-color: #31343f;
+    color: #9fed9c;
+    padding: 2%;
+    border-radius: 2px;
+    margin-top: -3%;
+  }
+
+  /* line 2003, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #tags-content {
+    border-radius: 2px;
+    width: 90%;
+    margin-left: 2.5%;
+    padding-top: 2%;
+    padding-bottom: 10%;
+    margin-top: 1%;
+  }
+
+  /* line 2013, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .about-us {
+    background-color: #f5f7fa;
+    width: 95%;
+    margin-left: -1%;
+    margin-top: -3%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-bottom: 2%;
+    border-radius: 2px;
+  }
+  /* line 2022, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .about-us h2 {
+    background-color: #dce4ef;
+    font-size: 1.6rem;
+    color: #31343f;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    text-align: center;
+    border-radius: 2px;
+  }
+
+  /* line 2033, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .contact-us {
+    background-color: #f5f7fa;
+    width: 95%;
+    margin-left: -1%;
+    margin-top: -3%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-bottom: 2%;
+    border-radius: 2px;
+  }
+  /* line 2042, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .contact-us h2 {
+    background-color: #dce4ef;
+    font-size: 1.6rem;
+    color: #31343f;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    text-align: center;
+    border-radius: 2px;
+  }
+  /* line 2052, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .contact-us p {
+    text-align: center;
+    color: #333333;
+    margin-top: 5%;
+    padding-bottom: 3%;
+    font-size: 1.3rem;
+  }
+
+  /* line 2061, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .about-image img {
+    width: 20%;
+    height: 150px;
+    border-radius: 2px;
+    margin-left: 5%;
+  }
+
+  /* line 2068, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .index-about-name {
+    color: #31343f;
+    margin-left: 35%;
+    margin-top: -15%;
+    margin-bottom: 15%;
+    font-size: 1.5rem;
+  }
+
+  /* line 2077, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .footer {
+    clear: both;
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    background-color: #dce4ef;
+    margin-top: 27%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+  /* line 2087, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .footer a {
+    color: #31343f;
+    margin-left: 1%;
+    font-size: 1.1rem;
+    padding-bottom: 0.5%;
+    display: block;
+  }
+  /* line 2095, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .footer a:hover {
+    color: white;
+  }
+  /* line 2099, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .footer p {
+    color: #31343f;
+    float: right;
+    font-size: 0.9rem;
+    margin-right: 1%;
+  }
+}
+@media screen and (min-width: 2500px) {
+  /* line 2111, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .logout-icon {
+    display: block;
+    position: absolute;
+    margin-left: 91%;
+    margin-top: -2.25%;
+  }
+  /* line 2116, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .logout-icon img {
+    width: 45%;
+    padding-top: 2.5%;
+    z-index: 5;
+  }
+
+  /* line 2122, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-info-container {
+    padding-bottom: 6%;
+    margin-top: -3%;
+  }
+
+  /* line 2126, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  button.message-and-request-button {
+    margin-top: 0%;
+  }
+
+  /* line 2129, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-images {
+    margin-top: 0%;
+  }
+  /* line 2131, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-images img {
+    border-radius: 0;
+    height: 250px;
+    width: 100%;
+  }
+
+  /* line 2139, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #login-notice {
+    margin-left: 1%;
+    margin-top: 5%;
+  }
+
+  /* line 2143, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .bx-wrapper {
+    height: 250px;
+  }
+
+  /* line 2147, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  input.block_button {
+    margin-top: -4.5%;
+    height: 2.5rem;
+  }
+
+  /* line 2151, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-name {
+    margin-top: -15%;
+  }
+
+  /* line 2154, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-languages {
+    margin-top: -16.5%;
+    height: 275px;
+  }
+
+  /* line 2159, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .line-break {
+    margin-top: 12.5%;
+  }
+
+  /* line 2164, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .new_message_pop_up_expanded textarea#message_message {
+    width: 75%;
+    height: 9rem;
+    margin-left: 10%;
+  }
+  /* line 2169, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .new_message_pop_up_expanded p {
+    margin-left: 5%;
+    padding-top: 2%;
+  }
+
+  /* line 2175, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  input#commit {
+    margin-left: 5%;
+  }
+
+  /* line 2178, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  #sent_message_show {
+    margin-top: 10%;
+  }
+
+  /* line 2182, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .spacing {
+    margin-left: 37%;
+    height: 50px;
+    width: 100%;
+  }
+
+  /* line 2188, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .search-form {
+    margin-top: -3.5%;
+  }
+
+  /* line 2192, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .recos img {
+    margin-bottom: 2%;
+    margin-left: 5%;
+  }
+
+  /* line 2197, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .reco-info {
+    padding-top: 3%;
+  }
+
+  /* line 2201, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .footer {
+    margin-top: 27%;
+  }
+
+  /* line 2205, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  input#search_city {
+    margin-left: 3%;
+  }
+
+  /* line 2208, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .about-image img {
+    width: 20%;
+    height: 250px;
+    border-radius: 2px;
+    margin-left: 5%;
+  }
+
+  /* line 2215, /Users/nataliedoak/Desktop/Bitmaker/Projects/GitHug/app/assets/stylesheets/profiles.scss */
+  .index-about-name {
+    color: #31343f;
+    margin-left: 35%;
+    margin-top: -10%;
+    margin-bottom: 10%;
+    font-size: 1.5rem;
+  }
+}

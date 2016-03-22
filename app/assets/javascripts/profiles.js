@@ -45,10 +45,10 @@ $(document).on('page:load ready', function() {
     $('#showLanguage').show(1000);
   });
 
-// Slideshow
-  $('.bxslider').bxSlider();
-
-  $('#login-notice').delay(1000).slideUp(1000);
+    $('#languageNext').click(function(){
+      $('#showLanguage').hide();
+      $('#showPreferences').show(1000);
+  });
 
   // For previous button
     $('#birthdayPrevious').click(function(){
@@ -70,7 +70,6 @@ $(document).on('page:load ready', function() {
       $('#showLanguage').show(1000);
       $('#showPreferences').hide();
     });
-
 
     $('.gender_validation').click(function() {
       $(this).siblings('input:checkbox').prop('checked', false);
@@ -104,6 +103,25 @@ $(document).on('page:load ready', function() {
         }
       }
     });
+
+    // var partnerPreference = $('#profile_date');
+    // var pairPreference = $('#profile_paired_programmer');
+    //
+    // var initialPartner = partnerPreference.is(':checked');
+    // var initialPair = pairPreference.is(':checked');
+    //
+    // var addPartner = $("#add-partner")[initialPartner ? "removeClass" : "addClass"]("hide");
+    //
+    // var addPartnerInputs = addPartner.find("input").attr('disabled', !initialPartner);
+    //
+    // partnerPreference.click(function() {
+    //   addPartner[this.checked ? "removeClass" : "addClass"]('hide');
+    //   addPartnerInputs.attr("disabled", this.checked);
+    // });
+// 
+//     $('#profile_date').change(function() {
+//     $('#add-partner').toggle();
+// });
 
   $('.edit_profile').validate({
     rules: {
@@ -155,10 +173,10 @@ $(document).on('page:load ready', function() {
         required: true,
         minlength: 1
       },
-      'search[operating_system]': {
-        required: true,
-        minlength: 1
-      },
+      // 'search[operating_system]': {
+      //   required: true,
+      //   minlength: 1
+      // },
       'search[min_age]': {
         required: true,
         min: 18
@@ -174,6 +192,13 @@ $(document).on('page:load ready', function() {
       'search[province]': {
         required:true
       }
+    },
+    errorPlacement: function(error, element) {
+        if ($("#lang_pref_form").has(element).size() > 0) {
+            error.insertAfter($("#lang_pref_form input:checkbox:last"));
+        } else {
+            error.insertAfter(element);
+        }
     }
   });
 
