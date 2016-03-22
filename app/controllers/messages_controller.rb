@@ -27,9 +27,9 @@ class MessagesController < ApplicationController
 
     if @message.save && @profile.notification_email?
       UserMailer.delay.user_message_notification(Profile.find(@message.recipient), Profile.find(@message.sender))
-      redirect_to messages_path
+      redirect_to messages_path, notice: "Message sent!"
     else
-        format.html { render partial:"reply", alert: "Sorry, something went wrong. Your message did not send" }
+      redirect_to messages_url, alert: "Sorry someething went wrong & your message could not be send. "
     end
 
     if @message.save && @profile.notification_sms? && @profile.phone_number?
