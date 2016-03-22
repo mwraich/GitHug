@@ -33,15 +33,11 @@ class MessagesController < ApplicationController
           else
             redirect_to messages_path
           end
-        end
           format.js
-      end
-      else
-        respond_to do |format|
-          format.html do
-            format.html { render partial:"reply", alert: "Sorry, something went wrong. Your message did not send" }
-          end
         end
+        end
+    else
+      redirect_to messages_url, alert: "Sorry someething went wrong & your message could not be send. "
     end
 
   end
