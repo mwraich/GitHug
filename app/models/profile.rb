@@ -124,7 +124,7 @@ class Profile < ActiveRecord::Base
   @twilio_client.account.sms.messages.create(
     :from => "#{@twilio_phone_number}",
     :to => self.phone_number,
-    :body => message.message
+    :body => "Message from #{message.sender.first_name}, saying: #{message.message}"
   )
     puts "SMS from :#{@twilio_phone_number}"
     puts "SMS to : #{self.phone_number}"
