@@ -31,7 +31,11 @@ textarea#message_message {
 #login-notice{
   display: none;
 }
-
+  li.error{
+    display: block;
+    color: #e06c75;
+    width: 100%;
+  }
   label.error {
     display: block;
     color: #e06c75;
@@ -1991,6 +1995,12 @@ textarea#message_message{
     display: block;
     color: #e06c75;
     width: 60%;
+  }
+  li.error{
+    display: block;
+    color: #e06c75;
+    width: 100%;
+
   }
 
   #tag-name{

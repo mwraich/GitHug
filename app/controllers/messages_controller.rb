@@ -29,9 +29,9 @@ class MessagesController < ApplicationController
       respond_to do |format|
         format.html do
             if request.xhr?
-              render profile_path(@profile.recipient)
+              render_ profile_path(@profile.recipient)
             else
-              render profile_path(@profile.recipient)
+              redirect_to messages_path
             end
           end
           format.js
@@ -39,7 +39,7 @@ class MessagesController < ApplicationController
       else
         respond_to do |format|
           format.html do
-            format.html { render partial:"new_message", alert: "Sorry, something went wrong. Your message did not send" }
+            format.html { render partial:"reply", alert: "Sorry, something went wrong. Your message did not send" }
           end
         format.js
       end

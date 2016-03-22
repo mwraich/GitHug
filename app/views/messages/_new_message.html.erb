@@ -10,6 +10,7 @@
     <%= f.text_area :message, class:"new_message_message" %>
     <%= f.hidden_field :recipient_id, value: @profile.id %>
 
-<%= f.submit "[ commit ]", id:"commit" %>
+  <%= f.submit "[ commit ]", id:"commit" %>
+
   <% end %>
 </div>

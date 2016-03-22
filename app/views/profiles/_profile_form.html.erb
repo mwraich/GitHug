@@ -1,10 +1,9 @@
 <%= form_for @profile do |f| %>
     <% if @profile.errors.any? %>
       <div class="error_messages">
-        <h2>Form Is Invalid</h2>
         <ul>
           <% @profile.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
+            <li class="error"><%= message %></li>
           <% end %>
         </ul>
       </div>
@@ -31,11 +30,15 @@
 
 <p id="tag">Add Some Photos!</p>
 <div class="add-language-spacing">
+  <div>
+    <%= f.fields_for :images do |image| %>
+    <%= render "image_fields", f: image %>
+    <% end %>
+  </div>
   <%= link_to_add_association "Add Another Photo", f, :images, id: 'add_photo',
   'data-association-insertion-method' => 'before',
   'data-association-insertion-traversal' => 'closest' %>
 </div>
-
 <button type ='button' id = 'nameNext'> Next </button>
 </div> <!-- end showFirstName-->
 
@@ -166,7 +169,7 @@
    <div>
      <%= f.label :paired_programmer, "Pair Programmer", id: "pair_label" %>
      <%= f.check_box :paired_programmer %>
-   </div><br>
+   </div>
 
    <div>
      <%= f.fields_for :pair_programmer do |pair| %>
