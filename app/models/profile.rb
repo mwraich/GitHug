@@ -112,7 +112,7 @@ class Profile < ActiveRecord::Base
     current_user.enemies.include?(self.user) #Have you blocked this person?
   end
 
-  def send_text_message
+  def send_text_message(message)
   # number_to_send_to = profile.phone
 
   @twilio_sid = ENV["twilio_sid"]
@@ -124,16 +124,12 @@ class Profile < ActiveRecord::Base
   @twilio_client.account.sms.messages.create(
     :from => "#{@twilio_phone_number}",
     :to => self.phone_number,
-    :body => 'message'
+    :body => message.message
   )
     puts "SMS from :#{@twilio_phone_number}"
     puts "SMS to : #{self.phone_number}"
-    puts "Hey #{self.first_name}
+    puts "Hey #{self.first_name}"
 
-    You just got a new message!
-    Go to GitHug to check it out!!
-    XOXO,
-    Team GitHug"
   end
 
   def location
