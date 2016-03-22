@@ -1,0 +1,3532 @@
+
+ .typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+/**
+ * bxSlider v4.2.5
+ * Copyright 2013-2015 Steven Wanderski
+ * Written while drinking Belgian ales and listening to jazz
+
+ * Licensed under MIT (http://opensource.org/licenses/MIT)
+ */
+/** VARIABLES 
+===================================*/
+/** RESET AND LAYOUT
+===================================*/
+/* line 14, /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper {
+  position: relative;
+  margin: 0 auto 60px;
+  padding: 0;
+  *zoom: 1;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+}
+
+/* line 22, /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper img {
+  max-width: 100%;
+  display: block;
+}
+
+/* line 26, /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bxslider {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 30, /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+ul.bxslider {
+  list-style: none;
+}
+
+/* line 33, /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-viewport {
+  /*fix other elements on the page moving (on Chrome)*/
+  -webkit-transform: translatez(0);
+}
+
+/** THEME
+===================================*/
+/* line 39, /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper {
+  box-shadow: 0 0 5px #ccc;
+  border: 5px solid #fff;
+  background: #fff;
+}
+
+/* line 46, /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
+}
+
+/* LOADER */
+/* line 53, /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-loading {
+  min-height: 50px;
+  background: url(/assets/bx_loader-6d46e2cf165a5a0584afba7bc9663da292ee08c97cfc7613de6013ed05be892a.gif) center center no-repeat #ffffff;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+}
+
+/* PAGER */
+/* line 64, /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-pager {
+  text-align: center;
+  font-size: .85em;
+  font-family: Arial;
+  font-weight: bold;
+  color: #666;
+  padding-top: 20px;
+}
+
+/* line 72, /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-pager.bx-default-pager a {
+  background: #666;
+  text-indent: -9999px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  outline: 0;
+  border-radius: 5px;
+}
+
+/* line 84, /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active,
+.bx-wrapper .bx-pager.bx-default-pager a:focus {
+  background: #000;
+}
+
+/* line 89, /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+}
+
+/* line 95, /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-pager-item {
+  font-size: 0;
+  line-height: 0;
+}
+
+/* DIRECTION CONTROLS (NEXT / PREV) */
+/* line 100, /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-prev {
+  left: 10px;
+  background: url(/assets/controls-257206c4fd6bcee36927eb0ef2ba087b5dfc6c9a18df7f8553878bf847616226.png) no-repeat 0 -32px;
+}
+
+/* line 104, /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-prev:hover,
+.bx-wrapper .bx-prev:focus {
+  background-position: 0 0;
+}
+
+/* line 108, /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-next {
+  right: 10px;
+  background: url(/assets/controls-257206c4fd6bcee36927eb0ef2ba087b5dfc6c9a18df7f8553878bf847616226.png) no-repeat -43px -32px;
+}
+
+/* line 112, /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-next:hover,
+.bx-wrapper .bx-next:focus {
+  background-position: -43px 0;
+}
+
+/* line 116, /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-controls-direction a {
+  position: absolute;
+  top: 50%;
+  margin-top: -16px;
+  outline: 0;
+  width: 32px;
+  height: 32px;
+  text-indent: -9999px;
+  z-index: 9999;
+}
+
+/* line 126, /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-controls-direction a.disabled {
+  display: none;
+}
+
+/* AUTO CONTROLS (START / STOP) */
+/* line 130, /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-controls-auto {
+  text-align: center;
+}
+
+/* line 133, /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-controls-auto .bx-start {
+  display: block;
+  text-indent: -9999px;
+  width: 10px;
+  height: 11px;
+  outline: 0;
+  background: url(/assets/controls-257206c4fd6bcee36927eb0ef2ba087b5dfc6c9a18df7f8553878bf847616226.png) -86px -11px no-repeat;
+  margin: 0 3px;
+}
+
+/* line 142, /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-controls-auto .bx-start:hover,
+.bx-wrapper .bx-controls-auto .bx-start.active,
+.bx-wrapper .bx-controls-auto .bx-start:focus {
+  background-position: -86px 0;
+}
+
+/* line 147, /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-controls-auto .bx-stop {
+  display: block;
+  text-indent: -9999px;
+  width: 9px;
+  height: 11px;
+  outline: 0;
+  background: url(/assets/controls-257206c4fd6bcee36927eb0ef2ba087b5dfc6c9a18df7f8553878bf847616226.png) -86px -44px no-repeat;
+  margin: 0 3px;
+}
+
+/* line 156, /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-controls-auto .bx-stop:hover,
+.bx-wrapper .bx-controls-auto .bx-stop.active,
+.bx-wrapper .bx-controls-auto .bx-stop:focus {
+  background-position: -86px -33px;
+}
+
+/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
+/* line 162, /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+  text-align: left;
+  width: 80%;
+}
+
+/* line 166, /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
+  right: 0;
+  width: 35px;
+}
+
+/* IMAGE CAPTIONS */
+/* line 171, /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #666;
+  background: rgba(80, 80, 80, 0.75);
+  width: 100%;
+}
+
+/* line 179, /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/bxslider-rails-4.2.5.1/vendor/assets/stylesheets/bxslider.css.scss */
+.bx-wrapper .bx-caption span {
+  color: #fff;
+  font-family: Arial;
+  display: block;
+  font-size: .85em;
+  padding: 10px;
+}
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS and IE text size adjust after device orientation change,
+ *    without disabling user zoom.
+ */
+/* line 9, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+/* line 19, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+body {
+  margin: 0;
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+/* line 33, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+/* line 54, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+/* line 67, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
+ */
+/* line 77, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+[hidden],
+template {
+  display: none;
+}
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+/* line 89, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+a {
+  background-color: transparent;
+}
+
+/**
+ * Improve readability of focused elements when they are also in an
+ * active/hover state.
+ */
+/* line 98, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+/* line 110, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+/* line 118, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+/* line 127, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+/* line 136, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+/* line 145, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+/* line 154, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+/* line 162, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 170, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+sup {
+  top: -0.5em;
+}
+
+/* line 174, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+sub {
+  bottom: -0.25em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+/* line 185, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+img {
+  border: 0;
+}
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+/* line 193, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+/* line 204, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+/* line 212, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Contain overflow in all browsers.
+ */
+/* line 221, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+pre {
+  overflow: auto;
+}
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+/* line 229, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+/* line 252, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+/* line 266, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+button {
+  overflow: visible;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+/* line 277, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+/* line 290, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+/* line 302, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+/* line 311, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+/* line 322, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+input {
+  line-height: normal;
+}
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+/* line 334, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+/* line 346, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
+ */
+/* line 356, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  box-sizing: content-box;
+  /* 2 */
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+/* line 367, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+/* line 376, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+/* line 387, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+/* line 396, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+/* line 405, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+optgroup {
+  font-weight: bold;
+}
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+/* line 416, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 421, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/vendor/assets/stylesheets/normalize.css */
+td,
+th {
+  padding: 0;
+}
+
+/* line 1, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_buttons.scss */
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #31343f;
+  border: 0;
+  border-radius: 2px;
+  color: #9fed9c;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Inconsolata";
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.75em 1.5em;
+  text-decoration: none;
+  -webkit-transition: background-color 150ms ease;
+  transition: background-color 150ms ease;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+/* line 21, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_buttons.scss */
+button:hover, button:focus, input[type="button"]:hover, input[type="button"]:focus, input[type="reset"]:hover, input[type="reset"]:focus, input[type="submit"]:hover, input[type="submit"]:focus {
+  background-color: #878787;
+  color: #fff;
+}
+/* line 27, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_buttons.scss */
+button:disabled, input[type="button"]:disabled, input[type="reset"]:disabled, input[type="submit"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+/* line 31, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_buttons.scss */
+button:disabled:hover, input[type="button"]:disabled:hover, input[type="reset"]:disabled:hover, input[type="submit"]:disabled:hover {
+  background-color: #dee2f8;
+}
+
+/* line 1, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_forms.scss */
+fieldset {
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 8, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_forms.scss */
+legend {
+  font-weight: 800;
+  margin-bottom: 0.375em;
+  padding: 0;
+}
+
+/* line 14, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_forms.scss */
+label {
+  display: inline;
+  font-weight: 600;
+  margin-bottom: 0.375em;
+  padding-left: 5%;
+  font-size: 1.3rem;
+  color: #6a6a6a;
+}
+
+/* line 23, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_forms.scss */
+input,
+select {
+  display: block;
+  font-family: "Inconsolata";
+  font-size: 1em;
+  color: #6a6a6a;
+}
+
+/* line 33, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_forms.scss */
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea,
+select[multiple] {
+  background-color: #ffffff;
+  border: solid;
+  border-color: #6a6a6a;
+  border-width: 0.5px;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  font-family: "Inconsolata";
+  font-size: 1em;
+  margin-bottom: 0.75em;
+  padding: 0.5em;
+  -webkit-transition: border-color 150ms ease;
+  transition: border-color 150ms ease;
+  width: 90%;
+  margin-left: 5%;
+  color: #3b3b3b;
+  height: 2rem;
+}
+/* line 51, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_forms.scss */
+input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, input:not([type]):hover, textarea:hover,
+select[multiple]:hover {
+  border-color: #008a81;
+}
+/* line 55, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_forms.scss */
+input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, input:not([type]):focus, textarea:focus,
+select[multiple]:focus {
+  border-color: #00aca1;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(201, 208, 244, 0.7);
+  outline: none;
+}
+/* line 61, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_forms.scss */
+input[type="color"]:disabled, input[type="date"]:disabled, input[type="datetime"]:disabled, input[type="datetime-local"]:disabled, input[type="email"]:disabled, input[type="month"]:disabled, input[type="number"]:disabled, input[type="password"]:disabled, input[type="search"]:disabled, input[type="tel"]:disabled, input[type="text"]:disabled, input[type="time"]:disabled, input[type="url"]:disabled, input[type="week"]:disabled, input:not([type]):disabled, textarea:disabled,
+select[multiple]:disabled {
+  background-color: #a1a1a1;
+  cursor: not-allowed;
+}
+/* line 65, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_forms.scss */
+input[type="color"]:disabled:hover, input[type="date"]:disabled:hover, input[type="datetime"]:disabled:hover, input[type="datetime-local"]:disabled:hover, input[type="email"]:disabled:hover, input[type="month"]:disabled:hover, input[type="number"]:disabled:hover, input[type="password"]:disabled:hover, input[type="search"]:disabled:hover, input[type="tel"]:disabled:hover, input[type="text"]:disabled:hover, input[type="time"]:disabled:hover, input[type="url"]:disabled:hover, input[type="week"]:disabled:hover, input:not([type]):disabled:hover, textarea:disabled:hover,
+select[multiple]:disabled:hover {
+  border: solid;
+  border-width: 0.5px;
+}
+
+/* line 73, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_forms.scss */
+textarea {
+  resize: vertical;
+}
+
+/* line 77, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_forms.scss */
+[type="search"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+/* line 81, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_forms.scss */
+[type="checkbox"],
+[type="radio"] {
+  display: inline;
+  margin-left: 0.375em;
+}
+
+/* line 88, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_forms.scss */
+[type="file"] {
+  margin-bottom: 0.75em;
+  width: 100%;
+}
+
+/* line 93, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_forms.scss */
+select {
+  margin-bottom: 1.5em;
+  max-width: 100%;
+  width: auto;
+}
+
+/* line 1, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_lists.scss */
+ul,
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 8, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_lists.scss */
+dl {
+  margin-bottom: 0.75em;
+}
+/* line 11, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_lists.scss */
+dl dt {
+  font-weight: 600;
+  margin-top: 0.75em;
+}
+/* line 16, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_lists.scss */
+dl dd {
+  margin: 0;
+}
+
+/* line 1, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_tables.scss */
+table {
+  border-collapse: collapse;
+  margin: 0.75em 0;
+  table-layout: fixed;
+  width: 100%;
+}
+
+/* line 8, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_tables.scss */
+th {
+  border-bottom: 1px solid #b8b8b8;
+  font-weight: 600;
+  padding: 0.75em 0;
+  text-align: left;
+}
+
+/* line 15, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_tables.scss */
+td {
+  border-bottom: 5px solid #f5f5f5;
+  padding: 0.75em 0;
+}
+
+/* line 20, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_tables.scss */
+tr,
+td,
+th {
+  vertical-align: middle;
+}
+
+/* line 1, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_typography.scss */
+html {
+  color: #dee2f8;
+  font-family: "Inconsolata";
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+/* line 8, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_typography.scss */
+h1 {
+  font-family: "Inconsolata";
+  font-size: 1em;
+  line-height: 1.2;
+  text-align: center;
+  margin: 0 0 0.75em;
+}
+
+/* line 16, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_typography.scss */
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Inconsolata";
+  font-size: 1em;
+  line-height: 1.2;
+  margin: 0 0 0.75em;
+}
+
+/* line 27, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_typography.scss */
+p {
+  margin: 0 0 0.75em;
+  color: #dee2f8;
+}
+
+/* line 32, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_typography.scss */
+a {
+  color: #dee2f8;
+  text-decoration: none;
+  -webkit-transition: color 150ms ease;
+  transition: color 150ms ease;
+}
+/* line 37, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_typography.scss */
+a:active, a:focus, a:hover {
+  color: #a7aaba;
+}
+
+/* line 44, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_typography.scss */
+hr {
+  border-bottom: 5px solid #f5f5f5;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: 1.5em 0;
+}
+
+/* line 52, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/base/_typography.scss */
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}
+
+/* line 4, /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/neat-1.7.4/app/assets/stylesheets/grid/_box-sizing.scss */
+html {
+  box-sizing: border-box;
+}
+
+/* line 9, /Users/annmariedoyle/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/neat-1.7.4/app/assets/stylesheets/grid/_box-sizing.scss */
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    -webkit-transform: scale(0.7);
+  }
+  50% {
+    -webkit-transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0.7);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+  }
+  50% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+  }
+}
+/* line 13, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/sessions.scss */
+body.sessions {
+  background-color: #31333f;
+}
+
+/* line 17, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/sessions.scss */
+.skip_login {
+  color: #707783;
+  float: right;
+  margin-top: -40%;
+  padding-right: 5%;
+}
+
+/* line 23, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/sessions.scss */
+.logoTyped {
+  font-family: "Inconsolata";
+  color: #98ea8f;
+  font-size: 1.5rem;
+}
+
+/* line 29, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/sessions.scss */
+.typed-cursor {
+  background-color: #98ea8f;
+  color: #98ea8f;
+  font-size: 1.2rem;
+}
+
+/* line 36, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/sessions.scss */
+.login img {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+}
+
+/* line 44, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/sessions.scss */
+#loadAnimation {
+  margin-top: 45%;
+  margin-bottom: 5%;
+  margin-left: 25%;
+}
+
+@media screen and (min-width: 900px) {
+  /* line 52, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/sessions.scss */
+  #loadAnimation {
+    margin-left: 40%;
+    margin-top: 15%;
+  }
+
+  /* line 57, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/sessions.scss */
+  .login img {
+    margin-left: 27.5%;
+    margin-top: 5%;
+  }
+
+  /* line 62, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/sessions.scss */
+  .skip_login {
+    margin-top: -12.5%;
+  }
+}
+@media screen and (min-width: 2500px) {
+  /* line 69, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/sessions.scss */
+  #loadAnimation {
+    margin-left: 45%;
+  }
+
+  /* line 72, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/sessions.scss */
+  .login img {
+    margin-left: 40%;
+    margin-top: 0%;
+  }
+
+  /* line 77, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/sessions.scss */
+  .skip_login {
+    margin-top: -12.5%;
+  }
+}
+/* line 3, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+body {
+  background-color: #DCE4EF;
+  min-height: 100%;
+}
+
+/* line 8, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+textarea#message_message {
+  color: black;
+}
+
+/* line 12, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.content {
+  margin-top: 20%;
+}
+
+/* line 16, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.page-title {
+  font-size: 1.6rem;
+  color: #31343f;
+  background-color: #dce4ef;
+  width: 90%;
+  margin-left: 5%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border-radius: 2px;
+}
+
+/* line 27, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#main-menu {
+  display: none;
+}
+
+/* line 31, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#login-notice {
+  display: none;
+}
+
+/* line 34, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+li.error {
+  display: block;
+  color: #e06c75;
+  width: 100%;
+}
+
+/* line 39, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+label.error {
+  display: block;
+  color: #e06c75;
+  width: 100%;
+}
+
+/* line 46, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.logout-icon {
+  display: none;
+}
+
+/* line 50, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.message-icon img {
+  width: 10%;
+}
+
+/* line 53, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.message img {
+  width: 10%;
+  margin-left: 5%;
+  display: inline;
+  margin-top: 2.5%;
+}
+
+/* line 60, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.logo h1 {
+  font-family: "VT323";
+  color: #9FED9C;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: -13%;
+}
+
+/* line 69, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.menu {
+  display: inline;
+  width: 10%;
+  float: right;
+  margin-top: -19%;
+  margin-right: 5%;
+}
+
+/* line 78, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.menu-bar {
+  z-index: 100;
+  background-color: #262831;
+  height: 4rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+/* line 95, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.form_checkbox_input label {
+  display: inline;
+  font-size: 1.1rem;
+  color: #3b3b3b;
+}
+
+/* line 101, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.form_radio_button label {
+  display: inline;
+  font-size: 1.2rem;
+  color: #3b3b3b;
+}
+
+/* line 108, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+label.select_label {
+  font-size: 1.4rem;
+  color: #6a6a6a;
+}
+
+/* line 114, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#tag {
+  padding-left: 5%;
+  font-size: 1.3rem;
+  color: #3b3b3b;
+  text-align: center;
+  margin-top: 5%;
+}
+
+/* line 122, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+a.add_fields {
+  color: #1E2542;
+}
+
+/* line 126, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.actions input {
+  width: 87%;
+  margin-left: 6.5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  font-size: 1.2rem;
+  background-color: #31343F;
+}
+
+/* line 135, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.actions {
+  margin-top: 10%;
+}
+
+/* line 139, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.language-fields-label {
+  display: inline;
+  font-size: 1rem;
+  color: #3b3b3b;
+}
+
+/* line 145, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#tag-explained {
+  text-align: center;
+  color: #919293;
+  margin-top: -1%;
+}
+
+/* line 151, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#add_language {
+  color: #52ce4c;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 5%;
+}
+/* line 158, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#add_language:hover, #add_language:focus {
+  color: #3b3b3b;
+}
+
+/* line 166, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.add-language-spacing {
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+/* line 171, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#remove_language {
+  color: #e06c75;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 5%;
+}
+/* line 178, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#remove_language:hover, #remove_language:focus {
+  color: #3b3b3b;
+}
+
+/* line 185, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#remove_pref_language {
+  color: #e06c75;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 5%;
+}
+/* line 192, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#remove_pref_language:hover, #remove_pref_language:focus {
+  color: #3b3b3b;
+}
+
+/* line 198, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#remove_preference {
+  color: #e06c75;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 5%;
+  font-size: 1.2rem;
+}
+/* line 205, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#remove_preference:hover, #remove_preference:focus {
+  color: #3b3b3b;
+}
+
+/* line 212, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#add_photo {
+  color: #52ce4c;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 5%;
+}
+/* line 219, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#add_photo:hover, #add_photo:focus {
+  color: #3b3b3b;
+}
+
+/* line 226, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#remove_photo {
+  color: #e06c75;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 5%;
+}
+/* line 233, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#remove_photo:hover, #remove_photo:focus {
+  color: #3b3b3b;
+}
+
+/* line 241, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#remove_partner {
+  color: #e06c75;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 5%;
+}
+/* line 248, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#remove_partner:hover, #remove_partner:focus {
+  color: #3b3b3b;
+}
+
+/* line 255, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#remove_pair_programmer {
+  color: #e06c75;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 5%;
+}
+/* line 262, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#remove_pair_programmer:hover, #remove_pair_programmer:focus {
+  color: #3b3b3b;
+}
+
+/* line 268, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#add_partner {
+  color: #52ce4c;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 5%;
+}
+/* line 275, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#add_partner:hover, #add_partner:focus {
+  color: #3b3b3b;
+}
+
+/* line 281, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#add_pair_programmer {
+  color: #52ce4c;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 5%;
+}
+/* line 288, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#add_pair_programmer:hover, #add_pair_programmer:focus {
+  color: #3b3b3b;
+}
+
+/* line 294, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+textarea#profile_about_me {
+  height: 3rem;
+}
+
+/* line 298, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+button#nameNext {
+  float: right;
+  margin-top: 2%;
+  margin-right: 5%;
+}
+
+/* line 304, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+button#birthdayNext {
+  float: right;
+  margin-right: 5%;
+  margin-top: 2%;
+}
+
+/* line 309, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+button#birthdayPrevious {
+  margin-left: 5%;
+  margin-top: 2%;
+}
+
+/* line 313, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+button#aboutMePrevious {
+  margin-left: 5%;
+  margin-top: 2%;
+}
+
+/* line 317, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+button#aboutMeNext {
+  float: right;
+  margin-right: 5%;
+  margin-top: 2%;
+}
+
+/* line 323, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+button#languagePrevious {
+  margin-left: 5%;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+
+/* line 329, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+button#languageNext {
+  float: right;
+  margin-right: 5%;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+
+/* line 336, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+button#preferencesPrevious {
+  margin-left: 5%;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+
+/* line 349, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.profile-image {
+  background-color: #AADBE8;
+  border-radius: 200px;
+  width: 30%;
+  display: inline;
+  float: left;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+/* line 360, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#index-view-profile-info {
+  font-size: 1.5rem;
+  display: inline;
+  clear: left;
+}
+/* line 365, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#index-view-profile-infop {
+  padding-top: 5%;
+  padding-left: 5%;
+}
+
+/* line 372, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#link-to-profile img {
+  width: 10%;
+  float: right;
+  margin-top: 1%;
+  margin-right: 6%;
+}
+
+/* line 379, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#index-profile-name {
+  color: #262831;
+}
+
+/* line 383, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#index-profile-location {
+  font-size: 1rem;
+  margin-top: -2%;
+  color: #3B3B3B;
+}
+
+/* line 389, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.index-users {
+  border-radius: 2px;
+  width: 90%;
+  margin-left: 5%;
+  padding-top: 2%;
+  padding-bottom: 10%;
+  margin-top: 1%;
+}
+
+/* line 398, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.line-break {
+  margin-top: 20%;
+}
+
+/* line 403, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.preference-form {
+  margin-bottom: 1%;
+  margin-left: 2.5%;
+  padding-bottom: 10%;
+}
+
+/* line 409, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.lang_pref_form {
+  margin-bottom: 3%;
+}
+
+/* line 413, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+input#search_city {
+  width: 50%;
+  display: inline;
+  margin-left: 10%;
+}
+
+/* line 418, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+select#search_province {
+  width: 50%;
+  display: inline;
+  margin-left: 1%;
+}
+
+/* line 424, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+input#submit {
+  float: right;
+  margin-top: -5%;
+  margin-right: 5%;
+}
+
+/* line 431, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+input#search_location {
+  width: 40%;
+  height: 2rem;
+  font-size: 1rem;
+  display: block;
+  margin-left: 5%;
+  border: solid;
+  border-color: #6a6a6a;
+  border-width: 0.5px;
+  border-radius: 5px;
+}
+
+/* line 443, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+input#search {
+  float: right;
+  margin-right: 7%;
+}
+
+/* line 448, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.button-label {
+  font-size: 1.2rem;
+  color: #3b3b3b;
+}
+
+/* line 454, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#search {
+  margin-left: 35%;
+}
+
+/* line 459, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.search-form {
+  background-color: #f5f7fa;
+  margin-top: 20%;
+  width: 90%;
+  margin-left: 5%;
+  padding-top: 1%;
+  margin-bottom: 2%;
+  border-radius: 2px;
+}
+/* line 467, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.search-form h2 {
+  background-color: #dce4ef;
+  font-size: 1.6rem;
+  color: #31343f;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 1%;
+  text-align: center;
+  border-radius: 2px;
+}
+
+/* line 479, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+label#first_option_label {
+  color: #6a6a6a;
+  font-size: 1.2rem;
+}
+
+/* line 484, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#first_option {
+  background-color: #f5f7fa;
+  margin-top: 20%;
+  width: 90%;
+  margin-left: 5%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  margin-bottom: 2%;
+  border-radius: 2px;
+}
+/* line 493, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#first_option h2 {
+  background-color: #dce4ef;
+  font-size: 1.6rem;
+  color: #31343f;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 1%;
+  text-align: center;
+  border-radius: 2px;
+}
+/* line 503, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#first_option label {
+  font-size: 1rem;
+  color: #3b3b3b;
+}
+
+/* line 510, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+input#search_min_age {
+  width: 20%;
+  height: 1.5rem;
+  font-size: 0.7rem;
+  border-width: 3px;
+  display: inline;
+  margin-left: 2.5%;
+  border: solid;
+  border-color: #6a6a6a;
+  border-width: 0.5px;
+  border-radius: 5px;
+}
+
+/* line 522, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+input#search_max_age {
+  width: 20%;
+  height: 1.5rem;
+  font-size: 0.7rem;
+  border-width: 3px;
+  display: inline;
+  margin-left: 2.5%;
+  margin-top: -2.5%;
+  border: solid;
+  border-color: #6a6a6a;
+  border-width: 0.5px;
+  border-radius: 5px;
+}
+
+/* line 536, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+select#profile_partner_attributes_province {
+  display: inline;
+  height: 2rem;
+  margin-left: 2%;
+}
+
+/* line 542, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+select#profile_pair_programmer_attributes_province {
+  display: inline;
+  height: 2rem;
+  margin-left: 2%;
+}
+
+/* line 549, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+select#profile_province {
+  display: inline;
+  height: 2rem;
+}
+
+/* line 559, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.profile-form {
+  margin-top: 20%;
+  background-color: #f5f7fa;
+  width: 95%;
+  margin-left: 2.5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  margin-bottom: 2%;
+  border-radius: 2px;
+}
+
+/* line 570, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.profile-name {
+  font-size: 1.5rem;
+  color: #262831;
+}
+
+/* line 575, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#profile-images {
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 20%;
+}
+/* line 580, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#profile-images img {
+  border-radius: 0px;
+  height: 225px;
+  width: 100%;
+}
+
+/* line 586, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+button.message-and-request-button {
+  background-color: #9FED9C;
+  color: #262831;
+  width: 35%;
+  margin-left: 10%;
+}
+
+/* line 594, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+input.block_button {
+  background-color: #e06c75;
+  color: white;
+  width: 35%;
+  margin-left: 55%;
+  margin-top: -18%;
+  height: 2.5rem;
+}
+
+/* line 603, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+button.message-to-button {
+  margin-left: 10%;
+  width: 35%;
+  background-color: #9fed9c;
+  color: #31343F;
+}
+
+/* line 610, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#profile-aboutme {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-right: 5%;
+  margin-left: 5%;
+  color: #262831;
+}
+/* line 618, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#profile-aboutme p {
+  color: #3B3B3B;
+}
+
+/* line 623, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#profile-details {
+  padding-bottom: 5%;
+  color: #262831;
+  text-align: center;
+}
+/* line 627, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#profile-details h2 {
+  font-size: 1.2rem;
+}
+
+/* line 632, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#profile-languages {
+  padding-bottom: 5%;
+  color: #262831;
+  text-align: center;
+}
+/* line 636, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#profile-languages h2 {
+  font-size: 1.2rem;
+}
+
+/* line 641, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.profile-tags {
+  text-align: center;
+  padding-bottom: 10%;
+}
+/* line 644, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.profile-tags a {
+  background-color: #31343f;
+  color: #9fed9c;
+  padding: 2%;
+  border-radius: 2px;
+}
+
+/* line 652, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.send-message-profile {
+  margin-left: 5%;
+  margin-bottom: 5%;
+}
+
+/* line 657, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.recos {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+/* line 661, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.recos img {
+  background-color: #AADBE8;
+  border-radius: 200px;
+  width: 13%;
+  display: inline;
+  float: left;
+  margin-right: 10px;
+}
+/* line 669, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.recos p {
+  color: #262831;
+  margin: -2px;
+}
+/* line 673, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.recos hr {
+  width: 100%;
+  height: 1px;
+}
+/* line 677, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.recos h2 {
+  font-family: "Inconsolata";
+  text-align: center;
+  color: #262831;
+  font-size: 1.2rem;
+  line-height: 1.2em;
+  margin-bottom: 2rem;
+}
+
+/* line 686, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.individual-reco {
+  margin-bottom: 28px;
+}
+
+/* line 690, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+li.message_error_messages {
+  color: #9FED9C;
+  padding-left: 6%;
+  margin-top: -2%;
+}
+
+/* line 697, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#nav-trigger {
+  display: none;
+}
+/* line 700, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#nav-triggerspan {
+  display: inline;
+}
+/* line 703, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#nav-triggerspan:after {
+  display: inline;
+  content: "";
+}
+
+/* line 709, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+nav#nav-mobile {
+  position: relative;
+  display: none;
+}
+
+/* line 714, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+nav#nav-mobile ul {
+  display: none;
+  position: absolute;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  background-color: #262831;
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+/* line 725, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+nav#nav-mobile li {
+  display: block;
+  border-bottom: solid 3px #61647d;
+  padding-bottom: 2%;
+  padding-top: 2%;
+}
+/* line 730, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+nav#nav-mobile li:last-child {
+  border-bottom: none;
+}
+
+/* line 736, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#show-inbox-button {
+  margin-left: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 40%;
+  background-color: #31343f;
+  border-radius: 2px;
+  color: #dee2f8;
+}
+
+/* line 746, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#show-inbox {
+  padding-top: 5%;
+}
+
+/* line 750, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#sent_message_show {
+  margin-left: 7%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 43%;
+  background-color: #31343f;
+  border-radius: 2px;
+  color: #dee2f8;
+}
+
+/* line 760, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.unread {
+  float: right;
+  margin-right: 5%;
+  margin-top: -1%;
+  font-size: 1.2rem;
+}
+
+/* line 767, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.unread-checkbox {
+  float: right;
+  margin-right: 5%;
+}
+
+/* line 772, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#message_message {
+  margin-top: 2.5%;
+}
+
+/* line 776, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.reply {
+  background-color: #9fed9c;
+  border: 0;
+  border-radius: 2px;
+  color: #31343f;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Inconsolata";
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.75em 1.5em;
+  -webkit-transition: background-color 150ms ease;
+  transition: background-color 150ms ease;
+  vertical-align: middle;
+  white-space: nowrap;
+  margin-left: 5%;
+}
+/* line 794, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.reply:hover, .reply:focus {
+  background-color: #878787;
+  color: #fff;
+}
+
+/* line 801, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#inbox_reply {
+  color: black;
+}
+
+/* line 805, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+textarea#message_message.reply_message_message {
+  height: 3rem;
+  color: #31343f;
+}
+
+/* line 810, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+textarea#message_message.new_message {
+  height: 3rem;
+  background-color: #31343f;
+  color: white;
+}
+
+/* line 816, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.recipient_id {
+  color: #3b3b3b;
+}
+
+/* line 820, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.subject_line {
+  color: #3b3b3b;
+}
+
+/* line 824, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.sent_by {
+  color: #3b3b3b;
+}
+
+/* line 828, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.reply_message {
+  margin-top: 2%;
+}
+/* line 830, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.reply_message input {
+  margin-left: 5%;
+}
+
+/* line 835, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.reply-name {
+  color: #3b3b3b;
+}
+
+/* line 839, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.reply {
+  margin-top: -2%;
+  margin-left: 5%;
+}
+
+/* line 843, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.message-text {
+  margin-left: 5%;
+  color: #31343f;
+}
+
+/* line 847, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.message-info {
+  margin-left: 5%;
+  color: #7f7f7f;
+}
+
+/* line 852, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#mailbox-title {
+  display: none;
+}
+
+/* line 856, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.new_message_pop_up_expanded {
+  bottom: 0;
+  z-index: 150;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 25%;
+  display: block;
+  background-color: #262831;
+}
+/* line 866, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.new_message_pop_up_expanded p {
+  color: #9fed9c;
+  padding-left: 6%;
+}
+
+/* line 874, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+input#commit {
+  border-radius: none;
+  padding-bottom: 5%;
+  font-size: 1.5rem;
+  background-color: #262831;
+  margin-left: -5%;
+  margin-top: -1%;
+  margin-bottom: 5%;
+}
+/* line 882, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+input#commit:hover {
+  color: white;
+}
+
+/* line 888, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#tag-name {
+  text-align: center;
+  font-size: 1.5rem;
+  width: 80%;
+  margin-left: 10%;
+  background-color: #31343f;
+  color: #9fed9c;
+  padding: 2%;
+  border-radius: 2px;
+  margin-top: 15%;
+}
+
+/* line 903, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.about-us {
+  background-color: #f5f7fa;
+  width: 95%;
+  margin-left: 2.5%;
+  margin-top: 25%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  margin-bottom: 2%;
+  border-radius: 2px;
+}
+/* line 912, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.about-us h2 {
+  background-color: #dce4ef;
+  font-size: 1.6rem;
+  color: #31343f;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 1%;
+  text-align: center;
+  border-radius: 2px;
+}
+
+/* line 923, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.contact-us {
+  background-color: #f5f7fa;
+  width: 95%;
+  margin-left: 2.5%;
+  margin-top: 15%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  margin-bottom: 2%;
+  border-radius: 2px;
+}
+/* line 932, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.contact-us h2 {
+  background-color: #dce4ef;
+  font-size: 1.6rem;
+  color: #31343f;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 1%;
+  text-align: center;
+  border-radius: 2px;
+}
+/* line 942, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.contact-us p {
+  text-align: center;
+  color: #333333;
+}
+
+/* line 947, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.about-image img {
+  width: 75%;
+  height: 250px;
+  border-radius: 2px;
+  margin-left: 12.5%;
+}
+
+/* line 954, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.index-about-name {
+  color: #31343f;
+  margin-left: 35%;
+  margin-top: 2%;
+  margin-bottom: 1%;
+  font-size: 1.5rem;
+}
+
+/* line 965, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.footer {
+  clear: both;
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  background-color: #9ea1b4;
+  margin-top: 110%;
+  padding-top: 1%;
+  padding-bottom: 0%;
+}
+/* line 975, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.footer a {
+  color: #eaeae8;
+  margin-left: 1%;
+  font-size: 1.1rem;
+  padding-bottom: 0.5%;
+  display: block;
+}
+/* line 983, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.footer p {
+  color: #d1d3d6;
+  float: right;
+  font-size: 0.9rem;
+  margin-right: 1%;
+}
+
+@media all and (max-width: 900px) {
+  /* line 993, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #nav-trigger {
+    display: block;
+  }
+
+  /* line 997, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  nav#nav-main {
+    display: none;
+  }
+
+  /* line 1001, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  nav#nav-mobile {
+    display: block;
+    margin-top: -5%;
+  }
+}
+/* line 1008, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#empty_mailbox {
+  height: 500px;
+}
+/* line 1011, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+#empty_mailbox p {
+  font-style: italic;
+}
+
+/* line 1015, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+.message-text {
+  padding-right: 2%;
+  word-wrap: break-word;
+}
+
+@media screen and (min-width: 900px) {
+  /* line 1028, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .spacing {
+    margin-left: 37%;
+    height: 55px;
+    width: 100%;
+  }
+
+  /* line 1034, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  body {
+    background-color: #D7DAE0;
+    min-height: 100%;
+  }
+
+  /* line 1038, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .message {
+    display: none;
+  }
+
+  /* line 1042, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .logo h1 {
+    font-family: "VT323";
+    color: #9FED9C;
+    font-size: 1.6rem;
+    text-align: left;
+    margin-top: 0.5%;
+    margin-left: 2%;
+  }
+
+  /* line 1052, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .menu-bar {
+    background-color: #31343f;
+    height: 3.5rem;
+  }
+
+  /* line 1056, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .logout-icon {
+    display: block;
+    float: right;
+    margin-right: -28%;
+    margin-top: -4.25%;
+  }
+  /* line 1061, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .logout-icon img {
+    width: 40%;
+    padding-top: 2.5%;
+  }
+
+  /* line 1066, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #nav-main {
+    display: none;
+  }
+
+  /* line 1070, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #main-menu {
+    display: block;
+    background-color: #31343f;
+    width: 15%;
+    position: fixed;
+  }
+  /* line 1076, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #main-menu li {
+    padding-left: 7.5%;
+    border-bottom: 5px solid #D7DAE0;
+    padding-bottom: 5%;
+    padding-top: 5%;
+  }
+  /* line 1081, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #main-menu li :hover {
+    color: #61AFEF;
+  }
+
+  /* line 1087, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #login-notice {
+    margin-left: 1%;
+    display: inline;
+    color: #5378BC;
+  }
+
+  /* line 1093, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #unread-messages-notice {
+    float: right;
+    background-color: #9fed9c;
+    color: #31343f;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 3%;
+    width: 15%;
+    border-radius: 2px;
+    font-style: none;
+  }
+  /* line 1104, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #unread-messages-notice p {
+    color: #31343f;
+    font-style: none;
+  }
+  /* line 1109, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #unread-messages-notice a {
+    color: #31343f;
+  }
+  /* line 1113, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #unread-messages-notice :active {
+    background-color: #31343f;
+    font-style: none;
+  }
+
+  /* line 1121, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .content {
+    width: 65%;
+    margin-left: 20%;
+    margin-top: 7%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-bottom: 2%;
+  }
+
+  /* line 1129, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-info-container {
+    background-color: #f5f7fa;
+    border-radius: 2px;
+    width: 90%;
+    margin-left: 2.5%;
+    padding-top: 2%;
+    padding-bottom: 3%;
+    margin-top: -3%;
+  }
+
+  /* line 1138, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-name {
+    width: 60%;
+    margin-top: -22%;
+    margin-left: 37%;
+  }
+  /* line 1142, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-name h1 {
+    text-align: left;
+    font-size: 2rem;
+    color: #31343f;
+  }
+
+  /* line 1149, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .bx-wrapper {
+    width: 45%;
+    border: none;
+    margin-left: -25%;
+    height: 200px;
+  }
+
+  /* line 1158, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-images {
+    margin-top: 0%;
+  }
+  /* line 1160, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-images img {
+    border-radius: 0;
+    height: 200px;
+    width: 100%;
+  }
+
+  /* line 1169, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-details {
+    background-color: #f5f7fa;
+    width: 44%;
+    margin-left: 2.5%;
+    margin-top: -3%;
+    border-radius: 2px;
+    padding-top: 1%;
+    text-align: left;
+  }
+  /* line 1177, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-details h2 {
+    background-color: #dce4ef;
+    font-size: 1.5rem;
+    color: #31343f;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    text-align: center;
+    border-radius: 2px;
+  }
+  /* line 1187, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-details li {
+    color: #3b3b3b;
+    margin-left: 6%;
+    margin-right: 6%;
+  }
+
+  /* line 1194, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-aboutme {
+    text-align: left;
+    margin-top: 2%;
+    background-color: #f5f7fa;
+    border-radius: 2px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-left: 2.5%;
+    width: 90%;
+  }
+  /* line 1203, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-aboutme h2 {
+    background-color: #dce4ef;
+    font-size: 1.6rem;
+    color: #31343f;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    text-align: center;
+    border-radius: 2px;
+  }
+  /* line 1213, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-aboutme p {
+    color: #3b3b3b;
+    margin-left: 6%;
+    margin-right: 6%;
+  }
+
+  /* line 1220, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .reco_matches {
+    text-align: left;
+    margin-top: 2%;
+    background-color: #f5f7fa;
+    border-radius: 2px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-left: 2.5%;
+    width: 90%;
+  }
+  /* line 1229, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .reco_matches h2 {
+    background-color: #dce4ef;
+    font-size: 1.6rem;
+    color: #31343f;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    text-align: center;
+    border-radius: 2px;
+  }
+
+  /* line 1242, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-languages {
+    float: right;
+    background-color: #f5f7fa;
+    width: 44%;
+    margin-top: -26.5%;
+    margin-right: 7.5%;
+    border-radius: 2px;
+    padding-top: 1%;
+    height: 220px;
+    text-align: left;
+  }
+  /* line 1252, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-languages h2 {
+    background-color: #dce4ef;
+    font-size: 1.5rem;
+    color: #31343f;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    text-align: center;
+    border-radius: 2px;
+  }
+  /* line 1262, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-languages li {
+    color: #3b3b3b;
+    margin-left: 6%;
+    margin-right: 6%;
+  }
+
+  /* line 1269, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .send-message-profile {
+    margin-left: 10%;
+  }
+  /* line 1271, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .send-message-profile p {
+    font-size: 1.2rem;
+    color: #00fe06;
+    margin-top: -2%;
+  }
+
+  /* line 1277, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .new_message p {
+    color: #9fed9c;
+    padding-left: 6%;
+  }
+
+  /* line 1283, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .new_message_pop_up_expanded {
+    width: 40%;
+    height: 23%;
+    float: right;
+    right: 0;
+  }
+  /* line 1288, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .new_message_pop_up_expanded textarea#message_message {
+    width: 75%;
+    height: 50%;
+  }
+
+  /* line 1294, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  input#commit {
+    background-color: #262831;
+    color: #9fed9c;
+    font-size: 1.5rem;
+    margin-left: -1%;
+    margin-top: -2%;
+    padding-bottom: 0;
+  }
+  /* line 1302, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  input#commit:hover {
+    color: white;
+  }
+
+  /* line 1306, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  button.message-and-request-button {
+    margin-left: 37%;
+    background-color: #9FED9C;
+    color: #262831;
+    width: 15%;
+  }
+
+  /* line 1313, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  input.block_button {
+    margin-left: 55%;
+    margin-top: -9%;
+    height: 2.5rem;
+    background-color: #e06c75;
+    color: white;
+    width: 16%;
+  }
+
+  /* line 1322, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .recos {
+    margin-top: 2%;
+    background-color: #f5f7fa;
+    border-radius: 2px;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    margin-left: 2.5%;
+    width: 90%;
+  }
+  /* line 1331, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .recos img {
+    width: 10%;
+    margin-right: 40px;
+    margin-left: 40px;
+  }
+  /* line 1336, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .recos p {
+    margin-left: 6%;
+    margin-right: 6%;
+    list-style: 1.2rem;
+  }
+  /* line 1341, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .recos hr {
+    border-bottom: 5px solid #dce4ef;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  /* line 1347, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .recos h2 {
+    background-color: #dce4ef;
+    font-size: 1.5rem;
+    color: #31343f;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    text-align: center;
+    border-radius: 2px;
+  }
+
+  /* line 1358, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .reco-info {
+    padding-top: 18px;
+  }
+
+  /* line 1366, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .profile-form {
+    background-color: #f5f7fa;
+    width: 65%;
+    margin-left: 17.5%;
+    margin-top: 7%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-bottom: 2%;
+    border-radius: 2px;
+  }
+
+  /* line 1376, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  input#profile_birthday {
+    margin-left: -1%;
+  }
+
+  /* line 1379, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .form_input input {
+    width: 40%;
+    height: 2rem;
+    border-color: #6a6a6a;
+    border-width: 0.5px;
+    border-radius: 5px;
+    font-size: 1rem;
+    display: inline;
+    margin-left: 2%;
+  }
+
+  /* line 1391, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .form_input label {
+    display: inline-block;
+    width: 20%;
+    font-size: 1rem;
+  }
+
+  /* line 1399, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  textarea#profile_about_me {
+    width: 40%;
+    border-color: #6a6a6a;
+    border-width: 0.5px;
+    border-radius: 5px;
+    font-size: 1rem;
+    display: inline;
+    margin-left: -5%;
+    margin-bottom: -3%;
+    height: 4rem;
+  }
+
+  /* line 1410, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .form_checkbox_input label {
+    display: inline-block;
+    width: 12%;
+    font-size: 1rem;
+  }
+
+  /* line 1415, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .form_radio_button label {
+    font-size: 1rem;
+  }
+
+  /* line 1418, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  label.select_label {
+    font-size: 1rem;
+    width: 17%;
+  }
+
+  /* line 1424, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .language-fields label {
+    font-size: 1rem;
+    display: inline-block;
+    width: 20%;
+  }
+
+  /* line 1431, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .language-fields input {
+    width: 40%;
+    height: 1.7rem;
+    border-color: #6a6a6a;
+    border-width: 0.5px;
+    border-radius: 5px;
+    font-size: 1rem;
+    display: inline;
+    margin-left: 2%;
+  }
+
+  /* line 1443, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .language-fields-radio input {
+    font-size: 0.7rem;
+    display: inline;
+  }
+
+  /* line 1448, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .language-fields-radio label {
+    display: inline;
+    width: 20%;
+    font-size: 1rem;
+  }
+
+  /* line 1455, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .skill-level {
+    font-size: 1rem;
+  }
+
+  /* line 1459, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #tag {
+    text-align: center;
+    padding-top: 0%;
+    padding-left: 0%;
+  }
+
+  /* line 1464, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #tag-explained {
+    text-align: center;
+    color: #919293;
+    margin-top: -1%;
+  }
+
+  /* line 1470, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  select#profile_partner_attributes_province {
+    display: inline;
+    margin-left: 2%;
+  }
+
+  /* line 1475, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  select#profile_pair_programmer_attributes_province {
+    display: inline;
+    margin-left: 2%;
+  }
+
+  /* line 1480, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #remove_language {
+    color: #e06c75;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 5%;
+  }
+  /* line 1487, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #remove_language:hover, #remove_language:focus {
+    color: #3b3b3b;
+  }
+
+  /* line 1494, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #add_language {
+    color: #52ce4c;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 5%;
+  }
+  /* line 1501, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #add_language:hover, #add_language:focus {
+    color: #3b3b3b;
+  }
+
+  /* line 1509, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #add_photo {
+    color: #52ce4c;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 5%;
+    margin-top: -15%;
+    font-size: 1.2rem;
+  }
+  /* line 1517, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #add_photo:hover, #add_photo:focus {
+    color: #3b3b3b;
+  }
+
+  /* line 1523, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #remove_photo {
+    margin-top: -15%;
+    color: #e06c75;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 5%;
+    font-size: 1.2rem;
+  }
+  /* line 1531, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #remove_photo:hover, #remove_photo:focus {
+    color: #3b3b3b;
+  }
+
+  /* line 1537, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #add_pref_language {
+    color: #52ce4c;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 5%;
+    margin-top: -15%;
+    font-size: 1.2rem;
+  }
+  /* line 1545, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #add_pref_language:hover, #add_pref_language:focus {
+    color: #3b3b3b;
+  }
+
+  /* line 1551, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #add_pref {
+    color: #52ce4c;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 5%;
+    margin-top: -15%;
+    font-size: 1.2rem;
+  }
+  /* line 1559, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #add_pref:hover, #add_pref:focus {
+    color: #3b3b3b;
+  }
+
+  /* line 1565, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .image-fields img {
+    margin-left: 5%;
+  }
+
+  /* line 1570, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .actions input {
+    width: 30%;
+    margin-left: 37%;
+    margin-bottom: 5%;
+    font-size: 1.2rem;
+    border: none;
+    background-color: #31343f;
+  }
+
+  /* line 1579, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .actions {
+    margin-top: 0%;
+  }
+
+  /* line 1583, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  label#looking_for {
+    width: 40%;
+  }
+
+  /* line 1588, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  select#profile_province {
+    display: inline;
+    margin-left: 2%;
+  }
+
+  /* line 1592, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .button-label {
+    font-size: 1rem;
+  }
+
+  /* line 1596, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  input#profile_tag_list {
+    margin-left: -5%;
+  }
+
+  /* line 1600, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  button#nameNext {
+    float: right;
+    margin-top: -3%;
+    margin-right: 2%;
+  }
+
+  /* line 1605, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  button#birthdayNext {
+    float: right;
+    margin-right: 5%;
+    margin-top: 2%;
+  }
+
+  /* line 1610, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  button#birthdayPrevious {
+    margin-left: 5%;
+    margin-top: 2%;
+  }
+
+  /* line 1614, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  button#aboutMePrevious {
+    margin-left: 5%;
+    margin-top: 2%;
+  }
+
+  /* line 1618, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  button#aboutMeNext {
+    float: right;
+    margin-right: 5%;
+    margin-top: 2%;
+  }
+
+  /* line 1624, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  button#languagePrevious {
+    margin-left: 5%;
+    margin-top: 2%;
+  }
+
+  /* line 1629, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  button#languageNext {
+    float: right;
+    margin-right: 5%;
+    margin-top: 2%;
+  }
+
+  /* line 1639, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #first_option {
+    background-color: #f5f7fa;
+    border-radius: 2px;
+    width: 90%;
+    margin-left: 2.5%;
+    padding-top: 1%;
+    margin-top: -3%;
+  }
+  /* line 1646, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #first_option h2 {
+    background-color: #dce4ef;
+    font-size: 1.6rem;
+    color: #31343f;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+    border-radius: 2px;
+  }
+
+  /* line 1658, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #search-choice {
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+  }
+
+  /* line 1663, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #pairchoice {
+    margin-left: 10%;
+  }
+
+  /* line 1667, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .preference-form {
+    margin-bottom: 1%;
+    margin-left: 2.5%;
+    padding-bottom: 2.5%;
+  }
+
+  /* line 1673, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .lang_pref_form {
+    margin-bottom: 3%;
+  }
+
+  /* line 1677, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  input#search_city {
+    width: 25%;
+    display: inline;
+    margin-left: 5%;
+    height: 2rem;
+  }
+
+  /* line 1683, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  select#search_province {
+    width: 25%;
+    display: inline;
+    margin-left: 1%;
+    height: 2rem;
+  }
+
+  /* line 1690, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  input#submit {
+    float: right;
+    margin-top: -5%;
+    margin-right: 5%;
+  }
+
+  /* line 1696, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .search-form {
+    background-color: #f5f7fa;
+    border-radius: 2px;
+    width: 90%;
+    margin-left: 2.5%;
+    padding-top: 2%;
+    margin-top: -2.5%;
+  }
+  /* line 1703, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .search-form h2 {
+    background-color: #dce4ef;
+    font-size: 1.6rem;
+    color: #31343f;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    text-align: center;
+    border-radius: 2px;
+  }
+
+  /* line 1716, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .looking-form {
+    margin-left: 2.5%;
+  }
+
+  /* line 1721, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  input#search_location {
+    width: 30%;
+    height: 1.5rem;
+    font-size: 1rem;
+    border-width: 3px;
+    display: inline;
+    margin-left: 1%;
+    border: solid;
+    border-color: #6a6a6a;
+    border-width: 0.5px;
+    border-radius: 5px;
+  }
+
+  /* line 1734, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  input#search {
+    float: right;
+    margin-right: 7%;
+    margin-top: 3%;
+  }
+
+  /* line 1740, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  input#search_min_age {
+    width: 20%;
+    height: 2.0rem;
+    font-size: 1rem;
+    border-width: 3px;
+    display: inline;
+    margin-left: 2.5%;
+    border: solid;
+    border-color: #6a6a6a;
+    border-width: 0.5px;
+    border-radius: 5px;
+  }
+
+  /* line 1752, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  input#search_max_age {
+    width: 20%;
+    height: 2.0rem;
+    font-size: 1rem;
+    border-width: 3px;
+    display: inline;
+    margin-left: 2.5%;
+    border: solid;
+    border-color: #6a6a6a;
+    border-width: 0.5px;
+    border-radius: 5px;
+  }
+
+  /* line 1768, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  img.profile-image {
+    width: 15%;
+  }
+
+  /* line 1772, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .index-users {
+    border-radius: 2px;
+    width: 90%;
+    margin-left: 2.5%;
+    padding-top: 2%;
+    padding-bottom: 10%;
+    margin-top: 1%;
+  }
+
+  /* line 1781, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #link-to-profile img {
+    width: 5%;
+    float: right;
+    margin-top: -8%;
+    margin-right: 6%;
+  }
+
+  /* line 1788, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #index-profile-name {
+    color: #3b3b3b;
+  }
+
+  /* line 1792, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #index-profile-location {
+    font-size: 1rem;
+    margin-top: -2%;
+  }
+
+  /* line 1797, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .line-break {
+    margin-top: 10%;
+  }
+
+  /* line 1802, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .profile-details-title {
+    font-size: 1.2rem;
+    color: #00aca1;
+  }
+
+  /* line 1807, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .profile-tags {
+    text-align: left;
+    margin-top: 2%;
+    background-color: #f5f7fa;
+    border-radius: 2px;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    margin-left: 2.5%;
+    width: 90%;
+  }
+  /* line 1816, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .profile-tags h2 {
+    background-color: #dce4ef;
+    font-size: 1.5rem;
+    color: #31343f;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    text-align: center;
+    border-radius: 2px;
+  }
+  /* line 1826, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .profile-tags a {
+    background-color: #31343f;
+    color: #9fed9c;
+    padding: 1%;
+  }
+
+  /* line 1833, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #tag-spacing {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  /* line 1839, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  button.message-to-button {
+    margin-left: 37%;
+    width: 16%;
+    background-color: #9fed9c;
+    color: #31343F;
+  }
+
+  /* line 1847, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .reply {
+    background-color: #9fed9c;
+    border: 0;
+    border-radius: 2px;
+    color: #31343f;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Inconsolata";
+    font-size: 1em;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 600;
+    line-height: 1;
+    padding: 0.75em 1.5em;
+    -webkit-transition: background-color 150ms ease;
+    transition: background-color 150ms ease;
+    vertical-align: middle;
+    white-space: nowrap;
+    margin-left: 5%;
+  }
+  /* line 1865, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .reply:hover, .reply:focus {
+    background-color: #878787;
+    color: #fff;
+  }
+
+  /* line 1872, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #mailbox {
+    background-color: #f5f7fa;
+    border-radius: 2px;
+    padding-top: 2%;
+    padding-bottom: 3%;
+    width: 95%;
+    margin-left: -2.5%;
+    margin-top: 2%;
+  }
+
+  /* line 1882, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #mailbox-title {
+    display: block;
+    background-color: #f5f7fa;
+    border-radius: 2px;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    width: 95%;
+    margin-left: -2.5%;
+    margin-top: -3%;
+  }
+  /* line 1891, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #mailbox-title h1 {
+    background-color: #dce4ef;
+    font-size: 1.5rem;
+    color: #31343f;
+    width: 90%;
+    border-radius: 2px;
+    margin-left: 5%;
+    margin-top: 1%;
+  }
+
+  /* line 1903, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #show-inbox-button {
+    float: left;
+    margin-left: 2%;
+    margin-top: 6%;
+    width: 20%;
+    background-color: #31343f;
+    border-radius: 2px;
+    color: #dee2f8;
+  }
+
+  /* line 1913, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #show-inbox {
+    margin-left: 30%;
+    margin-top: 2%;
+    background-color: white;
+    margin-right: 5%;
+    padding-top: 2%;
+    padding-left: 2%;
+    border-radius: 2px;
+  }
+
+  /* line 1922, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .sent_message {
+    margin-left: 30%;
+    margin-top: 2%;
+    background-color: white;
+    margin-right: 5%;
+    padding-top: 2%;
+    padding-left: 2%;
+    border-radius: 2px;
+  }
+
+  /* line 1931, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .unread {
+    float: right;
+    margin-right: 5%;
+    margin-top: -1%;
+    font-size: 1.2rem;
+  }
+
+  /* line 1938, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .unread-checkbox {
+    float: right;
+    margin-right: 2%;
+  }
+
+  /* line 1943, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .reply {
+    float: right;
+    margin-top: -8%;
+    margin-right: 2%;
+  }
+
+  /* line 1949, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .line-break-inbox {
+    width: 103.5%;
+    margin-left: -3.5%;
+  }
+
+  /* line 1955, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .message-info {
+    font-size: 1rem;
+  }
+
+  /* line 1959, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .recipient_id {
+    color: #3b3b3b;
+  }
+
+  /* line 1963, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .subject_line {
+    color: #3b3b3b;
+  }
+
+  /* line 1967, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .sent_by {
+    color: #3b3b3b;
+  }
+
+  /* line 1971, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .reply_message {
+    margin-top: 2%;
+  }
+
+  /* line 1976, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .reply-name {
+    color: #7f7f7f;
+    font-size: 1.3rem;
+  }
+
+  /* line 1981, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #sent_message_show {
+    float: left;
+    margin-left: -20%;
+    margin-top: 12%;
+    width: 20%;
+    background-color: #31343f;
+    border-radius: 2px;
+    color: #dee2f8;
+  }
+
+  /* line 1991, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #message_message {
+    margin-top: 2.5%;
+  }
+
+  /* line 1995, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  label.error {
+    display: block;
+    color: #e06c75;
+    width: 60%;
+  }
+
+  /* line 2000, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  li.error {
+    display: block;
+    color: #e06c75;
+    width: 100%;
+  }
+
+  /* line 2007, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #tag-name {
+    text-align: center;
+    font-size: 1.5rem;
+    width: 40%;
+    margin-left: 25%;
+    background-color: #31343f;
+    color: #9fed9c;
+    padding: 2%;
+    border-radius: 2px;
+    margin-top: -3%;
+  }
+
+  /* line 2021, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #tags-content {
+    border-radius: 2px;
+    width: 90%;
+    margin-left: 2.5%;
+    padding-top: 2%;
+    padding-bottom: 10%;
+    margin-top: 1%;
+  }
+
+  /* line 2031, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .about-us {
+    background-color: #f5f7fa;
+    width: 95%;
+    margin-left: -1%;
+    margin-top: -3%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-bottom: 2%;
+    border-radius: 2px;
+  }
+  /* line 2040, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .about-us h2 {
+    background-color: #dce4ef;
+    font-size: 1.6rem;
+    color: #31343f;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    text-align: center;
+    border-radius: 2px;
+  }
+
+  /* line 2051, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .contact-us {
+    background-color: #f5f7fa;
+    width: 95%;
+    margin-left: -1%;
+    margin-top: -3%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-bottom: 2%;
+    border-radius: 2px;
+  }
+  /* line 2060, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .contact-us h2 {
+    background-color: #dce4ef;
+    font-size: 1.6rem;
+    color: #31343f;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    text-align: center;
+    border-radius: 2px;
+  }
+  /* line 2070, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .contact-us p {
+    text-align: center;
+    color: #333333;
+    margin-top: 5%;
+    padding-bottom: 3%;
+    font-size: 1.3rem;
+  }
+
+  /* line 2079, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .about-image img {
+    width: 20%;
+    height: 150px;
+    border-radius: 2px;
+    margin-left: 5%;
+  }
+
+  /* line 2086, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .index-about-name {
+    color: #31343f;
+    margin-left: 35%;
+    margin-top: -15%;
+    margin-bottom: 15%;
+    font-size: 1.5rem;
+  }
+
+  /* line 2095, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .footer {
+    clear: both;
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    background-color: #dce4ef;
+    margin-top: 27%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+  /* line 2105, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .footer a {
+    color: #31343f;
+    margin-left: 1%;
+    font-size: 1.1rem;
+    padding-bottom: 0.5%;
+    display: block;
+  }
+  /* line 2113, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .footer a:hover {
+    color: white;
+  }
+  /* line 2117, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .footer p {
+    color: #31343f;
+    float: right;
+    font-size: 0.9rem;
+    margin-right: 1%;
+  }
+}
+@media screen and (min-width: 2500px) {
+  /* line 2129, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .logout-icon {
+    display: block;
+    position: absolute;
+    margin-left: 91%;
+    margin-top: -2.25%;
+  }
+  /* line 2134, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .logout-icon img {
+    width: 45%;
+    padding-top: 2.5%;
+    z-index: 5;
+  }
+
+  /* line 2140, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-info-container {
+    padding-bottom: 6%;
+    margin-top: -3%;
+  }
+
+  /* line 2144, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  button.message-and-request-button {
+    margin-top: 0%;
+  }
+
+  /* line 2147, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-images {
+    margin-top: 0%;
+  }
+  /* line 2149, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-images img {
+    border-radius: 0;
+    height: 250px;
+    width: 100%;
+  }
+
+  /* line 2157, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #login-notice {
+    margin-left: 1%;
+    margin-top: 5%;
+  }
+
+  /* line 2161, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .bx-wrapper {
+    height: 250px;
+  }
+
+  /* line 2165, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  input.block_button {
+    margin-top: -4.5%;
+    height: 2.5rem;
+  }
+
+  /* line 2169, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-name {
+    margin-top: -15%;
+  }
+
+  /* line 2172, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #profile-languages {
+    margin-top: -16.5%;
+    height: 275px;
+  }
+
+  /* line 2177, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .line-break {
+    margin-top: 12.5%;
+  }
+
+  /* line 2181, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .new_message_pop_up_expanded {
+    height: 15%;
+    padding-left: 0px;
+  }
+  /* line 2184, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .new_message_pop_up_expanded textarea#message_message {
+    width: 75%;
+    height: 50%;
+    margin-left: 5%;
+  }
+  /* line 2189, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .new_message_pop_up_expanded p {
+    padding-top: 2%;
+  }
+
+  /* line 2194, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  input#commit {
+    display: inline-block;
+    padding-left: 6%;
+  }
+
+  /* line 2198, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  #sent_message_show {
+    margin-top: 10%;
+  }
+
+  /* line 2202, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .spacing {
+    margin-left: 37%;
+    height: 50px;
+    width: 100%;
+  }
+
+  /* line 2208, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .search-form {
+    margin-top: -3.5%;
+  }
+
+  /* line 2212, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .recos img {
+    margin-bottom: 2%;
+    margin-left: 5%;
+  }
+
+  /* line 2217, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .reco-info {
+    padding-top: 3%;
+  }
+
+  /* line 2221, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .footer {
+    margin-top: 27%;
+  }
+
+  /* line 2225, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  input#search_city {
+    margin-left: 3%;
+  }
+
+  /* line 2228, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .about-image img {
+    width: 20%;
+    height: 250px;
+    border-radius: 2px;
+    margin-left: 5%;
+  }
+
+  /* line 2235, /Users/annmariedoyle/Documents/bitmaker/inClass/finalProject/GitHug/app/assets/stylesheets/profiles.scss */
+  .index-about-name {
+    color: #31343f;
+    margin-left: 35%;
+    margin-top: -10%;
+    margin-bottom: 10%;
+    font-size: 1.5rem;
+  }
+}

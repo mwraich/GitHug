@@ -1,13 +1,16 @@
 <%= form_for @profile do |f| %>
-    <% if @profile.errors.any? %>git 
+    <% if @profile.errors.any? %>
+
+
       <div class="error_messages">
+        <label class="error">
         <ul>
           <% @profile.errors.full_messages.each do |message| %>
             <li class="error"><%= message %></li>
           <% end %>
         </ul>
+        </label>
       </div>
-    </label>
     <% end %>
 
 <div id = 'showFirstName'>
