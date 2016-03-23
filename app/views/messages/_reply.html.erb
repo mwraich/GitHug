@@ -1,19 +1,13 @@
 <%= form_for @reply, remote:true do |f| %>
 
-<div class="message_error_messages" >
-<% if @reply.errors.any? %>
-    <ul>
-      <% @reply.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-<% end %>
-
+<div class="message_error_reply">
 </div>
-  <div class="reply_message">
-    <%= f.label :recipient_id, "#{@reply.recipient.first_name}$", class: "reply-name" %>
-    <%= f.hidden_field :recipient_id, class: "reply_to" %><br>
-    <%= f.text_area :message, class: "reply_message_message", id: "inbox_reply" %>
-    <%= f.submit "SEND", class:"reply-send" %>
-  </div>
+
+<div class="reply_message">
+  <%= f.label :recipient_id, "#{@reply.recipient.first_name}$", class: "reply-name" %>
+  <%= f.hidden_field :recipient_id, class: "reply_to" %><br>
+  <%= f.text_area :message, class: "reply_message_message", id: "inbox_reply" %>
+  <%= f.submit "SEND", class:"reply-send" %>
+</div>
+
 <% end %>

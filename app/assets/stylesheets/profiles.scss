@@ -687,10 +687,14 @@ button.message-to-button{
   margin-bottom: 28px;
 }
 
-li.message_error_messages{
-  color:#9FED9C;
-  padding-left: 6%;
+.message_error_messages{
+  color:#ff0000;
+  padding-left: 3%;
   margin-top: -2%;
+}
+.message_error_reply{
+  padding-left: 3%;
+  margin-top: 7%;
 }
 //--------------Responsive Nav Bar---------------//
 
@@ -2238,6 +2242,16 @@ textarea#message_message.new_message{
     margin-top: -10%;
     margin-bottom: 10%;
     font-size: 1.5rem;
+  }
+
+  .message_error_messages{
+    padding-left: 3%;
+    margin-top: 1%;
+  }
+
+  .message_error_reply{
+    padding-left: 3%;
+    margin-top: 0%;
   }
 
 }
