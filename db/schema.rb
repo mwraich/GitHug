@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160316230009) do
+ActiveRecord::Schema.define(version: 20160407184401) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,11 @@ ActiveRecord::Schema.define(version: 20160316230009) do
 
   add_index "blocked_users", ["blocked_id"], name: "index_blocked_users_on_blocked_id", using: :btree
   add_index "blocked_users", ["blocker_id"], name: "index_blocked_users_on_blocker_id", using: :btree
+
+  create_table "conversations", force: :cascade do |t|
+    t.integer "sender_id"
+    t.integer "recipient_id"
+  end
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
@@ -79,6 +84,7 @@ ActiveRecord::Schema.define(version: 20160316230009) do
     t.boolean  "read_status",     default: false
     t.boolean  "permission",      default: false
     t.integer  "pull_request_id"
+    t.integer  "conversation_id"
   end
 
   create_table "pair_programmers", force: :cascade do |t|
