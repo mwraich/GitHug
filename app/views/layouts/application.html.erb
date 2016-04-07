@@ -18,7 +18,7 @@
 
   <div class="menu-bar">
     <div class="message">
-      <%= link_to image_tag("message.svg"), messages_path, class: "message-icon"%>
+      <%= link_to image_tag("message.svg"), conversations_path, class: "message-icon"%>
     </div>
 
     <div class="logo" >
@@ -31,7 +31,7 @@
         <li><%= link_to 'Logout', session_path(current_user), method: 'delete' %></li>
         <% else %>
         <li><%= link_to 'Find A Match', profiles_path %></li>
-        <li><%= link_to 'Mailbox', messages_path %></li>
+        <li><%= link_to 'Mailbox', conversations_path %></li>
         <li><%= link_to 'Profile', profile_path(current_user.profile) %></li>
         <li><%= link_to 'Update Profile', edit_profile_path(current_user.profile) %></li>
         <li><%= link_to 'Logout', session_path(current_user), method: 'delete' %></li>
@@ -65,7 +65,7 @@
         <li><%= link_to 'Logout', session_path(current_user), method: 'delete' %></li>
         <% else %>
         <li><%= link_to 'Find A Match', profiles_path %></li>
-        <li><%= link_to 'Mailbox', messages_path %></li>
+        <li><%= link_to 'Mailbox', conversations_path %></li>
         <li><%= link_to 'Profile', profile_path(current_user.profile) %></li>
         <li><%= link_to 'Update Profile', edit_profile_path(current_user.profile) %></li>
         <% end %>
@@ -74,9 +74,9 @@
 
   <div class="yield">
 
-    <% if current_user.notice > 0 %>
+    <!-- <% if current_user.notice > 0 %>
       <p id="unread-messages-notice"><%= link_to "#{current_user.notice} New Messages", messages_path %></p>
-    <%end%>
+    <%end%> -->
   <% end %>
 
 

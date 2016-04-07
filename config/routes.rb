@@ -12,13 +12,14 @@ Rails.application.routes.draw do
   # get 'reply' => 'pull_requests#reply'
   # get 'reply' => 'pull_requests#reply'
 
-  resources :messages do
-    get 'reply' => 'messages#reply'
+  resources :conversations do
+    resources :messages do
+      get 'reply' => 'messages#reply'
 
 
-    # get 'pull_request_reply' => 'messages#pull_request_reply'
+      # get 'pull_request_reply' => 'messages#pull_request_reply'
+    end
   end
-
 
   resources :sessions, only: [:new, :create, :destroy]
   resources :blocked_users, only: [:create, :destroy]

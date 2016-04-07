@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+before_action :check_conversation, only: [:new, :create]
 
   def index
     @profile = current_user.profile
@@ -16,16 +17,24 @@ class MessagesController < ApplicationController
 
 
   def new
-    @message = Message.new
+
+    @conversation = Conversation.where(params[:sender_id], params[:recipient_id])
+
+
+    @message = @conversation.messages.build(message_params)
   end
 
   def create
 
-    @message = Message.new(message_params)
+
+      @conversation = Conversation.where(params[:sender_id], params[:recipient_id])
+
+    @message = @conversation.messages.build(message_params)
     @message.sender = current_user.profile
     @profile = current_user.profile
+    @conversation = Conversation.where(params[:sender_id], params[:recipient_id])
 
-    if @message.save 
+    if @message.save
       # && @profile.notification_email?
       # UserMailer.delay.user_message_notification(Profile.find(@message.recipient), Profile.find(@message.sender))
       respond_to do |format|
@@ -80,7 +89,16 @@ class MessagesController < ApplicationController
 
   private
 
+  def check_conversation
+    if Conversation.where(params[:sender_id], params[:recipient_id]).present?
+      @conversation = Conversation.where(params[:sender_id], params[:recipient_id]).first
+    else
+      @conversation = Conversation.create!
+    end
+
+  end
+
   def message_params
-    params.require(:message).permit(:recipient_id, :message, :read_status)
+    params.require(:message).permit(:recipient_id, :message, :read_status, :conversation_id)
   end
 end
