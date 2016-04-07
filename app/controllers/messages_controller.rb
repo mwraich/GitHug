@@ -16,18 +16,14 @@ class MessagesController < ApplicationController
 
 
   def new
-    @conversation = check_conversation
-    @message = @conversation.messages.build(message_params)
+    @message = Message.new
   end
 
   def create
 
-    @conversation = check_conversation
-
-    @message = @conversation.messages.build(message_params)
+    @message = Message.new(message_params)
     @message.sender = current_user.profile
     @profile = current_user.profile
-    @conversation = Conversation.where(params[:sender_id], params[:recipient_id])
 
     if @message.save
       # && @profile.notification_email?
@@ -84,16 +80,7 @@ class MessagesController < ApplicationController
 
   private
 
-  def check_conversation
-    if Conversation.where(params[:sender_id], params[:recipient_id]).present?
-      @conversation = Conversation.where(params[:sender_id], params[:recipient_id]).first
-    else
-      @conversation = Conversation.create!
-    end
-
-  end
-
   def message_params
-    params.require(:message).permit(:recipient_id, :message, :read_status, :conversation_id)
+    params.require(:message).permit(:recipient_id, :message, :read_status)
   end
 end

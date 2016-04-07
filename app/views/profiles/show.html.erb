@@ -96,9 +96,8 @@
   </div>
 </div>
 
-  <%= render "messages/new_message" %>
 
-
+<%= render "conversations/new_message" %>
 
 <% if check_current_user %>
     <% if @profile.partnerReco.present?  %>
@@ -110,5 +109,5 @@
 <% end %>
 
 <div class="new_message">
-  <%= render "messages/new_message" %>
+<%= render "conversations/new_message" %>
 </div>
