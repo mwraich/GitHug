@@ -10,7 +10,7 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-
+  
 
 ActiveRecord::Schema.define(version: 20160405193649) do
 
@@ -38,6 +38,13 @@ ActiveRecord::Schema.define(version: 20160405193649) do
   create_table "conversations", force: :cascade do |t|
     t.integer "sender_id"
     t.integer "recipient_id"
+  end
+
+  create_table "conversations", force: :cascade do |t|
+    t.integer  "sender_id"
+    t.integer  "recipient_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "conversations", force: :cascade do |t|
