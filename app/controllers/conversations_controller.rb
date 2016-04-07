@@ -1,8 +1,13 @@
 class ConversationsController < ApplicationController
 
+  def index
+    @profiles = Profile.all
+    @conversations = Conversation.all
+  end
+
   def create
-    if Conversation.beteen(params[:sender_id], params[:recipient_id]).present?
-      @conversation = Conversation.beteen(params[:sender_id], params[:recipient_id]).first
+    if Conversation.between(params[:sender_id], params[:recipient_id]).present?
+      @conversation = Conversation.between(params[:sender_id], params[:recipient_id]).first
     else
       @conversation = Conversation.create!(conversation_params)
     end
@@ -15,5 +20,5 @@ private
   def conversation_params
     params.permit(:sender_id, :recipeint_id)
   end
-  
+
 end
