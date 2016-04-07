@@ -1,0 +1,16 @@
+
+<div class="new_message_pop_up_expanded">
+
+
+  <%= form_for @conversation do |f| %>
+    <%= f.fields_for @message do |msg| %>
+
+
+      <%= msg.text_area :body, class: "new_message" %>
+
+      <%= msg.hidden_field :profile_sender, value: current_user.id %>
+    <% end %>
+      <%= f.submit "[ commit ]", id:"commit" %>
+    <% end %>
+
+</div>
