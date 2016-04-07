@@ -11,7 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20160407184401) do
 
   # These are extensions that must be enabled in order to support this database
@@ -37,13 +36,6 @@ ActiveRecord::Schema.define(version: 20160407184401) do
   create_table "conversations", force: :cascade do |t|
     t.integer "sender_id"
     t.integer "recipient_id"
-  end
-
-  create_table "conversations", force: :cascade do |t|
-    t.integer  "sender_id"
-    t.integer  "recipient_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "delayed_jobs", force: :cascade do |t|
@@ -83,13 +75,14 @@ ActiveRecord::Schema.define(version: 20160407184401) do
   add_index "languages", ["languageable_id"], name: "index_languages_on_languageable_id", using: :btree
 
   create_table "messages", force: :cascade do |t|
-    t.text     "body"
+    t.integer  "recipient_id"
+    t.integer  "sender_id"
+    t.text     "message"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.boolean  "read_status",     default: false
     t.boolean  "permission",      default: false
     t.integer  "pull_request_id"
-    t.integer  "profile_id"
     t.integer  "conversation_id"
   end
 

@@ -13,12 +13,9 @@ Rails.application.routes.draw do
   # get 'reply' => 'pull_requests#reply'
 
   resources :conversations do
-    resources :messages do
-      get 'reply' => 'messages#reply'
-
-
+    resources :messages, only: [:index, :new, :create]
       # get 'pull_request_reply' => 'messages#pull_request_reply'
-    end
+
   end
 
   resources :sessions, only: [:new, :create, :destroy]

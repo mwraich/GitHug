@@ -4,6 +4,7 @@ class ProfilesController < ApplicationController
   before_action :verify_user, only: :show
 
 
+
   def index
       @profiles = if params[:search]
       Profile.search(params[:search]).reject {|x| x if x.id == current_user.id }
@@ -17,7 +18,8 @@ class ProfilesController < ApplicationController
     # @github_image = @user.github_image
 
     @profile = Profile.find(params[:id])
-    @message = Message.new
+    @conversation = check_conversation
+    @message = @conversation.messages.build
 
 
     @profile_pairReco = @profile.pairReco
@@ -73,6 +75,15 @@ class ProfilesController < ApplicationController
   end
 
   private
+
+  def check_conversation
+    if Conversation.where(params[:sender_id], params[:recipient_id]).present?
+      @conversation = Conversation.where(params[:sender_id], params[:recipient_id]).first
+    else
+      @conversation = Conversation.create!
+    end
+
+  end
 
   def verify_user
     if (current_user.profile).blocked_by?(Profile.find(params[:id]).user)

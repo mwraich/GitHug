@@ -1,5 +1,4 @@
 class MessagesController < ApplicationController
-before_action :check_conversation, only: [:new, :create]
 
   def index
     @profile = current_user.profile
@@ -17,17 +16,13 @@ before_action :check_conversation, only: [:new, :create]
 
 
   def new
-
-    @conversation = Conversation.where(params[:sender_id], params[:recipient_id])
-
-
+    @conversation = check_conversation
     @message = @conversation.messages.build(message_params)
   end
 
   def create
 
-
-      @conversation = Conversation.where(params[:sender_id], params[:recipient_id])
+    @conversation = check_conversation
 
     @message = @conversation.messages.build(message_params)
     @message.sender = current_user.profile
