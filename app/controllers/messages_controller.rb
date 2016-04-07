@@ -25,7 +25,7 @@ class MessagesController < ApplicationController
     @message.sender = current_user.profile
     @profile = current_user.profile
 
-    if @message.save
+    if @message.save 
       # && @profile.notification_email?
       # UserMailer.delay.user_message_notification(Profile.find(@message.recipient), Profile.find(@message.sender))
       respond_to do |format|
