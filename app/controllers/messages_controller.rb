@@ -26,30 +26,11 @@ class MessagesController < ApplicationController
     @profile = current_user.profile
 
     if @message.save && @profile.notification_email?
-      # UserMailer.delay.user_message_notification(Profile.find(@message.recipient), Profile.find(@message.sender))
-      respond_to do |format|
-        format.html do
-          if request.xhr?
-            render messages_url
-          else
-            redirect_to messages_url
-          end
-        end
-        format.js
-      end
+      message_send
+    elsif @message.save
+      handle_message_redirect
     else
-      respond_to do |format|
-        format.html do
-          format.html do
-            render partial: 'reply'
-          end
-        end
-        format.js
-      end
-    end
-
-    if @message.save && @profile.notification_sms? && @profile.phone_number?
-      Profile.find(@message.recipient).send_text_message(@message)
+      # Need to handle error since message did not send
     end
   end
 
@@ -74,6 +55,25 @@ class MessagesController < ApplicationController
   def destroy; end
 
   private
+
+  def message_send
+    # UserMailer.delay.user_message_notification(Profile.find(@message.recipient),
+    #                                            Profile.find(@message.sender))
+    handle_message_redirect
+  end
+
+  def handle_message_redirect
+    respond_to do |format|
+      format.html do
+        if request.xhr?
+          render messages_url
+        else
+          redirect_to messages_url
+        end
+      end
+      format.js
+    end
+  end
 
   def message_params
     params.require(:message).permit(:recipient_id, :message, :read_status)
